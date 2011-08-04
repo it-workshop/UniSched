@@ -9,7 +9,7 @@
     class Group {
     private:
         std::string name;
-        std::vector<Human*> humans;
+        std::vector<class Human*> humans;
 
     public:
         Group(std::string);

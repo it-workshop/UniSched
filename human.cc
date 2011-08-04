@@ -21,6 +21,11 @@ std::string Human::get_SurName(void)
     return surname;
 }
 
+void Human::add_Group(Group *newbie)
+{
+    groups.push_back(newbie);
+}
+
 void Human::add_Active(Active_Time active)
 {
     this->active.push_back(active);

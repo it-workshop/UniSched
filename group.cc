@@ -16,6 +16,7 @@ std::string Group::get_Name(void)
 
 void Group::add_Human(Human *newbie)
 {
+    newbie->add_Group(this);
     humans.push_back(newbie);
 }
 
