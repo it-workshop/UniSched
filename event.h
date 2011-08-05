@@ -6,12 +6,6 @@
 
     #include <group.h>
 
-    class Required_People {
-    private:
-        Group *group;
-        unsigned short int number;
-    };
-
     class Event {
     private:
         std::string name;
