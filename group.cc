@@ -2,7 +2,7 @@
 
 Group::Group(std::string name)
 {
-    this->name = name;
+    name_ = name;
 }
 
 Group::~Group(void)
@@ -11,12 +11,28 @@ Group::~Group(void)
 
 std::string Group::get_Name(void)
 {
-    return name;
+    return name_;
 }
 
-void Group::add_Human(Human *newbie)
+std::vector<Person*> *Group::get_People(void)
 {
-    newbie->add_Group(this);
-    humans.push_back(newbie);
+    return &people_;
+}
+
+void Group::add_Person(Person *adding)
+{
+    adding->add_Group(this);
+    people_.push_back(adding);
+}
+
+void Group::delete_Person(Person *deleting)
+{
+    deleting->delete_Group(this);
+    for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
+        if (*it == deleting)
+        {
+            it = people_.erase(it);
+            break;
+        }
 }
 

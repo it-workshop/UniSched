@@ -7,15 +7,15 @@
 
     class Calendar {
     private:
-        std::vector<Event*> events;
+        std::vector<class Event*> events_;
 
     public:
         Calendar(void);
         ~Calendar(void);
 
-        void sort_Events(void);
-
+        std::vector<Event*> *get_Events(void);
         void add_Event(Event*);
+        void delete_Event(Event*);
     };
 
 #endif /* _CALENDAR_H_ */

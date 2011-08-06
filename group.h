@@ -4,12 +4,12 @@
     #include <string>
     #include <vector>
 
-    #include <human.h>
+    #include <person.h>
 
     class Group {
     private:
-        std::string name;
-        std::vector<class Human*> humans;
+        std::string name_;
+        std::vector<class Person*> people_;
 
     public:
         Group(std::string);
@@ -17,7 +17,10 @@
 
         std::string get_Name(void);
 
-        void add_Human(Human*);
+        std::vector<Person*> *get_People(void);
+        void add_Person(Person*);
+	void delete_Person(Person*);
+	
     };
 
 #endif /* _GROUP_H_ */
