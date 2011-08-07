@@ -4,10 +4,13 @@ Person::Person(std::string name, std::string surname)
 {
     name_ = name;
     surname_ = surname;
+
+    events_ = new Calendar ();
 }
 
 Person::~Person(void)
 {
+    delete events_;
 }
 
 std::string Person::get_Name(void)

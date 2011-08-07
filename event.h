@@ -22,8 +22,8 @@
         ~Event(void);
 
         std::string get_Name(void);
-        time_t get_Begin(void);
-        time_t get_End(void);
+        time_t *get_Begin(void);
+        time_t *get_End(void);
         Group *get_Group(void);
         std::vector<Calendar*> *get_Used_in(void);
 
@@ -31,7 +31,6 @@
         void delete_Use(Calendar*);
         void add_Person(class Person*);
         void delete_Person(class Person*);
-        void set_Time(time_t, time_t);
     };
 
 #endif /* _EVENT_H_ */

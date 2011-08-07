@@ -1,7 +1,7 @@
 NAME=raspisator
 
 CXX=g++
-CXXFLAGS=-Wall -O2 -g -I.
+CXXFLAGS=-Wall -O2 -I. -Werror
 
 RM=rm
 INSTALL=install
@@ -23,8 +23,7 @@ $(BIN):$(OBJECTS)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJECTS)
-	$(RM) $(BIN)
+	$(RM) $(OBJECTS) $(BIN)
 
 install: $(BIN)
 	$(INSTALL) $(BIN) $(BINDIR)/$(BIN)

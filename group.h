@@ -10,6 +10,7 @@
     private:
         std::string name_;
         std::vector<class Person*> people_;
+//        bool real_;
 
     public:
         Group(std::string);

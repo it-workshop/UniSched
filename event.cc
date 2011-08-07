@@ -10,6 +10,7 @@ Event::Event(std::string name, time_t begin, time_t end)
 
 Event::~Event(void)
 {
+    delete people_;
 }
 
 std::string Event::get_Name(void)
@@ -17,14 +18,14 @@ std::string Event::get_Name(void)
     return name_;
 }
 
-time_t Event::get_Begin(void)
+time_t *Event::get_Begin(void)
 {
-    return begin_;
+    return &begin_;
 }
 
-time_t Event::get_End(void)
+time_t *Event::get_End(void)
 {
-    return end_;
+    return &end_;
 }
 
 Group *Event::get_Group(void)
@@ -62,11 +63,5 @@ void Event::add_Person(Person *adding)
 void Event::delete_Person(Person *deleting)
 {
     people_->delete_Person(deleting);
-}
-
-void Event::set_Time(time_t begin, time_t end)
-{
-    begin_ = begin;
-    end_ = end;
 }
 
