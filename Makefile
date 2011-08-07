@@ -3,7 +3,7 @@ NAME=raspisator
 CXX=g++
 CXXFLAGS=-Wall -O2 -g -I.
 
-RM=rm
+RM=git rm
 INSTALL=install
 
 BIN=$(NAME)
