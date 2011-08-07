@@ -1,29 +1,31 @@
 #include <person.h>
 
 Person::Person(std::string name, std::string surname)
+: name_ (name),
+  surname_ (surname)
 {
-    name_ = name;
-    surname_ = surname;
+    //name_ = name;
+    //surname_ = surname;
 
     events_ = new Calendar ();
 }
 
-Person::~Person(void)
+Person::~Person()
 {
     delete events_;
 }
 
-std::string Person::get_Name(void)
+std::string Person::get_Name()
 {
     return name_;
 }
 
-std::string Person::get_Surname(void)
+std::string Person::get_Surname()
 {
     return surname_;
 }
 
-std::vector<Group*> *Person::get_Groups(void)
+std::vector<Group*> *Person::get_Groups()
 {
     return &groups_;
 }
