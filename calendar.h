@@ -8,11 +8,13 @@
     class Calendar {
     private:
         std::vector<class Event*> events_;
+        std::string name_;
 
     public:
-        Calendar(void);
+        Calendar(std::string);
         ~Calendar(void);
 
+        std::string get_Name(void);
         std::vector<Event*> *get_Events(void);
         void add_Event(Event*);
         void delete_Event(Event*);

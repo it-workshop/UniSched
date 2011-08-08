@@ -5,7 +5,7 @@ Person::Person(std::string name, std::string surname)
     name_ = name;
     surname_ = surname;
 
-    events_ = new Calendar ();
+    events_ = new Calendar("");
 }
 
 Person::~Person(void)
