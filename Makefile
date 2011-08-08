@@ -1,13 +1,13 @@
 NAME=raspisator
 
 CXX=g++
-CXXFLAGS=-Wall -O2 -g -I.
+CXXFLAGS=-Wall -O2 -g -I. -Werror
 
 RM=git rm
 INSTALL=install
 
 BIN=$(NAME)
-OBJECTS=$(shell echo *.cc | sed 's/\.cc/.o/g')
+OBJECTS=$(shell echo *.cpp | sed 's/\.cpp/.o/g')
 
 PREFIX=/usr
 BINDIR=$(PREFIX)/bin
@@ -19,7 +19,7 @@ all: $(BIN)
 $(BIN):$(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJECTS)
 
-%.o: %.cc
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
