@@ -25,7 +25,27 @@ std::string Calendar::get_Name(void)
     return name_;
 }
 
-//void Calendar::merge_calendar
+void Calendar::merge_calendar(Calendar *adding)
+{
+    for (std::vector<Event*>::iterator it = adding->get_Events()->begin(); it != adding->get_Events()->end(); it ++)
+        add_Event_nocollision(*it);
+}
+
+bool Calendar::has_Event(Event *event)
+{
+    for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
+        if ((*it) == event)
+            return true;
+    return false;
+}
+
+void Calendar::add_Event_nocollision(Event *adding)
+{
+    for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
+        if ((*it) == adding)
+            return;
+    add_Event(adding);
+}
 
 void Calendar::add_Event(Event *adding)
 {

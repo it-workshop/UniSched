@@ -32,6 +32,9 @@ int main (int argc, char *argv[])
     groups[2]->add_Person(persons[0]);
     groups[1]->add_Person(persons[1]);
 
+    groups[0]->merge_group(groups[1]);
+    groups[0]->merge_group(groups[2]);
+
     persons[0]->add_Event(events[0]);
     persons[0]->add_Event(events[1]);
 

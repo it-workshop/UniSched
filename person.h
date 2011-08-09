@@ -29,6 +29,8 @@
         bool is_female(void);
         time_t *birthday(void);
 
+        bool in_Event(class Event*);
+
         std::vector<Group*> *get_Groups(void);
         void add_Group(Group*);
         void delete_Group(Group*);

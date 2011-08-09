@@ -19,7 +19,9 @@
         std::string get_ID(void);
         std::string get_Name(void);
         std::vector<Event*> *get_Events(void);
-        //void merge_calendar(Calendar*);
+        void merge_calendar(Calendar*);
+        bool has_Event(Event *);
+        void add_Event_nocollision(Event*);
         void add_Event(Event*);
         void delete_Event(Event*);
     };

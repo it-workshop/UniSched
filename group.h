@@ -29,6 +29,8 @@
         void delete_Event(Event*);
 
         std::vector<Person*> *get_People(void);
+        void merge_group(Group *adding);
+        void add_Person_nocollision(Person*);
         void add_Person(Person*);
 	void delete_Person(Person*);
 	

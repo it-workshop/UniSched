@@ -60,6 +60,16 @@ time_t *Person::birthday(void)
     return &birthday_;
 }
 
+bool Person::in_Event(Event *event)
+{
+    if (events_->has_Event(event))
+        return true;
+    for (std::vector<Group *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
+        if ((*it)->get_Calendar()->has_Event(event))
+            return true;
+    return false;
+}
+
 Calendar *Person::get_Calendar(void)
 {
     return events_;

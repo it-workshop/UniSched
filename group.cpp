@@ -38,22 +38,34 @@ std::vector<Person*> *Group::get_People(void)
     return &people_;
 }
 
+void Group::merge_group(Group *adding)
+{
+    for (std::vector<Person*>::iterator it = adding->get_People()->begin(); it != adding->get_People()->end(); it ++)
+        add_Person_nocollision(*it);
+}
+
+void Group::add_Person_nocollision(Person *adding)
+{
+    for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
+        if ((*it) == adding)
+            return;
+    add_Person(adding);
+}
+
+
 void Group::add_Event(Event *adding)
 {
-    for (std::vector<Person *>::iterator it = people_.begin(); it != people_.end(); it ++)
-        (*it)->add_Event(adding);
     calendar_->add_Event(adding);
 }
 
 void Group::delete_Event(Event *deleting)
 {
-    for (std::vector<Person *>::iterator it = people_.begin(); it != people_.end(); it ++)
-        (*it)->delete_Event(deleting);
     calendar_->delete_Event(deleting);
 }
 
 void Group::add_Person(Person *adding)
 {
+    adding->get_Calendar()->merge_calendar(calendar_);
     adding->add_Group(this);
     people_.push_back(adding);
 }
