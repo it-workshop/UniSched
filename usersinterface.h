@@ -29,10 +29,10 @@
         void format_ASCII(time_t *);
         //std::string format_RUS(time_t *);
 
-        void out_Person(Person *);
-        void out_Group(Group *);
-        void out_Event(Event *);
-        void out_Calendar(Calendar *);
+        void print_Person(Person *);
+        void print_Group(Group *);
+        void print_Event(Event *);
+        void print_Calendar(Calendar *);
 
         //Person *in_Person(void);
         //Group *in_Group(void);

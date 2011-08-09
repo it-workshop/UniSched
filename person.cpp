@@ -1,18 +1,23 @@
 #include <person.h>
 
-Person::Person(std::string name, std::string surname)
-: name_ (name),
-  surname_ (surname)
+Person::Person(std::string ID, std::string name, std::string surname, bool female, time_t birthday)
+: ID_ (ID),
+  name_ (name),
+  surname_ (surname),
+  female_ (female),
+  birthday_ (birthday)
 {
-    //name_ = name;
-    //surname_ = surname;
-
-    events_ = new Calendar("");
+    events_ = new Calendar('c' + ID, "");
 }
 
 Person::~Person()
 {
     delete events_;
+}
+
+std::string Person::get_ID()
+{
+    return ID_;
 }
 
 std::string Person::get_Name()
@@ -43,6 +48,16 @@ void Person::delete_Group(Group *deleting)
             it = groups_.erase(it);
             break;
         }
+}
+
+bool Person::is_female(void)
+{
+    return female_;
+}
+
+time_t *Person::birthday(void)
+{
+    return &birthday_;
 }
 
 Calendar *Person::get_Calendar(void)

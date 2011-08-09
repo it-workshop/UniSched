@@ -63,36 +63,48 @@ void UsersInterface::format_ASCII(time_t *input)
     std::cout<<days[cutted.tm_wday]<<' '<< month[cutted.tm_mon]<<' '<<cutted.tm_mday<<' '<<cutted.tm_hour<<':'<<cutted.tm_min<<' '<<(cutted.tm_year + 1900);
 }
 
-void UsersInterface::out_Person(Person *printing)
+void UsersInterface::print_Person(Person *printing)
 {
-    std::cout<<printing->get_Name()<<' '<<printing->get_Surname()<<std::endl;
+    if (printing->is_female())
+       std::cout<<"Woman: ";
+    else
+       std::cout<<"Man: ";
+    std::cout<<printing->get_Name()<<' '<<printing->get_Surname()<<" ("<<printing->get_ID()<<')'<<std::endl<<"Birthday: ";
+    format(printing->birthday());
+    std::cout<<std::endl;
     for (std::vector<Group *>::iterator it = printing->get_Groups()->begin(); it != printing->get_Groups()->end(); it ++)
-        std::cout<<(*it)->get_Name()<<' ';
+        if ((*it)->get_Name() != "")
+            std::cout<<(*it)->get_Name()<<' ';
     if (!printing->get_Groups()->empty())
         std::cout<<std::endl;
-    out_Calendar(printing->get_Calendar());
+    print_Calendar(printing->get_Calendar());
 }
 
-void UsersInterface::out_Group(Group *printing)
+void UsersInterface::print_Group(Group *printing)
 {
-    std::cout<<printing->get_Name()<<std::endl;
+    if (printing->get_Name() != "")
+    {
+        std::cout<<printing->get_Name()<<" ("<<printing->get_ID()<<')'<<std::endl<<printing->get_Description()<<std::endl;
+    }
     for (std::vector<Person *>::iterator it = printing->get_People()->begin(); it != printing->get_People()->end(); it ++)
         std::cout<<(*it)->get_Name()<<' '<<(*it)->get_Surname()<<"  ";
     std::cout<<std::endl<<std::endl;
 }
 
-void UsersInterface::out_Event(Event *printing)
+void UsersInterface::print_Event(Event *printing)
 {
-    std::cout<<"Begin: ";
+    std::cout<<printing->get_Name()<<" ("<<printing->get_ID()<<')'<<std::endl<<printing->get_Description()<<std::endl<<"Begin: ";
     format(printing->get_Begin());
     std::cout<<" End: ";
     format(printing->get_End());
     std::cout<<std::endl;
-    out_Group(printing->get_Group());
+    print_Group(printing->get_Group());
 }
 
-void UsersInterface::out_Calendar(Calendar *printing)
+void UsersInterface::print_Calendar(Calendar *printing)
 {
+    if (printing->get_Name() != "")
+        std::cout<<printing->get_Name()<<std::endl;
     if (printing->get_Events()->empty())
     {
         std::cout<<std::endl;
@@ -100,11 +112,11 @@ void UsersInterface::out_Calendar(Calendar *printing)
     }
     for (std::vector<Event *>::iterator it = printing->get_Events()->begin(); it != printing->get_Events()->end(); it ++)
     {
-        std::cout<<"[(";
+        std::cout<<'['<<(*it)->get_Name()<<" (";
         format((*it)->get_Begin());
         std::cout<<")-(";
         format((*it)->get_End());
-        std::cout<<") "<<(*it)->get_Name()<<"] ";
+        std::cout<<")]  ";
     }
     std::cout<<std::endl<<std::endl;
 }

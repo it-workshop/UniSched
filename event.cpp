@@ -1,8 +1,10 @@
 #include <event.h>
 
-Event::Event(std::string name, time_t begin, time_t end)
+Event::Event(std::string ID, std::string name, time_t begin, time_t end, std::string description)
 {
-    people_ = new Group (name); 
+    people_ = new Group ('g' + ID, "", "group of event: " + name);
+    ID_ = ID;
+    description_ = description;
     name_ = name;
     begin_ = begin;
     end_ = end;
@@ -13,9 +15,19 @@ Event::~Event(void)
     delete people_;
 }
 
+std::string Event::get_ID(void)
+{
+    return ID_;
+}
+
 std::string Event::get_Name(void)
 {
     return name_;
+}
+
+std::string Event::get_Description(void)
+{
+    return description_;
 }
 
 time_t *Event::get_Begin(void)

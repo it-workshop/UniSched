@@ -3,6 +3,7 @@
 
     #include <string>
     #include <vector>
+    #include <time.h>
 
     #include <group.h>
     #include <calendar.h>
@@ -10,17 +11,23 @@
 
     class Person {
     private:
+        std::string ID_;
         std::string name_;
 	std::string surname_;
         std::vector<class Group*> groups_;
         class Calendar *events_;
+        bool female_;
+        time_t birthday_;
 
     public:
-        Person(std::string, std::string);
+        Person(std::string, std::string, std::string, bool, time_t);
 	~Person(void);
 
+        std::string get_ID(void);
 	std::string get_Name(void);
 	std::string get_Surname(void);
+        bool is_female(void);
+        time_t *birthday(void);
 
         std::vector<Group*> *get_Groups(void);
         void add_Group(Group*);

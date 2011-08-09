@@ -11,17 +11,21 @@
 
     class Event {
     private:
+        std::string ID_;
         std::string name_;
+        std::string description_;
         time_t begin_;
         time_t end_;
         class Group *people_;
         std::vector<class Calendar*> used_in_;
 
     public:
-        Event(std::string, time_t, time_t);
+        Event(std::string, std::string, time_t, time_t, std::string);
         ~Event(void);
 
+        std::string get_ID(void);
         std::string get_Name(void);
+        std::string get_Description(void);
         time_t *get_Begin(void);
         time_t *get_End(void);
         Group *get_Group(void);

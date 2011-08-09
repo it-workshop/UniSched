@@ -1,7 +1,8 @@
 #include <calendar.h>
 
-Calendar::Calendar(std::string name)
+Calendar::Calendar(std::string ID, std::string name)
 {
+    ID_ = ID;
     name_ = name;
 }
 
@@ -14,10 +15,17 @@ std::vector<Event*> *Calendar::get_Events(void)
     return &events_;
 }
 
+std::string Calendar::get_ID(void)
+{
+    return ID_;
+}
+
 std::string Calendar::get_Name(void)
 {
     return name_;
 }
+
+//void Calendar::merge_calendar
 
 void Calendar::add_Event(Event *adding)
 {
