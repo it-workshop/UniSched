@@ -28,14 +28,16 @@ int main (int argc, char *argv[])
 
     UsersInterface ui;
 
-    groups[1]->add_person(persons[0]);
-    groups[2]->add_person(persons[0]);
-    groups[1]->add_person(persons[1]);
+    groups[1]->add_person(persons[0], "director");
+//    groups[2]->add_person(persons[0], "director");
+//    groups[1]->add_person(persons[1], "member");
 
-    groups[1]->add_event(events[2]);
+//    persons[0]->add_event(events[2], "director");
+//    groups[1]->add_event(events[2]);
+//    groups[1]->delete_event(events[2]);
 
-    persons[0]->add_event(events[0]);
-    persons[0]->add_event(events[1]);
+//    persons[0]->add_event(events[0], "director");
+//    persons[0]->add_event(events[1], "director");
 
     ui.print_person(persons[0]);
     ui.print_person(persons[1]);

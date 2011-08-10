@@ -1,7 +1,7 @@
 NAME=raspisator
 
 CXX=g++
-CXXFLAGS=-Wall -O2 -g -I. -Werror
+CXXFLAGS=-Wall -g -I. -Werror
 
 RM=rm
 INSTALL=install

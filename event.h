@@ -33,7 +33,7 @@
 
         void add_use(Calendar*);
         void delete_use(Calendar*);
-        void add_person(class Person*);
+        void add_person(class Person*, std::string);
         void delete_person(class Person*);
     };
 

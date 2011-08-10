@@ -5,6 +5,7 @@
     #include <vector>
     #include <time.h>
 
+    #include <group_content.h>
     #include <group.h>
     #include <calendar.h>
     #include <event.h>
@@ -14,29 +15,29 @@
         std::string id_;
         std::string name_;
         std::string surname_;
-        std::vector<class Group*> groups_;
+        std::vector<struct Group_Content_*> groups_;
         class Calendar *events_;
         bool female_;
         time_t birthday_;
 
     public:
         Person(std::string, std::string, std::string, bool, time_t);
-	~Person(void);
+        ~Person();
 
-        std::string get_id(void);
-        std::string get_name(void);
-        std::string get_surname(void);
-        bool is_female(void);
-        time_t *birthday(void);
+        std::string get_id();
+        std::string get_name();
+        std::string get_surname();
+        bool is_female();
+        time_t *birthday();
 
         bool in_event(class Event*);
 
-        std::vector<Group*> *get_groups(void);
-        void add_group(Group*);
-        void delete_group(Group*);
+        std::vector<struct Group_Content_*> *get_groups();
+        void add_group(struct Group_Content_*);
+        void delete_group(class Group*);
 
-        Calendar *get_calendar(void);
-        void add_event(class Event*);
+        Calendar *get_calendar();
+        void add_event(class Event*, std::string);
         void delete_event(class Event*);
     };
 

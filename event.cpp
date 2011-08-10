@@ -53,7 +53,6 @@ std::vector<Calendar*> *Event::get_used_in(void)
 void Event::add_use(Calendar *adding)
 {
     used_in_.push_back(adding);
-    adding->add_event(this);
 }
 
 void Event::delete_use(Calendar *deleting)
@@ -64,12 +63,11 @@ void Event::delete_use(Calendar *deleting)
             it = used_in_.erase(it);
             break;
         }
-    deleting->delete_event(this);
 }
 
-void Event::add_person(Person *adding)
+void Event::add_person(Person *adding, std::string status)
 {
-    people_->add_person(adding);
+    people_->add_person(adding, status);
 }
 
 void Event::delete_person(Person *deleting)

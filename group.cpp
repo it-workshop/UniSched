@@ -8,48 +8,48 @@ Group::Group(std::string id, std::string name, std::string description)
     calendar_ = new Calendar('c' + id, "");
 }
 
-Group::~Group(void)
+Group::~Group()
 {
     delete calendar_;
 }
 
-std::string Group::get_name(void)
+std::string Group::get_name()
 {
     return name_;
 }
 
-std::string Group::get_id(void)
+std::string Group::get_id()
 {
     return id_;
 }
 
-std::string Group::get_description(void)
+std::string Group::get_description()
 {
     return description_;
 }
 
-Calendar *Group::get_calendar(void)
+Calendar *Group::get_calendar()
 {
     return calendar_;
 }
 
-std::vector<Person*> *Group::get_people(void)
+std::vector<Group_Content*> *Group::get_people()
 {
     return &people_;
 }
 
 void Group::merge_group(Group *adding)
 {
-    for (std::vector<Person*>::iterator it = adding->get_people()->begin(); it != adding->get_people()->end(); it ++)
-        add_person_nocollision(*it);
+    for (std::vector<Group_Content*>::iterator it = adding->get_people()->begin(); it != adding->get_people()->end(); it ++)
+        add_person_nocollision((*it)->person, (*it)->status);
 }
 
-void Group::add_person_nocollision(Person *adding)
+void Group::add_person_nocollision(Person *adding, std::string status)
 {
-    for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
-        if ((*it) == adding)
+    for (std::vector<Group_Content*>::iterator it = people_.begin(); it != people_.end(); it ++)
+        if ((*it)->person == adding)
             return;
-    add_person(adding);
+    add_person(adding, status);
 }
 
 
@@ -63,18 +63,23 @@ void Group::delete_event(Event *deleting)
     calendar_->delete_event(deleting);
 }
 
-void Group::add_person(Person *adding)
+void Group::add_person(Person *adding, std::string status)
 {
     adding->get_calendar()->merge_calendar(calendar_);
-    adding->add_group(this);
-    people_.push_back(adding);
+//    adding->add_group(this, status);
+    Group_Content *a = new Group_Content ();
+    a->group = this;
+    a->person = adding;
+    a->status = status;
+    people_.push_back(a);
+    adding->add_group(a);
 }
 
 void Group::delete_person(Person *deleting)
 {
     deleting->delete_group(this);
-    for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
-        if (*it == deleting)
+    for (std::vector<Group_Content*>::iterator it = people_.begin(); it != people_.end(); it ++)
+        if ((*it)->person == deleting)
         {
             it = people_.erase(it);
             break;

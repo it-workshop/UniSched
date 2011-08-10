@@ -49,11 +49,13 @@ void Calendar::add_event_nocollision(Event *adding)
 
 void Calendar::add_event(Event *adding)
 {
+    adding->add_use(this);
     events_.push_back(adding);
 }
 
 void Calendar::delete_event(Event *deleting)
 {
+    deleting->delete_use(this);
     for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
         if (*it == deleting)
         {
