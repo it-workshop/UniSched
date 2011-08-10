@@ -11,7 +11,7 @@
 
     class Event {
     private:
-        std::string ID_;
+        std::string id_;
         std::string name_;
         std::string description_;
         time_t begin_;
@@ -23,18 +23,18 @@
         Event(std::string, std::string, time_t, time_t, std::string);
         ~Event(void);
 
-        std::string get_ID(void);
-        std::string get_Name(void);
-        std::string get_Description(void);
-        time_t *get_Begin(void);
-        time_t *get_End(void);
-        Group *get_Group(void);
-        std::vector<Calendar*> *get_Used_in(void);
+        std::string get_id(void);
+        std::string get_name(void);
+        std::string get_description(void);
+        time_t *get_begin(void);
+        time_t *get_end(void);
+        Group *get_group(void);
+        std::vector<Calendar*> *get_used_in(void);
 
-        void add_Use(Calendar*);
-        void delete_Use(Calendar*);
-        void add_Person(class Person*);
-        void delete_Person(class Person*);
+        void add_use(Calendar*);
+        void delete_use(Calendar*);
+        void add_person(class Person*);
+        void delete_person(class Person*);
     };
 
 #endif /* _EVENT_H_ */

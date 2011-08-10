@@ -11,9 +11,9 @@
 
     class Person {
     private:
-        std::string ID_;
+        std::string id_;
         std::string name_;
-	std::string surname_;
+        std::string surname_;
         std::vector<class Group*> groups_;
         class Calendar *events_;
         bool female_;
@@ -23,21 +23,21 @@
         Person(std::string, std::string, std::string, bool, time_t);
 	~Person(void);
 
-        std::string get_ID(void);
-	std::string get_Name(void);
-	std::string get_Surname(void);
+        std::string get_id(void);
+        std::string get_name(void);
+        std::string get_surname(void);
         bool is_female(void);
         time_t *birthday(void);
 
-        bool in_Event(class Event*);
+        bool in_event(class Event*);
 
-        std::vector<Group*> *get_Groups(void);
-        void add_Group(Group*);
-        void delete_Group(Group*);
+        std::vector<Group*> *get_groups(void);
+        void add_group(Group*);
+        void delete_group(Group*);
 
-        Calendar *get_Calendar(void);
-        void add_Event(class Event*);
-        void delete_Event(class Event*);
+        Calendar *get_calendar(void);
+        void add_event(class Event*);
+        void delete_event(class Event*);
     };
 
 #endif /* _PERSON_H_ */

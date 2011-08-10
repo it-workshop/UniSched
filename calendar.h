@@ -8,7 +8,7 @@
 
     class Calendar {
     private:
-        std::string ID_;
+        std::string id_;
         std::vector<class Event*> events_;
         std::string name_;
 
@@ -16,14 +16,14 @@
         Calendar(std::string, std::string);
         ~Calendar(void);
 
-        std::string get_ID(void);
-        std::string get_Name(void);
-        std::vector<Event*> *get_Events(void);
+        std::string get_id(void);
+        std::string get_name(void);
+        std::vector<Event*> *get_events(void);
         void merge_calendar(Calendar*);
-        bool has_Event(Event *);
-        void add_Event_nocollision(Event*);
-        void add_Event(Event*);
-        void delete_Event(Event*);
+        bool has_event(Event *);
+        void add_event_nocollision(Event*);
+        void add_event(Event*);
+        void delete_event(Event*);
     };
 
 #endif /* _CALENDAR_H_ */

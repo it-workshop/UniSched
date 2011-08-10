@@ -1,9 +1,9 @@
 #include <event.h>
 
-Event::Event(std::string ID, std::string name, time_t begin, time_t end, std::string description)
+Event::Event(std::string id, std::string name, time_t begin, time_t end, std::string description)
 {
-    people_ = new Group ('g' + ID, "", "group of event: " + name);
-    ID_ = ID;
+    people_ = new Group ('g' + id, "", "group of event: " + name);
+    id_ = id;
     description_ = description;
     name_ = name;
     begin_ = begin;
@@ -15,48 +15,48 @@ Event::~Event(void)
     delete people_;
 }
 
-std::string Event::get_ID(void)
+std::string Event::get_id(void)
 {
-    return ID_;
+    return id_;
 }
 
-std::string Event::get_Name(void)
+std::string Event::get_name(void)
 {
     return name_;
 }
 
-std::string Event::get_Description(void)
+std::string Event::get_description(void)
 {
     return description_;
 }
 
-time_t *Event::get_Begin(void)
+time_t *Event::get_begin(void)
 {
     return &begin_;
 }
 
-time_t *Event::get_End(void)
+time_t *Event::get_end(void)
 {
     return &end_;
 }
 
-Group *Event::get_Group(void)
+Group *Event::get_group(void)
 {
     return people_;
 }
 
-std::vector<Calendar*> *Event::get_Used_in(void)
+std::vector<Calendar*> *Event::get_used_in(void)
 {
     return &used_in_;
 }
 
-void Event::add_Use(Calendar *adding)
+void Event::add_use(Calendar *adding)
 {
     used_in_.push_back(adding);
-    adding->add_Event(this);
+    adding->add_event(this);
 }
 
-void Event::delete_Use(Calendar *deleting)
+void Event::delete_use(Calendar *deleting)
 {
     for (std::vector<Calendar*>::iterator it = used_in_.begin(); it != used_in_.end(); it ++)
         if (*it == deleting)
@@ -64,16 +64,16 @@ void Event::delete_Use(Calendar *deleting)
             it = used_in_.erase(it);
             break;
         }
-    deleting->delete_Event(this);
+    deleting->delete_event(this);
 }
 
-void Event::add_Person(Person *adding)
+void Event::add_person(Person *adding)
 {
-    people_->add_Person(adding);
+    people_->add_person(adding);
 }
 
-void Event::delete_Person(Person *deleting)
+void Event::delete_person(Person *deleting)
 {
-    people_->delete_Person(deleting);
+    people_->delete_person(deleting);
 }
 

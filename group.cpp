@@ -1,11 +1,11 @@
 #include <group.h>
 
-Group::Group(std::string ID, std::string name, std::string description)
+Group::Group(std::string id, std::string name, std::string description)
 {
-    ID_ = ID;
+    id_ = id;
     name_ = name;
     description_ = description;
-    calendar_ = new Calendar('c' + ID, "");
+    calendar_ = new Calendar('c' + id, "");
 }
 
 Group::~Group(void)
@@ -13,66 +13,66 @@ Group::~Group(void)
     delete calendar_;
 }
 
-std::string Group::get_Name(void)
+std::string Group::get_name(void)
 {
     return name_;
 }
 
-std::string Group::get_ID(void)
+std::string Group::get_id(void)
 {
-    return ID_;
+    return id_;
 }
 
-std::string Group::get_Description(void)
+std::string Group::get_description(void)
 {
     return description_;
 }
 
-Calendar *Group::get_Calendar(void)
+Calendar *Group::get_calendar(void)
 {
     return calendar_;
 }
 
-std::vector<Person*> *Group::get_People(void)
+std::vector<Person*> *Group::get_people(void)
 {
     return &people_;
 }
 
 void Group::merge_group(Group *adding)
 {
-    for (std::vector<Person*>::iterator it = adding->get_People()->begin(); it != adding->get_People()->end(); it ++)
-        add_Person_nocollision(*it);
+    for (std::vector<Person*>::iterator it = adding->get_people()->begin(); it != adding->get_people()->end(); it ++)
+        add_person_nocollision(*it);
 }
 
-void Group::add_Person_nocollision(Person *adding)
+void Group::add_person_nocollision(Person *adding)
 {
     for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
         if ((*it) == adding)
             return;
-    add_Person(adding);
+    add_person(adding);
 }
 
 
-void Group::add_Event(Event *adding)
+void Group::add_event(Event *adding)
 {
-    calendar_->add_Event(adding);
+    calendar_->add_event(adding);
 }
 
-void Group::delete_Event(Event *deleting)
+void Group::delete_event(Event *deleting)
 {
-    calendar_->delete_Event(deleting);
+    calendar_->delete_event(deleting);
 }
 
-void Group::add_Person(Person *adding)
+void Group::add_person(Person *adding)
 {
-    adding->get_Calendar()->merge_calendar(calendar_);
-    adding->add_Group(this);
+    adding->get_calendar()->merge_calendar(calendar_);
+    adding->add_group(this);
     people_.push_back(adding);
 }
 
-void Group::delete_Person(Person *deleting)
+void Group::delete_person(Person *deleting)
 {
-    deleting->delete_Group(this);
+    deleting->delete_group(this);
     for (std::vector<Person*>::iterator it = people_.begin(); it != people_.end(); it ++)
         if (*it == deleting)
         {

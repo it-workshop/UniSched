@@ -9,7 +9,7 @@
 
     class Group {
     private:
-        std::string ID_;
+        std::string id_;
         std::string name_;
         std::string description_;
         std::vector<class Person*> people_;
@@ -19,20 +19,19 @@
         Group(std::string, std::string, std::string);
         ~Group(void);
 
-        bool real(void);
-        std::string get_Name(void);
-        std::string get_ID(void);
-        std::string get_Description(void);
+        std::string get_name(void);
+        std::string get_id(void);
+        std::string get_description(void);
 
-        Calendar *get_Calendar(void);
-        void add_Event(Event*);
-        void delete_Event(Event*);
+        Calendar *get_calendar(void);
+        void add_event(Event*);
+        void delete_event(Event*);
 
-        std::vector<Person*> *get_People(void);
+        std::vector<Person*> *get_people(void);
         void merge_group(Group *adding);
-        void add_Person_nocollision(Person*);
-        void add_Person(Person*);
-	void delete_Person(Person*);
+        void add_person_nocollision(Person*);
+        void add_person(Person*);
+	void delete_person(Person*);
 	
     };
 

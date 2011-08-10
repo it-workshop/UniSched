@@ -60,64 +60,69 @@ void UsersInterface::format_ASCII(time_t *input)
 
     struct tm cutted = *localtime(input);
 
-    std::cout<<days[cutted.tm_wday]<<' '<< month[cutted.tm_mon]<<' '<<cutted.tm_mday<<' '<<cutted.tm_hour<<':'<<cutted.tm_min<<' '<<(cutted.tm_year + 1900);
+    std::cout << days[cutted.tm_wday] << ' ' << month[cutted.tm_mon] << ' ' << cutted.tm_mday << ' ' << cutted.tm_hour << ':' << cutted.tm_min << ' ' << (cutted.tm_year + 1900);
 }
 
-void UsersInterface::print_Person(Person *printing)
+void UsersInterface::print_person(Person *printing)
 {
     if (printing->is_female())
-       std::cout<<"Woman: ";
+       std::cout << "Woman: ";
     else
-       std::cout<<"Man: ";
-    std::cout<<printing->get_Name()<<' '<<printing->get_Surname()<<" ("<<printing->get_ID()<<')'<<std::endl<<"Birthday: ";
+       std::cout << "Man: ";
+    std::cout << printing->get_name() << ' ' << printing->get_surname() << " ("<<printing->get_id() << ')' << std::endl << "Birthday: ";
     format(printing->birthday());
-    std::cout<<std::endl;
-    for (std::vector<Group *>::iterator it = printing->get_Groups()->begin(); it != printing->get_Groups()->end(); it ++)
-        if ((*it)->get_Name() != "")
-            std::cout<<(*it)->get_Name()<<' ';
-    if (!printing->get_Groups()->empty())
-        std::cout<<std::endl;
-    print_Calendar(printing->get_Calendar());
+    std::cout << std::endl;
+    for (std::vector<Group *>::iterator it = printing->get_groups()->begin(); it != printing->get_groups()->end(); it ++)
+        if ((*it)->get_name() != "")
+            std::cout << (*it)->get_name() << ' ';
+    if (!printing->get_groups()->empty())
+        std::cout << std::endl;
+    print_calendar(printing->get_calendar());
+    for (std::vector<Group *>::iterator it = printing->get_groups()->begin(); it != printing->get_groups()->end(); it ++)
+        print_calendar((*it)->get_calendar());
+    std::cout << std::endl << std::endl;
 }
 
-void UsersInterface::print_Group(Group *printing)
+void UsersInterface::print_group(Group *printing)
 {
-    if (printing->get_Name() != "")
+    if (printing->get_name() != "")
+        std::cout << printing->get_name() << " (" << printing->get_id() << ')' << std::endl << printing->get_description() << std::endl;
+    for (std::vector<Person *>::iterator it = printing->get_people()->begin(); it != printing->get_people()->end(); it ++)
+        std::cout << (*it)->get_name() << ' ' << (*it)->get_surname() << "  ";
+    if (printing ->get_name() != "")
     {
-        std::cout<<printing->get_Name()<<" ("<<printing->get_ID()<<')'<<std::endl<<printing->get_Description()<<std::endl;
+        std::cout << std::endl << "Events: ";
+        print_calendar(printing->get_calendar());
     }
-    for (std::vector<Person *>::iterator it = printing->get_People()->begin(); it != printing->get_People()->end(); it ++)
-        std::cout<<(*it)->get_Name()<<' '<<(*it)->get_Surname()<<"  ";
-    std::cout<<std::endl<<std::endl;
+    std::cout << std::endl << std::endl;
 }
 
-void UsersInterface::print_Event(Event *printing)
+void UsersInterface::print_event(Event *printing)
 {
-    std::cout<<printing->get_Name()<<" ("<<printing->get_ID()<<')'<<std::endl<<printing->get_Description()<<std::endl<<"Begin: ";
-    format(printing->get_Begin());
-    std::cout<<" End: ";
-    format(printing->get_End());
-    std::cout<<std::endl;
-    print_Group(printing->get_Group());
+    std::cout << printing->get_name() << " (" << printing->get_id() << ')' << std::endl << printing->get_description() << std::endl << "Begin: ";
+    format(printing->get_begin());
+    std::cout << " End: ";
+    format(printing->get_end());
+    std::cout << std::endl;
+    print_group(printing->get_group());
 }
 
-void UsersInterface::print_Calendar(Calendar *printing)
+void UsersInterface::print_calendar(Calendar *printing)
 {
-    if (printing->get_Name() != "")
-        std::cout<<printing->get_Name()<<std::endl;
-    if (printing->get_Events()->empty())
+    if (printing->get_name() != "")
+        std::cout << printing->get_name() << std::endl;
+    if (printing->get_events()->empty())
     {
-        std::cout<<std::endl;
+        std::cout << std::endl;
         return;
     }
-    for (std::vector<Event *>::iterator it = printing->get_Events()->begin(); it != printing->get_Events()->end(); it ++)
+    for (std::vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
-        std::cout<<'['<<(*it)->get_Name()<<" (";
-        format((*it)->get_Begin());
-        std::cout<<")-(";
-        format((*it)->get_End());
-        std::cout<<")]  ";
+        std::cout << '[' << (*it)->get_name() << " (";
+        format((*it)->get_begin());
+        std::cout << ")-(";
+        format((*it)->get_end());
+        std::cout << ")]  ";
     }
-    std::cout<<std::endl<<std::endl;
 }
 
