@@ -85,7 +85,7 @@ void UserInterface::print_person(Person *printing)
          << endl;
     for (vector<Group_Content *>::iterator it = printing->get_groups()->begin(); it != printing->get_groups()->end(); it ++)
     {
-        if ((*it)->group->get_name().empty())
+        if (!(*it)->group->get_name().empty())
             cout << "    "
                  << (*it)->group->get_name() 
                  << ": " << (*it)->status
@@ -100,7 +100,7 @@ void UserInterface::print_person(Person *printing)
 
 void UserInterface::print_group(Group *printing)
 {
-    if (printing->get_name().empty())
+    if (!printing->get_name().empty())
     {
         std::cout << "Group: "
                   << printing->get_name()
@@ -110,7 +110,7 @@ void UserInterface::print_group(Group *printing)
     }
     for (std::vector<Group_Content*>::iterator it = printing->get_people()->begin(); it != printing->get_people()->end(); it ++)
         std::cout << "    " << (*it)->person->get_name() << ' ' << (*it)->person->get_surname() << ": " << (*it)->status << std::endl;
-    if (printing ->get_name() != "")
+    if (!printing ->get_name().empty())
     {
         std::cout << "Events: " << std::endl;
         print_calendar(printing->get_calendar());
@@ -130,7 +130,7 @@ void UserInterface::print_event(Event *printing)
 
 void UserInterface::print_calendar(Calendar *printing)
 {
-    if (printing->get_name() != "")
+    if (!printing->get_name().empty())
         std::cout << "Calendar: " << printing->get_name() << std::endl;
     for (std::vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
