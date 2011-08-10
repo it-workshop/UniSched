@@ -5,6 +5,10 @@
     #include <vector>
     #include <time.h>
 
+    #ifdef HAVE_CONFIG_H
+    #include <config.h>
+    #endif /* HAVE_CONFIG_H */
+
     #include <group_content.h>
     #include <group.h>
     #include <calendar.h>

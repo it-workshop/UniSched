@@ -4,6 +4,10 @@
     #include <string>
     #include <vector>
 
+    #ifdef HAVE_CONFIG_H
+    #include <config.h>
+    #endif /* HAVE_CONFIG_H */
+
     #include <group_content.h>
     #include <calendar.h>
     #include <person.h>
