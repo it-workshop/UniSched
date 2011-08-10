@@ -16,12 +16,12 @@
         //RUS
     };
 
-    class UsersInterface {
+    class UserInterface {
     private:
         enum default_format def_format;
     public:
-        UsersInterface(void);
-        ~UsersInterface(void);
+        UserInterface(void);
+        ~UserInterface(void);
 
         void set_format(enum default_format);
         enum default_format get_format(void);
