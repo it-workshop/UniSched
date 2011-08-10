@@ -2,7 +2,7 @@
 #include <time.h>
 #include <vector>
 
-#include <usersinterface.h>
+#include <userinterface.h>
 #include <person.h>
 #include <group.h>
 #include <event.h>
@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
     events.push_back(new Event("e001", "event1", time(0) + 10000, time(0) + 15000, "blah-blah1"));
     events.push_back(new Event("e002", "event2", time(0) - 10000, time(0) - 5000, "blah-blah2"));
 
-    UsersInterface ui;
+    UserInterface ui;
 
     groups[1]->add_person(persons[0], "director");
 //    groups[2]->add_person(persons[0], "director");

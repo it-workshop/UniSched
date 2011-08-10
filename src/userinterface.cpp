@@ -1,25 +1,25 @@
-#include <usersinterface.h>
+#include <userinterface.h>
 
-UsersInterface::UsersInterface(void)
+UserInterface::UserInterface(void)
 {
     def_format = ASCII;
 }
 
-UsersInterface::~UsersInterface(void)
+UserInterface::~UserInterface(void)
 {
 }
 
-void UsersInterface::set_format(enum default_format new_format)
+void UserInterface::set_format(enum default_format new_format)
 {
     def_format = new_format;
 }
 
-enum default_format UsersInterface::get_format(void)
+enum default_format UserInterface::get_format(void)
 {
     return def_format;
 }
 
-void UsersInterface::format(time_t *input)
+void UserInterface::format(time_t *input)
 {
     switch (def_format)
     {
@@ -32,7 +32,7 @@ void UsersInterface::format(time_t *input)
     }
 }
 
-void UsersInterface::format_ASCII(time_t *input)
+void UserInterface::format_ASCII(time_t *input)
 {
     static const char days[7][4] = {
         "Sun",
@@ -68,7 +68,7 @@ void UsersInterface::format_ASCII(time_t *input)
               << ' ' << (cutted.tm_year + 1900);
 }
 
-void UsersInterface::print_person(Person *printing)
+void UserInterface::print_person(Person *printing)
 {
     if (printing->is_female())
        cout << "Woman: ";
@@ -98,7 +98,7 @@ void UsersInterface::print_person(Person *printing)
     cout << endl;
 }
 
-void UsersInterface::print_group(Group *printing)
+void UserInterface::print_group(Group *printing)
 {
     if (printing->get_name().empty())
     {
@@ -118,7 +118,7 @@ void UsersInterface::print_group(Group *printing)
     std::cout << std::endl;
 }
 
-void UsersInterface::print_event(Event *printing)
+void UserInterface::print_event(Event *printing)
 {
     std::cout << "Event: " << printing->get_name() << " (" << printing->get_id() << ')' << std::endl << printing->get_description() << std::endl << "Begin: ";
     format(printing->get_begin());
@@ -128,7 +128,7 @@ void UsersInterface::print_event(Event *printing)
     print_group(printing->get_group());
 }
 
-void UsersInterface::print_calendar(Calendar *printing)
+void UserInterface::print_calendar(Calendar *printing)
 {
     if (printing->get_name() != "")
         std::cout << "Calendar: " << printing->get_name() << std::endl;
