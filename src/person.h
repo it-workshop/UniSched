@@ -16,7 +16,7 @@
 
     class Person {
     private:
-        std::string id_;
+        unsigned long long int id_;
         std::string name_;
         std::string surname_;
         std::vector<struct Group_Content_*> groups_;
@@ -25,10 +25,10 @@
         time_t birthday_;
 
     public:
-        Person(std::string, std::string, std::string, bool, time_t);
+        Person(unsigned long long int, std::string, std::string, bool, time_t);
         ~Person();
 
-        std::string get_id();
+        unsigned long long int get_id();
         std::string get_name();
         std::string get_surname();
         bool is_female();

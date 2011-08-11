@@ -1,21 +1,23 @@
 #include <person.h>
 
-Person::Person(std::string id, std::string name, std::string surname, bool female, time_t birthday)
+Person::Person(unsigned long long int id, std::string name, std::string surname, bool female, time_t birthday)
 : id_ (id),
   name_ (name),
   surname_ (surname),
   female_ (female),
   birthday_ (birthday)
 {
-    events_ = new Calendar('c' + id, "");
+    events_ = new Calendar(3 * id + 1, "");
 }
 
 Person::~Person()
 {
+    for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
+        (*it)->group->delete_person(this);
     delete events_;
 }
 
-std::string Person::get_id()
+unsigned long long int Person::get_id()
 {
     return id_;
 }
@@ -72,7 +74,7 @@ bool Person::in_event(Event *event)
 
 Calendar *Person::get_calendar_out()
 {
-    Calendar *all = new Calendar(events_);
+    Calendar *all = new Calendar(0, events_);
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
         if (!(*it)->group->get_name().empty())
             all->merge_calendar((*it)->group->get_calendar());

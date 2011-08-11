@@ -15,7 +15,7 @@
 
     class Event {
     private:
-        std::string id_;
+        unsigned long long int id_;
         std::string name_;
         std::string description_;
         time_t begin_;
@@ -24,16 +24,16 @@
         std::vector<class Calendar*> used_in_;
 
     public:
-        Event(std::string, std::string, time_t, time_t, std::string);
-        ~Event(void);
+        Event(unsigned long long int, std::string, time_t, time_t, std::string);
+        ~Event();
 
-        std::string get_id(void);
-        std::string get_name(void);
-        std::string get_description(void);
-        time_t *get_begin(void);
-        time_t *get_end(void);
-        Group *get_group(void);
-        std::vector<Calendar*> *get_used_in(void);
+        unsigned long long int get_id();
+        std::string get_name();
+        std::string get_description();
+        time_t *get_begin();
+        time_t *get_end();
+        Group *get_group();
+        std::vector<Calendar*> *get_used_in();
 
         void add_use(Calendar*);
         void delete_use(Calendar*);

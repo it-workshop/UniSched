@@ -14,33 +14,121 @@ void UserInterface::listen(vector<Person *> *persons, vector<Group *> *groups, v
     string reading;
     while (true)
     {
+        unsigned long long int id, id1;
+        char symbol;
         cout << "raspisator-? ";
         cin >> reading;
-        if (reading == "persons")
+        if (reading == "merge")
         {
-            for (vector<Person *>::iterator it = persons->begin(); it != persons->end(); it ++)
-                print_person(*it);
+            cin >> symbol;
+            switch (symbol)
+            {
+            case '@':
+                cin >> id >> symbol >> id1;
+                (*groups)[id / 2]->merge_group((*groups)[id1 / 2]);
+                break;
+            case '%':
+                cin >> id >> symbol >> id1;
+                (*calendars)[id / 3]->merge_calendar((*calendars)[id / 3]);
+                break;
+            default:
+                cout << "Only group and calendar can be cloned";
+            }
             continue;
         }
-        if (reading == "groups")
+        if (reading == "exclude")
         {
-            for (vector<Group *>::iterator it = groups->begin(); it != groups->end(); it ++)
-                print_group(*it);
+            cin >> symbol >> id;
+            if (symbol != '@')
+                cout << "Only groups can be excluded";
+            cin >> symbol >> id1;
+            if (symbol != '@')
+                cout << "Only groups can be excluded";
+            (*groups)[id / 2]->exclude_group((*groups)[id1 / 2]);
             continue;
         }
-        if (reading == "events")
+        if (reading == "include")
         {
-            for (vector<Event *>::iterator it = events->begin(); it != events->end(); it ++)
-                print_event(*it);
+            cin >> symbol >> id;
+            if (symbol != '@')
+                cout << "Only groups can be included";
+            cin >> symbol >> id1;
+            if (symbol != '@')
+                cout << "Only groups can be included";
+            (*groups)[id / 2]->include_group((*groups)[id1 / 2]);
             continue;
         }
-        if (reading == "calendars")
+        if (reading == "clone")
         {
-            for (vector<Calendar *>::iterator it = calendars->begin(); it != calendars->end(); it ++)
-                print_calendar(*it);
+            cin >> symbol;
+            switch (symbol)
+            {
+            case '@':
+                cin >> id;
+                groups->push_back(new Group(2 * groups->size(), (*groups)[id / 2]));
+                break;
+            case '%':
+                cin >> id;
+                calendars->push_back(new Calendar(3 * calendars->size(), (*calendars)[id / 3]));
+                break;
+            default:
+                cout << "Only groups and calendars can be cloned" << endl;
+            }
             continue;
         }
-        if ((reading == "exit") || (reading == "quit"))
+        if (reading == "print")
+        {
+            cin >> symbol;
+            switch (symbol)
+            {
+            case '$':
+                cin >> id;
+                print_person((*persons)[id]);
+                break;
+            case '@':
+                cin >> id;
+                print_group((*groups)[id]);
+                break;
+            case '#':
+                cin >> id;
+                print_event((*events)[id]);
+                break;
+            case '%':
+                cin >> id;
+                print_calendar((*calendars)[id]);
+                break;
+            default:
+                cout << "Only person, group, event and calendar can be printed" << endl;
+            }
+            continue;
+        }
+        if (reading == "all")
+        {
+            cin >> symbol;
+            switch (symbol)
+            {
+            case '$':
+                for (vector<Person *>::iterator it = persons->begin(); it != persons->end(); it ++)
+                    print_person(*it);
+                break;
+            case '@':
+                for (vector<Group *>::iterator it = groups->begin(); it != groups->end(); it ++)
+                    print_group(*it);
+                break;
+            case '#':
+                for (vector<Event *>::iterator it = events->begin(); it != events->end(); it ++)
+                    print_event(*it);
+                break;
+            case '%':
+                for (vector<Calendar *>::iterator it = calendars->begin(); it != calendars->end(); it ++)
+                    print_calendar(*it);
+                break;
+            default:
+                cout << "Only person, group, event and calendar can be printed" << endl;
+            }
+            continue;
+        }
+        if (reading == "exit")
             return;
         cout << "There's no function: " << reading << endl;
     }
@@ -113,7 +201,7 @@ void UserInterface::print_person(Person *printing)
        cout << "Man: ";
     cout << printing->get_name()
          << ' ' << printing->get_surname()
-         << " ("<<printing->get_id()
+         << " ($"<<printing->get_id()
          << ')' << endl
          << "Birthday: ";
     format(printing->birthday());
@@ -139,7 +227,7 @@ void UserInterface::print_group(Group *printing)
     {
         cout << "Group: "
              << printing->get_name()
-             << " (" << printing->get_id()
+             << " (@" << printing->get_id()
              << ")" << endl
              << printing->get_description() << endl
              << "Memebers: " << endl;
@@ -159,7 +247,7 @@ void UserInterface::print_group(Group *printing)
 void UserInterface::print_event(Event *printing)
 {
     cout << "Event: " << printing->get_name()
-         << " (" << printing->get_id() << ')'
+         << " (#" << printing->get_id() << ')'
          << endl << printing->get_description()
          << endl << "Begin: ";
     format(printing->get_begin());
@@ -172,7 +260,9 @@ void UserInterface::print_event(Event *printing)
 void UserInterface::print_calendar(Calendar *printing)
 {
     if (!printing->get_name().empty())
-        cout << "Calendar: " << printing->get_name() << endl;
+        cout << "Calendar: "
+             << printing->get_name()
+             << " (%" << printing->get_id() << ')' << endl;
     for (vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
         cout << "    [" << (*it)->get_name() << " (";

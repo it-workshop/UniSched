@@ -1,19 +1,19 @@
 #include <group.h>
 
-Group::Group(std::string id, std::string name, std::string description)
+Group::Group(unsigned long long int id, std::string name, std::string description)
 {
     id_ = id;
     name_ = name;
     description_ = description;
-    calendar_ = new Calendar('c' + id, "");
+    calendar_ = new Calendar(3 * id + 2, "");
 }
 
-Group::Group(Group *group)
+Group::Group(unsigned long long int id, Group *group)
 {
-    id_ = group->id_;
+    id_ = id;
     name_ = group->name_;
     description_ = group->description_;
-    calendar_ = new Calendar(group->calendar_);
+    calendar_ = new Calendar(3 * id + 2, group->calendar_);
     for (std::vector<Group_Content*>::iterator it = group->people_.begin(); it != group->people_.end(); it ++)
     {
         Group_Content *a = new Group_Content();
@@ -26,6 +26,8 @@ Group::Group(Group *group)
 
 Group::~Group()
 {
+    for (std::vector<Group_Content *>::iterator it = people_.begin(); it != people_.end(); it ++)
+        delete_person((*it)->person);
     delete calendar_;
 }
 
@@ -34,7 +36,7 @@ std::string Group::get_name()
     return name_;
 }
 
-std::string Group::get_id()
+unsigned long long int Group::get_id()
 {
     return id_;
 }
@@ -82,31 +84,6 @@ void Group::include_group(Group *operating)
     }
 }
 
-void Group::xor_group(Group *operating)
-{
-    bool in_both = false;
-    for (std::vector<Group_Content*>::iterator it0 = people_.begin(); it0 != people_.end(); it0 ++)
-    {
-        in_both = false;
-        std::vector<Group_Content *>::iterator it1;
-        for (it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
-            if ((*it0)->person == (*it1)->person)
-            {
-                in_both = true;
-                break;
-            }
-        if (in_both)
-        {
-            std::vector<Group_Content*>::iterator tmp = it0;
-            it0 = people_.erase(it0);
-            if (tmp == people_.end())
-                return;
-        }
-        else
-            people_.push_back(*it1);
-    }
-}
-
 void Group::add_person_nocollision(Person *adding, std::string status)
 {
     for (std::vector<Group_Content*>::iterator it = people_.begin(); it != people_.end(); it ++)
@@ -129,7 +106,6 @@ void Group::delete_event(Event *deleting)
 void Group::add_person(Person *adding, std::string status)
 {
     adding->get_calendar()->merge_calendar(calendar_);
-//    adding->add_group(this, status);
     Group_Content *a = new Group_Content ();
     a->group = this;
     a->person = adding;

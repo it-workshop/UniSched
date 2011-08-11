@@ -1,8 +1,8 @@
 #include <event.h>
 
-Event::Event(std::string id, std::string name, time_t begin, time_t end, std::string description)
+Event::Event(unsigned long long int id, std::string name, time_t begin, time_t end, std::string description)
 {
-    people_ = new Group ('g' + id, "", "group of event: " + name);
+    people_ = new Group (2 * id + 1, "", "group of event: " + name);
     id_ = id;
     description_ = description;
     name_ = name;
@@ -10,42 +10,42 @@ Event::Event(std::string id, std::string name, time_t begin, time_t end, std::st
     end_ = end;
 }
 
-Event::~Event(void)
+Event::~Event()
 {
     delete people_;
 }
 
-std::string Event::get_id(void)
+unsigned long long int Event::get_id()
 {
     return id_;
 }
 
-std::string Event::get_name(void)
+std::string Event::get_name()
 {
     return name_;
 }
 
-std::string Event::get_description(void)
+std::string Event::get_description()
 {
     return description_;
 }
 
-time_t *Event::get_begin(void)
+time_t *Event::get_begin()
 {
     return &begin_;
 }
 
-time_t *Event::get_end(void)
+time_t *Event::get_end()
 {
     return &end_;
 }
 
-Group *Event::get_group(void)
+Group *Event::get_group()
 {
     return people_;
 }
 
-std::vector<Calendar*> *Event::get_used_in(void)
+std::vector<Calendar*> *Event::get_used_in()
 {
     return &used_in_;
 }

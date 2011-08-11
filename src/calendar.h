@@ -12,18 +12,18 @@
 
     class Calendar {
     private:
-        std::string id_;
+        unsigned long long int id_;
         std::vector<class Event*> events_;
         std::string name_;
 
     public:
-        Calendar(std::string, std::string);
-        Calendar(Calendar *);
-        ~Calendar(void);
+        Calendar(unsigned long long int, std::string);
+        Calendar(unsigned long long int, Calendar *);
+        ~Calendar();
 
-        std::string get_id(void);
-        std::string get_name(void);
-        std::vector<Event*> *get_events(void);
+        unsigned long long int get_id();
+        std::string get_name();
+        std::vector<Event*> *get_events();
         void merge_calendar(Calendar*);
         bool has_event(Event *);
         void add_event_nocollision(Event*);

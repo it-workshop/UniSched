@@ -1,47 +1,49 @@
 #include <calendar.h>
 
-Calendar::Calendar(std::string id, std::string name)
+Calendar::Calendar(unsigned long long int id, std::string name)
 {
     id_ = id;
     name_ = name;
 }
 
-Calendar::Calendar(Calendar *calendar)
+Calendar::Calendar(unsigned long long int id, Calendar *calendar)
 {
-    id_ = calendar->id_;
+    id_ = id;
     name_ = calendar->name_;
     for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
         events_.push_back(*it);
 }
 
-Calendar::~Calendar(void)
+Calendar::~Calendar()
 {
+    for (std::vector<Event *>::iterator it = events_.begin(); it != events_.end(); it ++)
+        delete_event(*it);
 }
 
-std::vector<Event*> *Calendar::get_events(void)
+std::vector<Event*> *Calendar::get_events()
 {
     return &events_;
 }
 
-std::string Calendar::get_id(void)
+unsigned long long int Calendar::get_id()
 {
     return id_;
 }
 
-std::string Calendar::get_name(void)
+std::string Calendar::get_name()
 {
     return name_;
 }
 
 void Calendar::merge_calendar(Calendar *adding)
 {
-    for (std::vector<Event*>::iterator it = adding->get_events()->begin(); it != adding->get_events()->end(); it ++)
+    for (std::vector<Event *>::iterator it = adding->get_events()->begin(); it != adding->get_events()->end(); it ++)
         add_event_nocollision(*it);
 }
 
 bool Calendar::has_event(Event *event)
 {
-    for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
+    for (std::vector<Event *>::iterator it = events_.begin(); it != events_.end(); it ++)
         if ((*it) == event)
             return true;
     return false;
@@ -49,7 +51,7 @@ bool Calendar::has_event(Event *event)
 
 void Calendar::add_event_nocollision(Event *adding)
 {
-    for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
+    for (std::vector<Event *>::iterator it = events_.begin(); it != events_.end(); it ++)
         if ((*it) == adding)
             return;
     add_event(adding);

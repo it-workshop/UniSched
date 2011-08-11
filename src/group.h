@@ -15,19 +15,19 @@
 
     class Group {
     private:
-        std::string id_;
+        unsigned long long int id_;
         std::string name_;
         std::string description_;
         std::vector<struct Group_Content_*> people_;
         Calendar *calendar_;
 
     public:
-        Group(std::string, std::string, std::string);
-        Group(Group *);
+        Group(unsigned long long int, std::string, std::string);
+        Group(unsigned long long int, Group *);
         ~Group();
 
         std::string get_name();
-        std::string get_id();
+        unsigned long long get_id();
         std::string get_description();
 
         Calendar *get_calendar();
@@ -38,7 +38,6 @@
         void merge_group(Group *);
         void exclude_group(Group *);
         void include_group(Group *);
-        void xor_group(Group *);
         void add_person_nocollision(Person*, std::string);
         void add_person(Person*, std::string);
         void delete_person(Person*);
