@@ -1,6 +1,7 @@
 #ifndef _GROUP_H_
 #define _GROUP_H_
 
+    #include <iostream>
     #include <string>
     #include <vector>
 
@@ -22,6 +23,7 @@
 
     public:
         Group(std::string, std::string, std::string);
+        Group(Group *);
         ~Group();
 
         std::string get_name();

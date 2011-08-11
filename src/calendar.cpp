@@ -6,6 +6,14 @@ Calendar::Calendar(std::string id, std::string name)
     name_ = name;
 }
 
+Calendar::Calendar(Calendar *calendar)
+{
+    id_ = calendar->id_;
+    name_ = calendar->name_;
+    for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
+        events_.push_back(*it);
+}
+
 Calendar::~Calendar(void)
 {
 }

@@ -18,6 +18,7 @@
 
     public:
         Calendar(std::string, std::string);
+        Calendar(Calendar *);
         ~Calendar(void);
 
         std::string get_id(void);

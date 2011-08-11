@@ -8,6 +8,22 @@ Group::Group(std::string id, std::string name, std::string description)
     calendar_ = new Calendar('c' + id, "");
 }
 
+Group::Group(Group *group)
+{
+    id_ = group->id_;
+    name_ = group->name_;
+    description_ = group->description_;
+    calendar_ = new Calendar(group->calendar_);
+    for (std::vector<Group_Content*>::iterator it = group->people_.begin(); it != group->people_.end(); it ++)
+    {
+        Group_Content *a = new Group_Content();
+        a->group = this;
+        a->person = (*it)->person;
+        a->status = (*it)->status;
+        people_.push_back(a);
+    }
+}
+
 Group::~Group()
 {
     delete calendar_;
@@ -52,12 +68,16 @@ void Group::exclude_group(Group *operating)
 
 void Group::include_group(Group *operating)
 {
+    std::vector<Group_Content*>::iterator tmp;
     for (std::vector<Group_Content*>::iterator it0 = people_.begin(); it0 != people_.end(); it0 ++)
     {
         for (std::vector<Group_Content*>::iterator it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
             if ((*it0)->person == (*it1)->person)
                 goto label;
+        tmp = it0;
         it0 = people_.erase(it0);
+        if (tmp == people_.end())
+            return;
         label:;
     }
 }
@@ -65,17 +85,23 @@ void Group::include_group(Group *operating)
 void Group::xor_group(Group *operating)
 {
     bool in_both = false;
-    for (std::vector<Group_Content*>::iterator it0 = people_->begin(); it0 != people_->end(); it0 ++)
+    for (std::vector<Group_Content*>::iterator it0 = people_.begin(); it0 != people_.end(); it0 ++)
     {
         in_both = false;
-        for (std::vector<Group_Content*>::iterator it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
+        std::vector<Group_Content *>::iterator it1;
+        for (it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
             if ((*it0)->person == (*it1)->person)
             {
                 in_both = true;
                 break;
             }
         if (in_both)
+        {
+            std::vector<Group_Content*>::iterator tmp = it0;
             it0 = people_.erase(it0);
+            if (tmp == people_.end())
+                return;
+        }
         else
             people_.push_back(*it1);
     }

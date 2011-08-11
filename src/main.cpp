@@ -28,14 +28,16 @@ int main (int argc, char *argv[])
 
     UserInterface ui;
 
-    groups[1]->add_person(persons[0], "director");
-    groups[2]->add_person(persons[0], "director");
-    groups[1]->add_person(persons[1], "member");
+    groups[1]->add_person(persons[1], "director");
+    groups[1]->add_person(persons[0], "wizard");
+    groups[2]->add_person(persons[0], "member");
+    groups[2]->add_person(persons[2], "director");
+
+    groups.push_back(new Group(groups[1]));
 
     persons[0]->add_event(events[2], "director");
     groups[1]->add_event(events[2]);
-    groups[1]->delete_event(events[2]);
-
+    
     persons[0]->add_event(events[0], "director");
     persons[0]->add_event(events[1], "director");
 
@@ -46,6 +48,7 @@ int main (int argc, char *argv[])
     ui.print_group(groups[0]);
     ui.print_group(groups[1]);
     ui.print_group(groups[2]);
+    ui.print_group(groups[3]);
 
     ui.print_event(events[0]);
     ui.print_event(events[1]);
