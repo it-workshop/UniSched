@@ -9,6 +9,43 @@ UserInterface::~UserInterface(void)
 {
 }
 
+void UserInterface::listen(vector<Person *> *persons, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars)
+{
+    string reading;
+    while (true)
+    {
+        cout << "raspisator-? ";
+        cin >> reading;
+        if (reading == "persons")
+        {
+            for (vector<Person *>::iterator it = persons->begin(); it != persons->end(); it ++)
+                print_person(*it);
+            continue;
+        }
+        if (reading == "groups")
+        {
+            for (vector<Group *>::iterator it = groups->begin(); it != groups->end(); it ++)
+                print_group(*it);
+            continue;
+        }
+        if (reading == "events")
+        {
+            for (vector<Event *>::iterator it = events->begin(); it != events->end(); it ++)
+                print_event(*it);
+            continue;
+        }
+        if (reading == "calendars")
+        {
+            for (vector<Calendar *>::iterator it = calendars->begin(); it != calendars->end(); it ++)
+                print_calendar(*it);
+            continue;
+        }
+        if ((reading == "exit") || (reading == "quit"))
+            return;
+        cout << "There's no function: " << reading << endl;
+    }
+}
+
 void UserInterface::set_format(enum default_format new_format)
 {
     def_format = new_format;
@@ -60,12 +97,12 @@ void UserInterface::format_ASCII(time_t *input)
 
     struct tm cutted = *localtime(input);
 
-    std::cout << days[cutted.tm_wday]
-              << ' ' << month[cutted.tm_mon]
-              << ' ' << cutted.tm_mday
-              << ' ' << cutted.tm_hour
-              << ':' << cutted.tm_min
-              << ' ' << (cutted.tm_year + 1900);
+    cout << days[cutted.tm_wday]
+         << ' ' << month[cutted.tm_mon]
+         << ' ' << cutted.tm_mday
+         << ' ' << cutted.tm_hour
+         << ':' << cutted.tm_min
+         << ' ' << (cutted.tm_year + 1900);
 }
 
 void UserInterface::print_person(Person *printing)
@@ -92,9 +129,7 @@ void UserInterface::print_person(Person *printing)
                  << endl;
     }
     cout << "Events:" << endl;
-    print_calendar(printing->get_calendar());
-    for (vector<Group_Content *>::iterator it = printing->get_groups()->begin(); it != printing->get_groups()->end(); it ++)
-        print_calendar((*it)->group->get_calendar());
+    print_calendar(printing->get_calendar_out());
     cout << endl;
 }
 
@@ -102,43 +137,54 @@ void UserInterface::print_group(Group *printing)
 {
     if (!printing->get_name().empty())
     {
-        std::cout << "Group: "
-                  << printing->get_name()
-                  << " (" << printing->get_id()
-                  << ")" << std::endl
-                  << printing->get_description() << std::endl << "Memebers: " << std::endl;
+        cout << "Group: "
+             << printing->get_name()
+             << " (" << printing->get_id()
+             << ")" << endl
+             << printing->get_description() << endl
+             << "Memebers: " << endl;
     }
-    for (std::vector<Group_Content*>::iterator it = printing->get_people()->begin(); it != printing->get_people()->end(); it ++)
-        std::cout << "    " << (*it)->person->get_name() << ' ' << (*it)->person->get_surname() << ": " << (*it)->status << std::endl;
+    for (vector<Group_Content*>::iterator it = printing->get_people()->begin(); it != printing->get_people()->end(); it ++)
+        cout << "    " << (*it)->person->get_name()
+             << ' ' << (*it)->person->get_surname()
+             << ": " << (*it)->status << endl;
     if (!printing ->get_name().empty())
     {
-        std::cout << "Events: " << std::endl;
+        cout << "Events: " << endl;
         print_calendar(printing->get_calendar());
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 void UserInterface::print_event(Event *printing)
 {
-    std::cout << "Event: " << printing->get_name() << " (" << printing->get_id() << ')' << std::endl << printing->get_description() << std::endl << "Begin: ";
+    cout << "Event: " << printing->get_name()
+         << " (" << printing->get_id() << ')'
+         << endl << printing->get_description()
+         << endl << "Begin: ";
     format(printing->get_begin());
-    std::cout << std::endl << "End:   ";
+    cout << endl << "End:   ";
     format(printing->get_end());
-    std::cout << std::endl;
+    cout << endl;
     print_group(printing->get_group());
 }
 
 void UserInterface::print_calendar(Calendar *printing)
 {
     if (!printing->get_name().empty())
-        std::cout << "Calendar: " << printing->get_name() << std::endl;
-    for (std::vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
+        cout << "Calendar: " << printing->get_name() << endl;
+    for (vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
-        std::cout << "    [" << (*it)->get_name() << " (";
+        cout << "    [" << (*it)->get_name() << " (";
         format((*it)->get_begin());
-        std::cout << ")-(";
+        cout << ")-(";
         format((*it)->get_end());
-        std::cout << ")]" << std::endl;
+        cout << ")]" << endl;
     }
 }
+
+/*Person *in_person();
+{
+    
+}*/
 

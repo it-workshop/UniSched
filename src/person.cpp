@@ -35,15 +35,6 @@ std::vector<Group_Content*> *Person::get_groups()
     return &groups_;
 }
 
-/*void Person::add_group(Group *adding, std::string status)
-{
-    Group_Content a;
-    a.person = this;
-    a.group = adding;
-    a.status = status;
-    groups_.push_back(&a);
-}*/
-
 void Person::add_group(struct Group_Content_ *adding)
 {
     groups_.push_back(adding);
@@ -59,12 +50,12 @@ void Person::delete_group(Group *deleting)
         }
 }
 
-bool Person::is_female(void)
+bool Person::is_female()
 {
     return female_;
 }
 
-time_t *Person::birthday(void)
+time_t *Person::birthday()
 {
     return &birthday_;
 }
@@ -79,7 +70,16 @@ bool Person::in_event(Event *event)
     return false;
 }
 
-Calendar *Person::get_calendar(void)
+Calendar *Person::get_calendar_out()
+{
+    Calendar *all = new Calendar(events_);
+    for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
+        if (!(*it)->group->get_name().empty())
+            all->merge_calendar((*it)->group->get_calendar());
+    return all;
+}
+
+Calendar *Person::get_calendar()
 {
     return events_;
 }

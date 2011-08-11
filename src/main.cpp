@@ -41,7 +41,8 @@ int main (int argc, char *argv[])
     persons[0]->add_event(events[0], "director");
     persons[0]->add_event(events[1], "director");
 
-    ui.print_person(persons[0]);
+    ui.listen(&persons, &groups, &events, &calendars);
+/*    ui.print_person(persons[0]);
     ui.print_person(persons[1]);
     ui.print_person(persons[2]);
     
@@ -53,7 +54,7 @@ int main (int argc, char *argv[])
     ui.print_event(events[0]);
     ui.print_event(events[1]);
     ui.print_event(events[2]);
-
+*/
     return 0;
 }
 

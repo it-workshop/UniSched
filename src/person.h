@@ -39,7 +39,7 @@
         std::vector<struct Group_Content_*> *get_groups();
         void add_group(struct Group_Content_*);
         void delete_group(class Group*);
-
+        Calendar *get_calendar_out();
         Calendar *get_calendar();
         void add_event(class Event*, std::string);
         void delete_event(class Event*);

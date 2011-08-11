@@ -1,7 +1,6 @@
 #ifndef _USERSINTERFACE_H_
 #define _USERSINTERFACE_H_
 
-    #include <iostream>
     #include <string>
     #include <vector>
     #include <time.h>
@@ -16,6 +15,8 @@
     #include <event.h>
     #include <calendar.h>
 
+    using std::string;
+    using std::cin;
     using std::cout;
     using std::endl;
     using std::vector;
@@ -31,6 +32,8 @@
     public:
         UserInterface(void);
         ~UserInterface(void);
+
+        void listen(vector<Person *> *, vector<Group *> *, vector<Event *> *, vector<Calendar *> *);
 
         void set_format(enum default_format);
         enum default_format get_format();
