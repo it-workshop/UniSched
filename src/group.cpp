@@ -38,10 +38,47 @@ std::vector<Group_Content*> *Group::get_people()
     return &people_;
 }
 
-void Group::merge_group(Group *adding)
+void Group::merge_group(Group *operating)
 {
-    for (std::vector<Group_Content*>::iterator it = adding->get_people()->begin(); it != adding->get_people()->end(); it ++)
+    for (std::vector<Group_Content*>::iterator it = operating->get_people()->begin(); it != operating->get_people()->end(); it ++)
         add_person_nocollision((*it)->person, (*it)->status);
+}
+
+void Group::exclude_group(Group *operating)
+{
+    for (std::vector<Group_Content*>::iterator it = operating->get_people()->begin(); it != operating->get_people()->end(); it ++)
+        delete_person((*it)->person);
+}
+
+void Group::include_group(Group *operating)
+{
+    for (std::vector<Group_Content*>::iterator it0 = people_.begin(); it0 != people_.end(); it0 ++)
+    {
+        for (std::vector<Group_Content*>::iterator it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
+            if ((*it0)->person == (*it1)->person)
+                goto label;
+        it0 = people_.erase(it0);
+        label:;
+    }
+}
+
+void Group::xor_group(Group *operating)
+{
+    bool in_both = false;
+    for (std::vector<Group_Content*>::iterator it0 = people_->begin(); it0 != people_->end(); it0 ++)
+    {
+        in_both = false;
+        for (std::vector<Group_Content*>::iterator it1 = operating->get_people()->begin(); it1 != operating->get_people()->end(); it1 ++)
+            if ((*it0)->person == (*it1)->person)
+            {
+                in_both = true;
+                break;
+            }
+        if (in_both)
+            it0 = people_.erase(it0);
+        else
+            people_.push_back(*it1);
+    }
 }
 
 void Group::add_person_nocollision(Person *adding, std::string status)

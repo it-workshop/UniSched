@@ -33,11 +33,13 @@
         void delete_event(Event*);
 
         std::vector<struct Group_Content_*> *get_people();
-        void merge_group(Group *adding);
+        void merge_group(Group *);
+        void exclude_group(Group *);
+        void include_group(Group *);
+        void xor_group(Group *);
         void add_person_nocollision(Person*, std::string);
         void add_person(Person*, std::string);
-	void delete_person(Person*);
-	
+        void delete_person(Person*);
     };
 
 #endif /* _GROUP_H_ */
