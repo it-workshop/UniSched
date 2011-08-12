@@ -1,0 +1,235 @@
+\hypertarget{classPerson}{
+\section{Person Class Reference}
+\label{d1/d63/classPerson}\index{Person@{Person}}
+}
+
+
+Class keeps person unique data.  
+
+
+
+
+{\ttfamily \#include $<$person.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPerson_aaf1ee270b2217213e07b5a28c498aa04}{Person} (unsigned long long int id, std::string name, std::string surname, bool female, time\_\-t birthday)
+\item 
+\hyperlink{classPerson_a700ffd693321c5fe6880262acf43d4da}{$\sim$Person} ()
+\item 
+unsigned long long int \hyperlink{classPerson_ae335564db9f9bac47de6ddf181ee8fb9}{get\_\-id} ()
+\item 
+std::string \hyperlink{classPerson_a1837ca2f4ba804aeee2a70c1a1fdd468}{get\_\-name} ()
+\item 
+std::string \hyperlink{classPerson_aad33f79ec5c96aa3ab30c9c4c989fb4b}{get\_\-surname} ()
+\item 
+bool \hyperlink{classPerson_a8bfe5b0c264f051b85812c692691e277}{is\_\-female} ()
+\item 
+time\_\-t \hyperlink{classPerson_aec14dd73ca58227cc70c4ba3a5065d02}{birthday} ()
+\item 
+std::vector$<$ struct \hyperlink{structGroup__Content__}{Group\_\-Content\_\-} $\ast$ $>$ $\ast$ \hyperlink{classPerson_a24cd3ad56c42c1cd34505b1094e6e7d5}{get\_\-groups} ()
+\item 
+void \hyperlink{classPerson_abe0a73c74f8a32b8b5234aeb35b01d0a}{add\_\-group} (struct \hyperlink{structGroup__Content__}{Group\_\-Content\_\-} $\ast$group)
+\item 
+void \hyperlink{classPerson_a0b0b2e78e7c32c0ba6596d4049c703ef}{delete\_\-group} (class \hyperlink{classGroup}{Group} $\ast$group)
+\item 
+\hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classPerson_abaaac95db5394d3ad78ad08221b1d231}{get\_\-calendar} ()
+\item 
+void \hyperlink{classPerson_ad09163d94c447622dc8c56d09decc7b6}{add\_\-event} (class \hyperlink{classEvent}{Event} $\ast$event, std::string status)
+\item 
+void \hyperlink{classPerson_acf5eded0c8d4c2aef744a2b877dc78f2}{delete\_\-event} (class \hyperlink{classEvent}{Event} $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class keeps person unique data. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPerson_aaf1ee270b2217213e07b5a28c498aa04}{
+\index{Person@{Person}!Person@{Person}}
+\index{Person@{Person}!Person@{Person}}
+\subsubsection[{Person}]{\setlength{\rightskip}{0pt plus 5cm}Person::Person (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{id, }
+\item[{std::string}]{name, }
+\item[{std::string}]{surname, }
+\item[{bool}]{female, }
+\item[{time\_\-t}]{birthday}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_aaf1ee270b2217213e07b5a28c498aa04}
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & Person's identificator. \\
+\hline
+\mbox{\tt in}  & {\em name} & Person's name. \\
+\hline
+\mbox{\tt in}  & {\em surname} & Person's surname. \\
+\hline
+\mbox{\tt in}  & {\em female} & Person's sex. \\
+\hline
+\mbox{\tt in}  & {\em birthday} & Person's birthday. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPerson_a700ffd693321c5fe6880262acf43d4da}{
+\index{Person@{Person}!$\sim$Person@{$\sim$Person}}
+\index{$\sim$Person@{$\sim$Person}!Person@{Person}}
+\subsubsection[{$\sim$Person}]{\setlength{\rightskip}{0pt plus 5cm}Person::$\sim$Person (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_a700ffd693321c5fe6880262acf43d4da}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPerson_ad09163d94c447622dc8c56d09decc7b6}{
+\index{Person@{Person}!add\_\-event@{add\_\-event}}
+\index{add\_\-event@{add\_\-event}!Person@{Person}}
+\subsubsection[{add\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Person::add\_\-event (
+\begin{DoxyParamCaption}
+\item[{class {\bf Event} $\ast$}]{event, }
+\item[{std::string}]{status}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_ad09163d94c447622dc8c56d09decc7b6}
+Add event to the person's calendar. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & event. \\
+\hline
+\mbox{\tt in}  & {\em status} & person's status in this event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPerson_abe0a73c74f8a32b8b5234aeb35b01d0a}{
+\index{Person@{Person}!add\_\-group@{add\_\-group}}
+\index{add\_\-group@{add\_\-group}!Person@{Person}}
+\subsubsection[{add\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Person::add\_\-group (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Group\_\-Content\_\-} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_abe0a73c74f8a32b8b5234aeb35b01d0a}
+Add group. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & group. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPerson_aec14dd73ca58227cc70c4ba3a5065d02}{
+\index{Person@{Person}!birthday@{birthday}}
+\index{birthday@{birthday}!Person@{Person}}
+\subsubsection[{birthday}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t Person::birthday (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_aec14dd73ca58227cc70c4ba3a5065d02}
+Get birthday of person. \begin{DoxyReturn}{Returns}
+person's birthday. 
+\end{DoxyReturn}
+\hypertarget{classPerson_acf5eded0c8d4c2aef744a2b877dc78f2}{
+\index{Person@{Person}!delete\_\-event@{delete\_\-event}}
+\index{delete\_\-event@{delete\_\-event}!Person@{Person}}
+\subsubsection[{delete\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Person::delete\_\-event (
+\begin{DoxyParamCaption}
+\item[{class {\bf Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_acf5eded0c8d4c2aef744a2b877dc78f2}
+Delete event from the person's calendar. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPerson_a0b0b2e78e7c32c0ba6596d4049c703ef}{
+\index{Person@{Person}!delete\_\-group@{delete\_\-group}}
+\index{delete\_\-group@{delete\_\-group}!Person@{Person}}
+\subsubsection[{delete\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Person::delete\_\-group (
+\begin{DoxyParamCaption}
+\item[{class {\bf Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_a0b0b2e78e7c32c0ba6596d4049c703ef}
+Delete group. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & group. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPerson_abaaac95db5394d3ad78ad08221b1d231}{
+\index{Person@{Person}!get\_\-calendar@{get\_\-calendar}}
+\index{get\_\-calendar@{get\_\-calendar}!Person@{Person}}
+\subsubsection[{get\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Calendar} $\ast$ Person::get\_\-calendar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_abaaac95db5394d3ad78ad08221b1d231}
+Get calendar of person. \begin{DoxyReturn}{Returns}
+\mbox{[}in\mbox{]} calendar calendar. 
+\end{DoxyReturn}
+\hypertarget{classPerson_a24cd3ad56c42c1cd34505b1094e6e7d5}{
+\index{Person@{Person}!get\_\-groups@{get\_\-groups}}
+\index{get\_\-groups@{get\_\-groups}!Person@{Person}}
+\subsubsection[{get\_\-groups}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf Group\_\-Content} $\ast$ $>$ $\ast$ Person::get\_\-groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_a24cd3ad56c42c1cd34505b1094e6e7d5}
+Get groups of person. \begin{DoxyReturn}{Returns}
+vector of person's groups. 
+\end{DoxyReturn}
+\hypertarget{classPerson_ae335564db9f9bac47de6ddf181ee8fb9}{
+\index{Person@{Person}!get\_\-id@{get\_\-id}}
+\index{get\_\-id@{get\_\-id}!Person@{Person}}
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int Person::get\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_ae335564db9f9bac47de6ddf181ee8fb9}
+Get id of person in database. \begin{DoxyReturn}{Returns}
+id of person. 
+\end{DoxyReturn}
+\hypertarget{classPerson_a1837ca2f4ba804aeee2a70c1a1fdd468}{
+\index{Person@{Person}!get\_\-name@{get\_\-name}}
+\index{get\_\-name@{get\_\-name}!Person@{Person}}
+\subsubsection[{get\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std::string Person::get\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_a1837ca2f4ba804aeee2a70c1a1fdd468}
+Get name of person. \begin{DoxyReturn}{Returns}
+name of person. 
+\end{DoxyReturn}
+\hypertarget{classPerson_aad33f79ec5c96aa3ab30c9c4c989fb4b}{
+\index{Person@{Person}!get\_\-surname@{get\_\-surname}}
+\index{get\_\-surname@{get\_\-surname}!Person@{Person}}
+\subsubsection[{get\_\-surname}]{\setlength{\rightskip}{0pt plus 5cm}std::string Person::get\_\-surname (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_aad33f79ec5c96aa3ab30c9c4c989fb4b}
+Get surname of person. \begin{DoxyReturn}{Returns}
+surname of person. 
+\end{DoxyReturn}
+\hypertarget{classPerson_a8bfe5b0c264f051b85812c692691e277}{
+\index{Person@{Person}!is\_\-female@{is\_\-female}}
+\index{is\_\-female@{is\_\-female}!Person@{Person}}
+\subsubsection[{is\_\-female}]{\setlength{\rightskip}{0pt plus 5cm}bool Person::is\_\-female (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d63/classPerson_a8bfe5b0c264f051b85812c692691e277}
+Get sex of person. \begin{DoxyReturn}{Returns}
+person's sex. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{person_8h}{person.h}\item 
+src/\hyperlink{person_8cpp}{person.cpp}\end{DoxyCompactItemize}

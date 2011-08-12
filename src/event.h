@@ -13,32 +13,68 @@
     #include <person.h>
     #include <calendar.h>
 
+    using std::string;
+    using std::vector;
+
+    /** @class Event
+     * @brief Class keeps information about event.
+     */
     class Event {
     private:
-        unsigned long long int id_;
-        std::string name_;
-        std::string description_;
-        time_t begin_;
-        time_t end_;
-        class Group *people_;
-        std::vector<class Calendar*> used_in_;
+        unsigned long long int id_;				/**< Event's identificator in the database. */
+        string name_;						/**< Event's name. */
+	string description_;					/**< Event's description. */
+        time_t begin_;						/**< Event's begin time. Number of seconds since the Epoch UNIX 1th Jan 1970, 00:00:00. */
+        time_t end_;						/**< Event's end time. Number of seconds since the Epoch UNIX 1th JAN 1970, 00:00:00. */
+        class Group *people_;					/**< Event's group. */
+        vector<class Calendar*> related_calendars_;		/**< Event's related calendars. */
 
     public:
-        Event(unsigned long long int, std::string, time_t, time_t, std::string);
-        ~Event();
+        Event(unsigned long long int id, string name, time_t begin, time_t end, string description);
+								/**< Constructor.
+								 * @param [in] id Event's identificator in the database.
+								 * @param [in] name Event's name.
+								 * @param [in] begin Event's begin time.
+								 * @param [in] end Event's end time.
+								 * @param [in] description Event's description.
+								 */
+        ~Event();						/**< Destructor. */
 
-        unsigned long long int get_id();
-        std::string get_name();
-        std::string get_description();
-        time_t *get_begin();
-        time_t *get_end();
-        Group *get_group();
-        std::vector<Calendar*> *get_used_in();
+        unsigned long long int get_id();			/**< Get event's identificator.
+								 * @return Event's identificator in the database.
+								 */
+        string get_name();					/**< Get event's name.
+								 * @return Event's name.
+								 */
+        string get_description();				/**< Get event's description.
+								 * @return Event's description.
+								 */
+        time_t get_begin();					/**< Get event's begin time.
+								 * @return Event's begin time.
+								 */
+        time_t get_end();					/**< Get event's end time.
+								 * @return Event's end time.
+								 */
+        Group *get_group();					/**< Get event's group.
+								 * @return Event's group.
+								 */
+        vector<Calendar*> *get_related_calendars();		/**< Get event's related calendars.
+								 * @return Event's related calendars.
+								 */
 
-        void add_use(Calendar*);
-        void delete_use(Calendar*);
-        void add_person(class Person*, std::string);
-        void delete_person(class Person*);
+        void add_related_calendar(Calendar *calendar);		/**< Add related calendar to event.
+								 * @param [in] calendar Calendar to add.
+								 */
+        void delete_related_calendar(Calendar *calendar);	/**< Delete related calendar from event.
+								 * @param [in] calendar Calendar to delete.
+								 */
+        void add_person(class Person *person, string status);	/**< Add person to the event's group.
+								 * @param [in] person Person to add.
+								 * @param [in] status Person's status in the event's group.
+								 */
+        void delete_person(class Person *person);		/**< Delete person from the event's group.
+								 * @param [in] person Person to delete.
+								 */
     };
 
 #endif /* _EVENT_H_ */

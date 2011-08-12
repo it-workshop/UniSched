@@ -1,0 +1,235 @@
+\hypertarget{classEvent}{
+\section{Event Class Reference}
+\label{d5/da5/classEvent}\index{Event@{Event}}
+}
+
+
+Class keeps information about event.  
+
+
+
+
+{\ttfamily \#include $<$event.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEvent_a6210fee3f753d5c550a00f1e4f5a971d}{Event} (unsigned long long int id, string name, time\_\-t begin, time\_\-t end, string description)
+\item 
+\hyperlink{classEvent_a7704ec01ce91e673885792054214b3d2}{$\sim$Event} ()
+\item 
+unsigned long long int \hyperlink{classEvent_a089064adeae9dcdbb53483417924939c}{get\_\-id} ()
+\item 
+string \hyperlink{classEvent_a99325a5304e3b73cd4df1f356a185cfc}{get\_\-name} ()
+\item 
+string \hyperlink{classEvent_a07fdb4a55424b028bfb64db3cea94c07}{get\_\-description} ()
+\item 
+time\_\-t \hyperlink{classEvent_aa0177bde2838d761774f6e9a50f1e76c}{get\_\-begin} ()
+\item 
+time\_\-t \hyperlink{classEvent_a25baaf84cc87da4b866f266f946c1d8f}{get\_\-end} ()
+\item 
+\hyperlink{classGroup}{Group} $\ast$ \hyperlink{classEvent_a5736ec29101416a0358b709c964bf50d}{get\_\-group} ()
+\item 
+vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$ \hyperlink{classEvent_ab2329f2021caee686920d5ab2cfa8569}{get\_\-related\_\-calendars} ()
+\item 
+void \hyperlink{classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}{add\_\-related\_\-calendar} (\hyperlink{classCalendar}{Calendar} $\ast$calendar)
+\item 
+void \hyperlink{classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}{delete\_\-related\_\-calendar} (\hyperlink{classCalendar}{Calendar} $\ast$calendar)
+\item 
+void \hyperlink{classEvent_a77077d8d27027113b2e20b4374a00a61}{add\_\-person} (class \hyperlink{classPerson}{Person} $\ast$person, string status)
+\item 
+void \hyperlink{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{delete\_\-person} (class \hyperlink{classPerson}{Person} $\ast$person)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class keeps information about event. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEvent_a6210fee3f753d5c550a00f1e4f5a971d}{
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\subsubsection[{Event}]{\setlength{\rightskip}{0pt plus 5cm}Event::Event (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{id, }
+\item[{string}]{name, }
+\item[{time\_\-t}]{begin, }
+\item[{time\_\-t}]{end, }
+\item[{string}]{description}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a6210fee3f753d5c550a00f1e4f5a971d}
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & Event's identificator in the database. \\
+\hline
+\mbox{\tt in}  & {\em name} & Event's name. \\
+\hline
+\mbox{\tt in}  & {\em begin} & Event's begin time. \\
+\hline
+\mbox{\tt in}  & {\em end} & Event's end time. \\
+\hline
+\mbox{\tt in}  & {\em description} & Event's description. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEvent_a7704ec01ce91e673885792054214b3d2}{
+\index{Event@{Event}!$\sim$Event@{$\sim$Event}}
+\index{$\sim$Event@{$\sim$Event}!Event@{Event}}
+\subsubsection[{$\sim$Event}]{\setlength{\rightskip}{0pt plus 5cm}Event::$\sim$Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a7704ec01ce91e673885792054214b3d2}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classEvent_a77077d8d27027113b2e20b4374a00a61}{
+\index{Event@{Event}!add\_\-person@{add\_\-person}}
+\index{add\_\-person@{add\_\-person}!Event@{Event}}
+\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Event::add\_\-person (
+\begin{DoxyParamCaption}
+\item[{class {\bf Person} $\ast$}]{person, }
+\item[{string}]{status}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a77077d8d27027113b2e20b4374a00a61}
+Add person to the event's group. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em person} & \hyperlink{classPerson}{Person} to add. \\
+\hline
+\mbox{\tt in}  & {\em status} & Person's status in the event's group. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}{
+\index{Event@{Event}!add\_\-related\_\-calendar@{add\_\-related\_\-calendar}}
+\index{add\_\-related\_\-calendar@{add\_\-related\_\-calendar}!Event@{Event}}
+\subsubsection[{add\_\-related\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void Event::add\_\-related\_\-calendar (
+\begin{DoxyParamCaption}
+\item[{{\bf Calendar} $\ast$}]{calendar}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}
+Add related calendar to event. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to add. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{
+\index{Event@{Event}!delete\_\-person@{delete\_\-person}}
+\index{delete\_\-person@{delete\_\-person}!Event@{Event}}
+\subsubsection[{delete\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Event::delete\_\-person (
+\begin{DoxyParamCaption}
+\item[{class {\bf Person} $\ast$}]{person}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a5e071ee79b9ac9520fa5f26d763ce662}
+Delete person from the event's group. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em person} & \hyperlink{classPerson}{Person} to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}{
+\index{Event@{Event}!delete\_\-related\_\-calendar@{delete\_\-related\_\-calendar}}
+\index{delete\_\-related\_\-calendar@{delete\_\-related\_\-calendar}!Event@{Event}}
+\subsubsection[{delete\_\-related\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void Event::delete\_\-related\_\-calendar (
+\begin{DoxyParamCaption}
+\item[{{\bf Calendar} $\ast$}]{calendar}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}
+Delete related calendar from event. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEvent_aa0177bde2838d761774f6e9a50f1e76c}{
+\index{Event@{Event}!get\_\-begin@{get\_\-begin}}
+\index{get\_\-begin@{get\_\-begin}!Event@{Event}}
+\subsubsection[{get\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t Event::get\_\-begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_aa0177bde2838d761774f6e9a50f1e76c}
+Get event's begin time. \begin{DoxyReturn}{Returns}
+Event's begin time. 
+\end{DoxyReturn}
+\hypertarget{classEvent_a07fdb4a55424b028bfb64db3cea94c07}{
+\index{Event@{Event}!get\_\-description@{get\_\-description}}
+\index{get\_\-description@{get\_\-description}!Event@{Event}}
+\subsubsection[{get\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}string Event::get\_\-description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a07fdb4a55424b028bfb64db3cea94c07}
+Get event's description. \begin{DoxyReturn}{Returns}
+Event's description. 
+\end{DoxyReturn}
+\hypertarget{classEvent_a25baaf84cc87da4b866f266f946c1d8f}{
+\index{Event@{Event}!get\_\-end@{get\_\-end}}
+\index{get\_\-end@{get\_\-end}!Event@{Event}}
+\subsubsection[{get\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t Event::get\_\-end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a25baaf84cc87da4b866f266f946c1d8f}
+Get event's end time. \begin{DoxyReturn}{Returns}
+Event's end time. 
+\end{DoxyReturn}
+\hypertarget{classEvent_a5736ec29101416a0358b709c964bf50d}{
+\index{Event@{Event}!get\_\-group@{get\_\-group}}
+\index{get\_\-group@{get\_\-group}!Event@{Event}}
+\subsubsection[{get\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group} $\ast$ Event::get\_\-group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a5736ec29101416a0358b709c964bf50d}
+Get event's group. \begin{DoxyReturn}{Returns}
+Event's group. 
+\end{DoxyReturn}
+\hypertarget{classEvent_a089064adeae9dcdbb53483417924939c}{
+\index{Event@{Event}!get\_\-id@{get\_\-id}}
+\index{get\_\-id@{get\_\-id}!Event@{Event}}
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int Event::get\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a089064adeae9dcdbb53483417924939c}
+Get event's identificator. \begin{DoxyReturn}{Returns}
+Event's identificator in the database. 
+\end{DoxyReturn}
+\hypertarget{classEvent_a99325a5304e3b73cd4df1f356a185cfc}{
+\index{Event@{Event}!get\_\-name@{get\_\-name}}
+\index{get\_\-name@{get\_\-name}!Event@{Event}}
+\subsubsection[{get\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string Event::get\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_a99325a5304e3b73cd4df1f356a185cfc}
+Get event's name. \begin{DoxyReturn}{Returns}
+Event's name. 
+\end{DoxyReturn}
+\hypertarget{classEvent_ab2329f2021caee686920d5ab2cfa8569}{
+\index{Event@{Event}!get\_\-related\_\-calendars@{get\_\-related\_\-calendars}}
+\index{get\_\-related\_\-calendars@{get\_\-related\_\-calendars}!Event@{Event}}
+\subsubsection[{get\_\-related\_\-calendars}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$ Event::get\_\-related\_\-calendars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d5/da5/classEvent_ab2329f2021caee686920d5ab2cfa8569}
+Get event's related calendars. \begin{DoxyReturn}{Returns}
+Event's related calendars. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{event_8h}{event.h}\item 
+src/\hyperlink{event_8cpp}{event.cpp}\end{DoxyCompactItemize}

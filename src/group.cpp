@@ -5,7 +5,7 @@ Group::Group(unsigned long long int id, std::string name, std::string descriptio
     id_ = id;
     name_ = name;
     description_ = description;
-    calendar_ = new Calendar(3 * id + 2, "");
+    calendar_ = new Calendar(3 * id + 2);
 }
 
 Group::Group(unsigned long long int id, Group *group)
@@ -59,7 +59,7 @@ std::vector<Group_Content*> *Group::get_people()
 void Group::merge_group(Group *operating)
 {
     for (std::vector<Group_Content*>::iterator it = operating->get_people()->begin(); it != operating->get_people()->end(); it ++)
-        add_person_nocollision((*it)->person, (*it)->status);
+        add_person((*it)->person, (*it)->status);
 }
 
 void Group::exclude_group(Group *operating)
@@ -84,14 +84,20 @@ void Group::include_group(Group *operating)
     }
 }
 
-void Group::add_person_nocollision(Person *adding, std::string status)
+void Group::add_person(Person *adding, std::string status)
 {
     for (std::vector<Group_Content*>::iterator it = people_.begin(); it != people_.end(); it ++)
         if ((*it)->person == adding)
             return;
-    add_person(adding, status);
-}
 
+    adding->get_calendar()->merge_calendar(calendar_);
+    Group_Content *a = new Group_Content ();
+    a->group = this;
+    a->person = adding;
+    a->status = status;
+    people_.push_back(a);
+    adding->add_group(a);
+}
 
 void Group::add_event(Event *adding)
 {
@@ -101,17 +107,6 @@ void Group::add_event(Event *adding)
 void Group::delete_event(Event *deleting)
 {
     calendar_->delete_event(deleting);
-}
-
-void Group::add_person(Person *adding, std::string status)
-{
-    adding->get_calendar()->merge_calendar(calendar_);
-    Group_Content *a = new Group_Content ();
-    a->group = this;
-    a->person = adding;
-    a->status = status;
-    people_.push_back(a);
-    adding->add_group(a);
 }
 
 void Group::delete_person(Person *deleting)
