@@ -7,7 +7,7 @@ Person::Person(unsigned long long int id, std::string name, std::string surname,
   female_ (female),
   birthday_ (birthday)
 {
-    events_ = new Calendar(3 * id + 1, "");
+    events_ = new Calendar(3 * id + 1);
 }
 
 Person::~Person()
@@ -57,33 +57,18 @@ bool Person::is_female()
     return female_;
 }
 
-time_t *Person::birthday()
+time_t Person::birthday()
 {
-    return &birthday_;
+    return birthday_;
 }
 
-bool Person::in_event(Event *event)
-{
-    if (events_->has_event(event))
-        return true;
-    for (std::vector<Group_Content*>::iterator it = groups_.begin(); it != groups_.end(); it ++)
-        if ((*it)->group->get_calendar()->has_event(event))
-            return true;
-    return false;
-}
-
-Calendar *Person::get_calendar_out()
+Calendar *Person::get_calendar()
 {
     Calendar *all = new Calendar(0, events_);
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
         if (!(*it)->group->get_name().empty())
             all->merge_calendar((*it)->group->get_calendar());
     return all;
-}
-
-Calendar *Person::get_calendar()
-{
-    return events_;
 }
 
 void Person::add_event(Event *adding, std::string status)

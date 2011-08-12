@@ -1,15 +1,13 @@
 #include <calendar.h>
 
-Calendar::Calendar(unsigned long long int id, std::string name)
+Calendar::Calendar(unsigned long long int id)
 {
     id_ = id;
-    name_ = name;
 }
 
 Calendar::Calendar(unsigned long long int id, Calendar *calendar)
 {
     id_ = id;
-    name_ = calendar->name_;
     for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
         events_.push_back(*it);
 }
@@ -30,15 +28,10 @@ unsigned long long int Calendar::get_id()
     return id_;
 }
 
-std::string Calendar::get_name()
-{
-    return name_;
-}
-
 void Calendar::merge_calendar(Calendar *adding)
 {
     for (std::vector<Event *>::iterator it = adding->get_events()->begin(); it != adding->get_events()->end(); it ++)
-        add_event_nocollision(*it);
+        add_event(*it);
 }
 
 bool Calendar::has_event(Event *event)
@@ -49,23 +42,19 @@ bool Calendar::has_event(Event *event)
     return false;
 }
 
-void Calendar::add_event_nocollision(Event *adding)
+void Calendar::add_event(Event *adding)
 {
     for (std::vector<Event *>::iterator it = events_.begin(); it != events_.end(); it ++)
         if ((*it) == adding)
             return;
-    add_event(adding);
-}
-
-void Calendar::add_event(Event *adding)
-{
-    adding->add_use(this);
+    
+    adding->add_related_calendar(this);
     events_.push_back(adding);
 }
 
 void Calendar::delete_event(Event *deleting)
 {
-    deleting->delete_use(this);
+    deleting->delete_related_calendar(this);
     for (std::vector<Event*>::iterator it = events_.begin(); it != events_.end(); it ++)
         if (*it == deleting)
         {

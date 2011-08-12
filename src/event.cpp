@@ -1,6 +1,6 @@
 #include <event.h>
 
-Event::Event(unsigned long long int id, std::string name, time_t begin, time_t end, std::string description)
+Event::Event(unsigned long long int id, string name, time_t begin, time_t end, string description)
 {
     people_ = new Group (2 * id + 1, "", "group of event: " + name);
     id_ = id;
@@ -20,24 +20,24 @@ unsigned long long int Event::get_id()
     return id_;
 }
 
-std::string Event::get_name()
+string Event::get_name()
 {
     return name_;
 }
 
-std::string Event::get_description()
+string Event::get_description()
 {
     return description_;
 }
 
-time_t *Event::get_begin()
+time_t Event::get_begin()
 {
-    return &begin_;
+    return begin_;
 }
 
-time_t *Event::get_end()
+time_t Event::get_end()
 {
-    return &end_;
+    return end_;
 }
 
 Group *Event::get_group()
@@ -45,27 +45,27 @@ Group *Event::get_group()
     return people_;
 }
 
-std::vector<Calendar*> *Event::get_used_in()
+vector<Calendar*> *Event::get_related_calendars()
 {
-    return &used_in_;
+    return &related_calendars_;
 }
 
-void Event::add_use(Calendar *adding)
+void Event::add_related_calendar(Calendar *adding)
 {
-    used_in_.push_back(adding);
+    related_calendars_.push_back(adding);
 }
 
-void Event::delete_use(Calendar *deleting)
+void Event::delete_related_calendar(Calendar *deleting)
 {
-    for (std::vector<Calendar*>::iterator it = used_in_.begin(); it != used_in_.end(); it ++)
+    for (vector<Calendar*>::iterator it = related_calendars_.begin(); it != related_calendars_.end(); it ++)
         if (*it == deleting)
         {
-            it = used_in_.erase(it);
+            it = related_calendars_.erase(it);
             break;
         }
 }
 
-void Event::add_person(Person *adding, std::string status)
+void Event::add_person(Person *adding, string status)
 {
     people_->add_person(adding, status);
 }

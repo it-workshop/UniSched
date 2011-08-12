@@ -21,35 +21,54 @@
     using std::endl;
     using std::vector;
 
+    /** @enum defaul_format Time format types. */
     enum default_format {
-        ASCII//,
-        //RUS
+        ASCII						/**< ASCII Time format. */
     };
 
+    /** @class UserInterface
+     * @brief Class provides user interface.
+     */
     class UserInterface {
     private:
-        enum default_format def_format;
+        enum default_format def_format;			/**< Default time format. */
     public:
-        UserInterface(void);
-        ~UserInterface(void);
+        UserInterface();				/**< Constructor */
+        ~UserInterface();				/**< Destructor */
 
-        void listen(vector<Person *> *, vector<Group *> *, vector<Event *> *, vector<Calendar *> *);
+        void listen(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
+							/**< Interactive command line mode.
+							 * @param [in] people All people objects in the programm.
+							 * @param [in] groups All groups objects.
+							 * @param [in] events All events objects.
+							 * @param [in] calendars All calendars objects.
+							 */
 
-        void set_format(enum default_format);
-        enum default_format get_format();
-        void format(time_t *);
-        void format_ASCII(time_t *);
-        //std::string format_RUS(time_t *);
+        void set_format(enum default_format format);	/**< Set default time format.
+							 * @param [in] format Type of time format.
+							 */
+        enum default_format get_format();		/**< Get default time format.
+							 * @return Default type of time format.
+							 */
+        void format(time_t time);			/**< Print time in default format.
+							 * @param [in] time Time to print.
+							 */
+        void format_ASCII(time_t);			/**< Print time in ASCII time format.
+							 * @param [in] time Time to print.
+							 */
 
-        void print_person(Person *);
-        void print_group(Group *);
-        void print_event(Event *);
-        void print_calendar(Calendar *);
-
-        //Person *in_person();
-        //Group *in_group();
-        //Event *in_event();
-        //Calendar *in_calendar();
+        void print_person(Person *person);		/**< Print person's information.
+							 * @param [in] person Person to print.
+							 */
+        void print_group(Group *group);			/**< Print group's information.
+							 * @param [in] group Group to print.
+							 */
+        void print_event(Event *event);			/**< Print event's information.
+							 * @param [in] event Event to print.
+							 */
+        void print_calendar(Calendar *calendar);	/**< Print calendar's information.
+							 * @param [in] calendar Calendar to print.
+							 */
     };
 
 #endif /* _USERSINTERFACE_H_ */

@@ -144,7 +144,7 @@ enum default_format UserInterface::get_format(void)
     return def_format;
 }
 
-void UserInterface::format(time_t *input)
+void UserInterface::format(time_t input)
 {
     switch (def_format)
     {
@@ -157,7 +157,7 @@ void UserInterface::format(time_t *input)
     }
 }
 
-void UserInterface::format_ASCII(time_t *input)
+void UserInterface::format_ASCII(time_t input)
 {
     static const char days[7][4] = {
         "Sun",
@@ -183,7 +183,7 @@ void UserInterface::format_ASCII(time_t *input)
         "Dec"
     };
 
-    struct tm cutted = *localtime(input);
+    struct tm cutted = *localtime(&input);
 
     cout << days[cutted.tm_wday]
          << ' ' << month[cutted.tm_mon]
@@ -217,7 +217,7 @@ void UserInterface::print_person(Person *printing)
                  << endl;
     }
     cout << "Events:" << endl;
-    print_calendar(printing->get_calendar_out());
+    print_calendar(printing->get_calendar());
     cout << endl;
 }
 
@@ -259,13 +259,8 @@ void UserInterface::print_event(Event *printing)
 
 void UserInterface::print_calendar(Calendar *printing)
 {
-    if (!printing->get_name().empty())
-        cout << "Calendar: "
-             << printing->get_name()
-             << " (%" << printing->get_id() << ')' << endl;
     for (vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
-        cout << "    [" << (*it)->get_name() << " (";
         format((*it)->get_begin());
         cout << ")-(";
         format((*it)->get_end());
