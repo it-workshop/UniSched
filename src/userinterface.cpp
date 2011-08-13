@@ -34,16 +34,9 @@ vector<string> UserInterface::get_request()
         now = getwchar();
         while ((now != L' ') && (now != L'\n'))
         {
-            if (now == WEOF)
-            {
-                if (errno == EILSEQ)
-                   cout << "char is way more better then wchar." << endl;
-                exit();
-                request.push_back("Ctrl+D");
-                return request;
-            }
             reading += now;
             now = getwchar();
+            now = now;
         }
         request.push_back(reading);
     }

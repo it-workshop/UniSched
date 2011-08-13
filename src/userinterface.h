@@ -5,8 +5,6 @@
 #include <vector>
 #include <time.h>
 #include <wchar.h>
-#include <stdio.h>
-#include <errno.h>
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
