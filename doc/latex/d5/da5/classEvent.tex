@@ -14,11 +14,11 @@ Class keeps information about event.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classEvent_a6210fee3f753d5c550a00f1e4f5a971d}{Event} (unsigned long long int id, string name, time\_\-t begin, time\_\-t end, string description)
+\hyperlink{classEvent_aeec95af5c9bf0410dc9078485dedb2bf}{Event} (\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} id, string name, time\_\-t begin, time\_\-t end, string description)
 \item 
 \hyperlink{classEvent_a7704ec01ce91e673885792054214b3d2}{$\sim$Event} ()
 \item 
-unsigned long long int \hyperlink{classEvent_a089064adeae9dcdbb53483417924939c}{get\_\-id} ()
+\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} \hyperlink{classEvent_a526943d871f71a59016637c27da80c23}{get\_\-id} ()
 \item 
 string \hyperlink{classEvent_a99325a5304e3b73cd4df1f356a185cfc}{get\_\-name} ()
 \item 
@@ -36,9 +36,9 @@ void \hyperlink{classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}{add\_\-related\_\-
 \item 
 void \hyperlink{classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}{delete\_\-related\_\-calendar} (\hyperlink{classCalendar}{Calendar} $\ast$calendar)
 \item 
-void \hyperlink{classEvent_a77077d8d27027113b2e20b4374a00a61}{add\_\-person} (class \hyperlink{classPerson}{Person} $\ast$person, string status)
+void \hyperlink{classEvent_a77077d8d27027113b2e20b4374a00a61}{add\_\-person} (class \hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person}, string \hyperlink{group__content_8h_ab4d38e7365d935f2a5f1403eec29127e}{status})
 \item 
-void \hyperlink{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{delete\_\-person} (class \hyperlink{classPerson}{Person} $\ast$person)
+void \hyperlink{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{delete\_\-person} (class \hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
 \end{DoxyCompactItemize}
 
 
@@ -46,32 +46,22 @@ void \hyperlink{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{delete\_\-person} 
 Class keeps information about event. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classEvent_a6210fee3f753d5c550a00f1e4f5a971d}{
+\hypertarget{classEvent_aeec95af5c9bf0410dc9078485dedb2bf}{
 \index{Event@{Event}!Event@{Event}}
 \index{Event@{Event}!Event@{Event}}
 \subsubsection[{Event}]{\setlength{\rightskip}{0pt plus 5cm}Event::Event (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{id, }
-\item[{string}]{name, }
-\item[{time\_\-t}]{begin, }
-\item[{time\_\-t}]{end, }
-\item[{string}]{description}
+\item[{{\bf id\_\-t}}]{ id, }
+\item[{string}]{ name, }
+\item[{time\_\-t}]{ begin, }
+\item[{time\_\-t}]{ end, }
+\item[{string}]{ description}
 \end{DoxyParamCaption}
 )}}
-\label{d5/da5/classEvent_a6210fee3f753d5c550a00f1e4f5a971d}
+\label{d5/da5/classEvent_aeec95af5c9bf0410dc9078485dedb2bf}
 Constructor. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Event's identificator in the database. \\
-\hline
-\mbox{\tt in}  & {\em name} & Event's name. \\
-\hline
-\mbox{\tt in}  & {\em begin} & Event's begin time. \\
-\hline
-\mbox{\tt in}  & {\em end} & Event's end time. \\
-\hline
-\mbox{\tt in}  & {\em description} & Event's description. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em id}]Event's identificator in the database. \item[\mbox{\tt[in]} {\em name}]Event's name. \item[\mbox{\tt[in]} {\em begin}]Event's begin time. \item[\mbox{\tt[in]} {\em end}]Event's end time. \item[\mbox{\tt[in]} {\em description}]Event's description. \end{DoxyParams}
 \hypertarget{classEvent_a7704ec01ce91e673885792054214b3d2}{
 \index{Event@{Event}!$\sim$Event@{$\sim$Event}}
 \index{$\sim$Event@{$\sim$Event}!Event@{Event}}
@@ -89,60 +79,50 @@ Destructor.
 \index{add\_\-person@{add\_\-person}!Event@{Event}}
 \subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Event::add\_\-person (
 \begin{DoxyParamCaption}
-\item[{class {\bf Person} $\ast$}]{person, }
-\item[{string}]{status}
+\item[{class {\bf Person} $\ast$}]{ person, }
+\item[{string}]{ status}
 \end{DoxyParamCaption}
 )}}
 \label{d5/da5/classEvent_a77077d8d27027113b2e20b4374a00a61}
 Add person to the event's group. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em person} & \hyperlink{classPerson}{Person} to add. \\
-\hline
-\mbox{\tt in}  & {\em status} & Person's status in the event's group. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em person}]\hyperlink{classPerson}{Person} to add. \item[\mbox{\tt[in]} {\em status}]Person's status in the event's group. \end{DoxyParams}
 \hypertarget{classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}{
 \index{Event@{Event}!add\_\-related\_\-calendar@{add\_\-related\_\-calendar}}
 \index{add\_\-related\_\-calendar@{add\_\-related\_\-calendar}!Event@{Event}}
 \subsubsection[{add\_\-related\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void Event::add\_\-related\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{{\bf Calendar} $\ast$}]{calendar}
+\item[{{\bf Calendar} $\ast$}]{ calendar}
 \end{DoxyParamCaption}
 )}}
 \label{d5/da5/classEvent_a1d59dc31b3358bb9d9d1e75cb735c6ef}
 Add related calendar to event. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to add. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em calendar}]\hyperlink{classCalendar}{Calendar} to add. \end{DoxyParams}
 \hypertarget{classEvent_a5e071ee79b9ac9520fa5f26d763ce662}{
 \index{Event@{Event}!delete\_\-person@{delete\_\-person}}
 \index{delete\_\-person@{delete\_\-person}!Event@{Event}}
 \subsubsection[{delete\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Event::delete\_\-person (
 \begin{DoxyParamCaption}
-\item[{class {\bf Person} $\ast$}]{person}
+\item[{class {\bf Person} $\ast$}]{ person}
 \end{DoxyParamCaption}
 )}}
 \label{d5/da5/classEvent_a5e071ee79b9ac9520fa5f26d763ce662}
 Delete person from the event's group. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em person} & \hyperlink{classPerson}{Person} to delete. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em person}]\hyperlink{classPerson}{Person} to delete. \end{DoxyParams}
 \hypertarget{classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}{
 \index{Event@{Event}!delete\_\-related\_\-calendar@{delete\_\-related\_\-calendar}}
 \index{delete\_\-related\_\-calendar@{delete\_\-related\_\-calendar}!Event@{Event}}
 \subsubsection[{delete\_\-related\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void Event::delete\_\-related\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{{\bf Calendar} $\ast$}]{calendar}
+\item[{{\bf Calendar} $\ast$}]{ calendar}
 \end{DoxyParamCaption}
 )}}
 \label{d5/da5/classEvent_ac4bc91dab8ca340c58aed7c91a8376a7}
 Delete related calendar from event. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to delete. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em calendar}]\hyperlink{classCalendar}{Calendar} to delete. \end{DoxyParams}
 \hypertarget{classEvent_aa0177bde2838d761774f6e9a50f1e76c}{
 \index{Event@{Event}!get\_\-begin@{get\_\-begin}}
 \index{get\_\-begin@{get\_\-begin}!Event@{Event}}
@@ -191,15 +171,15 @@ Event's end time.
 Get event's group. \begin{DoxyReturn}{Returns}
 Event's group. 
 \end{DoxyReturn}
-\hypertarget{classEvent_a089064adeae9dcdbb53483417924939c}{
+\hypertarget{classEvent_a526943d871f71a59016637c27da80c23}{
 \index{Event@{Event}!get\_\-id@{get\_\-id}}
 \index{get\_\-id@{get\_\-id}!Event@{Event}}
-\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int Event::get\_\-id (
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\_\-t} Event::get\_\-id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{d5/da5/classEvent_a089064adeae9dcdbb53483417924939c}
+\label{d5/da5/classEvent_a526943d871f71a59016637c27da80c23}
 Get event's identificator. \begin{DoxyReturn}{Returns}
 Event's identificator in the database. 
 \end{DoxyReturn}

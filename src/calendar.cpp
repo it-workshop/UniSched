@@ -1,11 +1,11 @@
 #include <calendar.h>
 
-Calendar::Calendar(unsigned long long int id)
+Calendar::Calendar(id_t id)
 {
     id_ = id;
 }
 
-Calendar::Calendar(unsigned long long int id, Calendar *calendar)
+Calendar::Calendar(id_t id, Calendar *calendar)
 {
     id_ = id;
     for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
@@ -23,7 +23,7 @@ std::vector<Event*> *Calendar::get_events()
     return &events_;
 }
 
-unsigned long long int Calendar::get_id()
+id_t Calendar::get_id()
 {
     return id_;
 }

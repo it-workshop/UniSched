@@ -14,13 +14,13 @@ Class keeps information about calendar.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCalendar_af796f2f9c98608edaf99a6fc1fb610a5}{Calendar} (unsigned long long int id)
+\hyperlink{classCalendar_acf7171bfd7518524f62bee81554037d3}{Calendar} (\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} id)
 \item 
-\hyperlink{classCalendar_a9548747afa326135626f552562398edd}{Calendar} (unsigned long long int id, \hyperlink{classCalendar}{Calendar} $\ast$calendar)
+\hyperlink{classCalendar_a8ccfb5918c6e3ff293e23936dea826fb}{Calendar} (\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} id, \hyperlink{classCalendar}{Calendar} $\ast$calendar)
 \item 
 \hyperlink{classCalendar_a23aa939f694874a8f98ec54326d80741}{$\sim$Calendar} ()
 \item 
-unsigned long long int \hyperlink{classCalendar_a20aaf2566e8e3ef7db419e776672146d}{get\_\-id} ()
+\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} \hyperlink{classCalendar_a853ad0f4635e09acbb4554267123ece4}{get\_\-id} ()
 \item 
 vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$ \hyperlink{classCalendar_aa1e9611c947c9b37975437b188066bf9}{get\_\-events} ()
 \item 
@@ -38,37 +38,31 @@ void \hyperlink{classCalendar_a305abce38aacb905a0277f573f6b486c}{delete\_\-event
 Class keeps information about calendar. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCalendar_af796f2f9c98608edaf99a6fc1fb610a5}{
+\hypertarget{classCalendar_acf7171bfd7518524f62bee81554037d3}{
 \index{Calendar@{Calendar}!Calendar@{Calendar}}
 \index{Calendar@{Calendar}!Calendar@{Calendar}}
 \subsubsection[{Calendar}]{\setlength{\rightskip}{0pt plus 5cm}Calendar::Calendar (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{id}
+\item[{{\bf id\_\-t}}]{ id}
 \end{DoxyParamCaption}
 )}}
-\label{dd/dac/classCalendar_af796f2f9c98608edaf99a6fc1fb610a5}
+\label{dd/dac/classCalendar_acf7171bfd7518524f62bee81554037d3}
 Constructor. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Calendar's identificator in the database. \\
-\hline
-\end{DoxyParams}
-\hypertarget{classCalendar_a9548747afa326135626f552562398edd}{
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em id}]Calendar's identificator in the database. \end{DoxyParams}
+\hypertarget{classCalendar_a8ccfb5918c6e3ff293e23936dea826fb}{
 \index{Calendar@{Calendar}!Calendar@{Calendar}}
 \index{Calendar@{Calendar}!Calendar@{Calendar}}
 \subsubsection[{Calendar}]{\setlength{\rightskip}{0pt plus 5cm}Calendar::Calendar (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{id, }
-\item[{{\bf Calendar} $\ast$}]{calendar}
+\item[{{\bf id\_\-t}}]{ id, }
+\item[{{\bf Calendar} $\ast$}]{ calendar}
 \end{DoxyParamCaption}
 )}}
-\label{dd/dac/classCalendar_a9548747afa326135626f552562398edd}
+\label{dd/dac/classCalendar_a8ccfb5918c6e3ff293e23936dea826fb}
 Constructor. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Calendar's identificator in the database. \\
-\hline
-\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to clone. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em id}]Calendar's identificator in the database. \item[\mbox{\tt[in]} {\em calendar}]\hyperlink{classCalendar}{Calendar} to clone. \end{DoxyParams}
 \hypertarget{classCalendar_a23aa939f694874a8f98ec54326d80741}{
 \index{Calendar@{Calendar}!$\sim$Calendar@{$\sim$Calendar}}
 \index{$\sim$Calendar@{$\sim$Calendar}!Calendar@{Calendar}}
@@ -86,29 +80,25 @@ Destructor.
 \index{add\_\-event@{add\_\-event}!Calendar@{Calendar}}
 \subsubsection[{add\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar::add\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf Event} $\ast$}]{event}
+\item[{{\bf Event} $\ast$}]{ event}
 \end{DoxyParamCaption}
 )}}
 \label{dd/dac/classCalendar_ad099edd0e82ca0a2ffb18702d029fffa}
 Add event to the calendar. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em event} & \hyperlink{classEvent}{Event} to add. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em event}]\hyperlink{classEvent}{Event} to add. \end{DoxyParams}
 \hypertarget{classCalendar_a305abce38aacb905a0277f573f6b486c}{
 \index{Calendar@{Calendar}!delete\_\-event@{delete\_\-event}}
 \index{delete\_\-event@{delete\_\-event}!Calendar@{Calendar}}
 \subsubsection[{delete\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar::delete\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf Event} $\ast$}]{event}
+\item[{{\bf Event} $\ast$}]{ event}
 \end{DoxyParamCaption}
 )}}
 \label{dd/dac/classCalendar_a305abce38aacb905a0277f573f6b486c}
 Delete event from the calendar. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em event} & to delete. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em event}]to delete. \end{DoxyParams}
 \hypertarget{classCalendar_aa1e9611c947c9b37975437b188066bf9}{
 \index{Calendar@{Calendar}!get\_\-events@{get\_\-events}}
 \index{get\_\-events@{get\_\-events}!Calendar@{Calendar}}
@@ -121,15 +111,15 @@ Delete event from the calendar.
 Get Calendar's events. \begin{DoxyReturn}{Returns}
 Calendar's events. 
 \end{DoxyReturn}
-\hypertarget{classCalendar_a20aaf2566e8e3ef7db419e776672146d}{
+\hypertarget{classCalendar_a853ad0f4635e09acbb4554267123ece4}{
 \index{Calendar@{Calendar}!get\_\-id@{get\_\-id}}
 \index{get\_\-id@{get\_\-id}!Calendar@{Calendar}}
-\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int Calendar::get\_\-id (
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\_\-t} Calendar::get\_\-id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{dd/dac/classCalendar_a20aaf2566e8e3ef7db419e776672146d}
+\label{dd/dac/classCalendar_a853ad0f4635e09acbb4554267123ece4}
 Get Calendar's identificator. \begin{DoxyReturn}{Returns}
 Calendar's identificator in the database. 
 \end{DoxyReturn}
@@ -138,15 +128,13 @@ Calendar's identificator in the database.
 \index{has\_\-event@{has\_\-event}!Calendar@{Calendar}}
 \subsubsection[{has\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}bool Calendar::has\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf Event} $\ast$}]{event}
+\item[{{\bf Event} $\ast$}]{ event}
 \end{DoxyParamCaption}
 )}}
 \label{dd/dac/classCalendar_a46578e7e3f65bd5d523a108ad00965dd}
 Tests, Is \hyperlink{classCalendar}{Calendar} has event. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em event} & \hyperlink{classEvent}{Event} to test. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em event}]\hyperlink{classEvent}{Event} to test. \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if calendar contains this event. 
 \end{DoxyReturn}
@@ -155,15 +143,13 @@ true if calendar contains this event.
 \index{merge\_\-calendar@{merge\_\-calendar}!Calendar@{Calendar}}
 \subsubsection[{merge\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void Calendar::merge\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{{\bf Calendar} $\ast$}]{calendar}
+\item[{{\bf Calendar} $\ast$}]{ calendar}
 \end{DoxyParamCaption}
 )}}
 \label{dd/dac/classCalendar_a9ed5161b06c2a2acc8e5febbeeeb39b0}
 Merge Calendars. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to merge with. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em calendar}]\hyperlink{classCalendar}{Calendar} to merge with. \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

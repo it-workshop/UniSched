@@ -1,6 +1,6 @@
 #include <event.h>
 
-Event::Event(unsigned long long int id, string name, time_t begin, time_t end, string description)
+Event::Event(id_t id, string name, time_t begin, time_t end, string description)
 {
     people_ = new Group (2 * id + 1, "", "group of event: " + name);
     id_ = id;
@@ -15,7 +15,7 @@ Event::~Event()
     delete people_;
 }
 
-unsigned long long int Event::get_id()
+id_t Event::get_id()
 {
     return id_;
 }

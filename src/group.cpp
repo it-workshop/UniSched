@@ -1,6 +1,6 @@
 #include <group.h>
 
-Group::Group(unsigned long long int id, std::string name, std::string description)
+Group::Group(id_t id, std::string name, std::string description)
 {
     id_ = id;
     name_ = name;
@@ -8,7 +8,7 @@ Group::Group(unsigned long long int id, std::string name, std::string descriptio
     calendar_ = new Calendar(3 * id + 2);
 }
 
-Group::Group(unsigned long long int id, Group *group)
+Group::Group(id_t id, Group *group)
 {
     id_ = id;
     name_ = group->name_;
@@ -36,7 +36,7 @@ std::string Group::get_name()
     return name_;
 }
 
-unsigned long long int Group::get_id()
+id_t Group::get_id()
 {
     return id_;
 }

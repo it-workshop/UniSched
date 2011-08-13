@@ -14,7 +14,7 @@ void UserInterface::listen(vector<Person *> *persons, vector<Group *> *groups, v
     string reading;
     while (true)
     {
-        unsigned long long int id, id1;
+        id_t id, id1;
         char symbol;
         cout << "raspisator-? ";
         cin >> reading;
@@ -139,7 +139,7 @@ void UserInterface::set_format(enum default_format new_format)
     def_format = new_format;
 }
 
-enum default_format UserInterface::get_format(void)
+enum default_format UserInterface::get_format()
 {
     return def_format;
 }
@@ -267,9 +267,4 @@ void UserInterface::print_calendar(Calendar *printing)
         cout << ")]" << endl;
     }
 }
-
-/*Person *in_person();
-{
-    
-}*/
 

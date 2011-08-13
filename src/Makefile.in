@@ -152,7 +152,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPP_FLAGS = -I$(srcdir)
-raspisator_SOURCES = main.cpp person.cpp person.h event.cpp event.h group.cpp group.h calendar.cpp calendar.h userinterface.cpp userinterface.h group_content.h
+raspisator_SOURCES = main.cpp types.h person.cpp person.h event.cpp event.h group.cpp group.h calendar.cpp calendar.h userinterface.cpp userinterface.h group_content.h
 all: all-am
 
 .SUFFIXES:

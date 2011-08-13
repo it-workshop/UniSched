@@ -2,6 +2,7 @@
 #include <time.h>
 #include <vector>
 
+#include <types.h>
 #include <userinterface.h>
 #include <person.h>
 #include <group.h>

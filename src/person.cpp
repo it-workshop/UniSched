@@ -1,6 +1,6 @@
 #include <person.h>
 
-Person::Person(unsigned long long int id, std::string name, std::string surname, bool female, time_t birthday)
+Person::Person(id_t id, std::string name, std::string surname, bool female, time_t birthday)
 : id_ (id),
   name_ (name),
   surname_ (surname),
@@ -17,7 +17,7 @@ Person::~Person()
     delete events_;
 }
 
-unsigned long long int Person::get_id()
+id_t Person::get_id()
 {
     return id_;
 }

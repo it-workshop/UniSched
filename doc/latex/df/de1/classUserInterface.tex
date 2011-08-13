@@ -26,11 +26,11 @@ enum \hyperlink{userinterface_8h_a5a0e707f53d6c5632b2fb5ffd2d22a11}{default\_\-f
 \item 
 void \hyperlink{classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}{format} (time\_\-t time)
 \item 
-void \hyperlink{classUserInterface_a937d302f0a7d08abcf59a80e75151b48}{format\_\-ASCII} (time\_\-t)
+void \hyperlink{classUserInterface_a41c109a7e042b44dc98a1250681fc684}{format\_\-ASCII} (time\_\-t time)
 \item 
-void \hyperlink{classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}{print\_\-person} (\hyperlink{classPerson}{Person} $\ast$person)
+void \hyperlink{classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}{print\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
 \item 
-void \hyperlink{classUserInterface_a31424519b61f71584a4a5196c6632beb}{print\_\-group} (\hyperlink{classGroup}{Group} $\ast$group)
+void \hyperlink{classUserInterface_a31424519b61f71584a4a5196c6632beb}{print\_\-group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
 \item 
 void \hyperlink{classUserInterface_aca628f5a276b39ff4346e2150b419590}{print\_\-event} (\hyperlink{classEvent}{Event} $\ast$event)
 \item 
@@ -68,35 +68,31 @@ Destructor
 \index{format@{format}!UserInterface@{UserInterface}}
 \subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::format (
 \begin{DoxyParamCaption}
-\item[{time\_\-t}]{time}
+\item[{time\_\-t}]{ time}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}
 Print time in default format. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em time} & Time to print. \\
-\hline
-\end{DoxyParams}
-\hypertarget{classUserInterface_a937d302f0a7d08abcf59a80e75151b48}{
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em time}]Time to print. \end{DoxyParams}
+\hypertarget{classUserInterface_a41c109a7e042b44dc98a1250681fc684}{
 \index{UserInterface@{UserInterface}!format\_\-ASCII@{format\_\-ASCII}}
 \index{format\_\-ASCII@{format\_\-ASCII}!UserInterface@{UserInterface}}
 \subsubsection[{format\_\-ASCII}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::format\_\-ASCII (
 \begin{DoxyParamCaption}
-\item[{time\_\-t}]{input}
+\item[{time\_\-t}]{ time}
 \end{DoxyParamCaption}
 )}}
-\label{df/de1/classUserInterface_a937d302f0a7d08abcf59a80e75151b48}
+\label{df/de1/classUserInterface_a41c109a7e042b44dc98a1250681fc684}
 Print time in ASCII time format. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em time} & Time to print. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em time}]Time to print. \end{DoxyParams}
 \hypertarget{classUserInterface_ad543750a7accc0c4825e02a93fda1909}{
 \index{UserInterface@{UserInterface}!get\_\-format@{get\_\-format}}
 \index{get\_\-format@{get\_\-format}!UserInterface@{UserInterface}}
 \subsubsection[{get\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf default\_\-format} UserInterface::get\_\-format (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+{}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_ad543750a7accc0c4825e02a93fda1909}
@@ -108,94 +104,76 @@ Default type of time format.
 \index{listen@{listen}!UserInterface@{UserInterface}}
 \subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::listen (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf Person} $\ast$ $>$ $\ast$}]{people, }
-\item[{vector$<$ {\bf Group} $\ast$ $>$ $\ast$}]{groups, }
-\item[{vector$<$ {\bf Event} $\ast$ $>$ $\ast$}]{events, }
-\item[{vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$}]{calendars}
+\item[{vector$<$ {\bf Person} $\ast$ $>$ $\ast$}]{ people, }
+\item[{vector$<$ {\bf Group} $\ast$ $>$ $\ast$}]{ groups, }
+\item[{vector$<$ {\bf Event} $\ast$ $>$ $\ast$}]{ events, }
+\item[{vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$}]{ calendars}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a8aea06378a5d0b2d7bf338e947e2b87f}
 Interactive command line mode. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em people} & All people objects in the programm. \\
-\hline
-\mbox{\tt in}  & {\em groups} & All groups objects. \\
-\hline
-\mbox{\tt in}  & {\em events} & All events objects. \\
-\hline
-\mbox{\tt in}  & {\em calendars} & All calendars objects. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em people}]All people objects in the programm. \item[\mbox{\tt[in]} {\em groups}]All groups objects. \item[\mbox{\tt[in]} {\em events}]All events objects. \item[\mbox{\tt[in]} {\em calendars}]All calendars objects. \end{DoxyParams}
 \hypertarget{classUserInterface_aca95eaf06d053b4ac267e94ccb84e501}{
 \index{UserInterface@{UserInterface}!print\_\-calendar@{print\_\-calendar}}
 \index{print\_\-calendar@{print\_\-calendar}!UserInterface@{UserInterface}}
 \subsubsection[{print\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::print\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{{\bf Calendar} $\ast$}]{calendar}
+\item[{{\bf Calendar} $\ast$}]{ calendar}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_aca95eaf06d053b4ac267e94ccb84e501}
 Print calendar's information. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em calendar} & \hyperlink{classCalendar}{Calendar} to print. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em calendar}]\hyperlink{classCalendar}{Calendar} to print. \end{DoxyParams}
 \hypertarget{classUserInterface_aca628f5a276b39ff4346e2150b419590}{
 \index{UserInterface@{UserInterface}!print\_\-event@{print\_\-event}}
 \index{print\_\-event@{print\_\-event}!UserInterface@{UserInterface}}
 \subsubsection[{print\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::print\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf Event} $\ast$}]{event}
+\item[{{\bf Event} $\ast$}]{ event}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_aca628f5a276b39ff4346e2150b419590}
 Print event's information. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em event} & \hyperlink{classEvent}{Event} to print. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em event}]\hyperlink{classEvent}{Event} to print. \end{DoxyParams}
 \hypertarget{classUserInterface_a31424519b61f71584a4a5196c6632beb}{
 \index{UserInterface@{UserInterface}!print\_\-group@{print\_\-group}}
 \index{print\_\-group@{print\_\-group}!UserInterface@{UserInterface}}
 \subsubsection[{print\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::print\_\-group (
 \begin{DoxyParamCaption}
-\item[{{\bf Group} $\ast$}]{group}
+\item[{{\bf Group} $\ast$}]{ group}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a31424519b61f71584a4a5196c6632beb}
 Print group's information. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em group} & \hyperlink{classGroup}{Group} to print. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em group}]\hyperlink{classGroup}{Group} to print. \end{DoxyParams}
 \hypertarget{classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}{
 \index{UserInterface@{UserInterface}!print\_\-person@{print\_\-person}}
 \index{print\_\-person@{print\_\-person}!UserInterface@{UserInterface}}
 \subsubsection[{print\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::print\_\-person (
 \begin{DoxyParamCaption}
-\item[{{\bf Person} $\ast$}]{person}
+\item[{{\bf Person} $\ast$}]{ person}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}
 Print person's information. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em person} & \hyperlink{classPerson}{Person} to print. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em person}]\hyperlink{classPerson}{Person} to print. \end{DoxyParams}
 \hypertarget{classUserInterface_a36513fcf018fafc53726cf610f46571f}{
 \index{UserInterface@{UserInterface}!set\_\-format@{set\_\-format}}
 \index{set\_\-format@{set\_\-format}!UserInterface@{UserInterface}}
 \subsubsection[{set\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::set\_\-format (
 \begin{DoxyParamCaption}
-\item[{enum {\bf default\_\-format}}]{format}
+\item[{enum {\bf default\_\-format}}]{ format}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a36513fcf018fafc53726cf610f46571f}
 Set default time format. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em format} & Type of time format. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em format}]Type of time format. \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
