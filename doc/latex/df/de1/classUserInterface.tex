@@ -14,11 +14,13 @@ Class provides user interface.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classUserInterface_ae6fb70370701b3bd6120e923df9705b0}{UserInterface} ()
+\hyperlink{classUserInterface_a72d625f6d41876d679ed067e0f273ed8}{UserInterface} (vector$<$ \hyperlink{classPerson}{Person} $\ast$ $>$ $\ast$\hyperlink{classUserInterface_a3d0914e9d2ba661bc3691397c695287e}{people}, vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$\hyperlink{classUserInterface_a12676e629660c43c63eb5b01c5c19bc3}{groups}, vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$\hyperlink{classUserInterface_ae3370dc0d02c19b4b1cc7c47221c2bfa}{events}, vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$\hyperlink{classUserInterface_abd1f3233d3e666415f6cdf8458b50faa}{calendars})
 \item 
 \hyperlink{classUserInterface_ae588b2ff1711a016dd4c6fc5002c0841}{$\sim$UserInterface} ()
 \item 
-void \hyperlink{classUserInterface_a8aea06378a5d0b2d7bf338e947e2b87f}{listen} (vector$<$ \hyperlink{classPerson}{Person} $\ast$ $>$ $\ast$people, vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$groups, vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$events, vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$calendars)
+void \hyperlink{classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}{listen} ()
+\item 
+void \hyperlink{classUserInterface_a396eb29856a6afc91bc0e0eef1de2df7}{exit} ()
 \item 
 void \hyperlink{classUserInterface_a36513fcf018fafc53726cf610f46571f}{set\_\-format} (enum \hyperlink{userinterface_8h_a5a0e707f53d6c5632b2fb5ffd2d22a11}{default\_\-format} format)
 \item 
@@ -36,34 +38,60 @@ void \hyperlink{classUserInterface_aca628f5a276b39ff4346e2150b419590}{print\_\-e
 \item 
 void \hyperlink{classUserInterface_aca95eaf06d053b4ac267e94ccb84e501}{print\_\-calendar} (\hyperlink{classCalendar}{Calendar} $\ast$calendar)
 \end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classPerson}{Person} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_a3d0914e9d2ba661bc3691397c695287e}{people}
+\item 
+vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_a12676e629660c43c63eb5b01c5c19bc3}{groups}
+\item 
+vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_ae3370dc0d02c19b4b1cc7c47221c2bfa}{events}
+\item 
+vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_abd1f3233d3e666415f6cdf8458b50faa}{calendars}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class provides user interface. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classUserInterface_ae6fb70370701b3bd6120e923df9705b0}{
+\hypertarget{classUserInterface_a72d625f6d41876d679ed067e0f273ed8}{
 \index{UserInterface@{UserInterface}!UserInterface@{UserInterface}}
 \index{UserInterface@{UserInterface}!UserInterface@{UserInterface}}
 \subsubsection[{UserInterface}]{\setlength{\rightskip}{0pt plus 5cm}UserInterface::UserInterface (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+\item[{vector$<$ {\bf Person} $\ast$ $>$ $\ast$}]{ people, }
+\item[{vector$<$ {\bf Group} $\ast$ $>$ $\ast$}]{ groups, }
+\item[{vector$<$ {\bf Event} $\ast$ $>$ $\ast$}]{ events, }
+\item[{vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$}]{ calendars}
 \end{DoxyParamCaption}
 )}}
-\label{df/de1/classUserInterface_ae6fb70370701b3bd6120e923df9705b0}
-Constructor \hypertarget{classUserInterface_ae588b2ff1711a016dd4c6fc5002c0841}{
+\label{df/de1/classUserInterface_a72d625f6d41876d679ed067e0f273ed8}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em people}]All people objects in the programm. \item[\mbox{\tt[in]} {\em groups}]All groups objects. \item[\mbox{\tt[in]} {\em events}]All events objects. \item[\mbox{\tt[in]} {\em calendars}]All calendars objects. \end{DoxyParams}
+\hypertarget{classUserInterface_ae588b2ff1711a016dd4c6fc5002c0841}{
 \index{UserInterface@{UserInterface}!$\sim$UserInterface@{$\sim$UserInterface}}
 \index{$\sim$UserInterface@{$\sim$UserInterface}!UserInterface@{UserInterface}}
 \subsubsection[{$\sim$UserInterface}]{\setlength{\rightskip}{0pt plus 5cm}UserInterface::$\sim$UserInterface (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+{}
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_ae588b2ff1711a016dd4c6fc5002c0841}
 Destructor 
 
 \subsection{Member Function Documentation}
-\hypertarget{classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}{
+\hypertarget{classUserInterface_a396eb29856a6afc91bc0e0eef1de2df7}{
+\index{UserInterface@{UserInterface}!exit@{exit}}
+\index{exit@{exit}!UserInterface@{UserInterface}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{df/de1/classUserInterface_a396eb29856a6afc91bc0e0eef1de2df7}
+Exit from interactive command line mode. \hypertarget{classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}{
 \index{UserInterface@{UserInterface}!format@{format}}
 \index{format@{format}!UserInterface@{UserInterface}}
 \subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::format (
@@ -99,22 +127,16 @@ Print time in ASCII time format.
 Get default time format. \begin{DoxyReturn}{Returns}
 Default type of time format. 
 \end{DoxyReturn}
-\hypertarget{classUserInterface_a8aea06378a5d0b2d7bf338e947e2b87f}{
+\hypertarget{classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}{
 \index{UserInterface@{UserInterface}!listen@{listen}}
 \index{listen@{listen}!UserInterface@{UserInterface}}
 \subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::listen (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf Person} $\ast$ $>$ $\ast$}]{ people, }
-\item[{vector$<$ {\bf Group} $\ast$ $>$ $\ast$}]{ groups, }
-\item[{vector$<$ {\bf Event} $\ast$ $>$ $\ast$}]{ events, }
-\item[{vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$}]{ calendars}
+{}
 \end{DoxyParamCaption}
 )}}
-\label{df/de1/classUserInterface_a8aea06378a5d0b2d7bf338e947e2b87f}
-Interactive command line mode. 
-\begin{DoxyParams}{Parameters}
-\item[\mbox{\tt[in]} {\em people}]All people objects in the programm. \item[\mbox{\tt[in]} {\em groups}]All groups objects. \item[\mbox{\tt[in]} {\em events}]All events objects. \item[\mbox{\tt[in]} {\em calendars}]All calendars objects. \end{DoxyParams}
-\hypertarget{classUserInterface_aca95eaf06d053b4ac267e94ccb84e501}{
+\label{df/de1/classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}
+Interactive command line mode. \hypertarget{classUserInterface_aca95eaf06d053b4ac267e94ccb84e501}{
 \index{UserInterface@{UserInterface}!print\_\-calendar@{print\_\-calendar}}
 \index{print\_\-calendar@{print\_\-calendar}!UserInterface@{UserInterface}}
 \subsubsection[{print\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::print\_\-calendar (
@@ -175,6 +197,29 @@ Set default time format.
 \begin{DoxyParams}{Parameters}
 \item[\mbox{\tt[in]} {\em format}]Type of time format. \end{DoxyParams}
 
+
+\subsection{Member Data Documentation}
+\hypertarget{classUserInterface_abd1f3233d3e666415f6cdf8458b50faa}{
+\index{UserInterface@{UserInterface}!calendars@{calendars}}
+\index{calendars@{calendars}!UserInterface@{UserInterface}}
+\subsubsection[{calendars}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Calendar} $\ast$$>$$\ast$ {\bf UserInterface::calendars}}}
+\label{df/de1/classUserInterface_abd1f3233d3e666415f6cdf8458b50faa}
+Pointer to vector og calendars \hypertarget{classUserInterface_ae3370dc0d02c19b4b1cc7c47221c2bfa}{
+\index{UserInterface@{UserInterface}!events@{events}}
+\index{events@{events}!UserInterface@{UserInterface}}
+\subsubsection[{events}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Event} $\ast$$>$$\ast$ {\bf UserInterface::events}}}
+\label{df/de1/classUserInterface_ae3370dc0d02c19b4b1cc7c47221c2bfa}
+Pointer to vector of events \hypertarget{classUserInterface_a12676e629660c43c63eb5b01c5c19bc3}{
+\index{UserInterface@{UserInterface}!groups@{groups}}
+\index{groups@{groups}!UserInterface@{UserInterface}}
+\subsubsection[{groups}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Group} $\ast$$>$$\ast$ {\bf UserInterface::groups}}}
+\label{df/de1/classUserInterface_a12676e629660c43c63eb5b01c5c19bc3}
+Pointer to vector of groups \hypertarget{classUserInterface_a3d0914e9d2ba661bc3691397c695287e}{
+\index{UserInterface@{UserInterface}!people@{people}}
+\index{people@{people}!UserInterface@{UserInterface}}
+\subsubsection[{people}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Person} $\ast$$>$$\ast$ {\bf UserInterface::people}}}
+\label{df/de1/classUserInterface_a3d0914e9d2ba661bc3691397c695287e}
+Pointer to vector of people 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
