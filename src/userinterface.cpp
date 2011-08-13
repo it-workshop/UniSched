@@ -27,23 +27,21 @@ void UserInterface::listen()
 vector<string> UserInterface::get_request()
 {
     vector<string> request;
-    wchar_t now;
+    char now;
     while (now != L'\n')
     {
         string reading = "";
-        now = getwchar();
+        now = getchar();
         while ((now != L' ') && (now != L'\n'))
         {
-            if (now == WEOF)
+            if (now == EOF)
             {
-                if (errno == EILSEQ)
-                   cout << "char is way more better then wchar." << endl;
                 exit();
                 request.push_back("Ctrl+D");
                 return request;
             }
             reading += now;
-            now = getwchar();
+            now = getchar();
         }
         request.push_back(reading);
     }
