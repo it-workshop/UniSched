@@ -65,11 +65,24 @@ namespace uiconsole {
      */
     class Command_All: protected Command {
     public:
-        Command_All(UserInterface *);		/**< Constructor.
+        Command_All(UserInterface *ui);		/**< Constructor.
 						 * @param [in] ui pointer to UserInterface.
 						 */
-        void run(vector<string> args);		/**< Print all objects of a class (s)
+        void run(vector<string> args);		/**< Print all objects of a class (s).
 						 * @param [in] args Vector {"all", "(s)"}.
+						 */
+    };
+
+    /** @class Command_Help
+     * @brief Class of ,,help`` command.
+     */
+    class Command_Help: protected Command {
+    public:
+        Command_Help(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Print all help strings.
+						 * @param [in] args Vector {"help"(, "(command)")}.
 						 */
     };
 
