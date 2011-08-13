@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <time.h>
+#include <wchar.h>
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -47,9 +48,13 @@ public:
     						 * @param [in] events All events objects.
     						 * @param [in] calendars All calendars objects.
  						*/
-    ~UserInterface();				/**< Destructor */
+    ~UserInterface();				/**< Destructor. */
 
     void listen();				/**< Interactive command line mode. */
+
+    vector<string> get_request();		/**< Get request of user.
+						 * @return Vector of words inputed bu user.
+						 */
 
     void exit();                                /**< Exit from interactive command line mode. */
 

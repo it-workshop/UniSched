@@ -56,8 +56,7 @@ uiconsole::Command_All::Command_All(UserInterface *ui): uiconsole::Command (ui)
 
 void uiconsole::Command_All::run(vector<string> args)
 {
-    char symbol;
-    cin >> symbol;
+    char symbol = args[1][0];
     switch (symbol)
     {
     case '$':
@@ -89,7 +88,7 @@ void uiconsole::execute(vector<string> args)
             (*it)->run(args);
             return;
         }
-    cout << endl << "There's no function named:" << args[0];
+    cout << endl << "There's no function named: " << args[0] << endl;
 }
 
 void uiconsole::initiate(UserInterface *ui)
