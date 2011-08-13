@@ -21,9 +21,9 @@ class Group;
 class Calendar;
 class UserInterface;
 
-//class Command;
-//class Command_Exit;
-//class Command_All;
+class Command;
+class Command_Exit;
+class Command_All;
 
 #endif /* _GLOBAL_NAMESPACE_ */
 

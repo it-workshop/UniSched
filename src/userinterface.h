@@ -10,6 +10,7 @@
 #endif /* HAVE_CONFIG_H */
 
 #include <types.h>
+#include <commands.h>
 #include <group_content.h>
 #include <person.h>
 #include <group.h>
@@ -32,18 +33,25 @@ enum default_format {
  */
 class UserInterface {
 private:
+    bool done;						/**< True when interactive command line mode ends */
     enum default_format def_format;			/**< Default time format. */
 public:
-    UserInterface();				/**< Constructor */
-    ~UserInterface();				/**< Destructor */
-
-    void listen(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
-    						/**< Interactive command line mode.
+    vector<Person *> *people;				/**< Pointer to vector of people */
+    vector<Group *> *groups;				/**< Pointer to vector of groups */
+    vector<Event *> *events;				/**< Pointer to vector of events */
+    vector<Calendar *> *calendars;			/**< Pointer to vector og calendars */
+    UserInterface(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
+						/**< Constructor
     						 * @param [in] people All people objects in the programm.
     						 * @param [in] groups All groups objects.
     						 * @param [in] events All events objects.
     						 * @param [in] calendars All calendars objects.
-    						 */
+ 						*/
+    ~UserInterface();				/**< Destructor */
+
+    void listen();				/**< Interactive command line mode. */
+
+    void exit();                                /**< Exit from interactive command line mode. */
 
     void set_format(enum default_format format);	/**< Set default time format.
     						 * @param [in] format Type of time format.

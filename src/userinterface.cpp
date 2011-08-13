@@ -1,18 +1,32 @@
 #include <userinterface.h>
 
-UserInterface::UserInterface(void)
+UserInterface::UserInterface(vector<Person *> *people_, vector<Group *> *groups_, vector<Event *> *events_, vector<Calendar *> *calendars_)
+:   people (people_),
+    groups (groups_),
+    events (events_),
+    calendars (calendars_)
 {
+    done = false;
     def_format = ASCII;
 }
 
-UserInterface::~UserInterface(void)
+UserInterface::~UserInterface()
 {
 }
 
-void UserInterface::listen(vector<Person *> *persons, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars)
+void UserInterface::listen()
 {
     string reading;
-    while (true)
+    uiconsole::initiate(this);
+    while (!done)
+    {
+        cout << endl << "raspisator-? ";
+        cin >> reading;
+        vector<string> args;
+        args.push_back(reading);
+        uiconsole::execute(args);
+    }
+    /*while (true)
     {
         id_t id, id1;
         char symbol;
@@ -131,7 +145,12 @@ void UserInterface::listen(vector<Person *> *persons, vector<Group *> *groups, v
         if (reading == "exit")
             return;
         cout << "There's no function: " << reading << endl;
-    }
+    }*/
+}
+
+void UserInterface::exit()
+{
+    done = true;
 }
 
 void UserInterface::set_format(enum default_format new_format)
