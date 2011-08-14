@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef  _GLOBAL_NAMESPACE_
 #define _GLOBAL_NAMESPACE_
 // _________________________________
