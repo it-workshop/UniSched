@@ -36,8 +36,7 @@ vector<string> UserInterface::get_request()
         {
             if (now == EOF)
             {
-                exit();
-                request.push_back("Ctrl+D");
+                request.push_back("exit");
                 return request;
             }
             reading += now;

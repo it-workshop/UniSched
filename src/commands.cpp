@@ -44,6 +44,7 @@ uiconsole::Command_Exit::Command_Exit(UserInterface *ui): uiconsole::Command (ui
 
 void uiconsole::Command_Exit::run(vector<string> args)
 {
+    cout << endl;
     ui->exit();
 }
 
