@@ -145,6 +145,31 @@ void uiconsole::Command_Print::run(vector<string> args)
     }
 }
 
+uiconsole::Command_Help::Command_Help(UserInterface *ui) : Command(ui)
+{
+    name = "help";
+    description = "print descriptions or detialized help";
+    help = "Type ,,help`` to print all descriptions, \n" \
+           "Type ,,help (command)`` to print detialized help about command.";
+}
+
+void uiconsole::Command_Help::run(vector<string> args)
+{
+    if (args.size() == 1)
+    {
+        for (vector<Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
+            cout << (*it)->get_name() << ": " << (*it)->get_description() << endl;
+        return;
+    }
+    for (vector<Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
+        if ((*it)->get_name() == args[1])
+        {
+            cout << (*it)->get_help() << endl;
+            return;
+        }
+    cout << "There're no funcion named:" << args[1];
+}
+
 uiconsole::Command_Clone::Command_Clone(UserInterface *ui) : Command(ui)
 {
     name = "clone";
@@ -359,6 +384,7 @@ void uiconsole::initiate(UserInterface *ui)
     new uiconsole::Command_Exit(ui);
     new uiconsole::Command_All(ui);
     new uiconsole::Command_Print(ui);
+    new uiconsole::Command_Help(ui);
     new uiconsole::Command_Clone(ui);
     new uiconsole::Command_Merge(ui);
     new uiconsole::Command_Exclude(ui);

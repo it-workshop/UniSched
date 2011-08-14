@@ -87,6 +87,19 @@ namespace uiconsole {
 						 */
     };
 
+    /** @class Command_Help
+     * @brief Class of ,,help (command)`` command.
+     */
+    class Command_Help: protected Command {
+    public:
+        Command_Help(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Print all description or more detailized help about command.
+						 * @param [in] args Vector {"help"(, "(command)")}.
+						 */
+    };
+
     /** @class Command_Clone
      * @brief Class of ,,clone (s)(id)`` command.
      */
