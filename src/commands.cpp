@@ -56,6 +56,11 @@ uiconsole::Command_All::Command_All(UserInterface *ui): uiconsole::Command (ui)
 
 void uiconsole::Command_All::run(vector<string> args)
 {
+    if (args.size() == 1)
+    {
+        cout << "Need one argument for all" << endl;
+        return;
+    }
     char symbol = args[1][0];
     switch (symbol)
     {

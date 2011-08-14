@@ -42,8 +42,6 @@ vector<string> UserInterface::get_request()
             }
             reading += now;
             now = getchar();
-            reading += now;
-            now = getwchar();
         }
         request.push_back(reading);
     }
