@@ -3,6 +3,7 @@
 Event::Event(id_type id, string name, time_t begin, time_t end, string description)
 {
     people_ = new Group (2 * id + 1, "", "group of event: " + name);
+    people_->get_calendar()->add_event(this);
     id_ = id;
     description_ = description;
     name_ = name;

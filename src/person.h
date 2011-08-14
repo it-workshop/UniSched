@@ -79,7 +79,6 @@ private:
     std::string name_;				/**< Name of the person. */
     std::string surname_;			/**< Surname of the person. */
     std::vector<Group_Content *> groups_;	/**< Groups contains this person. */
-    Calendar *events_;				/**< Person's calendar. */
     enum Sex sex_;				/**< Person's sex. */
     time_t birthday_;				/**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
 

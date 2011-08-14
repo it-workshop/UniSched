@@ -7,14 +7,12 @@ Person::Person(id_type id, std::string name, std::string surname, enum Person::S
   sex_ (sex),
   birthday_ (birthday)
 {
-    events_ = new Calendar(3 * id + 1);
 }
 
 Person::~Person()
 {
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
         (*it)->group->delete_person(this);
-    delete events_;
 }
 
 id_type Person::get_id()
@@ -64,7 +62,7 @@ time_t Person::birthday()
 
 Calendar *Person::get_calendar()
 {
-    Calendar *all = new Calendar(0, events_);
+    Calendar *all = new Calendar(0);
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
         if (!(*it)->group->get_name().empty())
             all->merge_calendar((*it)->group->get_calendar());
@@ -73,13 +71,11 @@ Calendar *Person::get_calendar()
 
 void Person::add_event(Event *adding, std::string status)
 {
-    events_->add_event(adding);
     adding->add_person(this, status);
 }
 
 void Person::delete_event(Event *deleting)
 {
-    events_->delete_event(deleting);
     deleting->delete_person(this);
 }
 
