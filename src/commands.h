@@ -87,6 +87,19 @@ namespace uiconsole {
 						 */
     };
 
+    /** @class Command_Clone
+     * @brief Class of ,,clone (s)(id)`` command.
+     */
+    class Command_Clone: protected Command {
+    public:
+        Command_Clone(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+	void run(vector<string> args);		/**< Clone object of a class (s) and with id (id).
+						 * @param [in] args Vector {"clone", "(s)(id)"}.
+						 */
+    };
+
     void execute(vector<string> args);		/**< Executes user request.
 						 * @param [in] args User request.
 						 */

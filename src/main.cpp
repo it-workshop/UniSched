@@ -26,8 +26,8 @@ int main (int argc, char *argv[])
     persons.push_back(new Person(2, "Nam", "Lusia", true, time(0) - 2000000));
 
     groups.push_back(new Group(0, "0-group", "blah-blah-blah0"));
-    groups.push_back(new Group(2, "1-group", "blah-blah-blah1"));
-    groups.push_back(new Group(4, "2-group", "blah-blah_blah2"));
+    groups.push_back(new Group(1, "1-group", "blah-blah-blah1"));
+    groups.push_back(new Group(2, "2-group", "blah-blah_blah2"));
 
     events.push_back(new Event(0, "event0", time(0), time(0) + 5000, "blah-blah0"));
     events.push_back(new Event(1, "event1", time(0) + 10000, time(0) + 15000, "bla1"));

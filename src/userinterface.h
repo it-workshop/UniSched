@@ -41,6 +41,7 @@ public:
     vector<Group *> *groups;				/**< Pointer to vector of groups */
     vector<Event *> *events;				/**< Pointer to vector of events */
     vector<Calendar *> *calendars;			/**< Pointer to vector og calendars */
+    vector <vector<string> * > requests;		/**< History of requests */
     UserInterface(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
 						/**< Constructor
     						 * @param [in] people All people objects in the programm.

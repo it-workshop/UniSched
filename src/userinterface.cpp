@@ -16,7 +16,6 @@ UserInterface::~UserInterface()
 
 void UserInterface::listen()
 {
-    string reading;
     while (!done)
     {
         cout << endl << "raspisator-? ";
