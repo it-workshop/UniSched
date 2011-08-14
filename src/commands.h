@@ -100,6 +100,19 @@ namespace uiconsole {
 						 */
     };
 
+    /** @class Command_Merge
+     * @brief Class of ,,merge (s)(id) (s)(id)`` command.
+     */
+    class Command_Merge: protected Command {
+    public:
+        Command_Merge(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Merge two objects of class (s) with id's (id0) (id1).
+						 * @param [in] args Vector {"merge", "(s)(id0)", "(s)(id1)"}.
+						 */
+    };
+
     void execute(vector<string> args);		/**< Executes user request.
 						 * @param [in] args User request.
 						 */
