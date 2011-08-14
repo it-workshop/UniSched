@@ -70,12 +70,12 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a1b0a164e39923dc6a7bd37a075dceda7">Person</a> (<a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> id, std::string name, std::string surname, bool female, time_t birthday)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a3f28ee718c6ed2692ecf767ed1b2a86f">Person</a> (<a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> id, std::string name, std::string surname, enum <a class="el" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a> sex, time_t birthday)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a700ffd693321c5fe6880262acf43d4da">~Person</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#addbe4758044124636fb0f9d3094c6fcb">get_id</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a1837ca2f4ba804aeee2a70c1a1fdd468">get_name</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#aad33f79ec5c96aa3ab30c9c4c989fb4b">get_surname</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a8bfe5b0c264f051b85812c692691e277">is_female</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#ae73331abe20c0f03fcb04de8a6adde46">sex</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">time_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#aec14dd73ca58227cc70c4ba3a5065d02">birthday</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d2/d04/structGroup__Content.html">Group_Content</a> * &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#a24cd3ad56c42c1cd34505b1094e6e7d5">get_groups</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d63/classPerson.html#aa17159e6bb16f2a42a1c4bcae08ae903">add_group</a> (<a class="el" href="../../d2/d04/structGroup__Content.html">Group_Content</a> *<a class="el" href="../../dc/db3/group__content_8h.html#a27517aa1480ab2d9bfe5d62e693b33eb">group</a>)</td></tr>
@@ -110,7 +110,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a1b0a164e39923dc6a7bd37a075dceda7"></a><!-- doxytag: member="Person::Person" ref="a1b0a164e39923dc6a7bd37a075dceda7" args="(id_type id, std::string name, std::string surname, bool female, time_t birthday)" -->
+<a class="anchor" id="a3f28ee718c6ed2692ecf767ed1b2a86f"></a><!-- doxytag: member="Person::Person" ref="a3f28ee718c6ed2692ecf767ed1b2a86f" args="(id_type id, std::string name, std::string surname, enum Sex sex, time_t birthday)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -135,8 +135,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>female</em>, </td>
+          <td class="paramtype">enum <a class="el" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a>&nbsp;</td>
+          <td class="paramname"> <em>sex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -158,7 +158,7 @@ Public Member Functions</h2></td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>id</em>&nbsp;</td><td>Person's identificator. </td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>name</em>&nbsp;</td><td>Person's name. </td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>surname</em>&nbsp;</td><td>Person's surname. </td></tr>
-    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>female</em>&nbsp;</td><td>Person's sex. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>sex</em>&nbsp;</td><td>Person's sex. </td></tr>
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>birthday</em>&nbsp;</td><td>Person's birthday. </td></tr>
   </table>
   </dd>
@@ -409,12 +409,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8bfe5b0c264f051b85812c692691e277"></a><!-- doxytag: member="Person::is_female" ref="a8bfe5b0c264f051b85812c692691e277" args="()" -->
+<a class="anchor" id="ae73331abe20c0f03fcb04de8a6adde46"></a><!-- doxytag: member="Person::sex" ref="ae73331abe20c0f03fcb04de8a6adde46" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Person::is_female </td>
+          <td class="memname">enum <a class="el" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Person::Sex</a> Person::sex </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
@@ -438,7 +438,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -447,7 +447,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 20:26:11 for Universal Scheduler by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 23:48:08 for Universal Scheduler by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

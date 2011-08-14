@@ -32,6 +32,10 @@ void \hyperlink{classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}{format} (t
 \item 
 void \hyperlink{classUserInterface_a41c109a7e042b44dc98a1250681fc684}{format\_\-ASCII} (time\_\-t time)
 \item 
+void \hyperlink{classUserInterface_a9226c83fcb42b9a1ee279e8b250ca68c}{format\_\-DATE} (time\_\-t time)
+\item 
+time\_\-t \hyperlink{classUserInterface_a0a4f683492e8a8565423ea501565c02e}{get\_\-time} (string time)
+\item 
 time\_\-t \hyperlink{classUserInterface_a313636d15fc03a167163b56f0223cab9}{get\_\-birthday} (string time)
 \item 
 void \hyperlink{classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}{print\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
@@ -121,6 +125,18 @@ Print time in default format.
 Print time in ASCII time format. 
 \begin{DoxyParams}{Parameters}
 \item[\mbox{\tt[in]} {\em time}]Time to print. \end{DoxyParams}
+\hypertarget{classUserInterface_a9226c83fcb42b9a1ee279e8b250ca68c}{
+\index{UserInterface@{UserInterface}!format\_\-DATE@{format\_\-DATE}}
+\index{format\_\-DATE@{format\_\-DATE}!UserInterface@{UserInterface}}
+\subsubsection[{format\_\-DATE}]{\setlength{\rightskip}{0pt plus 5cm}void UserInterface::format\_\-DATE (
+\begin{DoxyParamCaption}
+\item[{time\_\-t}]{ time}
+\end{DoxyParamCaption}
+)}}
+\label{df/de1/classUserInterface_a9226c83fcb42b9a1ee279e8b250ca68c}
+Print only date. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em time}]Time to print. \end{DoxyParams}
 \hypertarget{classUserInterface_a313636d15fc03a167163b56f0223cab9}{
 \index{UserInterface@{UserInterface}!get\_\-birthday@{get\_\-birthday}}
 \index{get\_\-birthday@{get\_\-birthday}!UserInterface@{UserInterface}}
@@ -130,7 +146,7 @@ Print time in ASCII time format.
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_a313636d15fc03a167163b56f0223cab9}
-Get time\_\-t from formated string. 
+Get time\_\-t from DATE formated string. 
 \begin{DoxyParams}{Parameters}
 \item[\mbox{\tt[in]} {\em time}]Formated string. \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -159,6 +175,21 @@ Default type of time format.
 \label{df/de1/classUserInterface_a22fa7e60f82f12920e1627c862f6532e}
 Get request of user. \begin{DoxyReturn}{Returns}
 Vector of words inputed bu user. 
+\end{DoxyReturn}
+\hypertarget{classUserInterface_a0a4f683492e8a8565423ea501565c02e}{
+\index{UserInterface@{UserInterface}!get\_\-time@{get\_\-time}}
+\index{get\_\-time@{get\_\-time}!UserInterface@{UserInterface}}
+\subsubsection[{get\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t UserInterface::get\_\-time (
+\begin{DoxyParamCaption}
+\item[{string}]{ time}
+\end{DoxyParamCaption}
+)}}
+\label{df/de1/classUserInterface_a0a4f683492e8a8565423ea501565c02e}
+Get time\_\-t from ASCII formated string. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em time}]Formated string. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+time\_\-t 
 \end{DoxyReturn}
 \hypertarget{classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}{
 \index{UserInterface@{UserInterface}!listen@{listen}}

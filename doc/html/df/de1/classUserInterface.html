@@ -74,6 +74,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../df/d52/userinterface_8h.html#a5a0e707f53d6c5632b2fb5ffd2d22a11">default_format</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#ad543750a7accc0c4825e02a93fda1909">get_format</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a9373bc1aedbdc68905942bcb7c6a8fd3">format</a> (time_t time)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a41c109a7e042b44dc98a1250681fc684">format_ASCII</a> (time_t time)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a9226c83fcb42b9a1ee279e8b250ca68c">format_DATE</a> (time_t time)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">time_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a0a4f683492e8a8565423ea501565c02e">get_time</a> (string time)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">time_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a313636d15fc03a167163b56f0223cab9">get_birthday</a> (string time)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a45a7ad6cca95218631d8c6fbe49362e2">print_person</a> (<a class="el" href="../../d1/d63/classPerson.html">Person</a> *<a class="el" href="../../dc/db3/group__content_8h.html#ab8664e6fd42f01eeaad084b5e20eb54e">person</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de1/classUserInterface.html#a31424519b61f71584a4a5196c6632beb">print_group</a> (<a class="el" href="../../d0/db7/classGroup.html">Group</a> *<a class="el" href="../../dc/db3/group__content_8h.html#a27517aa1480ab2d9bfe5d62e693b33eb">group</a>)</td></tr>
@@ -226,6 +228,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9226c83fcb42b9a1ee279e8b250ca68c"></a><!-- doxytag: member="UserInterface::format_DATE" ref="a9226c83fcb42b9a1ee279e8b250ca68c" args="(time_t time)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UserInterface::format_DATE </td>
+          <td>(</td>
+          <td class="paramtype">time_t&nbsp;</td>
+          <td class="paramname"> <em>time</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Print only date. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>time</em>&nbsp;</td><td>Time to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a313636d15fc03a167163b56f0223cab9"></a><!-- doxytag: member="UserInterface::get_birthday" ref="a313636d15fc03a167163b56f0223cab9" args="(string time)" -->
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +268,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get time_t from formated string. </p>
+<p>Get time_t from DATE formated string. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>time</em>&nbsp;</td><td>Formated string. </td></tr>
@@ -287,6 +314,32 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Get request of user. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Vector of words inputed bu user. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a4f683492e8a8565423ea501565c02e"></a><!-- doxytag: member="UserInterface::get_time" ref="a0a4f683492e8a8565423ea501565c02e" args="(string time)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t UserInterface::get_time </td>
+          <td>(</td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>time</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get time_t from ASCII formated string. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>time</em>&nbsp;</td><td>Formated string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>time_t </dd></dl>
 
 </div>
 </div>
@@ -514,7 +567,7 @@ Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -523,7 +576,7 @@ Public Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 20:26:11 for Universal Scheduler by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 23:48:08 for Universal Scheduler by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

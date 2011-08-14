@@ -1,0 +1,251 @@
+\hypertarget{DataStorage_8h}{
+\section{src/DataStorage.h File Reference}
+\label{d8/d87/DataStorage_8h}\index{src/DataStorage.h@{src/DataStorage.h}}
+}
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include \char`\"{}include/person.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCalendarBunch}{CalendarBunch}
+\item 
+struct \hyperlink{structGCBunch}{GCBunch}
+\item 
+struct \hyperlink{structdsrow}{dsrow}
+\item 
+class \hyperlink{classTDataStorage}{TDataStorage}
+\item 
+class \hyperlink{classRDataStorage}{RDataStorage}
+\item 
+class \hyperlink{classRFileStorage}{RFileStorage}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DataStorage_8h_a64e439002936d3ec7cf456f30b96d8e3}{NOERR}~0;
+\item 
+\#define \hyperlink{DataStorage_8h_ae241b961572f7dd1b2cb12a918f7848d}{SCVERR}~3;
+\item 
+\#define \hyperlink{DataStorage_8h_a318295d0a1b7d65bd02fe7740f377c40}{GCVERR}~5;
+\item 
+\#define \hyperlink{DataStorage_8h_a956dae7d44d81eaa8136403ec562447b}{UNKNERR}~4;
+\item 
+\#define \hyperlink{DataStorage_8h_ac067b94d8f3868354f247dfff4954947}{LOADERR}~6;
+\item 
+\#define \hyperlink{DataStorage_8h_ae7024a16ab3b3aa306213a48327b6427}{SAVEERR}~7;
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long long int \hyperlink{DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}{ulli}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43}{PersonAttribute} \{ \par
+\hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43ac38b0e7a891d3ad4d026b254bd8ef5a7}{paNAME} =  1, 
+\hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a76ab448476f797f5233c6baa366b8cf1}{paSURNAME}, 
+\hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43aecfe962409e3852fed6f174d68f9d50e}{paBIRTH}, 
+\hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a6410086da01c6c225862223935b3a685}{paFEMALE}, 
+\par
+\hyperlink{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a9575ab2adbdf0730d67435ec0b17c582}{paCALENDARID}
+ \}
+\item 
+enum \hyperlink{DataStorage_8h_a4c949782f68874391d68d8c796501e06}{GroupAttribute} \{ \hyperlink{DataStorage_8h_a4c949782f68874391d68d8c796501e06ab94200c33857e5f43a8828a898b80f14}{gaNAME} =  1, 
+\hyperlink{DataStorage_8h_a4c949782f68874391d68d8c796501e06a20d619a6e0eadaad30687e68d6932ba2}{gaDESC}, 
+\hyperlink{DataStorage_8h_a4c949782f68874391d68d8c796501e06aa2e90b0d03ddbb897ff49c51550fd831}{gaCALENDARID}
+ \}
+\item 
+enum \hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682}{EventAttribute} \{ \par
+\hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a31f2c20138e58f030abbbf15e67af0c3}{eaNAME} =  1, 
+\hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682aeb2ba7048818174566e4c7f503865a1f}{eaGROUPID}, 
+\hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a6ba5cdb5e872fa6e81f23e9a666c0631}{eaBEGIN}, 
+\hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a512da0f5aa32829d9ab6d3fc70f76611}{eaEND}, 
+\par
+\hyperlink{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a0ad32b0699ffc2408f0ac93a1b70cb6f}{eaDESC}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long int \hyperlink{DataStorage_8h_aecccddf0e9ee3ac6a0fde837cf6e47a5}{stoulli} (std::string)
+\item 
+int \hyperlink{DataStorage_8h_aeda2d8102bae5a9c20159ebde58a0f2f}{vis} (int val, int s)
+\item 
+\hyperlink{DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}{ulli} \hyperlink{DataStorage_8h_acb45ba5c402d1a6dafd8a6e84cbd71de}{ullilen} (\hyperlink{DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}{ulli} val)
+\item 
+string \hyperlink{DataStorage_8h_a54411134ba59b1b8ba93fc6eaf2a8ebc}{ullitos} (\hyperlink{DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}{ulli} val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{DataStorage_8h_a318295d0a1b7d65bd02fe7740f377c40}{
+\index{DataStorage.h@{DataStorage.h}!GCVERR@{GCVERR}}
+\index{GCVERR@{GCVERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{GCVERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define GCVERR~5;}}
+\label{d8/d87/DataStorage_8h_a318295d0a1b7d65bd02fe7740f377c40}
+\hypertarget{DataStorage_8h_ac067b94d8f3868354f247dfff4954947}{
+\index{DataStorage.h@{DataStorage.h}!LOADERR@{LOADERR}}
+\index{LOADERR@{LOADERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{LOADERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define LOADERR~6;}}
+\label{d8/d87/DataStorage_8h_ac067b94d8f3868354f247dfff4954947}
+\hypertarget{DataStorage_8h_a64e439002936d3ec7cf456f30b96d8e3}{
+\index{DataStorage.h@{DataStorage.h}!NOERR@{NOERR}}
+\index{NOERR@{NOERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{NOERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define NOERR~0;}}
+\label{d8/d87/DataStorage_8h_a64e439002936d3ec7cf456f30b96d8e3}
+\hypertarget{DataStorage_8h_ae7024a16ab3b3aa306213a48327b6427}{
+\index{DataStorage.h@{DataStorage.h}!SAVEERR@{SAVEERR}}
+\index{SAVEERR@{SAVEERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{SAVEERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define SAVEERR~7;}}
+\label{d8/d87/DataStorage_8h_ae7024a16ab3b3aa306213a48327b6427}
+\hypertarget{DataStorage_8h_ae241b961572f7dd1b2cb12a918f7848d}{
+\index{DataStorage.h@{DataStorage.h}!SCVERR@{SCVERR}}
+\index{SCVERR@{SCVERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{SCVERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define SCVERR~3;}}
+\label{d8/d87/DataStorage_8h_ae241b961572f7dd1b2cb12a918f7848d}
+\hypertarget{DataStorage_8h_a956dae7d44d81eaa8136403ec562447b}{
+\index{DataStorage.h@{DataStorage.h}!UNKNERR@{UNKNERR}}
+\index{UNKNERR@{UNKNERR}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{UNKNERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define UNKNERR~4;}}
+\label{d8/d87/DataStorage_8h_a956dae7d44d81eaa8136403ec562447b}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}{
+\index{DataStorage.h@{DataStorage.h}!ulli@{ulli}}
+\index{ulli@{ulli}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{ulli}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long long int {\bf ulli}}}
+\label{d8/d87/DataStorage_8h_afebafa022413aaef27ce1b01cbfa9791}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682}{
+\index{DataStorage.h@{DataStorage.h}!EventAttribute@{EventAttribute}}
+\index{EventAttribute@{EventAttribute}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{EventAttribute}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf EventAttribute}}}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{eaNAME@{eaNAME}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!eaNAME@{eaNAME}}\item[{\em 
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a31f2c20138e58f030abbbf15e67af0c3}{
+eaNAME}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a31f2c20138e58f030abbbf15e67af0c3}
+}]\index{eaGROUPID@{eaGROUPID}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!eaGROUPID@{eaGROUPID}}\item[{\em 
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682aeb2ba7048818174566e4c7f503865a1f}{
+eaGROUPID}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682aeb2ba7048818174566e4c7f503865a1f}
+}]\index{eaBEGIN@{eaBEGIN}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!eaBEGIN@{eaBEGIN}}\item[{\em 
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a6ba5cdb5e872fa6e81f23e9a666c0631}{
+eaBEGIN}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a6ba5cdb5e872fa6e81f23e9a666c0631}
+}]\index{eaEND@{eaEND}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!eaEND@{eaEND}}\item[{\em 
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a512da0f5aa32829d9ab6d3fc70f76611}{
+eaEND}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a512da0f5aa32829d9ab6d3fc70f76611}
+}]\index{eaDESC@{eaDESC}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!eaDESC@{eaDESC}}\item[{\em 
+\hypertarget{DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a0ad32b0699ffc2408f0ac93a1b70cb6f}{
+eaDESC}
+\label{d8/d87/DataStorage_8h_af6563a486af2737f53e7c3fb908c2682a0ad32b0699ffc2408f0ac93a1b70cb6f}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{DataStorage_8h_a4c949782f68874391d68d8c796501e06}{
+\index{DataStorage.h@{DataStorage.h}!GroupAttribute@{GroupAttribute}}
+\index{GroupAttribute@{GroupAttribute}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{GroupAttribute}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf GroupAttribute}}}
+\label{d8/d87/DataStorage_8h_a4c949782f68874391d68d8c796501e06}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{gaNAME@{gaNAME}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!gaNAME@{gaNAME}}\item[{\em 
+\hypertarget{DataStorage_8h_a4c949782f68874391d68d8c796501e06ab94200c33857e5f43a8828a898b80f14}{
+gaNAME}
+\label{d8/d87/DataStorage_8h_a4c949782f68874391d68d8c796501e06ab94200c33857e5f43a8828a898b80f14}
+}]\index{gaDESC@{gaDESC}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!gaDESC@{gaDESC}}\item[{\em 
+\hypertarget{DataStorage_8h_a4c949782f68874391d68d8c796501e06a20d619a6e0eadaad30687e68d6932ba2}{
+gaDESC}
+\label{d8/d87/DataStorage_8h_a4c949782f68874391d68d8c796501e06a20d619a6e0eadaad30687e68d6932ba2}
+}]\index{gaCALENDARID@{gaCALENDARID}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!gaCALENDARID@{gaCALENDARID}}\item[{\em 
+\hypertarget{DataStorage_8h_a4c949782f68874391d68d8c796501e06aa2e90b0d03ddbb897ff49c51550fd831}{
+gaCALENDARID}
+\label{d8/d87/DataStorage_8h_a4c949782f68874391d68d8c796501e06aa2e90b0d03ddbb897ff49c51550fd831}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43}{
+\index{DataStorage.h@{DataStorage.h}!PersonAttribute@{PersonAttribute}}
+\index{PersonAttribute@{PersonAttribute}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{PersonAttribute}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf PersonAttribute}}}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{paNAME@{paNAME}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!paNAME@{paNAME}}\item[{\em 
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43ac38b0e7a891d3ad4d026b254bd8ef5a7}{
+paNAME}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43ac38b0e7a891d3ad4d026b254bd8ef5a7}
+}]\index{paSURNAME@{paSURNAME}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!paSURNAME@{paSURNAME}}\item[{\em 
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a76ab448476f797f5233c6baa366b8cf1}{
+paSURNAME}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a76ab448476f797f5233c6baa366b8cf1}
+}]\index{paBIRTH@{paBIRTH}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!paBIRTH@{paBIRTH}}\item[{\em 
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43aecfe962409e3852fed6f174d68f9d50e}{
+paBIRTH}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43aecfe962409e3852fed6f174d68f9d50e}
+}]\index{paFEMALE@{paFEMALE}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!paFEMALE@{paFEMALE}}\item[{\em 
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a6410086da01c6c225862223935b3a685}{
+paFEMALE}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a6410086da01c6c225862223935b3a685}
+}]\index{paCALENDARID@{paCALENDARID}!DataStorage.h@{DataStorage.h}}\index{DataStorage.h@{DataStorage.h}!paCALENDARID@{paCALENDARID}}\item[{\em 
+\hypertarget{DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a9575ab2adbdf0730d67435ec0b17c582}{
+paCALENDARID}
+\label{d8/d87/DataStorage_8h_a91eab30aa0b680f2872e3a9e9a187d43a9575ab2adbdf0730d67435ec0b17c582}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{DataStorage_8h_aecccddf0e9ee3ac6a0fde837cf6e47a5}{
+\index{DataStorage.h@{DataStorage.h}!stoulli@{stoulli}}
+\index{stoulli@{stoulli}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{stoulli}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int stoulli (
+\begin{DoxyParamCaption}
+\item[{std::string}]{}
+\end{DoxyParamCaption}
+)}}
+\label{d8/d87/DataStorage_8h_aecccddf0e9ee3ac6a0fde837cf6e47a5}
+\hypertarget{DataStorage_8h_acb45ba5c402d1a6dafd8a6e84cbd71de}{
+\index{DataStorage.h@{DataStorage.h}!ullilen@{ullilen}}
+\index{ullilen@{ullilen}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{ullilen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ulli} ullilen (
+\begin{DoxyParamCaption}
+\item[{{\bf ulli}}]{ val}
+\end{DoxyParamCaption}
+)}}
+\label{d8/d87/DataStorage_8h_acb45ba5c402d1a6dafd8a6e84cbd71de}
+\hypertarget{DataStorage_8h_a54411134ba59b1b8ba93fc6eaf2a8ebc}{
+\index{DataStorage.h@{DataStorage.h}!ullitos@{ullitos}}
+\index{ullitos@{ullitos}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{ullitos}]{\setlength{\rightskip}{0pt plus 5cm}string ullitos (
+\begin{DoxyParamCaption}
+\item[{{\bf ulli}}]{ val}
+\end{DoxyParamCaption}
+)}}
+\label{d8/d87/DataStorage_8h_a54411134ba59b1b8ba93fc6eaf2a8ebc}
+\hypertarget{DataStorage_8h_aeda2d8102bae5a9c20159ebde58a0f2f}{
+\index{DataStorage.h@{DataStorage.h}!vis@{vis}}
+\index{vis@{vis}!DataStorage.h@{DataStorage.h}}
+\subsubsection[{vis}]{\setlength{\rightskip}{0pt plus 5cm}int vis (
+\begin{DoxyParamCaption}
+\item[{int}]{ val, }
+\item[{int}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{d8/d87/DataStorage_8h_aeda2d8102bae5a9c20159ebde58a0f2f}

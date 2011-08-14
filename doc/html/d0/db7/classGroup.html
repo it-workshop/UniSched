@@ -71,7 +71,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#abdd86767799c3c3b6d2f7204b1945bd3">get_id</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#ade4eb90fbeb5f50dfb2ccb262cd39ce8">get_description</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dac/classCalendar.html">Calendar</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#a10f85a428de5c1215fd7d319bd1a9ca3">get_calendar</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#a8888e1a6507d004f3b5317fc9a65f005">add_event</a> (<a class="el" href="../../d5/da5/classEvent.html">Event</a> *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#abea5d93d27820a64c84792e3011f1394">add_event</a> (<a class="el" href="../../d5/da5/classEvent.html">Event</a> *event, string <a class="el" href="../../dc/db3/group__content_8h.html#ab4d38e7365d935f2a5f1403eec29127e">status</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#a70b5f6f47818f5d4912926b29faa96bf">delete_event</a> (<a class="el" href="../../d5/da5/classEvent.html">Event</a> *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="../../d2/d04/structGroup__Content.html">Group_Content</a> * &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#a8578c69459be6971dd31e76357f934dc">get_people</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db7/classGroup.html#a2aca17525330aeaf591e0bc243a8149e">merge_group</a> (<a class="el" href="../../d0/db7/classGroup.html">Group</a> *<a class="el" href="../../dc/db3/group__content_8h.html#a27517aa1480ab2d9bfe5d62e693b33eb">group</a>)</td></tr>
@@ -180,7 +180,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a8888e1a6507d004f3b5317fc9a65f005"></a><!-- doxytag: member="Group::add_event" ref="a8888e1a6507d004f3b5317fc9a65f005" args="(Event *event)" -->
+<a class="anchor" id="abea5d93d27820a64c84792e3011f1394"></a><!-- doxytag: member="Group::add_event" ref="abea5d93d27820a64c84792e3011f1394" args="(Event *event, string status)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -188,9 +188,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Group::add_event </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d5/da5/classEvent.html">Event</a> *&nbsp;</td>
-          <td class="paramname"> <em>event</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramname"> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>status</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -199,6 +208,7 @@ Public Member Functions</h2></td></tr>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>event</em>&nbsp;</td><td><a class="el" href="../../d5/da5/classEvent.html" title="Class keeps information about event.">Event</a> to add. </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>status</em>&nbsp;</td><td>Status of link. </td></tr>
   </table>
   </dd>
 </dl>
@@ -470,7 +480,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -479,7 +489,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 20:26:11 for Universal Scheduler by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 23:48:08 for Universal Scheduler by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

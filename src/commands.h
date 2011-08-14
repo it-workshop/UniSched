@@ -48,6 +48,13 @@ namespace uiconsole {
 						 */
     };
 
+    #ifdef _COMMANDS_CPP_
+    #define _EXTERN_
+    #else /* _COMMANDS_CPP_ */
+    #define _EXTERN_ extern
+    #endif /* !_COMMANDS_CPP_ */
+    _EXTERN_ vector<uiconsole::Command *> commands;
+    #undef _EXTERN_
     /** @class Command_Exit
      * @brief Class of ,,exit`` command.
      */

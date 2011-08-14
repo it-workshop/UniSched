@@ -21,7 +21,7 @@ enum \hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6b}{Sex} \{ \hyperlin
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPerson_a1b0a164e39923dc6a7bd37a075dceda7}{Person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, std::string name, std::string surname, bool female, time\_\-t birthday)
+\hyperlink{classPerson_a3f28ee718c6ed2692ecf767ed1b2a86f}{Person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, std::string name, std::string surname, enum \hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6b}{Sex} sex, time\_\-t birthday)
 \item 
 \hyperlink{classPerson_a700ffd693321c5fe6880262acf43d4da}{$\sim$Person} ()
 \item 
@@ -31,7 +31,7 @@ std::string \hyperlink{classPerson_a1837ca2f4ba804aeee2a70c1a1fdd468}{get\_\-nam
 \item 
 std::string \hyperlink{classPerson_aad33f79ec5c96aa3ab30c9c4c989fb4b}{get\_\-surname} ()
 \item 
-bool \hyperlink{classPerson_a8bfe5b0c264f051b85812c692691e277}{is\_\-female} ()
+enum \hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6b}{Sex} \hyperlink{classPerson_ae73331abe20c0f03fcb04de8a6adde46}{sex} ()
 \item 
 time\_\-t \hyperlink{classPerson_aec14dd73ca58227cc70c4ba3a5065d02}{birthday} ()
 \item 
@@ -75,7 +75,7 @@ FEMALE}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPerson_a1b0a164e39923dc6a7bd37a075dceda7}{
+\hypertarget{classPerson_a3f28ee718c6ed2692ecf767ed1b2a86f}{
 \index{Person@{Person}!Person@{Person}}
 \index{Person@{Person}!Person@{Person}}
 \subsubsection[{Person}]{\setlength{\rightskip}{0pt plus 5cm}Person::Person (
@@ -83,14 +83,14 @@ FEMALE}
 \item[{{\bf id\_\-type}}]{ id, }
 \item[{std::string}]{ name, }
 \item[{std::string}]{ surname, }
-\item[{bool}]{ female, }
+\item[{enum {\bf Sex}}]{ sex, }
 \item[{time\_\-t}]{ birthday}
 \end{DoxyParamCaption}
 )}}
-\label{d1/d63/classPerson_a1b0a164e39923dc6a7bd37a075dceda7}
+\label{d1/d63/classPerson_a3f28ee718c6ed2692ecf767ed1b2a86f}
 Constructor. 
 \begin{DoxyParams}{Parameters}
-\item[\mbox{\tt[in]} {\em id}]Person's identificator. \item[\mbox{\tt[in]} {\em name}]Person's name. \item[\mbox{\tt[in]} {\em surname}]Person's surname. \item[\mbox{\tt[in]} {\em female}]Person's sex. \item[\mbox{\tt[in]} {\em birthday}]Person's birthday. \end{DoxyParams}
+\item[\mbox{\tt[in]} {\em id}]Person's identificator. \item[\mbox{\tt[in]} {\em name}]Person's name. \item[\mbox{\tt[in]} {\em surname}]Person's surname. \item[\mbox{\tt[in]} {\em sex}]Person's sex. \item[\mbox{\tt[in]} {\em birthday}]Person's birthday. \end{DoxyParams}
 \hypertarget{classPerson_a700ffd693321c5fe6880262acf43d4da}{
 \index{Person@{Person}!$\sim$Person@{$\sim$Person}}
 \index{$\sim$Person@{$\sim$Person}!Person@{Person}}
@@ -224,15 +224,15 @@ name of person.
 Get surname of person. \begin{DoxyReturn}{Returns}
 surname of person. 
 \end{DoxyReturn}
-\hypertarget{classPerson_a8bfe5b0c264f051b85812c692691e277}{
-\index{Person@{Person}!is\_\-female@{is\_\-female}}
-\index{is\_\-female@{is\_\-female}!Person@{Person}}
-\subsubsection[{is\_\-female}]{\setlength{\rightskip}{0pt plus 5cm}bool Person::is\_\-female (
+\hypertarget{classPerson_ae73331abe20c0f03fcb04de8a6adde46}{
+\index{Person@{Person}!sex@{sex}}
+\index{sex@{sex}!Person@{Person}}
+\subsubsection[{sex}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Person::Sex} Person::sex (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{d1/d63/classPerson_a8bfe5b0c264f051b85812c692691e277}
+\label{d1/d63/classPerson_ae73331abe20c0f03fcb04de8a6adde46}
 Get sex of person. \begin{DoxyReturn}{Returns}
 person's sex. 
 \end{DoxyReturn}

@@ -48,7 +48,12 @@ PROGRAMS = $(bin_PROGRAMS)
 am_raspisator_OBJECTS = main.$(OBJEXT) person.$(OBJEXT) \
 	event.$(OBJEXT) group.$(OBJEXT) calendar.$(OBJEXT) \
 	userinterface.$(OBJEXT) data_storage.$(OBJEXT) \
-	commands.$(OBJEXT)
+	commands.$(OBJEXT) command_exit.$(OBJEXT) \
+	command_all.$(OBJEXT) command_print.$(OBJEXT) \
+	command_help.$(OBJEXT) command_clone.$(OBJEXT) \
+	command_merge.$(OBJEXT) command_exclude.$(OBJEXT) \
+	command_include.$(OBJEXT) command_add.$(OBJEXT) \
+	command_link.$(OBJEXT)
 raspisator_OBJECTS = $(am_raspisator_OBJECTS)
 raspisator_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
@@ -149,7 +154,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPP_FLAGS = -I$(srcdir)
-raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp data_storage.cpp commands.cpp
+raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp data_storage.cpp commands.cpp command_exit.cpp command_all.cpp command_print.cpp command_help.cpp command_clone.cpp command_merge.cpp command_exclude.cpp command_include.cpp command_add.cpp command_link.cpp
 all: all-am
 
 .SUFFIXES:
@@ -232,6 +237,16 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/calendar.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_add.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_all.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_clone.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_exclude.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_exit.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_help.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_include.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_link.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_merge.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_print.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/commands.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data_storage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@
