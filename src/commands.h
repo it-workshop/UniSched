@@ -113,6 +113,32 @@ namespace uiconsole {
 						 */
     };
 
+    /** @class Command_Exclude
+     * @brief Class of ,,exclude (s)(id) (s)(id)`` command.
+     */
+    class Command_Exclude: protected Command {
+    public:
+        Command_Exclude(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Exclude group (id1) from group (id0).
+						 * @param [in] args Vector {"exclude", "(s)(id0)", "(s)(id1)"}.
+						 */
+    };
+
+    /** @class Command_Include
+     * @brief Class of ,,include (s)(id) (s)(id)`` command.
+     */
+    class Command_Include: protected Command {
+    public:
+        Command_Include(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Include group (id1) and group (id0).
+						 * @param [in] args Vector {"include", "(s)(id0)", "(s)(id1)"}.
+						 */
+    };
+
     void execute(vector<string> args);		/**< Executes user request.
 						 * @param [in] args User request.
 						 */
