@@ -139,6 +139,19 @@ namespace uiconsole {
 						 */
     };
 
+    /** @class Command_Add
+     * @brief Class of ,,add (s)`` command.
+     */
+    class Command_Add: protected Command {
+    public:
+        Command_Add(UserInterface *ui);		/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Add object of class s.
+						 * param [in] args Vector parametres.
+						 */
+    };
+
     void execute(vector<string> args);		/**< Executes user request.
 						 * @param [in] args User request.
 						 */

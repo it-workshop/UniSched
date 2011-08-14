@@ -305,6 +305,44 @@ void uiconsole::Command_Include::run(vector<string> args)
         cout << "There're no group with that id.";
 }
 
+uiconsole::Command_Add::Command_Add(UserInterface *ui) : Command(ui)
+{
+    name = "add";
+    description = "add new object";
+    help = "Type ,,add @(name)`` and description ended with empty string";
+}
+
+void uiconsole::Command_Add::run(vector<string> args)
+{
+    if (args.size() == 1)
+    {
+        cout << "Need type for add." << endl;
+        return;
+    }
+    char symbol = args[1][0];
+    string name, description;
+    Group *newbie;
+    switch (symbol)
+    {
+    case '@':
+        name = args[1].c_str() + 1;
+        cout << "Input description of the group" << endl;
+        while (symbol != '\n')
+        {
+            symbol = getchar();
+            description += symbol;
+            if (symbol == '\n')
+                symbol = getchar();
+        }
+        newbie = new Group(ui->groups->size(), name, description);
+        ui->groups->push_back(newbie);
+        ui->print_group(newbie);
+        break;
+    default:
+        cout << "In this version only groups can added.";
+    }
+}
+
 void uiconsole::execute(vector<string> args)
 {
     for (vector<uiconsole::Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
@@ -325,5 +363,6 @@ void uiconsole::initiate(UserInterface *ui)
     new uiconsole::Command_Merge(ui);
     new uiconsole::Command_Exclude(ui);
     new uiconsole::Command_Include(ui);
+    new uiconsole::Command_Add(ui);
 }
 
