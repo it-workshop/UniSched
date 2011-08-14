@@ -20,7 +20,7 @@
  */
 class Person {
 private:
-    id_t id_;					/**< Person's identificator in the database. */
+    id_type id_;				/**< Person's identificator in the database. */
     std::string name_;				/**< Name of the person. */
     std::string surname_;			/**< Surname of the person. */
     std::vector<Group_Content *> groups_;	/**< Groups contains this person. */
@@ -29,7 +29,7 @@ private:
     time_t birthday_;				/**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
 
 public:
-    Person(id_t id, std::string name, std::string surname, bool female, time_t birthday);
+    Person(id_type id, std::string name, std::string surname, bool female, time_t birthday);
     						/**< Constructor.
     						 * @param [in] id Person's identificator.
     						 * @param [in] name Person's name.
@@ -39,7 +39,7 @@ public:
     						 */
     ~Person();					/**< Destructor. */
 
-    id_t get_id();				/**< Get id of person in database.
+    id_type get_id();				/**< Get id of person in database.
     						 * @return id of person.
     						 */
     std::string get_name();				/**< Get name of person.

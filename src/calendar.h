@@ -19,20 +19,20 @@ using std::vector;
  */
 class Calendar {
 private:
-    id_t id_;							/**< Calendar's identificator in the database. */
+    id_type id_;					/**< Calendar's identificator in the database. */
     vector<Event *> events_;				/**< Calendar's events. */
 
 public:
-    Calendar(id_t id);						/**< Constructor.
+    Calendar(id_type id);					/**< Constructor.
     							 * @param [in] id Calendar's identificator in the database.
     							 */
-    Calendar(id_t id, Calendar *calendar);		/**< Constructor.
+    Calendar(id_type id, Calendar *calendar);		/**< Constructor.
     							 * @param [in] id Calendar's identificator in the database.
     							 * @param [in] calendar Calendar to clone.
     							 */
     ~Calendar();						/**< Destructor. */
 
-    id_t get_id();					/**< Get Calendar's identificator.
+    id_type get_id();					/**< Get Calendar's identificator.
     							 * @return Calendar's identificator in the database.
     							 */
     vector<Event*> *get_events();				/**< Get Calendar's events.

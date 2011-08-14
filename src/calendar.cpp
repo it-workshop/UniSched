@@ -1,11 +1,11 @@
 #include <calendar.h>
 
-Calendar::Calendar(id_t id)
+Calendar::Calendar(id_type id)
 {
     id_ = id;
 }
 
-Calendar::Calendar(id_t id, Calendar *calendar)
+Calendar::Calendar(id_type id, Calendar *calendar)
 {
     id_ = id;
     for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
@@ -23,7 +23,7 @@ std::vector<Event*> *Calendar::get_events()
     return &events_;
 }
 
-id_t Calendar::get_id()
+id_type Calendar::get_id()
 {
     return id_;
 }

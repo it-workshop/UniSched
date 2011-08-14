@@ -22,20 +22,20 @@ using std::vector;
  */
 class Group {
 private:
-    id_t id_;					/**< Group's identificator in the database. */
+    id_type id_;					/**< Group's identificator in the database. */
     string name_;					/**< Group's name. */
     string description_;				/**< Group's description. */
     vector<Group_Content *> people_;			/**< People in this group. */
     Calendar *calendar_;				/**< Group's calendar. */
 
 public:
-    Group(id_t id, string name, string description);
+    Group(id_type id, string name, string description);
     						/**< Constructor.
     						 * @param [in] id Group's identificator in the database.
     						 * @param [in] name Group's name.
     						 * @param [in] description Group's description.
     						 */
-    Group(id_t id, Group * group);		/**< Constructor.
+    Group(id_type id, Group * group);		/**< Constructor.
     						 * @param [in] id Group's identificator in the database.
     						 * @param [in] group Group from which get information.
     						 */
@@ -43,7 +43,7 @@ public:
 
     string get_name();				/**< Get group's name.
     						 * @return Group's name. */
-    id_t get_id();				/**< Get group's identificator.
+    id_type get_id();				/**< Get group's identificator.
     						 * @return Group's identificator.
     						 */
     string get_description();			/**< Get group's description.

@@ -1,6 +1,7 @@
 #ifndef _COMMANDS_H_
 #define _COMMANDS_H_
 
+#include <stdlib.h>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -65,11 +66,24 @@ namespace uiconsole {
      */
     class Command_All: protected Command {
     public:
-        Command_All(UserInterface *);		/**< Constructor.
+        Command_All(UserInterface *ui);		/**< Constructor.
 						 * @param [in] ui pointer to UserInterface.
 						 */
-        void run(vector<string> args);		/**< Print all objects of a class (s)
+        void run(vector<string> args);		/**< Print all objects of a class (s).
 						 * @param [in] args Vector {"all", "(s)"}.
+						 */
+    };
+
+    /** @class Command_Print
+     * @brief Class of ,,print (s)(id)`` command.
+     */
+    class Command_Print: protected Command {
+    public:
+        Command_Print(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Print object of a class (s) and with id (id).
+						 * @param [in] args Vector {"print", "(s)(id)"}.
 						 */
     };
 

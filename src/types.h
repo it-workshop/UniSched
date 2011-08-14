@@ -11,7 +11,7 @@
  \_________________________________ */
                                      //
 /** @typedef id_t unsigned long long int */
-typedef unsigned long long id_t;
+typedef unsigned long long id_type;
 /** @typedef Group_Content @struct Group_Content_ */
 typedef struct Group_Content_ Group_Content;
 

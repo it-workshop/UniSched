@@ -1,6 +1,6 @@
 #include <person.h>
 
-Person::Person(id_t id, std::string name, std::string surname, bool female, time_t birthday)
+Person::Person(id_type id, std::string name, std::string surname, bool female, time_t birthday)
 : id_ (id),
   name_ (name),
   surname_ (surname),
@@ -17,7 +17,7 @@ Person::~Person()
     delete events_;
 }
 
-id_t Person::get_id()
+id_type Person::get_id()
 {
     return id_;
 }

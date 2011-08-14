@@ -22,16 +22,16 @@ using std::vector;
  */
 class Event {
 private:
-    id_t id_;						/**< Event's identificator in the database. */
+    id_type id_;						/**< Event's identificator in the database. */
     string name_;						/**< Event's name. */
     string description_;					/**< Event's description. */
     time_t begin_;						/**< Event's begin time. Number of seconds since the Epoch UNIX 1th Jan 1970, 00:00:00. */
     time_t end_;						/**< Event's end time. Number of seconds since the Epoch UNIX 1th JAN 1970, 00:00:00. */
     class Group *people_;					/**< Event's group. */
-    vector<Calendar *> related_calendars_;		/**< Event's related calendars. */
+    vector<Calendar *> related_calendars_;			/**< Event's related calendars. */
 
 public:
-    Event(id_t id, string name, time_t begin, time_t end, string description);
+    Event(id_type id, string name, time_t begin, time_t end, string description);
     							/**< Constructor.
     							 * @param [in] id Event's identificator in the database.
     							 * @param [in] name Event's name.
@@ -41,7 +41,7 @@ public:
     							 */
     ~Event();						/**< Destructor. */
 
-    id_t get_id();					/**< Get event's identificator.
+    id_type get_id();					/**< Get event's identificator.
     							 * @return Event's identificator in the database.
     							 */
     string get_name();					/**< Get event's name.
