@@ -20,6 +20,8 @@ Class provides user interface.
 \item 
 void \hyperlink{classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}{listen} ()
 \item 
+vector$<$ string $>$ \hyperlink{classUserInterface_a22fa7e60f82f12920e1627c862f6532e}{get\_\-request} ()
+\item 
 void \hyperlink{classUserInterface_a396eb29856a6afc91bc0e0eef1de2df7}{exit} ()
 \item 
 void \hyperlink{classUserInterface_a36513fcf018fafc53726cf610f46571f}{set\_\-format} (enum \hyperlink{userinterface_8h_a5a0e707f53d6c5632b2fb5ffd2d22a11}{default\_\-format} format)
@@ -29,6 +31,8 @@ enum \hyperlink{userinterface_8h_a5a0e707f53d6c5632b2fb5ffd2d22a11}{default\_\-f
 void \hyperlink{classUserInterface_a9373bc1aedbdc68905942bcb7c6a8fd3}{format} (time\_\-t time)
 \item 
 void \hyperlink{classUserInterface_a41c109a7e042b44dc98a1250681fc684}{format\_\-ASCII} (time\_\-t time)
+\item 
+time\_\-t \hyperlink{classUserInterface_a313636d15fc03a167163b56f0223cab9}{get\_\-birthday} (string time)
 \item 
 void \hyperlink{classUserInterface_a45a7ad6cca95218631d8c6fbe49362e2}{print\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
 \item 
@@ -48,6 +52,8 @@ vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$ \hyperlink{classUserIn
 vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_ae3370dc0d02c19b4b1cc7c47221c2bfa}{events}
 \item 
 vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$ \hyperlink{classUserInterface_abd1f3233d3e666415f6cdf8458b50faa}{calendars}
+\item 
+vector$<$ vector$<$ string $>$ $\ast$ $>$ \hyperlink{classUserInterface_af1cb3bd8de564e4610d863937986d60e}{requests}
 \end{DoxyCompactItemize}
 
 
@@ -79,7 +85,7 @@ Constructor
 \end{DoxyParamCaption}
 )}}
 \label{df/de1/classUserInterface_ae588b2ff1711a016dd4c6fc5002c0841}
-Destructor 
+Destructor. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classUserInterface_a396eb29856a6afc91bc0e0eef1de2df7}{
@@ -115,6 +121,21 @@ Print time in default format.
 Print time in ASCII time format. 
 \begin{DoxyParams}{Parameters}
 \item[\mbox{\tt[in]} {\em time}]Time to print. \end{DoxyParams}
+\hypertarget{classUserInterface_a313636d15fc03a167163b56f0223cab9}{
+\index{UserInterface@{UserInterface}!get\_\-birthday@{get\_\-birthday}}
+\index{get\_\-birthday@{get\_\-birthday}!UserInterface@{UserInterface}}
+\subsubsection[{get\_\-birthday}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t UserInterface::get\_\-birthday (
+\begin{DoxyParamCaption}
+\item[{string}]{ time}
+\end{DoxyParamCaption}
+)}}
+\label{df/de1/classUserInterface_a313636d15fc03a167163b56f0223cab9}
+Get time\_\-t from formated string. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em time}]Formated string. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+time\_\-t 
+\end{DoxyReturn}
 \hypertarget{classUserInterface_ad543750a7accc0c4825e02a93fda1909}{
 \index{UserInterface@{UserInterface}!get\_\-format@{get\_\-format}}
 \index{get\_\-format@{get\_\-format}!UserInterface@{UserInterface}}
@@ -126,6 +147,18 @@ Print time in ASCII time format.
 \label{df/de1/classUserInterface_ad543750a7accc0c4825e02a93fda1909}
 Get default time format. \begin{DoxyReturn}{Returns}
 Default type of time format. 
+\end{DoxyReturn}
+\hypertarget{classUserInterface_a22fa7e60f82f12920e1627c862f6532e}{
+\index{UserInterface@{UserInterface}!get\_\-request@{get\_\-request}}
+\index{get\_\-request@{get\_\-request}!UserInterface@{UserInterface}}
+\subsubsection[{get\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ UserInterface::get\_\-request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{df/de1/classUserInterface_a22fa7e60f82f12920e1627c862f6532e}
+Get request of user. \begin{DoxyReturn}{Returns}
+Vector of words inputed bu user. 
 \end{DoxyReturn}
 \hypertarget{classUserInterface_ac1cead6c14db26f88802ea035fb59bd9}{
 \index{UserInterface@{UserInterface}!listen@{listen}}
@@ -219,7 +252,12 @@ Pointer to vector of groups \hypertarget{classUserInterface_a3d0914e9d2ba661bc36
 \index{people@{people}!UserInterface@{UserInterface}}
 \subsubsection[{people}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Person} $\ast$$>$$\ast$ {\bf UserInterface::people}}}
 \label{df/de1/classUserInterface_a3d0914e9d2ba661bc3691397c695287e}
-Pointer to vector of people 
+Pointer to vector of people \hypertarget{classUserInterface_af1cb3bd8de564e4610d863937986d60e}{
+\index{UserInterface@{UserInterface}!requests@{requests}}
+\index{requests@{requests}!UserInterface@{UserInterface}}
+\subsubsection[{requests}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$string$>$ $\ast$ $>$ {\bf UserInterface::requests}}}
+\label{df/de1/classUserInterface_af1cb3bd8de564e4610d863937986d60e}
+History of requests 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

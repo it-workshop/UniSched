@@ -334,7 +334,8 @@ uiconsole::Command_Add::Command_Add(UserInterface *ui) : Command(ui)
 {
     name = "add";
     description = "add new object";
-    help = "Type ,,add @(name)`` and description ended with empty string";
+    help = "Type ,,add @(name)`` and description ended with empty string to add group,\n" \
+           "Type ,,add $(name) (surname) (sex) DD/MM/YYYY(birthday)";
 }
 
 void uiconsole::Command_Add::run(vector<string> args)
@@ -346,7 +347,9 @@ void uiconsole::Command_Add::run(vector<string> args)
     }
     char symbol = args[1][0];
     string name, description;
-    Group *newbie;
+    time_t begin, end;
+    Group *new_group;
+    Person *new_person;
     switch (symbol)
     {
     case '@':
@@ -359,9 +362,26 @@ void uiconsole::Command_Add::run(vector<string> args)
             if (symbol == '\n')
                 symbol = getchar();
         }
-        newbie = new Group(ui->groups->size(), name, description);
-        ui->groups->push_back(newbie);
-        ui->print_group(newbie);
+        new_group = new Group(ui->groups->size(), name, description);
+        ui->groups->push_back(new_group);
+        ui->print_group(new_group);
+        break;
+    case '$':
+        if (args.size() < 5)
+        {
+            cout << "Need more arguments, see ,,help add``." << endl;
+            return;
+        }
+        name = args[1].c_str() + 1;
+        begin = ui->get_birthday(args[4]);
+	if (!begin)
+        {
+            cout << "Poor date format" << endl;
+            return;
+        }
+        new_person = new Person(ui->people->size(), name, args[2], args[3] == "FEMALE", begin);
+        ui->people->push_back(new_person);
+        ui->print_person(new_person);
         break;
     default:
         cout << "In this version only groups can added.";

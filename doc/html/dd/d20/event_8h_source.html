@@ -70,17 +70,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a name="l00019"></a>00019 
 <a name="l00023"></a><a class="code" href="../../d5/da5/classEvent.html">00023</a> <span class="keyword">class </span><a class="code" href="../../d5/da5/classEvent.html" title="Class keeps information about event.">Event</a> {
 <a name="l00024"></a>00024 <span class="keyword">private</span>:
-<a name="l00025"></a>00025     <a class="code" href="../../d9/d49/types_8h.html#ac948e8774f26ce7ea57a66b925e451b9">id_t</a> id_;                       
+<a name="l00025"></a>00025     <a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> id_;                        
 <a name="l00026"></a>00026     <span class="keywordtype">string</span> name_;                       
 <a name="l00027"></a>00027     <span class="keywordtype">string</span> description_;                    
 <a name="l00028"></a>00028     time_t begin_;                      
 <a name="l00029"></a>00029     time_t end_;                        
 <a name="l00030"></a>00030     <span class="keyword">class </span><a class="code" href="../../d0/db7/classGroup.html" title="Class keeps information about group of people.">Group</a> *people_;                   
-<a name="l00031"></a>00031     vector&lt;Calendar *&gt; related_calendars_;      
+<a name="l00031"></a>00031     vector&lt;Calendar *&gt; related_calendars_;          
 <a name="l00033"></a>00033 <span class="keyword">public</span>:
-<a name="l00034"></a>00034     <a class="code" href="../../d5/da5/classEvent.html#aeec95af5c9bf0410dc9078485dedb2bf">Event</a>(<a class="code" href="../../d9/d49/types_8h.html#ac948e8774f26ce7ea57a66b925e451b9">id_t</a> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> name, time_t begin, time_t end, <span class="keywordtype">string</span> description);
+<a name="l00034"></a>00034     <a class="code" href="../../d5/da5/classEvent.html#a150a1c9476acae579c6664d8736a59c1">Event</a>(<a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> name, time_t begin, time_t end, <span class="keywordtype">string</span> description);
 <a name="l00042"></a>00042     <a class="code" href="../../d5/da5/classEvent.html#a7704ec01ce91e673885792054214b3d2">~Event</a>();                       
-<a name="l00044"></a>00044     <a class="code" href="../../d9/d49/types_8h.html#ac948e8774f26ce7ea57a66b925e451b9">id_t</a> <a class="code" href="../../d5/da5/classEvent.html#a526943d871f71a59016637c27da80c23">get_id</a>();                  
+<a name="l00044"></a>00044     <a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> <a class="code" href="../../d5/da5/classEvent.html#aa82316746fdf73be1da9b5b8840f5e2d">get_id</a>();                   
 <a name="l00047"></a>00047     <span class="keywordtype">string</span> <a class="code" href="../../d5/da5/classEvent.html#a99325a5304e3b73cd4df1f356a185cfc">get_name</a>();                  
 <a name="l00050"></a>00050     <span class="keywordtype">string</span> <a class="code" href="../../d5/da5/classEvent.html#a07fdb4a55424b028bfb64db3cea94c07">get_description</a>();               
 <a name="l00053"></a>00053     time_t <a class="code" href="../../d5/da5/classEvent.html#aa0177bde2838d761774f6e9a50f1e76c">get_begin</a>();                 
@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Aug 13 2011 20:00:50 for Universal Scheduler by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 14 2011 20:26:11 for Universal Scheduler by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

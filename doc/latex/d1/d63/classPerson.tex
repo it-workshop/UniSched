@@ -11,14 +11,21 @@ Class keeps person unique data.
 
 {\ttfamily \#include $<$person.h$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6b}{Sex} \{ \hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4}{MALE}, 
+\hyperlink{classPerson_a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064}{FEMALE}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPerson_abceb8d57c311395b7f0c313fb8deb2e4}{Person} (\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} id, std::string name, std::string surname, bool female, time\_\-t birthday)
+\hyperlink{classPerson_a1b0a164e39923dc6a7bd37a075dceda7}{Person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, std::string name, std::string surname, bool female, time\_\-t birthday)
 \item 
 \hyperlink{classPerson_a700ffd693321c5fe6880262acf43d4da}{$\sim$Person} ()
 \item 
-\hyperlink{types_8h_ac948e8774f26ce7ea57a66b925e451b9}{id\_\-t} \hyperlink{classPerson_a3f54eedb2a7a5f1cdeb08732b58154ab}{get\_\-id} ()
+\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} \hyperlink{classPerson_addbe4758044124636fb0f9d3094c6fcb}{get\_\-id} ()
 \item 
 std::string \hyperlink{classPerson_a1837ca2f4ba804aeee2a70c1a1fdd468}{get\_\-name} ()
 \item 
@@ -45,20 +52,42 @@ void \hyperlink{classPerson_ab788997b3b66a72e51f924d416029ff5}{delete\_\-event} 
 \subsection{Detailed Description}
 Class keeps person unique data. 
 
+\subsection{Member Enumeration Documentation}
+\hypertarget{classPerson_a328ea8d2e8c2674688c7f944fab70b6b}{
+\index{Person@{Person}!Sex@{Sex}}
+\index{Sex@{Sex}!Person@{Person}}
+\subsubsection[{Sex}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Person::Sex}}}
+\label{d1/d63/classPerson_a328ea8d2e8c2674688c7f944fab70b6b}
+enum of sex \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{MALE@{MALE}!Person@{Person}}\index{Person@{Person}!MALE@{MALE}}\item[{\em 
+\hypertarget{classPerson_a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4}{
+MALE}
+\label{d1/d63/classPerson_a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4}
+}]\index{FEMALE@{FEMALE}!Person@{Person}}\index{Person@{Person}!FEMALE@{FEMALE}}\item[{\em 
+\hypertarget{classPerson_a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064}{
+FEMALE}
+\label{d1/d63/classPerson_a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064}
+}]\end{description}
+\end{Desc}
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPerson_abceb8d57c311395b7f0c313fb8deb2e4}{
+\hypertarget{classPerson_a1b0a164e39923dc6a7bd37a075dceda7}{
 \index{Person@{Person}!Person@{Person}}
 \index{Person@{Person}!Person@{Person}}
 \subsubsection[{Person}]{\setlength{\rightskip}{0pt plus 5cm}Person::Person (
 \begin{DoxyParamCaption}
-\item[{{\bf id\_\-t}}]{ id, }
+\item[{{\bf id\_\-type}}]{ id, }
 \item[{std::string}]{ name, }
 \item[{std::string}]{ surname, }
 \item[{bool}]{ female, }
 \item[{time\_\-t}]{ birthday}
 \end{DoxyParamCaption}
 )}}
-\label{d1/d63/classPerson_abceb8d57c311395b7f0c313fb8deb2e4}
+\label{d1/d63/classPerson_a1b0a164e39923dc6a7bd37a075dceda7}
 Constructor. 
 \begin{DoxyParams}{Parameters}
 \item[\mbox{\tt[in]} {\em id}]Person's identificator. \item[\mbox{\tt[in]} {\em name}]Person's name. \item[\mbox{\tt[in]} {\em surname}]Person's surname. \item[\mbox{\tt[in]} {\em female}]Person's sex. \item[\mbox{\tt[in]} {\em birthday}]Person's birthday. \end{DoxyParams}
@@ -159,15 +188,15 @@ Get calendar of person. \begin{DoxyReturn}{Returns}
 Get groups of person. \begin{DoxyReturn}{Returns}
 vector of person's groups. 
 \end{DoxyReturn}
-\hypertarget{classPerson_a3f54eedb2a7a5f1cdeb08732b58154ab}{
+\hypertarget{classPerson_addbe4758044124636fb0f9d3094c6fcb}{
 \index{Person@{Person}!get\_\-id@{get\_\-id}}
 \index{get\_\-id@{get\_\-id}!Person@{Person}}
-\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\_\-t} Person::get\_\-id (
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\_\-type} Person::get\_\-id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{d1/d63/classPerson_a3f54eedb2a7a5f1cdeb08732b58154ab}
+\label{d1/d63/classPerson_addbe4758044124636fb0f9d3094c6fcb}
 Get id of person in database. \begin{DoxyReturn}{Returns}
 id of person. 
 \end{DoxyReturn}

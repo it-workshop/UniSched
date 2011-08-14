@@ -72,6 +72,10 @@ public:
     						 * @param [in] time Time to print.
     						 */
 
+    time_t get_birthday(string time);		/**< Get time_t from formated string.
+						 * @param [in] time Formated string.
+						 * @return time_t
+						 */
     void print_person(Person *person);		/**< Print person's information.
     						 * @param [in] person Person to print.
     						 */

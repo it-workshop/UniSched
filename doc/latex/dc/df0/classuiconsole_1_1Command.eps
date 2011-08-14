@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 123.456790
+%%BoundingBox: 0 0 500 534.759358
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 4.050000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.935000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 2 def
+/rows 10 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -174,8 +174,15 @@
 boxfont setfont
 1 boundaspect scale
 (uiconsole::Command) cw
+(uiconsole::Command_Add) cw
 (uiconsole::Command_All) cw
+(uiconsole::Command_Clone) cw
+(uiconsole::Command_Exclude) cw
 (uiconsole::Command_Exit) cw
+(uiconsole::Command_Help) cw
+(uiconsole::Command_Include) cw
+(uiconsole::Command_Merge) cw
+(uiconsole::Command_Print) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -187,17 +194,38 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (uiconsole::Command) 0.500000 1.000000 box
- (uiconsole::Command_All) 0.000000 0.000000 box
- (uiconsole::Command_Exit) 1.000000 0.000000 box
+ (uiconsole::Command) 0.000000 9.000000 box
+ (uiconsole::Command_Add) 1.000000 8.000000 box
+ (uiconsole::Command_All) 1.000000 7.000000 box
+ (uiconsole::Command_Clone) 1.000000 6.000000 box
+ (uiconsole::Command_Exclude) 1.000000 5.000000 box
+ (uiconsole::Command_Exit) 1.000000 4.000000 box
+ (uiconsole::Command_Help) 1.000000 3.000000 box
+ (uiconsole::Command_Include) 1.000000 2.000000 box
+ (uiconsole::Command_Merge) 1.000000 1.000000 box
+ (uiconsole::Command_Print) 1.000000 0.000000 box
 
 % ----- relations -----
 
 dashed
-1 0.500000 0.250000 out
+1 0.000000 8.250000 out
 dashed
-0.000000 1.000000 1.000000 conn
+0 0.000000 8.500000 hedge
 dashed
-0 0.000000 0.750000 in
+0 0.000000 7.500000 hedge
 dashed
-0 1.000000 0.750000 in
+0 0.000000 6.500000 hedge
+dashed
+0 0.000000 5.500000 hedge
+dashed
+0 0.000000 4.500000 hedge
+dashed
+0 0.000000 3.500000 hedge
+dashed
+0 0.000000 2.500000 hedge
+dashed
+0 0.000000 1.500000 hedge
+dashed
+0 0.000000 0.500000 hedge
+dashed
+0.000000 9.000000 0.500000 vedge

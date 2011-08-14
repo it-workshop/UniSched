@@ -39,6 +39,12 @@ public:
     						 */
     ~Person();					/**< Destructor. */
 
+    /** @enum Sex enum of sex */
+    enum Sex {
+        MALE,
+        FEMALE
+    };
+
     id_type get_id();				/**< Get id of person in database.
     						 * @return id of person.
     						 */
