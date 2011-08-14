@@ -1,10 +1,10 @@
 #include <person.h>
 
-Person::Person(id_type id, std::string name, std::string surname, bool female, time_t birthday)
+Person::Person(id_type id, std::string name, std::string surname, enum Person::Sex sex, time_t birthday)
 : id_ (id),
   name_ (name),
   surname_ (surname),
-  female_ (female),
+  sex_ (sex),
   birthday_ (birthday)
 {
     events_ = new Calendar(3 * id + 1);
@@ -52,9 +52,9 @@ void Person::delete_group(Group *deleting)
         }
 }
 
-bool Person::is_female()
+enum Person::Sex Person::sex()
 {
-    return female_;
+    return sex_;
 }
 
 time_t Person::birthday()

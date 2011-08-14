@@ -161,7 +161,20 @@ namespace uiconsole {
 						 * @param [in] ui pointer to UserInterface.
 						 */
         void run(vector<string> args);		/**< Add object of class s.
-						 * param [in] args Vector parametres.
+						 * @param [in] args Vector parametres.
+						 */
+    };
+
+    /** @class Command_Link
+     * @brief Class of ,,link (s0)(id0) (s1)(id1)`` command.
+     */
+    class Command_Link: protected Command {
+    public:
+        Command_Link(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Link two objects.
+						 * @param [in] args Vector {"link", "(s0)(id0)", "(s1)(id1)"}.
 						 */
     };
 

@@ -52,8 +52,9 @@ public:
     Calendar *get_calendar();			/**< Get group's calendar.
     						 * @return Group's calendar.
     						 */
-    void add_event(Event *event);			/**< Add event to the group's calendar.
+    void add_event(Event *event, string status);/**< Add event to the group's calendar.
     						 * @param [in] event Event to add.
+						 * @param [in] status Status of link.
     						 */
     void delete_event(Event *event);		/**< Delete event from group's calendar.
     						 * @param [in] event Event to delete.

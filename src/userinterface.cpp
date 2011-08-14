@@ -68,9 +68,10 @@ void UserInterface::format(time_t input)
     case ASCII:
         format_ASCII(input);
         break;
+    case DATE:
+        format_DATE(input);
     default:
         break;
-        //return format_RUS(input);
     }
 }
 
@@ -110,6 +111,55 @@ void UserInterface::format_ASCII(time_t input)
          << ' ' << (cutted.tm_year + 1900);
 }
 
+void UserInterface::format_DATE(time_t input)
+{
+    static const char days[7][4] = {
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    };
+    static const char month[12][4] = {
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    };
+
+    struct tm cutted = *localtime(&input);
+
+    cout << days[cutted.tm_wday]
+         << ' ' << month[cutted.tm_mon]
+         << ' ' << cutted.tm_mday
+         << ' ' << (cutted.tm_year + 1900);
+}
+
+time_t UserInterface::get_time(string time)
+{
+    if (time.size() != 16)
+        return 0;
+    struct tm formated;
+    formated.tm_sec = 1;
+    formated.tm_min = atoi(time.c_str() + 3);
+    formated.tm_hour = atoi(time.c_str());
+    formated.tm_isdst = 0;
+    formated.tm_mday = atoi(time.c_str() + 6);
+    formated.tm_mon = atoi(time.c_str() + 9);
+    formated.tm_year = atoi(time.c_str() + 12) - 1900;
+    return mktime(&formated);
+}
+
 time_t UserInterface::get_birthday(string time)
 {
     if (time.size() != 10)
@@ -127,7 +177,7 @@ time_t UserInterface::get_birthday(string time)
 
 void UserInterface::print_person(Person *printing)
 {
-    if (printing->is_female())
+    if (printing->sex() == Person::FEMALE)
        cout << "Woman: ";
     else
        cout << "Man: ";
@@ -136,7 +186,7 @@ void UserInterface::print_person(Person *printing)
          << " ($"<<printing->get_id()
          << ')' << endl
          << "Birthday: ";
-    format(printing->birthday());
+    format_DATE(printing->birthday());
     cout << endl
          << "Groups: "
          << endl;
@@ -193,10 +243,11 @@ void UserInterface::print_calendar(Calendar *printing)
 {
     for (vector<Event *>::iterator it = printing->get_events()->begin(); it != printing->get_events()->end(); it ++)
     {
+        cout << "    " << (*it)->get_name() << " (";
         format((*it)->get_begin());
         cout << ")-(";
         format((*it)->get_end());
-        cout << ")]" << endl;
+        cout << ")" << endl;
     }
 }
 

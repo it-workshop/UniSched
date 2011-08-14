@@ -19,31 +19,23 @@
  * @brief Class keeps person unique data.
  */
 class Person {
-private:
-    id_type id_;				/**< Person's identificator in the database. */
-    std::string name_;				/**< Name of the person. */
-    std::string surname_;			/**< Surname of the person. */
-    std::vector<Group_Content *> groups_;	/**< Groups contains this person. */
-    Calendar *events_;				/**< Person's calendar. */
-    bool female_;				/**< Person's sex. True if female. */
-    time_t birthday_;				/**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
-
 public:
-    Person(id_type id, std::string name, std::string surname, bool female, time_t birthday);
-    						/**< Constructor.
-    						 * @param [in] id Person's identificator.
-    						 * @param [in] name Person's name.
-    						 * @param [in] surname Person's surname.
-    						 * @param [in] female Person's sex.
-    						 * @param [in] birthday Person's birthday.
-    						 */
-    ~Person();					/**< Destructor. */
-
     /** @enum Sex enum of sex */
     enum Sex {
         MALE,
         FEMALE
     };
+
+    Person(id_type id, std::string name, std::string surname, enum Sex sex, time_t birthday);
+    						/**< Constructor.
+    						 * @param [in] id Person's identificator.
+    						 * @param [in] name Person's name.
+    						 * @param [in] surname Person's surname.
+    						 * @param [in] sex Person's sex.
+    						 * @param [in] birthday Person's birthday.
+    						 */
+    ~Person();					/**< Destructor. */
+
 
     id_type get_id();				/**< Get id of person in database.
     						 * @return id of person.
@@ -54,7 +46,7 @@ public:
     std::string get_surname();			/**< Get surname of person.
     						 * @return surname of person.
     						 */
-    bool is_female();				/**< Get sex of person.
+    enum Sex sex();				/**< Get sex of person.
     						 * @return person's sex.
     						 */
     time_t birthday();				/**< Get birthday of person.
@@ -82,6 +74,15 @@ public:
     void delete_event(Event* event);		/**< Delete event from the person's calendar.
     						 * @param [in] event event.
     						 */
+private:
+    id_type id_;				/**< Person's identificator in the database. */
+    std::string name_;				/**< Name of the person. */
+    std::string surname_;			/**< Surname of the person. */
+    std::vector<Group_Content *> groups_;	/**< Groups contains this person. */
+    Calendar *events_;				/**< Person's calendar. */
+    enum Sex sex_;				/**< Person's sex. */
+    time_t birthday_;				/**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
+
 };
 
 #endif /* _PERSON_H_ */

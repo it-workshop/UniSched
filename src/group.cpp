@@ -99,9 +99,11 @@ void Group::add_person(Person *adding, std::string status)
     adding->add_group(a);
 }
 
-void Group::add_event(Event *adding)
+void Group::add_event(Event *adding, string status)
 {
     calendar_->add_event(adding);
+    for (vector<Group_Content *>::iterator it = get_people()->begin(); it != get_people()->end(); it ++)
+        adding->add_person((*it)->person, status);
 }
 
 void Group::delete_event(Event *deleting)

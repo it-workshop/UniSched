@@ -21,9 +21,9 @@ int main (int argc, char *argv[])
     for (int i = 1; i < argc; i++)
         args.push_back(argv[i]);
 
-    persons.push_back(new Person(0, "Prihodko", "Ivan", false, time(0) - 1000000));
-    persons.push_back(new Person(1, "Derbenev", "Alex", false, time(0) - 1500000));
-    persons.push_back(new Person(2, "Nam", "Lusia", true, time(0) - 2000000));
+    persons.push_back(new Person(0, "Prihodko", "Ivan", Person::MALE, time(0) - 1000000));
+    persons.push_back(new Person(1, "Derbenev", "Alex", Person::MALE, time(0) - 1500000));
+    persons.push_back(new Person(2, "Nam", "Lusia", Person::FEMALE, time(0) - 2000000));
 
     groups.push_back(new Group(0, "0-group", "blah-blah-blah0"));
     groups.push_back(new Group(1, "1-group", "blah-blah-blah1"));
@@ -41,7 +41,7 @@ int main (int argc, char *argv[])
     groups[2]->add_person(persons[2], "director");
 
     persons[0]->add_event(events[2], "director");
-    groups[1]->add_event(events[2]);
+    groups[1]->add_event(events[2], "member");
     
     persons[0]->add_event(events[0], "director");
     persons[0]->add_event(events[1], "director");

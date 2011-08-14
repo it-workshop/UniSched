@@ -47,7 +47,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_raspisator_OBJECTS = main.$(OBJEXT) person.$(OBJEXT) \
 	event.$(OBJEXT) group.$(OBJEXT) calendar.$(OBJEXT) \
-	userinterface.$(OBJEXT) data_storage.$(OBJEXT)
+	userinterface.$(OBJEXT) data_storage.$(OBJEXT) \
+	commands.$(OBJEXT)
 raspisator_OBJECTS = $(am_raspisator_OBJECTS)
 raspisator_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
@@ -148,7 +149,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPP_FLAGS = -I$(srcdir)
-raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp  data_storage.cpp
+raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp data_storage.cpp commands.cpp
 all: all-am
 
 .SUFFIXES:
@@ -231,6 +232,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/calendar.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/commands.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data_storage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/group.Po@am__quote@

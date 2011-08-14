@@ -26,7 +26,8 @@ using std::vector;
 
 /** @enum defaul_format Time format types. */
 enum default_format {
-    ASCII						/**< ASCII Time format. */
+    ASCII,						/**< ASCII Time format. */
+    DATE						/**< Date Time format. */
 };
 
 /** @class UserInterface
@@ -71,8 +72,14 @@ public:
     void format_ASCII(time_t time);		/**< Print time in ASCII time format.
     						 * @param [in] time Time to print.
     						 */
-
-    time_t get_birthday(string time);		/**< Get time_t from formated string.
+    void format_DATE(time_t time);		/**< Print only date.
+						 * @param [in] time Time to print.
+						 */
+    time_t get_time(string time);		/**< Get time_t from ASCII formated string.
+						 * @param [in] time Formated string.
+						 * @return time_t
+						 */
+    time_t get_birthday(string time);		/**< Get time_t from DATE formated string.
 						 * @param [in] time Formated string.
 						 * @return time_t
 						 */
