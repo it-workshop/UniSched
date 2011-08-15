@@ -24,6 +24,7 @@ int main (int argc, char *argv[])
         args.push_back(argv[i]);
 
     UserInterface *ui = new UserInterface ();
+    ui->set_db (db);
 
     uiconsole::initiate(ui);
     
