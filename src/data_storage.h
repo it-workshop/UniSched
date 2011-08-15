@@ -44,6 +44,7 @@ public:
     virtual bool load() = 0;
     virtual bool save() = 0;
     void init ();
+    void sync ();
 
     virtual void setup(string location, string user, string pass, string bdname) = 0;
     vector<Person *> *get_people ();

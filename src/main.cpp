@@ -39,6 +39,9 @@ int main (int argc, char *argv[])
     else
         ui->listen();
 
+    db->sync ();
+    db->save ();
+
     return 0;
 }
 

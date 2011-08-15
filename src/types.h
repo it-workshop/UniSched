@@ -71,7 +71,8 @@ namespace storage {
 
     enum EventTemplateAttribute {
         taNAME = 1,
-        taSCRIPT
+        taSCRIPT,
+	taDURATION
     };
 
     enum QueueAttribute {
