@@ -36,5 +36,55 @@ namespace uiconsole {
     class Command_Print;
 };
 
+namespace storage {
+    enum Errors {
+        NO_ERR,
+        SET_CELL_VALUE_ERR,
+        GET_CELL_VALUE_ERR,
+        UNKOWN_ERR,
+        LOAD_ERR,
+        SAVE_ERR
+    };
+
+    enum PersonAttribute {
+        paNAME = 1,
+        paSURNAME,
+        paBIRTHDAY,
+        paSEX
+    };
+
+    enum GroupAttribute {
+        gaNAME = 1,
+        gaDESCRIPTION,
+        gaCALENDAR
+    };
+
+    enum EventAttribute {
+        eaNAME = 1,
+	eaGROUP,
+        eaBEGIN, 
+        eaEND,
+        eaDESCRIPTION
+    };
+
+    enum EventTemplateAttribute {
+        taNAME = 1,
+        taSCRIPT
+    };
+
+    enum QueueAttribute {
+        qaNAME = 1
+    };
+
+    class TableDataStorage;
+    class DataStorage;
+    class FileStorage;
+
+    typedef struct QueueBunch_ QueueBunch;
+    typedef struct GroupBunch_ GroupBunch;
+    typedef struct CalendarBunch_ CalendarBunch;
+    typedef struct dsrow_ dsrow;
+};
+
 #endif /* _GLOBAL_NAMESPACE_ */
 

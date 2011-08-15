@@ -10,6 +10,7 @@
 #include <group.h>
 #include <event.h>
 #include <data_storage.h>
+#include <file_storage.h>
 
 int main (int argc, char *argv[])
 {
