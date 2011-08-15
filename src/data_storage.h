@@ -1,14 +1,17 @@
 #ifndef _DATASTORAGE_H_
 #define _DATASTORAGE_H_
 
-#include <fstream>
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
+#include <algorithm>
 
 #include <types.h>
 #include <person.h>
+#include <group.h>
+#include <event.h>
+#include <calendar.h>
 
 namespace storage{
 
@@ -23,27 +26,27 @@ enum Errors {
 
 using std::string;
 using std::vector;
+using std::sort;
 
 enum PersonAttribute {
     paNAME = 1,
     paSURNAME,
-    paBIRTH,
-    paFEMALE,
-    paCALENDARID
+    paBIRTHDAY,
+    paSEX
 };
 
 enum GroupAttribute {
     gaNAME = 1,
-    gaDESC,
-    gaCALENDARID
+    gaDESCRIPTION,
+    gaCALENDAR
 };
 
 enum EventAttribute {
     eaNAME = 1,
-    eaGROUPID,
+    eaGROUP,
     eaBEGIN, 
     eaEND,
-    eaDESC
+    eaDESCRIPTION
 };
 
 typedef struct CalendarBunch_ {
@@ -96,10 +99,29 @@ private:
 
 class DataStorage{
 public:
+     DataStorage ();
+    ~DataStorage ();
     virtual bool load() = 0;
     virtual bool save() = 0;
-    virtual void setup(string location, string user, string pass, string bdname) = 0;
+    void init ();
 
+    virtual void setup(string location, string user, string pass, string bdname) = 0;
+    vector<Person *> *get_people ();
+    vector<Group *> *get_groups ();
+    vector<Event *> *get_events ();
+    vector<Calendar *> *get_calendars ();
+
+    Person * get_person (id_type id);
+    Group * get_group (id_type id);
+    Event * get_event (id_type id);
+    Calendar * get_calendar (id_type id);
+
+    void register_group (Group *group);
+    void register_calendar (Calendar *calendar);
+    void register_person (Person *person);
+    void register_event (Event *event);
+
+private:
     vector<id_type> get_person_ID_list();
 
     string get_person_attr(PersonAttribute attr, id_type id);
@@ -134,6 +156,11 @@ public:
     void remove_group_bunch(unsigned long long int num);
     void add_group_bunch(GroupBunch bnch);
 
+    vector<Person *> people_vector_;
+    vector<Group *> groups_vector_;
+    vector<Event *> events_vector_;
+    vector<Calendar *> calendars_vector_;
+
     protected:
     TableDataStorage people_;
     TableDataStorage groups_;
@@ -144,8 +171,9 @@ public:
 
 class FileStorage : public DataStorage{
 public:
+     FileStorage ();
+    ~FileStorage ();
     void setup(string location, string user, string password, string bdname);
-    void setup(string location);
     bool load();
     bool save();
 private:

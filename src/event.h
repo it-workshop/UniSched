@@ -44,6 +44,9 @@ public:
     id_type get_id();					/**< Get event's identificator.
     							 * @return Event's identificator in the database.
     							 */
+    void set_id (id_type id);				/**< Set event's identificator in the database.
+    							 * @param [in] id Event's id.
+							 */
     string get_name();					/**< Get event's name.
     							 * @return Event's name.
     							 */

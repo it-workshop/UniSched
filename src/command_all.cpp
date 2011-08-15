@@ -18,19 +18,19 @@ void uiconsole::Command_All::run(vector<string> args)
     switch (symbol)
     {
     case '$':
-        for (vector<Person *>::iterator it = ui->people->begin(); it != ui->people->end(); it ++)
+        for (vector<Person *>::iterator it = ui->get_db ()->get_people ()->begin(); it != ui->get_db ()->get_people ()->end(); it ++)
             ui->print_person(*it);
         break;
     case '@':
-        for (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
+        for (vector<Group *>::iterator it = ui->get_db ()->get_groups ()->begin(); it != ui->get_db ()->get_groups ()->end(); it ++)
             ui->print_group(*it);
         break;
     case '#':
-        for (vector<Event *>::iterator it = ui->events->begin(); it != ui->events->end(); it ++)
+        for (vector<Event *>::iterator it = ui->get_db ()->get_events ()->begin(); it != ui->get_db()->get_events ()->end(); it ++)
             ui->print_event(*it);
         break;
     case '%':
-        for (vector<Calendar *>::iterator it = ui->calendars->begin(); it != ui->calendars->end(); it ++)
+        for (vector<Calendar *>::iterator it = ui->get_db ()->get_calendars ()->begin(); it != ui->get_db ()->get_calendars ()->end(); it ++)
             ui->print_calendar(*it);
         break;
     default:

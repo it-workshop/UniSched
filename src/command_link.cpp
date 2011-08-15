@@ -31,12 +31,10 @@ void uiconsole::Command_Link::run(vector<string> args)
             cout << "Wrong arguments, see ,,help link``." << endl;
             return;
         }
-        for (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
-            if ((*it)->get_id() == id0)
-                group = *it;
-        for  (vector<Person *>::iterator it = ui->people->begin(); it != ui->people->end(); it ++)
-            if ((*it)->get_id() == id1)
-                person = *it;
+        
+	group = ui->get_db ()->get_group (id0);
+        person = ui->get_db ()->get_person (id1);
+
         if ((!group) || (!person))
         {
             cout << "Wrong id" << endl;
@@ -52,12 +50,10 @@ void uiconsole::Command_Link::run(vector<string> args)
             cout << "Wrong arguments, see ,,help link``.";
             return;
         }
-        for (vector<Person *>::iterator it = ui->people->begin(); it != ui->people->end(); it ++)
-            if ((*it)->get_id() == id0)
-                person = *it;
-        for  (vector<Event *>::iterator it = ui->events->begin(); it != ui->events->end(); it ++)
-            if ((*it)->get_id() == id1)
-                event = *it;
+
+        person = ui->get_db ()->get_person (id0);
+        event = ui->get_db ()->get_event (id1);
+
         if ((!event) || (!person))
         {
             cout << "Wrong id" << endl;
@@ -73,12 +69,10 @@ void uiconsole::Command_Link::run(vector<string> args)
             cout << "Wrong arguments, see ,,help link``.";
             return;
         }
-        for (vector<Event *>::iterator it = ui->events->begin(); it != ui->events->end(); it ++)
-            if ((*it)->get_id() == id0)
-                event = *it;
-        for  (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
-            if ((*it)->get_id() == id1)
-                group = *it;
+        
+	event = ui->get_db ()->get_event (id0);
+        group = ui->get_db ()->get_group (id1);
+
         if ((!group) || (!event))
         {
             cout << "Wrong id" << endl;

@@ -20,6 +20,11 @@ id_type Person::get_id()
     return id_;
 }
 
+void Person::set_id(id_type id)
+{
+    id_ = id;
+}
+
 std::string Person::get_name()
 {
     return name_;
@@ -62,7 +67,7 @@ time_t Person::birthday()
 
 Calendar *Person::get_calendar()
 {
-    Calendar *all = new Calendar(0);
+    Calendar *all = new Calendar((id_type)0);
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
         if (!(*it)->group->get_name().empty())
             all->merge_calendar((*it)->group->get_calendar());
