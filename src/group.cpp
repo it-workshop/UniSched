@@ -8,12 +8,11 @@ Group::Group(id_type id, std::string name, std::string description)
     calendar_ = new Calendar(3 * id + 2);
 }
 
-Group::Group(id_type id, Group *group)
+Group::Group(Group *group)
 {
-    id_ = id;
     name_ = group->name_;
     description_ = group->description_;
-    calendar_ = new Calendar(3 * id + 2, group->calendar_);
+    calendar_ = new Calendar(group->calendar_);
     for (std::vector<Group_Content*>::iterator it = group->people_.begin(); it != group->people_.end(); it ++)
     {
         Group_Content *a = new Group_Content();
@@ -39,6 +38,11 @@ std::string Group::get_name()
 id_type Group::get_id()
 {
     return id_;
+}
+
+void Group::set_id(id_type id)
+{
+    id_ = id;
 }
 
 std::string Group::get_description()

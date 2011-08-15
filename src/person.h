@@ -40,6 +40,9 @@ public:
     id_type get_id();				/**< Get id of person in database.
     						 * @return id of person.
     						 */
+    void set_id (id_type id);			/**< Set id of person in database.
+    						 * @param [in] id Person's id.
+						 */
     std::string get_name();				/**< Get name of person.
     						 * @return name of person.
     						 */

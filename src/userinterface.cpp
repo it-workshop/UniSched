@@ -1,10 +1,6 @@
 #include <userinterface.h>
 
-UserInterface::UserInterface(vector<Person *> *people_, vector<Group *> *groups_, vector<Event *> *events_, vector<Calendar *> *calendars_)
-:   people (people_),
-    groups (groups_),
-    events (events_),
-    calendars (calendars_)
+UserInterface::UserInterface()
 {
     done = false;
     def_format = ASCII;
@@ -12,6 +8,16 @@ UserInterface::UserInterface(vector<Person *> *people_, vector<Group *> *groups_
 
 UserInterface::~UserInterface()
 {
+}
+
+void UserInterface::set_db (storage::DataStorage *db)
+{
+    db_ = db;
+}
+
+storage::DataStorage *UserInterface::get_db ()
+{
+    return db_;
 }
 
 void UserInterface::listen()

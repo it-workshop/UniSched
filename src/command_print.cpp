@@ -19,40 +19,28 @@ void uiconsole::Command_Print::run(vector<string> args)
     switch (symbol)
     {
     case '$':
-        for (vector<Person *>::iterator it = ui->people->begin(); it != ui->people->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                ui->print_person(*it);
-                return;
-            }
-        cout << "There're no person with that id.";
+        if (ui->get_db ()->get_person (id))
+	    ui->print_person (ui->get_db ()->get_person (id));
+	else
+            cout << "There're no person with that id.";
         break;
     case '@':
-        for (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                ui->print_group(*it);
-                return;
-            }
-        cout << "There're no group with that id.";
+        if (ui->get_db ()->get_group (id))
+            ui->print_group(ui->get_db ()->get_group (id));
+        else
+            cout << "There're no group with that id.";
         break;
     case '#':
-        for (vector<Event *>::iterator it = ui->events->begin(); it != ui->events->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                ui->print_event(*it);
-                return;
-            }
-        cout << "There're no event with that id.";
+        if (ui->get_db ()->get_event (id))
+            ui->print_event(ui->get_db ()->get_event (id));
+	else
+            cout << "There're no event with that id.";
         break;
     case '%':
-        for (vector<Calendar *>::iterator it = ui->calendars->begin(); it != ui->calendars->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                ui->print_calendar(*it);
-                return;
-            }
-        cout << "There're no calendar with that id.";
+        if (ui->get_db ()->get_calendar (id))
+            ui->print_calendar(ui->get_db ()->get_calendar (id));
+	else
+            cout << "There're no calendar with that id.";
         break;
     default:
         cout << "Only person, group, event and calendar can be printed." << endl;

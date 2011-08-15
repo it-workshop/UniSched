@@ -19,25 +19,23 @@ void uiconsole::Command_Clone::run(vector<string> args)
     switch (symbol)
     {
     case '@':
-        for (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                Group *newbie = new Group(ui->groups->size(), (*it));
-                ui->groups->push_back(newbie); ////////////////////////////////////////////
-                ui->print_group(newbie);
-                return;
-            }
+        if (ui->get_db ()->get_group (id))
+        {
+            Group *newbie = new Group(ui->get_db ()->get_group (id));
+            ui->get_db ()->register_group(newbie); ////////////////////////////////////////////
+            ui->print_group(newbie);
+            return;
+        }
         cout << "There're no group with that id.";
         break;
     case '%':
-         for (vector<Calendar *>::iterator it = ui->calendars->begin(); it != ui->calendars->end(); it ++)
-            if ((*it)->get_id() == id)
-            {
-                Calendar *newbie = new Calendar(ui->calendars->size(), (*it));
-                ui->calendars->push_back(newbie); //////////////////////////////////////
-                ui->print_calendar(newbie);
-                return;
-            }
+         if (ui->get_db ()->get_calendar (id))
+         {
+             Calendar *newbie = new Calendar(ui->get_db ()->get_calendar (id));
+             ui->get_db ()->register_calendar(newbie); //////////////////////////////////////
+             ui->print_calendar(newbie);
+             return;
+         }
         cout << "There're no calendar with that id.";
         break;
     }

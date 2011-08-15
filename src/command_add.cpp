@@ -34,8 +34,8 @@ void uiconsole::Command_Add::run(vector<string> args)
             if (symbol == '\n')
                 symbol = getchar();
         }
-        new_group = new Group(ui->groups->size(), name, description);
-        ui->groups->push_back(new_group);
+        new_group = new Group(0, name, description);
+	ui->get_db ()->register_group (new_group);
         ui->print_group(new_group);
         break;
     case '$':
@@ -51,8 +51,8 @@ void uiconsole::Command_Add::run(vector<string> args)
             cout << "Poor date format" << endl;
             return;
         }
-        new_person = new Person(ui->people->size(), name, args[2], (args[3] == "MALE") ? Person::MALE : Person::FEMALE, begin);
-        ui->people->push_back(new_person);
+        new_person = new Person(0, name, args[2], (args[3] == "MALE") ? Person::MALE : Person::FEMALE, begin);
+        ui->get_db ()->register_person (new_person);
         ui->print_person(new_person);
         break;
     case '#':
@@ -76,8 +76,8 @@ void uiconsole::Command_Add::run(vector<string> args)
             if (symbol == '\n')
                 symbol = getchar();
         } 
-        new_event = new Event(ui->events->size(), name, begin, end, description);
-        ui->events->push_back(new_event);
+        new_event = new Event(0, name, begin, end, description);
+        ui->get_db ()->register_event (new_event);
         ui->print_event(new_event);
         break;
     default:

@@ -5,9 +5,8 @@ Calendar::Calendar(id_type id)
     id_ = id;
 }
 
-Calendar::Calendar(id_type id, Calendar *calendar)
+Calendar::Calendar(Calendar *calendar)
 {
-    id_ = id;
     for (std::vector<Event*>::iterator it = calendar->events_.begin(); it != calendar->events_.end(); it ++)
         events_.push_back(*it);
 }
@@ -26,6 +25,11 @@ std::vector<Event*> *Calendar::get_events()
 id_type Calendar::get_id()
 {
     return id_;
+}
+
+void Calendar::set_id (id_type id)
+{
+    id_ = id;
 }
 
 void Calendar::merge_calendar(Calendar *adding)

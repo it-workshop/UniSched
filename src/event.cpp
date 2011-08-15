@@ -21,6 +21,11 @@ id_type Event::get_id()
     return id_;
 }
 
+void Event::set_id (id_type id)
+{
+    id_ = id;
+}
+
 string Event::get_name()
 {
     return name_;

@@ -26,8 +26,7 @@ public:
     Calendar(id_type id);					/**< Constructor.
     							 * @param [in] id Calendar's identificator in the database.
     							 */
-    Calendar(id_type id, Calendar *calendar);		/**< Constructor.
-    							 * @param [in] id Calendar's identificator in the database.
+    Calendar(Calendar *calendar);			/**< Constructor.
     							 * @param [in] calendar Calendar to clone.
     							 */
     ~Calendar();						/**< Destructor. */
@@ -35,6 +34,9 @@ public:
     id_type get_id();					/**< Get Calendar's identificator.
     							 * @return Calendar's identificator in the database.
     							 */
+    void set_id (id_type id);				/**< Set Calendar's identificator in the database.
+    							 * @param [in] id Calendar's id.
+							 */
     vector<Event*> *get_events();				/**< Get Calendar's events.
     							 * @return Calendar's events.
     							 */

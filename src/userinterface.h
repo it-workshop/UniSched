@@ -17,6 +17,7 @@
 #include <group.h>
 #include <event.h>
 #include <calendar.h>
+#include <data_storage.h>
 
 using std::string;
 using std::cin;
@@ -37,20 +38,17 @@ class UserInterface {
 private:
     bool done;						/**< True when interactive command line mode ends */
     enum default_format def_format;			/**< Default time format. */
+
+    storage::DataStorage *db_;				/**< Storage object. */
 public:
-    vector<Person *> *people;				/**< Pointer to vector of people */
-    vector<Group *> *groups;				/**< Pointer to vector of groups */
-    vector<Event *> *events;				/**< Pointer to vector of events */
-    vector<Calendar *> *calendars;			/**< Pointer to vector og calendars */
-    vector <vector<string> * > requests;		/**< History of requests */
-    UserInterface(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
-						/**< Constructor
-    						 * @param [in] people All people objects in the programm.
-    						 * @param [in] groups All groups objects.
-    						 * @param [in] events All events objects.
-    						 * @param [in] calendars All calendars objects.
- 						*/
+     UserInterface();				/**< Constructor. */
     ~UserInterface();				/**< Destructor. */
+    void set_db (storage::DataStorage *db);	/**< Set storage object.
+    						 * @param [in] db Storage object.
+						 */
+    storage::DataStorage *get_db ();		/**< Get storage object.
+    						 * @return Storage object.
+						 */
 
     void listen();				/**< Interactive command line mode. */
 

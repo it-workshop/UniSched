@@ -23,13 +23,10 @@ void uiconsole::Command_Exclude::run(vector<string> args)
     id_type id0 = atoll(args[1].c_str() + 1);
     id_type id1 = atoll(args[2].c_str() + 1);
     Group *group0, *group1;
-    for (vector<Group *>::iterator it = ui->groups->begin(); it != ui->groups->end(); it ++)
-    {
-        if ((*it)->get_id() == id0)
-            group0 = *it;
-        if ((*it)->get_id() == id1)
-            group1 = *it;
-    }
+
+    group0 = ui->get_db ()->get_group (id0);
+    group1 = ui->get_db ()->get_group (id1);
+
     if ((group0) && (group1))
     {
         group0->exclude_group(group1);

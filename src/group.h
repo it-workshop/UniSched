@@ -35,17 +35,20 @@ public:
     						 * @param [in] name Group's name.
     						 * @param [in] description Group's description.
     						 */
-    Group(id_type id, Group * group);		/**< Constructor.
-    						 * @param [in] id Group's identificator in the database.
+    Group(Group * group);			/**< Constructor.
     						 * @param [in] group Group from which get information.
     						 */
     ~Group();					/**< Destructor. */
 
     string get_name();				/**< Get group's name.
-    						 * @return Group's name. */
+    						 * @return Group's name.
+						 */
     id_type get_id();				/**< Get group's identificator.
     						 * @return Group's identificator.
     						 */
+    void set_id (id_type id);			/**< Set Group's id.
+    						 * @param id Group's id.
+						 */
     string get_description();			/**< Get group's description.
     						 * @return Group's description.
     						 */

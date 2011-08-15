@@ -94,7 +94,7 @@ bool TableDataStorage::load_table(string filename)
 
     if(!lt)
     {
-        error_ = SAVE_ERR;
+        error_ = LOAD_ERR;
         return false;
     }
 
@@ -178,14 +178,17 @@ unsigned long long int TableDataStorage::get_fields_count()
     return fields_count_;
 }
 
+FileStorage::FileStorage ()
+{
+}
+
+FileStorage::~FileStorage ()
+{
+}
+
 void FileStorage::setup(string location, string, string, string)
 {
     path_ = location;
-}
-
-void FileStorage::setup(string location)
-{
-    setup (location);
 }
 
 bool FileStorage::load()
@@ -247,6 +250,34 @@ unsigned long long int find_num_row(TableDataStorage table, id_type id)
     }
 
     return 0;
+}
+
+DataStorage::DataStorage ()
+{
+}
+
+DataStorage::~DataStorage ()
+{
+}
+
+vector<Person *> *DataStorage::get_people ()
+{
+    return &people_vector_;
+}
+
+vector<Group *> *DataStorage::get_groups ()
+{
+    return &groups_vector_;
+}
+
+vector<Event *> *DataStorage::get_events ()
+{
+    return &events_vector_;
+}
+
+vector<Calendar *> *DataStorage::get_calendars ()
+{
+    return &calendars_vector_;
 }
 
 string DataStorage::get_person_attr(PersonAttribute attr, id_type id)
@@ -415,5 +446,165 @@ void DataStorage::add_group_bunch(GroupBunch bnch)
     flds[1] = itos(bnch.GroupID);
     flds[2] = bnch.Status;
     group_content_.add_row(flds);
+}
+
+bool less_calendar_id_comp (Group *group1, Group *group2)
+{
+    return (group1->get_calendar ()->get_id () < group2->get_calendar ()->get_id ());
+}
+
+bool less_id_comp(Group *group1, Group *group2)
+{
+    return group1->get_id() < group2->get_id();
+}
+
+inline unsigned long long int min (unsigned long long int a, unsigned long long int b)
+{
+    return (a < b)?a:b;
+}
+
+Person * DataStorage::get_person (id_type id)
+{
+    for (vector<Person *>::iterator it = people_vector_.begin (); it != people_vector_.end (); it++)
+        if ((*it)->get_id () == id)
+	    return *it;
+    return NULL;
+}
+
+Group * DataStorage::get_group (id_type id)
+{
+    for (vector<Group *>::iterator it = groups_vector_.begin (); it != groups_vector_.end (); it++)
+        if ((*it)->get_id () == id)
+	    return *it;
+    return NULL;
+}
+
+Event * DataStorage::get_event (id_type id)
+{
+    for (vector<Event *>::iterator it = events_vector_.begin (); it != events_vector_.end (); it++)
+        if ((*it)->get_id () == id)
+	    return *it;
+    return NULL;
+}
+
+Calendar * DataStorage::get_calendar (id_type id)
+{
+    for (vector<Calendar *>::iterator it = calendars_vector_.begin (); it != calendars_vector_.end (); it++)
+        if ((*it)->get_id () == id)
+	    return *it;
+    return NULL;
+}
+
+void DataStorage::register_group (Group *group)
+{
+    group->set_id (groups_vector_[groups_vector_.size () - 1]->get_id () + 1);
+    groups_vector_.push_back (group);
+}
+
+void DataStorage::register_calendar (Calendar *calendar)
+{
+    calendar->set_id (calendars_vector_[calendars_vector_.size () - 1]->get_id () + 1);
+    calendars_vector_.push_back (calendar);
+}
+
+void DataStorage::register_person (Person *person)
+{
+    person->set_id (people_vector_[people_vector_.size () - 1]->get_id () + 1);
+    people_vector_.push_back (person);
+}
+
+void DataStorage::register_event (Event *event)
+{
+    event->set_id (events_vector_[events_vector_.size () - 1]->get_id () + 1);
+    events_vector_.push_back (event);
+}
+
+void DataStorage::init ()
+{
+    vector<id_type> persons_ids = get_person_ID_list ();
+    vector<id_type> events_vector_ids = get_event_ID_list ();
+    vector<id_type> groups_vector_ids = get_group_ID_list ();
+
+    vector<Group *> owners;
+
+    for (vector<id_type>::iterator it = persons_ids.begin (); it != persons_ids.end (); it++)
+    {
+        string name = get_person_attr (paNAME, *it);
+	string surname = get_person_attr (paSURNAME, *it);
+	enum Person::Sex sex = (get_person_attr (paSEX, *it) == "MALE")?Person::MALE:Person::FEMALE;
+	time_t birthday = atoll(get_person_attr (paBIRTHDAY, *it).c_str ());
+
+        people_vector_.push_back (new Person (*it, name, surname, sex, birthday));
+    }
+
+    for (vector<id_type>::iterator it = events_vector_ids.begin (); it != events_vector_ids.end (); it++)
+    {
+        string name = get_event_attr (eaNAME, *it);
+	time_t begin = atoll (get_event_attr (eaBEGIN, *it).c_str ());
+	time_t end = atoll (get_event_attr (eaEND, *it).c_str ());
+	string description = get_event_attr (eaDESCRIPTION, *it);
+	id_type group_id = atoll (get_event_attr (eaGROUP, *it).c_str ());
+
+        events_vector_.push_back (new Event (*it, name, begin, end, description));
+	events_vector_[events_vector_.size () - 1]->get_group ()->set_id (group_id);
+	groups_vector_.push_back (events_vector_[events_vector_.size () - 1]->get_group ());
+	calendars_vector_.push_back (groups_vector_[groups_vector_.size () - 1]->get_calendar ());
+	owners.push_back (groups_vector_[groups_vector_.size () - 1]);
+    }
+
+    for (vector<id_type>::iterator it = groups_vector_ids.begin (); it != groups_vector_ids.end (); it++)
+    {
+        id_type calendar = atoll (get_group_attr (gaCALENDAR, *it).c_str ());
+	string name;
+	string description;
+
+        for (vector<Group *>::iterator it_ = owners.begin (); it_ != owners.end (); it_++)
+	{
+	    if (*it == (*it_)->get_id ())
+	    {
+	        (*it_)->get_calendar ()->set_id (calendar);
+
+	        goto skip;
+	    }
+	}
+
+	name = get_group_attr (gaNAME, *it);
+	description = get_group_attr (gaDESCRIPTION, *it);
+        
+        groups_vector_.push_back (new Group (*it, name, description));
+	calendars_vector_.push_back (groups_vector_[groups_vector_.size () - 1]->get_calendar ());
+	calendars_vector_[calendars_vector_.size () - 1]->set_id (calendar);
+    skip:;
+    }
+
+    sort (groups_vector_.begin (), groups_vector_.end (), less_id_comp);
+
+    for (unsigned long long int i = 0; i < get_group_bunches_count (); i++)
+    {
+        GroupBunch bunch = get_group_bunch (i);
+
+	id_type j;
+	for (j = min(bunch.GroupID, groups_vector_.size ());  groups_vector_[j]->get_id () != bunch.GroupID; j--);
+	Group * group = groups_vector_[j];
+
+	for (j = min(bunch.PersonID, people_vector_.size ()); people_vector_[j]->get_id () != bunch.PersonID; j--);
+	Person * person = people_vector_[j];
+
+	group->add_person (person, bunch.Status);
+    }
+
+    sort (groups_vector_.begin (), groups_vector_.end (), less_calendar_id_comp);
+
+    for (unsigned long long int i = 0; i < get_calendar_bunches_count (); i++)
+    {
+        CalendarBunch bunch = get_calendar_bunch (i);
+
+	id_type j;
+	for (j = min(bunch.EventID, events_vector_.size ()); events_vector_[j]->get_id () != bunch.EventID; j--);
+	Event *event = events_vector_[j];
+
+	for (j = min(bunch.ID, groups_vector_.size ()); groups_vector_[j]->get_calendar ()->get_id () != bunch.ID; j--);
+	groups_vector_[j]->add_event (event, "");
+    }
 }
 
