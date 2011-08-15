@@ -20,6 +20,7 @@ class Event;
 class Group;
 class Calendar;
 class Queue;
+class Event_Template;
 class UserInterface;
 
 namespace uiconsole {
