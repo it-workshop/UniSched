@@ -255,5 +255,6 @@ void UserInterface::print_calendar(Calendar *printing)
         format((*it)->get_end());
         cout << ")" << endl;
     }
+    cout << endl;
 }
 
