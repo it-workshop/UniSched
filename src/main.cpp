@@ -3,6 +3,7 @@
 #include <vector>
 
 #include <types.h>
+#include <event_template.h>
 #include <queue.h>
 #include <commands.h>
 #include <userinterface.h>
@@ -28,6 +29,10 @@ int main (int argc, char *argv[])
 
     uiconsole::initiate(ui);
     
+//    Event_Template *test = new Event_Template("all $\nall @\nall %\nall #\nexit\n", 12);
+
+//    test->get_requered_people();
+
     if (argc - 1)
         uiconsole::execute(args);
     else

@@ -59,7 +59,7 @@ void uiconsole::Command_Add::run(vector<string> args)
     case '#':
         if (args.size() < 4)
         {
-            cout << "Need more arguments, see ..help add``." << endl;
+            cout << "Need more arguments, see ,,help add``." << endl;
         }
         name = args[1].c_str() + 1;
         begin = ui->get_time(args[2]);
@@ -80,6 +80,10 @@ void uiconsole::Command_Add::run(vector<string> args)
         new_event = new Event(0, name, begin, end, description);
         ui->get_db ()->register_event (new_event);
         ui->print_event(new_event);
+        break;
+    case '&':
+        name = args[1].c_str() + 1;
+//        ui->get_db ()->register_queue (new Queue(name));
         break;
     default:
         cout << "Only people, groups and events can be added.";

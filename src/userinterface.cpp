@@ -33,11 +33,11 @@ vector<string> UserInterface::get_request()
 {
     vector<string> request;
     char now;
-    while (now != L'\n')
+    while (now != '\n')
     {
         string reading = "";
         now = getchar();
-        while ((now != L' ') && (now != L'\n'))
+        while ((now != ' ') && (now != '\n'))
         {
             if (now == EOF)
             {

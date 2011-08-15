@@ -24,6 +24,16 @@ string Queue::get_name()
     return name_;
 }
 
+id_type Queue::get_id()
+{
+    return id_;
+}
+
+void Queue::set_id(id_type id)
+{
+    id_ = id;
+}
+
 void Queue::enqueue(Group *adding)
 {
     groups_.push_back(adding);

@@ -15,35 +15,46 @@ void uiconsole::Command_Print::run(vector<string> args)
         return;
     }
     char symbol = args[1][0];
-    id_type id = atoll(args[1].c_str() + 1);
-    switch (symbol)
+     if (args[1].size() == 1)
     {
-    case '$':
-        if (ui->get_db ()->get_person (id))
-	    ui->print_person (ui->get_db ()->get_person (id));
-	else
-            cout << "There're no person with that id.";
-        break;
-    case '@':
-        if (ui->get_db ()->get_group (id))
-            ui->print_group(ui->get_db ()->get_group (id));
-        else
-            cout << "There're no group with that id.";
-        break;
-    case '#':
-        if (ui->get_db ()->get_event (id))
-            ui->print_event(ui->get_db ()->get_event (id));
-	else
-            cout << "There're no event with that id.";
-        break;
-    case '%':
-        if (ui->get_db ()->get_calendar (id))
-            ui->print_calendar(ui->get_db ()->get_calendar (id));
-	else
-            cout << "There're no calendar with that id.";
-        break;
-    default:
-        cout << "Only person, group, event and calendar can be printed." << endl;
+        cout << "Need id or name after (s)." << endl;
+        return;
+    }
+    id_type id = atoll(args[1].c_str() + 1);
+    string name = "";
+    if ((!id) && (args[1][1] != '0'))
+        name = args[1].c_str() + 1;
+    else
+    {
+        switch (symbol)
+        {
+        case '$':
+            if (ui->get_db ()->get_person (id))
+                ui->print_person (ui->get_db ()->get_person (id));
+            else
+                cout << "There're no person with that id.";
+            break;
+        case '@':
+            if (ui->get_db ()->get_group (id))
+                ui->print_group(ui->get_db ()->get_group (id));
+            else
+                cout << "There're no group with that id.";
+            break;
+        case '#':
+            if (ui->get_db ()->get_event (id))
+                ui->print_event(ui->get_db ()->get_event (id));
+            else
+                cout << "There're no event with that id.";
+            break;
+        case '%':
+            if (ui->get_db ()->get_calendar (id))
+                ui->print_calendar(ui->get_db ()->get_calendar (id));
+            else
+                cout << "There're no calendar with that id.";
+            break;
+        default:
+            cout << "Only person, group, event and calendar can be printed." << endl;
+        }
     }
 }
 

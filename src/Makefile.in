@@ -53,7 +53,8 @@ am_raspisator_OBJECTS = main.$(OBJEXT) person.$(OBJEXT) \
 	command_help.$(OBJEXT) command_clone.$(OBJEXT) \
 	command_merge.$(OBJEXT) command_exclude.$(OBJEXT) \
 	command_include.$(OBJEXT) command_add.$(OBJEXT) \
-	command_link.$(OBJEXT) queue.$(OBJEXT)
+	command_link.$(OBJEXT) queue.$(OBJEXT) \
+	event_template.$(OBJEXT)
 raspisator_OBJECTS = $(am_raspisator_OBJECTS)
 raspisator_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
@@ -154,7 +155,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPP_FLAGS = -I$(srcdir)
-raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp data_storage.cpp commands.cpp command_exit.cpp command_all.cpp command_print.cpp command_help.cpp command_clone.cpp command_merge.cpp command_exclude.cpp command_include.cpp command_add.cpp command_link.cpp queue.cpp
+raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp calendar.cpp userinterface.cpp data_storage.cpp commands.cpp command_exit.cpp command_all.cpp command_print.cpp command_help.cpp command_clone.cpp command_merge.cpp command_exclude.cpp command_include.cpp command_add.cpp command_link.cpp queue.cpp event_template.cpp
 all: all-am
 
 .SUFFIXES:
@@ -250,6 +251,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/commands.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data_storage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event_template.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/group.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/person.Po@am__quote@

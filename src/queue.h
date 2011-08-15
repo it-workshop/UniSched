@@ -15,6 +15,7 @@ using std::string;
  */
 class Queue {
 private:
+    id_type id_;				/**< Id of a queue. */
     string name_;				/**< Name of a queue. */
     vector<Group *> groups_;			/**< Vector of groups. */
 public:
@@ -28,6 +29,12 @@ public:
 						 */
     vector<Group *>::iterator get_end();	/**< Get end of a queue.
 						 * @return End of a queue.
+						 */
+    id_type get_id();				/**< Get id of a queue.
+						 * @return ID of a queue.
+						 */
+    void set_id(id_type id);			/**< Set id of a queue.
+						 * @param [in] id New id.
 						 */
     string get_name();				/**< Get name of a queue.
 						 * @return Name of a queue.
