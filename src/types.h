@@ -17,6 +17,7 @@ typedef struct Group_Content_ Group_Content;
 
 class Person;
 class Event;
+class Event_Template;
 class Group;
 class Calendar;
 class Queue;
