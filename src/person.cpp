@@ -69,8 +69,7 @@ Calendar *Person::get_calendar()
 {
     Calendar *all = new Calendar((id_type)0);
     for (std::vector<Group_Content *>::iterator it = groups_.begin(); it != groups_.end(); it ++)
-        if (!(*it)->group->get_name().empty())
-            all->merge_calendar((*it)->group->get_calendar());
+        all->merge_calendar((*it)->group->get_calendar());
     return all;
 }
 
