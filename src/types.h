@@ -19,11 +19,22 @@ class Person;
 class Event;
 class Group;
 class Calendar;
+class Queue;
 class UserInterface;
 
-class Command;
-class Command_Exit;
-class Command_All;
+namespace uiconsole {
+    class Command;
+    class Command_Add;
+    class Command_All;
+    class Command_Clone;
+    class Command_Exclude;
+    class Command_Exit;
+    class Command_Help;
+    class Command_Include;
+    class Command_Link;
+    class Command_Merge;
+    class Command_Print;
+};
 
 #endif /* _GLOBAL_NAMESPACE_ */
 

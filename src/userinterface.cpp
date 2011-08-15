@@ -1,9 +1,10 @@
 #include <userinterface.h>
 
-UserInterface::UserInterface(vector<Person *> *people_, vector<Group *> *groups_, vector<Event *> *events_, vector<Calendar *> *calendars_)
+UserInterface::UserInterface(vector<Person *> *people_, vector<Group *> *groups_, vector<Event *> *events_, vector<Calendar *> *calendars_, vector<Queue *> *queues_)
 :   people (people_),
     groups (groups_),
     events (events_),
+    queues (queues_),
     calendars (calendars_)
 {
     done = false;

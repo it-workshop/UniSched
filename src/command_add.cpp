@@ -6,7 +6,8 @@ uiconsole::Command_Add::Command_Add(UserInterface *ui) : Command(ui)
     description = "add new object";
     help = "Type ,,add @(name)`` and description ended with empty string to add group,\n" \
            "Type ,,add $(name) (surname) (sex) DD/MM/YYYY(birthday) to add person,\n" \
-           "Type ,,add #(name) HH:MM-DD/MM/YYYY(begin) HH:MM-DD/MM/YYYY(end) and description ended with empty string to add event.";
+           "Type ,,add #(name) HH:MM-DD/MM/YYYY(begin) HH:MM-DD/MM/YYYY(end) and description ended with empty string to add event,\n" \
+           "Type ,,add &(name) to add new queue.";
 }
 
 void uiconsole::Command_Add::run(vector<string> args)

@@ -3,6 +3,7 @@
 #include <vector>
 
 #include <types.h>
+#include <queue.h>
 #include <commands.h>
 #include <userinterface.h>
 #include <person.h>
@@ -15,6 +16,7 @@ int main (int argc, char *argv[])
     std::vector<Group *> groups;
     std::vector<Event *> events;
     std::vector<Calendar *> calendars;
+    std::vector<Queue *> queues;
 
     std::vector<string> args;
 
@@ -33,7 +35,7 @@ int main (int argc, char *argv[])
     events.push_back(new Event(1, "event1", time(0) + 10000, time(0) + 15000, "bla1"));
     events.push_back(new Event(2, "event2", time(0) - 10000, time(0) - 5000, "blah2"));
 
-    UserInterface ui(&persons, &groups, &events, &calendars);
+    UserInterface ui(&persons, &groups, &events, &calendars, &queues);
 
     groups[1]->add_person(persons[1], "director");
     groups[1]->add_person(persons[0], "wizard");

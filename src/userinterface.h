@@ -12,6 +12,7 @@
 
 #include <types.h>
 #include <commands.h>
+#include <queue.h>
 #include <group_content.h>
 #include <person.h>
 #include <group.h>
@@ -26,8 +27,8 @@ using std::vector;
 
 /** @enum defaul_format Time format types. */
 enum default_format {
-    ASCII,						/**< ASCII Time format. */
-    DATE						/**< Date Time format. */
+    ASCII,					/**< ASCII Time format. */
+    DATE					/**< Date Time format. */
 };
 
 /** @class UserInterface
@@ -35,20 +36,21 @@ enum default_format {
  */
 class UserInterface {
 private:
-    bool done;						/**< True when interactive command line mode ends */
-    enum default_format def_format;			/**< Default time format. */
+    bool done;					/**< True when interactive command line mode ends */
+    enum default_format def_format;		/**< Default time format. */
 public:
-    vector<Person *> *people;				/**< Pointer to vector of people */
-    vector<Group *> *groups;				/**< Pointer to vector of groups */
-    vector<Event *> *events;				/**< Pointer to vector of events */
-    vector<Calendar *> *calendars;			/**< Pointer to vector og calendars */
-    vector <vector<string> * > requests;		/**< History of requests */
-    UserInterface(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars);
+    vector<Person *> *people;			/**< Pointer to vector of people */
+    vector<Group *> *groups;			/**< Pointer to vector of groups */
+    vector<Event *> *events;			/**< Pointer to vector of events */
+    vector<Calendar *> *calendars;		/**< Pointer to vector of calendars */
+    vector <Queue *> *queues;			/**< Pointer to vector of queues */
+    UserInterface(vector<Person *> *people, vector<Group *> *groups, vector<Event *> *events, vector<Calendar *> *calendars, vector<Queue *> *queues);
 						/**< Constructor
     						 * @param [in] people All people objects in the programm.
     						 * @param [in] groups All groups objects.
     						 * @param [in] events All events objects.
     						 * @param [in] calendars All calendars objects.
+						 * @param [in] queues All queues objects.
  						*/
     ~UserInterface();				/**< Destructor. */
 
@@ -60,7 +62,7 @@ public:
 
     void exit();                                /**< Exit from interactive command line mode. */
 
-    void set_format(enum default_format format);	/**< Set default time format.
+    void set_format(enum default_format format);/**< Set default time format.
     						 * @param [in] format Type of time format.
     						 */
     enum default_format get_format();		/**< Get default time format.
@@ -86,7 +88,7 @@ public:
     void print_person(Person *person);		/**< Print person's information.
     						 * @param [in] person Person to print.
     						 */
-    void print_group(Group *group);			/**< Print group's information.
+    void print_group(Group *group);		/**< Print group's information.
     						 * @param [in] group Group to print.
     						 */
     void print_event(Event *event);			/**< Print event's information.
