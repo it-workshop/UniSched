@@ -4,7 +4,7 @@
 }
 
 
-{\ttfamily \#include $<$data\_\-storage.h$>$}
+{\ttfamily \#include $<$file\_\-storage.h$>$}
 
 Inheritance diagram for storage::FileStorage:\begin{figure}[H]
 \begin{center}
@@ -15,14 +15,37 @@ Inheritance diagram for storage::FileStorage:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classstorage_1_1FileStorage_a74a3d23be4524c10333cba19be066c6c}{setup} (string location, string user, string password, string bdname)
+\hyperlink{classstorage_1_1FileStorage_a3a88a71218e6e8cb6c7af942ac1daf47}{FileStorage} ()
 \item 
-void \hyperlink{classstorage_1_1FileStorage_a0e20db6bbc452ce3a8f7a978940af29d}{setup} (string location)
+\hyperlink{classstorage_1_1FileStorage_a336c41583d9b31f33988319e4397c5fc}{$\sim$FileStorage} ()
+\item 
+void \hyperlink{classstorage_1_1FileStorage_a74a3d23be4524c10333cba19be066c6c}{setup} (string location, string user, string password, string bdname)
 \item 
 bool \hyperlink{classstorage_1_1FileStorage_acec1ff977a4fb2885ca0f90336b2c296}{load} ()
 \item 
 bool \hyperlink{classstorage_1_1FileStorage_abc882239d83ffc2b3ddc86aad18ac83c}{save} ()
 \end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classstorage_1_1FileStorage_a3a88a71218e6e8cb6c7af942ac1daf47}{
+\index{storage::FileStorage@{storage::FileStorage}!FileStorage@{FileStorage}}
+\index{FileStorage@{FileStorage}!storage::FileStorage@{storage::FileStorage}}
+\subsubsection[{FileStorage}]{\setlength{\rightskip}{0pt plus 5cm}FileStorage::FileStorage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d8/da7/classstorage_1_1FileStorage_a3a88a71218e6e8cb6c7af942ac1daf47}
+\hypertarget{classstorage_1_1FileStorage_a336c41583d9b31f33988319e4397c5fc}{
+\index{storage::FileStorage@{storage::FileStorage}!$\sim$FileStorage@{$\sim$FileStorage}}
+\index{$\sim$FileStorage@{$\sim$FileStorage}!storage::FileStorage@{storage::FileStorage}}
+\subsubsection[{$\sim$FileStorage}]{\setlength{\rightskip}{0pt plus 5cm}FileStorage::$\sim$FileStorage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d8/da7/classstorage_1_1FileStorage_a336c41583d9b31f33988319e4397c5fc}
 
 
 \subsection{Member Function Documentation}
@@ -57,10 +80,10 @@ Implements \hyperlink{classstorage_1_1DataStorage_a973b7fd5741ad0159d95a67b91734
 \index{setup@{setup}!storage::FileStorage@{storage::FileStorage}}
 \subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void FileStorage::setup (
 \begin{DoxyParamCaption}
-\item[{string}]{ location, }
-\item[{string}]{ user, }
-\item[{string}]{ password, }
-\item[{string}]{ bdname}
+\item[{string}]{location, }
+\item[{string}]{user, }
+\item[{string}]{password, }
+\item[{string}]{bdname}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
 \label{d8/da7/classstorage_1_1FileStorage_a74a3d23be4524c10333cba19be066c6c}
@@ -68,18 +91,9 @@ Implements \hyperlink{classstorage_1_1DataStorage_a973b7fd5741ad0159d95a67b91734
 
 Implements \hyperlink{classstorage_1_1DataStorage_aabde44460aae44655dbdf69b8128ad22}{storage::DataStorage}.
 
-\hypertarget{classstorage_1_1FileStorage_a0e20db6bbc452ce3a8f7a978940af29d}{
-\index{storage::FileStorage@{storage::FileStorage}!setup@{setup}}
-\index{setup@{setup}!storage::FileStorage@{storage::FileStorage}}
-\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void FileStorage::setup (
-\begin{DoxyParamCaption}
-\item[{string}]{ location}
-\end{DoxyParamCaption}
-)}}
-\label{d8/da7/classstorage_1_1FileStorage_a0e20db6bbc452ce3a8f7a978940af29d}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{data__storage_8h}{data\_\-storage.h}\item 
-src/\hyperlink{data__storage_8cpp}{data\_\-storage.cpp}\end{DoxyCompactItemize}
+src/\hyperlink{file__storage_8h}{file\_\-storage.h}\item 
+src/\hyperlink{file__storage_8cpp}{file\_\-storage.cpp}\end{DoxyCompactItemize}
