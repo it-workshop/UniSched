@@ -65,6 +65,8 @@ void DataStorage::init ()
     vector<id_type> persons_ids = get_person_ID_list ();
     vector<id_type> events_vector_ids = get_event_ID_list ();
     vector<id_type> groups_vector_ids = get_group_ID_list ();
+    vector<id_type> queues_vector_ids = get_queue_ID_list ();
+    vector<id_type> event_templates_ids = get_event_template_ID_list ();
 
     vector<Group *> owners;
 
@@ -134,6 +136,25 @@ void DataStorage::init ()
 	group->add_person (person, bunch.Status);
     }
 
+for (vector<id_type>::iterator it = queues_vector_ids.begin (); it != queues_vector_ids.end (); it++)
+    {
+        string name = get_queue_attr(qaNAME, *it);
+        queues_vector_.push_back (new Queue (name));
+	queues_vector_[queues_vector_.size () - 1]->set_id (*it);
+    }
+
+    for (unsigned long long int i = 0; i < get_queue_bunches_count (); i++)
+    {
+        QueueBunch bunch = get_queue_bunch (i);
+
+	id_type j;
+	for (j = min (bunch.QueueID, queues_vector_.size ()); queues_vector_[j]->get_id () != bunch.QueueID; j--);
+	Queue *queue = queues_vector_[j];
+
+	for (j = min (bunch.GroupID, groups_vector_.size ()); groups_vector_[j]->get_id () != bunch.GroupID; j--);
+	queue->enqueue (groups_vector_[j]);
+    }
+
     sort (groups_vector_.begin (), groups_vector_.end (), less_calendar_id_comp);
 
     for (unsigned long long int i = 0; i < get_calendar_bunches_count (); i++)
@@ -147,6 +168,54 @@ void DataStorage::init ()
 	for (j = min(bunch.ID, groups_vector_.size ()); groups_vector_[j]->get_calendar ()->get_id () != bunch.ID; j--);
 	groups_vector_[j]->add_event (event, "");
     }
+
+    for (vector<id_type>::iterator it = event_templates_ids.begin (); it != event_templates_ids.end (); it++)
+    {
+        string name = get_event_template_attr (taNAME, *it);
+	string script = get_event_template_attr (taSCRIPT, *it);
+	time_t duration = atoll(get_event_template_attr (taDURATION, *it).c_str());
+	event_templates_vector_.push_back (new Event_Template (*it, name, script, duration));
+    }
+}
+
+void DataStorage::sync ()
+{
+    while (get_group_bunches_count ())
+        remove_group_bunch(0);
+
+    while (get_calendar_bunches_count ())
+        remove_calendar_bunch (0);
+
+    while (get_queue_bunches_count ())
+        remove_queue_bunch (0);
+
+    for (vector<Group *>::iterator it = groups_vector_.begin (); it != groups_vector_.end (); it++)
+        for (vector<Group_Content *>::iterator it_ = (*it)->get_people()->begin(); it_ != (*it)->get_people ()->end(); it_ ++)
+	{
+	    GroupBunch bunch;
+	    bunch.PersonID = (*it_)->person->get_id ();
+	    bunch.GroupID = (*it)->get_id ();
+	    bunch.Status = (*it_)->status;
+	    add_group_bunch (bunch);
+	}
+    
+    for (vector<Calendar *>::iterator it = calendars_vector_.begin (); it != calendars_vector_.end (); it++)
+        for (vector<Event *>::iterator it_ = (*it)->get_events ()->end (); it_ != (*it)->get_events()->end (); it_++)
+	{
+	    CalendarBunch bunch;
+	    bunch.ID = (*it)->get_id();
+	    bunch.EventID = (*it_)->get_id();
+	    add_calendar_bunch (bunch);
+	}
+
+    for (vector<Queue *>::iterator it = queues_vector_.begin (); it != queues_vector_.end (); it++)
+        for (vector<Group *>::iterator it_ = (*it)->get_begin (); it_ != (*it)->get_end (); it_++)
+	{
+	    QueueBunch bunch;
+	    bunch.QueueID = (*it)->get_id ();
+	    bunch.GroupID = (*it_)->get_id ();
+	    add_queue_bunch (bunch);
+	}
 }
 
 vector<Person *> *DataStorage::get_people ()

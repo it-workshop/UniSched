@@ -8,9 +8,13 @@
 \item 
 string \hyperlink{data__storage_8cpp_a6ea0dd5051076a4d814e03a8eed3cea7}{itos} (unsigned long long int value)
 \item 
-bool \hyperlink{data__storage_8cpp_a5d60b8c7e69f1faf228bf5964dbbb6ca}{stob} (string str)
-\item 
 unsigned long long int \hyperlink{data__storage_8cpp_ae9e5082865282ff49f99e2807c79c7a3}{find\_\-num\_\-row} (\hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} table, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\item 
+bool \hyperlink{data__storage_8cpp_a6aa29976b90c15a2b1df2c959ff225bb}{less\_\-calendar\_\-id\_\-comp} (\hyperlink{classGroup}{Group} $\ast$group1, \hyperlink{classGroup}{Group} $\ast$group2)
+\item 
+bool \hyperlink{data__storage_8cpp_aa6381f060237c82d31f5c08240719f4b}{less\_\-id\_\-comp} (\hyperlink{classGroup}{Group} $\ast$group1, \hyperlink{classGroup}{Group} $\ast$group2)
+\item 
+unsigned long long int \hyperlink{data__storage_8cpp_a810a8222d5716ae33ac54d314651cdb5}{min} (unsigned long long int a, unsigned long long int b)
 \end{DoxyCompactItemize}
 
 
@@ -20,8 +24,8 @@ unsigned long long int \hyperlink{data__storage_8cpp_ae9e5082865282ff49f99e2807c
 \index{find\_\-num\_\-row@{find\_\-num\_\-row}!data_storage.cpp@{data\_\-storage.cpp}}
 \subsubsection[{find\_\-num\_\-row}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int find\_\-num\_\-row (
 \begin{DoxyParamCaption}
-\item[{{\bf TableDataStorage}}]{ table, }
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf TableDataStorage}}]{table, }
+\item[{{\bf id\_\-type}}]{id}
 \end{DoxyParamCaption}
 )}}
 \label{d6/d9a/data__storage_8cpp_ae9e5082865282ff49f99e2807c79c7a3}
@@ -30,16 +34,37 @@ unsigned long long int \hyperlink{data__storage_8cpp_ae9e5082865282ff49f99e2807c
 \index{itos@{itos}!data_storage.cpp@{data\_\-storage.cpp}}
 \subsubsection[{itos}]{\setlength{\rightskip}{0pt plus 5cm}string itos (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{ value}
+\item[{unsigned long long int}]{value}
 \end{DoxyParamCaption}
 )}}
 \label{d6/d9a/data__storage_8cpp_a6ea0dd5051076a4d814e03a8eed3cea7}
-\hypertarget{data__storage_8cpp_a5d60b8c7e69f1faf228bf5964dbbb6ca}{
-\index{data\_\-storage.cpp@{data\_\-storage.cpp}!stob@{stob}}
-\index{stob@{stob}!data_storage.cpp@{data\_\-storage.cpp}}
-\subsubsection[{stob}]{\setlength{\rightskip}{0pt plus 5cm}bool stob (
+\hypertarget{data__storage_8cpp_a6aa29976b90c15a2b1df2c959ff225bb}{
+\index{data\_\-storage.cpp@{data\_\-storage.cpp}!less\_\-calendar\_\-id\_\-comp@{less\_\-calendar\_\-id\_\-comp}}
+\index{less\_\-calendar\_\-id\_\-comp@{less\_\-calendar\_\-id\_\-comp}!data_storage.cpp@{data\_\-storage.cpp}}
+\subsubsection[{less\_\-calendar\_\-id\_\-comp}]{\setlength{\rightskip}{0pt plus 5cm}bool less\_\-calendar\_\-id\_\-comp (
 \begin{DoxyParamCaption}
-\item[{string}]{ str}
+\item[{{\bf Group} $\ast$}]{group1, }
+\item[{{\bf Group} $\ast$}]{group2}
 \end{DoxyParamCaption}
 )}}
-\label{d6/d9a/data__storage_8cpp_a5d60b8c7e69f1faf228bf5964dbbb6ca}
+\label{d6/d9a/data__storage_8cpp_a6aa29976b90c15a2b1df2c959ff225bb}
+\hypertarget{data__storage_8cpp_aa6381f060237c82d31f5c08240719f4b}{
+\index{data\_\-storage.cpp@{data\_\-storage.cpp}!less\_\-id\_\-comp@{less\_\-id\_\-comp}}
+\index{less\_\-id\_\-comp@{less\_\-id\_\-comp}!data_storage.cpp@{data\_\-storage.cpp}}
+\subsubsection[{less\_\-id\_\-comp}]{\setlength{\rightskip}{0pt plus 5cm}bool less\_\-id\_\-comp (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group1, }
+\item[{{\bf Group} $\ast$}]{group2}
+\end{DoxyParamCaption}
+)}}
+\label{d6/d9a/data__storage_8cpp_aa6381f060237c82d31f5c08240719f4b}
+\hypertarget{data__storage_8cpp_a810a8222d5716ae33ac54d314651cdb5}{
+\index{data\_\-storage.cpp@{data\_\-storage.cpp}!min@{min}}
+\index{min@{min}!data_storage.cpp@{data\_\-storage.cpp}}
+\subsubsection[{min}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int min (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{a, }
+\item[{unsigned long long int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d6/d9a/data__storage_8cpp_a810a8222d5716ae33ac54d314651cdb5}

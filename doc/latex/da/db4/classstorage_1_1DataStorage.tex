@@ -15,57 +15,55 @@ Inheritance diagram for storage::DataStorage:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classstorage_1_1DataStorage_a22825d40495dae6a5df46d629fb26a3f}{DataStorage} ()
+\item 
+\hyperlink{classstorage_1_1DataStorage_adf4ef73e6d368dc7fcd213ba80e1d618}{$\sim$DataStorage} ()
+\item 
 virtual bool \hyperlink{classstorage_1_1DataStorage_a1cfb8136faea457c36a1adf1d024b2e1}{load} ()=0
 \item 
 virtual bool \hyperlink{classstorage_1_1DataStorage_a973b7fd5741ad0159d95a67b91734dd2}{save} ()=0
 \item 
+void \hyperlink{classstorage_1_1DataStorage_a00e2feae10b5a44acf711273c2d0d3d8}{init} ()
+\item 
+void \hyperlink{classstorage_1_1DataStorage_a6a7b4a651eae72f6c16826632038a59f}{sync} ()
+\item 
 virtual void \hyperlink{classstorage_1_1DataStorage_aabde44460aae44655dbdf69b8128ad22}{setup} (string location, string user, string pass, string bdname)=0
 \item 
-vector$<$ \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} $>$ \hyperlink{classstorage_1_1DataStorage_a06a2348464bcab2acc728716679556fe}{get\_\-person\_\-ID\_\-list} ()
+vector$<$ \hyperlink{classPerson}{Person} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a6c21f6254e3c57dca63ad39c262b280d}{get\_\-people} ()
 \item 
-string \hyperlink{classstorage_1_1DataStorage_aa4ffb98c676775ad88253ebeaa790a4b}{get\_\-person\_\-attr} (\hyperlink{namespacestorage_a42f9d3eac07801f5551c7e5b60d6e9ce}{PersonAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a12f909c64f1414e91186c998b6e29db2}{get\_\-groups} ()
 \item 
-void \hyperlink{classstorage_1_1DataStorage_a4bfa24dc03cfb2e93ef3cd59fa0c58ce}{set\_\-person\_\-attr} (\hyperlink{namespacestorage_a42f9d3eac07801f5551c7e5b60d6e9ce}{PersonAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, string value)
+vector$<$ \hyperlink{classEvent}{Event} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a6b649e3fa5ca3eb1921c4ee176a19f42}{get\_\-events} ()
 \item 
-void \hyperlink{classstorage_1_1DataStorage_ab2987fe459ddc88e82b48cd1b38fe68c}{add\_\-person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+vector$<$ \hyperlink{classCalendar}{Calendar} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a04a667fec74228c64a60a37510482665}{get\_\-calendars} ()
 \item 
-void \hyperlink{classstorage_1_1DataStorage_a030dfcb2b1cadaf99eb3bcbc784dae9b}{remove\_\-person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+vector$<$ \hyperlink{classQueue}{Queue} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a61a1e515f42170324276c5a1a78961c5}{get\_\-queues} ()
 \item 
-vector$<$ \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} $>$ \hyperlink{classstorage_1_1DataStorage_a82642d970b251d7561c4e579f500eed1}{get\_\-group\_\-ID\_\-list} ()
+vector$<$ \hyperlink{classEvent__Template}{Event\_\-Template} $\ast$ $>$ $\ast$ \hyperlink{classstorage_1_1DataStorage_a308f8bdd6c6a5ed65586e8c028cc6e42}{get\_\-event\_\-templates} ()
 \item 
-string \hyperlink{classstorage_1_1DataStorage_a316cbd7ab0c9b1bb67af1a82a9428fa7}{get\_\-group\_\-attr} (\hyperlink{namespacestorage_abe112dd5cc72469c2ce28e3a5ea229a3}{GroupAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\hyperlink{classPerson}{Person} $\ast$ \hyperlink{classstorage_1_1DataStorage_abca728c67538176fd721dcb8730bac81}{get\_\-person} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_ae5d83b0319e6e9849dadb78c8e622d05}{set\_\-group\_\-attr} (\hyperlink{namespacestorage_abe112dd5cc72469c2ce28e3a5ea229a3}{GroupAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, string value)
+\hyperlink{classGroup}{Group} $\ast$ \hyperlink{classstorage_1_1DataStorage_a53e3931141b50ff3d5bfd7e682092091}{get\_\-group} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_af03714bfc767d0ee4adcf051bf771441}{add\_\-group} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\hyperlink{classEvent}{Event} $\ast$ \hyperlink{classstorage_1_1DataStorage_af68ca095bb27db3b8532045f77b5ae73}{get\_\-event} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_a0bc7ee24698e6e557655c207baa1afc8}{remove\_\-group} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classstorage_1_1DataStorage_a38b24aa35d0f1159200c78e53a0c99bb}{get\_\-calendar} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-vector$<$ \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} $>$ \hyperlink{classstorage_1_1DataStorage_a1281a1f9d1d13f84c9d783957fe83778}{get\_\-event\_\-ID\_\-list} ()
+\hyperlink{classQueue}{Queue} $\ast$ \hyperlink{classstorage_1_1DataStorage_a38f0afa3026ff4c41e25c85648d24cd1}{get\_\-queue} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-string \hyperlink{classstorage_1_1DataStorage_a7d2d91d297297e8d37486dc10d3e9f41}{get\_\-event\_\-attr} (\hyperlink{namespacestorage_a6e2b156f6c0c979e3e6d80ed6ba55420}{EventAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\hyperlink{classEvent__Template}{Event\_\-Template} $\ast$ \hyperlink{classstorage_1_1DataStorage_a085a420bbfdb5aad5ca5ed2396bca656}{get\_\-event\_\-template} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_a17a77bdcced46a81fe5a94004aec3a8d}{set\_\-event\_\-attr} (\hyperlink{namespacestorage_a6e2b156f6c0c979e3e6d80ed6ba55420}{EventAttribute} attr, \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, string value)
+void \hyperlink{classstorage_1_1DataStorage_aa29c972a9d8e25c54703435b79060ccf}{register\_\-group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
 \item 
-void \hyperlink{classstorage_1_1DataStorage_ac477bff8893b021ac4452b4fd7100557}{add\_\-event} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+void \hyperlink{classstorage_1_1DataStorage_a4aea70365b132555020159c04121a9a0}{register\_\-calendar} (\hyperlink{classCalendar}{Calendar} $\ast$calendar)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_a91e36c011ef731e252118ac8d66dbed3}{remove\_\-event} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+void \hyperlink{classstorage_1_1DataStorage_ab397fd5fc17fb58e45b2968b165c95dd}{register\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
 \item 
-unsigned long long int \hyperlink{classstorage_1_1DataStorage_a0836f261c2cc88b382197a6cecf67b7e}{get\_\-calendar\_\-bunches\_\-count} ()
+void \hyperlink{classstorage_1_1DataStorage_a2c63723d6bb413a0d630b05a045935e1}{register\_\-event} (\hyperlink{classEvent}{Event} $\ast$event)
 \item 
-\hyperlink{structstorage_1_1CalendarBunch__}{CalendarBunch} \hyperlink{classstorage_1_1DataStorage_a6f445af69b7ba9d9c84d0d8412a537f7}{get\_\-calendar\_\-bunch} (unsigned long long int num)
+void \hyperlink{classstorage_1_1DataStorage_a78b6e15d0d878cc5113cba50dae7c73b}{register\_\-queue} (\hyperlink{classQueue}{Queue} $\ast$queue)
 \item 
-void \hyperlink{classstorage_1_1DataStorage_ab825a572ae207a374fdbafbae1dc783f}{remove\_\-calendar\_\-bunch} (unsigned long long int num)
-\item 
-void \hyperlink{classstorage_1_1DataStorage_ac7b4152086292d6a2b88d633c938140d}{add\_\-calendar\_\-bunch} (\hyperlink{structstorage_1_1CalendarBunch__}{CalendarBunch} bnch)
-\item 
-unsigned long long int \hyperlink{classstorage_1_1DataStorage_adc0bfcc5d6133e814f18d731fe8018e4}{get\_\-group\_\-bunches\_\-count} ()
-\item 
-\hyperlink{structstorage_1_1GroupBunch__}{GroupBunch} \hyperlink{classstorage_1_1DataStorage_a70227aa6c47733fe0a42e55cf8856f9a}{get\_\-group\_\-bunch} (unsigned long long int num)
-\item 
-void \hyperlink{classstorage_1_1DataStorage_a5d5028576d12a77bf51d2c66909c1a73}{remove\_\-group\_\-bunch} (unsigned long long int num)
-\item 
-void \hyperlink{classstorage_1_1DataStorage_a0b14b86856e2865845b249b53e960a9d}{add\_\-group\_\-bunch} (\hyperlink{structstorage_1_1GroupBunch__}{GroupBunch} bnch)
+void \hyperlink{classstorage_1_1DataStorage_a3984bdbb2a2aecfaca0a4745df0f7850}{register\_\-event\_\-template} (\hyperlink{classEvent__Template}{Event\_\-Template} $\ast$event\_\-template)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -79,148 +77,154 @@ void \hyperlink{classstorage_1_1DataStorage_a0b14b86856e2865845b249b53e960a9d}{a
 \hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} \hyperlink{classstorage_1_1DataStorage_ac49bf760dd1492eb566e7bbbf9d84743}{group\_\-content\_\-}
 \item 
 \hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} \hyperlink{classstorage_1_1DataStorage_adc094f1bdcad1fd0940c947d2b0529b9}{calendars\_\-}
+\item 
+\hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} \hyperlink{classstorage_1_1DataStorage_af9a0216e83d32b996086a0b15a5281ab}{queues\_\-}
+\item 
+\hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} \hyperlink{classstorage_1_1DataStorage_a19686eeb613ff2ade96fd557b26627f1}{queues\_\-bunches\_\-}
+\item 
+\hyperlink{classstorage_1_1TableDataStorage}{TableDataStorage} \hyperlink{classstorage_1_1DataStorage_a96b081918351159d88994b382f1b97e2}{event\_\-templates\_\-}
 \end{DoxyCompactItemize}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classstorage_1_1DataStorage_a22825d40495dae6a5df46d629fb26a3f}{
+\index{storage::DataStorage@{storage::DataStorage}!DataStorage@{DataStorage}}
+\index{DataStorage@{DataStorage}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{DataStorage}]{\setlength{\rightskip}{0pt plus 5cm}DataStorage::DataStorage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a22825d40495dae6a5df46d629fb26a3f}
+\hypertarget{classstorage_1_1DataStorage_adf4ef73e6d368dc7fcd213ba80e1d618}{
+\index{storage::DataStorage@{storage::DataStorage}!$\sim$DataStorage@{$\sim$DataStorage}}
+\index{$\sim$DataStorage@{$\sim$DataStorage}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{$\sim$DataStorage}]{\setlength{\rightskip}{0pt plus 5cm}DataStorage::$\sim$DataStorage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_adf4ef73e6d368dc7fcd213ba80e1d618}
+
+
 \subsection{Member Function Documentation}
-\hypertarget{classstorage_1_1DataStorage_ac7b4152086292d6a2b88d633c938140d}{
-\index{storage::DataStorage@{storage::DataStorage}!add\_\-calendar\_\-bunch@{add\_\-calendar\_\-bunch}}
-\index{add\_\-calendar\_\-bunch@{add\_\-calendar\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{add\_\-calendar\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::add\_\-calendar\_\-bunch (
+\hypertarget{classstorage_1_1DataStorage_a38b24aa35d0f1159200c78e53a0c99bb}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-calendar@{get\_\-calendar}}
+\index{get\_\-calendar@{get\_\-calendar}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Calendar} $\ast$ DataStorage::get\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{{\bf CalendarBunch}}]{ bnch}
+\item[{{\bf id\_\-type}}]{id}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_ac7b4152086292d6a2b88d633c938140d}
-\hypertarget{classstorage_1_1DataStorage_ac477bff8893b021ac4452b4fd7100557}{
-\index{storage::DataStorage@{storage::DataStorage}!add\_\-event@{add\_\-event}}
-\index{add\_\-event@{add\_\-event}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{add\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::add\_\-event (
-\begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_ac477bff8893b021ac4452b4fd7100557}
-\hypertarget{classstorage_1_1DataStorage_af03714bfc767d0ee4adcf051bf771441}{
-\index{storage::DataStorage@{storage::DataStorage}!add\_\-group@{add\_\-group}}
-\index{add\_\-group@{add\_\-group}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{add\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::add\_\-group (
-\begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_af03714bfc767d0ee4adcf051bf771441}
-\hypertarget{classstorage_1_1DataStorage_a0b14b86856e2865845b249b53e960a9d}{
-\index{storage::DataStorage@{storage::DataStorage}!add\_\-group\_\-bunch@{add\_\-group\_\-bunch}}
-\index{add\_\-group\_\-bunch@{add\_\-group\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{add\_\-group\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::add\_\-group\_\-bunch (
-\begin{DoxyParamCaption}
-\item[{{\bf GroupBunch}}]{ bnch}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a0b14b86856e2865845b249b53e960a9d}
-\hypertarget{classstorage_1_1DataStorage_ab2987fe459ddc88e82b48cd1b38fe68c}{
-\index{storage::DataStorage@{storage::DataStorage}!add\_\-person@{add\_\-person}}
-\index{add\_\-person@{add\_\-person}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::add\_\-person (
-\begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_ab2987fe459ddc88e82b48cd1b38fe68c}
-\hypertarget{classstorage_1_1DataStorage_a6f445af69b7ba9d9c84d0d8412a537f7}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-calendar\_\-bunch@{get\_\-calendar\_\-bunch}}
-\index{get\_\-calendar\_\-bunch@{get\_\-calendar\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-calendar\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CalendarBunch} DataStorage::get\_\-calendar\_\-bunch (
-\begin{DoxyParamCaption}
-\item[{unsigned long long int}]{ num}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a6f445af69b7ba9d9c84d0d8412a537f7}
-\hypertarget{classstorage_1_1DataStorage_a0836f261c2cc88b382197a6cecf67b7e}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-calendar\_\-bunches\_\-count@{get\_\-calendar\_\-bunches\_\-count}}
-\index{get\_\-calendar\_\-bunches\_\-count@{get\_\-calendar\_\-bunches\_\-count}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-calendar\_\-bunches\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int DataStorage::get\_\-calendar\_\-bunches\_\-count (
+\label{da/db4/classstorage_1_1DataStorage_a38b24aa35d0f1159200c78e53a0c99bb}
+\hypertarget{classstorage_1_1DataStorage_a04a667fec74228c64a60a37510482665}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-calendars@{get\_\-calendars}}
+\index{get\_\-calendars@{get\_\-calendars}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-calendars}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Calendar} $\ast$ $>$ $\ast$ DataStorage::get\_\-calendars (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a0836f261c2cc88b382197a6cecf67b7e}
-\hypertarget{classstorage_1_1DataStorage_a7d2d91d297297e8d37486dc10d3e9f41}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-event\_\-attr@{get\_\-event\_\-attr}}
-\index{get\_\-event\_\-attr@{get\_\-event\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-event\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}string DataStorage::get\_\-event\_\-attr (
+\label{da/db4/classstorage_1_1DataStorage_a04a667fec74228c64a60a37510482665}
+\hypertarget{classstorage_1_1DataStorage_af68ca095bb27db3b8532045f77b5ae73}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-event@{get\_\-event}}
+\index{get\_\-event@{get\_\-event}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event} $\ast$ DataStorage::get\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf EventAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf id\_\-type}}]{id}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a7d2d91d297297e8d37486dc10d3e9f41}
-\hypertarget{classstorage_1_1DataStorage_a1281a1f9d1d13f84c9d783957fe83778}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-event\_\-ID\_\-list@{get\_\-event\_\-ID\_\-list}}
-\index{get\_\-event\_\-ID\_\-list@{get\_\-event\_\-ID\_\-list}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-event\_\-ID\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf id\_\-type} $>$ DataStorage::get\_\-event\_\-ID\_\-list (
+\label{da/db4/classstorage_1_1DataStorage_af68ca095bb27db3b8532045f77b5ae73}
+\hypertarget{classstorage_1_1DataStorage_a085a420bbfdb5aad5ca5ed2396bca656}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-event\_\-template@{get\_\-event\_\-template}}
+\index{get\_\-event\_\-template@{get\_\-event\_\-template}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-event\_\-template}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event\_\-Template} $\ast$ DataStorage::get\_\-event\_\-template (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf id\_\-type}}]{id}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a1281a1f9d1d13f84c9d783957fe83778}
-\hypertarget{classstorage_1_1DataStorage_a316cbd7ab0c9b1bb67af1a82a9428fa7}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-group\_\-attr@{get\_\-group\_\-attr}}
-\index{get\_\-group\_\-attr@{get\_\-group\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-group\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}string DataStorage::get\_\-group\_\-attr (
-\begin{DoxyParamCaption}
-\item[{{\bf GroupAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a316cbd7ab0c9b1bb67af1a82a9428fa7}
-\hypertarget{classstorage_1_1DataStorage_a70227aa6c47733fe0a42e55cf8856f9a}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-group\_\-bunch@{get\_\-group\_\-bunch}}
-\index{get\_\-group\_\-bunch@{get\_\-group\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-group\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GroupBunch} DataStorage::get\_\-group\_\-bunch (
-\begin{DoxyParamCaption}
-\item[{unsigned long long int}]{ num}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a70227aa6c47733fe0a42e55cf8856f9a}
-\hypertarget{classstorage_1_1DataStorage_adc0bfcc5d6133e814f18d731fe8018e4}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-group\_\-bunches\_\-count@{get\_\-group\_\-bunches\_\-count}}
-\index{get\_\-group\_\-bunches\_\-count@{get\_\-group\_\-bunches\_\-count}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-group\_\-bunches\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int DataStorage::get\_\-group\_\-bunches\_\-count (
+\label{da/db4/classstorage_1_1DataStorage_a085a420bbfdb5aad5ca5ed2396bca656}
+\hypertarget{classstorage_1_1DataStorage_a308f8bdd6c6a5ed65586e8c028cc6e42}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-event\_\-templates@{get\_\-event\_\-templates}}
+\index{get\_\-event\_\-templates@{get\_\-event\_\-templates}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-event\_\-templates}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Event\_\-Template} $\ast$ $>$ $\ast$ DataStorage::get\_\-event\_\-templates (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_adc0bfcc5d6133e814f18d731fe8018e4}
-\hypertarget{classstorage_1_1DataStorage_a82642d970b251d7561c4e579f500eed1}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-group\_\-ID\_\-list@{get\_\-group\_\-ID\_\-list}}
-\index{get\_\-group\_\-ID\_\-list@{get\_\-group\_\-ID\_\-list}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-group\_\-ID\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf id\_\-type} $>$ DataStorage::get\_\-group\_\-ID\_\-list (
+\label{da/db4/classstorage_1_1DataStorage_a308f8bdd6c6a5ed65586e8c028cc6e42}
+\hypertarget{classstorage_1_1DataStorage_a6b649e3fa5ca3eb1921c4ee176a19f42}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-events@{get\_\-events}}
+\index{get\_\-events@{get\_\-events}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Event} $\ast$ $>$ $\ast$ DataStorage::get\_\-events (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a82642d970b251d7561c4e579f500eed1}
-\hypertarget{classstorage_1_1DataStorage_aa4ffb98c676775ad88253ebeaa790a4b}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-person\_\-attr@{get\_\-person\_\-attr}}
-\index{get\_\-person\_\-attr@{get\_\-person\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-person\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}string DataStorage::get\_\-person\_\-attr (
+\label{da/db4/classstorage_1_1DataStorage_a6b649e3fa5ca3eb1921c4ee176a19f42}
+\hypertarget{classstorage_1_1DataStorage_a53e3931141b50ff3d5bfd7e682092091}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-group@{get\_\-group}}
+\index{get\_\-group@{get\_\-group}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group} $\ast$ DataStorage::get\_\-group (
 \begin{DoxyParamCaption}
-\item[{{\bf PersonAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf id\_\-type}}]{id}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_aa4ffb98c676775ad88253ebeaa790a4b}
-\hypertarget{classstorage_1_1DataStorage_a06a2348464bcab2acc728716679556fe}{
-\index{storage::DataStorage@{storage::DataStorage}!get\_\-person\_\-ID\_\-list@{get\_\-person\_\-ID\_\-list}}
-\index{get\_\-person\_\-ID\_\-list@{get\_\-person\_\-ID\_\-list}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{get\_\-person\_\-ID\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf id\_\-type} $>$ DataStorage::get\_\-person\_\-ID\_\-list (
+\label{da/db4/classstorage_1_1DataStorage_a53e3931141b50ff3d5bfd7e682092091}
+\hypertarget{classstorage_1_1DataStorage_a12f909c64f1414e91186c998b6e29db2}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-groups@{get\_\-groups}}
+\index{get\_\-groups@{get\_\-groups}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-groups}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Group} $\ast$ $>$ $\ast$ DataStorage::get\_\-groups (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a06a2348464bcab2acc728716679556fe}
+\label{da/db4/classstorage_1_1DataStorage_a12f909c64f1414e91186c998b6e29db2}
+\hypertarget{classstorage_1_1DataStorage_a6c21f6254e3c57dca63ad39c262b280d}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-people@{get\_\-people}}
+\index{get\_\-people@{get\_\-people}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-people}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Person} $\ast$ $>$ $\ast$ DataStorage::get\_\-people (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a6c21f6254e3c57dca63ad39c262b280d}
+\hypertarget{classstorage_1_1DataStorage_abca728c67538176fd721dcb8730bac81}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-person@{get\_\-person}}
+\index{get\_\-person@{get\_\-person}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Person} $\ast$ DataStorage::get\_\-person (
+\begin{DoxyParamCaption}
+\item[{{\bf id\_\-type}}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_abca728c67538176fd721dcb8730bac81}
+\hypertarget{classstorage_1_1DataStorage_a38f0afa3026ff4c41e25c85648d24cd1}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-queue@{get\_\-queue}}
+\index{get\_\-queue@{get\_\-queue}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Queue} $\ast$ DataStorage::get\_\-queue (
+\begin{DoxyParamCaption}
+\item[{{\bf id\_\-type}}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a38f0afa3026ff4c41e25c85648d24cd1}
+\hypertarget{classstorage_1_1DataStorage_a61a1e515f42170324276c5a1a78961c5}{
+\index{storage::DataStorage@{storage::DataStorage}!get\_\-queues@{get\_\-queues}}
+\index{get\_\-queues@{get\_\-queues}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{get\_\-queues}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Queue} $\ast$ $>$ $\ast$ DataStorage::get\_\-queues (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a61a1e515f42170324276c5a1a78961c5}
+\hypertarget{classstorage_1_1DataStorage_a00e2feae10b5a44acf711273c2d0d3d8}{
+\index{storage::DataStorage@{storage::DataStorage}!init@{init}}
+\index{init@{init}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a00e2feae10b5a44acf711273c2d0d3d8}
 \hypertarget{classstorage_1_1DataStorage_a1cfb8136faea457c36a1adf1d024b2e1}{
 \index{storage::DataStorage@{storage::DataStorage}!load@{load}}
 \index{load@{load}!storage::DataStorage@{storage::DataStorage}}
@@ -234,51 +238,60 @@ void \hyperlink{classstorage_1_1DataStorage_a0b14b86856e2865845b249b53e960a9d}{a
 
 Implemented in \hyperlink{classstorage_1_1FileStorage_acec1ff977a4fb2885ca0f90336b2c296}{storage::FileStorage}.
 
-\hypertarget{classstorage_1_1DataStorage_ab825a572ae207a374fdbafbae1dc783f}{
-\index{storage::DataStorage@{storage::DataStorage}!remove\_\-calendar\_\-bunch@{remove\_\-calendar\_\-bunch}}
-\index{remove\_\-calendar\_\-bunch@{remove\_\-calendar\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{remove\_\-calendar\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::remove\_\-calendar\_\-bunch (
+\hypertarget{classstorage_1_1DataStorage_a4aea70365b132555020159c04121a9a0}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-calendar@{register\_\-calendar}}
+\index{register\_\-calendar@{register\_\-calendar}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-calendar (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{ num}
+\item[{{\bf Calendar} $\ast$}]{calendar}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_ab825a572ae207a374fdbafbae1dc783f}
-\hypertarget{classstorage_1_1DataStorage_a91e36c011ef731e252118ac8d66dbed3}{
-\index{storage::DataStorage@{storage::DataStorage}!remove\_\-event@{remove\_\-event}}
-\index{remove\_\-event@{remove\_\-event}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{remove\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::remove\_\-event (
+\label{da/db4/classstorage_1_1DataStorage_a4aea70365b132555020159c04121a9a0}
+\hypertarget{classstorage_1_1DataStorage_a2c63723d6bb413a0d630b05a045935e1}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-event@{register\_\-event}}
+\index{register\_\-event@{register\_\-event}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-event (
 \begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf Event} $\ast$}]{event}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a91e36c011ef731e252118ac8d66dbed3}
-\hypertarget{classstorage_1_1DataStorage_a0bc7ee24698e6e557655c207baa1afc8}{
-\index{storage::DataStorage@{storage::DataStorage}!remove\_\-group@{remove\_\-group}}
-\index{remove\_\-group@{remove\_\-group}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{remove\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::remove\_\-group (
+\label{da/db4/classstorage_1_1DataStorage_a2c63723d6bb413a0d630b05a045935e1}
+\hypertarget{classstorage_1_1DataStorage_a3984bdbb2a2aecfaca0a4745df0f7850}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-event\_\-template@{register\_\-event\_\-template}}
+\index{register\_\-event\_\-template@{register\_\-event\_\-template}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-event\_\-template}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-event\_\-template (
 \begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf Event\_\-Template} $\ast$}]{event\_\-template}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a0bc7ee24698e6e557655c207baa1afc8}
-\hypertarget{classstorage_1_1DataStorage_a5d5028576d12a77bf51d2c66909c1a73}{
-\index{storage::DataStorage@{storage::DataStorage}!remove\_\-group\_\-bunch@{remove\_\-group\_\-bunch}}
-\index{remove\_\-group\_\-bunch@{remove\_\-group\_\-bunch}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{remove\_\-group\_\-bunch}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::remove\_\-group\_\-bunch (
+\label{da/db4/classstorage_1_1DataStorage_a3984bdbb2a2aecfaca0a4745df0f7850}
+\hypertarget{classstorage_1_1DataStorage_aa29c972a9d8e25c54703435b79060ccf}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-group@{register\_\-group}}
+\index{register\_\-group@{register\_\-group}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-group (
 \begin{DoxyParamCaption}
-\item[{unsigned long long int}]{ num}
+\item[{{\bf Group} $\ast$}]{group}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a5d5028576d12a77bf51d2c66909c1a73}
-\hypertarget{classstorage_1_1DataStorage_a030dfcb2b1cadaf99eb3bcbc784dae9b}{
-\index{storage::DataStorage@{storage::DataStorage}!remove\_\-person@{remove\_\-person}}
-\index{remove\_\-person@{remove\_\-person}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{remove\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::remove\_\-person (
+\label{da/db4/classstorage_1_1DataStorage_aa29c972a9d8e25c54703435b79060ccf}
+\hypertarget{classstorage_1_1DataStorage_ab397fd5fc17fb58e45b2968b165c95dd}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-person@{register\_\-person}}
+\index{register\_\-person@{register\_\-person}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-person (
 \begin{DoxyParamCaption}
-\item[{{\bf id\_\-type}}]{ id}
+\item[{{\bf Person} $\ast$}]{person}
 \end{DoxyParamCaption}
 )}}
-\label{da/db4/classstorage_1_1DataStorage_a030dfcb2b1cadaf99eb3bcbc784dae9b}
+\label{da/db4/classstorage_1_1DataStorage_ab397fd5fc17fb58e45b2968b165c95dd}
+\hypertarget{classstorage_1_1DataStorage_a78b6e15d0d878cc5113cba50dae7c73b}{
+\index{storage::DataStorage@{storage::DataStorage}!register\_\-queue@{register\_\-queue}}
+\index{register\_\-queue@{register\_\-queue}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{register\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::register\_\-queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Queue} $\ast$}]{queue}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a78b6e15d0d878cc5113cba50dae7c73b}
 \hypertarget{classstorage_1_1DataStorage_a973b7fd5741ad0159d95a67b91734dd2}{
 \index{storage::DataStorage@{storage::DataStorage}!save@{save}}
 \index{save@{save}!storage::DataStorage@{storage::DataStorage}}
@@ -292,48 +305,15 @@ Implemented in \hyperlink{classstorage_1_1FileStorage_acec1ff977a4fb2885ca0f9033
 
 Implemented in \hyperlink{classstorage_1_1FileStorage_abc882239d83ffc2b3ddc86aad18ac83c}{storage::FileStorage}.
 
-\hypertarget{classstorage_1_1DataStorage_a17a77bdcced46a81fe5a94004aec3a8d}{
-\index{storage::DataStorage@{storage::DataStorage}!set\_\-event\_\-attr@{set\_\-event\_\-attr}}
-\index{set\_\-event\_\-attr@{set\_\-event\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{set\_\-event\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::set\_\-event\_\-attr (
-\begin{DoxyParamCaption}
-\item[{{\bf EventAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id, }
-\item[{string}]{ value}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a17a77bdcced46a81fe5a94004aec3a8d}
-\hypertarget{classstorage_1_1DataStorage_ae5d83b0319e6e9849dadb78c8e622d05}{
-\index{storage::DataStorage@{storage::DataStorage}!set\_\-group\_\-attr@{set\_\-group\_\-attr}}
-\index{set\_\-group\_\-attr@{set\_\-group\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{set\_\-group\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::set\_\-group\_\-attr (
-\begin{DoxyParamCaption}
-\item[{{\bf GroupAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id, }
-\item[{string}]{ value}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_ae5d83b0319e6e9849dadb78c8e622d05}
-\hypertarget{classstorage_1_1DataStorage_a4bfa24dc03cfb2e93ef3cd59fa0c58ce}{
-\index{storage::DataStorage@{storage::DataStorage}!set\_\-person\_\-attr@{set\_\-person\_\-attr}}
-\index{set\_\-person\_\-attr@{set\_\-person\_\-attr}!storage::DataStorage@{storage::DataStorage}}
-\subsubsection[{set\_\-person\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::set\_\-person\_\-attr (
-\begin{DoxyParamCaption}
-\item[{{\bf PersonAttribute}}]{ attr, }
-\item[{{\bf id\_\-type}}]{ id, }
-\item[{string}]{ value}
-\end{DoxyParamCaption}
-)}}
-\label{da/db4/classstorage_1_1DataStorage_a4bfa24dc03cfb2e93ef3cd59fa0c58ce}
 \hypertarget{classstorage_1_1DataStorage_aabde44460aae44655dbdf69b8128ad22}{
 \index{storage::DataStorage@{storage::DataStorage}!setup@{setup}}
 \index{setup@{setup}!storage::DataStorage@{storage::DataStorage}}
 \subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void storage::DataStorage::setup (
 \begin{DoxyParamCaption}
-\item[{string}]{ location, }
-\item[{string}]{ user, }
-\item[{string}]{ pass, }
-\item[{string}]{ bdname}
+\item[{string}]{location, }
+\item[{string}]{user, }
+\item[{string}]{pass, }
+\item[{string}]{bdname}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
 \label{da/db4/classstorage_1_1DataStorage_aabde44460aae44655dbdf69b8128ad22}
@@ -341,6 +321,15 @@ Implemented in \hyperlink{classstorage_1_1FileStorage_abc882239d83ffc2b3ddc86aad
 
 Implemented in \hyperlink{classstorage_1_1FileStorage_a74a3d23be4524c10333cba19be066c6c}{storage::FileStorage}.
 
+\hypertarget{classstorage_1_1DataStorage_a6a7b4a651eae72f6c16826632038a59f}{
+\index{storage::DataStorage@{storage::DataStorage}!sync@{sync}}
+\index{sync@{sync}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}void DataStorage::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{da/db4/classstorage_1_1DataStorage_a6a7b4a651eae72f6c16826632038a59f}
 
 
 \subsection{Member Data Documentation}
@@ -349,6 +338,11 @@ Implemented in \hyperlink{classstorage_1_1FileStorage_a74a3d23be4524c10333cba19b
 \index{calendars\_\-@{calendars\_\-}!storage::DataStorage@{storage::DataStorage}}
 \subsubsection[{calendars\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TableDataStorage} {\bf storage::DataStorage::calendars\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{da/db4/classstorage_1_1DataStorage_adc094f1bdcad1fd0940c947d2b0529b9}
+\hypertarget{classstorage_1_1DataStorage_a96b081918351159d88994b382f1b97e2}{
+\index{storage::DataStorage@{storage::DataStorage}!event\_\-templates\_\-@{event\_\-templates\_\-}}
+\index{event\_\-templates\_\-@{event\_\-templates\_\-}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{event\_\-templates\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TableDataStorage} {\bf storage::DataStorage::event\_\-templates\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{da/db4/classstorage_1_1DataStorage_a96b081918351159d88994b382f1b97e2}
 \hypertarget{classstorage_1_1DataStorage_a16f699e52132096d7e8ec8d43c73ad1f}{
 \index{storage::DataStorage@{storage::DataStorage}!events\_\-@{events\_\-}}
 \index{events\_\-@{events\_\-}!storage::DataStorage@{storage::DataStorage}}
@@ -369,6 +363,16 @@ Implemented in \hyperlink{classstorage_1_1FileStorage_a74a3d23be4524c10333cba19b
 \index{people\_\-@{people\_\-}!storage::DataStorage@{storage::DataStorage}}
 \subsubsection[{people\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TableDataStorage} {\bf storage::DataStorage::people\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{da/db4/classstorage_1_1DataStorage_a8c32de002329fa6018a0957c925cf183}
+\hypertarget{classstorage_1_1DataStorage_af9a0216e83d32b996086a0b15a5281ab}{
+\index{storage::DataStorage@{storage::DataStorage}!queues\_\-@{queues\_\-}}
+\index{queues\_\-@{queues\_\-}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{queues\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TableDataStorage} {\bf storage::DataStorage::queues\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{da/db4/classstorage_1_1DataStorage_af9a0216e83d32b996086a0b15a5281ab}
+\hypertarget{classstorage_1_1DataStorage_a19686eeb613ff2ade96fd557b26627f1}{
+\index{storage::DataStorage@{storage::DataStorage}!queues\_\-bunches\_\-@{queues\_\-bunches\_\-}}
+\index{queues\_\-bunches\_\-@{queues\_\-bunches\_\-}!storage::DataStorage@{storage::DataStorage}}
+\subsubsection[{queues\_\-bunches\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TableDataStorage} {\bf storage::DataStorage::queues\_\-bunches\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{da/db4/classstorage_1_1DataStorage_a19686eeb613ff2ade96fd557b26627f1}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

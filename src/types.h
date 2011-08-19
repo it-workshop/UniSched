@@ -21,6 +21,7 @@ class Event_Template;
 class Group;
 class Calendar;
 class Queue;
+class Event_Template;
 class UserInterface;
 
 namespace uiconsole {
@@ -70,7 +71,8 @@ namespace storage {
 
     enum EventTemplateAttribute {
         taNAME = 1,
-        taSCRIPT
+        taSCRIPT,
+	taDURATION
     };
 
     enum QueueAttribute {
