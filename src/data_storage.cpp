@@ -227,60 +227,149 @@ Event_Template * DataStorage::get_event_template (id_type id)
     return NULL;
 }
 
+void DataStorage::delete_person (id_type id)
+{
+    for (vector<Person *>::iterator it = people_vector_.begin(); it != people_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            people_vector_.erase(it);
+/*            remove_person(id);
+*/            return;
+        }
+}
+
+void DataStorage::delete_event (id_type id)
+{
+    for (vector<Event *>::iterator it = events_vector_.begin(); it != events_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            events_vector_.erase(it);
+/*            remove_event(id);
+*/            return;
+        }
+}
+
+void DataStorage::delete_group (id_type id)
+{
+    for (vector<Group *>::iterator it = groups_vector_.begin(); it != groups_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            groups_vector_.erase(it);
+/*            remove_group(id);
+*/            return;
+        }
+}
+
+void DataStorage::delete_queue (id_type id)
+{
+    for (vector<Queue *>::iterator it = queues_vector_.begin(); it != queues_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            queues_vector_.erase(it);
+/*            remove_queue(id);
+*/            return;
+        }
+}
+
+void DataStorage::delete_calendar (id_type id)
+{
+    for (vector<Calendar *>::iterator it = calendars_vector_.begin(); it != calendars_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            calendars_vector_.erase(it);
+            return;
+        }
+}
+
+void DataStorage::delete_event_template (id_type id)
+{
+    for (vector<Event_Template *>::iterator it = event_templates_vector_.begin(); it != event_templates_vector_.end(); it ++)
+        if ((*it)->get_id() == id)
+        {
+            delete *it;
+            event_templates_vector_.erase(it);
+/*            remove_event_template(id);
+*/            return;
+        }
+}
+
 void DataStorage::register_group (Group *group)
 {
-    group->set_id (groups_vector_[groups_vector_.size () - 1]->get_id () + 1);
+    if (groups_vector_.empty())
+        group->set_id(0);
+    else
+        group->set_id (groups_vector_[groups_vector_.size () - 1]->get_id () + 1);
     groups_vector_.push_back (group);
-    add_group (group->get_id ());
+/*    add_group (group->get_id ());
     set_group_attr (gaNAME, group->get_id(), group->get_name ());
     set_group_attr (gaDESCRIPTION, group->get_id(), group->get_description ());
-    set_group_attr (gaCALENDAR, group->get_id(), itos (group->get_calendar ()->get_id ()));
+    set_group_attr (gaCALENDAR, group->get_id(), itos (group->get_calendar ()->get_id ()));*/
 }
 
 void DataStorage::register_calendar (Calendar *calendar)
 {
-    calendar->set_id (calendars_vector_[calendars_vector_.size () - 1]->get_id () + 1);
+    if (calendars_vector_.empty())
+        calendar->set_id(0);
+    else
+        calendar->set_id (calendars_vector_[calendars_vector_.size () - 1]->get_id () + 1);
     calendars_vector_.push_back (calendar);
 }
 
 void DataStorage::register_person (Person *person)
 {
-    person->set_id (people_vector_[people_vector_.size () - 1]->get_id () + 1);
+    if (people_vector_.empty())
+        person->set_id(0);
+    else
+        person->set_id (people_vector_[people_vector_.size () - 1]->get_id () + 1);
     people_vector_.push_back (person);
-    add_person (person->get_id ());
+ /*   add_person (person->get_id ());
     set_person_attr (paNAME, person->get_id (), person->get_name ());
     set_person_attr (paSURNAME, person->get_id (), person->get_surname ());
     set_person_attr (paBIRTHDAY, person->get_id (), itos(person->birthday ()));
-    set_person_attr (paSEX, person->get_id (), (person->sex () == Person::MALE)?"MALE":"FEMALE");
+    set_person_attr (paSEX, person->get_id (), (person->sex () == Person::MALE)?"MALE":"FEMALE");*/
 }
 
 void DataStorage::register_event (Event *event)
 {
-    event->set_id (events_vector_[events_vector_.size () - 1]->get_id () + 1);
+    if (events_vector_.empty())
+        event->set_id(0);
+    else
+        event->set_id (events_vector_[events_vector_.size () - 1]->get_id () + 1);
     events_vector_.push_back (event);
-    add_event (event->get_id ());
+/*    add_event (event->get_id ());
     set_event_attr (eaNAME, event->get_id (), event->get_name ());
     set_event_attr (eaGROUP, event->get_id (), itos(event->get_group ()->get_id ()));
     set_event_attr (eaBEGIN, event->get_id (), itos(event->get_begin ()));
     set_event_attr (eaEND, event->get_id (), itos(event->get_end ()));
-    set_event_attr (eaDESCRIPTION, event->get_id (), event->get_description ());
+    set_event_attr (eaDESCRIPTION, event->get_id (), event->get_description ());*/
 }
 
 void DataStorage::register_queue (Queue *queue)
 {
-    queue->set_id (queues_vector_[queues_vector_.size () - 1]->get_id () + 1);
+    if (queues_vector_.empty())
+        queue->set_id(0);
+    else
+        queue->set_id (queues_vector_[queues_vector_.size () - 1]->get_id () + 1);
     queues_vector_.push_back (queue);
-    add_queue (queue->get_id ());
-    set_queue_attr (qaNAME, queue->get_id (), queue->get_name());
+/*    add_queue (queue->get_id ());
+    set_queue_attr (qaNAME, queue->get_id (), queue->get_name());*/
 }
 
 void DataStorage::register_event_template (Event_Template *event_template)
 {
-    event_template->set_id (event_templates_vector_[event_templates_vector_.size () - 1]->get_id () + 1);
+    if (event_templates_vector_.empty())
+        event_template->set_id(0);
+    else
+        event_template->set_id (event_templates_vector_[event_templates_vector_.size () - 1]->get_id () + 1);
     event_templates_vector_.push_back (event_template);
-    add_event_template (event_template->get_id ());
+/*    add_event_template (event_template->get_id ());
     set_event_template_attr (taNAME, event_template->get_id (), event_template->get_name ());
-    set_event_template_attr (taSCRIPT, event_template->get_id (), event_template->get_script ());
+    set_event_template_attr (taSCRIPT, event_template->get_id (), event_template->get_script ());*/
 }
 
 string DataStorage::get_person_attr(PersonAttribute attr, id_type id)

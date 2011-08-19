@@ -1,7 +1,8 @@
 #include <queue.h>
 
-Queue::Queue(string name)
-:   name_ (name)
+Queue::Queue(id_type id, string name)
+:   name_ (name),
+    id_ (id)
 {
 }
 
@@ -9,14 +10,9 @@ Queue::~Queue()
 {
 }
 
-vector<Group *>::iterator Queue::get_begin()
+vector<Group *> *Queue::get_vector()
 {
-    return groups_.begin();
-}
-
-vector<Group *>::iterator Queue::get_end()
-{
-    return groups_.end();
+    return &groups_;
 }
 
 string Queue::get_name()

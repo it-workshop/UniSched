@@ -54,6 +54,8 @@ am_raspisator_OBJECTS = main.$(OBJEXT) person.$(OBJEXT) \
 	command_clone.$(OBJEXT) command_merge.$(OBJEXT) \
 	command_exclude.$(OBJEXT) command_include.$(OBJEXT) \
 	command_add.$(OBJEXT) command_link.$(OBJEXT) \
+	command_delete.$(OBJEXT) command_enqueue.$(OBJEXT) \
+	command_dequeue.$(OBJEXT) command_select.$(OBJEXT) \
 	table_data_storage.$(OBJEXT) data_storage.$(OBJEXT) \
 	file_storage.$(OBJEXT)
 raspisator_OBJECTS = $(am_raspisator_OBJECTS)
@@ -161,8 +163,9 @@ raspisator_SOURCES = main.cpp person.cpp event.cpp group.cpp \
 	commands.cpp command_exit.cpp command_all.cpp \
 	command_print.cpp command_help.cpp command_clone.cpp \
 	command_merge.cpp command_exclude.cpp command_include.cpp \
-	command_add.cpp command_link.cpp table_data_storage.cpp \
-	data_storage.cpp file_storage.cpp
+	command_add.cpp command_link.cpp command_delete.cpp \
+	command_enqueue.cpp command_dequeue.cpp command_select.cpp \
+	table_data_storage.cpp data_storage.cpp file_storage.cpp
 all: all-am
 
 .SUFFIXES:
@@ -248,6 +251,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_add.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_all.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_clone.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_delete.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_dequeue.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_enqueue.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_exclude.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_exit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_help.Po@am__quote@
@@ -255,6 +261,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_link.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_merge.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_print.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_select.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/commands.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data_storage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@

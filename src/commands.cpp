@@ -57,5 +57,10 @@ void uiconsole::initiate(UserInterface *ui)
     new uiconsole::Command_Include(ui);
     new uiconsole::Command_Add(ui);
     new uiconsole::Command_Link(ui);
+    new uiconsole::Command_Delete(ui);
+    new uiconsole::Command_Enqueue(ui);
+    new uiconsole::Command_Dequeue(ui);
+    new uiconsole::Command_Select(ui);
+//    new uiconsole::Command_Generarate(ui);
 }
 

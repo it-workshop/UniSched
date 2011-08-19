@@ -53,12 +53,22 @@ public:
     vector<Queue *> *get_queues ();
     vector<Event_Template *> *get_event_templates ();
 
+
+
     Person * get_person (id_type id);
     Group * get_group (id_type id);
     Event * get_event (id_type id);
     Calendar * get_calendar (id_type id);
     Queue * get_queue (id_type id);
     Event_Template * get_event_template (id_type id);
+
+    void delete_group (id_type id);
+    void delete_calendar (id_type id);
+    void delete_person (id_type id);
+    void delete_event (id_type id);
+    void delete_queue (id_type id);
+    void delete_event_template (id_type id);
+
 
     void register_group (Group *group);
     void register_calendar (Calendar *calendar);

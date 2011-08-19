@@ -27,7 +27,6 @@ Group::~Group()
 {
     for (std::vector<Group_Content *>::iterator it = people_.begin(); it != people_.end(); it ++)
         delete_person((*it)->person);
-    delete calendar_;
 }
 
 std::string Group::get_name()

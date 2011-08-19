@@ -15,7 +15,7 @@ void uiconsole::Command_Print::run(vector<string> args)
         return;
     }
     char symbol = args[1][0];
-     if (args[1].size() == 1)
+    if (args[1].size() == 1)
     {
         cout << "Need id or name after (s)." << endl;
         return;

@@ -3,7 +3,7 @@
 uiconsole::Command_Add::Command_Add(UserInterface *ui) : Command(ui)
 {
     name = "add";
-    description = "add new object";
+    description = "add new object.";
     help = "Type ,,add @(name)`` and description ended with empty string to add group,\n" \
            "Type ,,add $(name) (surname) (sex) DD/MM/YYYY(birthday) to add person,\n" \
            "Type ,,add #(name) HH:MM-DD/MM/YYYY(begin) HH:MM-DD/MM/YYYY(end) and description ended with empty string to add event,\n" \
@@ -83,7 +83,7 @@ void uiconsole::Command_Add::run(vector<string> args)
         break;
     case '&':
         name = args[1].c_str() + 1;
-//        ui->get_db ()->register_queue (new Queue(name));
+        ui->get_db ()->register_queue (new Queue(0, name));
         break;
     default:
         cout << "Only people, groups and events can be added.";

@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 #include <types.h>
 #include <userinterface.h>
@@ -182,6 +184,71 @@ namespace uiconsole {
 						 */
         void run(vector<string> args);		/**< Link two objects.
 						 * @param [in] args Vector {"link", "(s0)(id0)", "(s1)(id1)"}.
+						 */
+    };
+
+    /** @class Command_Delete
+     * @brief Class of ,,delete (s)(id)`` command.
+     */
+    class Command_Delete: protected Command {
+    public:
+        Command_Delete(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Delete one object.
+						 * @param [in] args Vector {"delete", "(s)(id)"}.
+						 */
+    };
+
+    /** @class Command_Dequeue
+     * @brief Class of ,,dequeue &(id0) @(id1)`` command.
+     */
+    class Command_Dequeue: protected Command {
+    public:
+        Command_Dequeue(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Dequeue one group from queue.
+						 * @param [in] args Vector {"dequeue", "&(id0)", "&(id1)"}.
+						 */
+    };
+
+    /** @class Command_Select
+     * @brief Class of ,,select @(id0) @(id1) (N) &(id2)`` command.
+     */
+    class Command_Select: protected Command {
+    public:
+        Command_Select(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Select N people from group.
+						 * @param [in] args Vector {"select", "@(id0)", "@(id1)", "(N)", "&(id2)"}.
+						 */
+    };
+
+   /** * @class Command_Generate
+     * @brief Class of ,,generate @(id) (begin)`` command.
+     
+    class Command_Generate: protected Command {
+    public:
+        Command_Generate(UserInterface *ui);	*< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 
+        void run(vector<string> args);		*< Delete one object.
+						 * @param [in] args Vector {"generate", "@(id)", "(begin)"}.
+						 */
+    //};
+
+    /** @class Command_Enqueue
+     * @brief Class of ,,enqueue &(id0) @(id1)`` command.
+     */
+    class Command_Enqueue: protected Command {
+    public:
+        Command_Enqueue(UserInterface *ui);	/**< Constructor.
+						 * @param [in] ui pointer to UserInterface.
+						 */
+        void run(vector<string> args);		/**< Enqueue group.
+						 * @param [in] args Vector {"enqueue", "&(id0)", "@(id1)"}.
 						 */
     };
 
