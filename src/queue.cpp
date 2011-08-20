@@ -1,8 +1,7 @@
 #include <queue.h>
 
-Queue::Queue(id_type id, string name)
-:   name_ (name),
-    id_ (id)
+Queue::Queue(string name)
+:   name_ (name)
 {
 }
 

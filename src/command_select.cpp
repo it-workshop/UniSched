@@ -38,10 +38,10 @@ void uiconsole::Command_Select::run(vector<string> args)
     for (int i = 0; i < N; i++)
     {
         int b = 0, a = rand() % copy->get_people()->size();
-        output->add_person((copy[a])->person);
         vector<Group_Content *>::iterator it;
         for (it = copy->get_people()->begin(); b < a; it ++)
             b++;
+        output->add_person((*it)->person, "auto");
         copy->get_people()->erase(it);
     }
 }

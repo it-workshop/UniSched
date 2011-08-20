@@ -83,7 +83,7 @@ void uiconsole::Command_Add::run(vector<string> args)
         break;
     case '&':
         name = args[1].c_str() + 1;
-        ui->get_db ()->register_queue (new Queue(0, name));
+        ui->get_db ()->register_queue (new Queue(name));
         break;
     default:
         cout << "Only people, groups and events can be added.";

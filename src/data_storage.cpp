@@ -209,7 +209,7 @@ void DataStorage::sync ()
 	}
 
     for (vector<Queue *>::iterator it = queues_vector_.begin (); it != queues_vector_.end (); it++)
-        for (vector<Group *>::iterator it_ = (*it)->get_begin (); it_ != (*it)->get_end (); it_++)
+        for (vector<Group *>::iterator it_ = (*it)->get_vector()->begin (); it_ != (*it)->get_vector()->end (); it_++)
 	{
 	    QueueBunch bunch;
 	    bunch.QueueID = (*it)->get_id ();

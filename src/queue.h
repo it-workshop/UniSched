@@ -19,7 +19,7 @@ private:
     string name_;				/**< Name of a queue. */
     vector<Group *> groups_;			/**< Vector of groups. */
 public:
-    Queue(id_type id, string name);		/**< Constructor.
+    Queue(string name);				/**< Constructor.
 						 * @param [in] id ID of queue.
 						 * @param [in] name Name of queue.
 						 */
