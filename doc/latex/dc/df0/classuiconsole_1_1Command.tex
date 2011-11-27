@@ -1,0 +1,160 @@
+\hypertarget{classuiconsole_1_1Command}{
+\section{uiconsole::Command Class Reference}
+\label{dc/df0/classuiconsole_1_1Command}\index{uiconsole::Command@{uiconsole::Command}}
+}
+
+
+Abstract class of console command.  
+
+
+
+
+{\ttfamily \#include $<$commands.h$>$}
+
+Inheritance diagram for uiconsole::Command:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{dc/df0/classuiconsole_1_1Command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuiconsole_1_1Command_a4f28955b8a36ef1d3b4402b081346060}{Command} (\hyperlink{classUserInterface}{UserInterface} $\ast$\hyperlink{classuiconsole_1_1Command_ab43ed5152860c099f858d62f9f556699}{ui})
+\item 
+\hyperlink{classuiconsole_1_1Command_a11421d325715cfc8f1e779ef823b3445}{$\sim$Command} ()
+\item 
+string \hyperlink{classuiconsole_1_1Command_a64d37b0931d5ba0a35d535a6f5a443f3}{get\_\-name} ()
+\item 
+string \hyperlink{classuiconsole_1_1Command_abcc8cf2d95618e990449e41b510c3fdc}{get\_\-description} ()
+\item 
+string \hyperlink{classuiconsole_1_1Command_a79b882f32e4ed531f950b0030e2d4998}{get\_\-help} ()
+\item 
+virtual void \hyperlink{classuiconsole_1_1Command_a5c4d205b1de13a6b3d0db73ddc7ebefa}{run} (vector$<$ string $>$ args)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUserInterface}{UserInterface} $\ast$ \hyperlink{classuiconsole_1_1Command_ab43ed5152860c099f858d62f9f556699}{ui}
+\item 
+string \hyperlink{classuiconsole_1_1Command_a61eae0502f93a95a9434835f5c72d999}{name}
+\item 
+string \hyperlink{classuiconsole_1_1Command_ad6dbdcec778315e395a8be8571c3c69d}{description}
+\item 
+string \hyperlink{classuiconsole_1_1Command_adcc2a70ee67fa5040e6fce1508c490d2}{help}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class of console command. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classuiconsole_1_1Command_a4f28955b8a36ef1d3b4402b081346060}{
+\index{uiconsole::Command@{uiconsole::Command}!Command@{Command}}
+\index{Command@{Command}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}uiconsole::Command::Command (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInterface} $\ast$}]{ui}
+\end{DoxyParamCaption}
+)}}
+\label{dc/df0/classuiconsole_1_1Command_a4f28955b8a36ef1d3b4402b081346060}
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ui} & pointer to \hyperlink{classUserInterface}{UserInterface}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classuiconsole_1_1Command_a11421d325715cfc8f1e779ef823b3445}{
+\index{uiconsole::Command@{uiconsole::Command}!$\sim$Command@{$\sim$Command}}
+\index{$\sim$Command@{$\sim$Command}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{$\sim$Command}]{\setlength{\rightskip}{0pt plus 5cm}uiconsole::Command::$\sim$Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{dc/df0/classuiconsole_1_1Command_a11421d325715cfc8f1e779ef823b3445}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classuiconsole_1_1Command_abcc8cf2d95618e990449e41b510c3fdc}{
+\index{uiconsole::Command@{uiconsole::Command}!get\_\-description@{get\_\-description}}
+\index{get\_\-description@{get\_\-description}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{get\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}string uiconsole::Command::get\_\-description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{dc/df0/classuiconsole_1_1Command_abcc8cf2d95618e990449e41b510c3fdc}
+Get description of command. \begin{DoxyReturn}{Returns}
+description of command. 
+\end{DoxyReturn}
+\hypertarget{classuiconsole_1_1Command_a79b882f32e4ed531f950b0030e2d4998}{
+\index{uiconsole::Command@{uiconsole::Command}!get\_\-help@{get\_\-help}}
+\index{get\_\-help@{get\_\-help}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{get\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}string uiconsole::Command::get\_\-help (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{dc/df0/classuiconsole_1_1Command_a79b882f32e4ed531f950b0030e2d4998}
+Get help of command. \begin{DoxyReturn}{Returns}
+help of command. 
+\end{DoxyReturn}
+\hypertarget{classuiconsole_1_1Command_a64d37b0931d5ba0a35d535a6f5a443f3}{
+\index{uiconsole::Command@{uiconsole::Command}!get\_\-name@{get\_\-name}}
+\index{get\_\-name@{get\_\-name}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{get\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string uiconsole::Command::get\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{dc/df0/classuiconsole_1_1Command_a64d37b0931d5ba0a35d535a6f5a443f3}
+Get name of command. \begin{DoxyReturn}{Returns}
+name of command. 
+\end{DoxyReturn}
+\hypertarget{classuiconsole_1_1Command_a5c4d205b1de13a6b3d0db73ddc7ebefa}{
+\index{uiconsole::Command@{uiconsole::Command}!run@{run}}
+\index{run@{run}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual void uiconsole::Command::run (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{dc/df0/classuiconsole_1_1Command_a5c4d205b1de13a6b3d0db73ddc7ebefa}
+Virtual method called at the execution of command 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em args} & Vector of strings used in function \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classuiconsole_1_1Command__Exit_a83d9528d878c0f3cc8aa26a7c3ebc3c3}{uiconsole::Command\_\-Exit}, \hyperlink{classuiconsole_1_1Command__All_afec181f8031593644a3acca7f5e7fe8f}{uiconsole::Command\_\-All}, \hyperlink{classuiconsole_1_1Command__Print_a42106fe7a7b5ce0c90a5a196c5f8ff42}{uiconsole::Command\_\-Print}, \hyperlink{classuiconsole_1_1Command__Help_a79203580b82e0b17883096640d83e6ff}{uiconsole::Command\_\-Help}, \hyperlink{classuiconsole_1_1Command__Clone_af61cd935a174eaeeec06b98620afe6af}{uiconsole::Command\_\-Clone}, \hyperlink{classuiconsole_1_1Command__Merge_a5d82c5fab7e1f57b885a00eab2cb87b0}{uiconsole::Command\_\-Merge}, \hyperlink{classuiconsole_1_1Command__Exclude_ab2a21ebe3eaf318d9abbbdb89c6fe035}{uiconsole::Command\_\-Exclude}, \hyperlink{classuiconsole_1_1Command__Include_ac4a0f5366a1fbf8d118bde8c5f55e633}{uiconsole::Command\_\-Include}, \hyperlink{classuiconsole_1_1Command__Add_ace9280c73bb3e2a18ace8a4e1ff3ee64}{uiconsole::Command\_\-Add}, and \hyperlink{classuiconsole_1_1Command__Link_a62fc45d4a5aa32b6d2e685f055cec0e6}{uiconsole::Command\_\-Link}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classuiconsole_1_1Command_ad6dbdcec778315e395a8be8571c3c69d}{
+\index{uiconsole::Command@{uiconsole::Command}!description@{description}}
+\index{description@{description}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf uiconsole::Command::description}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/df0/classuiconsole_1_1Command_ad6dbdcec778315e395a8be8571c3c69d}
+Description of command. \hypertarget{classuiconsole_1_1Command_adcc2a70ee67fa5040e6fce1508c490d2}{
+\index{uiconsole::Command@{uiconsole::Command}!help@{help}}
+\index{help@{help}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf uiconsole::Command::help}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/df0/classuiconsole_1_1Command_adcc2a70ee67fa5040e6fce1508c490d2}
+Help to the command. \hypertarget{classuiconsole_1_1Command_a61eae0502f93a95a9434835f5c72d999}{
+\index{uiconsole::Command@{uiconsole::Command}!name@{name}}
+\index{name@{name}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf uiconsole::Command::name}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/df0/classuiconsole_1_1Command_a61eae0502f93a95a9434835f5c72d999}
+Name of command. \hypertarget{classuiconsole_1_1Command_ab43ed5152860c099f858d62f9f556699}{
+\index{uiconsole::Command@{uiconsole::Command}!ui@{ui}}
+\index{ui@{ui}!uiconsole::Command@{uiconsole::Command}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInterface}$\ast$ {\bf uiconsole::Command::ui}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/df0/classuiconsole_1_1Command_ab43ed5152860c099f858d62f9f556699}
+Pointer to user interface object. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{commands_8h}{commands.h}\item 
+src/\hyperlink{commands_8cpp}{commands.cpp}\end{DoxyCompactItemize}

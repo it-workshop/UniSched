@@ -1,0 +1,284 @@
+\hypertarget{classGroup}{
+\section{Group Class Reference}
+\label{d0/db7/classGroup}\index{Group@{Group}}
+}
+
+
+Class keeps information about group of people.  
+
+
+
+
+{\ttfamily \#include $<$group.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGroup_ae2cf7fd2aae55c47454fa3072ccc45f1}{Group} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id, string name, string description)
+\item 
+\hyperlink{classGroup_a4b68e3ee36ef3270af3ecfae4b043c4c}{Group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+\hyperlink{classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}{$\sim$Group} ()
+\item 
+string \hyperlink{classGroup_aab2e4ec29eda3a490dede01eb9411f03}{get\_\-name} ()
+\item 
+\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} \hyperlink{classGroup_abdd86767799c3c3b6d2f7204b1945bd3}{get\_\-id} ()
+\item 
+void \hyperlink{classGroup_a1b7657c13a5cad2a8ad931c8fed8ecfb}{set\_\-id} (\hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} id)
+\item 
+string \hyperlink{classGroup_ade4eb90fbeb5f50dfb2ccb262cd39ce8}{get\_\-description} ()
+\item 
+\hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classGroup_a10f85a428de5c1215fd7d319bd1a9ca3}{get\_\-calendar} ()
+\item 
+void \hyperlink{classGroup_abea5d93d27820a64c84792e3011f1394}{add\_\-event} (\hyperlink{classEvent}{Event} $\ast$event, string \hyperlink{group__content_8h_ab4d38e7365d935f2a5f1403eec29127e}{status})
+\item 
+void \hyperlink{classGroup_a70b5f6f47818f5d4912926b29faa96bf}{delete\_\-event} (\hyperlink{classEvent}{Event} $\ast$event)
+\item 
+vector$<$ \hyperlink{structGroup__Content}{Group\_\-Content} $\ast$ $>$ $\ast$ \hyperlink{classGroup_a8578c69459be6971dd31e76357f934dc}{get\_\-people} ()
+\item 
+void \hyperlink{classGroup_a2aca17525330aeaf591e0bc243a8149e}{merge\_\-group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classGroup_a7fccd60929bd2e36db09fe37fffe0548}{exclude\_\-group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classGroup_ac753fa2674ec19ab156645f978654961}{include\_\-group} (\hyperlink{classGroup}{Group} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classGroup_afc2080f42e091f6831fd9d80e7b8f0d9}{add\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person}, string \hyperlink{group__content_8h_ab4d38e7365d935f2a5f1403eec29127e}{status})
+\item 
+void \hyperlink{classGroup_ad00847c4219c29fd3b94c6784870b629}{delete\_\-person} (\hyperlink{classPerson}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class keeps information about group of people. $<$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGroup_ae2cf7fd2aae55c47454fa3072ccc45f1}{
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}Group::Group (
+\begin{DoxyParamCaption}
+\item[{{\bf id\_\-type}}]{id, }
+\item[{string}]{name, }
+\item[{string}]{description}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_ae2cf7fd2aae55c47454fa3072ccc45f1}
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & Group's identificator in the database. \\
+\hline
+\mbox{\tt in}  & {\em name} & Group's name. \\
+\hline
+\mbox{\tt in}  & {\em description} & Group's description. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a4b68e3ee36ef3270af3ecfae4b043c4c}{
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}Group::Group (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a4b68e3ee36ef3270af3ecfae4b043c4c}
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & \hyperlink{classGroup}{Group} from which get information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}{
+\index{Group@{Group}!$\sim$Group@{$\sim$Group}}
+\index{$\sim$Group@{$\sim$Group}!Group@{Group}}
+\subsubsection[{$\sim$Group}]{\setlength{\rightskip}{0pt plus 5cm}Group::$\sim$Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGroup_abea5d93d27820a64c84792e3011f1394}{
+\index{Group@{Group}!add\_\-event@{add\_\-event}}
+\index{add\_\-event@{add\_\-event}!Group@{Group}}
+\subsubsection[{add\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Group::add\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event} $\ast$}]{event, }
+\item[{string}]{status}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_abea5d93d27820a64c84792e3011f1394}
+Add event to the group's calendar. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & \hyperlink{classEvent}{Event} to add. \\
+\hline
+\mbox{\tt in}  & {\em status} & Status of link. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_afc2080f42e091f6831fd9d80e7b8f0d9}{
+\index{Group@{Group}!add\_\-person@{add\_\-person}}
+\index{add\_\-person@{add\_\-person}!Group@{Group}}
+\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Group::add\_\-person (
+\begin{DoxyParamCaption}
+\item[{{\bf Person} $\ast$}]{person, }
+\item[{string}]{status}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_afc2080f42e091f6831fd9d80e7b8f0d9}
+Add person to the group. 
+\begin{DoxyParams}{Parameters}
+{\em person} & \hyperlink{classPerson}{Person} to add. \\
+\hline
+{\em status} & Person's status in this group. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a70b5f6f47818f5d4912926b29faa96bf}{
+\index{Group@{Group}!delete\_\-event@{delete\_\-event}}
+\index{delete\_\-event@{delete\_\-event}!Group@{Group}}
+\subsubsection[{delete\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void Group::delete\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a70b5f6f47818f5d4912926b29faa96bf}
+Delete event from group's calendar. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event} & \hyperlink{classEvent}{Event} to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_ad00847c4219c29fd3b94c6784870b629}{
+\index{Group@{Group}!delete\_\-person@{delete\_\-person}}
+\index{delete\_\-person@{delete\_\-person}!Group@{Group}}
+\subsubsection[{delete\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Group::delete\_\-person (
+\begin{DoxyParamCaption}
+\item[{{\bf Person} $\ast$}]{person}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_ad00847c4219c29fd3b94c6784870b629}
+Delete person from group. 
+\begin{DoxyParams}{Parameters}
+{\em person} & \hyperlink{classPerson}{Person} to delete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a7fccd60929bd2e36db09fe37fffe0548}{
+\index{Group@{Group}!exclude\_\-group@{exclude\_\-group}}
+\index{exclude\_\-group@{exclude\_\-group}!Group@{Group}}
+\subsubsection[{exclude\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Group::exclude\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a7fccd60929bd2e36db09fe37fffe0548}
+Exclude group from this. 
+\begin{DoxyParams}{Parameters}
+{\em group} & \hyperlink{classGroup}{Group} to exclude. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a10f85a428de5c1215fd7d319bd1a9ca3}{
+\index{Group@{Group}!get\_\-calendar@{get\_\-calendar}}
+\index{get\_\-calendar@{get\_\-calendar}!Group@{Group}}
+\subsubsection[{get\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Calendar} $\ast$ Group::get\_\-calendar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a10f85a428de5c1215fd7d319bd1a9ca3}
+Get group's calendar. \begin{DoxyReturn}{Returns}
+Group's calendar. 
+\end{DoxyReturn}
+\hypertarget{classGroup_ade4eb90fbeb5f50dfb2ccb262cd39ce8}{
+\index{Group@{Group}!get\_\-description@{get\_\-description}}
+\index{get\_\-description@{get\_\-description}!Group@{Group}}
+\subsubsection[{get\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}std::string Group::get\_\-description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_ade4eb90fbeb5f50dfb2ccb262cd39ce8}
+Get group's description. \begin{DoxyReturn}{Returns}
+Group's description. 
+\end{DoxyReturn}
+\hypertarget{classGroup_abdd86767799c3c3b6d2f7204b1945bd3}{
+\index{Group@{Group}!get\_\-id@{get\_\-id}}
+\index{get\_\-id@{get\_\-id}!Group@{Group}}
+\subsubsection[{get\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\_\-type} Group::get\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_abdd86767799c3c3b6d2f7204b1945bd3}
+Get group's identificator. \begin{DoxyReturn}{Returns}
+Group's identificator. 
+\end{DoxyReturn}
+\hypertarget{classGroup_aab2e4ec29eda3a490dede01eb9411f03}{
+\index{Group@{Group}!get\_\-name@{get\_\-name}}
+\index{get\_\-name@{get\_\-name}!Group@{Group}}
+\subsubsection[{get\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std::string Group::get\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_aab2e4ec29eda3a490dede01eb9411f03}
+Get group's name. \begin{DoxyReturn}{Returns}
+Group's name. 
+\end{DoxyReturn}
+\hypertarget{classGroup_a8578c69459be6971dd31e76357f934dc}{
+\index{Group@{Group}!get\_\-people@{get\_\-people}}
+\index{get\_\-people@{get\_\-people}!Group@{Group}}
+\subsubsection[{get\_\-people}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf Group\_\-Content} $\ast$ $>$ $\ast$ Group::get\_\-people (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a8578c69459be6971dd31e76357f934dc}
+Get group's people. \begin{DoxyReturn}{Returns}
+group's people. 
+\end{DoxyReturn}
+\hypertarget{classGroup_ac753fa2674ec19ab156645f978654961}{
+\index{Group@{Group}!include\_\-group@{include\_\-group}}
+\index{include\_\-group@{include\_\-group}!Group@{Group}}
+\subsubsection[{include\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Group::include\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_ac753fa2674ec19ab156645f978654961}
+Select includes in group. 
+\begin{DoxyParams}{Parameters}
+{\em group} & \hyperlink{classGroup}{Group} to include. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a2aca17525330aeaf591e0bc243a8149e}{
+\index{Group@{Group}!merge\_\-group@{merge\_\-group}}
+\index{merge\_\-group@{merge\_\-group}!Group@{Group}}
+\subsubsection[{merge\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Group::merge\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a2aca17525330aeaf591e0bc243a8149e}
+Merge group with this. 
+\begin{DoxyParams}{Parameters}
+{\em group} & \hyperlink{classGroup}{Group} to merge. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGroup_a1b7657c13a5cad2a8ad931c8fed8ecfb}{
+\index{Group@{Group}!set\_\-id@{set\_\-id}}
+\index{set\_\-id@{set\_\-id}!Group@{Group}}
+\subsubsection[{set\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void Group::set\_\-id (
+\begin{DoxyParamCaption}
+\item[{{\bf id\_\-type}}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{d0/db7/classGroup_a1b7657c13a5cad2a8ad931c8fed8ecfb}
+Set Group's id. 
+\begin{DoxyParams}{Parameters}
+{\em id} & Group's id. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{group_8h}{group.h}\item 
+src/\hyperlink{group_8cpp}{group.cpp}\end{DoxyCompactItemize}
