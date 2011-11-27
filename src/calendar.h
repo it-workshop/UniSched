@@ -1,15 +1,10 @@
-#ifndef _CALENDAR_H_
-#define _CALENDAR_H_
+#pragma once
 
 #include <vector>
 #include <string>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif /* HAVE_CONFIG_H */
-
-#include <types.h>
-#include <event.h>
+#include "types.h"
+#include "event.h"
 
 using std::string;
 using std::vector;
@@ -54,6 +49,4 @@ public:
     							 * @param [in] event to delete.
     							 */
 };
-
-#endif /* _CALENDAR_H_ */
 

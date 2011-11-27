@@ -1,18 +1,11 @@
-#ifndef _GROUP_H_
-#define _GROUP_H_
-
 #include <iostream>
 #include <string>
 #include <vector>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif /* HAVE_CONFIG_H */
-
-#include <types.h>
-#include <group_content.h>
-#include <calendar.h>
-#include <person.h>
+#include "types.h"
+#include "group_content.h"
+#include "calendar.h"
+#include "person.h"
 
 using std::string;
 using std::vector;
@@ -85,6 +78,4 @@ public:
     						 * @param person Person to delete.
     						 */
 };
-
-#endif /* _GROUP_H_ */
 

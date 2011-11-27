@@ -1,18 +1,11 @@
-#ifndef _EVENT_H_
-#define _EVENT_H_
-
 #include <string>
 #include <vector>
 #include <time.h>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif /* HAVE_CONFIG_H */
-
-#include <types.h>
-#include <group.h>
-#include <person.h>
-#include <calendar.h>
+#include "types.h"
+#include "group.h"
+#include "person.h"
+#include "calendar.h"
 
 using std::string;
 using std::vector;
@@ -80,6 +73,3 @@ public:
     							 * @param [in] person Person to delete.
     							 */
 };
-
-#endif /* _EVENT_H_ */
-
