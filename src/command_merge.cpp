@@ -1,4 +1,4 @@
-#include <commands.h>
+#include "commands.h"
 
 uiconsole::Command_Merge::Command_Merge(UserInterface *ui) : Command(ui)
 {

@@ -1,4 +1,4 @@
-#include <commands.h>
+#include "commands.h"
 
 uiconsole::Command_Link::Command_Link(UserInterface *ui) : Command(ui)
 {

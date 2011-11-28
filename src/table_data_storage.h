@@ -1,9 +1,10 @@
-#ifndef _TABLE_DATA_STORAGE_H_
-#define _TABLE_DATA_STORAGE_H_
+
+#pragma once
 
 #include <string>
 #include <vector>
-#include <types.h>
+
+#include "types.h"
 
 using std::string;
 using std::vector;
@@ -44,6 +45,4 @@ private:
 
     vector<dsrow> rows_;
 };
-
-#endif /* _TABLE_DATA_STORAGE_H_ */
 

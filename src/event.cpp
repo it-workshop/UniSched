@@ -1,4 +1,4 @@
-#include <event.h>
+#include "event.h"
 
 Event::Event(id_type id, string name, time_t begin, time_t end, string description)
 {

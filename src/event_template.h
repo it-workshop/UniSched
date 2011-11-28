@@ -1,12 +1,12 @@
-#ifndef _EVENT_TEMPLATE_H_
-#define _EVENT_TEMPLATE_H_
+
+#pragma once
 
 #include <vector>
 #include <string>
 
-#include <types.h>
-#include <commands.h>
-#include <group.h>
+#include "types.h"
+#include "commands.h"
+#include "group.h"
 
 using std::vector;
 using std::string;
@@ -47,6 +47,4 @@ public:
 						 */
     void get_requered_people();			/**< The set of requered people. */
 };
-
-#endif /* _EVENT_TEMPLATE_H_ */
 

@@ -1,5 +1,6 @@
-#ifndef  _GLOBAL_NAMESPACE_
-#define _GLOBAL_NAMESPACE_
+
+#pragma once
+
 // _________________________________
  /*                                  \
  |  This file is created to provide  |
@@ -88,6 +89,4 @@ namespace storage {
     typedef struct CalendarBunch_ CalendarBunch;
     typedef struct dsrow_ dsrow;
 };
-
-#endif /* _GLOBAL_NAMESPACE_ */
 

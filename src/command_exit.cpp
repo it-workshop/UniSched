@@ -1,4 +1,4 @@
-#include <commands.h>
+#include "commands.h"
 
 uiconsole::Command_Exit::Command_Exit(UserInterface *ui): uiconsole::Command (ui)
 {

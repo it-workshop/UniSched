@@ -1,5 +1,5 @@
-#ifndef _USERSINTERFACE_H_
-#define _USERSINTERFACE_H_
+
+#pragma once
 
 #include <string>
 #include <vector>
@@ -10,15 +10,15 @@
 #include <config.h>
 #endif /* HAVE_CONFIG_H */
 
-#include <types.h>
-#include <commands.h>
-#include <queue.h>
-#include <group_content.h>
-#include <person.h>
-#include <group.h>
-#include <event.h>
-#include <calendar.h>
-#include <data_storage.h>
+#include "types.h"
+#include "commands.h"
+#include "queue.h"
+#include "group_content.h"
+#include "person.h"
+#include "group.h"
+#include "event.h"
+#include "calendar.h"
+#include "data_storage.h"
 
 using std::string;
 using std::cin;
@@ -95,6 +95,4 @@ public:
     						 * @param [in] calendar Calendar to print.
     						 */
 };
-
-#endif /* _USERSINTERFACE_H_ */
 

@@ -1,11 +1,11 @@
-#ifndef _QUEUE_H_
-#define _QUEUE_H_
+
+#pragma once
 
 #include <vector>
 #include <string>
 
-#include <types.h>
-#include <group.h>
+#include "types.h"
+#include "group.h"
 
 using std::vector;
 using std::string;
@@ -44,6 +44,4 @@ public:
 						 * @return Popped group.
 						 */
 };
-
-#endif /* _QUEUE_H_ */
 

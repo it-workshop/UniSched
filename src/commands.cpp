@@ -1,5 +1,5 @@
 #define _COMMANDS_CPP_
-#include <commands.h>
+#include "commands.h"
 
 uiconsole::Command::Command(UserInterface *ui)
 {

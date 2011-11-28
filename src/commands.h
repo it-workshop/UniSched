@@ -1,5 +1,5 @@
-#ifndef _COMMANDS_H_
-#define _COMMANDS_H_
+
+#pragma once
 
 #include <stdlib.h>
 #include <string>
@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include <types.h>
-#include <userinterface.h>
+#include "types.h"
+#include "userinterface.h"
 
 using std::string;
 using std::cin;
@@ -260,6 +260,4 @@ namespace uiconsole {
 						 */
 
 }
-
-#endif /* _COMMANDS_H_ */
 

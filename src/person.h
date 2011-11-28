@@ -1,5 +1,5 @@
-#ifndef _PERSON_H_
-#define _PERSON_H_
+
+#pragma once
 
 #include <string>
 #include <vector>
@@ -9,11 +9,11 @@
 #include <config.h>
 #endif /* HAVE_CONFIG_H */
 
-#include <types.h>
-#include <group_content.h>
-#include <group.h>
-#include <calendar.h>
-#include <event.h>
+#include "types.h"
+#include "group_content.h"
+#include "group.h"
+#include "calendar.h"
+#include "event.h"
 
 /** @class Person
  * @brief Class keeps person unique data.
@@ -86,6 +86,4 @@ private:
     time_t birthday_;				/**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
 
 };
-
-#endif /* _PERSON_H_ */
 

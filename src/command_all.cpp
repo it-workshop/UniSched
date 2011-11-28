@@ -1,4 +1,4 @@
-#include <commands.h>
+#include "commands.h"
 
 uiconsole::Command_All::Command_All(UserInterface *ui): uiconsole::Command (ui)
 {

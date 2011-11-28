@@ -1,5 +1,5 @@
-#ifndef _DATASTORAGE_H_
-#define _DATASTORAGE_H_
+
+#pragma once
 
 #include <iostream>
 #include <stdlib.h>
@@ -7,14 +7,14 @@
 #include <vector>
 #include <algorithm>
 
-#include <types.h>
-#include <person.h>
-#include <group.h>
-#include <event.h>
-#include <calendar.h>
-#include <queue.h>
-#include <event_template.h>
-#include <table_data_storage.h>
+#include "types.h"
+#include "person.h"
+#include "group.h"
+#include "event.h"
+#include "calendar.h"
+#include "queue.h"
+#include "event_template.h"
+#include "table_data_storage.h"
 
 using std::string;
 using std::vector;
@@ -149,6 +149,4 @@ private:
     TableDataStorage queues_bunches_;
     TableDataStorage event_templates_;
 };
-
-#endif /* _DATASTORAGE_H_ */
 

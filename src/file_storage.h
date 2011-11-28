@@ -1,9 +1,9 @@
-#ifndef _FILE_STORAGE_H_
-#define _FILE_STORAGE_H_
 
-#include <types.h>
-#include <table_data_storage.h>
-#include <data_storage.h>
+#pragma once
+
+#include "types.h"
+#include "table_data_storage.h"
+#include "data_storage.h"
 
 class storage::FileStorage : public storage::DataStorage {
 public:
@@ -15,8 +15,4 @@ public:
 private:
     string path_;
 };
-
-
-
-#endif /* _FILE_STORAGE_H_ */
 

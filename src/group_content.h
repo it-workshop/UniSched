@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <string>
 
 #include "types.h"
@@ -11,3 +14,4 @@ struct Group_Content_ {
     Person *person;					/**< Person. */
     string status;					/**< Person's status in this group. */
 }; /**< @struct Group_Content */
+
