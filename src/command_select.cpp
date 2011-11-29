@@ -13,11 +13,13 @@ void uiconsole::Command_Select::run(vector<string> args)
     if (args.size() < 5)
     {
         cout << "Need four arguments." << endl;
+        cout << this->help;
         return;
     }
     if ((args[1][0] != '@') || (args[2][0] != '@') || (args[4][0] != '&'))
     {
         cout << "Wrong types." << endl;
+        cout << this->help;
         return;
     }
     id_type id0 = atoll(args[1].c_str() + 1),

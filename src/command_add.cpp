@@ -15,7 +15,8 @@ void uiconsole::Command_Add::run(vector<string> args)
     if (args.size() == 1)
     {
         cout << "Need type for add." << endl;
-        return;
+        cout << this->help;
+        return; 
     }
     char symbol = args[1][0];
     string name, description;

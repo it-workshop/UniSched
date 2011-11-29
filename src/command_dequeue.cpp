@@ -12,11 +12,13 @@ void uiconsole::Command_Dequeue::run(vector<string> args)
     if (args.size() < 3)
     {
         cout << "Need two arguments." << endl;
+        cout << this->help;
         return;
     }
     if ((args[1][0] != '&') || (args[2][0] != '@'))
     {
         cout << "Wrong types." << endl;
+        cout << this->help;
         return;
     }
     id_type id0 = atoll(args[1].c_str() + 1),

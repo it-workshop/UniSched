@@ -14,6 +14,7 @@ void uiconsole::Command_Link::run(vector<string> args)
     if (args.size() < 4)
     {
         cout << "Need type for link." << endl;
+        cout << this->help;
         return;
     }
     char symbol0 = args[1][0],

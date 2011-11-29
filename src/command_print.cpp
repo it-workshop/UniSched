@@ -12,12 +12,14 @@ void uiconsole::Command_Print::run(vector<string> args)
     if (args.size() == 1)
     {
         cout << "Need one argument for print." << endl;
+        cout << this->help;
         return;
     }
     char symbol = args[1][0];
     if (args[1].size() == 1)
     {
         cout << "Need id or name after (s)." << endl;
+        cout << this->help;
         return;
     }
     id_type id = atoll(args[1].c_str() + 1);

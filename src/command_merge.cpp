@@ -12,6 +12,7 @@ void uiconsole::Command_Merge::run(vector<string> args)
     if (args.size() < 3)
     {
         cout << "Need two arguments for merge." << endl;
+        cout << this->help;
         return;
     }
     char symbol = args[1][0];

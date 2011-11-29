@@ -12,6 +12,7 @@ void uiconsole::Command_All::run(vector<string> args)
     if (args.size() == 1)
     {
         cout << "Need one argument for all." << endl;
+        cout << this->help;
         return;
     }
     char symbol = args[1][0];

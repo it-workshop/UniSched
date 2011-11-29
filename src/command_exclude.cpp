@@ -12,12 +12,14 @@ void uiconsole::Command_Exclude::run(vector<string> args)
     if (args.size() < 3)
     {
         cout << "Need two arguments for exclusion." << endl;
+        cout << this->help;
         return;
     }
     char symbol = args[1][0];
     if ((args[2][0] != '@') || (args[1][0] != '@'))
     {
         cout << "Arguments must be groups." << endl;
+        cout << this->help;
         return;
     }
     id_type id0 = atoll(args[1].c_str() + 1);
