@@ -15,15 +15,10 @@
 
 int main (int argc, char *argv[])
 {
-    std::vector<string> args;
-
     storage::DataStorage *db = new storage::FileStorage ();
     db->setup ("database/", "", "", "");
     db->load ();
     db->init ();
-
-    for (int i = 1; i < argc; i++)
-        args.push_back(argv[i]);
 
     UserInterface *ui = new UserInterface ();
     ui->set_db (db);
@@ -34,10 +29,10 @@ int main (int argc, char *argv[])
 
 //    test->get_requered_people();
 
-    if (argc - 1)
-        uiconsole::execute(args);
-    else
-        ui->listen();
+    if (argc == 2)
+		freopen (argv[1], "r", stdin);
+    
+	ui->listen();
 
     db->sync ();
     db->save ();
