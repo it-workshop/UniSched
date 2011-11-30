@@ -31,7 +31,7 @@ void TableDataStorage::add_row(string fields[])
 {
     dsrow nrow;
 
-    for(int i = 0; i < fields_count_; i++)
+    for (int i = 0; i < fields_count_; i++)
     {
         nrow.fields.push_back(fields[i]);
     }
@@ -42,7 +42,7 @@ void TableDataStorage::add_row(string fields[])
 
 string TableDataStorage::get_cell_value(int row, int field)
 {
-    if(row >= rows_count_ || field >= fields_count_)
+    if (row >= rows_count_ || field >= fields_count_)
     {
         error_ = GET_CELL_VALUE_ERR;
 	return NULL;
@@ -53,7 +53,7 @@ string TableDataStorage::get_cell_value(int row, int field)
 
 bool TableDataStorage::set_cell_value(int row, int field, string value)
 {
-    if(row >= rows_count_ || field >= fields_count_)
+    if (row >= rows_count_ || field >= fields_count_)
     {
         error_ = SET_CELL_VALUE_ERR;
         return false;
@@ -67,7 +67,7 @@ bool TableDataStorage::load_table(string filename)
 {
     FILE * lt = fopen(filename.c_str (), "r");
 
-    if(!lt)
+    if (!lt)
     {
         error_ = LOAD_ERR;
         return false;
@@ -78,21 +78,21 @@ bool TableDataStorage::load_table(string filename)
     string str;
     string tsym = " ";
 
-    while(true)
+    while (true)
     {
         tsym[0] = fgetc(lt);
 
-        if(tsym[0] == EOF)
+        if (tsym[0] == EOF)
 	    break;
 	
-	if(tsym[0] == ';' || tsym[0] == ',')
+	if (tsym[0] == ';' || tsym[0] == ',')
 	{
             rw->fields.push_back(str);
             str="";
             tsym[0] = fgetc(lt);
 	}
 
-	if(tsym[0] == '\n')
+	if (tsym[0] == '\n')
 	{
 	    rw->fields.push_back(str);
             str="";
@@ -100,7 +100,7 @@ bool TableDataStorage::load_table(string filename)
             rw = new dsrow();
             tsym[0] = fgetc(lt);
         }
-	    if(tsym[0]!='\"')
+	    if (tsym[0]!='\"')
             str.append(tsym);
 	}
     
@@ -115,14 +115,14 @@ bool TableDataStorage::save_table(string filename)
     FILE * lt = fopen(filename.c_str(), "w");
     string str="";
 
-    for(int i = 0; i < rows_count_; i++)
+    for (int i = 0; i < rows_count_; i++)
     {
-        for(int d = 0; d < fields_count_; d++)
+        for (int d = 0; d < fields_count_; d++)
 	{
             str = rows_[i].fields[d];
             fputs(str.c_str(), lt);
 
-            if(d < fields_count_ - 1)
+            if (d < fields_count_ - 1)
 	        fputc(';', lt);
         }
 

@@ -496,7 +496,7 @@ void DataStorage::add_person(id_type id)
     string flds[people_.get_rows_count()];
     flds[0] = itos(id);
 
-    for(unsigned long long int i = 1; i < people_.get_rows_count(); i++)
+    for (unsigned long long int i = 1; i < people_.get_rows_count(); i++)
         flds[i] = "";
 
     people_.add_row(flds);
@@ -506,7 +506,7 @@ void DataStorage::add_group(id_type id)
 {
     string flds[groups_.get_rows_count()];
     flds[0] = itos(id);
-    for(unsigned long long int i = 1; i < groups_.get_rows_count(); i++)
+    for (unsigned long long int i = 1; i < groups_.get_rows_count(); i++)
         flds[i] = "";
 
     groups_.add_row(flds);
@@ -517,7 +517,7 @@ void DataStorage::add_event(id_type id)
     string flds[events_.get_rows_count()];
     flds[0] = itos(id);
 
-    for(unsigned long long int i = 1; i < events_.get_rows_count(); i++)
+    for (unsigned long long int i = 1; i < events_.get_rows_count(); i++)
         flds[i] = "";
 
     events_.add_row(flds);
@@ -572,7 +572,7 @@ vector<id_type> DataStorage::get_person_ID_list()
 {
     vector<id_type> ids;
 
-    for(unsigned long long int i = 0; i < people_.get_rows_count(); i++)
+    for (unsigned long long int i = 0; i < people_.get_rows_count(); i++)
     {
         ids.push_back(atoll(people_.get_cell_value(i, 0).c_str()));
     }
@@ -584,7 +584,7 @@ vector<id_type> DataStorage::get_event_ID_list()
 {
     vector<id_type> ids;
 
-    for(unsigned long long int i = 0; i < events_.get_rows_count(); i++)
+    for (unsigned long long int i = 0; i < events_.get_rows_count(); i++)
     {
         ids.push_back(atoll(events_.get_cell_value(i, 0).c_str()));
     }
@@ -596,7 +596,7 @@ vector<id_type> DataStorage::get_group_ID_list()
 {
     vector<id_type> ids;
 
-    for(unsigned long long int  i = 0; i < groups_.get_rows_count(); i++)
+    for (unsigned long long int  i = 0; i < groups_.get_rows_count(); i++)
     {
         ids.push_back(atoll(groups_.get_cell_value(i, 0).c_str()));
     }
@@ -608,7 +608,7 @@ vector<id_type> DataStorage::get_queue_ID_list()
 {
     vector<id_type> ids;
 
-    for(unsigned long long int i = 0; i < queues_.get_rows_count(); i++)
+    for (unsigned long long int i = 0; i < queues_.get_rows_count(); i++)
     {
         ids.push_back(atoll(queues_.get_cell_value(i, 0).c_str()));
     }
@@ -620,7 +620,7 @@ vector<id_type> DataStorage::get_event_template_ID_list()
 {
     vector<id_type> ids;
 
-    for(unsigned long long int i = 0; i < event_templates_.get_rows_count(); i++)
+    for (unsigned long long int i = 0; i < event_templates_.get_rows_count(); i++)
     {
         ids.push_back(atoll(event_templates_.get_cell_value(i, 0).c_str()));
     }
