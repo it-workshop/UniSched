@@ -12,7 +12,8 @@ cmake . && make
 
 Code Style
 ~~~~~~~~~~
-Предлагается следование следующим правилам:
+Предлагается следование следующим правилам::
+
     F001 Source files should not use the '\r' (CR) character
     F002 File names should be well-formed
     L001 No trailing whitespace
