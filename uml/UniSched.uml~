@@ -58,7 +58,7 @@
 			CodeGeneration
 		</plugin>
 </profile>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Wed Nov 30 10:55:26 GMT 2011'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Wed Nov 30 10:54:38 GMT 2011'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.29.2(6) revised on $Date: 2007-05-12 08:08:08 +0200 (Sat, 12 May 2007) $ </XMI.exporterVersion>
@@ -66,8 +66,8 @@
     <XMI.metamodel xmi.name="UML" xmi.version="1.4"/></XMI.header>
   <XMI.content>
     <UML:Model xmi.id = '127-0-0-1-a340433:133ef3792a3:-8000:0000000000000E25'
-      name = 'UniSched' visibility = 'public' isSpecification = 'false' isRoot = 'false'
-      isLeaf = 'false' isAbstract = 'false'>
+      name = 'untitledModel' isSpecification = 'false' isRoot = 'false' isLeaf = 'false'
+      isAbstract = 'false'>
       <UML:Namespace.ownedElement>
         <UML:Generalization xmi.id = '127-0-0-1-a340433:133ef3792a3:-8000:0000000000000E2A'
           isSpecification = 'false'>
