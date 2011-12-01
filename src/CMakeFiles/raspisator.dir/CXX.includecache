@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/calendar.cpp
-calendar.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/calendar.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/calendar.h
 vector
 -
@@ -19,66 +15,6 @@ types.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/types.h
 event.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/event.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_add.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_all.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_clone.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_delete.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_dequeue.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_enqueue.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_exclude.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_exit.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_generate.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_help.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_include.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_link.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_merge.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_print.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/command_select.cpp
-commands.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.h
 
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/commands.cpp
 commands.h
@@ -134,10 +70,6 @@ event_template.h
 table_data_storage.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/table_data_storage.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/event.cpp
-event.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/event.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/event.h
 string
 -
@@ -154,10 +86,6 @@ person.h
 calendar.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/calendar.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/event_template.cpp
-event_template.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/event_template.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/event_template.h
 vector
 -
@@ -170,10 +98,6 @@ commands.h
 group.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/group.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/file_storage.cpp
-file_storage.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/file_storage.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/file_storage.h
 types.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/types.h
@@ -181,10 +105,6 @@ table_data_storage.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/table_data_storage.h
 data_storage.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/data_storage.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/group.cpp
-group.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/group.h
 
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/group.h
 iostream
@@ -240,10 +160,6 @@ data_storage.h
 file_storage.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/file_storage.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/person.cpp
-person.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/person.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/person.h
 string
 -
@@ -264,10 +180,6 @@ calendar.h
 event.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/event.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/queue.cpp
-queue.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/queue.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/queue.h
 vector
 -
@@ -278,12 +190,6 @@ types.h
 group.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/group.h
 
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/table_data_storage.cpp
-table_data_storage.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/table_data_storage.h
-stdio.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/stdio.h
-
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/table_data_storage.h
 string
 -
@@ -293,10 +199,6 @@ types.h
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/types.h
 
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/types.h
-
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/userinterface.cpp
-userinterface.h
-/Users/arsh/Documents/workspace/issl_2011/UniSched/src/userinterface.h
 
 /Users/arsh/Documents/workspace/issl_2011/UniSched/src/userinterface.h
 string
