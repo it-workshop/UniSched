@@ -35,13 +35,13 @@ namespace uiconsole {
 						 */
         ~Command();				/**< Destructor. */
 
-        string get_name();			/**< Get name of command.
+        const string& get_name() {return name;}; /**< Get name of command.
 						 * @return name of command.
 						 */
-        string get_description();		/**< Get description of command.
+        const string& get_description() {return description;}; /**< Get description of command.
 						 * @return description of command.
 						 */
-        string get_help();			/**< Get help of command.
+        const string& get_help() {return help;};			/**< Get help of command.
 						 * @return help of command.
 						 */
         virtual void run(vector<string> args) = 0;
