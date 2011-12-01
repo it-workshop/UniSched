@@ -21,6 +21,9 @@ uiconsole::Command::~Command()
 
 void uiconsole::execute(vector<string> args)
 {
+	if (args[0].empty())
+		return;
+
     for (vector<uiconsole::Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
         if ((*it)->get_name() == args[0])
         {
