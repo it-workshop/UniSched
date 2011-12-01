@@ -161,7 +161,7 @@ time_t UserInterface::get_time(string time)
     formated.tm_hour = atoi(time.c_str());
     formated.tm_isdst = 0;
     formated.tm_mday = atoi(time.c_str() + 6);
-    formated.tm_mon = atoi(time.c_str() + 9);
+    formated.tm_mon = atoi(time.c_str() + 9) - 1;
     formated.tm_year = atoi(time.c_str() + 12) - 1900;
     return mktime(&formated);
 }
@@ -176,7 +176,7 @@ time_t UserInterface::get_birthday(string time)
     formated.tm_hour = 0;
     formated.tm_isdst = 0;
     formated.tm_mday = atoi(time.c_str());
-    formated.tm_mon = atoi(time.c_str() + 3);
+    formated.tm_mon = atoi(time.c_str() + 3) - 1;
     formated.tm_year = atoi(time.c_str() + 6) - 1900;
     return mktime(&formated);
 }
