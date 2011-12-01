@@ -1,0 +1,10 @@
+add $Arshavir Ter-Gabrielyan MALE 24/04/1991
+all $
+add $Harry Mosyagin MALE 23/12/1991
+add @Developers
+A group of developers of this project.
+
+link @0 $0 "WirelessWizard"
+#link @0 $1 "Cramur"
+#all @
+exit

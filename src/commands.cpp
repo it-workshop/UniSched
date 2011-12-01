@@ -21,16 +21,18 @@ uiconsole::Command::~Command()
 
 void uiconsole::execute(vector<string> args)
 {
-	if (args[0].empty())
-		return;
+    if (args[0].empty())
+    {
+        return;
+    }
 
     for (vector<uiconsole::Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
-        if ((*it)->get_name() == args[0])
-        {
-            (*it)->run(args);
-            return;
-        }
-    cout << endl << "There's no function named: " << args[0] << endl;
+    if ((*it)->get_name() == args[0])
+    {
+        (*it)->run(args);
+        return;
+    }
+    cout << "There's no function named: " << args[0] << endl;
 }
 
 void uiconsole::initiate(UserInterface *ui)
