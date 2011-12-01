@@ -34,7 +34,10 @@ void uiconsole::Command_Add::run(vector<string> args)
             symbol = getchar();
             description += symbol;
             if (symbol == '\n')
+			{
                 symbol = getchar();
+				ungetc (symbol, stdin);
+			}
         }
         new_group = new Group(0, name, description);
 	ui->get_db ()->register_group (new_group);
@@ -76,7 +79,10 @@ void uiconsole::Command_Add::run(vector<string> args)
             symbol = getchar();
             description += symbol;
             if (symbol == '\n')
+			{
                 symbol = getchar();
+				ungetc(symbol, stdin);
+			}
         } 
         new_event = new Event(0, name, begin, end, description);
         ui->get_db ()->register_event (new_event);
