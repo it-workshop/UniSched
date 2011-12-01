@@ -24,7 +24,7 @@ void UserInterface::listen()
 {
     while (!done)
     {
-        cout << endl << "raspisator-? ";
+        cout << "raspisator-? ";
         uiconsole::execute(get_request());
     }
 }
