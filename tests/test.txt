@@ -22,4 +22,6 @@ all $
 all @
 all #
 all %
+select @0 @2 1 &0
 exit
+

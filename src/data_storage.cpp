@@ -15,7 +15,7 @@ string itos (unsigned long long int value)
     while ((value /= 10) > 0);
     length = i - 1;
 
-    for (i = 0; i < length; i++)
+    for (i = 0; i < length ; i++)
     {
         reverse [length - i] = array [i];
     }

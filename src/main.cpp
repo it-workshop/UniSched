@@ -15,13 +15,13 @@
 
 int main (int argc, char *argv[])
 {
-    storage::DataStorage *db = new storage::FileStorage();
-    db->setup("database/", "", "", "");
-    db->load();
-    db->init();
+    storage::DataStorage *db = new storage::FileStorage ();
+    db->setup ("database/", "", "", "");
+    db->load ();
+    db->init ();
 
-    UserInterface *ui = new UserInterface();
-    ui->set_db(db);
+    UserInterface *ui = new UserInterface ();
+    ui->set_db (db);
 
     uiconsole::initiate(ui);
     
@@ -30,11 +30,10 @@ int main (int argc, char *argv[])
 //    test->get_requered_people();
 
     if (argc == 2)
-    {
-        freopen (argv[1], "r", stdin);
-    }
+		freopen (argv[1], "r", stdin);
+    
+	ui->listen();
 
-    ui->listen();
     db->sync ();
     db->save ();
 
