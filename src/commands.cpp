@@ -19,21 +19,6 @@ uiconsole::Command::~Command()
     }
 }
 
-string uiconsole::Command::get_name()
-{
-    return name;
-}
-
-string uiconsole::Command::get_description()
-{
-    return description;
-}
-
-string uiconsole::Command::get_help()
-{
-    return help;
-}
-
 void uiconsole::execute(vector<string> args)
 {
     for (vector<uiconsole::Command *>::iterator it = commands.begin(); it != commands.end(); it ++)
