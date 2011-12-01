@@ -1,0 +1,57 @@
+This file contains 2 major parts: general usage info and examples.
+
+GENERAL
+========
+1. The user-related CLI
+
+2. basic solutions
+
+3. tricks&tips
+
+EXAMPLES
+========
+Пользователь подумал: "Завтра я хочу провести лекцию по манипулированию сознанием, при этом это надо согласовать ещё с двумя лекторами и пятнадцатью слушателями, допустим, в той же системе, погулять с собакой и выпить чашечку кофе с моей бывшей одноклассницей".
+
+Чтобы запланировать это все с помощью Расписатора, ему стоит сделать следующее.
+Допустим, он только что скомпилил Расписатор и база пустая, пользователь добавляет в базу себя и всех других людей, с кем связано его время в планируемом запросе и кого можно вспомнить по имени.
+
+NEWPERSON Вера --birthday 21.12.1991 --sex F --group "Girl Buddies"
+> Group "Girl Buddies" doesn't exist. Create it?
+yes
+> ok, done.
+> The ID of the group "Girl Buddies" is #@0001, enjoy.
+> Вера's ID is $0001, enjoy.
+NEWEVENT "A Cup of Coffie" --time 19:00/3.12.2011 --group @($0001) --descriptor "Buy some flowers" --alarm-warning 1:00
+> The ID of the event
+> Ok, I'll warn you at 18:00/3.12.2011. Enjoy.
+NEWPERSON Enga --birthday 12.06.2004 --sex F --group Pets --comment "a dog"
+> Group "Pets" doesn't exist. Create it?
+yes
+> ok, done.
+> The ID of the group "Pets" is @0002, enjoy.
+> Enga's ID is $0002, enjoy.
+NEWEVENT "Walk with the Dog" --time 16:30/3.12.2011 --group NEW($0002)
+> The ID of the event "Walk with the Dog" is #0002.
+> Ok, don't forget about it. Enjoy.
+# Позвонить двум лекторам и выяснить кто когда юзает аудиторию.
+# Позвонить в секретариат и забронировать аудиторию; добавить свою лекцию в расписание.
+NEWEVENT "Mind Control Lecture" --time 9:00/5.12.2011 --alarm-warning 2:30
+> The ID of the event "Mind Control Lecture" is #0003.
+> Ok, I'll warn you at 6:30/5.12.2011. Enjoy.
+CONNECT ssh://10.82.74.120:544 -p "dont-bee-a-smart-ass" -l WirelessWizard --raspisator-directory ~/raspisator
+> Found new groups: "Students" (ID @0003, with 3 related events, IDs in range #0003-#0005).
+> Adding 15 new Individuals to the DB (IDs in range $0004-$00018). Enjoy.
+GETEVENT #0003 --edit --group @0003 --email-warning now
+> Event "Mind Control Lecture" modified, do you want to sync with the Internet DB (ssh://10.82.74.120:544)?
+yes
+> Synchronized successfully, the notification email is generated:
+> -----------------------------------------
+> Dear Students,
+> Please look to the new event in your calendars. I'll be happy to see you around on Monday, 5-th December for listening to my new lecture about mind controlling.
+> Best Regards, PhD Wireless Wizard.
+> -----------------------------------------
+> Send message or edit via vim?
+send
+> Message sent, thank you&enjoy.
+MAKECAL --all
+[Text-generated calendar output]
