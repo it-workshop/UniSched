@@ -37,3 +37,4 @@ Code Style
     T019 Control structures should have complete curly-braced block of code 
 
 Подробнее смотри http://www.inspirel.com/vera/ce/doc/rules/index.html
+Тулза для проверки называется vera++, профиль настроек лежит в файле style_rules
