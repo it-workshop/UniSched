@@ -22,6 +22,9 @@ protected:
     void set_field(const std::string name, const time_t value);
     void set_field(const std::string name, const StorableObject& value);
 
+    virtual void save() = 0;
+    virtual void load() = 0;
+
 public:
 
     StorableObject(const int id, AbstractStorage& storage): id(id), storage(storage) {}

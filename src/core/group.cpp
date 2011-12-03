@@ -27,3 +27,18 @@ void Group::del_parent_group(AbstractGroup *group)
         }
     }
 }
+
+void Group::save()
+{
+    AbstractGroup::save();
+
+    /* TODO: need something to save parent_groups_ field, need interface. */
+}
+
+void Group::load()
+{
+    AbstractGroup::load();
+
+    /* TODO: need something to load parent_groups_ field, need interface. */
+}
+

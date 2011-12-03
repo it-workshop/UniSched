@@ -40,3 +40,18 @@ void AbstractGroup::del_person(Person * person)
     }
 }
 
+void AbstractGroup::save()
+{
+    set_field("name", name_);
+
+    /* TODO: need something to save people_ field, need interface. */
+    /* TODO: need something to save child_groups_ field, need interface. */
+}
+
+void AbstractGroup::load()
+{
+    name_ = get_field_string("name");
+
+    /* TODO: need something to load people_ field, need interface. */
+    /* TODO: need something to save child_groups_ field, need interface. */
+}

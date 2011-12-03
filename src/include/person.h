@@ -21,19 +21,24 @@ public:
     };
 
 private:
-    const std::string name_;
+    std::string name_;
                             /**< Name of the person. */
-    const std::string surname_;
+    std::string surname_;
                             /**< Surname of the person. */
-    const enum Sex sex_;
+    enum Sex sex_;
                             /**< Person's sex. */
-    const time_t birthday_;
+    time_t birthday_;
                             /**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
     std::vector<class AbstractGroup const *> groups_;
+
+    std::vector<class AbstractGroup const *>::iterator groups_iterator_;
 
 protected:
     void add_group(class AbstractGroup const * group) { groups_.push_back(group); }
     void del_group(class AbstractGroup const * group);
+
+    virtual void save();
+    virtual void load();
 
 public:
    Person(const int id, Storage::AbstractStorage& storage,
@@ -65,6 +70,10 @@ public:
                             /**< Get birthday of person.
     						 * @return person's birthday.
     						 */
+
+    class AbstractGroup const * first_group() { groups_iterator_ = groups_.begin(); return *groups_iterator_++; }
+    class AbstractGroup const * next_group() { return *groups_iterator_++; }
+    const bool has_next_group() { return groups_iterator_ != groups_.end(); }
 };
 
 };
