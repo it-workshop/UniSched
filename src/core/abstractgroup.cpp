@@ -4,7 +4,7 @@ using namespace Core;
 
 void AbstractGroup::del_child(AbstractGroup const * group)
 {
-    for (std::vector<AbstractGroup const *>::iterator it = child_groups_.begin(); it != child_groups_.end(); it++)
+    for (auto it = child_groups_.begin(); it != child_groups_.end(); it++)
     {
         if (*it == group)
         {
@@ -16,7 +16,7 @@ void AbstractGroup::del_child(AbstractGroup const * group)
 
 void AbstractGroup::add_person(Person * person)
 {
-    for (std::vector<Person const *>:: iterator it = people_.begin(); it != people_.end(); it++)
+    for (auto it = people_.begin(); it != people_.end(); it++)
     {
         if (*it == person)
         {
@@ -30,7 +30,7 @@ void AbstractGroup::add_person(Person * person)
 
 void AbstractGroup::del_person(Person * person)
 {
-    for (std::vector<Person const *>::iterator it = people_.begin(); it != people_.end(); it++)
+    for (auto it = people_.begin(); it != people_.end(); it++)
     {
         if (*it == person)
         {
@@ -44,14 +44,50 @@ void AbstractGroup::save()
 {
     set_field("name", name_);
 
-    /* TODO: need something to save people_ field, need interface. */
-    /* TODO: need something to save child_groups_ field, need interface. */
+    {
+        std::vector<StorableObject const *> temp_cast_vector;
+        for (auto it = people_.begin(); it != people_.end(); it++)
+        {
+            temp_cast_vector.push_back(*it);
+        }
+
+        set_field_vector("people", temp_cast_vector);
+    }
+
+    {
+        std::vector<StorableObject const *> temp_cast_vector;
+        for (auto it = child_groups_.begin(); it != child_groups_.end(); it++)
+        {
+            temp_cast_vector.push_back(*it);
+        }
+
+        set_field_vector("child_groups", temp_cast_vector);
+    }
 }
 
 void AbstractGroup::load()
 {
     name_ = get_field_string("name");
 
-    /* TODO: need something to load people_ field, need interface. */
-    /* TODO: need something to save child_groups_ field, need interface. */
+    {
+        people_.clear();
+
+        auto temp_cast_vector = get_field_vector("people");
+        for (auto it = temp_cast_vector.begin(); it != temp_cast_vector.end(); it++)
+        {
+            people_.push_back(dynamic_cast<Person const *>(*it));
+        }
+
+        set_field_vector("people", temp_cast_vector);
+    }
+
+    {
+        child_groups_.clear();
+
+        auto temp_cast_vector = get_field_vector("child_groups");
+        for (auto it = temp_cast_vector.begin(); it != temp_cast_vector.end(); it++)
+        {
+            child_groups_.push_back(dynamic_cast<AbstractGroup const *>(*it));
+        }
+    }
 }

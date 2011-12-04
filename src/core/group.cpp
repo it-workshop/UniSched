@@ -4,7 +4,7 @@ using namespace Core;
 
 void Group::add_parent_group(AbstractGroup *group)
 {
-    for (std::vector<AbstractGroup const *>::iterator it = parent_groups_.begin(); it != parent_groups_.end(); it++)
+    for (auto it = parent_groups_.begin(); it != parent_groups_.end(); it++)
     {
         if (*it == group)
         {
@@ -18,7 +18,7 @@ void Group::add_parent_group(AbstractGroup *group)
 
 void Group::del_parent_group(AbstractGroup *group)
 {
-    for (std::vector<AbstractGroup const *>::iterator it = parent_groups_.begin(); it != parent_groups_.end(); it++)
+    for (auto it = parent_groups_.begin(); it != parent_groups_.end(); it++)
     {
         if (*it == group)
         {
@@ -32,13 +32,29 @@ void Group::save()
 {
     AbstractGroup::save();
 
-    /* TODO: need something to save parent_groups_ field, need interface. */
+    {
+        std::vector<StorableObject const *> temp_cast_vector;
+        for (auto it = parent_groups_.begin(); it != parent_groups_.end(); it++)
+        {
+            temp_cast_vector.push_back(*it);
+        }
+
+        set_field_vector("parent_groups", temp_cast_vector);
+    }
 }
 
 void Group::load()
 {
     AbstractGroup::load();
 
-    /* TODO: need something to load parent_groups_ field, need interface. */
+    {
+        parent_groups_.clear();
+
+        auto temp_cast_vector = get_field_vector("parent_groups");
+        for (auto it = temp_cast_vector.begin(); it != temp_cast_vector.end(); it++)
+        {
+            parent_groups_.push_back(dynamic_cast<AbstractGroup const *>(*it));
+        }
+    }
 }
 

@@ -14,15 +14,19 @@ private:
     std::vector<StorableObject> objects;
     std::queue<int> request_result;
 protected:
-    virtual const int get_field_int(const int id, const std::string field) const {}
-    virtual const std::string get_field_string(const int id, const std::string field) const {}
-    virtual const time_t get_field_time(const int id, const std::string field) const {}
-    virtual const StorableObject& get_field_object(const int id, const std::string field) const {}
+    virtual const int get_field_int(const int id, const std::string field) const = 0;
+    virtual const std::string get_field_string(const int id, const std::string field) const = 0;
+    virtual const time_t get_field_time(const int id, const std::string field) const = 0;
+    virtual const std::string get_field_enum(const int id, const std::string field) const = 0;
+    virtual const StorableObject& get_field_object(const int id, const std::string field) const = 0;
+    virtual std::vector<StorableObject const *> get_field_vector(const int id, const std::string field) const = 0;
 
-    virtual void set_field(const int id, const std::string field, const int value) {}
-    virtual void set_field(const int id, const std::string field, const std::string value) {}
-    virtual void set_field(const int id, const std::string field, const time_t value) {}
-    virtual void set_field(const int id, const std::string field, const StorableObject& value) {}
+    virtual void set_field(const int id, const std::string field, const int value) = 0;
+    virtual void set_field(const int id, const std::string field, const std::string value) = 0;
+    virtual void set_field(const int id, const std::string field, const time_t value) = 0;
+    virtual void set_field_enum(const int id, const std::string field, const std::string value) = 0;
+    virtual void set_field(const int id, const std::string field, const StorableObject& value) = 0;
+    virtual void set_field_vector(const int id, const std::string field, const std::vector<StorableObject const *> vector) = 0;
 
 public:
     AbstractStorage(): objects(), request_result() {}

@@ -1,3 +1,6 @@
 *.o
 raspisator
 *~
+.*.swp
+.*.swo
+

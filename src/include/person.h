@@ -20,6 +20,9 @@ public:
         FEMALE
     };
 
+    const Sex _(const std::string str) { return (str == "MALE")?MALE:FEMALE; }
+    const std::string _(const Sex sex) { return (sex == MALE)?"MALE":"FEMALE"; }
+
 private:
     std::string name_;
                             /**< Name of the person. */
