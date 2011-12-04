@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 add_subdirectory (storage)
+add_subdirectory (userinterface)
 add_subdirectory (core)
 
 add_executable (raspisator calendar.cpp command_add.cpp command_all.cpp
@@ -11,7 +12,7 @@ add_executable (raspisator calendar.cpp command_add.cpp command_all.cpp
     data_storage.cpp event.cpp event_template.cpp file_storage.cpp group.cpp
     main.cpp person.cpp queue.cpp table_data_storage.cpp userinterface.cpp)
 
-target_link_libraries (raspisator core storage)
+target_link_libraries (raspisator core storage userinterface)
 
 add_test(test_batch raspisator ../tests/test.txt)
 
