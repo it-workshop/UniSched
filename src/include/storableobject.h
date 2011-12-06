@@ -5,12 +5,13 @@
 namespace Storage {
 
 class StorableObject {
+friend class AbstractStorage;
 private:
-    const int id;
-    class AbstractStorage& storage;
+    const int id_;
+    class AbstractStorage& storage_;
 
 protected:
-    const int get_id() { return id; }
+    const int id() const { return id_; };
 
     const int get_field_int(const std::string name) const;
     const std::string get_field_string(const std::string name) const;
@@ -31,7 +32,7 @@ protected:
 
 public:
 
-    StorableObject(const int id, AbstractStorage& storage): id(id), storage(storage) {}
+    StorableObject(const int id, AbstractStorage& storage): id_(id), storage_(storage) {}
 };
 
 };

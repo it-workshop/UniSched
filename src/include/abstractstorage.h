@@ -11,8 +11,7 @@ namespace Storage {
 class AbstractStorage {
 friend class StorableObject;
 private:
-    std::vector<StorableObject> objects;
-    std::queue<int> request_result;
+    std::vector<StorableObject const *> objects_;
 protected:
     virtual const int get_field_int(const int id, const std::string field) const = 0;
     virtual const std::string get_field_string(const int id, const std::string field) const = 0;
@@ -28,17 +27,34 @@ protected:
     virtual void set_field(const int id, const std::string field, const StorableObject& value) = 0;
     virtual void set_field_vector(const int id, const std::string field, const std::vector<StorableObject const *> vector) = 0;
 
+    virtual void set_object(StorableObject const * object);
+
+    virtual const int new_id();
+
 public:
-    AbstractStorage(): objects(), request_result() {}
+    struct Argument {
+        const std::string field;
+        enum {
+            STRING,
+            INTEGER,
+            TIME,
+            ENUMERATION
+        } type;
+        const std::string string;
+        const int integer;
+        const time_t time;
+    };
 
-    virtual const StorableObject& get_object(const int id) const { return objects[id]; }
+    AbstractStorage() {}
 
-    virtual const int search(const std::string field, const int value) const = 0;
-    virtual const int search(const std::string field, const std::string value) const = 0;
-    virtual const int search(const std::string field, const time_t value) const = 0;
+    void remove(StorableObject const * object);
 
-    int get_next_result () { int id = request_result.front(); request_result.pop(); return id; }
-    const bool is_next_result () const { return !request_result.empty (); }
+    template <class T>
+    StorableObject const *create(std::vector<const Argument *>& parameters);
+
+    virtual std::vector<StorableObject const *>& search(std::vector<Argument const *>& parameters) = 0;
+
+    virtual StorableObject const * object(const int id) const { return objects_[id]; }
 };
 
 };
