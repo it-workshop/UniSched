@@ -23,6 +23,7 @@ void Group::del_parent_group(AbstractGroup *group)
         if (*it == group)
         {
             parent_groups_.erase(it);
+            group->del_child(this);
             break;
         }
     }
