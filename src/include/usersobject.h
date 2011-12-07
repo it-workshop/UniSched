@@ -4,7 +4,7 @@
 #include <vector>
 #include <typeinfo>
 
-namespace UserInterface {
+namespace UI {
 
 class UsersObject {
 private:

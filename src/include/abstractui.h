@@ -3,9 +3,9 @@
 #include <usersobject.h>
 #include <storage.h>
 
-namespace UserInterface {
+namespace UI {
 
-class AbstractUserInterface {
+class AbstractUI {
 private:
     Storage::AbstractStorage& storage_;
     std::vector<UsersObject const *> cache_;
@@ -20,7 +20,8 @@ protected:
     void remove(UsersObject const * object);
 
 public:
-    AbstractUserInterface (Storage::AbstractStorage& storage):
+
+    AbstractUI (Storage::AbstractStorage& storage):
         storage_(storage) {}
 };
 

@@ -1,16 +1,16 @@
-#include <abstractuserinterface.h>
+#include <abstractui.h>
 
-using namespace UserInterface;
+using namespace UI;
 
 template <class T>
-void AbstractUserInterface::create(const std::vector<const Storage::AbstractStorage::Argument>& parameters)
+void AbstractUI::create(const std::vector<const Storage::AbstractStorage::Argument>& parameters)
 {
     cache_.clear();
 
     cache_.push_back(dynamic_cast<UsersObject const *&>(storage_.create<T>(parameters)));
 }
 
-void AbstractUserInterface::remove(UsersObject const * object)
+void AbstractUI::remove(UsersObject const * object)
 {
     for (auto it = cache_.begin(); it != cache_.end(); it++)
     {
@@ -24,7 +24,7 @@ void AbstractUserInterface::remove(UsersObject const * object)
     storage_.remove(dynamic_cast<Storage::StorableObject const *>(object));
 }
 
-void AbstractUserInterface::search(std::vector<Storage::AbstractStorage::Argument const *>& parameters)
+void AbstractUI::search(std::vector<Storage::AbstractStorage::Argument const *>& parameters)
 {
     cache_.clear();
 
