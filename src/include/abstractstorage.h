@@ -11,14 +11,15 @@ namespace Storage {
 class AbstractStorage {
 friend class StorableObject;
 private:
-    std::vector<StorableObject const *> objects_;
 protected:
+    std::vector<StorableObject const *> objects_;
+    
     virtual const int get_field_int(const int id, const std::string field) const = 0;
     virtual const std::string get_field_string(const int id, const std::string field) const = 0;
     virtual const time_t get_field_time(const int id, const std::string field) const = 0;
     virtual const std::string get_field_enum(const int id, const std::string field) const = 0;
     virtual const StorableObject& get_field_object(const int id, const std::string field) const = 0;
-    virtual std::vector<StorableObject const *> get_field_vector(const int id, const std::string field) const = 0;
+    virtual const std::vector<StorableObject const *> get_field_vector(const int id, const std::string field) const = 0;
 
     virtual void set_field(const int id, const std::string field, const int value) = 0;
     virtual void set_field(const int id, const std::string field, const std::string value) = 0;

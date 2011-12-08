@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 add_subdirectory (storage)
 add_subdirectory (ui)
 add_subdirectory (core)
+add_subdirectory (tests)
 
 add_executable (raspisator calendar.cpp command_add.cpp command_all.cpp
     command_clone.cpp command_delete.cpp command_dequeue.cpp
