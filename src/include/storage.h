@@ -2,10 +2,10 @@
 
 namespace Storage {
 
-    class AbstractStorage;
     class StorableObject;
+    class AbstractStorage;
 };
 
-#include "abstractstorage.h"
 #include "storableobject.h"
+#include "abstractstorage.h"
 

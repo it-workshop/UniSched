@@ -1,6 +1,7 @@
 #pragma once
 
-#include "abstractstorage.h"
+#include <string>
+#include <vector>
 
 namespace Storage {
 
@@ -37,3 +38,4 @@ public:
 
 };
 
+#include <abstractstorage.h>
