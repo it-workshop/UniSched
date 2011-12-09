@@ -22,7 +22,7 @@ void Person::save()
     set_field("birthday", birthday_);
 
     {
-        std::vector<StorableObject const *> temp_cast_vector;
+        std::vector<StorableObject *> temp_cast_vector;
         for (auto it = groups_.begin(); it != groups_.end(); it++)
         {
             temp_cast_vector.push_back(*it);
@@ -41,10 +41,10 @@ void Person::load()
 
     groups_.clear();
     {
-        std::vector<StorableObject const *> temp_cast_vector = get_field_vector("groups");
+        std::vector<StorableObject *> temp_cast_vector = get_field_vector("groups");
         for (auto it = temp_cast_vector.begin(); it != temp_cast_vector.end(); it++)
         {
-            groups_.push_back(dynamic_cast<AbstractGroup const *>(*it));
+            groups_.push_back(dynamic_cast<AbstractGroup *>(*it));
         }
     }
 }
@@ -96,16 +96,13 @@ const std::string Person::read_enum(const std::string name) const throw (std::ba
     throw std::bad_cast();
 }
 
-const std::vector<UI::UsersObject const *> * Person::read_vector(const std::string name) const throw (std::bad_cast)
+const std::vector<UI::UsersObject *> Person::read_vector(const std::string name) const throw (std::bad_cast)
 {
     if (name == "group")
     {
-        std::vector<UI::UsersObject const *> * temp_cast_vector = new std::vector<UI::UsersObject const *>();
-
+        std::vector<UI::UsersObject *> temp_cast_vector;
         for (auto it = groups_.begin(); it != groups_.end(); it++)
-        {
-            temp_cast_vector->push_back(*it);
-        }
+            { temp_cast_vector.push_back(*it); }
 
         return temp_cast_vector;
     }

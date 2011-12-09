@@ -46,11 +46,11 @@ private:
     time_t birthday_;
                             /**< Person birthday. Time in seconds from 00:00:00, 1 Jan, 1900. */
 
-    std::vector<class AbstractGroup const *> groups_;
+    std::vector<class AbstractGroup *> groups_;
                             /**< Person's groups. */
 
 protected:
-    void add_group(class AbstractGroup const * group)
+    void add_group(class AbstractGroup * group)
             { groups_.push_back(group); }
                             /**< Add group to person, call in AbstractGroup::add_person()
                              * @param [in] group to add.
@@ -110,7 +110,7 @@ public:
     						 * @return person's birthday.
     						 */
 
-    const std::vector<class AbstractGroup const *>& groups()
+    const std::vector<class AbstractGroup *>& groups()
             { return groups_; }
                             /**< @deprecated Get person's groups.
                              * @return person's groups.
@@ -122,7 +122,7 @@ public:
     virtual const std::string read_string(const std::string name) const throw (std::bad_cast);
     virtual const time_t read_time(const std::string name) const throw (std::bad_cast);
     virtual const std::string read_enum(const std::string name) const throw (std::bad_cast);
-    virtual const std::vector<UI::UsersObject const *> * read_vector(const std::string name) const throw(std::bad_cast);
+    virtual const std::vector<UI::UsersObject *> read_vector(const std::string name) const throw(std::bad_cast);
 
     virtual void update(const std::string name, const int value) throw (std::bad_cast);
     virtual void update(const std::string name, const std::string value) throw (std::bad_cast);

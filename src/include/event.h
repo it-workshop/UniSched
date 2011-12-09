@@ -24,6 +24,11 @@ public:
     const time_t begin() const { return begin_; }
     const time_t duration() const { return duration_; }
     const time_t end() const { return begin_ + duration_; }
+
+    virtual const std::string read() const;
+    virtual const time_t read_time(const std::string name) const throw (std::bad_cast);
+    virtual void update(const std::string name, const time_t value) throw (std::bad_cast);
+    virtual void update(UI::UsersObject * object, const bool linked) throw (std::bad_cast);
 };
 
 };

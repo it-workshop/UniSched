@@ -27,7 +27,7 @@ const StorableObject& StorableObject::get_field_object (const std::string name) 
     return storage_.get_field_object (id_, name);
 }
 
-std::vector<StorableObject const *> StorableObject::get_field_vector(const std::string name) const
+std::vector<StorableObject *> StorableObject::get_field_vector(const std::string name) const
 {
     return storage_.get_field_vector(id_, name);
 }
@@ -57,7 +57,7 @@ void StorableObject::set_field(const std::string name, const StorableObject& val
     storage_.set_field(id_, name, value);
 }
 
-void StorableObject::set_field_vector(const std::string name, const std::vector<StorableObject const *>& vector)
+void StorableObject::set_field_vector(const std::string name, const std::vector<StorableObject *>& vector)
 {
     storage_.set_field_vector(id_, name, vector);
 }

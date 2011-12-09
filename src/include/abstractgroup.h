@@ -13,15 +13,13 @@ friend class Group;
 private:
     std::string name_;
 
-    std::vector<AbstractGroup const *> child_groups_;
-    std::vector<AbstractGroup const *>::iterator child_groups_iterator_;
+    std::vector<AbstractGroup *> child_groups_;
     
-    std::vector<class Person const *> people_;
-    std::vector<class Person const *>::iterator people_iterator_;
+    std::vector<class Person *> people_;
 
 protected:
-    void add_child(AbstractGroup const * group) { child_groups_.push_back(group); }
-    void del_child(AbstractGroup const * group);
+    void add_child(AbstractGroup * group) { child_groups_.push_back(group); }
+    void del_child(AbstractGroup * group);
 
     virtual void save();
     virtual void load();
@@ -37,13 +35,20 @@ public:
     void add_person(Person * person);
     void del_person(Person * person);
 
-    AbstractGroup const * first_child_group() { child_groups_iterator_ = child_groups_.begin(); return *child_groups_iterator_++; }
-    AbstractGroup const * next_child_group() { return *child_groups_iterator_++; }
-    const bool has_next_child_group() const { return child_groups_iterator_ != child_groups_.end(); }
+    virtual const std::string read() const;
 
-    class Person const * first_person() { people_iterator_ = people_.begin(); return *people_iterator_++; }
-    class Person const * next_person() { return *people_iterator_++; }
-    const bool has_next_person() const { return people_iterator_ != people_.end(); }
+    virtual const int read_int(const std::string name) const throw (std::bad_cast);
+    virtual const std::string read_string(const std::string name) const throw (std::bad_cast);
+    virtual const time_t read_time(const std::string name) const throw (std::bad_cast);
+    virtual const std::string read_enum(const std::string name) const throw (std::bad_cast);
+    virtual const std::vector<UI::UsersObject *> read_vector(const std::string name) const throw (std::bad_cast);
+
+    virtual void update(const std::string name, const int value) throw (std::bad_cast);
+    virtual void update(const std::string name, const std::string value) throw (std::bad_cast);
+    virtual void update(const std::string name, const time_t value) throw (std::bad_cast);
+    virtual void update_enum(const std::string name, const std::string value) throw (std::bad_cast);
+    virtual void update(UI::UsersObject * object, const bool linked) throw (std::bad_cast);
+
 };
 
 };

@@ -8,16 +8,16 @@ namespace UI {
 class AbstractUI {
 private:
     Storage::AbstractStorage& storage_;
-    std::vector<UsersObject const *> cache_;
+    std::vector<UsersObject *> cache_;
 protected:
-    std::vector<UsersObject const *>& cache() { return cache_; }
+    std::vector<UsersObject *>& cache() { return cache_; }
 
-    void search(std::vector<Storage::AbstractStorage::Argument const *>& parameters);
+    void search(std::vector<Storage::AbstractStorage::Argument *>& parameters);
 
     template <class T>
     void create(const std::vector<const Storage::AbstractStorage::Argument>& parameters);
 
-    void remove(UsersObject const * object);
+    void remove(UsersObject * object);
 
 public:
 

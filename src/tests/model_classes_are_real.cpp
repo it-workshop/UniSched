@@ -13,7 +13,7 @@ protected:
             { return ""; }
     virtual const Storage::StorableObject& get_field_object(const int id, const std::string name) const
             { return *objects_[0]; }
-    virtual const std::vector<Storage::StorableObject const *> get_field_vector(const int id, const std::string name) const
+    virtual const std::vector<Storage::StorableObject *> get_field_vector(const int id, const std::string name) const
             { return objects_; }
 
     virtual void set_field(const int id , const std::string name, const int value)
@@ -26,11 +26,11 @@ protected:
             {}
     virtual void set_field(const int id , const std::string name, const Storage::StorableObject& value)
             {}
-    virtual void set_field_vector(const int id , const std::string name, const std::vector<Storage::StorableObject const *> value)
+    virtual void set_field_vector(const int id , const std::string name, const std::vector<Storage::StorableObject *> value)
             {}
 public:
 
-    virtual std::vector<Storage::StorableObject const *>& search(std::vector<Argument const *>&)
+    virtual std::vector<Storage::StorableObject *>& search(std::vector<Argument *>&)
             { return objects_; }
 };
 
@@ -42,7 +42,7 @@ int main()
 {
     DummyStorage storage;
 
-    std::vector<Storage::AbstractStorage::Argument const *> parameters;
+    std::vector<const Storage::AbstractStorage::Argument *> parameters;
 
     storage.create<Core::Person>(parameters);
     storage.create<Core::Group>(parameters);

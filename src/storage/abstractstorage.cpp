@@ -2,7 +2,7 @@
 
 using namespace Storage;
 
-void AbstractStorage::remove(StorableObject const * object)
+void AbstractStorage::remove(StorableObject * object)
 {
     delete object;
 }
@@ -14,7 +14,7 @@ const int AbstractStorage::new_id()
     return id;
 }
 
-void AbstractStorage::set_object(StorableObject const * object)
+void AbstractStorage::set_object(StorableObject * object)
 {
     objects_[object->id()] = object;
 }
