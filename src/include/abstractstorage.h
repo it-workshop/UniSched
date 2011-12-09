@@ -52,7 +52,7 @@ public:
     template <class T>
     StorableObject const * create(std::vector<const Argument *>& parameters)
     {
-        T const * object = new T(new_id(), this);
+        T * object = new T(new_id(), *this);
     
         set_object(dynamic_cast<StorableObject const *>(object));
 
@@ -79,7 +79,7 @@ public:
             }
         }
 
-        (dynamic_cast<StorableObject const *>(object))->load();
+        (dynamic_cast<StorableObject *>(object))->load();
 
         return dynamic_cast<StorableObject const *>(object);
     }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 #include <vector>
 
 #include <storableobject.h>
@@ -114,6 +115,20 @@ public:
                             /**< @deprecated Get person's groups.
                              * @return person's groups.
                              */
+    
+    virtual const std::string read() const;
+
+    virtual const int read_int(const std::string name) const throw (std::bad_cast);
+    virtual const std::string read_string(const std::string name) const throw (std::bad_cast);
+    virtual const time_t read_time(const std::string name) const throw (std::bad_cast);
+    virtual const std::string read_enum(const std::string name) const throw (std::bad_cast);
+    virtual const std::vector<UI::UsersObject const *> * read_vector(const std::string name) const throw(std::bad_cast);
+
+    virtual void update(const std::string name, const int value) throw (std::bad_cast);
+    virtual void update(const std::string name, const std::string value) throw (std::bad_cast);
+    virtual void update(const std::string name, const time_t value) throw (std::bad_cast);
+    virtual void update_enum(const std::string, const std::string value) throw (std::bad_cast);
+    virtual void update(UsersObject *, bool linked) throw (std::bad_cast);
 };
 
 };

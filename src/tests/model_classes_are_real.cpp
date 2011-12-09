@@ -1,4 +1,4 @@
-#include <storage.h>
+#include <abstractstorage.h>
 
 class DummyStorage: public Storage::AbstractStorage {
 private:

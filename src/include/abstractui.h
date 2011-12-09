@@ -1,7 +1,7 @@
 #pragma once
 
 #include <usersobject.h>
-#include <storage.h>
+#include <abstractstorage.h>
 
 namespace UI {
 

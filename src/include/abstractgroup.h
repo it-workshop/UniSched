@@ -3,12 +3,12 @@
 #include <string>
 #include <vector>
 
-#include <storage.h>
+#include <storableobject.h>
 #include <person.h>
 
 namespace Core {
 
-class AbstractGroup: public Storage::StorableObject {
+class AbstractGroup: public Storage::StorableObject, public UI::UsersObject {
 friend class Group;
 private:
     std::string name_;
