@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="da/d4a/calendar_8h" kind="file">
+    <compoundname>calendar.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includes refid="dd/d20/event_8h" local="yes">event.h</includes>
+    <includedby refid="db/d2e/calendar_8cpp" local="yes">src/calendar.cpp</includedby>
+    <includedby refid="d4/d98/person_8h" local="yes">src/person.h</includedby>
+    <includedby refid="d9/dd1/group_8h" local="yes">src/group.h</includedby>
+    <includedby refid="dd/d20/event_8h" local="yes">src/event.h</includedby>
+    <includedby refid="df/d52/userinterface_8h" local="yes">src/userinterface.h</includedby>
+    <includedby refid="d5/d2b/data__storage_8h" local="yes">src/data_storage.h</includedby>
+    <incdepgraph>
+      <node id="21">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/calendar.h</label>
+        <link refid="calendar.h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>string</label>
+      </node>
+      <node id="18">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="13">
+        <label>vector</label>
+      </node>
+      <node id="17">
+        <label>time.h</label>
+      </node>
+      <node id="19">
+        <label>iostream</label>
+      </node>
+      <node id="20">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="36">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="24">
+        <label>src/person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>src/data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>src/command_clone.cpp</label>
+        <link refid="d8/deb/command__clone_8cpp"/>
+      </node>
+      <node id="43">
+        <label>src/command_exclude.cpp</label>
+        <link refid="d6/d72/command__exclude_8cpp"/>
+      </node>
+      <node id="57">
+        <label>src/group.cpp</label>
+        <link refid="d3/d97/group_8cpp"/>
+      </node>
+      <node id="37">
+        <label>src/event_template.cpp</label>
+        <link refid="d1/d6f/event__template_8cpp"/>
+      </node>
+      <node id="48">
+        <label>src/command_link.cpp</label>
+        <link refid="dc/d5f/command__link_8cpp"/>
+      </node>
+      <node id="22">
+        <label>src/calendar.h</label>
+        <link refid="calendar.h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>src/event.cpp</label>
+        <link refid="df/d1b/event_8cpp"/>
+      </node>
+      <node id="46">
+        <label>src/command_help.cpp</label>
+        <link refid="d8/d4a/command__help_8cpp"/>
+      </node>
+      <node id="27">
+        <label>src/event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>src/userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>src/command_delete.cpp</label>
+        <link refid="d3/d58/command__delete_8cpp"/>
+      </node>
+      <node id="51">
+        <label>src/command_select.cpp</label>
+        <link refid="d6/d5c/command__select_8cpp"/>
+      </node>
+      <node id="29">
+        <label>src/commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>src/userinterface.cpp</label>
+        <link refid="d4/dcb/userinterface_8cpp"/>
+      </node>
+      <node id="38">
+        <label>src/command_all.cpp</label>
+        <link refid="d7/d45/command__all_8cpp"/>
+      </node>
+      <node id="26">
+        <label>src/group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>src/queue.cpp</label>
+        <link refid="dc/d31/queue_8cpp"/>
+      </node>
+      <node id="58">
+        <label>src/person.cpp</label>
+        <link refid="d8/de5/person_8cpp"/>
+      </node>
+      <node id="42">
+        <label>src/command_enqueue.cpp</label>
+        <link refid="df/d57/command__enqueue_8cpp"/>
+      </node>
+      <node id="33">
+        <label>src/data_storage.cpp</label>
+        <link refid="d6/d9a/data__storage_8cpp"/>
+      </node>
+      <node id="30">
+        <label>src/command_add.cpp</label>
+        <link refid="d8/df6/command__add_8cpp"/>
+      </node>
+      <node id="52">
+        <label>src/commands.cpp</label>
+        <link refid="d5/d77/commands_8cpp"/>
+      </node>
+      <node id="34">
+        <label>src/file_storage.h</label>
+        <link refid="d9/d60/file__storage_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>src/command_include.cpp</label>
+        <link refid="df/da9/command__include_8cpp"/>
+      </node>
+      <node id="31">
+        <label>src/event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>src/command_print.cpp</label>
+        <link refid="df/d67/command__print_8cpp"/>
+      </node>
+      <node id="25">
+        <label>src/group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>src/command_exit.cpp</label>
+        <link refid="d6/db1/command__exit_8cpp"/>
+      </node>
+      <node id="49">
+        <label>src/command_merge.cpp</label>
+        <link refid="de/d05/command__merge_8cpp"/>
+      </node>
+      <node id="23">
+        <label>src/calendar.cpp</label>
+        <link refid="db/d2e/calendar_8cpp"/>
+      </node>
+      <node id="41">
+        <label>src/command_dequeue.cpp</label>
+        <link refid="d2/de0/command__dequeue_8cpp"/>
+      </node>
+      <node id="55">
+        <label>src/queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>src/command_generate.cpp</label>
+        <link refid="d6/d54/command__generate_8cpp"/>
+      </node>
+      <node id="35">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="dd/dac/classCalendar" prot="public">Calendar</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d20/event_8h" kindref="compound">event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="dd/dac/classCalendar" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/>id_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event<sp/>*&gt;<sp/>events_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dac/classCalendar_1ae8e2987543087a4c91179e875388504e" kindref="member">Calendar</ref>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dac/classCalendar_1ae8e2987543087a4c91179e875388504e" kindref="member">Calendar</ref>(<ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*calendar);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dac/classCalendar_1a23aa939f694874a8f98ec54326d80741" kindref="member">~Calendar</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="dd/dac/classCalendar_1ab9f9a418d5122e8f5915fd817b8422b1" kindref="member">get_id</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar_1a1d5d2228fa04cc9ed48756c2569a69ae" kindref="member">set_id</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event*&gt;<sp/>*<ref refid="dd/dac/classCalendar_1aa1e9611c947c9b37975437b188066bf9" kindref="member">get_events</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar_1a9ed5161b06c2a2acc8e5febbeeeb39b0" kindref="member">merge_calendar</ref>(<ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*calendar);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar_1a46578e7e3f65bd5d523a108ad00965dd" kindref="member">has_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*event);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar_1ad099edd0e82ca0a2ffb18702d029fffa" kindref="member">add_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*event);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar_1a305abce38aacb905a0277f573f6b486c" kindref="member">delete_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*event);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/calendar.h"/>
+  </compounddef>
+</doxygen>

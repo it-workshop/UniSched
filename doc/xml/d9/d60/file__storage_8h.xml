@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d9/d60/file__storage_8h" kind="file">
+    <compoundname>file_storage.h</compoundname>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includes refid="df/da3/table__data__storage_8h" local="yes">table_data_storage.h</includes>
+    <includes refid="d5/d2b/data__storage_8h" local="yes">data_storage.h</includes>
+    <includedby refid="de/d3e/file__storage_8cpp" local="yes">src/file_storage.cpp</includedby>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="712">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+      </node>
+      <node id="707">
+        <label>data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="711" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+      </node>
+      <node id="716">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+      </node>
+      <node id="709">
+        <label>stdlib.h</label>
+      </node>
+      <node id="717">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+      </node>
+      <node id="721">
+        <label>userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="707" relation="include">
+        </childnode>
+      </node>
+      <node id="705">
+        <label>string</label>
+      </node>
+      <node id="704">
+        <label>table_data_storage.h</label>
+        <link refid="df/da3/table__data__storage_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+      </node>
+      <node id="720">
+        <label>commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
+        </childnode>
+      </node>
+      <node id="715">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+      </node>
+      <node id="703">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="706">
+        <label>vector</label>
+      </node>
+      <node id="702">
+        <label>src/file_storage.h</label>
+        <link refid="file_storage.h"/>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+        <childnode refid="707" relation="include">
+        </childnode>
+      </node>
+      <node id="713">
+        <label>time.h</label>
+      </node>
+      <node id="708">
+        <label>iostream</label>
+      </node>
+      <node id="719">
+        <label>event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+      </node>
+      <node id="714">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+      </node>
+      <node id="711">
+        <label>algorithm</label>
+      </node>
+      <node id="710">
+        <label>stdio.h</label>
+      </node>
+      <node id="718">
+        <label>queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="724">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="722">
+        <label>src/file_storage.h</label>
+        <link refid="file_storage.h"/>
+        <childnode refid="723" relation="include">
+        </childnode>
+        <childnode refid="724" relation="include">
+        </childnode>
+      </node>
+      <node id="723">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d8/da7/classstorage_1_1FileStorage" prot="public">storage::FileStorage</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/da3/table__data__storage_8h" kindref="compound">table_data_storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/d2b/data__storage_8h" kindref="compound">data_storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="d8/da7/classstorage_1_1FileStorage" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/da7/classstorage_1_1FileStorage" kindref="compound">storage::FileStorage</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>storage::<ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">DataStorage</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="d8/da7/classstorage_1_1FileStorage_1a3a88a71218e6e8cb6c7af942ac1daf47" kindref="member">FileStorage</ref><sp/>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/da7/classstorage_1_1FileStorage_1a336c41583d9b31f33988319e4397c5fc" kindref="member">~FileStorage</ref><sp/>();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/da7/classstorage_1_1FileStorage_1a74a3d23be4524c10333cba19be066c6c" kindref="member">setup</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>location,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>user,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>password,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>bdname);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/da7/classstorage_1_1FileStorage_1acec1ff977a4fb2885ca0f90336b2c296" kindref="member">load</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d8/da7/classstorage_1_1FileStorage_1abc882239d83ffc2b3ddc86aad18ac83c" kindref="member">save</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>path_;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/file_storage.h"/>
+  </compounddef>
+</doxygen>

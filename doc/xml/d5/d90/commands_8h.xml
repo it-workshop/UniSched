@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d5/d90/commands_8h" kind="file">
+    <compoundname>commands.h</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">time.h</includes>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includes refid="df/d52/userinterface_8h" local="yes">userinterface.h</includes>
+    <includedby refid="d8/df6/command__add_8cpp" local="yes">src/command_add.cpp</includedby>
+    <includedby refid="df/d52/userinterface_8h" local="yes">src/userinterface.h</includedby>
+    <includedby refid="d1/d38/event__template_8h" local="yes">src/event_template.h</includedby>
+    <includedby refid="d7/d45/command__all_8cpp" local="yes">src/command_all.cpp</includedby>
+    <includedby refid="d8/deb/command__clone_8cpp" local="yes">src/command_clone.cpp</includedby>
+    <includedby refid="d3/d58/command__delete_8cpp" local="yes">src/command_delete.cpp</includedby>
+    <includedby refid="d2/de0/command__dequeue_8cpp" local="yes">src/command_dequeue.cpp</includedby>
+    <includedby refid="df/d57/command__enqueue_8cpp" local="yes">src/command_enqueue.cpp</includedby>
+    <includedby refid="d6/d72/command__exclude_8cpp" local="yes">src/command_exclude.cpp</includedby>
+    <includedby refid="d6/db1/command__exit_8cpp" local="yes">src/command_exit.cpp</includedby>
+    <includedby refid="d6/d54/command__generate_8cpp" local="yes">src/command_generate.cpp</includedby>
+    <includedby refid="d8/d4a/command__help_8cpp" local="yes">src/command_help.cpp</includedby>
+    <includedby refid="df/da9/command__include_8cpp" local="yes">src/command_include.cpp</includedby>
+    <includedby refid="dc/d5f/command__link_8cpp" local="yes">src/command_link.cpp</includedby>
+    <includedby refid="de/d05/command__merge_8cpp" local="yes">src/command_merge.cpp</includedby>
+    <includedby refid="df/d67/command__print_8cpp" local="yes">src/command_print.cpp</includedby>
+    <includedby refid="d6/d5c/command__select_8cpp" local="yes">src/command_select.cpp</includedby>
+    <includedby refid="d5/d77/commands_8cpp" local="yes">src/commands.cpp</includedby>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="407">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="409" relation="include">
+        </childnode>
+      </node>
+      <node id="410">
+        <label>data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="403" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="404" relation="include">
+        </childnode>
+        <childnode refid="412" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+      </node>
+      <node id="408">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="409" relation="include">
+        </childnode>
+      </node>
+      <node id="396">
+        <label>stdlib.h</label>
+      </node>
+      <node id="409">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="402">
+        <label>userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="403" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="404" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="410" relation="include">
+        </childnode>
+      </node>
+      <node id="397">
+        <label>string</label>
+      </node>
+      <node id="413">
+        <label>table_data_storage.h</label>
+        <link refid="df/da3/table__data__storage_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+      </node>
+      <node id="395">
+        <label>src/commands.h</label>
+        <link refid="commands.h"/>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="402" relation="include">
+        </childnode>
+      </node>
+      <node id="405">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+      </node>
+      <node id="401">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="398">
+        <label>vector</label>
+      </node>
+      <node id="400">
+        <label>time.h</label>
+      </node>
+      <node id="399">
+        <label>iostream</label>
+      </node>
+      <node id="412">
+        <label>event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+      </node>
+      <node id="406">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+      </node>
+      <node id="411">
+        <label>algorithm</label>
+      </node>
+      <node id="403">
+        <label>stdio.h</label>
+      </node>
+      <node id="404">
+        <label>queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="401" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="417">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="420">
+        <label>src/data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="416" relation="include">
+        </childnode>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+      <node id="426">
+        <label>src/command_clone.cpp</label>
+        <link refid="d8/deb/command__clone_8cpp"/>
+      </node>
+      <node id="430">
+        <label>src/command_exclude.cpp</label>
+        <link refid="d6/d72/command__exclude_8cpp"/>
+      </node>
+      <node id="424">
+        <label>src/event_template.cpp</label>
+        <link refid="d1/d6f/event__template_8cpp"/>
+      </node>
+      <node id="435">
+        <label>src/command_link.cpp</label>
+        <link refid="dc/d5f/command__link_8cpp"/>
+      </node>
+      <node id="433">
+        <label>src/command_help.cpp</label>
+        <link refid="d8/d4a/command__help_8cpp"/>
+      </node>
+      <node id="416">
+        <label>src/userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="414" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+        <childnode refid="418" relation="include">
+        </childnode>
+      </node>
+      <node id="427">
+        <label>src/command_delete.cpp</label>
+        <link refid="d3/d58/command__delete_8cpp"/>
+      </node>
+      <node id="438">
+        <label>src/command_select.cpp</label>
+        <link refid="d6/d5c/command__select_8cpp"/>
+      </node>
+      <node id="414">
+        <label>src/commands.h</label>
+        <link refid="commands.h"/>
+        <childnode refid="415" relation="include">
+        </childnode>
+        <childnode refid="416" relation="include">
+        </childnode>
+        <childnode refid="419" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="427" relation="include">
+        </childnode>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
+        <childnode refid="434" relation="include">
+        </childnode>
+        <childnode refid="435" relation="include">
+        </childnode>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="437" relation="include">
+        </childnode>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="439" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+      <node id="418">
+        <label>src/userinterface.cpp</label>
+        <link refid="d4/dcb/userinterface_8cpp"/>
+      </node>
+      <node id="425">
+        <label>src/command_all.cpp</label>
+        <link refid="d7/d45/command__all_8cpp"/>
+      </node>
+      <node id="429">
+        <label>src/command_enqueue.cpp</label>
+        <link refid="df/d57/command__enqueue_8cpp"/>
+      </node>
+      <node id="421">
+        <label>src/data_storage.cpp</label>
+        <link refid="d6/d9a/data__storage_8cpp"/>
+      </node>
+      <node id="415">
+        <label>src/command_add.cpp</label>
+        <link refid="d8/df6/command__add_8cpp"/>
+      </node>
+      <node id="439">
+        <label>src/commands.cpp</label>
+        <link refid="d5/d77/commands_8cpp"/>
+      </node>
+      <node id="422">
+        <label>src/file_storage.h</label>
+        <link refid="d9/d60/file__storage_8h"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+      <node id="434">
+        <label>src/command_include.cpp</label>
+        <link refid="df/da9/command__include_8cpp"/>
+      </node>
+      <node id="419">
+        <label>src/event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="420" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+      <node id="437">
+        <label>src/command_print.cpp</label>
+        <link refid="df/d67/command__print_8cpp"/>
+      </node>
+      <node id="431">
+        <label>src/command_exit.cpp</label>
+        <link refid="d6/db1/command__exit_8cpp"/>
+      </node>
+      <node id="436">
+        <label>src/command_merge.cpp</label>
+        <link refid="de/d05/command__merge_8cpp"/>
+      </node>
+      <node id="428">
+        <label>src/command_dequeue.cpp</label>
+        <link refid="d2/de0/command__dequeue_8cpp"/>
+      </node>
+      <node id="432">
+        <label>src/command_generate.cpp</label>
+        <link refid="d6/d54/command__generate_8cpp"/>
+      </node>
+      <node id="423">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="dc/df0/classuiconsole_1_1Command" prot="public">uiconsole::Command</innerclass>
+    <innerclass refid="d5/dd7/classuiconsole_1_1Command__Exit" prot="public">uiconsole::Command_Exit</innerclass>
+    <innerclass refid="de/dfe/classuiconsole_1_1Command__All" prot="public">uiconsole::Command_All</innerclass>
+    <innerclass refid="df/d75/classuiconsole_1_1Command__Print" prot="public">uiconsole::Command_Print</innerclass>
+    <innerclass refid="d0/d3d/classuiconsole_1_1Command__Help" prot="public">uiconsole::Command_Help</innerclass>
+    <innerclass refid="df/d75/classuiconsole_1_1Command__Clone" prot="public">uiconsole::Command_Clone</innerclass>
+    <innerclass refid="d8/dc5/classuiconsole_1_1Command__Merge" prot="public">uiconsole::Command_Merge</innerclass>
+    <innerclass refid="d8/d1d/classuiconsole_1_1Command__Exclude" prot="public">uiconsole::Command_Exclude</innerclass>
+    <innerclass refid="dc/d64/classuiconsole_1_1Command__Include" prot="public">uiconsole::Command_Include</innerclass>
+    <innerclass refid="dd/d31/classuiconsole_1_1Command__Add" prot="public">uiconsole::Command_Add</innerclass>
+    <innerclass refid="d3/d25/classuiconsole_1_1Command__Link" prot="public">uiconsole::Command_Link</innerclass>
+    <innerclass refid="d6/d90/classuiconsole_1_1Command__Delete" prot="public">uiconsole::Command_Delete</innerclass>
+    <innerclass refid="d2/de6/classuiconsole_1_1Command__Dequeue" prot="public">uiconsole::Command_Dequeue</innerclass>
+    <innerclass refid="d4/dfe/classuiconsole_1_1Command__Select" prot="public">uiconsole::Command_Select</innerclass>
+    <innerclass refid="da/d43/classuiconsole_1_1Command__Enqueue" prot="public">uiconsole::Command_Enqueue</innerclass>
+    <innernamespace refid="da/de1/namespaceuiconsole">uiconsole</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d5/d90/commands_8h_1af8fd06e7ed6972b87f4221225587c1c1" prot="public" static="no">
+        <name>_EXTERN_</name>
+        <initializer>extern</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="56" bodyfile="/home/alex/code/UniSched/src/commands.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d52/userinterface_8h" kindref="compound">userinterface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cin;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cout;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::endl;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">uiconsole<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="dc/df0/classuiconsole_1_1Command" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29" refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" kindref="member">name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="dc/df0/classuiconsole_1_1Command_1ad6dbdcec778315e395a8be8571c3c69d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ad6dbdcec778315e395a8be8571c3c69d" kindref="member">description</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" kindref="member">help</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a4f28955b8a36ef1d3b4402b081346060" kindref="member">Command</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a11421d325715cfc8f1e779ef823b3445" kindref="member">~Command</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="dc/df0/classuiconsole_1_1Command_1ac7dbbea517086411a60d48faa2f15ae8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ac7dbbea517086411a60d48faa2f15ae8" kindref="member">get_name</ref>()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" kindref="member">name</ref>;};<sp/></highlight></codeline>
+<codeline lineno="41" refid="dc/df0/classuiconsole_1_1Command_1a6f548d67af5035358bbf0bcaf129619b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a6f548d67af5035358bbf0bcaf129619b" kindref="member">get_description</ref>()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ad6dbdcec778315e395a8be8571c3c69d" kindref="member">description</ref>;};<sp/></highlight></codeline>
+<codeline lineno="44" refid="dc/df0/classuiconsole_1_1Command_1a50ea5c140158782f5c87b51399ba461a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a50ea5c140158782f5c87b51399ba461a" kindref="member">get_help</ref>()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" kindref="member">help</ref>;};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a5c4d205b1de13a6b3d0db73ddc7ebefa" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>_COMMANDS_CPP_</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_EXTERN_</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else<sp/></highlight><highlight class="comment">/*<sp/>_COMMANDS_CPP_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="d5/d90/commands_8h_1af8fd06e7ed6972b87f4221225587c1c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_EXTERN_<sp/>extern</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif<sp/></highlight><highlight class="comment">/*<sp/>!_COMMANDS_CPP_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="da/de1/namespaceuiconsole_1a2592267a0e2c7bd8742a231b656153d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d90/commands_8h_1af8fd06e7ed6972b87f4221225587c1c1" kindref="member">_EXTERN_</ref><sp/>vector&lt;uiconsole::Command<sp/>*&gt;<sp/><ref refid="da/de1/namespaceuiconsole_1a2592267a0e2c7bd8742a231b656153d2" kindref="member">commands</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#undef<sp/>_EXTERN_</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="63" refid="d5/dd7/classuiconsole_1_1Command__Exit" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d5/dd7/classuiconsole_1_1Command__Exit" kindref="compound" tooltip="Class of ,,exit`` command.">Command_Exit</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/dd7/classuiconsole_1_1Command__Exit_1a27f68e3484510c7451417e2babb6b514" kindref="member">Command_Exit</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/dd7/classuiconsole_1_1Command__Exit_1a83d9528d878c0f3cc8aa26a7c3ebc3c3" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="de/dfe/classuiconsole_1_1Command__All" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/dfe/classuiconsole_1_1Command__All" kindref="compound" tooltip="Class of ,,all (s)`` command.">Command_All</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/dfe/classuiconsole_1_1Command__All_1a8bfd5695c279967bc6667e51a85d2610" kindref="member">Command_All</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/dfe/classuiconsole_1_1Command__All_1afec181f8031593644a3acca7f5e7fe8f" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="df/d75/classuiconsole_1_1Command__Print" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d75/classuiconsole_1_1Command__Print" kindref="compound" tooltip="Class of ,,print (s)(id)`` command.">Command_Print</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d75/classuiconsole_1_1Command__Print_1a8db0b51d3232e42e9f50f55cbc3920c3" kindref="member">Command_Print</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d75/classuiconsole_1_1Command__Print_1a42106fe7a7b5ce0c90a5a196c5f8ff42" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="d0/d3d/classuiconsole_1_1Command__Help" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/d3d/classuiconsole_1_1Command__Help" kindref="compound" tooltip="Class of ,,help (command)`` command.">Command_Help</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d0/d3d/classuiconsole_1_1Command__Help_1a4c5f133a08fd1e534660d80f539c604d" kindref="member">Command_Help</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d0/d3d/classuiconsole_1_1Command__Help_1a79203580b82e0b17883096640d83e6ff" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="df/d75/classuiconsole_1_1Command__Clone" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d75/classuiconsole_1_1Command__Clone" kindref="compound" tooltip="Class of ,,clone (s)(id)`` command.">Command_Clone</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/d75/classuiconsole_1_1Command__Clone_1adad6880fe28570d5c4f8250798987c6d" kindref="member">Command_Clone</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d75/classuiconsole_1_1Command__Clone_1af61cd935a174eaeeec06b98620afe6af" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="d8/dc5/classuiconsole_1_1Command__Merge" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/dc5/classuiconsole_1_1Command__Merge" kindref="compound" tooltip="Class of ,,merge (s)(id) (s)(id)`` command.">Command_Merge</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/dc5/classuiconsole_1_1Command__Merge_1a7d15ac15581529bd9137d7242c798d34" kindref="member">Command_Merge</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/dc5/classuiconsole_1_1Command__Merge_1a5d82c5fab7e1f57b885a00eab2cb87b0" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="d8/d1d/classuiconsole_1_1Command__Exclude" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d1d/classuiconsole_1_1Command__Exclude" kindref="compound" tooltip="Class of ,,exclude (s)(id) (s)(id)`` command.">Command_Exclude</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d1d/classuiconsole_1_1Command__Exclude_1a6c01d50d0cfebf5c17ac8b40ce67fd49" kindref="member">Command_Exclude</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d1d/classuiconsole_1_1Command__Exclude_1ab2a21ebe3eaf318d9abbbdb89c6fe035" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="dc/d64/classuiconsole_1_1Command__Include" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dc/d64/classuiconsole_1_1Command__Include" kindref="compound" tooltip="Class of ,,include (s)(id) (s)(id)`` command.">Command_Include</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/d64/classuiconsole_1_1Command__Include_1a28041e8559bf57e3bcef5f7f2c116181" kindref="member">Command_Include</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/d64/classuiconsole_1_1Command__Include_1ac4a0f5366a1fbf8d118bde8c5f55e633" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="dd/d31/classuiconsole_1_1Command__Add" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dd/d31/classuiconsole_1_1Command__Add" kindref="compound" tooltip="Class of ,,add (s)`` command.">Command_Add</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dd/d31/classuiconsole_1_1Command__Add_1a664d6968c80cfa23fa2774e3346283b7" kindref="member">Command_Add</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d31/classuiconsole_1_1Command__Add_1ace9280c73bb3e2a18ace8a4e1ff3ee64" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="d3/d25/classuiconsole_1_1Command__Link" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/d25/classuiconsole_1_1Command__Link" kindref="compound" tooltip="Class of ,,link (s0)(id0) (s1)(id1)`` command.">Command_Link</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d3/d25/classuiconsole_1_1Command__Link_1a9ec2d337ea91b840a0d67d21948d436e" kindref="member">Command_Link</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d25/classuiconsole_1_1Command__Link_1a62fc45d4a5aa32b6d2e685f055cec0e6" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="d6/d90/classuiconsole_1_1Command__Delete" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d6/d90/classuiconsole_1_1Command__Delete" kindref="compound" tooltip="Class of ,,delete (s)(id)`` command.">Command_Delete</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d90/classuiconsole_1_1Command__Delete_1abce1cda7f9ef46226858d921e7fa1eb8" kindref="member">Command_Delete</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d90/classuiconsole_1_1Command__Delete_1a1b3e129b6db759603d472d3a951d7743" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="d2/de6/classuiconsole_1_1Command__Dequeue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/de6/classuiconsole_1_1Command__Dequeue" kindref="compound" tooltip="Class of ,,dequeue &amp;amp;(id0) @(id1)`` command.">Command_Dequeue</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d2/de6/classuiconsole_1_1Command__Dequeue_1a9ba380c71a66a628ba2f68f9b5636c97" kindref="member">Command_Dequeue</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/de6/classuiconsole_1_1Command__Dequeue_1a4ffbe293d61a29f4bc36428578dad66e" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="d4/dfe/classuiconsole_1_1Command__Select" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d4/dfe/classuiconsole_1_1Command__Select" kindref="compound" tooltip="Class of ,,select @(id0) @(id1) (N) &amp;amp;(id2)`` command.">Command_Select</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dfe/classuiconsole_1_1Command__Select_1a71479b0b684f8503b1caff3feebc44b5" kindref="member">Command_Select</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/dfe/classuiconsole_1_1Command__Select_1ad3274b623f8cb12814fa2272ddece058" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="da/d43/classuiconsole_1_1Command__Enqueue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/d43/classuiconsole_1_1Command__Enqueue" kindref="compound" tooltip="Class of ,,enqueue &amp;amp;(id0) @(id1)`` command.">Command_Enqueue</ref>:<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound" tooltip="Abstract class of console command.">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="da/d43/classuiconsole_1_1Command__Enqueue_1ac29b7ad041516806ac7b7398da2dc811" kindref="member">Command_Enqueue</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>);<sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/d43/classuiconsole_1_1Command__Enqueue_1a62ddd6ebdd0412b4d109d56e48ec1f9e" kindref="member">run</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/de1/namespaceuiconsole_1a40263e63a42257769b2fb9a95fd771c1" kindref="member">execute</ref>(vector&lt;string&gt;<sp/>args);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/de1/namespaceuiconsole_1a037fc32900a055adc36892666b385f30" kindref="member">initiate</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*ui);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/commands.h"/>
+  </compounddef>
+</doxygen>

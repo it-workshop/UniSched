@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d3/db8/structstorage_1_1GroupBunch__" kind="struct" prot="public">
+    <compoundname>storage::GroupBunch_</compoundname>
+    <includes refid="d5/d2b/data__storage_8h" local="no">data_storage.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/db8/structstorage_1_1GroupBunch___1ab7c018c8d79c50d64f28ffcd279b21a4" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type storage::GroupBunch_::PersonID</definition>
+        <argsstring></argsstring>
+        <name>PersonID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/data_storage.h" line="29" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/db8/structstorage_1_1GroupBunch___1a761c0b9cdc83ee74754a43f13953933d" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type storage::GroupBunch_::GroupID</definition>
+        <argsstring></argsstring>
+        <name>GroupID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/data_storage.h" line="30" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/db8/structstorage_1_1GroupBunch___1a6a28ad5ef8fe8361e56530026675e2bf" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string storage::GroupBunch_::Status</definition>
+        <argsstring></argsstring>
+        <name>Status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/data_storage.h" line="31" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="342">
+        <label>string</label>
+      </node>
+      <node id="341">
+        <label>storage::GroupBunch_</label>
+        <link refid="d3/db8/structstorage_1_1GroupBunch__"/>
+        <childnode refid="342" relation="usage">
+          <edgelabel>Status</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/data_storage.h" line="28" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="28" bodyend="32"/>
+    <listofallmembers>
+      <member refid="d3/db8/structstorage_1_1GroupBunch___1a761c0b9cdc83ee74754a43f13953933d" prot="public" virt="non-virtual"><scope>storage::GroupBunch_</scope><name>GroupID</name></member>
+      <member refid="d3/db8/structstorage_1_1GroupBunch___1ab7c018c8d79c50d64f28ffcd279b21a4" prot="public" virt="non-virtual"><scope>storage::GroupBunch_</scope><name>PersonID</name></member>
+      <member refid="d3/db8/structstorage_1_1GroupBunch___1a6a28ad5ef8fe8361e56530026675e2bf" prot="public" virt="non-virtual"><scope>storage::GroupBunch_</scope><name>Status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

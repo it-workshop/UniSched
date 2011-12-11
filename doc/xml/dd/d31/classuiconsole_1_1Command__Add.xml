@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dd/d31/classuiconsole_1_1Command__Add" kind="class" prot="public">
+    <compoundname>uiconsole::Command_Add</compoundname>
+    <basecompoundref refid="dc/df0/classuiconsole_1_1Command" prot="protected" virt="non-virtual">uiconsole::Command</basecompoundref>
+    <includes refid="d5/d90/commands_8h" local="no">commands.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d31/classuiconsole_1_1Command__Add_1a664d6968c80cfa23fa2774e3346283b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>uiconsole::Command_Add::Command_Add</definition>
+        <argsstring>(UserInterface *ui)</argsstring>
+        <name>Command_Add</name>
+        <param>
+          <type><ref refid="df/de1/classUserInterface" kindref="compound">UserInterface</ref> *</type>
+          <declname>ui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to <ref refid="df/de1/classUserInterface" kindref="compound">UserInterface</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="171" bodyfile="/home/alex/code/UniSched/src/command_add.cpp" bodystart="3" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d31/classuiconsole_1_1Command__Add_1ace9280c73bb3e2a18ace8a4e1ff3ee64" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void uiconsole::Command_Add::run</definition>
+        <argsstring>(vector&lt; string &gt; args)</argsstring>
+        <name>run</name>
+        <reimplements refid="dc/df0/classuiconsole_1_1Command_1a5c4d205b1de13a6b3d0db73ddc7ebefa">run</reimplements>
+        <param>
+          <type>vector&lt; string &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add object of class s. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector parametres. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="174" bodyfile="/home/alex/code/UniSched/src/command_add.cpp" bodystart="13" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class of ,,add (s)`` command. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="51">
+        <label>uiconsole::Command</label>
+        <link refid="dc/df0/classuiconsole_1_1Command"/>
+      </node>
+      <node id="50">
+        <label>uiconsole::Command_Add</label>
+        <link refid="dd/d31/classuiconsole_1_1Command__Add"/>
+        <childnode refid="51" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="62">
+        <label>vector&lt; Group * &gt;</label>
+      </node>
+      <node id="54">
+        <label>string</label>
+      </node>
+      <node id="53">
+        <label>uiconsole::Command</label>
+        <link refid="dc/df0/classuiconsole_1_1Command"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>help</edgelabel>
+          <edgelabel>name</edgelabel>
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>ui</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>storage::TableDataStorage</label>
+        <link refid="df/d87/classstorage_1_1TableDataStorage"/>
+        <childnode refid="58" relation="usage">
+          <edgelabel>rows_</edgelabel>
+        </childnode>
+      </node>
+      <node id="58">
+        <label>vector&lt; dsrow &gt;</label>
+      </node>
+      <node id="56">
+        <label>storage::DataStorage</label>
+        <link refid="da/db4/classstorage_1_1DataStorage"/>
+        <childnode refid="57" relation="usage">
+          <edgelabel>events_</edgelabel>
+          <edgelabel>group_content_</edgelabel>
+          <edgelabel>queues_bunches_</edgelabel>
+          <edgelabel>groups_</edgelabel>
+          <edgelabel>calendars_</edgelabel>
+          <edgelabel>queues_</edgelabel>
+          <edgelabel>event_templates_</edgelabel>
+          <edgelabel>people_</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>people_vector_</edgelabel>
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>events_vector_</edgelabel>
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>queues_vector_</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>groups_vector_</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>calendars_vector_</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>event_templates_vector_</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>uiconsole::Command_Add</label>
+        <link refid="dd/d31/classuiconsole_1_1Command__Add"/>
+        <childnode refid="53" relation="protected-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>vector&lt; Event * &gt;</label>
+      </node>
+      <node id="59">
+        <label>vector&lt; Person * &gt;</label>
+      </node>
+      <node id="61">
+        <label>vector&lt; Queue * &gt;</label>
+      </node>
+      <node id="64">
+        <label>vector&lt; Event_Template * &gt;</label>
+      </node>
+      <node id="63">
+        <label>vector&lt; Calendar * &gt;</label>
+      </node>
+      <node id="55">
+        <label>UserInterface</label>
+        <link refid="df/de1/classUserInterface"/>
+        <childnode refid="56" relation="usage">
+          <edgelabel>db_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/commands.h" line="167" bodyfile="/home/alex/code/UniSched/src/commands.h" bodystart="167" bodyend="175"/>
+    <listofallmembers>
+      <member refid="dc/df0/classuiconsole_1_1Command_1a4f28955b8a36ef1d3b4402b081346060" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>Command</name></member>
+      <member refid="dd/d31/classuiconsole_1_1Command__Add_1a664d6968c80cfa23fa2774e3346283b7" prot="public" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>Command_Add</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1ad6dbdcec778315e395a8be8571c3c69d" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>description</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1a6f548d67af5035358bbf0bcaf129619b" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>get_description</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1a50ea5c140158782f5c87b51399ba461a" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>get_help</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1ac7dbbea517086411a60d48faa2f15ae8" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>get_name</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>help</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>name</name></member>
+      <member refid="dd/d31/classuiconsole_1_1Command__Add_1ace9280c73bb3e2a18ace8a4e1ff3ee64" prot="public" virt="virtual"><scope>uiconsole::Command_Add</scope><name>run</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>ui</name></member>
+      <member refid="dc/df0/classuiconsole_1_1Command_1a11421d325715cfc8f1e779ef823b3445" prot="protected" virt="non-virtual"><scope>uiconsole::Command_Add</scope><name>~Command</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

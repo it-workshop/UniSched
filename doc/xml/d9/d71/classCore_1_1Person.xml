@@ -1,0 +1,766 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d9/d71/classCore_1_1Person" kind="class" prot="public">
+    <compoundname>Core::Person</compoundname>
+    <basecompoundref refid="d4/deb/classStorage_1_1StorableObject" prot="public" virt="non-virtual">Storage::StorableObject</basecompoundref>
+    <basecompoundref refid="df/d0b/classUI_1_1UsersObject" prot="public" virt="non-virtual">UI::UsersObject</basecompoundref>
+    <includes refid="dc/d3e/include_2person_8h" local="no">person.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" prot="public" static="no">
+        <name>Sex</name>
+        <enumvalue id="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9" prot="public">
+          <name>MALE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1" prot="public">
+          <name>FEMALE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>enum of sex </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="20" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="20" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d9/d71/classCore_1_1Person_1a8be971ab18693e55f617c7dc8abc3e26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class AbstractGroup</definition>
+        <argsstring></argsstring>
+        <name>AbstractGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="17" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d71/classCore_1_1Person_1aa48f80dd4bc0f3bd24e249b6f87e3762" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Core::Person::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Name of the person. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="41" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="41" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d71/classCore_1_1Person_1aed64cd8bd3014e7c9057ea7d89179d71" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Core::Person::surname_</definition>
+        <argsstring></argsstring>
+        <name>surname_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Surname of the person. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="43" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d71/classCore_1_1Person_1a0a9b0b78f3b37a5272e53296de83f049" prot="private" static="no" mutable="no">
+        <type>enum <ref refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kindref="member">Sex</ref></type>
+        <definition>enum Sex Core::Person::sex_</definition>
+        <argsstring></argsstring>
+        <name>sex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Person&apos;s sex. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="45" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d71/classCore_1_1Person_1ac2ac9d843d45d2a42736a87d75d3f0d0" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t Core::Person::birthday_</definition>
+        <argsstring></argsstring>
+        <name>birthday_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="d9/d71/classCore_1_1Person" kindref="compound">Person</ref> birthday. Time in seconds from 00:00:00, 1 Jan, 1900. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="47" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d71/classCore_1_1Person_1ab0b88b2a5b0f71f5c7b47949f825df4e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; class <ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> * &gt;</type>
+        <definition>std::vector&lt;class AbstractGroup *&gt; Core::Person::groups_</definition>
+        <argsstring></argsstring>
+        <name>groups_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Person&apos;s groups. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="50" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a88e1d40e7be7d95e6cec9bc623d6e076" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kindref="member">Sex</ref></type>
+        <definition>static const Sex Core::Person::_</definition>
+        <argsstring>(const std::string str)</argsstring>
+        <name>_</name>
+        <param>
+          <type>const std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Small function to easy type casting. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to cast. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>MALE if string equals to &quot;MALE&quot; else FEMALE. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="26" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a7ded3b871b2e7f6ce35b7b1f4e1738ee" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>static const std::string Core::Person::_</definition>
+        <argsstring>(const Sex sex)</argsstring>
+        <name>_</name>
+        <param>
+          <type>const <ref refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kindref="member">Sex</ref></type>
+          <declname>sex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Small function to easy type casting. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enum to cast. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&quot;MALE&quot; if enum equals to MALE else FEMALE. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="33" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="32" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1aa9b9581966365e7272d43e77f7a220e4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Core::Person::add_group</definition>
+        <argsstring>(class AbstractGroup *group)</argsstring>
+        <name>add_group</name>
+        <param>
+          <type>class <ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add group to person, call in <ref refid="dd/d68/classCore_1_1AbstractGroup_1acbc75be98b4a9b9ceab55967124c0351" kindref="member">AbstractGroup::add_person()</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="54" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a0057f7bd335dd35e470e67ad2e22b0d5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Person::del_group</definition>
+        <argsstring>(class AbstractGroup const *group)</argsstring>
+        <name>del_group</name>
+        <param>
+          <type>class <ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> const *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete group from person. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="62" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="5" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a846fa55a79f6da0258d711adc88a1a30" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <reimplements refid="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9">save</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save all data into storage. Virtual in <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">Storage::StorableObject</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="65" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="17" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ae88c1b9c89b03ac7f4ba3ddcff4c62a7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <reimplements refid="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151">load</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load all data from starage. Viltual in <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">Storage::StorableObject</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="67" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="35" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a3f7bca52408bae72dd0213b2a92827f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Core::Person::Person</definition>
+        <argsstring>(const int id, Storage::AbstractStorage &amp;storage)</argsstring>
+        <name>Person</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. Call at <ref refid="d6/da0/classStorage_1_1AbstractStorage_1a108af124f19c0ae9a4a461aee6abc3ec" kindref="member">Storage::AbstractStorage::create&lt;Person&gt;()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s identificator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data storage. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="72" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1aa1b55740d1dd9f2543ad27f4ecca8e72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Core::Person::Person</definition>
+        <argsstring>(const int id, Storage::AbstractStorage &amp;storage, const std::string name, const std::string surname, const enum Sex sex, const time_t birthday)</argsstring>
+        <name>Person</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>surname</declname>
+        </param>
+        <param>
+          <type>const enum <ref refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kindref="member">Sex</ref></type>
+          <declname>sex</declname>
+        </param>
+        <param>
+          <type>const time_t</type>
+          <declname>birthday</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Constructor. </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s identificator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data storage. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">surname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s surname. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s sex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">birthday</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s birthday. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="83" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="78" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a14d39111fb34383818154a26b0d248f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string Core::Person::name</definition>
+        <argsstring>() const </argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Get name of person. </para></xrefdescription></xrefsect><simplesect kind="return"><para>name of person. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="93" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="93" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a5572207d53649af10cd9bb62fe21995c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string Core::Person::surname</definition>
+        <argsstring>() const </argsstring>
+        <name>surname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Get surname of person. </para></xrefdescription></xrefsect><simplesect kind="return"><para>surname of person. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="98" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="98" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a0d70ad24edf86e3c0f88e913342aa24d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>enum <ref refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kindref="member">Sex</ref></type>
+        <definition>enum Sex Core::Person::sex</definition>
+        <argsstring>() const </argsstring>
+        <name>sex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Get sex of person. </para></xrefdescription></xrefsect><simplesect kind="return"><para>person&apos;s sex. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="103" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="103" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ab0d1836a97254798585fc6c97a63680e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const time_t</type>
+        <definition>const time_t Core::Person::birthday</definition>
+        <argsstring>() const </argsstring>
+        <name>birthday</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000005"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Get birthday of person. </para></xrefdescription></xrefsect><simplesect kind="return"><para>person&apos;s birthday. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="108" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="108" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ae6dc9f0c0ca2caf326b69b72d81aea84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; class <ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> * &gt; &amp;</type>
+        <definition>const std::vector&lt;class AbstractGroup *&gt;&amp; Core::Person::groups</definition>
+        <argsstring>()</argsstring>
+        <name>groups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="da/d58/deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Get person&apos;s groups. </para></xrefdescription></xrefsect><simplesect kind="return"><para>person&apos;s groups. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="114" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="113" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a3b86cab797444527364376dad2a0c300" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string Person::read</definition>
+        <argsstring>() const </argsstring>
+        <name>read</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a68d5297258a2f4da4ff58f4809690db3">read</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="119" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="52" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a9b1601502537f54b7c33fc593f8df590" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const int</type>
+        <definition>const int Person::read_int</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_int</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a63ab79bb54b6134a483b2e384c824c7e">read_int</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="121" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a4b7d0b1c545c2c4876b3f410b914f3a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string Person::read_string</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_string</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1aed80fcf20b550a0e3484fbe6beb24c19">read_string</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="122" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="72" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ad0485ff28f4f80aeb0da9f8a6ae2f6d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const time_t</type>
+        <definition>const time_t Person::read_time</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_time</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a490536c477c5a796724ce26fd010c680">read_time</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="123" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="83" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a5dfa21d7b0a58e09f71e07a4298f0f62" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string Person::read_enum</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_enum</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a20ea26010f60e60f38d380fdaa9240d5">read_enum</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="124" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ab28c3e468d265c16bce1d4488493c5a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::vector&lt; <ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UI::UsersObject</ref> * &gt;</type>
+        <definition>const std::vector&lt; UI::UsersObject * &gt; Person::read_vector</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_vector</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a6899d8a06268abb8f2a13feba9921ce5">read_vector</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="125" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="99" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ac2900dc24258c00ea1de17350c3f4658" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::update</definition>
+        <argsstring>(const std::string name, const int value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a9b30123c0a25a66715bce9a58a27d37e">update</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="127" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a51ec02307587cf9dfd7ed3036cf202cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::update</definition>
+        <argsstring>(const std::string name, const std::string value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a4c86312e8400ce3e1b5d2c17552ce5f5">update</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="128" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="119" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1ad650eba89f671041c26f8d1419f6e6c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::update</definition>
+        <argsstring>(const std::string name, const time_t value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1add0bfcc5674bd3f56eeb68919c640bb7">update</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const time_t</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="129" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="136" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a1c6826659c2413189dae536f7c83af98" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Person::update_enum</definition>
+        <argsstring>(const std::string, const std::string value)</argsstring>
+        <name>update_enum</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a925f50c5cb5123a13493f76029ae6f06">update_enum</reimplements>
+        <param>
+          <type>const std::string</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="130" bodyfile="/home/alex/code/UniSched/src/core/person.cpp" bodystart="147" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d71/classCore_1_1Person_1a50fa1e127f56e2caa873017b54c090cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Core::Person::update</definition>
+        <argsstring>(UsersObject *, bool linked)</argsstring>
+        <name>update</name>
+        <param>
+          <type>UsersObject *</type>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>linked</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/person.h" line="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class keeps person unique data. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="343">
+        <label>Core::Person</label>
+        <link refid="d9/d71/classCore_1_1Person"/>
+        <childnode refid="344" relation="public-inheritance">
+        </childnode>
+        <childnode refid="345" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="344">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+      </node>
+      <node id="345">
+        <label>UI::UsersObject</label>
+        <link refid="df/d0b/classUI_1_1UsersObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="348">
+        <label>Storage::AbstractStorage</label>
+        <link refid="d6/da0/classStorage_1_1AbstractStorage"/>
+      </node>
+      <node id="346">
+        <label>Core::Person</label>
+        <link refid="d9/d71/classCore_1_1Person"/>
+        <childnode refid="347" relation="public-inheritance">
+        </childnode>
+        <childnode refid="349" relation="public-inheritance">
+        </childnode>
+        <childnode refid="350" relation="usage">
+          <edgelabel>surname_</edgelabel>
+          <edgelabel>name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="350">
+        <label>string</label>
+      </node>
+      <node id="347">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+        <childnode refid="348" relation="usage">
+          <edgelabel>storage_</edgelabel>
+        </childnode>
+      </node>
+      <node id="349">
+        <label>UI::UsersObject</label>
+        <link refid="df/d0b/classUI_1_1UsersObject"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/include/person.h" line="16" bodyfile="/home/alex/code/UniSched/src/include/person.h" bodystart="16" bodyend="132"/>
+    <listofallmembers>
+      <member refid="d9/d71/classCore_1_1Person_1a88e1d40e7be7d95e6cec9bc623d6e076" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>_</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a7ded3b871b2e7f6ce35b7b1f4e1738ee" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>_</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a8be971ab18693e55f617c7dc8abc3e26" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>AbstractGroup</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1aa9b9581966365e7272d43e77f7a220e4" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>add_group</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ab0d1836a97254798585fc6c97a63680e" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>birthday</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ac2ac9d843d45d2a42736a87d75d3f0d0" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>birthday_</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a0057f7bd335dd35e470e67ad2e22b0d5" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>del_group</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>FEMALE</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_int</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_object</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_string</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_time</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>get_field_vector</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ae6dc9f0c0ca2caf326b69b72d81aea84" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>groups</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ab0b88b2a5b0f71f5c7b47949f825df4e" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>groups_</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>id</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ae88c1b9c89b03ac7f4ba3ddcff4c62a7" prot="protected" virt="virtual"><scope>Core::Person</scope><name>load</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>MALE</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a14d39111fb34383818154a26b0d248f5" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>name</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1aa48f80dd4bc0f3bd24e249b6f87e3762" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>name_</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a3f7bca52408bae72dd0213b2a92827f0" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>Person</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1aa1b55740d1dd9f2543ad27f4ecca8e72" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>Person</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a3b86cab797444527364376dad2a0c300" prot="public" virt="virtual"><scope>Core::Person</scope><name>read</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a5dfa21d7b0a58e09f71e07a4298f0f62" prot="public" virt="virtual"><scope>Core::Person</scope><name>read_enum</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a9b1601502537f54b7c33fc593f8df590" prot="public" virt="virtual"><scope>Core::Person</scope><name>read_int</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a4b7d0b1c545c2c4876b3f410b914f3a2" prot="public" virt="virtual"><scope>Core::Person</scope><name>read_string</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ad0485ff28f4f80aeb0da9f8a6ae2f6d0" prot="public" virt="virtual"><scope>Core::Person</scope><name>read_time</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ab28c3e468d265c16bce1d4488493c5a6" prot="public" virt="virtual"><scope>Core::Person</scope><name>read_vector</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a846fa55a79f6da0258d711adc88a1a30" prot="protected" virt="virtual"><scope>Core::Person</scope><name>save</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a95c8d3440fa0ef6bce0f8d3bbac1f477" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1af16a9fb211fd421a5aa89d741a67c2fb" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a97dd82cb4f99d421e84e3bac17dc8c8b" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" prot="protected" virt="non-virtual"><scope>Core::Person</scope><name>set_field_vector</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>Sex</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a0d70ad24edf86e3c0f88e913342aa24d" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>sex</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a0a9b0b78f3b37a5272e53296de83f049" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>sex_</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>StorableObject</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a5572207d53649af10cd9bb62fe21995c" prot="public" virt="non-virtual"><scope>Core::Person</scope><name>surname</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1aed64cd8bd3014e7c9057ea7d89179d71" prot="private" virt="non-virtual"><scope>Core::Person</scope><name>surname_</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ac2900dc24258c00ea1de17350c3f4658" prot="public" virt="virtual"><scope>Core::Person</scope><name>update</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a51ec02307587cf9dfd7ed3036cf202cd" prot="public" virt="virtual"><scope>Core::Person</scope><name>update</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1ad650eba89f671041c26f8d1419f6e6c8" prot="public" virt="virtual"><scope>Core::Person</scope><name>update</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a50fa1e127f56e2caa873017b54c090cb" prot="public" virt="virtual"><scope>Core::Person</scope><name>update</name></member>
+      <member refid="df/d0b/classUI_1_1UsersObject_1af4cdeca80652e7c57d34aacc7d0a5dc3" prot="public" virt="pure-virtual" ambiguityscope="UI::UsersObject::"><scope>Core::Person</scope><name>update</name></member>
+      <member refid="d9/d71/classCore_1_1Person_1a1c6826659c2413189dae536f7c83af98" prot="public" virt="virtual"><scope>Core::Person</scope><name>update_enum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

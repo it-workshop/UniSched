@@ -1,0 +1,567 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dd/d68/classCore_1_1AbstractGroup" kind="class" prot="public">
+    <compoundname>Core::AbstractGroup</compoundname>
+    <basecompoundref refid="d4/deb/classStorage_1_1StorableObject" prot="public" virt="non-virtual">Storage::StorableObject</basecompoundref>
+    <basecompoundref refid="df/d0b/classUI_1_1UsersObject" prot="public" virt="non-virtual">UI::UsersObject</basecompoundref>
+    <derivedcompoundref refid="d9/d42/classCore_1_1Event" prot="public" virt="non-virtual">Core::Event</derivedcompoundref>
+    <derivedcompoundref refid="d2/d30/classCore_1_1Group" prot="public" virt="non-virtual">Core::Group</derivedcompoundref>
+    <includes refid="df/de3/abstractgroup_8h" local="no">abstractgroup.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="dd/d68/classCore_1_1AbstractGroup_1a2697825715974a353728f0d4d5658112" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Group</definition>
+        <argsstring></argsstring>
+        <name>Group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="12" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d68/classCore_1_1AbstractGroup_1a39f4f9ce96f1b38185e55e0555c21296" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Core::AbstractGroup::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="14" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d68/classCore_1_1AbstractGroup_1abeca4ab8123df8be60b041cf9e77ea09" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> * &gt;</type>
+        <definition>std::vector&lt;AbstractGroup *&gt; Core::AbstractGroup::child_groups_</definition>
+        <argsstring></argsstring>
+        <name>child_groups_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="16" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d68/classCore_1_1AbstractGroup_1ad2e5825c37427646511964efdefa8c58" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; class <ref refid="d9/d71/classCore_1_1Person" kindref="compound">Person</ref> * &gt;</type>
+        <definition>std::vector&lt;class Person *&gt; Core::AbstractGroup::people_</definition>
+        <argsstring></argsstring>
+        <name>people_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="18" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1abf219d714e6a17d5e712b2fcb60395d2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Core::AbstractGroup::add_child</definition>
+        <argsstring>(AbstractGroup *group)</argsstring>
+        <name>add_child</name>
+        <param>
+          <type><ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="21" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1aa81866b9c414c24d25ca26311b4b4330" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::del_child</definition>
+        <argsstring>(AbstractGroup *group)</argsstring>
+        <name>del_child</name>
+        <param>
+          <type><ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="22" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="6" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1ab8cc5ad1c04d67c24af785f9adb2d67c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <reimplements refid="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9">save</reimplements>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a88deac78fd6b251e9854f6f42a772be1">save</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a6dbea64bf650e7e36d55539cf59a66e7">save</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="24" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="44" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1ace41b51dd585a95b61990b69f078a283" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <reimplements refid="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151">load</reimplements>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a8fa43f7c7fb91a1840b5839b91aae500">load</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a63462f7c20234f5c7f18e9c5e19d72b9">load</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="25" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="69" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Core::AbstractGroup::AbstractGroup</definition>
+        <argsstring>(const int id, Storage::AbstractStorage &amp;storage)</argsstring>
+        <name>AbstractGroup</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="29" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="28" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a2b6c9e7b2d618019fe626d28a53ddd06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Core::AbstractGroup::AbstractGroup</definition>
+        <argsstring>(const int id, Storage::AbstractStorage &amp;storage, const std::string name)</argsstring>
+        <name>AbstractGroup</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="31" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string Core::AbstractGroup::name</definition>
+        <argsstring>() const </argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="33" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1acbc75be98b4a9b9ceab55967124c0351" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::add_person</definition>
+        <argsstring>(Person *person)</argsstring>
+        <name>add_person</name>
+        <param>
+          <type><ref refid="d9/d71/classCore_1_1Person" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="35" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="18" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a378e2ab0f4db0a47906c4341846a143b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::del_person</definition>
+        <argsstring>(Person *person)</argsstring>
+        <name>del_person</name>
+        <param>
+          <type><ref refid="d9/d71/classCore_1_1Person" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="36" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="32" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a0306b58e715d164aef3e29de0ec659bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string AbstractGroup::read</definition>
+        <argsstring>() const </argsstring>
+        <name>read</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a68d5297258a2f4da4ff58f4809690db3">read</reimplements>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a5fe3fef1b6709f953e5487841d90bbb9">read</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a8dd94bcb05cb3c5ef065fa204cd724f9">read</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="38" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="96" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a7e15ec9b621230659a5ca2f0be724d83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const int</type>
+        <definition>const int AbstractGroup::read_int</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_int</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a63ab79bb54b6134a483b2e384c824c7e">read_int</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="40" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a907fc505a7f7828fcd2e7f6eaf5e27cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string AbstractGroup::read_string</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_string</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1aed80fcf20b550a0e3484fbe6beb24c19">read_string</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="41" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="124" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1af52530d29e3b8f0047a0c0675dc6c912" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const time_t</type>
+        <definition>const time_t AbstractGroup::read_time</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_time</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a490536c477c5a796724ce26fd010c680">read_time</reimplements>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a4977832cb03001d8afe46bcddc60ce1a">read_time</reimplementedby>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="42" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a2f373e90feaad172563c6256ae30a6a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::string</type>
+        <definition>const std::string AbstractGroup::read_enum</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_enum</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a20ea26010f60e60f38d380fdaa9240d5">read_enum</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="43" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1ab582f4364426a152875742278ba0d999" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const std::vector&lt; <ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UI::UsersObject</ref> * &gt;</type>
+        <definition>const std::vector&lt; UI::UsersObject * &gt; AbstractGroup::read_vector</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>read_vector</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a6899d8a06268abb8f2a13feba9921ce5">read_vector</reimplements>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a52e48b1f92f6354b4e3a32d710b9c7b3">read_vector</reimplementedby>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="44" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="142" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::update</definition>
+        <argsstring>(const std::string name, const int value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a9b30123c0a25a66715bce9a58a27d37e">update</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="46" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a39c1a34ff912b5abd298f58bf6196a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::update</definition>
+        <argsstring>(const std::string name, const std::string value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a4c86312e8400ce3e1b5d2c17552ce5f5">update</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="47" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="170" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a9891a3850584dc3677563aea603fb9c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::update</definition>
+        <argsstring>(const std::string name, const time_t value)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1add0bfcc5674bd3f56eeb68919c640bb7">update</reimplements>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1aaa4b9def6b65cc896e0054210b2d5dae">update</reimplementedby>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const time_t</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="48" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a1f379a7c4d54b49db4d20127521a238a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::update_enum</definition>
+        <argsstring>(const std::string name, const std::string value)</argsstring>
+        <name>update_enum</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1a925f50c5cb5123a13493f76029ae6f06">update_enum</reimplements>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="49" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d68/classCore_1_1AbstractGroup_1a1b3a59bf11da1ea7bd9a0735cb54dbb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AbstractGroup::update</definition>
+        <argsstring>(UI::UsersObject *object, const bool linked)</argsstring>
+        <name>update</name>
+        <reimplements refid="df/d0b/classUI_1_1UsersObject_1af4cdeca80652e7c57d34aacc7d0a5dc3">update</reimplements>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a12d2636d65f1baea3666bb492320b5c1">update</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a308ae7ad334b8c9a166dc57cfd6a0524">update</reimplementedby>
+        <param>
+          <type><ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UI::UsersObject</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>linked</declname>
+        </param>
+        <exceptions> throw (std::bad_cast)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="50" bodyfile="/home/alex/code/UniSched/src/core/abstractgroup.cpp" bodystart="191" bodyend="197"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Core::Event</label>
+        <link refid="d9/d42/classCore_1_1Event"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+      </node>
+      <node id="0">
+        <label>Core::AbstractGroup</label>
+        <link refid="dd/d68/classCore_1_1AbstractGroup"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>UI::UsersObject</label>
+        <link refid="df/d0b/classUI_1_1UsersObject"/>
+      </node>
+      <node id="4">
+        <label>Core::Group</label>
+        <link refid="d2/d30/classCore_1_1Group"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>Storage::AbstractStorage</label>
+        <link refid="d6/da0/classStorage_1_1AbstractStorage"/>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>storage_</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Core::AbstractGroup</label>
+        <link refid="dd/d68/classCore_1_1AbstractGroup"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>name_</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>UI::UsersObject</label>
+        <link refid="df/d0b/classUI_1_1UsersObject"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="11" bodyfile="/home/alex/code/UniSched/src/include/abstractgroup.h" bodystart="11" bodyend="52"/>
+    <listofallmembers>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>AbstractGroup</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a2b6c9e7b2d618019fe626d28a53ddd06" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>AbstractGroup</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1abf219d714e6a17d5e712b2fcb60395d2" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>add_child</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1acbc75be98b4a9b9ceab55967124c0351" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>add_person</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1abeca4ab8123df8be60b041cf9e77ea09" prot="private" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>child_groups_</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1aa81866b9c414c24d25ca26311b4b4330" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>del_child</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a378e2ab0f4db0a47906c4341846a143b" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>del_person</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_int</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_object</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_string</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_time</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>get_field_vector</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a2697825715974a353728f0d4d5658112" prot="private" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>Group</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>id</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1ace41b51dd585a95b61990b69f078a283" prot="protected" virt="virtual"><scope>Core::AbstractGroup</scope><name>load</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>name</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a39f4f9ce96f1b38185e55e0555c21296" prot="private" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>name_</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1ad2e5825c37427646511964efdefa8c58" prot="private" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>people_</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a0306b58e715d164aef3e29de0ec659bd" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a2f373e90feaad172563c6256ae30a6a6" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read_enum</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a7e15ec9b621230659a5ca2f0be724d83" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read_int</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a907fc505a7f7828fcd2e7f6eaf5e27cd" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read_string</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1af52530d29e3b8f0047a0c0675dc6c912" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read_time</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1ab582f4364426a152875742278ba0d999" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>read_vector</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1ab8cc5ad1c04d67c24af785f9adb2d67c" prot="protected" virt="virtual"><scope>Core::AbstractGroup</scope><name>save</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a95c8d3440fa0ef6bce0f8d3bbac1f477" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1af16a9fb211fd421a5aa89d741a67c2fb" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a97dd82cb4f99d421e84e3bac17dc8c8b" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" prot="protected" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>set_field_vector</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" prot="public" virt="non-virtual"><scope>Core::AbstractGroup</scope><name>StorableObject</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>update</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a39c1a34ff912b5abd298f58bf6196a45" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>update</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a9891a3850584dc3677563aea603fb9c2" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>update</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a1b3a59bf11da1ea7bd9a0735cb54dbb8" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>update</name></member>
+      <member refid="dd/d68/classCore_1_1AbstractGroup_1a1f379a7c4d54b49db4d20127521a238a" prot="public" virt="virtual"><scope>Core::AbstractGroup</scope><name>update_enum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

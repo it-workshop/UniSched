@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="df/de1/classUserInterface" kind="class" prot="public">
+    <compoundname>UserInterface</compoundname>
+    <includes refid="df/d52/userinterface_8h" local="no">userinterface.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/de1/classUserInterface_1a1cb1cca7ddef2924a120431ad4e718a8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UserInterface::done</definition>
+        <argsstring></argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True when interactive command line mode ends </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="40" bodyfile="/home/alex/code/UniSched/src/userinterface.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/de1/classUserInterface_1a9b9a4d1a1eb0b70712ec4d2ccef75d3f" prot="private" static="no" mutable="no">
+        <type>enum <ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref></type>
+        <definition>enum default_format UserInterface::def_format</definition>
+        <argsstring></argsstring>
+        <name>def_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default time format. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="41" bodyfile="/home/alex/code/UniSched/src/userinterface.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/de1/classUserInterface_1ab1b742ea3f3c29660ec1ceb0a2788977" prot="private" static="no" mutable="no">
+        <type><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref> *</type>
+        <definition>storage::DataStorage* UserInterface::db_</definition>
+        <argsstring></argsstring>
+        <name>db_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="de/d4e/namespaceStorage" kindref="compound">Storage</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="43" bodyfile="/home/alex/code/UniSched/src/userinterface.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/de1/classUserInterface_1ae6fb70370701b3bd6120e923df9705b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UserInterface::UserInterface</definition>
+        <argsstring>()</argsstring>
+        <name>UserInterface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="45" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1ae588b2ff1711a016dd4c6fc5002c0841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UserInterface::~UserInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~UserInterface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="46" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a8e37eb7afd119929d302b7052746194a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::set_db</definition>
+        <argsstring>(storage::DataStorage *db)</argsstring>
+        <name>set_db</name>
+        <param>
+          <type><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref> *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set storage object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="de/d4e/namespaceStorage" kindref="compound">Storage</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="49" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref> *</type>
+        <definition>storage::DataStorage * UserInterface::get_db</definition>
+        <argsstring>()</argsstring>
+        <name>get_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get storage object. <simplesect kind="return"><para><ref refid="de/d4e/namespaceStorage" kindref="compound">Storage</ref> object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="52" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1ac1cead6c14db26f88802ea035fb59bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::listen</definition>
+        <argsstring>()</argsstring>
+        <name>listen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interactive command line mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="54" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="23" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a22fa7e60f82f12920e1627c862f6532e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; UserInterface::get_request</definition>
+        <argsstring>()</argsstring>
+        <name>get_request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get request of user. <simplesect kind="return"><para>Vector of words inputed bu user. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="58" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="32" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a396eb29856a6afc91bc0e0eef1de2df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::exit</definition>
+        <argsstring>()</argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exit from interactive command line mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="60" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a36513fcf018fafc53726cf610f46571f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::set_format</definition>
+        <argsstring>(enum default_format format)</argsstring>
+        <name>set_format</name>
+        <param>
+          <type>enum <ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref></type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set default time format. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of time format. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="64" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1ad543750a7accc0c4825e02a93fda1909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>enum <ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref></type>
+        <definition>enum default_format UserInterface::get_format</definition>
+        <argsstring>()</argsstring>
+        <name>get_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get default time format. <simplesect kind="return"><para>Default type of time format. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="67" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a9373bc1aedbdc68905942bcb7c6a8fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::format</definition>
+        <argsstring>(time_t time)</argsstring>
+        <name>format</name>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print time in default format. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="70" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="70" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a41c109a7e042b44dc98a1250681fc684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::format_ASCII</definition>
+        <argsstring>(time_t time)</argsstring>
+        <name>format_ASCII</name>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print time in ASCII time format. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="73" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="84" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a9226c83fcb42b9a1ee279e8b250ca68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::format_DATE</definition>
+        <argsstring>(time_t time)</argsstring>
+        <name>format_DATE</name>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print only date. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="76" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="120" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a0a4f683492e8a8565423ea501565c02e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t UserInterface::get_time</definition>
+        <argsstring>(string time)</argsstring>
+        <name>get_time</name>
+        <param>
+          <type>string</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get time_t from ASCII formated string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Formated string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time_t </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="80" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="154" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a313636d15fc03a167163b56f0223cab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t UserInterface::get_birthday</definition>
+        <argsstring>(string time)</argsstring>
+        <name>get_birthday</name>
+        <param>
+          <type>string</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get time_t from DATE formated string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Formated string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time_t </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="84" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="169" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a45a7ad6cca95218631d8c6fbe49362e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::print_person</definition>
+        <argsstring>(Person *person)</argsstring>
+        <name>print_person</name>
+        <param>
+          <type><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print person&apos;s information. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="87" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="184" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1a31424519b61f71584a4a5196c6632beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::print_group</definition>
+        <argsstring>(Group *group)</argsstring>
+        <name>print_group</name>
+        <param>
+          <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print group&apos;s information. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="90" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="212" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1aca628f5a276b39ff4346e2150b419590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::print_event</definition>
+        <argsstring>(Event *event)</argsstring>
+        <name>print_event</name>
+        <param>
+          <type><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print event&apos;s information. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="93" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="235" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="df/de1/classUserInterface_1aca95eaf06d053b4ac267e94ccb84e501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UserInterface::print_calendar</definition>
+        <argsstring>(Calendar *calendar)</argsstring>
+        <name>print_calendar</name>
+        <param>
+          <type><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> *</type>
+          <declname>calendar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print calendar&apos;s information. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">calendar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="96" bodyfile="/home/alex/code/UniSched/src/userinterface.cpp" bodystart="248" bodyend="259"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class provides user interface. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="378">
+        <label>vector&lt; Group * &gt;</label>
+      </node>
+      <node id="373">
+        <label>storage::TableDataStorage</label>
+        <link refid="df/d87/classstorage_1_1TableDataStorage"/>
+        <childnode refid="374" relation="usage">
+          <edgelabel>rows_</edgelabel>
+        </childnode>
+      </node>
+      <node id="374">
+        <label>vector&lt; dsrow &gt;</label>
+      </node>
+      <node id="372">
+        <label>storage::DataStorage</label>
+        <link refid="da/db4/classstorage_1_1DataStorage"/>
+        <childnode refid="373" relation="usage">
+          <edgelabel>events_</edgelabel>
+          <edgelabel>group_content_</edgelabel>
+          <edgelabel>queues_bunches_</edgelabel>
+          <edgelabel>groups_</edgelabel>
+          <edgelabel>calendars_</edgelabel>
+          <edgelabel>queues_</edgelabel>
+          <edgelabel>event_templates_</edgelabel>
+          <edgelabel>people_</edgelabel>
+        </childnode>
+        <childnode refid="375" relation="usage">
+          <edgelabel>people_vector_</edgelabel>
+        </childnode>
+        <childnode refid="376" relation="usage">
+          <edgelabel>events_vector_</edgelabel>
+        </childnode>
+        <childnode refid="377" relation="usage">
+          <edgelabel>queues_vector_</edgelabel>
+        </childnode>
+        <childnode refid="378" relation="usage">
+          <edgelabel>groups_vector_</edgelabel>
+        </childnode>
+        <childnode refid="379" relation="usage">
+          <edgelabel>calendars_vector_</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>event_templates_vector_</edgelabel>
+        </childnode>
+      </node>
+      <node id="376">
+        <label>vector&lt; Event * &gt;</label>
+      </node>
+      <node id="375">
+        <label>vector&lt; Person * &gt;</label>
+      </node>
+      <node id="377">
+        <label>vector&lt; Queue * &gt;</label>
+      </node>
+      <node id="380">
+        <label>vector&lt; Event_Template * &gt;</label>
+      </node>
+      <node id="379">
+        <label>vector&lt; Calendar * &gt;</label>
+      </node>
+      <node id="371">
+        <label>UserInterface</label>
+        <link refid="df/de1/classUserInterface"/>
+        <childnode refid="372" relation="usage">
+          <edgelabel>db_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/userinterface.h" line="38" bodyfile="/home/alex/code/UniSched/src/userinterface.h" bodystart="38" bodyend="97"/>
+    <listofallmembers>
+      <member refid="df/de1/classUserInterface_1ab1b742ea3f3c29660ec1ceb0a2788977" prot="private" virt="non-virtual"><scope>UserInterface</scope><name>db_</name></member>
+      <member refid="df/de1/classUserInterface_1a9b9a4d1a1eb0b70712ec4d2ccef75d3f" prot="private" virt="non-virtual"><scope>UserInterface</scope><name>def_format</name></member>
+      <member refid="df/de1/classUserInterface_1a1cb1cca7ddef2924a120431ad4e718a8" prot="private" virt="non-virtual"><scope>UserInterface</scope><name>done</name></member>
+      <member refid="df/de1/classUserInterface_1a396eb29856a6afc91bc0e0eef1de2df7" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>exit</name></member>
+      <member refid="df/de1/classUserInterface_1a9373bc1aedbdc68905942bcb7c6a8fd3" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>format</name></member>
+      <member refid="df/de1/classUserInterface_1a41c109a7e042b44dc98a1250681fc684" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>format_ASCII</name></member>
+      <member refid="df/de1/classUserInterface_1a9226c83fcb42b9a1ee279e8b250ca68c" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>format_DATE</name></member>
+      <member refid="df/de1/classUserInterface_1a313636d15fc03a167163b56f0223cab9" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>get_birthday</name></member>
+      <member refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>get_db</name></member>
+      <member refid="df/de1/classUserInterface_1ad543750a7accc0c4825e02a93fda1909" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>get_format</name></member>
+      <member refid="df/de1/classUserInterface_1a22fa7e60f82f12920e1627c862f6532e" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>get_request</name></member>
+      <member refid="df/de1/classUserInterface_1a0a4f683492e8a8565423ea501565c02e" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>get_time</name></member>
+      <member refid="df/de1/classUserInterface_1ac1cead6c14db26f88802ea035fb59bd9" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>listen</name></member>
+      <member refid="df/de1/classUserInterface_1aca95eaf06d053b4ac267e94ccb84e501" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>print_calendar</name></member>
+      <member refid="df/de1/classUserInterface_1aca628f5a276b39ff4346e2150b419590" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>print_event</name></member>
+      <member refid="df/de1/classUserInterface_1a31424519b61f71584a4a5196c6632beb" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>print_group</name></member>
+      <member refid="df/de1/classUserInterface_1a45a7ad6cca95218631d8c6fbe49362e2" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>print_person</name></member>
+      <member refid="df/de1/classUserInterface_1a8e37eb7afd119929d302b7052746194a" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>set_db</name></member>
+      <member refid="df/de1/classUserInterface_1a36513fcf018fafc53726cf610f46571f" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>set_format</name></member>
+      <member refid="df/de1/classUserInterface_1ae6fb70370701b3bd6120e923df9705b0" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>UserInterface</name></member>
+      <member refid="df/de1/classUserInterface_1ae588b2ff1711a016dd4c6fc5002c0841" prot="public" virt="non-virtual"><scope>UserInterface</scope><name>~UserInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

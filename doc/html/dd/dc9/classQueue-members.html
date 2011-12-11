@@ -29,6 +29,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -67,10 +68,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 This is the complete list of members for <a class="el" href="../../d7/d56/classQueue.html">Queue</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#ad5eb8f94bae1af72ad3391fea1821c8b">dequeue</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#a651cb053c98529502dc84def4638771a">enqueue</a>(Group *adding)</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#adb1ae4097097c94935c6e8af1175e4af">get_begin</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#a43c7ba286ff9641d8ca0b195ef940db8">get_end</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#a69f2c1cee4763ed7671a4710cc9748c2">get_id</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#ab68f53f6e69bbe4f82b581716dc247d8">get_name</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#a6de27cfb498b3bc6000f63599f124c53">get_vector</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#aee8e0d9677cef92e34f0347b73f64c97">Queue</a>(string name)</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#ad29a81e51660af6071684ad3c5b063f1">set_id</a>(id_type id)</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d7/d56/classQueue.html#a00d119db8fa3050da37746e82cbcf94f">~Queue</a>()</td><td><a class="el" href="../../d7/d56/classQueue.html">Queue</a></td><td></td></tr>
@@ -80,7 +80,7 @@ This is the complete list of members for <a class="el" href="../../d7/d56/classQ
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,7 +89,7 @@ This is the complete list of members for <a class="el" href="../../d7/d56/classQ
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Aug 18 2011 13:50:32 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 01:43:04 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

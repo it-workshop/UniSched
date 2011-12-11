@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="de/dda/classUI_1_1AbstractUI" kind="class" prot="public">
+    <compoundname>UI::AbstractUI</compoundname>
+    <includes refid="d1/d7a/abstractui_8h" local="no">abstractui.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/dda/classUI_1_1AbstractUI_1a8a30b02e8aae325cb25f4495190ed187" prot="private" static="no" mutable="no">
+        <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+        <definition>Storage::AbstractStorage&amp; UI::AbstractUI::storage_</definition>
+        <argsstring></argsstring>
+        <name>storage_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="10" bodyfile="/home/alex/code/UniSched/src/include/abstractui.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/dda/classUI_1_1AbstractUI_1a94586af15fc6ddc48b7a7cd1bdf5f0e7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UsersObject</ref> * &gt;</type>
+        <definition>std::vector&lt;UsersObject *&gt; UI::AbstractUI::cache_</definition>
+        <argsstring></argsstring>
+        <name>cache_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="11" bodyfile="/home/alex/code/UniSched/src/include/abstractui.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="de/dda/classUI_1_1AbstractUI_1ab09dc4b586d429a5238d1b09c98d2a4b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UsersObject</ref> * &gt; &amp;</type>
+        <definition>std::vector&lt;UsersObject *&gt;&amp; UI::AbstractUI::cache</definition>
+        <argsstring>()</argsstring>
+        <name>cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="13" bodyfile="/home/alex/code/UniSched/src/include/abstractui.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="de/dda/classUI_1_1AbstractUI_1aaa55abbdeb863b8189393e929f643335" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AbstractUI::search</definition>
+        <argsstring>(std::vector&lt; Storage::AbstractStorage::Argument * &gt; &amp;parameters)</argsstring>
+        <name>search</name>
+        <param>
+          <type>std::vector&lt; <ref refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument" kindref="compound">Storage::AbstractStorage::Argument</ref> * &gt; &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="15" bodyfile="/home/alex/code/UniSched/src/ui/abstractui.cpp" bodystart="27" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="de/dda/classUI_1_1AbstractUI_1a485b7a347d6b07f6dc44a3174cb96eaa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void AbstractUI::create</definition>
+        <argsstring>(const std::vector&lt; const Storage::AbstractStorage::Argument &gt; &amp;parameters)</argsstring>
+        <name>create</name>
+        <param>
+          <type>const std::vector&lt; const <ref refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument" kindref="compound">Storage::AbstractStorage::Argument</ref> &gt; &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="18" bodyfile="/home/alex/code/UniSched/src/ui/abstractui.cpp" bodystart="6" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="de/dda/classUI_1_1AbstractUI_1a160bde97ba2106267a8850db226d9790" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AbstractUI::remove</definition>
+        <argsstring>(UsersObject *object)</argsstring>
+        <name>remove</name>
+        <param>
+          <type><ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UsersObject</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="20" bodyfile="/home/alex/code/UniSched/src/ui/abstractui.cpp" bodystart="13" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/dda/classUI_1_1AbstractUI_1a35092e69be8cc4406582540286db5a69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>UI::AbstractUI::AbstractUI</definition>
+        <argsstring>(Storage::AbstractStorage &amp;storage)</argsstring>
+        <name>AbstractUI</name>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="25" bodyfile="/home/alex/code/UniSched/src/include/abstractui.h" bodystart="24" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="15">
+        <label>Storage::AbstractStorage</label>
+        <link refid="d6/da0/classStorage_1_1AbstractStorage"/>
+      </node>
+      <node id="14">
+        <label>UI::AbstractUI</label>
+        <link refid="de/dda/classUI_1_1AbstractUI"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>storage_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/include/abstractui.h" line="8" bodyfile="/home/alex/code/UniSched/src/include/abstractui.h" bodystart="8" bodyend="26"/>
+    <listofallmembers>
+      <member refid="de/dda/classUI_1_1AbstractUI_1a35092e69be8cc4406582540286db5a69" prot="public" virt="non-virtual"><scope>UI::AbstractUI</scope><name>AbstractUI</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1ab09dc4b586d429a5238d1b09c98d2a4b" prot="protected" virt="non-virtual"><scope>UI::AbstractUI</scope><name>cache</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1a94586af15fc6ddc48b7a7cd1bdf5f0e7" prot="private" virt="non-virtual"><scope>UI::AbstractUI</scope><name>cache_</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1a485b7a347d6b07f6dc44a3174cb96eaa" prot="protected" virt="non-virtual"><scope>UI::AbstractUI</scope><name>create</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1a160bde97ba2106267a8850db226d9790" prot="protected" virt="non-virtual"><scope>UI::AbstractUI</scope><name>remove</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1aaa55abbdeb863b8189393e929f643335" prot="protected" virt="non-virtual"><scope>UI::AbstractUI</scope><name>search</name></member>
+      <member refid="de/dda/classUI_1_1AbstractUI_1a8a30b02e8aae325cb25f4495190ed187" prot="private" virt="non-virtual"><scope>UI::AbstractUI</scope><name>storage_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

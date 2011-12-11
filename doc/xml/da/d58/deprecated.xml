@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="da/d58/deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated List</title>
+    <detaileddescription>
+<para><anchor id="da/d58/deprecated_1_deprecated000005"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1ab0d1836a97254798585fc6c97a63680e" kindref="member">Core::Person::birthday</ref> () const  </term></varlistentry>
+<listitem><para>Get birthday of person. </para></listitem>
+</variablelist>
+</para><para><anchor id="da/d58/deprecated_1_deprecated000006"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1ae6dc9f0c0ca2caf326b69b72d81aea84" kindref="member">Core::Person::groups</ref> () </term></varlistentry>
+<listitem><para>Get person&apos;s groups. </para></listitem>
+</variablelist>
+</para><para><anchor id="da/d58/deprecated_1_deprecated000002"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1a14d39111fb34383818154a26b0d248f5" kindref="member">Core::Person::name</ref> () const  </term></varlistentry>
+<listitem><para>Get name of person. </para></listitem>
+</variablelist>
+</para><para><anchor id="da/d58/deprecated_1_deprecated000001"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1aa1b55740d1dd9f2543ad27f4ecca8e72" kindref="member">Core::Person::Person</ref> (const int id, <ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref> &amp;storage, const std::string name, const std::string surname, const enum Sex sex, const time_t birthday) </term></varlistentry>
+<listitem><para>Constructor. </para></listitem>
+</variablelist>
+</para><para><anchor id="da/d58/deprecated_1_deprecated000004"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1a0d70ad24edf86e3c0f88e913342aa24d" kindref="member">Core::Person::sex</ref> () const  </term></varlistentry>
+<listitem><para>Get sex of person. </para></listitem>
+</variablelist>
+</para><para><anchor id="da/d58/deprecated_1_deprecated000003"/> <variablelist>
+<varlistentry><term>Member <ref refid="d9/d71/classCore_1_1Person_1a5572207d53649af10cd9bb62fe21995c" kindref="member">Core::Person::surname</ref> () const  </term></varlistentry>
+<listitem><para>Get surname of person. </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,712 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.3">
+  <compound refid="dd/d68/classCore_1_1AbstractGroup" kind="class"><name>Core::AbstractGroup</name>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a2697825715974a353728f0d4d5658112" kind="friend"><name>Group</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a39f4f9ce96f1b38185e55e0555c21296" kind="variable"><name>name_</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1abeca4ab8123df8be60b041cf9e77ea09" kind="variable"><name>child_groups_</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1ad2e5825c37427646511964efdefa8c58" kind="variable"><name>people_</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1abf219d714e6a17d5e712b2fcb60395d2" kind="function"><name>add_child</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1aa81866b9c414c24d25ca26311b4b4330" kind="function"><name>del_child</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1ab8cc5ad1c04d67c24af785f9adb2d67c" kind="function"><name>save</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1ace41b51dd585a95b61990b69f078a283" kind="function"><name>load</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" kind="function"><name>AbstractGroup</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a2b6c9e7b2d618019fe626d28a53ddd06" kind="function"><name>AbstractGroup</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kind="function"><name>name</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1acbc75be98b4a9b9ceab55967124c0351" kind="function"><name>add_person</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a378e2ab0f4db0a47906c4341846a143b" kind="function"><name>del_person</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a0306b58e715d164aef3e29de0ec659bd" kind="function"><name>read</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a7e15ec9b621230659a5ca2f0be724d83" kind="function"><name>read_int</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a907fc505a7f7828fcd2e7f6eaf5e27cd" kind="function"><name>read_string</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1af52530d29e3b8f0047a0c0675dc6c912" kind="function"><name>read_time</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a2f373e90feaad172563c6256ae30a6a6" kind="function"><name>read_enum</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1ab582f4364426a152875742278ba0d999" kind="function"><name>read_vector</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" kind="function"><name>update</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a39c1a34ff912b5abd298f58bf6196a45" kind="function"><name>update</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a9891a3850584dc3677563aea603fb9c2" kind="function"><name>update</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a1f379a7c4d54b49db4d20127521a238a" kind="function"><name>update_enum</name></member>
+    <member refid="dd/d68/classCore_1_1AbstractGroup_1a1b3a59bf11da1ea7bd9a0735cb54dbb8" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="d6/da0/classStorage_1_1AbstractStorage" kind="class"><name>Storage::AbstractStorage</name>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ac344c900799ce1069f4324f043f17763" kind="friend"><name>StorableObject</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a54758736009f559baf85a2d477b4d370" kind="variable"><name>objects_</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a80a7e4ab87a0326aa8b5571b09d55eaa" kind="function"><name>get_field_int</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ad12a3abb791ef5a696196c28e643ec22" kind="function"><name>get_field_string</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a87fe8d51934ab2403758d905ef313272" kind="function"><name>get_field_time</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1acd7e88a005b6873632c7f20245e5f3f7" kind="function"><name>get_field_enum</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ac795e31d42a58c501702f443259b4d43" kind="function"><name>get_field_object</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ae7c30697d68dc9d7de595388030d8e10" kind="function"><name>get_field_vector</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1acdd090d0beb6a8241914e7d78a7f2c0c" kind="function"><name>set_field</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ae5ee00e647f121b68ebada0f094058bc" kind="function"><name>set_field</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a50ee4a829bc067a9291a11aa99ec0f16" kind="function"><name>set_field</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a50925678c74c09acd8549a541fdbbe9f" kind="function"><name>set_field_enum</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a3a92c35a35f7c2d798f5455ec8156d15" kind="function"><name>set_field</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a24af03b9a68ace199b0a6fa812abad39" kind="function"><name>set_field_vector</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a641a6b75fe34c51943902d846ff66328" kind="function"><name>set_object</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ab9e323067a58b74a7d1c835f0d1832c8" kind="function"><name>new_id</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a73fd0acd5b0f71febf5254db391416c0" kind="function"><name>AbstractStorage</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a5d114117d4954e01fd650251b829fdbf" kind="function"><name>remove</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a108af124f19c0ae9a4a461aee6abc3ec" kind="function"><name>create</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1ac85363cc08204d6158d6f68d7c51764a" kind="function"><name>search</name></member>
+    <member refid="d6/da0/classStorage_1_1AbstractStorage_1a21ff57c954664abb78d1d658a1da7afa" kind="function"><name>object</name></member>
+  </compound>
+  <compound refid="de/dda/classUI_1_1AbstractUI" kind="class"><name>UI::AbstractUI</name>
+    <member refid="de/dda/classUI_1_1AbstractUI_1a8a30b02e8aae325cb25f4495190ed187" kind="variable"><name>storage_</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1a94586af15fc6ddc48b7a7cd1bdf5f0e7" kind="variable"><name>cache_</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1ab09dc4b586d429a5238d1b09c98d2a4b" kind="function"><name>cache</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1aaa55abbdeb863b8189393e929f643335" kind="function"><name>search</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1a485b7a347d6b07f6dc44a3174cb96eaa" kind="function"><name>create</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1a160bde97ba2106267a8850db226d9790" kind="function"><name>remove</name></member>
+    <member refid="de/dda/classUI_1_1AbstractUI_1a35092e69be8cc4406582540286db5a69" kind="function"><name>AbstractUI</name></member>
+  </compound>
+  <compound refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument" kind="struct"><name>Storage::AbstractStorage::Argument</name>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a92adab5cf7e02947e2e75fba5e11446c" kind="enum"><name>@0</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a92adab5cf7e02947e2e75fba5e11446ca3268a68276a4ac73701de323858c945b" kind="enumvalue"><name>STRING</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a92adab5cf7e02947e2e75fba5e11446ca4f57d3a5ac601598730fb58b08c81540" kind="enumvalue"><name>INTEGER</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a92adab5cf7e02947e2e75fba5e11446ca6f9cbb024f036014248e8322253da11e" kind="enumvalue"><name>TIME</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a92adab5cf7e02947e2e75fba5e11446ca37240303f27a558e24e9e07d1abfa215" kind="enumvalue"><name>ENUMERATION</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1ad48a91372dd1a9445b4ddcee0bc8336a" kind="variable"><name>field</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a77f04e835f26305c4222df78c07f8efd" kind="variable"><name>type</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1ab8ea8281cdefeb901a267261ed2e0478" kind="variable"><name>string</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1a6b20329db4720c44c45d8380f840dbec" kind="variable"><name>integer</name></member>
+    <member refid="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_1ae6cc69656647a6cccf725a0156373a51" kind="variable"><name>time</name></member>
+  </compound>
+  <compound refid="dd/dac/classCalendar" kind="class"><name>Calendar</name>
+    <member refid="dd/dac/classCalendar_1a2adaa036096c4d37da33d17338712f7e" kind="variable"><name>id_</name></member>
+    <member refid="dd/dac/classCalendar_1aea67530d25e9b566370924bc7e8c2c3f" kind="variable"><name>events_</name></member>
+    <member refid="dd/dac/classCalendar_1ae8e2987543087a4c91179e875388504e" kind="function"><name>Calendar</name></member>
+    <member refid="dd/dac/classCalendar_1a6a6373f8f939a50ca5b6f28613420d07" kind="function"><name>Calendar</name></member>
+    <member refid="dd/dac/classCalendar_1a23aa939f694874a8f98ec54326d80741" kind="function"><name>~Calendar</name></member>
+    <member refid="dd/dac/classCalendar_1ab9f9a418d5122e8f5915fd817b8422b1" kind="function"><name>get_id</name></member>
+    <member refid="dd/dac/classCalendar_1a1d5d2228fa04cc9ed48756c2569a69ae" kind="function"><name>set_id</name></member>
+    <member refid="dd/dac/classCalendar_1aa1e9611c947c9b37975437b188066bf9" kind="function"><name>get_events</name></member>
+    <member refid="dd/dac/classCalendar_1a9ed5161b06c2a2acc8e5febbeeeb39b0" kind="function"><name>merge_calendar</name></member>
+    <member refid="dd/dac/classCalendar_1a46578e7e3f65bd5d523a108ad00965dd" kind="function"><name>has_event</name></member>
+    <member refid="dd/dac/classCalendar_1ad099edd0e82ca0a2ffb18702d029fffa" kind="function"><name>add_event</name></member>
+    <member refid="dd/dac/classCalendar_1a305abce38aacb905a0277f573f6b486c" kind="function"><name>delete_event</name></member>
+  </compound>
+  <compound refid="d9/de4/structstorage_1_1CalendarBunch__" kind="struct"><name>storage::CalendarBunch_</name>
+    <member refid="d9/de4/structstorage_1_1CalendarBunch___1a519996ee57438ac30e1eea259358585f" kind="variable"><name>ID</name></member>
+    <member refid="d9/de4/structstorage_1_1CalendarBunch___1a87e88f8847e01128e2d2c21b9a0a284b" kind="variable"><name>EventID</name></member>
+  </compound>
+  <compound refid="dc/df0/classuiconsole_1_1Command" kind="class"><name>uiconsole::Command</name>
+    <member refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kind="variable"><name>ui</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" kind="variable"><name>name</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1ad6dbdcec778315e395a8be8571c3c69d" kind="variable"><name>description</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" kind="variable"><name>help</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a4f28955b8a36ef1d3b4402b081346060" kind="function"><name>Command</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a11421d325715cfc8f1e779ef823b3445" kind="function"><name>~Command</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1ac7dbbea517086411a60d48faa2f15ae8" kind="function"><name>get_name</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a6f548d67af5035358bbf0bcaf129619b" kind="function"><name>get_description</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a50ea5c140158782f5c87b51399ba461a" kind="function"><name>get_help</name></member>
+    <member refid="dc/df0/classuiconsole_1_1Command_1a5c4d205b1de13a6b3d0db73ddc7ebefa" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="dd/d31/classuiconsole_1_1Command__Add" kind="class"><name>uiconsole::Command_Add</name>
+    <member refid="dd/d31/classuiconsole_1_1Command__Add_1a664d6968c80cfa23fa2774e3346283b7" kind="function"><name>Command_Add</name></member>
+    <member refid="dd/d31/classuiconsole_1_1Command__Add_1ace9280c73bb3e2a18ace8a4e1ff3ee64" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="de/dfe/classuiconsole_1_1Command__All" kind="class"><name>uiconsole::Command_All</name>
+    <member refid="de/dfe/classuiconsole_1_1Command__All_1a8bfd5695c279967bc6667e51a85d2610" kind="function"><name>Command_All</name></member>
+    <member refid="de/dfe/classuiconsole_1_1Command__All_1afec181f8031593644a3acca7f5e7fe8f" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="df/d75/classuiconsole_1_1Command__Clone" kind="class"><name>uiconsole::Command_Clone</name>
+    <member refid="df/d75/classuiconsole_1_1Command__Clone_1adad6880fe28570d5c4f8250798987c6d" kind="function"><name>Command_Clone</name></member>
+    <member refid="df/d75/classuiconsole_1_1Command__Clone_1af61cd935a174eaeeec06b98620afe6af" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d6/d90/classuiconsole_1_1Command__Delete" kind="class"><name>uiconsole::Command_Delete</name>
+    <member refid="d6/d90/classuiconsole_1_1Command__Delete_1abce1cda7f9ef46226858d921e7fa1eb8" kind="function"><name>Command_Delete</name></member>
+    <member refid="d6/d90/classuiconsole_1_1Command__Delete_1a1b3e129b6db759603d472d3a951d7743" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d2/de6/classuiconsole_1_1Command__Dequeue" kind="class"><name>uiconsole::Command_Dequeue</name>
+    <member refid="d2/de6/classuiconsole_1_1Command__Dequeue_1a9ba380c71a66a628ba2f68f9b5636c97" kind="function"><name>Command_Dequeue</name></member>
+    <member refid="d2/de6/classuiconsole_1_1Command__Dequeue_1a4ffbe293d61a29f4bc36428578dad66e" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="da/d43/classuiconsole_1_1Command__Enqueue" kind="class"><name>uiconsole::Command_Enqueue</name>
+    <member refid="da/d43/classuiconsole_1_1Command__Enqueue_1ac29b7ad041516806ac7b7398da2dc811" kind="function"><name>Command_Enqueue</name></member>
+    <member refid="da/d43/classuiconsole_1_1Command__Enqueue_1a62ddd6ebdd0412b4d109d56e48ec1f9e" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d8/d1d/classuiconsole_1_1Command__Exclude" kind="class"><name>uiconsole::Command_Exclude</name>
+    <member refid="d8/d1d/classuiconsole_1_1Command__Exclude_1a6c01d50d0cfebf5c17ac8b40ce67fd49" kind="function"><name>Command_Exclude</name></member>
+    <member refid="d8/d1d/classuiconsole_1_1Command__Exclude_1ab2a21ebe3eaf318d9abbbdb89c6fe035" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d5/dd7/classuiconsole_1_1Command__Exit" kind="class"><name>uiconsole::Command_Exit</name>
+    <member refid="d5/dd7/classuiconsole_1_1Command__Exit_1a27f68e3484510c7451417e2babb6b514" kind="function"><name>Command_Exit</name></member>
+    <member refid="d5/dd7/classuiconsole_1_1Command__Exit_1a83d9528d878c0f3cc8aa26a7c3ebc3c3" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d8/de0/classCommand__Generate" kind="class"><name>Command_Generate</name>
+  </compound>
+  <compound refid="d0/d3d/classuiconsole_1_1Command__Help" kind="class"><name>uiconsole::Command_Help</name>
+    <member refid="d0/d3d/classuiconsole_1_1Command__Help_1a4c5f133a08fd1e534660d80f539c604d" kind="function"><name>Command_Help</name></member>
+    <member refid="d0/d3d/classuiconsole_1_1Command__Help_1a79203580b82e0b17883096640d83e6ff" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="dc/d64/classuiconsole_1_1Command__Include" kind="class"><name>uiconsole::Command_Include</name>
+    <member refid="dc/d64/classuiconsole_1_1Command__Include_1a28041e8559bf57e3bcef5f7f2c116181" kind="function"><name>Command_Include</name></member>
+    <member refid="dc/d64/classuiconsole_1_1Command__Include_1ac4a0f5366a1fbf8d118bde8c5f55e633" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d3/d25/classuiconsole_1_1Command__Link" kind="class"><name>uiconsole::Command_Link</name>
+    <member refid="d3/d25/classuiconsole_1_1Command__Link_1a9ec2d337ea91b840a0d67d21948d436e" kind="function"><name>Command_Link</name></member>
+    <member refid="d3/d25/classuiconsole_1_1Command__Link_1a62fc45d4a5aa32b6d2e685f055cec0e6" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d8/dc5/classuiconsole_1_1Command__Merge" kind="class"><name>uiconsole::Command_Merge</name>
+    <member refid="d8/dc5/classuiconsole_1_1Command__Merge_1a7d15ac15581529bd9137d7242c798d34" kind="function"><name>Command_Merge</name></member>
+    <member refid="d8/dc5/classuiconsole_1_1Command__Merge_1a5d82c5fab7e1f57b885a00eab2cb87b0" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="df/d75/classuiconsole_1_1Command__Print" kind="class"><name>uiconsole::Command_Print</name>
+    <member refid="df/d75/classuiconsole_1_1Command__Print_1a8db0b51d3232e42e9f50f55cbc3920c3" kind="function"><name>Command_Print</name></member>
+    <member refid="df/d75/classuiconsole_1_1Command__Print_1a42106fe7a7b5ce0c90a5a196c5f8ff42" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="d4/dfe/classuiconsole_1_1Command__Select" kind="class"><name>uiconsole::Command_Select</name>
+    <member refid="d4/dfe/classuiconsole_1_1Command__Select_1a71479b0b684f8503b1caff3feebc44b5" kind="function"><name>Command_Select</name></member>
+    <member refid="d4/dfe/classuiconsole_1_1Command__Select_1ad3274b623f8cb12814fa2272ddece058" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="da/db4/classstorage_1_1DataStorage" kind="class"><name>storage::DataStorage</name>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac22c092035d06729c7602dcad6d609d8" kind="variable"><name>people_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac0cfe9805fe3f1ef72030da92a2b6971" kind="variable"><name>groups_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a2eefa659dbda277e01904a16ecddaae6" kind="variable"><name>events_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ade8614168df58d60c9e8da9ad7fe11d7" kind="variable"><name>calendars_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a2c8ccca7d3e769f2f86fa94617682b6c" kind="variable"><name>queues_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a474ff98fb515b4d2dcae0b549b07fdb3" kind="variable"><name>event_templates_vector_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a8c32de002329fa6018a0957c925cf183" kind="variable"><name>people_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a08dbec98bdd6b7c3e6623a8bbe72235c" kind="variable"><name>groups_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a16f699e52132096d7e8ec8d43c73ad1f" kind="variable"><name>events_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac49bf760dd1492eb566e7bbbf9d84743" kind="variable"><name>group_content_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1adc094f1bdcad1fd0940c947d2b0529b9" kind="variable"><name>calendars_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1af9a0216e83d32b996086a0b15a5281ab" kind="variable"><name>queues_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a19686eeb613ff2ade96fd557b26627f1" kind="variable"><name>queues_bunches_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a96b081918351159d88994b382f1b97e2" kind="variable"><name>event_templates_</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a22825d40495dae6a5df46d629fb26a3f" kind="function"><name>DataStorage</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1adf4ef73e6d368dc7fcd213ba80e1d618" kind="function"><name>~DataStorage</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a1cfb8136faea457c36a1adf1d024b2e1" kind="function"><name>load</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a973b7fd5741ad0159d95a67b91734dd2" kind="function"><name>save</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a00e2feae10b5a44acf711273c2d0d3d8" kind="function"><name>init</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a6a7b4a651eae72f6c16826632038a59f" kind="function"><name>sync</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1aabde44460aae44655dbdf69b8128ad22" kind="function"><name>setup</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a6c21f6254e3c57dca63ad39c262b280d" kind="function"><name>get_people</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a12f909c64f1414e91186c998b6e29db2" kind="function"><name>get_groups</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a6b649e3fa5ca3eb1921c4ee176a19f42" kind="function"><name>get_events</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a04a667fec74228c64a60a37510482665" kind="function"><name>get_calendars</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a61a1e515f42170324276c5a1a78961c5" kind="function"><name>get_queues</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a308f8bdd6c6a5ed65586e8c028cc6e42" kind="function"><name>get_event_templates</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1abca728c67538176fd721dcb8730bac81" kind="function"><name>get_person</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a53e3931141b50ff3d5bfd7e682092091" kind="function"><name>get_group</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1af68ca095bb27db3b8532045f77b5ae73" kind="function"><name>get_event</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a38b24aa35d0f1159200c78e53a0c99bb" kind="function"><name>get_calendar</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a38f0afa3026ff4c41e25c85648d24cd1" kind="function"><name>get_queue</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a085a420bbfdb5aad5ca5ed2396bca656" kind="function"><name>get_event_template</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1afdcd88ea1431926e2573ecbca72cf7a9" kind="function"><name>delete_group</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac87846227576aff38920d4a0a56718b5" kind="function"><name>delete_calendar</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a16ec2023c236757fd8ff7abab2ecf74d" kind="function"><name>delete_person</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a92302162f0c37753f7acadfb82a951f4" kind="function"><name>delete_event</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ae4741645dcf5d1efd8bfbaa4422c929a" kind="function"><name>delete_queue</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a72e75a91ab796b9b219443da461928e4" kind="function"><name>delete_event_template</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1aa29c972a9d8e25c54703435b79060ccf" kind="function"><name>register_group</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a4aea70365b132555020159c04121a9a0" kind="function"><name>register_calendar</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ab397fd5fc17fb58e45b2968b165c95dd" kind="function"><name>register_person</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a2c63723d6bb413a0d630b05a045935e1" kind="function"><name>register_event</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a78b6e15d0d878cc5113cba50dae7c73b" kind="function"><name>register_queue</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a3984bdbb2a2aecfaca0a4745df0f7850" kind="function"><name>register_event_template</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1aa4ffb98c676775ad88253ebeaa790a4b" kind="function"><name>get_person_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a4bfa24dc03cfb2e93ef3cd59fa0c58ce" kind="function"><name>set_person_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ab2987fe459ddc88e82b48cd1b38fe68c" kind="function"><name>add_person</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a030dfcb2b1cadaf99eb3bcbc784dae9b" kind="function"><name>remove_person</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a316cbd7ab0c9b1bb67af1a82a9428fa7" kind="function"><name>get_group_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ae5d83b0319e6e9849dadb78c8e622d05" kind="function"><name>set_group_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1af03714bfc767d0ee4adcf051bf771441" kind="function"><name>add_group</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a0bc7ee24698e6e557655c207baa1afc8" kind="function"><name>remove_group</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a7d2d91d297297e8d37486dc10d3e9f41" kind="function"><name>get_event_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a17a77bdcced46a81fe5a94004aec3a8d" kind="function"><name>set_event_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac477bff8893b021ac4452b4fd7100557" kind="function"><name>add_event</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a91e36c011ef731e252118ac8d66dbed3" kind="function"><name>remove_event</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a06a2348464bcab2acc728716679556fe" kind="function"><name>get_person_ID_list</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a82642d970b251d7561c4e579f500eed1" kind="function"><name>get_group_ID_list</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a1281a1f9d1d13f84c9d783957fe83778" kind="function"><name>get_event_ID_list</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a7d5651c455cd000ed50f1ea5bc998b88" kind="function"><name>get_event_template_ID_list</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ade404917eac74aebcb378373be266c11" kind="function"><name>get_event_template_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1aff9a35d72ebf4f5f7b9df80fa1504169" kind="function"><name>set_event_template_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a5a6cd99e0b7b2dc0fe65616dc1119edc" kind="function"><name>add_event_template</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a43314568f93e76d99f90e55968175d5e" kind="function"><name>remove_event_template</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a0a3c8f23d498ae8440ad87cef4624527" kind="function"><name>get_queue_ID_list</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a8d99538ae68d198955546776e6df642c" kind="function"><name>add_queue</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a4adc8ae9ea8dbdc3d61834b826be8410" kind="function"><name>remove_queue</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a96c5edba7bbceec5ad3c6ef7085aff18" kind="function"><name>get_queue_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a15c64cd9f2ae3ecf9d1b04158f54d272" kind="function"><name>set_queue_attr</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a0836f261c2cc88b382197a6cecf67b7e" kind="function"><name>get_calendar_bunches_count</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a6f445af69b7ba9d9c84d0d8412a537f7" kind="function"><name>get_calendar_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ab825a572ae207a374fdbafbae1dc783f" kind="function"><name>remove_calendar_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1ac7b4152086292d6a2b88d633c938140d" kind="function"><name>add_calendar_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1adc0bfcc5d6133e814f18d731fe8018e4" kind="function"><name>get_group_bunches_count</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a70227aa6c47733fe0a42e55cf8856f9a" kind="function"><name>get_group_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a5d5028576d12a77bf51d2c66909c1a73" kind="function"><name>remove_group_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a0b14b86856e2865845b249b53e960a9d" kind="function"><name>add_group_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a4cd57f5cf73d3bed790317c8316b71d6" kind="function"><name>get_queue_bunches_count</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a27e4d7531de1356eb314534a720b4424" kind="function"><name>get_queue_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1a23ab4ee992340adf88cbbe40a7469b1f" kind="function"><name>remove_queue_bunch</name></member>
+    <member refid="da/db4/classstorage_1_1DataStorage_1af0a90348456252f85f61181369f5921c" kind="function"><name>add_queue_bunch</name></member>
+  </compound>
+  <compound refid="de/d6b/structstorage_1_1dsrow__" kind="struct"><name>storage::dsrow_</name>
+    <member refid="de/d6b/structstorage_1_1dsrow___1afd086e21b6eb76e655f91e8887ce6aff" kind="variable"><name>fields</name></member>
+  </compound>
+  <compound refid="d0/df2/classDummyStorage" kind="class"><name>DummyStorage</name>
+    <member refid="d0/df2/classDummyStorage_1a275263eba82a652005292f01a120af8e" kind="function"><name>get_field_int</name></member>
+    <member refid="d0/df2/classDummyStorage_1a410ef9d239193e25f830c49140e18293" kind="function"><name>get_field_string</name></member>
+    <member refid="d0/df2/classDummyStorage_1a978ef9d688175e3739bb478f4c9b5313" kind="function"><name>get_field_time</name></member>
+    <member refid="d0/df2/classDummyStorage_1a1101739c23fbf79b009558553180ef1a" kind="function"><name>get_field_enum</name></member>
+    <member refid="d0/df2/classDummyStorage_1a62ead126a3be7736995227fcb3a7e5cd" kind="function"><name>get_field_object</name></member>
+    <member refid="d0/df2/classDummyStorage_1afe36af3f3147027ebb6447192201c790" kind="function"><name>get_field_vector</name></member>
+    <member refid="d0/df2/classDummyStorage_1ab22488d00b8969af5356bc344672bd18" kind="function"><name>set_field</name></member>
+    <member refid="d0/df2/classDummyStorage_1aaa0d3249ea3207fae78253b191b80854" kind="function"><name>set_field</name></member>
+    <member refid="d0/df2/classDummyStorage_1a51662a853e821fda1828e8756d58f1df" kind="function"><name>set_field</name></member>
+    <member refid="d0/df2/classDummyStorage_1a0655a6f7c822adbe174d1c7fe7c9ea34" kind="function"><name>set_field_enum</name></member>
+    <member refid="d0/df2/classDummyStorage_1ac1674d9c4106af70139f4672a8702285" kind="function"><name>set_field</name></member>
+    <member refid="d0/df2/classDummyStorage_1a6102ef89119b0ee1525439b3fd7043ce" kind="function"><name>set_field_vector</name></member>
+    <member refid="d0/df2/classDummyStorage_1abef91708b67fec5a4b35e073a19c8b2a" kind="function"><name>search</name></member>
+  </compound>
+  <compound refid="d5/da5/classEvent" kind="class"><name>Event</name>
+    <member refid="d5/da5/classEvent_1a12576f27897812783eb5c782a686d34d" kind="variable"><name>id_</name></member>
+    <member refid="d5/da5/classEvent_1afa92ca7e9e238807797ebf07b9ce78b3" kind="variable"><name>name_</name></member>
+    <member refid="d5/da5/classEvent_1a9abb6abe7b82e5ce77ae6acb74217960" kind="variable"><name>description_</name></member>
+    <member refid="d5/da5/classEvent_1a5e813e2d29ec25eee68b7386e7807d05" kind="variable"><name>begin_</name></member>
+    <member refid="d5/da5/classEvent_1ad0b789465a3f6217358a38c5dda2bc6a" kind="variable"><name>end_</name></member>
+    <member refid="d5/da5/classEvent_1ae552aaa8077e421db35822fb065b8440" kind="variable"><name>people_</name></member>
+    <member refid="d5/da5/classEvent_1ac41c2abda9fb4c6c533838f6bf9a75cb" kind="variable"><name>related_calendars_</name></member>
+    <member refid="d5/da5/classEvent_1a150a1c9476acae579c6664d8736a59c1" kind="function"><name>Event</name></member>
+    <member refid="d5/da5/classEvent_1a7704ec01ce91e673885792054214b3d2" kind="function"><name>~Event</name></member>
+    <member refid="d5/da5/classEvent_1aa82316746fdf73be1da9b5b8840f5e2d" kind="function"><name>get_id</name></member>
+    <member refid="d5/da5/classEvent_1a69a17e50e894d6ef113b7895ff6d517f" kind="function"><name>set_id</name></member>
+    <member refid="d5/da5/classEvent_1a99325a5304e3b73cd4df1f356a185cfc" kind="function"><name>get_name</name></member>
+    <member refid="d5/da5/classEvent_1a07fdb4a55424b028bfb64db3cea94c07" kind="function"><name>get_description</name></member>
+    <member refid="d5/da5/classEvent_1aa0177bde2838d761774f6e9a50f1e76c" kind="function"><name>get_begin</name></member>
+    <member refid="d5/da5/classEvent_1a25baaf84cc87da4b866f266f946c1d8f" kind="function"><name>get_end</name></member>
+    <member refid="d5/da5/classEvent_1a5736ec29101416a0358b709c964bf50d" kind="function"><name>get_group</name></member>
+    <member refid="d5/da5/classEvent_1ab2329f2021caee686920d5ab2cfa8569" kind="function"><name>get_related_calendars</name></member>
+    <member refid="d5/da5/classEvent_1a1d59dc31b3358bb9d9d1e75cb735c6ef" kind="function"><name>add_related_calendar</name></member>
+    <member refid="d5/da5/classEvent_1ac4bc91dab8ca340c58aed7c91a8376a7" kind="function"><name>delete_related_calendar</name></member>
+    <member refid="d5/da5/classEvent_1a77077d8d27027113b2e20b4374a00a61" kind="function"><name>add_person</name></member>
+    <member refid="d5/da5/classEvent_1a5e071ee79b9ac9520fa5f26d763ce662" kind="function"><name>delete_person</name></member>
+  </compound>
+  <compound refid="d9/d42/classCore_1_1Event" kind="class"><name>Core::Event</name>
+    <member refid="d9/d42/classCore_1_1Event_1adad558b6dc958d224f63d314326ffb67" kind="variable"><name>begin_</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a37939704e5ba8f6bd317ea2a12b64b50" kind="variable"><name>duration_</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a6dbea64bf650e7e36d55539cf59a66e7" kind="function"><name>save</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a63462f7c20234f5c7f18e9c5e19d72b9" kind="function"><name>load</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a067e37070ea0fa9b39d7d1171c2f9a2d" kind="function"><name>Event</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1aa4a154dde2ab0f1e011fc2f41909cb43" kind="function"><name>Event</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a829b19b781b4d5989928c021b3a3553a" kind="function"><name>begin</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1ad83a2109fa632352f63adfdafe2dc86f" kind="function"><name>duration</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1af83b91c07834359638a4f7473abad5c5" kind="function"><name>end</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a8dd94bcb05cb3c5ef065fa204cd724f9" kind="function"><name>read</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a4977832cb03001d8afe46bcddc60ce1a" kind="function"><name>read_time</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1aaa4b9def6b65cc896e0054210b2d5dae" kind="function"><name>update</name></member>
+    <member refid="d9/d42/classCore_1_1Event_1a308ae7ad334b8c9a166dc57cfd6a0524" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="df/d6e/classEvent__Template" kind="class"><name>Event_Template</name>
+    <member refid="df/d6e/classEvent__Template_1a37aaaf53e8b9ecade24d47a14d53e188" kind="variable"><name>id_</name></member>
+    <member refid="df/d6e/classEvent__Template_1a5809e7285c3e203cfba5cc94e8163e1d" kind="variable"><name>name_</name></member>
+    <member refid="df/d6e/classEvent__Template_1a108c6e4f655f46ea6103d7e0568a1341" kind="variable"><name>script_</name></member>
+    <member refid="df/d6e/classEvent__Template_1a607d05646877ea614881447b3871d55d" kind="variable"><name>duration_</name></member>
+    <member refid="df/d6e/classEvent__Template_1a9b9d2cac8e055691f223f4f3bd045f67" kind="function"><name>Event_Template</name></member>
+    <member refid="df/d6e/classEvent__Template_1a67a470b75e148a9ecc3ecdb941d77b44" kind="function"><name>~Event_Template</name></member>
+    <member refid="df/d6e/classEvent__Template_1a8e5659c7e0d4e1fc373d6f89c4d7f8b5" kind="function"><name>get_id</name></member>
+    <member refid="df/d6e/classEvent__Template_1a3258c27adfe3f48d1b2d9c17fdc221d1" kind="function"><name>set_id</name></member>
+    <member refid="df/d6e/classEvent__Template_1a80afa18429deb22d7480404c2d699f8a" kind="function"><name>get_name</name></member>
+    <member refid="df/d6e/classEvent__Template_1ac3952dcb999cfce3b5455b9e1aff21a7" kind="function"><name>get_script</name></member>
+    <member refid="df/d6e/classEvent__Template_1af573da4a03fb22083d935097951c39cb" kind="function"><name>get_requered_people</name></member>
+  </compound>
+  <compound refid="d8/da7/classstorage_1_1FileStorage" kind="class"><name>storage::FileStorage</name>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1acc001777cd6d12cf460e98ad0101b278" kind="variable"><name>path_</name></member>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1a3a88a71218e6e8cb6c7af942ac1daf47" kind="function"><name>FileStorage</name></member>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1a336c41583d9b31f33988319e4397c5fc" kind="function"><name>~FileStorage</name></member>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1a74a3d23be4524c10333cba19be066c6c" kind="function"><name>setup</name></member>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1acec1ff977a4fb2885ca0f90336b2c296" kind="function"><name>load</name></member>
+    <member refid="d8/da7/classstorage_1_1FileStorage_1abc882239d83ffc2b3ddc86aad18ac83c" kind="function"><name>save</name></member>
+  </compound>
+  <compound refid="d0/db7/classGroup" kind="class"><name>Group</name>
+    <member refid="d0/db7/classGroup_1a431c8971f3da64265d5b0c35e777bdff" kind="variable"><name>id_</name></member>
+    <member refid="d0/db7/classGroup_1a59dee0a4ab9aceb52091ffdcd7d9c6f2" kind="variable"><name>name_</name></member>
+    <member refid="d0/db7/classGroup_1aed2309f3d03fd376e02f30cb000520ed" kind="variable"><name>description_</name></member>
+    <member refid="d0/db7/classGroup_1a5c8f86e031ec6f9007874988a78dae05" kind="variable"><name>people_</name></member>
+    <member refid="d0/db7/classGroup_1a3b0eb8097769110ef54f76895a1a647d" kind="variable"><name>calendar_</name></member>
+    <member refid="d0/db7/classGroup_1ae2cf7fd2aae55c47454fa3072ccc45f1" kind="function"><name>Group</name></member>
+    <member refid="d0/db7/classGroup_1a4b68e3ee36ef3270af3ecfae4b043c4c" kind="function"><name>Group</name></member>
+    <member refid="d0/db7/classGroup_1aed00a22ff227ee2657ae44a5cbcedf7c" kind="function"><name>~Group</name></member>
+    <member refid="d0/db7/classGroup_1aab2e4ec29eda3a490dede01eb9411f03" kind="function"><name>get_name</name></member>
+    <member refid="d0/db7/classGroup_1abdd86767799c3c3b6d2f7204b1945bd3" kind="function"><name>get_id</name></member>
+    <member refid="d0/db7/classGroup_1a1b7657c13a5cad2a8ad931c8fed8ecfb" kind="function"><name>set_id</name></member>
+    <member refid="d0/db7/classGroup_1ade4eb90fbeb5f50dfb2ccb262cd39ce8" kind="function"><name>get_description</name></member>
+    <member refid="d0/db7/classGroup_1a10f85a428de5c1215fd7d319bd1a9ca3" kind="function"><name>get_calendar</name></member>
+    <member refid="d0/db7/classGroup_1abea5d93d27820a64c84792e3011f1394" kind="function"><name>add_event</name></member>
+    <member refid="d0/db7/classGroup_1a70b5f6f47818f5d4912926b29faa96bf" kind="function"><name>delete_event</name></member>
+    <member refid="d0/db7/classGroup_1a8578c69459be6971dd31e76357f934dc" kind="function"><name>get_people</name></member>
+    <member refid="d0/db7/classGroup_1a2aca17525330aeaf591e0bc243a8149e" kind="function"><name>merge_group</name></member>
+    <member refid="d0/db7/classGroup_1a7fccd60929bd2e36db09fe37fffe0548" kind="function"><name>exclude_group</name></member>
+    <member refid="d0/db7/classGroup_1ac753fa2674ec19ab156645f978654961" kind="function"><name>include_group</name></member>
+    <member refid="d0/db7/classGroup_1afc2080f42e091f6831fd9d80e7b8f0d9" kind="function"><name>add_person</name></member>
+    <member refid="d0/db7/classGroup_1ad00847c4219c29fd3b94c6784870b629" kind="function"><name>delete_person</name></member>
+  </compound>
+  <compound refid="d2/d30/classCore_1_1Group" kind="class"><name>Core::Group</name>
+    <member refid="d2/d30/classCore_1_1Group_1acd5a22e6f6a8077efe50be1e3a02bece" kind="variable"><name>parent_groups_</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a88deac78fd6b251e9854f6f42a772be1" kind="function"><name>save</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a8fa43f7c7fb91a1840b5839b91aae500" kind="function"><name>load</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a39511a091570283cb5fb2a4b8f0a841a" kind="function"><name>Group</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a05760e4e45ae6fec2674d216f0a5a6e9" kind="function"><name>add_parent_group</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a93e4626dde0f84e68f1460e557daaed0" kind="function"><name>del_parent_group</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a5fe3fef1b6709f953e5487841d90bbb9" kind="function"><name>read</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a52e48b1f92f6354b4e3a32d710b9c7b3" kind="function"><name>read_vector</name></member>
+    <member refid="d2/d30/classCore_1_1Group_1a12d2636d65f1baea3666bb492320b5c1" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="d2/d04/structGroup__Content" kind="struct"><name>Group_Content</name>
+  </compound>
+  <compound refid="d9/d96/structGroup__Content__" kind="struct"><name>Group_Content_</name>
+    <member refid="d9/d96/structGroup__Content___1a5d4584e061a790c1543ed43be2e68af5" kind="variable"><name>group</name></member>
+    <member refid="d9/d96/structGroup__Content___1aaee52f465ae5b393ad625663a228a040" kind="variable"><name>person</name></member>
+    <member refid="d9/d96/structGroup__Content___1acd55c0cc8ecafe72189cc849c07da3b3" kind="variable"><name>status</name></member>
+  </compound>
+  <compound refid="d3/db8/structstorage_1_1GroupBunch__" kind="struct"><name>storage::GroupBunch_</name>
+    <member refid="d3/db8/structstorage_1_1GroupBunch___1ab7c018c8d79c50d64f28ffcd279b21a4" kind="variable"><name>PersonID</name></member>
+    <member refid="d3/db8/structstorage_1_1GroupBunch___1a761c0b9cdc83ee74754a43f13953933d" kind="variable"><name>GroupID</name></member>
+    <member refid="d3/db8/structstorage_1_1GroupBunch___1a6a28ad5ef8fe8361e56530026675e2bf" kind="variable"><name>Status</name></member>
+  </compound>
+  <compound refid="d9/d71/classCore_1_1Person" kind="class"><name>Core::Person</name>
+    <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764" kind="enum"><name>Sex</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9" kind="enumvalue"><name>MALE</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1" kind="enumvalue"><name>FEMALE</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a8be971ab18693e55f617c7dc8abc3e26" kind="friend"><name>AbstractGroup</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1aa48f80dd4bc0f3bd24e249b6f87e3762" kind="variable"><name>name_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1aed64cd8bd3014e7c9057ea7d89179d71" kind="variable"><name>surname_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a0a9b0b78f3b37a5272e53296de83f049" kind="variable"><name>sex_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ac2ac9d843d45d2a42736a87d75d3f0d0" kind="variable"><name>birthday_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ab0b88b2a5b0f71f5c7b47949f825df4e" kind="variable"><name>groups_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a88e1d40e7be7d95e6cec9bc623d6e076" kind="function"><name>_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a7ded3b871b2e7f6ce35b7b1f4e1738ee" kind="function"><name>_</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1aa9b9581966365e7272d43e77f7a220e4" kind="function"><name>add_group</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a0057f7bd335dd35e470e67ad2e22b0d5" kind="function"><name>del_group</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a846fa55a79f6da0258d711adc88a1a30" kind="function"><name>save</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ae88c1b9c89b03ac7f4ba3ddcff4c62a7" kind="function"><name>load</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a3f7bca52408bae72dd0213b2a92827f0" kind="function"><name>Person</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1aa1b55740d1dd9f2543ad27f4ecca8e72" kind="function"><name>Person</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a14d39111fb34383818154a26b0d248f5" kind="function"><name>name</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a5572207d53649af10cd9bb62fe21995c" kind="function"><name>surname</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a0d70ad24edf86e3c0f88e913342aa24d" kind="function"><name>sex</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ab0d1836a97254798585fc6c97a63680e" kind="function"><name>birthday</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ae6dc9f0c0ca2caf326b69b72d81aea84" kind="function"><name>groups</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a3b86cab797444527364376dad2a0c300" kind="function"><name>read</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a9b1601502537f54b7c33fc593f8df590" kind="function"><name>read_int</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a4b7d0b1c545c2c4876b3f410b914f3a2" kind="function"><name>read_string</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ad0485ff28f4f80aeb0da9f8a6ae2f6d0" kind="function"><name>read_time</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a5dfa21d7b0a58e09f71e07a4298f0f62" kind="function"><name>read_enum</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ab28c3e468d265c16bce1d4488493c5a6" kind="function"><name>read_vector</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ac2900dc24258c00ea1de17350c3f4658" kind="function"><name>update</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a51ec02307587cf9dfd7ed3036cf202cd" kind="function"><name>update</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1ad650eba89f671041c26f8d1419f6e6c8" kind="function"><name>update</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a1c6826659c2413189dae536f7c83af98" kind="function"><name>update_enum</name></member>
+    <member refid="d9/d71/classCore_1_1Person_1a50fa1e127f56e2caa873017b54c090cb" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="d1/d63/classPerson" kind="class"><name>Person</name>
+    <member refid="d1/d63/classPerson_1a328ea8d2e8c2674688c7f944fab70b6b" kind="enum"><name>Sex</name></member>
+    <member refid="d1/d63/classPerson_1a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4" kind="enumvalue"><name>MALE</name></member>
+    <member refid="d1/d63/classPerson_1a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064" kind="enumvalue"><name>FEMALE</name></member>
+    <member refid="d1/d63/classPerson_1aff573b60f6d50e6d2d7b501dd3d6e81f" kind="variable"><name>id_</name></member>
+    <member refid="d1/d63/classPerson_1a4b84c9da9f39099f54ee1c1c6fc56c0c" kind="variable"><name>name_</name></member>
+    <member refid="d1/d63/classPerson_1abf9e2c1ffbeec1a16f8f99821458e74d" kind="variable"><name>surname_</name></member>
+    <member refid="d1/d63/classPerson_1a7ec87020bfc45a07e091ff2ee6d40cae" kind="variable"><name>groups_</name></member>
+    <member refid="d1/d63/classPerson_1ad450991ab9eb4ff95fc833006e506f1e" kind="variable"><name>sex_</name></member>
+    <member refid="d1/d63/classPerson_1abf0f9deec9d1270e069f526e78642e80" kind="variable"><name>birthday_</name></member>
+    <member refid="d1/d63/classPerson_1a3f28ee718c6ed2692ecf767ed1b2a86f" kind="function"><name>Person</name></member>
+    <member refid="d1/d63/classPerson_1a700ffd693321c5fe6880262acf43d4da" kind="function"><name>~Person</name></member>
+    <member refid="d1/d63/classPerson_1addbe4758044124636fb0f9d3094c6fcb" kind="function"><name>get_id</name></member>
+    <member refid="d1/d63/classPerson_1ab71f6c7ca2abd23309282a7a93b4d639" kind="function"><name>set_id</name></member>
+    <member refid="d1/d63/classPerson_1a1837ca2f4ba804aeee2a70c1a1fdd468" kind="function"><name>get_name</name></member>
+    <member refid="d1/d63/classPerson_1aad33f79ec5c96aa3ab30c9c4c989fb4b" kind="function"><name>get_surname</name></member>
+    <member refid="d1/d63/classPerson_1ae73331abe20c0f03fcb04de8a6adde46" kind="function"><name>sex</name></member>
+    <member refid="d1/d63/classPerson_1aec14dd73ca58227cc70c4ba3a5065d02" kind="function"><name>birthday</name></member>
+    <member refid="d1/d63/classPerson_1a24cd3ad56c42c1cd34505b1094e6e7d5" kind="function"><name>get_groups</name></member>
+    <member refid="d1/d63/classPerson_1aa17159e6bb16f2a42a1c4bcae08ae903" kind="function"><name>add_group</name></member>
+    <member refid="d1/d63/classPerson_1a93dfe7e17e0316b1f7dddebf5fd3f7ce" kind="function"><name>delete_group</name></member>
+    <member refid="d1/d63/classPerson_1abaaac95db5394d3ad78ad08221b1d231" kind="function"><name>get_calendar</name></member>
+    <member refid="d1/d63/classPerson_1a57689e959d613756a806e5d32654d3e8" kind="function"><name>add_event</name></member>
+    <member refid="d1/d63/classPerson_1ab788997b3b66a72e51f924d416029ff5" kind="function"><name>delete_event</name></member>
+  </compound>
+  <compound refid="d7/d56/classQueue" kind="class"><name>Queue</name>
+    <member refid="d7/d56/classQueue_1af53d36bdde062d043e77c81f4a88773c" kind="variable"><name>id_</name></member>
+    <member refid="d7/d56/classQueue_1a307cbdecc90d393bd382cd2541bf7f3a" kind="variable"><name>name_</name></member>
+    <member refid="d7/d56/classQueue_1af18ed8e03e60399777bfff8dea92b692" kind="variable"><name>groups_</name></member>
+    <member refid="d7/d56/classQueue_1aee8e0d9677cef92e34f0347b73f64c97" kind="function"><name>Queue</name></member>
+    <member refid="d7/d56/classQueue_1a00d119db8fa3050da37746e82cbcf94f" kind="function"><name>~Queue</name></member>
+    <member refid="d7/d56/classQueue_1a6de27cfb498b3bc6000f63599f124c53" kind="function"><name>get_vector</name></member>
+    <member refid="d7/d56/classQueue_1a69f2c1cee4763ed7671a4710cc9748c2" kind="function"><name>get_id</name></member>
+    <member refid="d7/d56/classQueue_1ad29a81e51660af6071684ad3c5b063f1" kind="function"><name>set_id</name></member>
+    <member refid="d7/d56/classQueue_1ab68f53f6e69bbe4f82b581716dc247d8" kind="function"><name>get_name</name></member>
+    <member refid="d7/d56/classQueue_1a651cb053c98529502dc84def4638771a" kind="function"><name>enqueue</name></member>
+    <member refid="d7/d56/classQueue_1ad5eb8f94bae1af72ad3391fea1821c8b" kind="function"><name>dequeue</name></member>
+  </compound>
+  <compound refid="db/d0b/structstorage_1_1QueueBunch__" kind="struct"><name>storage::QueueBunch_</name>
+    <member refid="db/d0b/structstorage_1_1QueueBunch___1a2665693a394fa79076cf6983b91354a4" kind="variable"><name>QueueID</name></member>
+    <member refid="db/d0b/structstorage_1_1QueueBunch___1ac4d1b2ea07850fa32ca7fceb5db12ff8" kind="variable"><name>GroupID</name></member>
+  </compound>
+  <compound refid="d4/deb/classStorage_1_1StorableObject" kind="class"><name>Storage::StorableObject</name>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a8d384f3e1d366a9f5aa2a8afa3cf96b3" kind="friend"><name>AbstractStorage</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1aca982c8da56f09f642afa8ab64662942" kind="variable"><name>id_</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a04a699f3ac3e266fab9e7ef36a5c70dc" kind="variable"><name>storage_</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" kind="function"><name>id</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" kind="function"><name>get_field_int</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" kind="function"><name>get_field_string</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" kind="function"><name>get_field_time</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" kind="function"><name>get_field_enum</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" kind="function"><name>get_field_object</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" kind="function"><name>get_field_vector</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" kind="function"><name>set_field</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a95c8d3440fa0ef6bce0f8d3bbac1f477" kind="function"><name>set_field</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1af16a9fb211fd421a5aa89d741a67c2fb" kind="function"><name>set_field</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" kind="function"><name>set_field_enum</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a97dd82cb4f99d421e84e3bac17dc8c8b" kind="function"><name>set_field</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" kind="function"><name>set_field_vector</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9" kind="function"><name>save</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151" kind="function"><name>load</name></member>
+    <member refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" kind="function"><name>StorableObject</name></member>
+  </compound>
+  <compound refid="df/d87/classstorage_1_1TableDataStorage" kind="class"><name>storage::TableDataStorage</name>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a69b7357e7c5b041a7ff4e0af50e1f6b9" kind="variable"><name>fields_count_</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1affbc969e2a8fae45035dece3d119d6bf" kind="variable"><name>rows_count_</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a210f0e46836a1a4281e4b6b768de9d1d" kind="variable"><name>error_</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a00a69160dafa93e3f867e586353add07" kind="variable"><name>rows_</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a91d68894f40a7ed48041d6da83bcbb6f" kind="function"><name>TableDataStorage</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a6e988f0e5213f79711eaa15dce114df4" kind="function"><name>~TableDataStorage</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a659685562ccafaa19e8f1e58ce6576c1" kind="function"><name>create_table</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a6f62b42d9309e7792f029d53b51816ba" kind="function"><name>add_row</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1ab2aee9b1629a1bd21daf490d85e39c29" kind="function"><name>rem_row</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a4366051dffb6a58c1c2d9c9b6bb5c4b0" kind="function"><name>get_cell_value</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a8562901c5f3864d68e8df2e68f334640" kind="function"><name>set_cell_value</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a6b4bfe6422d92d6561b14e4c5b4bc423" kind="function"><name>get_last_error</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a6f3a1ad98a2018e095f6bbcffdfeb9a8" kind="function"><name>load_table</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a408e93fa9efee49c3809e4afcc0d58e0" kind="function"><name>save_table</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a0d5d76c0db83f278d6e3e2dd08094d36" kind="function"><name>load_table</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1ac4ea64d9efd96af23f621500606adbe3" kind="function"><name>save_table</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a49af804e3b872ae12f67d4d0b78ca7ab" kind="function"><name>get_rows_count</name></member>
+    <member refid="df/d87/classstorage_1_1TableDataStorage_1a2a1cad158e2c20292f9474403ca4c6ef" kind="function"><name>get_fields_count</name></member>
+  </compound>
+  <compound refid="df/de1/classUserInterface" kind="class"><name>UserInterface</name>
+    <member refid="df/de1/classUserInterface_1a1cb1cca7ddef2924a120431ad4e718a8" kind="variable"><name>done</name></member>
+    <member refid="df/de1/classUserInterface_1a9b9a4d1a1eb0b70712ec4d2ccef75d3f" kind="variable"><name>def_format</name></member>
+    <member refid="df/de1/classUserInterface_1ab1b742ea3f3c29660ec1ceb0a2788977" kind="variable"><name>db_</name></member>
+    <member refid="df/de1/classUserInterface_1ae6fb70370701b3bd6120e923df9705b0" kind="function"><name>UserInterface</name></member>
+    <member refid="df/de1/classUserInterface_1ae588b2ff1711a016dd4c6fc5002c0841" kind="function"><name>~UserInterface</name></member>
+    <member refid="df/de1/classUserInterface_1a8e37eb7afd119929d302b7052746194a" kind="function"><name>set_db</name></member>
+    <member refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kind="function"><name>get_db</name></member>
+    <member refid="df/de1/classUserInterface_1ac1cead6c14db26f88802ea035fb59bd9" kind="function"><name>listen</name></member>
+    <member refid="df/de1/classUserInterface_1a22fa7e60f82f12920e1627c862f6532e" kind="function"><name>get_request</name></member>
+    <member refid="df/de1/classUserInterface_1a396eb29856a6afc91bc0e0eef1de2df7" kind="function"><name>exit</name></member>
+    <member refid="df/de1/classUserInterface_1a36513fcf018fafc53726cf610f46571f" kind="function"><name>set_format</name></member>
+    <member refid="df/de1/classUserInterface_1ad543750a7accc0c4825e02a93fda1909" kind="function"><name>get_format</name></member>
+    <member refid="df/de1/classUserInterface_1a9373bc1aedbdc68905942bcb7c6a8fd3" kind="function"><name>format</name></member>
+    <member refid="df/de1/classUserInterface_1a41c109a7e042b44dc98a1250681fc684" kind="function"><name>format_ASCII</name></member>
+    <member refid="df/de1/classUserInterface_1a9226c83fcb42b9a1ee279e8b250ca68c" kind="function"><name>format_DATE</name></member>
+    <member refid="df/de1/classUserInterface_1a0a4f683492e8a8565423ea501565c02e" kind="function"><name>get_time</name></member>
+    <member refid="df/de1/classUserInterface_1a313636d15fc03a167163b56f0223cab9" kind="function"><name>get_birthday</name></member>
+    <member refid="df/de1/classUserInterface_1a45a7ad6cca95218631d8c6fbe49362e2" kind="function"><name>print_person</name></member>
+    <member refid="df/de1/classUserInterface_1a31424519b61f71584a4a5196c6632beb" kind="function"><name>print_group</name></member>
+    <member refid="df/de1/classUserInterface_1aca628f5a276b39ff4346e2150b419590" kind="function"><name>print_event</name></member>
+    <member refid="df/de1/classUserInterface_1aca95eaf06d053b4ac267e94ccb84e501" kind="function"><name>print_calendar</name></member>
+  </compound>
+  <compound refid="df/d0b/classUI_1_1UsersObject" kind="class"><name>UI::UsersObject</name>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a68d5297258a2f4da4ff58f4809690db3" kind="function"><name>read</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a63ab79bb54b6134a483b2e384c824c7e" kind="function"><name>read_int</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1aed80fcf20b550a0e3484fbe6beb24c19" kind="function"><name>read_string</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a490536c477c5a796724ce26fd010c680" kind="function"><name>read_time</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a20ea26010f60e60f38d380fdaa9240d5" kind="function"><name>read_enum</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a6899d8a06268abb8f2a13feba9921ce5" kind="function"><name>read_vector</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a9b30123c0a25a66715bce9a58a27d37e" kind="function"><name>update</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a4c86312e8400ce3e1b5d2c17552ce5f5" kind="function"><name>update</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1add0bfcc5674bd3f56eeb68919c640bb7" kind="function"><name>update</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1a925f50c5cb5123a13493f76029ae6f06" kind="function"><name>update_enum</name></member>
+    <member refid="df/d0b/classUI_1_1UsersObject_1af4cdeca80652e7c57d34aacc7d0a5dc3" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="d3/d7a/namespaceCore" kind="namespace"><name>Core</name>
+  </compound>
+  <compound refid="d0/daa/namespacestorage" kind="namespace"><name>storage</name>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6be" kind="enum"><name>Errors</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6beab022daa71e205b32600c42a71cd8abd9" kind="enumvalue"><name>NO_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6beacdf2bfcf9aa6c81b977b6f0385c4022f" kind="enumvalue"><name>SET_CELL_VALUE_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6bea9b9b601c702875135dbaadc17ca376a7" kind="enumvalue"><name>GET_CELL_VALUE_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6bea1741e738e284508e65564b0a43330a59" kind="enumvalue"><name>UNKOWN_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6bea1fb229c8079685007285aed87f0602a6" kind="enumvalue"><name>LOAD_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6bea0b2da9195c17eb6b12af46eccc47d558" kind="enumvalue"><name>SAVE_ERR</name></member>
+    <member refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9ce" kind="enum"><name>PersonAttribute</name></member>
+    <member refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9cea1a0f7411f00da5302897feff12e8361f" kind="enumvalue"><name>paNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9cea708252563a34f476cf90705693d55b07" kind="enumvalue"><name>paSURNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9ceadf021b738f83eb0b014c0147b956f3e5" kind="enumvalue"><name>paBIRTHDAY</name></member>
+    <member refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9cea94eecc998962827237971a4d82f01f01" kind="enumvalue"><name>paSEX</name></member>
+    <member refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3" kind="enum"><name>GroupAttribute</name></member>
+    <member refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3aa8a524c714d5a7811887d5359a7e84c6" kind="enumvalue"><name>gaNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3a8ef4cc8b5d42e1c5851051c5e1fd07ca" kind="enumvalue"><name>gaDESCRIPTION</name></member>
+    <member refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3aebbb8aa2ae07068925c36353edd3a174" kind="enumvalue"><name>gaCALENDAR</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420" kind="enum"><name>EventAttribute</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420a43533b6f3a1c1ec7875ba3a8d4d9f8fe" kind="enumvalue"><name>eaNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420a49ada458bc7f0c2f1f2c497f029fa907" kind="enumvalue"><name>eaGROUP</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420a7cf33f29983d72ae16eae43ca50b6fc3" kind="enumvalue"><name>eaBEGIN</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420a23c12949159e98618bf687dd1376ed3b" kind="enumvalue"><name>eaEND</name></member>
+    <member refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420af89b5d32c067478da3e65f1ce21bef52" kind="enumvalue"><name>eaDESCRIPTION</name></member>
+    <member refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6" kind="enum"><name>EventTemplateAttribute</name></member>
+    <member refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6a0c62fdfb94f1f5f8cadd4741cb5f5dfe" kind="enumvalue"><name>taNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6a050306964f7ae6811d9fa8090f5cda84" kind="enumvalue"><name>taSCRIPT</name></member>
+    <member refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6ac8a094ded1dc6817caf6f3a89a83c6f5" kind="enumvalue"><name>taDURATION</name></member>
+    <member refid="d0/daa/namespacestorage_1a7b75107b1860d57c84e341db35541d94" kind="enum"><name>QueueAttribute</name></member>
+    <member refid="d0/daa/namespacestorage_1a7b75107b1860d57c84e341db35541d94a0e629ed373383d85c7ebac611c31dfaf" kind="enumvalue"><name>qaNAME</name></member>
+    <member refid="d0/daa/namespacestorage_1a1434d2eb1851911feb0d96bcebbe67b4" kind="typedef"><name>QueueBunch</name></member>
+    <member refid="d0/daa/namespacestorage_1a0e84e70cce6b3f424ada280421e39929" kind="typedef"><name>GroupBunch</name></member>
+    <member refid="d0/daa/namespacestorage_1a47a941864de57d132a90257532a3f5a4" kind="typedef"><name>CalendarBunch</name></member>
+    <member refid="d0/daa/namespacestorage_1a84e19b67e9af2b43bf856350014b7ae2" kind="typedef"><name>dsrow</name></member>
+  </compound>
+  <compound refid="de/d4e/namespaceStorage" kind="namespace"><name>Storage</name>
+  </compound>
+  <compound refid="d6/d56/namespaceUI" kind="namespace"><name>UI</name>
+  </compound>
+  <compound refid="da/de1/namespaceuiconsole" kind="namespace"><name>uiconsole</name>
+    <member refid="da/de1/namespaceuiconsole_1a2592267a0e2c7bd8742a231b656153d2" kind="variable"><name>commands</name></member>
+    <member refid="da/de1/namespaceuiconsole_1a40263e63a42257769b2fb9a95fd771c1" kind="function"><name>execute</name></member>
+    <member refid="da/de1/namespaceuiconsole_1a037fc32900a055adc36892666b385f30" kind="function"><name>initiate</name></member>
+  </compound>
+  <compound refid="db/d2e/calendar_8cpp" kind="file"><name>calendar.cpp</name>
+  </compound>
+  <compound refid="da/d4a/calendar_8h" kind="file"><name>calendar.h</name>
+  </compound>
+  <compound refid="d8/df6/command__add_8cpp" kind="file"><name>command_add.cpp</name>
+  </compound>
+  <compound refid="d7/d45/command__all_8cpp" kind="file"><name>command_all.cpp</name>
+  </compound>
+  <compound refid="d8/deb/command__clone_8cpp" kind="file"><name>command_clone.cpp</name>
+  </compound>
+  <compound refid="d3/d58/command__delete_8cpp" kind="file"><name>command_delete.cpp</name>
+  </compound>
+  <compound refid="d2/de0/command__dequeue_8cpp" kind="file"><name>command_dequeue.cpp</name>
+  </compound>
+  <compound refid="df/d57/command__enqueue_8cpp" kind="file"><name>command_enqueue.cpp</name>
+  </compound>
+  <compound refid="d6/d72/command__exclude_8cpp" kind="file"><name>command_exclude.cpp</name>
+  </compound>
+  <compound refid="d6/db1/command__exit_8cpp" kind="file"><name>command_exit.cpp</name>
+  </compound>
+  <compound refid="d6/d54/command__generate_8cpp" kind="file"><name>command_generate.cpp</name>
+  </compound>
+  <compound refid="d8/d4a/command__help_8cpp" kind="file"><name>command_help.cpp</name>
+  </compound>
+  <compound refid="df/da9/command__include_8cpp" kind="file"><name>command_include.cpp</name>
+  </compound>
+  <compound refid="dc/d5f/command__link_8cpp" kind="file"><name>command_link.cpp</name>
+  </compound>
+  <compound refid="de/d05/command__merge_8cpp" kind="file"><name>command_merge.cpp</name>
+  </compound>
+  <compound refid="df/d67/command__print_8cpp" kind="file"><name>command_print.cpp</name>
+  </compound>
+  <compound refid="d6/d5c/command__select_8cpp" kind="file"><name>command_select.cpp</name>
+  </compound>
+  <compound refid="d5/d77/commands_8cpp" kind="file"><name>commands.cpp</name>
+    <member refid="d5/d77/commands_8cpp_1af9f1f27ea45e14a989ce97cc46c35ec7" kind="define"><name>_COMMANDS_CPP_</name></member>
+  </compound>
+  <compound refid="d5/d90/commands_8h" kind="file"><name>commands.h</name>
+    <member refid="d5/d90/commands_8h_1af8fd06e7ed6972b87f4221225587c1c1" kind="define"><name>_EXTERN_</name></member>
+  </compound>
+  <compound refid="dd/da0/abstractgroup_8cpp" kind="file"><name>abstractgroup.cpp</name>
+  </compound>
+  <compound refid="d2/d72/core_2event_8cpp" kind="file"><name>event.cpp</name>
+  </compound>
+  <compound refid="df/d1b/event_8cpp" kind="file"><name>event.cpp</name>
+  </compound>
+  <compound refid="db/d77/core_2group_8cpp" kind="file"><name>group.cpp</name>
+  </compound>
+  <compound refid="d3/d97/group_8cpp" kind="file"><name>group.cpp</name>
+  </compound>
+  <compound refid="d8/d2c/core_2person_8cpp" kind="file"><name>person.cpp</name>
+  </compound>
+  <compound refid="d8/de5/person_8cpp" kind="file"><name>person.cpp</name>
+  </compound>
+  <compound refid="d6/d9a/data__storage_8cpp" kind="file"><name>data_storage.cpp</name>
+    <member refid="d6/d9a/data__storage_8cpp_1a6ea0dd5051076a4d814e03a8eed3cea7" kind="function"><name>itos</name></member>
+    <member refid="d6/d9a/data__storage_8cpp_1ae9e5082865282ff49f99e2807c79c7a3" kind="function"><name>find_num_row</name></member>
+    <member refid="d6/d9a/data__storage_8cpp_1a6aa29976b90c15a2b1df2c959ff225bb" kind="function"><name>less_calendar_id_comp</name></member>
+    <member refid="d6/d9a/data__storage_8cpp_1aa6381f060237c82d31f5c08240719f4b" kind="function"><name>less_id_comp</name></member>
+    <member refid="d6/d9a/data__storage_8cpp_1a810a8222d5716ae33ac54d314651cdb5" kind="function"><name>min</name></member>
+  </compound>
+  <compound refid="d5/d2b/data__storage_8h" kind="file"><name>data_storage.h</name>
+  </compound>
+  <compound refid="dd/d20/event_8h" kind="file"><name>event.h</name>
+  </compound>
+  <compound refid="d1/d8f/include_2event_8h" kind="file"><name>event.h</name>
+  </compound>
+  <compound refid="d1/d6f/event__template_8cpp" kind="file"><name>event_template.cpp</name>
+  </compound>
+  <compound refid="d1/d38/event__template_8h" kind="file"><name>event_template.h</name>
+  </compound>
+  <compound refid="de/d3e/file__storage_8cpp" kind="file"><name>file_storage.cpp</name>
+  </compound>
+  <compound refid="d9/d60/file__storage_8h" kind="file"><name>file_storage.h</name>
+  </compound>
+  <compound refid="d9/dd1/group_8h" kind="file"><name>group.h</name>
+  </compound>
+  <compound refid="d3/d25/include_2group_8h" kind="file"><name>group.h</name>
+  </compound>
+  <compound refid="dc/db3/group__content_8h" kind="file"><name>group_content.h</name>
+    <member refid="dc/db3/group__content_8h_1a27517aa1480ab2d9bfe5d62e693b33eb" kind="variable"><name>group</name></member>
+    <member refid="dc/db3/group__content_8h_1ab8664e6fd42f01eeaad084b5e20eb54e" kind="variable"><name>person</name></member>
+    <member refid="dc/db3/group__content_8h_1ab4d38e7365d935f2a5f1403eec29127e" kind="variable"><name>status</name></member>
+  </compound>
+  <compound refid="df/de3/abstractgroup_8h" kind="file"><name>abstractgroup.h</name>
+  </compound>
+  <compound refid="de/d16/abstractstorage_8h" kind="file"><name>abstractstorage.h</name>
+  </compound>
+  <compound refid="d1/d7a/abstractui_8h" kind="file"><name>abstractui.h</name>
+  </compound>
+  <compound refid="dc/d3e/include_2person_8h" kind="file"><name>person.h</name>
+  </compound>
+  <compound refid="d4/d98/person_8h" kind="file"><name>person.h</name>
+  </compound>
+  <compound refid="d5/d07/storableobject_8h" kind="file"><name>storableobject.h</name>
+  </compound>
+  <compound refid="d2/dcb/usersobject_8h" kind="file"><name>usersobject.h</name>
+  </compound>
+  <compound refid="df/d0a/main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="df/d0a/main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dc/d31/queue_8cpp" kind="file"><name>queue.cpp</name>
+  </compound>
+  <compound refid="d8/d38/queue_8h" kind="file"><name>queue.h</name>
+  </compound>
+  <compound refid="d2/df5/abstractstorage_8cpp" kind="file"><name>abstractstorage.cpp</name>
+  </compound>
+  <compound refid="d3/de7/storableobject_8cpp" kind="file"><name>storableobject.cpp</name>
+  </compound>
+  <compound refid="d6/dcc/table__data__storage_8cpp" kind="file"><name>table_data_storage.cpp</name>
+  </compound>
+  <compound refid="df/da3/table__data__storage_8h" kind="file"><name>table_data_storage.h</name>
+  </compound>
+  <compound refid="df/d1b/model__classes__are__real_8cpp" kind="file"><name>model_classes_are_real.cpp</name>
+    <member refid="df/d1b/model__classes__are__real_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d9/d49/types_8h" kind="file"><name>types.h</name>
+    <member refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kind="typedef"><name>id_type</name></member>
+    <member refid="d9/d49/types_8h_1abda815bcb63ee903900f16cef4d83cdc" kind="typedef"><name>Group_Content</name></member>
+  </compound>
+  <compound refid="d6/df7/abstractui_8cpp" kind="file"><name>abstractui.cpp</name>
+  </compound>
+  <compound refid="d1/d88/usersobject_8cpp" kind="file"><name>usersobject.cpp</name>
+  </compound>
+  <compound refid="d4/dcb/userinterface_8cpp" kind="file"><name>userinterface.cpp</name>
+  </compound>
+  <compound refid="df/d52/userinterface_8h" kind="file"><name>userinterface.h</name>
+    <member refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kind="enum"><name>default_format</name></member>
+    <member refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11af9c208c7d7a0f102f2683165540c882d" kind="enumvalue"><name>ASCII</name></member>
+    <member refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11a0ace72efd9e987dfd807365d0ca50141" kind="enumvalue"><name>DATE</name></member>
+  </compound>
+  <compound refid="da/d58/deprecated" kind="page"><name>deprecated</name>
+  </compound>
+  <compound refid="dir_3cdd47e94afa284c5999dcfb2b2022cc" kind="dir"><name>src/core/</name>
+  </compound>
+  <compound refid="dir_b638e6e50e8352a15403e759ae85028d" kind="dir"><name>src/include/</name>
+  </compound>
+  <compound refid="dir_9a8e864bee81192fa4af7d548a7471e3" kind="dir"><name>src/</name>
+  </compound>
+  <compound refid="dir_c9ac3a95baa06aa87ba20966878132ea" kind="dir"><name>src/storage/</name>
+  </compound>
+  <compound refid="dir_90aee1310cac8742bd4481f2e3fecb89" kind="dir"><name>src/tests/</name>
+  </compound>
+  <compound refid="dir_745bf63c63bae1e149493c933b14246e" kind="dir"><name>src/ui/</name>
+  </compound>
+</doxygenindex>

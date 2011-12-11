@@ -18,9 +18,7 @@ Class keeps queue groups.
 \item 
 \hyperlink{classQueue_a00d119db8fa3050da37746e82cbcf94f}{$\sim$Queue} ()
 \item 
-vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$::iterator \hyperlink{classQueue_adb1ae4097097c94935c6e8af1175e4af}{get\_\-begin} ()
-\item 
-vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$::iterator \hyperlink{classQueue_a43c7ba286ff9641d8ca0b195ef940db8}{get\_\-end} ()
+vector$<$ \hyperlink{classGroup}{Group} $\ast$ $>$ $\ast$ \hyperlink{classQueue_a6de27cfb498b3bc6000f63599f124c53}{get\_\-vector} ()
 \item 
 \hyperlink{types_8h_a0b60c08a3ab1435cccc5643d32d8ccee}{id\_\-type} \hyperlink{classQueue_a69f2c1cee4763ed7671a4710cc9748c2}{get\_\-id} ()
 \item 
@@ -49,6 +47,8 @@ Class keeps queue groups.
 \label{d7/d56/classQueue_aee8e0d9677cef92e34f0347b73f64c97}
 Constructor. 
 \begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & ID of queue. \\
+\hline
 \mbox{\tt in}  & {\em name} & Name of queue. \\
 \hline
 \end{DoxyParams}
@@ -90,30 +90,6 @@ Push to queue.
 \mbox{\tt in}  & {\em adding} & \hyperlink{classGroup}{Group} to add. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classQueue_adb1ae4097097c94935c6e8af1175e4af}{
-\index{Queue@{Queue}!get\_\-begin@{get\_\-begin}}
-\index{get\_\-begin@{get\_\-begin}!Queue@{Queue}}
-\subsubsection[{get\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Group} $\ast$ $>$::iterator Queue::get\_\-begin (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{d7/d56/classQueue_adb1ae4097097c94935c6e8af1175e4af}
-Get begin of a queue. \begin{DoxyReturn}{Returns}
-Begin of a queue. 
-\end{DoxyReturn}
-\hypertarget{classQueue_a43c7ba286ff9641d8ca0b195ef940db8}{
-\index{Queue@{Queue}!get\_\-end@{get\_\-end}}
-\index{get\_\-end@{get\_\-end}!Queue@{Queue}}
-\subsubsection[{get\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Group} $\ast$ $>$::iterator Queue::get\_\-end (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{d7/d56/classQueue_a43c7ba286ff9641d8ca0b195ef940db8}
-Get end of a queue. \begin{DoxyReturn}{Returns}
-End of a queue. 
-\end{DoxyReturn}
 \hypertarget{classQueue_a69f2c1cee4763ed7671a4710cc9748c2}{
 \index{Queue@{Queue}!get\_\-id@{get\_\-id}}
 \index{get\_\-id@{get\_\-id}!Queue@{Queue}}
@@ -137,6 +113,18 @@ ID of a queue.
 \label{d7/d56/classQueue_ab68f53f6e69bbe4f82b581716dc247d8}
 Get name of a queue. \begin{DoxyReturn}{Returns}
 Name of a queue. 
+\end{DoxyReturn}
+\hypertarget{classQueue_a6de27cfb498b3bc6000f63599f124c53}{
+\index{Queue@{Queue}!get\_\-vector@{get\_\-vector}}
+\index{get\_\-vector@{get\_\-vector}!Queue@{Queue}}
+\subsubsection[{get\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Group} $\ast$ $>$ $\ast$ Queue::get\_\-vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{d7/d56/classQueue_a6de27cfb498b3bc6000f63599f124c53}
+Get b of a queue. \begin{DoxyReturn}{Returns}
+Begin of a queue. 
 \end{DoxyReturn}
 \hypertarget{classQueue_ad29a81e51660af6071684ad3c5b063f1}{
 \index{Queue@{Queue}!set\_\-id@{set\_\-id}}

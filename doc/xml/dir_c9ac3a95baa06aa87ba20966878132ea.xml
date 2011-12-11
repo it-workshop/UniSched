@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_c9ac3a95baa06aa87ba20966878132ea" kind="dir">
+    <compoundname>src/storage/</compoundname>
+    <innerfile refid="d2/df5/abstractstorage_8cpp">abstractstorage.cpp</innerfile>
+    <innerfile refid="d3/de7/storableobject_8cpp">storableobject.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/storage/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,483 @@
+\hypertarget{classCore_1_1Person}{
+\section{Core::Person Class Reference}
+\label{d9/d71/classCore_1_1Person}\index{Core::Person@{Core::Person}}
+}
+
+
+Class keeps person unique data.  
+
+
+
+
+{\ttfamily \#include $<$person.h$>$}
+
+Inheritance diagram for Core::Person:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d71/classCore_1_1Person}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{Sex} \{ \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9}{MALE}, 
+\hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1}{FEMALE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1Person_a3f7bca52408bae72dd0213b2a92827f0}{Person} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage)
+\item 
+\hyperlink{classCore_1_1Person_aa1b55740d1dd9f2543ad27f4ecca8e72}{Person} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage, const std::string name, const std::string surname, const enum \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{Sex} sex, const time\_\-t birthday)
+\item 
+const std::string \hyperlink{classCore_1_1Person_a14d39111fb34383818154a26b0d248f5}{name} () const 
+\item 
+const std::string \hyperlink{classCore_1_1Person_a5572207d53649af10cd9bb62fe21995c}{surname} () const 
+\item 
+enum \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{Sex} \hyperlink{classCore_1_1Person_a0d70ad24edf86e3c0f88e913342aa24d}{sex} () const 
+\item 
+const time\_\-t \hyperlink{classCore_1_1Person_ab0d1836a97254798585fc6c97a63680e}{birthday} () const 
+\item 
+const std::vector$<$ class \hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$ $>$ \& \hyperlink{classCore_1_1Person_ae6dc9f0c0ca2caf326b69b72d81aea84}{groups} ()
+\item 
+virtual const std::string \hyperlink{classCore_1_1Person_a3b86cab797444527364376dad2a0c300}{read} () const 
+\item 
+virtual const int \hyperlink{classCore_1_1Person_a9b1601502537f54b7c33fc593f8df590}{read\_\-int} (const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual const std::string \hyperlink{classCore_1_1Person_a4b7d0b1c545c2c4876b3f410b914f3a2}{read\_\-string} (const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual const time\_\-t \hyperlink{classCore_1_1Person_ad0485ff28f4f80aeb0da9f8a6ae2f6d0}{read\_\-time} (const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual const std::string \hyperlink{classCore_1_1Person_a5dfa21d7b0a58e09f71e07a4298f0f62}{read\_\-enum} (const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual const std::vector$<$ \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$ $>$ \hyperlink{classCore_1_1Person_ab28c3e468d265c16bce1d4488493c5a6}{read\_\-vector} (const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1Person_ac2900dc24258c00ea1de17350c3f4658}{update} (const std::string name, const int value)  throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1Person_a51ec02307587cf9dfd7ed3036cf202cd}{update} (const std::string name, const std::string value)  throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1Person_ad650eba89f671041c26f8d1419f6e6c8}{update} (const std::string name, const time\_\-t value)  throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1Person_a1c6826659c2413189dae536f7c83af98}{update\_\-enum} (const std::string, const std::string value)  throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1Person_a50fa1e127f56e2caa873017b54c090cb}{update} (UsersObject $\ast$, bool linked)  throw (std::bad\_\-cast)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{Sex} \hyperlink{classCore_1_1Person_a88e1d40e7be7d95e6cec9bc623d6e076}{\_\-} (const std::string str)
+\item 
+static const std::string \hyperlink{classCore_1_1Person_a7ded3b871b2e7f6ce35b7b1f4e1738ee}{\_\-} (const \hyperlink{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{Sex} sex)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCore_1_1Person_aa9b9581966365e7272d43e77f7a220e4}{add\_\-group} (class \hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classCore_1_1Person_a0057f7bd335dd35e470e67ad2e22b0d5}{del\_\-group} (class \hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} const $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classCore_1_1Person_a846fa55a79f6da0258d711adc88a1a30}{save} ()
+\item 
+void \hyperlink{classCore_1_1Person_ae88c1b9c89b03ac7f4ba3ddcff4c62a7}{load} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCore_1_1Person_a8be971ab18693e55f617c7dc8abc3e26}{AbstractGroup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class keeps person unique data. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}{
+\index{Core::Person@{Core::Person}!Sex@{Sex}}
+\index{Sex@{Sex}!Core::Person@{Core::Person}}
+\subsubsection[{Sex}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Core::Person::Sex}}}
+\label{d9/d71/classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764}
+enum of sex \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{MALE@{MALE}!Core::Person@{Core::Person}}\index{Core::Person@{Core::Person}!MALE@{MALE}}\item[{\em 
+\hypertarget{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9}{
+MALE}
+\label{d9/d71/classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9}
+}]\index{FEMALE@{FEMALE}!Core::Person@{Core::Person}}\index{Core::Person@{Core::Person}!FEMALE@{FEMALE}}\item[{\em 
+\hypertarget{classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1}{
+FEMALE}
+\label{d9/d71/classCore_1_1Person_a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1Person_a3f7bca52408bae72dd0213b2a92827f0}{
+\index{Core::Person@{Core::Person}!Person@{Person}}
+\index{Person@{Person}!Core::Person@{Core::Person}}
+\subsubsection[{Person}]{\setlength{\rightskip}{0pt plus 5cm}Core::Person::Person (
+\begin{DoxyParamCaption}
+\item[{const int}]{id, }
+\item[{{\bf Storage::AbstractStorage} \&}]{storage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a3f7bca52408bae72dd0213b2a92827f0}
+Constructor. Call at \hyperlink{classStorage_1_1AbstractStorage_a108af124f19c0ae9a4a461aee6abc3ec}{Storage::AbstractStorage::create$<$Person$>$()}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & Person's identificator. \\
+\hline
+\mbox{\tt in}  & {\em storage} & Data storage. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCore_1_1Person_aa1b55740d1dd9f2543ad27f4ecca8e72}{
+\index{Core::Person@{Core::Person}!Person@{Person}}
+\index{Person@{Person}!Core::Person@{Core::Person}}
+\subsubsection[{Person}]{\setlength{\rightskip}{0pt plus 5cm}Core::Person::Person (
+\begin{DoxyParamCaption}
+\item[{const int}]{id, }
+\item[{{\bf Storage::AbstractStorage} \&}]{storage, }
+\item[{const std::string}]{name, }
+\item[{const std::string}]{surname, }
+\item[{const enum {\bf Sex}}]{sex, }
+\item[{const time\_\-t}]{birthday}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_aa1b55740d1dd9f2543ad27f4ecca8e72}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]Constructor. \end{Desc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & Person's identificator. \\
+\hline
+\mbox{\tt in}  & {\em storage} & Data storage. \\
+\hline
+\mbox{\tt in}  & {\em name} & Person's name. \\
+\hline
+\mbox{\tt in}  & {\em surname} & Person's surname. \\
+\hline
+\mbox{\tt in}  & {\em sex} & Person's sex. \\
+\hline
+\mbox{\tt in}  & {\em birthday} & Person's birthday. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1Person_a88e1d40e7be7d95e6cec9bc623d6e076}{
+\index{Core::Person@{Core::Person}!\_\-@{\_\-}}
+\index{\_\-@{\_\-}!Core::Person@{Core::Person}}
+\subsubsection[{\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf Sex} Core::Person::\_\- (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a88e1d40e7be7d95e6cec9bc623d6e076}
+Small function to easy type casting. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & String to cast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MALE if string equals to \char`\"{}MALE\char`\"{} else FEMALE. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_a7ded3b871b2e7f6ce35b7b1f4e1738ee}{
+\index{Core::Person@{Core::Person}!\_\-@{\_\-}}
+\index{\_\-@{\_\-}!Core::Person@{Core::Person}}
+\subsubsection[{\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static const std::string Core::Person::\_\- (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sex}}]{sex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a7ded3b871b2e7f6ce35b7b1f4e1738ee}
+Small function to easy type casting. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sex} & enum to cast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\char`\"{}MALE\char`\"{} if enum equals to MALE else FEMALE. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_aa9b9581966365e7272d43e77f7a220e4}{
+\index{Core::Person@{Core::Person}!add\_\-group@{add\_\-group}}
+\index{add\_\-group@{add\_\-group}!Core::Person@{Core::Person}}
+\subsubsection[{add\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Core::Person::add\_\-group (
+\begin{DoxyParamCaption}
+\item[{class {\bf AbstractGroup} $\ast$}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_aa9b9581966365e7272d43e77f7a220e4}
+Add group to person, call in \hyperlink{classCore_1_1AbstractGroup_acbc75be98b4a9b9ceab55967124c0351}{AbstractGroup::add\_\-person()} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & to add. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCore_1_1Person_ab0d1836a97254798585fc6c97a63680e}{
+\index{Core::Person@{Core::Person}!birthday@{birthday}}
+\index{birthday@{birthday}!Core::Person@{Core::Person}}
+\subsubsection[{birthday}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::Person::birthday (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ab0d1836a97254798585fc6c97a63680e}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000007}{Deprecated}]Get birthday of person. \end{Desc}
+\begin{DoxyReturn}{Returns}
+person's birthday. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_a0057f7bd335dd35e470e67ad2e22b0d5}{
+\index{Core::Person@{Core::Person}!del\_\-group@{del\_\-group}}
+\index{del\_\-group@{del\_\-group}!Core::Person@{Core::Person}}
+\subsubsection[{del\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Person::del\_\-group (
+\begin{DoxyParamCaption}
+\item[{class {\bf AbstractGroup} const $\ast$}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a0057f7bd335dd35e470e67ad2e22b0d5}
+Delete group from person. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group.} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCore_1_1Person_ae6dc9f0c0ca2caf326b69b72d81aea84}{
+\index{Core::Person@{Core::Person}!groups@{groups}}
+\index{groups@{groups}!Core::Person@{Core::Person}}
+\subsubsection[{groups}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$class {\bf AbstractGroup} $\ast$$>$\& Core::Person::groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ae6dc9f0c0ca2caf326b69b72d81aea84}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000008}{Deprecated}]Get person's groups. \end{Desc}
+\begin{DoxyReturn}{Returns}
+person's groups. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_ae88c1b9c89b03ac7f4ba3ddcff4c62a7}{
+\index{Core::Person@{Core::Person}!load@{load}}
+\index{load@{load}!Core::Person@{Core::Person}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void Person::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ae88c1b9c89b03ac7f4ba3ddcff4c62a7}
+Load all data from starage. Viltual in \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. 
+
+Implements \hyperlink{classStorage_1_1StorableObject_ab92526b66762a9099d720cf28bfc4151}{Storage::StorableObject}.
+
+\hypertarget{classCore_1_1Person_a14d39111fb34383818154a26b0d248f5}{
+\index{Core::Person@{Core::Person}!name@{name}}
+\index{name@{name}!Core::Person@{Core::Person}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Core::Person::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a14d39111fb34383818154a26b0d248f5}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]Get name of person. \end{Desc}
+\begin{DoxyReturn}{Returns}
+name of person. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_a3b86cab797444527364376dad2a0c300}{
+\index{Core::Person@{Core::Person}!read@{read}}
+\index{read@{read}!Core::Person@{Core::Person}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Person::read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a3b86cab797444527364376dad2a0c300}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a68d5297258a2f4da4ff58f4809690db3}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a5dfa21d7b0a58e09f71e07a4298f0f62}{
+\index{Core::Person@{Core::Person}!read\_\-enum@{read\_\-enum}}
+\index{read\_\-enum@{read\_\-enum}!Core::Person@{Core::Person}}
+\subsubsection[{read\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Person::read\_\-enum (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a5dfa21d7b0a58e09f71e07a4298f0f62}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a20ea26010f60e60f38d380fdaa9240d5}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a9b1601502537f54b7c33fc593f8df590}{
+\index{Core::Person@{Core::Person}!read\_\-int@{read\_\-int}}
+\index{read\_\-int@{read\_\-int}!Core::Person@{Core::Person}}
+\subsubsection[{read\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}const int Person::read\_\-int (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a9b1601502537f54b7c33fc593f8df590}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a63ab79bb54b6134a483b2e384c824c7e}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a4b7d0b1c545c2c4876b3f410b914f3a2}{
+\index{Core::Person@{Core::Person}!read\_\-string@{read\_\-string}}
+\index{read\_\-string@{read\_\-string}!Core::Person@{Core::Person}}
+\subsubsection[{read\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Person::read\_\-string (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a4b7d0b1c545c2c4876b3f410b914f3a2}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_aed80fcf20b550a0e3484fbe6beb24c19}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_ad0485ff28f4f80aeb0da9f8a6ae2f6d0}{
+\index{Core::Person@{Core::Person}!read\_\-time@{read\_\-time}}
+\index{read\_\-time@{read\_\-time}!Core::Person@{Core::Person}}
+\subsubsection[{read\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Person::read\_\-time (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ad0485ff28f4f80aeb0da9f8a6ae2f6d0}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a490536c477c5a796724ce26fd010c680}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_ab28c3e468d265c16bce1d4488493c5a6}{
+\index{Core::Person@{Core::Person}!read\_\-vector@{read\_\-vector}}
+\index{read\_\-vector@{read\_\-vector}!Core::Person@{Core::Person}}
+\subsubsection[{read\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ {\bf UI::UsersObject} $\ast$ $>$ Person::read\_\-vector (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ab28c3e468d265c16bce1d4488493c5a6}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a6899d8a06268abb8f2a13feba9921ce5}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a846fa55a79f6da0258d711adc88a1a30}{
+\index{Core::Person@{Core::Person}!save@{save}}
+\index{save@{save}!Core::Person@{Core::Person}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void Person::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a846fa55a79f6da0258d711adc88a1a30}
+Save all data into storage. Virtual in \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. 
+
+Implements \hyperlink{classStorage_1_1StorableObject_a85609f4a18b49c7e0eed0205ee6df5d9}{Storage::StorableObject}.
+
+\hypertarget{classCore_1_1Person_a0d70ad24edf86e3c0f88e913342aa24d}{
+\index{Core::Person@{Core::Person}!sex@{sex}}
+\index{sex@{sex}!Core::Person@{Core::Person}}
+\subsubsection[{sex}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sex} Core::Person::sex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a0d70ad24edf86e3c0f88e913342aa24d}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000006}{Deprecated}]Get sex of person. \end{Desc}
+\begin{DoxyReturn}{Returns}
+person's sex. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_a5572207d53649af10cd9bb62fe21995c}{
+\index{Core::Person@{Core::Person}!surname@{surname}}
+\index{surname@{surname}!Core::Person@{Core::Person}}
+\subsubsection[{surname}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Core::Person::surname (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a5572207d53649af10cd9bb62fe21995c}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]Get surname of person. \end{Desc}
+\begin{DoxyReturn}{Returns}
+surname of person. 
+\end{DoxyReturn}
+\hypertarget{classCore_1_1Person_ac2900dc24258c00ea1de17350c3f4658}{
+\index{Core::Person@{Core::Person}!update@{update}}
+\index{update@{update}!Core::Person@{Core::Person}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Person::update (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name, }
+\item[{const int}]{value}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ac2900dc24258c00ea1de17350c3f4658}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a9b30123c0a25a66715bce9a58a27d37e}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a51ec02307587cf9dfd7ed3036cf202cd}{
+\index{Core::Person@{Core::Person}!update@{update}}
+\index{update@{update}!Core::Person@{Core::Person}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Person::update (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name, }
+\item[{const std::string}]{value}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a51ec02307587cf9dfd7ed3036cf202cd}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a4c86312e8400ce3e1b5d2c17552ce5f5}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_ad650eba89f671041c26f8d1419f6e6c8}{
+\index{Core::Person@{Core::Person}!update@{update}}
+\index{update@{update}!Core::Person@{Core::Person}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Person::update (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name, }
+\item[{const time\_\-t}]{value}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_ad650eba89f671041c26f8d1419f6e6c8}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_add0bfcc5674bd3f56eeb68919c640bb7}{UI::UsersObject}.
+
+\hypertarget{classCore_1_1Person_a50fa1e127f56e2caa873017b54c090cb}{
+\index{Core::Person@{Core::Person}!update@{update}}
+\index{update@{update}!Core::Person@{Core::Person}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Core::Person::update (
+\begin{DoxyParamCaption}
+\item[{UsersObject $\ast$}]{, }
+\item[{bool}]{linked}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a50fa1e127f56e2caa873017b54c090cb}
+\hypertarget{classCore_1_1Person_a1c6826659c2413189dae536f7c83af98}{
+\index{Core::Person@{Core::Person}!update\_\-enum@{update\_\-enum}}
+\index{update\_\-enum@{update\_\-enum}!Core::Person@{Core::Person}}
+\subsubsection[{update\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}void Person::update\_\-enum (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name, }
+\item[{const std::string}]{value}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a1c6826659c2413189dae536f7c83af98}
+
+
+Implements \hyperlink{classUI_1_1UsersObject_a925f50c5cb5123a13493f76029ae6f06}{UI::UsersObject}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCore_1_1Person_a8be971ab18693e55f617c7dc8abc3e26}{
+\index{Core::Person@{Core::Person}!AbstractGroup@{AbstractGroup}}
+\index{AbstractGroup@{AbstractGroup}!Core::Person@{Core::Person}}
+\subsubsection[{AbstractGroup}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf AbstractGroup}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{d9/d71/classCore_1_1Person_a8be971ab18693e55f617c7dc8abc3e26}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{include_2person_8h}{person.h}\item 
+src/core/\hyperlink{core_2person_8cpp}{person.cpp}\end{DoxyCompactItemize}

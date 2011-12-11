@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d1/d7a/abstractui_8h" kind="file">
+    <compoundname>abstractui.h</compoundname>
+    <includes refid="d2/dcb/usersobject_8h" local="no">usersobject.h</includes>
+    <includes refid="de/d16/abstractstorage_8h" local="no">abstractstorage.h</includes>
+    <incdepgraph>
+      <node id="854">
+        <label>src/include/abstractui.h</label>
+        <link refid="abstractui.h"/>
+        <childnode refid="855" relation="include">
+        </childnode>
+        <childnode refid="859" relation="include">
+        </childnode>
+      </node>
+      <node id="856">
+        <label>string</label>
+      </node>
+      <node id="858">
+        <label>typeinfo</label>
+      </node>
+      <node id="857">
+        <label>vector</label>
+      </node>
+      <node id="859">
+        <label>abstractstorage.h</label>
+        <link refid="de/d16/abstractstorage_8h"/>
+        <childnode refid="856" relation="include">
+        </childnode>
+        <childnode refid="857" relation="include">
+        </childnode>
+        <childnode refid="860" relation="include">
+        </childnode>
+      </node>
+      <node id="860">
+        <label>storableobject.h</label>
+        <link refid="d5/d07/storableobject_8h"/>
+        <childnode refid="856" relation="include">
+        </childnode>
+        <childnode refid="857" relation="include">
+        </childnode>
+        <childnode refid="859" relation="include">
+        </childnode>
+      </node>
+      <node id="855">
+        <label>usersobject.h</label>
+        <link refid="d2/dcb/usersobject_8h"/>
+        <childnode refid="856" relation="include">
+        </childnode>
+        <childnode refid="857" relation="include">
+        </childnode>
+        <childnode refid="858" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="de/dda/classUI_1_1AbstractUI" prot="public">UI::AbstractUI</innerclass>
+    <innernamespace refid="d6/d56/namespaceUI">UI</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d2/dcb/usersobject_8h" kindref="compound">usersobject.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="de/d16/abstractstorage_8h" kindref="compound">abstractstorage.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="d6/d56/namespaceUI" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">UI<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="de/dda/classUI_1_1AbstractUI" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/dda/classUI_1_1AbstractUI" kindref="compound">AbstractUI</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref>&amp;<sp/>storage_;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;UsersObject<sp/>*&gt;<sp/>cache_;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13" refid="de/dda/classUI_1_1AbstractUI_1ab09dc4b586d429a5238d1b09c98d2a4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;UsersObject<sp/>*&gt;&amp;<sp/><ref refid="de/dda/classUI_1_1AbstractUI_1ab09dc4b586d429a5238d1b09c98d2a4b" kindref="member">cache</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cache_;<sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/dda/classUI_1_1AbstractUI_1aaa55abbdeb863b8189393e929f643335" kindref="member">search</ref>(std::vector&lt;Storage::AbstractStorage::Argument<sp/>*&gt;&amp;<sp/>parameters);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/dda/classUI_1_1AbstractUI_1a485b7a347d6b07f6dc44a3174cb96eaa" kindref="member">create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;const<sp/>Storage::AbstractStorage::Argument&gt;&amp;<sp/>parameters);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UsersObject</ref><sp/>*<sp/>object);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="de/dda/classUI_1_1AbstractUI_1a35092e69be8cc4406582540286db5a69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/dda/classUI_1_1AbstractUI_1a35092e69be8cc4406582540286db5a69" kindref="member">AbstractUI</ref><sp/>(<ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref>&amp;<sp/>storage):</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>storage_(storage)<sp/>{}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/include/abstractui.h"/>
+  </compounddef>
+</doxygen>

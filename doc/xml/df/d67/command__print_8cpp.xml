@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="df/d67/command__print_8cpp" kind="file">
+    <compoundname>command_print.cpp</compoundname>
+    <includes refid="d5/d90/commands_8h" local="yes">commands.h</includes>
+    <incdepgraph>
+      <node id="345">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+      </node>
+      <node id="348">
+        <label>data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="350" relation="include">
+        </childnode>
+        <childnode refid="351" relation="include">
+        </childnode>
+      </node>
+      <node id="346">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+      </node>
+      <node id="334">
+        <label>stdlib.h</label>
+      </node>
+      <node id="347">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+      </node>
+      <node id="340">
+        <label>userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+      </node>
+      <node id="335">
+        <label>string</label>
+      </node>
+      <node id="351">
+        <label>table_data_storage.h</label>
+        <link refid="df/da3/table__data__storage_8h"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+      </node>
+      <node id="333">
+        <label>commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+      </node>
+      <node id="343">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+      </node>
+      <node id="339">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="336">
+        <label>vector</label>
+      </node>
+      <node id="338">
+        <label>time.h</label>
+      </node>
+      <node id="337">
+        <label>iostream</label>
+      </node>
+      <node id="350">
+        <label>event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+      </node>
+      <node id="344">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+      </node>
+      <node id="332">
+        <label>src/command_print.cpp</label>
+        <link refid="command_print.cpp"/>
+        <childnode refid="333" relation="include">
+        </childnode>
+      </node>
+      <node id="349">
+        <label>algorithm</label>
+      </node>
+      <node id="341">
+        <label>stdio.h</label>
+      </node>
+      <node id="342">
+        <label>queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/d90/commands_8h" kindref="compound">commands.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="df/d75/classuiconsole_1_1Command__Print_1a8db0b51d3232e42e9f50f55cbc3920c3" kindref="member">uiconsole::Command_Print::Command_Print</ref>(<ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>*ui):<sp/>uiconsole::Command<sp/>(ui)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;print&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>description<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;print<sp/>one<sp/>object<sp/>by<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>help<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Type<sp/>,,print<sp/>(s)(id)``<sp/>to<sp/>print<sp/>object<sp/>of<sp/>a<sp/>class<sp/>s,<sp/>and<sp/>id<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d75/classuiconsole_1_1Command__Print_1a42106fe7a7b5ce0c90a5a196c5f8ff42" kindref="member">uiconsole::Command_Print::run</ref>(vector&lt;string&gt;<sp/>args)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(args.size()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Need<sp/>one<sp/>argument<sp/>for<sp/>print.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>this-&gt;<ref refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" kindref="member">help</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>symbol<sp/>=<sp/>args[1][0];</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(args[1].size()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Need<sp/>id<sp/>or<sp/>name<sp/>after<sp/>(s).&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>this-&gt;<ref refid="dc/df0/classuiconsole_1_1Command_1adcc2a70ee67fa5040e6fce1508c490d2" kindref="member">help</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>atoll(args[1].c_str()<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1a61eae0502f93a95a9434835f5c72d999" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((!</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>(args[1][1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/>=<sp/>args[1].c_str()<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(symbol)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;$&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1abca728c67538176fd721dcb8730bac81" kindref="member">get_person</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a45a7ad6cca95218631d8c6fbe49362e2" kindref="member">print_person</ref><sp/>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1abca728c67538176fd721dcb8730bac81" kindref="member">get_person</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;There&apos;re<sp/>no<sp/>person<sp/>with<sp/>that<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;@&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1a53e3931141b50ff3d5bfd7e682092091" kindref="member">get_group</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a31424519b61f71584a4a5196c6632beb" kindref="member">print_group</ref>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1a53e3931141b50ff3d5bfd7e682092091" kindref="member">get_group</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;There&apos;re<sp/>no<sp/>group<sp/>with<sp/>that<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1af68ca095bb27db3b8532045f77b5ae73" kindref="member">get_event</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1aca628f5a276b39ff4346e2150b419590" kindref="member">print_event</ref>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1af68ca095bb27db3b8532045f77b5ae73" kindref="member">get_event</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;There&apos;re<sp/>no<sp/>event<sp/>with<sp/>that<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;%&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1a38b24aa35d0f1159200c78e53a0c99bb" kindref="member">get_calendar</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1aca95eaf06d053b4ac267e94ccb84e501" kindref="member">print_calendar</ref>(<ref refid="dc/df0/classuiconsole_1_1Command_1ab43ed5152860c099f858d62f9f556699" kindref="member">ui</ref>-&gt;<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>()-&gt;<ref refid="da/db4/classstorage_1_1DataStorage_1a38b24aa35d0f1159200c78e53a0c99bb" kindref="member">get_calendar</ref><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;There&apos;re<sp/>no<sp/>calendar<sp/>with<sp/>that<sp/>id.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Only<sp/>person,<sp/>group,<sp/>event<sp/>and<sp/>calendar<sp/>can<sp/>be<sp/>printed.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/command_print.cpp"/>
+  </compounddef>
+</doxygen>

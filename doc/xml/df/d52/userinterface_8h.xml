@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="df/d52/userinterface_8h" kind="file">
+    <compoundname>userinterface.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includes refid="d5/d90/commands_8h" local="yes">commands.h</includes>
+    <includes refid="d8/d38/queue_8h" local="yes">queue.h</includes>
+    <includes refid="dc/db3/group__content_8h" local="yes">group_content.h</includes>
+    <includes refid="d4/d98/person_8h" local="yes">person.h</includes>
+    <includes refid="d9/dd1/group_8h" local="yes">group.h</includes>
+    <includes refid="dd/d20/event_8h" local="yes">event.h</includes>
+    <includes refid="da/d4a/calendar_8h" local="yes">calendar.h</includes>
+    <includes refid="d5/d2b/data__storage_8h" local="yes">data_storage.h</includes>
+    <includedby refid="d5/d90/commands_8h" local="yes">src/commands.h</includedby>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="d4/dcb/userinterface_8cpp" local="yes">src/userinterface.cpp</includedby>
+    <incdepgraph>
+      <node id="1148">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+      </node>
+      <node id="1151">
+        <label>data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1152" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+        <childnode refid="1154" relation="include">
+        </childnode>
+      </node>
+      <node id="1149">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+      </node>
+      <node id="1143">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1150">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+      </node>
+      <node id="1136">
+        <label>src/userinterface.h</label>
+        <link refid="userinterface.h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+      </node>
+      <node id="1137">
+        <label>string</label>
+      </node>
+      <node id="1154">
+        <label>table_data_storage.h</label>
+        <link refid="df/da3/table__data__storage_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+      </node>
+      <node id="1142">
+        <label>commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+      </node>
+      <node id="1146">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+      </node>
+      <node id="1141">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="1138">
+        <label>vector</label>
+      </node>
+      <node id="1139">
+        <label>time.h</label>
+      </node>
+      <node id="1144">
+        <label>iostream</label>
+      </node>
+      <node id="1153">
+        <label>event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+      </node>
+      <node id="1147">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+      </node>
+      <node id="1152">
+        <label>algorithm</label>
+      </node>
+      <node id="1140">
+        <label>stdio.h</label>
+      </node>
+      <node id="1145">
+        <label>queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1163">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="1159">
+        <label>src/data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1160" relation="include">
+        </childnode>
+        <childnode refid="1161" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+      </node>
+      <node id="1166">
+        <label>src/command_clone.cpp</label>
+        <link refid="d8/deb/command__clone_8cpp"/>
+      </node>
+      <node id="1170">
+        <label>src/command_exclude.cpp</label>
+        <link refid="d6/d72/command__exclude_8cpp"/>
+      </node>
+      <node id="1164">
+        <label>src/event_template.cpp</label>
+        <link refid="d1/d6f/event__template_8cpp"/>
+      </node>
+      <node id="1175">
+        <label>src/command_link.cpp</label>
+        <link refid="dc/d5f/command__link_8cpp"/>
+      </node>
+      <node id="1173">
+        <label>src/command_help.cpp</label>
+        <link refid="d8/d4a/command__help_8cpp"/>
+      </node>
+      <node id="1155">
+        <label>src/userinterface.h</label>
+        <link refid="userinterface.h"/>
+        <childnode refid="1156" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+        <childnode refid="1180" relation="include">
+        </childnode>
+      </node>
+      <node id="1167">
+        <label>src/command_delete.cpp</label>
+        <link refid="d3/d58/command__delete_8cpp"/>
+      </node>
+      <node id="1178">
+        <label>src/command_select.cpp</label>
+        <link refid="d6/d5c/command__select_8cpp"/>
+      </node>
+      <node id="1156">
+        <label>src/commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="1157" relation="include">
+        </childnode>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1158" relation="include">
+        </childnode>
+        <childnode refid="1165" relation="include">
+        </childnode>
+        <childnode refid="1166" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+        <childnode refid="1168" relation="include">
+        </childnode>
+        <childnode refid="1169" relation="include">
+        </childnode>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1172" relation="include">
+        </childnode>
+        <childnode refid="1173" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+        <childnode refid="1175" relation="include">
+        </childnode>
+        <childnode refid="1176" relation="include">
+        </childnode>
+        <childnode refid="1177" relation="include">
+        </childnode>
+        <childnode refid="1178" relation="include">
+        </childnode>
+        <childnode refid="1179" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+      </node>
+      <node id="1180">
+        <label>src/userinterface.cpp</label>
+        <link refid="d4/dcb/userinterface_8cpp"/>
+      </node>
+      <node id="1165">
+        <label>src/command_all.cpp</label>
+        <link refid="d7/d45/command__all_8cpp"/>
+      </node>
+      <node id="1169">
+        <label>src/command_enqueue.cpp</label>
+        <link refid="df/d57/command__enqueue_8cpp"/>
+      </node>
+      <node id="1160">
+        <label>src/data_storage.cpp</label>
+        <link refid="d6/d9a/data__storage_8cpp"/>
+      </node>
+      <node id="1157">
+        <label>src/command_add.cpp</label>
+        <link refid="d8/df6/command__add_8cpp"/>
+      </node>
+      <node id="1179">
+        <label>src/commands.cpp</label>
+        <link refid="d5/d77/commands_8cpp"/>
+      </node>
+      <node id="1161">
+        <label>src/file_storage.h</label>
+        <link refid="d9/d60/file__storage_8h"/>
+        <childnode refid="1162" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+      </node>
+      <node id="1174">
+        <label>src/command_include.cpp</label>
+        <link refid="df/da9/command__include_8cpp"/>
+      </node>
+      <node id="1158">
+        <label>src/event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="1159" relation="include">
+        </childnode>
+        <childnode refid="1164" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+      </node>
+      <node id="1177">
+        <label>src/command_print.cpp</label>
+        <link refid="df/d67/command__print_8cpp"/>
+      </node>
+      <node id="1171">
+        <label>src/command_exit.cpp</label>
+        <link refid="d6/db1/command__exit_8cpp"/>
+      </node>
+      <node id="1176">
+        <label>src/command_merge.cpp</label>
+        <link refid="de/d05/command__merge_8cpp"/>
+      </node>
+      <node id="1168">
+        <label>src/command_dequeue.cpp</label>
+        <link refid="d2/de0/command__dequeue_8cpp"/>
+      </node>
+      <node id="1172">
+        <label>src/command_generate.cpp</label>
+        <link refid="d6/d54/command__generate_8cpp"/>
+      </node>
+      <node id="1162">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="df/de1/classUserInterface" prot="public">UserInterface</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" prot="public" static="no">
+        <name>default_format</name>
+        <enumvalue id="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11af9c208c7d7a0f102f2683165540c882d" prot="public">
+          <name>ASCII</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ASCII Time format. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11a0ace72efd9e987dfd807365d0ca50141" prot="public">
+          <name>DATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Date Time format. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/userinterface.h" line="30" bodyfile="/home/alex/code/UniSched/src/userinterface.h" bodystart="30" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_CONFIG_H</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HAVE_CONFIG_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/d90/commands_8h" kindref="compound">commands.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d8/d38/queue_8h" kindref="compound">queue.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dc/db3/group__content_8h" kindref="compound">group_content.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d4/d98/person_8h" kindref="compound">person.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/dd1/group_8h" kindref="compound">group.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d20/event_8h" kindref="compound">event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/d4a/calendar_8h" kindref="compound">calendar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/d2b/data__storage_8h" kindref="compound">data_storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cin;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cout;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::endl;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref><sp/>{</highlight></codeline>
+<codeline lineno="31" refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11af9c208c7d7a0f102f2683165540c882d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11af9c208c7d7a0f102f2683165540c882d" kindref="member">ASCII</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11a0ace72efd9e987dfd807365d0ca50141" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11a0ace72efd9e987dfd807365d0ca50141" kindref="member">DATE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="df/de1/classUserInterface" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/de1/classUserInterface" kindref="compound" tooltip="Class provides user interface.">UserInterface</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>done;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref><sp/>def_format;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref><sp/>*db_;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/de1/classUserInterface_1ae6fb70370701b3bd6120e923df9705b0" kindref="member">UserInterface</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/de1/classUserInterface_1ae588b2ff1711a016dd4c6fc5002c0841" kindref="member">~UserInterface</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a8e37eb7afd119929d302b7052746194a" kindref="member">set_db</ref><sp/>(<ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref><sp/>*db);<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref><sp/>*<ref refid="df/de1/classUserInterface_1a3e61736f56a4b5ff2236d061ecad6be4" kindref="member">get_db</ref><sp/>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1ac1cead6c14db26f88802ea035fb59bd9" kindref="member">listen</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="df/de1/classUserInterface_1a22fa7e60f82f12920e1627c862f6532e" kindref="member">get_request</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a396eb29856a6afc91bc0e0eef1de2df7" kindref="member">exit</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a36513fcf018fafc53726cf610f46571f" kindref="member">set_format</ref>(</highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref><sp/><ref refid="df/de1/classUserInterface_1a9373bc1aedbdc68905942bcb7c6a8fd3" kindref="member">format</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="df/d52/userinterface_8h_1a5a0e707f53d6c5632b2fb5ffd2d22a11" kindref="member">default_format</ref><sp/><ref refid="df/de1/classUserInterface_1ad543750a7accc0c4825e02a93fda1909" kindref="member">get_format</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a9373bc1aedbdc68905942bcb7c6a8fd3" kindref="member">format</ref>(time_t<sp/>time);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a41c109a7e042b44dc98a1250681fc684" kindref="member">format_ASCII</ref>(time_t<sp/>time);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a9226c83fcb42b9a1ee279e8b250ca68c" kindref="member">format_DATE</ref>(time_t<sp/>time);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>time_t<sp/><ref refid="df/de1/classUserInterface_1a0a4f683492e8a8565423ea501565c02e" kindref="member">get_time</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>time);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>time_t<sp/><ref refid="df/de1/classUserInterface_1a313636d15fc03a167163b56f0223cab9" kindref="member">get_birthday</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>time);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a45a7ad6cca95218631d8c6fbe49362e2" kindref="member">print_person</ref>(<ref refid="d1/d63/classPerson" kindref="compound" tooltip="Class keeps person unique data.">Person</ref><sp/>*<ref refid="dc/db3/group__content_8h_1ab8664e6fd42f01eeaad084b5e20eb54e" kindref="member">person</ref>);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1a31424519b61f71584a4a5196c6632beb" kindref="member">print_group</ref>(<ref refid="d0/db7/classGroup" kindref="compound" tooltip="Class keeps information about group of people.">Group</ref><sp/>*<ref refid="dc/db3/group__content_8h_1a27517aa1480ab2d9bfe5d62e693b33eb" kindref="member">group</ref>);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1aca628f5a276b39ff4346e2150b419590" kindref="member">print_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*event);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/de1/classUserInterface_1aca95eaf06d053b4ac267e94ccb84e501" kindref="member">print_calendar</ref>(<ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*calendar);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/userinterface.h"/>
+  </compounddef>
+</doxygen>

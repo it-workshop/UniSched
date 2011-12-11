@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="da/de1/namespaceuiconsole" kind="namespace">
+    <compoundname>uiconsole</compoundname>
+    <innerclass refid="dc/df0/classuiconsole_1_1Command" prot="public">uiconsole::Command</innerclass>
+    <innerclass refid="d5/dd7/classuiconsole_1_1Command__Exit" prot="public">uiconsole::Command_Exit</innerclass>
+    <innerclass refid="de/dfe/classuiconsole_1_1Command__All" prot="public">uiconsole::Command_All</innerclass>
+    <innerclass refid="df/d75/classuiconsole_1_1Command__Print" prot="public">uiconsole::Command_Print</innerclass>
+    <innerclass refid="d0/d3d/classuiconsole_1_1Command__Help" prot="public">uiconsole::Command_Help</innerclass>
+    <innerclass refid="df/d75/classuiconsole_1_1Command__Clone" prot="public">uiconsole::Command_Clone</innerclass>
+    <innerclass refid="d8/dc5/classuiconsole_1_1Command__Merge" prot="public">uiconsole::Command_Merge</innerclass>
+    <innerclass refid="d8/d1d/classuiconsole_1_1Command__Exclude" prot="public">uiconsole::Command_Exclude</innerclass>
+    <innerclass refid="dc/d64/classuiconsole_1_1Command__Include" prot="public">uiconsole::Command_Include</innerclass>
+    <innerclass refid="dd/d31/classuiconsole_1_1Command__Add" prot="public">uiconsole::Command_Add</innerclass>
+    <innerclass refid="d3/d25/classuiconsole_1_1Command__Link" prot="public">uiconsole::Command_Link</innerclass>
+    <innerclass refid="d6/d90/classuiconsole_1_1Command__Delete" prot="public">uiconsole::Command_Delete</innerclass>
+    <innerclass refid="d2/de6/classuiconsole_1_1Command__Dequeue" prot="public">uiconsole::Command_Dequeue</innerclass>
+    <innerclass refid="d4/dfe/classuiconsole_1_1Command__Select" prot="public">uiconsole::Command_Select</innerclass>
+    <innerclass refid="da/d43/classuiconsole_1_1Command__Enqueue" prot="public">uiconsole::Command_Enqueue</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="da/de1/namespaceuiconsole_1a2592267a0e2c7bd8742a231b656153d2" prot="public" static="no" mutable="no">
+        <type>_EXTERN_ vector&lt; <ref refid="dc/df0/classuiconsole_1_1Command" kindref="compound">uiconsole::Command</ref> * &gt;</type>
+        <definition>_EXTERN_ vector&lt;uiconsole::Command *&gt; uiconsole::commands</definition>
+        <argsstring></argsstring>
+        <name>commands</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="58" bodyfile="/home/alex/code/UniSched/src/commands.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="da/de1/namespaceuiconsole_1a40263e63a42257769b2fb9a95fd771c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void uiconsole::execute</definition>
+        <argsstring>(vector&lt; string &gt; args)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>vector&lt; string &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Executes user request. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User request. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="257" bodyfile="/home/alex/code/UniSched/src/commands.cpp" bodystart="22" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="da/de1/namespaceuiconsole_1a037fc32900a055adc36892666b385f30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void uiconsole::initiate</definition>
+        <argsstring>(UserInterface *ui)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type><ref refid="df/de1/classUserInterface" kindref="compound">UserInterface</ref> *</type>
+          <declname>ui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiates all commands. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to <ref refid="df/de1/classUserInterface" kindref="compound">UserInterface</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/commands.h" line="260" bodyfile="/home/alex/code/UniSched/src/commands.cpp" bodystart="36" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Namespace of console user interface. </para>    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/commands.h" line="20"/>
+  </compounddef>
+</doxygen>

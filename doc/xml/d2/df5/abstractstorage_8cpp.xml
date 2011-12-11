@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d2/df5/abstractstorage_8cpp" kind="file">
+    <compoundname>abstractstorage.cpp</compoundname>
+    <includes local="no">abstractstorage.h</includes>
+    <incdepgraph>
+      <node id="1018">
+        <label>abstractstorage.h</label>
+      </node>
+      <node id="1017">
+        <label>src/storage/abstractstorage.cpp</label>
+        <link refid="abstractstorage.cpp"/>
+        <childnode refid="1018" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;abstractstorage.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Storage;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a5d114117d4954e01fd650251b829fdbf" kindref="member">AbstractStorage::remove</ref>(<ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a21ff57c954664abb78d1d658a1da7afa" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1ab9e323067a58b74a7d1c835f0d1832c8" kindref="member">AbstractStorage::new_id</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a54758736009f559baf85a2d477b4d370" kindref="member">objects_</ref>.size();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a54758736009f559baf85a2d477b4d370" kindref="member">objects_</ref>.reserve(<ref refid="d6/da0/classStorage_1_1AbstractStorage_1a54758736009f559baf85a2d477b4d370" kindref="member">objects_</ref>.size()<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a641a6b75fe34c51943902d846ff66328" kindref="member">AbstractStorage::set_object</ref>(<ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a54758736009f559baf85a2d477b4d370" kindref="member">objects_</ref>[</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">-&gt;id()]<sp/>=<sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage_1a21ff57c954664abb78d1d658a1da7afa" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/storage/abstractstorage.cpp"/>
+  </compounddef>
+</doxygen>

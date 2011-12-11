@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d5/d2b/data__storage_8h" kind="file">
+    <compoundname>data_storage.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includes refid="d4/d98/person_8h" local="yes">person.h</includes>
+    <includes refid="d9/dd1/group_8h" local="yes">group.h</includes>
+    <includes refid="dd/d20/event_8h" local="yes">event.h</includes>
+    <includes refid="da/d4a/calendar_8h" local="yes">calendar.h</includes>
+    <includes refid="d8/d38/queue_8h" local="yes">queue.h</includes>
+    <includes refid="d1/d38/event__template_8h" local="yes">event_template.h</includes>
+    <includes refid="df/da3/table__data__storage_8h" local="yes">table_data_storage.h</includes>
+    <includedby refid="df/d52/userinterface_8h" local="yes">src/userinterface.h</includedby>
+    <includedby refid="d6/d9a/data__storage_8cpp" local="yes">src/data_storage.cpp</includedby>
+    <includedby refid="d9/d60/file__storage_8h" local="yes">src/file_storage.h</includedby>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="518">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+      </node>
+      <node id="511">
+        <label>src/data_storage.h</label>
+        <link refid="data_storage.h"/>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+      </node>
+      <node id="513">
+        <label>stdlib.h</label>
+      </node>
+      <node id="524">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+      </node>
+      <node id="528">
+        <label>userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>string</label>
+      </node>
+      <node id="529">
+        <label>table_data_storage.h</label>
+        <link refid="df/da3/table__data__storage_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+      </node>
+      <node id="527">
+        <label>commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+      </node>
+      <node id="522">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="515">
+        <label>vector</label>
+      </node>
+      <node id="520">
+        <label>time.h</label>
+      </node>
+      <node id="512">
+        <label>iostream</label>
+      </node>
+      <node id="526">
+        <label>event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+      </node>
+      <node id="516">
+        <label>algorithm</label>
+      </node>
+      <node id="514">
+        <label>stdio.h</label>
+      </node>
+      <node id="525">
+        <label>queue.h</label>
+        <link refid="d8/d38/queue_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="536">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="530">
+        <label>src/data_storage.h</label>
+        <link refid="data_storage.h"/>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="538">
+        <label>src/command_clone.cpp</label>
+        <link refid="d8/deb/command__clone_8cpp"/>
+      </node>
+      <node id="542">
+        <label>src/command_exclude.cpp</label>
+        <link refid="d6/d72/command__exclude_8cpp"/>
+      </node>
+      <node id="535">
+        <label>src/event_template.cpp</label>
+        <link refid="d1/d6f/event__template_8cpp"/>
+      </node>
+      <node id="547">
+        <label>src/command_link.cpp</label>
+        <link refid="dc/d5f/command__link_8cpp"/>
+      </node>
+      <node id="545">
+        <label>src/command_help.cpp</label>
+        <link refid="d8/d4a/command__help_8cpp"/>
+      </node>
+      <node id="531">
+        <label>src/userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="552" relation="include">
+        </childnode>
+      </node>
+      <node id="539">
+        <label>src/command_delete.cpp</label>
+        <link refid="d3/d58/command__delete_8cpp"/>
+      </node>
+      <node id="550">
+        <label>src/command_select.cpp</label>
+        <link refid="d6/d5c/command__select_8cpp"/>
+      </node>
+      <node id="532">
+        <label>src/commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="552">
+        <label>src/userinterface.cpp</label>
+        <link refid="d4/dcb/userinterface_8cpp"/>
+      </node>
+      <node id="537">
+        <label>src/command_all.cpp</label>
+        <link refid="d7/d45/command__all_8cpp"/>
+      </node>
+      <node id="553">
+        <label>src/data_storage.cpp</label>
+        <link refid="d6/d9a/data__storage_8cpp"/>
+      </node>
+      <node id="541">
+        <label>src/command_enqueue.cpp</label>
+        <link refid="df/d57/command__enqueue_8cpp"/>
+      </node>
+      <node id="533">
+        <label>src/command_add.cpp</label>
+        <link refid="d8/df6/command__add_8cpp"/>
+      </node>
+      <node id="551">
+        <label>src/commands.cpp</label>
+        <link refid="d5/d77/commands_8cpp"/>
+      </node>
+      <node id="554">
+        <label>src/file_storage.h</label>
+        <link refid="d9/d60/file__storage_8h"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>src/command_include.cpp</label>
+        <link refid="df/da9/command__include_8cpp"/>
+      </node>
+      <node id="534">
+        <label>src/event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="549">
+        <label>src/command_print.cpp</label>
+        <link refid="df/d67/command__print_8cpp"/>
+      </node>
+      <node id="543">
+        <label>src/command_exit.cpp</label>
+        <link refid="d6/db1/command__exit_8cpp"/>
+      </node>
+      <node id="548">
+        <label>src/command_merge.cpp</label>
+        <link refid="de/d05/command__merge_8cpp"/>
+      </node>
+      <node id="540">
+        <label>src/command_dequeue.cpp</label>
+        <link refid="d2/de0/command__dequeue_8cpp"/>
+      </node>
+      <node id="544">
+        <label>src/command_generate.cpp</label>
+        <link refid="d6/d54/command__generate_8cpp"/>
+      </node>
+      <node id="555">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d9/de4/structstorage_1_1CalendarBunch__" prot="public">storage::CalendarBunch_</innerclass>
+    <innerclass refid="d3/db8/structstorage_1_1GroupBunch__" prot="public">storage::GroupBunch_</innerclass>
+    <innerclass refid="db/d0b/structstorage_1_1QueueBunch__" prot="public">storage::QueueBunch_</innerclass>
+    <innerclass refid="da/db4/classstorage_1_1DataStorage" prot="public">storage::DataStorage</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d4/d98/person_8h" kindref="compound">person.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/dd1/group_8h" kindref="compound">group.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/d20/event_8h" kindref="compound">event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/d4a/calendar_8h" kindref="compound">calendar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d8/d38/queue_8h" kindref="compound">queue.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d1/d38/event__template_8h" kindref="compound">event_template.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/da3/table__data__storage_8h" kindref="compound">table_data_storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::sort;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="d9/de4/structstorage_1_1CalendarBunch__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d9/de4/structstorage_1_1CalendarBunch__" kindref="compound">storage::CalendarBunch_</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="d9/de4/structstorage_1_1CalendarBunch___1a519996ee57438ac30e1eea259358585f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="d9/de4/structstorage_1_1CalendarBunch___1a519996ee57438ac30e1eea259358585f" kindref="member">ID</ref>;</highlight></codeline>
+<codeline lineno="25" refid="d9/de4/structstorage_1_1CalendarBunch___1a87e88f8847e01128e2d2c21b9a0a284b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="d9/de4/structstorage_1_1CalendarBunch___1a87e88f8847e01128e2d2c21b9a0a284b" kindref="member">EventID</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="d3/db8/structstorage_1_1GroupBunch__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/db8/structstorage_1_1GroupBunch__" kindref="compound">storage::GroupBunch_</ref><sp/>{</highlight></codeline>
+<codeline lineno="29" refid="d3/db8/structstorage_1_1GroupBunch___1ab7c018c8d79c50d64f28ffcd279b21a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="d3/db8/structstorage_1_1GroupBunch___1ab7c018c8d79c50d64f28ffcd279b21a4" kindref="member">PersonID</ref>;</highlight></codeline>
+<codeline lineno="30" refid="d3/db8/structstorage_1_1GroupBunch___1a761c0b9cdc83ee74754a43f13953933d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="d3/db8/structstorage_1_1GroupBunch___1a761c0b9cdc83ee74754a43f13953933d" kindref="member">GroupID</ref>;</highlight></codeline>
+<codeline lineno="31" refid="d3/db8/structstorage_1_1GroupBunch___1a6a28ad5ef8fe8361e56530026675e2bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d3/db8/structstorage_1_1GroupBunch___1a6a28ad5ef8fe8361e56530026675e2bf" kindref="member">Status</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="db/d0b/structstorage_1_1QueueBunch__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="db/d0b/structstorage_1_1QueueBunch__" kindref="compound">storage::QueueBunch_</ref><sp/>{</highlight></codeline>
+<codeline lineno="35" refid="db/d0b/structstorage_1_1QueueBunch___1a2665693a394fa79076cf6983b91354a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="db/d0b/structstorage_1_1QueueBunch___1a2665693a394fa79076cf6983b91354a4" kindref="member">QueueID</ref>;</highlight></codeline>
+<codeline lineno="36" refid="db/d0b/structstorage_1_1QueueBunch___1ac4d1b2ea07850fa32ca7fceb5db12ff8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="db/d0b/structstorage_1_1QueueBunch___1ac4d1b2ea07850fa32ca7fceb5db12ff8" kindref="member">GroupID</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="da/db4/classstorage_1_1DataStorage" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/db4/classstorage_1_1DataStorage" kindref="compound">storage::DataStorage</ref>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a22825d40495dae6a5df46d629fb26a3f" kindref="member">DataStorage</ref><sp/>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1adf4ef73e6d368dc7fcd213ba80e1d618" kindref="member">~DataStorage</ref><sp/>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a1cfb8136faea457c36a1adf1d024b2e1" kindref="member">load</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a973b7fd5741ad0159d95a67b91734dd2" kindref="member">save</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a00e2feae10b5a44acf711273c2d0d3d8" kindref="member">init</ref><sp/>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a6a7b4a651eae72f6c16826632038a59f" kindref="member">sync</ref><sp/>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1aabde44460aae44655dbdf69b8128ad22" kindref="member">setup</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>location,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>user,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pass,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>bdname)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Person<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a6c21f6254e3c57dca63ad39c262b280d" kindref="member">get_people</ref><sp/>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Group<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a12f909c64f1414e91186c998b6e29db2" kindref="member">get_groups</ref><sp/>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a6b649e3fa5ca3eb1921c4ee176a19f42" kindref="member">get_events</ref><sp/>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Calendar<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a04a667fec74228c64a60a37510482665" kindref="member">get_calendars</ref><sp/>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Queue<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a61a1e515f42170324276c5a1a78961c5" kindref="member">get_queues</ref><sp/>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event_Template<sp/>*&gt;<sp/>*<ref refid="da/db4/classstorage_1_1DataStorage_1a308f8bdd6c6a5ed65586e8c028cc6e42" kindref="member">get_event_templates</ref><sp/>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/d63/classPerson" kindref="compound" tooltip="Class keeps person unique data.">Person</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1abca728c67538176fd721dcb8730bac81" kindref="member">get_person</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/db7/classGroup" kindref="compound" tooltip="Class keeps information about group of people.">Group</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a53e3931141b50ff3d5bfd7e682092091" kindref="member">get_group</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1af68ca095bb27db3b8532045f77b5ae73" kindref="member">get_event</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a38b24aa35d0f1159200c78e53a0c99bb" kindref="member">get_calendar</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d7/d56/classQueue" kindref="compound" tooltip="Class keeps queue groups.">Queue</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a38f0afa3026ff4c41e25c85648d24cd1" kindref="member">get_queue</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d6e/classEvent__Template" kindref="compound">Event_Template</ref><sp/>*<sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a085a420bbfdb5aad5ca5ed2396bca656" kindref="member">get_event_template</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1afdcd88ea1431926e2573ecbca72cf7a9" kindref="member">delete_group</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1ac87846227576aff38920d4a0a56718b5" kindref="member">delete_calendar</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a16ec2023c236757fd8ff7abab2ecf74d" kindref="member">delete_person</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a92302162f0c37753f7acadfb82a951f4" kindref="member">delete_event</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1ae4741645dcf5d1efd8bfbaa4422c929a" kindref="member">delete_queue</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a72e75a91ab796b9b219443da461928e4" kindref="member">delete_event_template</ref><sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1aa29c972a9d8e25c54703435b79060ccf" kindref="member">register_group</ref><sp/>(<ref refid="d0/db7/classGroup" kindref="compound" tooltip="Class keeps information about group of people.">Group</ref><sp/>*<ref refid="dc/db3/group__content_8h_1a27517aa1480ab2d9bfe5d62e693b33eb" kindref="member">group</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a4aea70365b132555020159c04121a9a0" kindref="member">register_calendar</ref><sp/>(<ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*calendar);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1ab397fd5fc17fb58e45b2968b165c95dd" kindref="member">register_person</ref><sp/>(<ref refid="d1/d63/classPerson" kindref="compound" tooltip="Class keeps person unique data.">Person</ref><sp/>*<ref refid="dc/db3/group__content_8h_1ab8664e6fd42f01eeaad084b5e20eb54e" kindref="member">person</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a2c63723d6bb413a0d630b05a045935e1" kindref="member">register_event</ref><sp/>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*event);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a78b6e15d0d878cc5113cba50dae7c73b" kindref="member">register_queue</ref><sp/>(<ref refid="d7/d56/classQueue" kindref="compound" tooltip="Class keeps queue groups.">Queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a3984bdbb2a2aecfaca0a4745df0f7850" kindref="member">register_event_template</ref><sp/>(<ref refid="df/d6e/classEvent__Template" kindref="compound">Event_Template</ref><sp/>*event_template);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>get_person_attr(<ref refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9ce" kindref="member">PersonAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_person_attr(<ref refid="d0/daa/namespacestorage_1a42f9d3eac07801f5551c7e5b60d6e9ce" kindref="member">PersonAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_person(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_person(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>get_group_attr(<ref refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3" kindref="member">GroupAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_group_attr(<ref refid="d0/daa/namespacestorage_1abe112dd5cc72469c2ce28e3a5ea229a3" kindref="member">GroupAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_group(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_group(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>get_event_attr(<ref refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420" kindref="member">EventAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_event_attr(<ref refid="d0/daa/namespacestorage_1a6e2b156f6c0c979e3e6d80ed6ba55420" kindref="member">EventAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_event(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_event(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;id_type&gt;<sp/>get_person_ID_list();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;id_type&gt;<sp/>get_group_ID_list();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;id_type&gt;<sp/>get_event_ID_list();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;id_type&gt;<sp/>get_event_template_ID_list<sp/>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>get_event_template_attr<sp/>(<ref refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6" kindref="member">EventTemplateAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_event_template_attr<sp/>(<ref refid="d0/daa/namespacestorage_1a4e52cb7b4b8b22d0c4d69d9a82a1a6b6" kindref="member">EventTemplateAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_event_template<sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_event_template<sp/>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;id_type&gt;<sp/>get_queue_ID_list<sp/>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_queue(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_queue(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>get_queue_attr<sp/>(<ref refid="d0/daa/namespacestorage_1a7b75107b1860d57c84e341db35541d94" kindref="member">QueueAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_queue_attr<sp/>(<ref refid="d0/daa/namespacestorage_1a7b75107b1860d57c84e341db35541d94" kindref="member">QueueAttribute</ref><sp/>attr,<sp/><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>get_calendar_bunches_count();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d9/de4/structstorage_1_1CalendarBunch__" kindref="compound">CalendarBunch</ref><sp/>get_calendar_bunch(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_calendar_bunch(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_calendar_bunch(<ref refid="d9/de4/structstorage_1_1CalendarBunch__" kindref="compound">CalendarBunch</ref><sp/>bnch);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>get_group_bunches_count();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/db8/structstorage_1_1GroupBunch__" kindref="compound">GroupBunch</ref><sp/>get_group_bunch(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_group_bunch(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_group_bunch(<ref refid="d3/db8/structstorage_1_1GroupBunch__" kindref="compound">GroupBunch</ref><sp/>bnch);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>get_queue_bunches_count();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="db/d0b/structstorage_1_1QueueBunch__" kindref="compound">QueueBunch</ref><sp/>get_queue_bunch<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>remove_queue_bunch<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add_queue_bunch<sp/>(<ref refid="db/d0b/structstorage_1_1QueueBunch__" kindref="compound">QueueBunch</ref><sp/>bnch);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Person<sp/>*&gt;<sp/>people_vector_;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Group<sp/>*&gt;<sp/>groups_vector_;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event<sp/>*&gt;<sp/>events_vector_;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Calendar<sp/>*&gt;<sp/>calendars_vector_;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Queue<sp/>*&gt;<sp/>queues_vector_;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Event_Template<sp/>*&gt;<sp/>event_templates_vector_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143" refid="da/db4/classstorage_1_1DataStorage_1a8c32de002329fa6018a0957c925cf183" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a8c32de002329fa6018a0957c925cf183" kindref="member">people_</ref>;</highlight></codeline>
+<codeline lineno="144" refid="da/db4/classstorage_1_1DataStorage_1a08dbec98bdd6b7c3e6623a8bbe72235c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a08dbec98bdd6b7c3e6623a8bbe72235c" kindref="member">groups_</ref>;</highlight></codeline>
+<codeline lineno="145" refid="da/db4/classstorage_1_1DataStorage_1a16f699e52132096d7e8ec8d43c73ad1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a16f699e52132096d7e8ec8d43c73ad1f" kindref="member">events_</ref>;</highlight></codeline>
+<codeline lineno="146" refid="da/db4/classstorage_1_1DataStorage_1ac49bf760dd1492eb566e7bbbf9d84743" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1ac49bf760dd1492eb566e7bbbf9d84743" kindref="member">group_content_</ref>;</highlight></codeline>
+<codeline lineno="147" refid="da/db4/classstorage_1_1DataStorage_1adc094f1bdcad1fd0940c947d2b0529b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1adc094f1bdcad1fd0940c947d2b0529b9" kindref="member">calendars_</ref>;</highlight></codeline>
+<codeline lineno="148" refid="da/db4/classstorage_1_1DataStorage_1af9a0216e83d32b996086a0b15a5281ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1af9a0216e83d32b996086a0b15a5281ab" kindref="member">queues_</ref>;</highlight></codeline>
+<codeline lineno="149" refid="da/db4/classstorage_1_1DataStorage_1a19686eeb613ff2ade96fd557b26627f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a19686eeb613ff2ade96fd557b26627f1" kindref="member">queues_bunches_</ref>;</highlight></codeline>
+<codeline lineno="150" refid="da/db4/classstorage_1_1DataStorage_1a96b081918351159d88994b382f1b97e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">TableDataStorage</ref><sp/><ref refid="da/db4/classstorage_1_1DataStorage_1a96b081918351159d88994b382f1b97e2" kindref="member">event_templates_</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/data_storage.h"/>
+  </compounddef>
+</doxygen>

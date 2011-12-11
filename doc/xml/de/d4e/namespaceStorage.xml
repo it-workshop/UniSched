@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="de/d4e/namespaceStorage" kind="namespace">
+    <compoundname>Storage</compoundname>
+    <innerclass refid="d6/da0/classStorage_1_1AbstractStorage" prot="public">Storage::AbstractStorage</innerclass>
+    <innerclass refid="d4/deb/classStorage_1_1StorableObject" prot="public">Storage::StorableObject</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/include/abstractstorage.h" line="8"/>
+  </compounddef>
+</doxygen>

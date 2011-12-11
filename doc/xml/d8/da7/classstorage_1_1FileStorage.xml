@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d8/da7/classstorage_1_1FileStorage" kind="class" prot="public">
+    <compoundname>storage::FileStorage</compoundname>
+    <basecompoundref refid="da/db4/classstorage_1_1DataStorage" prot="public" virt="non-virtual">storage::DataStorage</basecompoundref>
+    <includes refid="d9/d60/file__storage_8h" local="no">file_storage.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/da7/classstorage_1_1FileStorage_1acc001777cd6d12cf460e98ad0101b278" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string storage::FileStorage::path_</definition>
+        <argsstring></argsstring>
+        <name>path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="16" bodyfile="/home/alex/code/UniSched/src/file_storage.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/da7/classstorage_1_1FileStorage_1a3a88a71218e6e8cb6c7af942ac1daf47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FileStorage::FileStorage</definition>
+        <argsstring>()</argsstring>
+        <name>FileStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="10" bodyfile="/home/alex/code/UniSched/src/file_storage.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/da7/classstorage_1_1FileStorage_1a336c41583d9b31f33988319e4397c5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FileStorage::~FileStorage</definition>
+        <argsstring>()</argsstring>
+        <name>~FileStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="11" bodyfile="/home/alex/code/UniSched/src/file_storage.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/da7/classstorage_1_1FileStorage_1a74a3d23be4524c10333cba19be066c6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FileStorage::setup</definition>
+        <argsstring>(string location, string user, string password, string bdname)</argsstring>
+        <name>setup</name>
+        <reimplements refid="da/db4/classstorage_1_1DataStorage_1aabde44460aae44655dbdf69b8128ad22">setup</reimplements>
+        <param>
+          <type>string</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>bdname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="12" bodyfile="/home/alex/code/UniSched/src/file_storage.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/da7/classstorage_1_1FileStorage_1acec1ff977a4fb2885ca0f90336b2c296" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool FileStorage::load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <reimplements refid="da/db4/classstorage_1_1DataStorage_1a1cfb8136faea457c36a1adf1d024b2e1">load</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="13" bodyfile="/home/alex/code/UniSched/src/file_storage.cpp" bodystart="20" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/da7/classstorage_1_1FileStorage_1abc882239d83ffc2b3ddc86aad18ac83c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool FileStorage::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <reimplements refid="da/db4/classstorage_1_1DataStorage_1a973b7fd5741ad0159d95a67b91734dd2">save</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/file_storage.h" line="14" bodyfile="/home/alex/code/UniSched/src/file_storage.cpp" bodystart="46" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="301">
+        <label>storage::FileStorage</label>
+        <link refid="d8/da7/classstorage_1_1FileStorage"/>
+        <childnode refid="302" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>storage::DataStorage</label>
+        <link refid="da/db4/classstorage_1_1DataStorage"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="310">
+        <label>vector&lt; Group * &gt;</label>
+      </node>
+      <node id="313">
+        <label>string</label>
+      </node>
+      <node id="305">
+        <label>storage::TableDataStorage</label>
+        <link refid="df/d87/classstorage_1_1TableDataStorage"/>
+        <childnode refid="306" relation="usage">
+          <edgelabel>rows_</edgelabel>
+        </childnode>
+      </node>
+      <node id="306">
+        <label>vector&lt; dsrow &gt;</label>
+      </node>
+      <node id="303">
+        <label>storage::FileStorage</label>
+        <link refid="d8/da7/classstorage_1_1FileStorage"/>
+        <childnode refid="304" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="usage">
+          <edgelabel>path_</edgelabel>
+        </childnode>
+      </node>
+      <node id="304">
+        <label>storage::DataStorage</label>
+        <link refid="da/db4/classstorage_1_1DataStorage"/>
+        <childnode refid="305" relation="usage">
+          <edgelabel>events_</edgelabel>
+          <edgelabel>group_content_</edgelabel>
+          <edgelabel>queues_bunches_</edgelabel>
+          <edgelabel>groups_</edgelabel>
+          <edgelabel>calendars_</edgelabel>
+          <edgelabel>queues_</edgelabel>
+          <edgelabel>event_templates_</edgelabel>
+          <edgelabel>people_</edgelabel>
+        </childnode>
+        <childnode refid="307" relation="usage">
+          <edgelabel>people_vector_</edgelabel>
+        </childnode>
+        <childnode refid="308" relation="usage">
+          <edgelabel>events_vector_</edgelabel>
+        </childnode>
+        <childnode refid="309" relation="usage">
+          <edgelabel>queues_vector_</edgelabel>
+        </childnode>
+        <childnode refid="310" relation="usage">
+          <edgelabel>groups_vector_</edgelabel>
+        </childnode>
+        <childnode refid="311" relation="usage">
+          <edgelabel>calendars_vector_</edgelabel>
+        </childnode>
+        <childnode refid="312" relation="usage">
+          <edgelabel>event_templates_vector_</edgelabel>
+        </childnode>
+      </node>
+      <node id="308">
+        <label>vector&lt; Event * &gt;</label>
+      </node>
+      <node id="307">
+        <label>vector&lt; Person * &gt;</label>
+      </node>
+      <node id="309">
+        <label>vector&lt; Queue * &gt;</label>
+      </node>
+      <node id="312">
+        <label>vector&lt; Event_Template * &gt;</label>
+      </node>
+      <node id="311">
+        <label>vector&lt; Calendar * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/file_storage.h" line="8" bodyfile="/home/alex/code/UniSched/src/file_storage.h" bodystart="8" bodyend="17"/>
+    <listofallmembers>
+      <member refid="da/db4/classstorage_1_1DataStorage_1adc094f1bdcad1fd0940c947d2b0529b9" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>calendars_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a22825d40495dae6a5df46d629fb26a3f" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>DataStorage</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1ac87846227576aff38920d4a0a56718b5" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_calendar</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a92302162f0c37753f7acadfb82a951f4" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_event</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a72e75a91ab796b9b219443da461928e4" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_event_template</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1afdcd88ea1431926e2573ecbca72cf7a9" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_group</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a16ec2023c236757fd8ff7abab2ecf74d" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_person</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1ae4741645dcf5d1efd8bfbaa4422c929a" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>delete_queue</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a96b081918351159d88994b382f1b97e2" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>event_templates_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a16f699e52132096d7e8ec8d43c73ad1f" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>events_</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1a3a88a71218e6e8cb6c7af942ac1daf47" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>FileStorage</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a38b24aa35d0f1159200c78e53a0c99bb" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_calendar</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a04a667fec74228c64a60a37510482665" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_calendars</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1af68ca095bb27db3b8532045f77b5ae73" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_event</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a085a420bbfdb5aad5ca5ed2396bca656" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_event_template</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a308f8bdd6c6a5ed65586e8c028cc6e42" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_event_templates</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a6b649e3fa5ca3eb1921c4ee176a19f42" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_events</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a53e3931141b50ff3d5bfd7e682092091" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_group</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a12f909c64f1414e91186c998b6e29db2" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_groups</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a6c21f6254e3c57dca63ad39c262b280d" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_people</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1abca728c67538176fd721dcb8730bac81" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_person</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a38f0afa3026ff4c41e25c85648d24cd1" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_queue</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a61a1e515f42170324276c5a1a78961c5" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>get_queues</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1ac49bf760dd1492eb566e7bbbf9d84743" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>group_content_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a08dbec98bdd6b7c3e6623a8bbe72235c" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>groups_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a00e2feae10b5a44acf711273c2d0d3d8" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>init</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1acec1ff977a4fb2885ca0f90336b2c296" prot="public" virt="virtual"><scope>storage::FileStorage</scope><name>load</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1acc001777cd6d12cf460e98ad0101b278" prot="private" virt="non-virtual"><scope>storage::FileStorage</scope><name>path_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a8c32de002329fa6018a0957c925cf183" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>people_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1af9a0216e83d32b996086a0b15a5281ab" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>queues_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a19686eeb613ff2ade96fd557b26627f1" prot="protected" virt="non-virtual"><scope>storage::FileStorage</scope><name>queues_bunches_</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a4aea70365b132555020159c04121a9a0" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_calendar</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a2c63723d6bb413a0d630b05a045935e1" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_event</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a3984bdbb2a2aecfaca0a4745df0f7850" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_event_template</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1aa29c972a9d8e25c54703435b79060ccf" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_group</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1ab397fd5fc17fb58e45b2968b165c95dd" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_person</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a78b6e15d0d878cc5113cba50dae7c73b" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>register_queue</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1abc882239d83ffc2b3ddc86aad18ac83c" prot="public" virt="virtual"><scope>storage::FileStorage</scope><name>save</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1a74a3d23be4524c10333cba19be066c6c" prot="public" virt="virtual"><scope>storage::FileStorage</scope><name>setup</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1a6a7b4a651eae72f6c16826632038a59f" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>sync</name></member>
+      <member refid="da/db4/classstorage_1_1DataStorage_1adf4ef73e6d368dc7fcd213ba80e1d618" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>~DataStorage</name></member>
+      <member refid="d8/da7/classstorage_1_1FileStorage_1a336c41583d9b31f33988319e4397c5fc" prot="public" virt="non-virtual"><scope>storage::FileStorage</scope><name>~FileStorage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

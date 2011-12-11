@@ -29,6 +29,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -78,8 +79,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#aee8e0d9677cef92e34f0347b73f64c97">Queue</a> (string name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#a00d119db8fa3050da37746e82cbcf94f">~Queue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#adb1ae4097097c94935c6e8af1175e4af">get_begin</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#a43c7ba286ff9641d8ca0b195ef940db8">get_end</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#a6de27cfb498b3bc6000f63599f124c53">get_vector</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#a69f2c1cee4763ed7671a4710cc9748c2">get_id</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#ad29a81e51660af6071684ad3c5b063f1">set_id</a> (<a class="el" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d56/classQueue.html#ab68f53f6e69bbe4f82b581716dc247d8">get_name</a> ()</td></tr>
@@ -106,6 +106,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructor. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>ID of queue. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of queue. </td></tr>
   </table>
   </dd>
@@ -173,42 +174,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adb1ae4097097c94935c6e8af1175e4af"></a><!-- doxytag: member="Queue::get_begin" ref="adb1ae4097097c94935c6e8af1175e4af" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt;::iterator Queue::get_begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get begin of a queue. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Begin of a queue. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a43c7ba286ff9641d8ca0b195ef940db8"></a><!-- doxytag: member="Queue::get_end" ref="a43c7ba286ff9641d8ca0b195ef940db8" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt;::iterator Queue::get_end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get end of a queue. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>End of a queue. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a69f2c1cee4763ed7671a4710cc9748c2"></a><!-- doxytag: member="Queue::get_id" ref="a69f2c1cee4763ed7671a4710cc9748c2" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +207,24 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get name of a queue. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Name of a queue. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6de27cfb498b3bc6000f63599f124c53"></a><!-- doxytag: member="Queue::get_vector" ref="a6de27cfb498b3bc6000f63599f124c53" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="../../d0/db7/classGroup.html">Group</a> * &gt; * Queue::get_vector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get b of a queue. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Begin of a queue. </dd></dl>
 
 </div>
 </div>
@@ -279,7 +262,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -288,7 +271,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Aug 18 2011 13:50:32 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 01:43:04 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

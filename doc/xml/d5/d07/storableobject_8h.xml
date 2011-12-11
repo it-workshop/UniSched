@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d5/d07/storableobject_8h" kind="file">
+    <compoundname>storableobject.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="de/d16/abstractstorage_8h" local="no">abstractstorage.h</includes>
+    <includedby refid="df/de3/abstractgroup_8h" local="no">src/include/abstractgroup.h</includedby>
+    <includedby refid="de/d16/abstractstorage_8h" local="no">src/include/abstractstorage.h</includedby>
+    <includedby refid="dc/d3e/include_2person_8h" local="no">src/include/person.h</includedby>
+    <incdepgraph>
+      <node id="923">
+        <label>string</label>
+      </node>
+      <node id="924">
+        <label>vector</label>
+      </node>
+      <node id="925">
+        <label>abstractstorage.h</label>
+        <link refid="de/d16/abstractstorage_8h"/>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+      </node>
+      <node id="922">
+        <label>src/include/storableobject.h</label>
+        <link refid="storableobject.h"/>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="925" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="932">
+        <label>src/include/abstractui.h</label>
+        <link refid="d1/d7a/abstractui_8h"/>
+      </node>
+      <node id="929">
+        <label>src/include/group.h</label>
+        <link refid="d3/d25/include_2group_8h"/>
+      </node>
+      <node id="927">
+        <label>src/include/abstractgroup.h</label>
+        <link refid="df/de3/abstractgroup_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+      </node>
+      <node id="931">
+        <label>src/include/abstractstorage.h</label>
+        <link refid="de/d16/abstractstorage_8h"/>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="926">
+        <label>src/include/storableobject.h</label>
+        <link refid="storableobject.h"/>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+      </node>
+      <node id="930">
+        <label>src/include/person.h</label>
+        <link refid="dc/d3e/include_2person_8h"/>
+        <childnode refid="927" relation="include">
+        </childnode>
+      </node>
+      <node id="928">
+        <label>src/include/event.h</label>
+        <link refid="d1/d8f/include_2event_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d4/deb/classStorage_1_1StorableObject" prot="public">Storage::StorableObject</innerclass>
+    <innernamespace refid="de/d4e/namespaceStorage">Storage</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Storage<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="d4/deb/classStorage_1_1StorableObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="9" refid="d4/deb/classStorage_1_1StorableObject_1a8d384f3e1d366a9f5aa2a8afa3cf96b3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">AbstractStorage</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>id_;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">AbstractStorage</ref>&amp;<sp/>storage_;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15" refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" kindref="member">id</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id_;<sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" kindref="member">get_field_int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" kindref="member">get_field_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" kindref="member">get_field_time</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" kindref="member">get_field_enum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref>&amp;<sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" kindref="member">get_field_object</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;StorableObject<sp/>*&gt;<sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" kindref="member">get_field_vector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" kindref="member">set_field</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" kindref="member">set_field</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>value);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" kindref="member">set_field</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>value);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" kindref="member">set_field_enum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" kindref="member">set_field</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref>&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" kindref="member">set_field_vector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;StorableObject<sp/>*&gt;&amp;<sp/>vector);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9" kindref="member">save</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151" kindref="member">load</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" kindref="member">StorableObject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">AbstractStorage</ref>&amp;<sp/>storage):<sp/>id_(id),<sp/>storage_(storage)<sp/>{}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="de/d16/abstractstorage_8h" kindref="compound">abstractstorage.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/include/storableobject.h"/>
+  </compounddef>
+</doxygen>

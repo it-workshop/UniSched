@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="df/de3/abstractgroup_8h" kind="file">
+    <compoundname>abstractgroup.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="d5/d07/storableobject_8h" local="no">storableobject.h</includes>
+    <includes refid="dc/d3e/include_2person_8h" local="no">person.h</includes>
+    <includedby refid="d1/d8f/include_2event_8h" local="no">src/include/event.h</includedby>
+    <includedby refid="d3/d25/include_2group_8h" local="no">src/include/group.h</includedby>
+    <includedby refid="dc/d3e/include_2person_8h" local="no">src/include/person.h</includedby>
+    <incdepgraph>
+      <node id="830">
+        <label>src/include/abstractgroup.h</label>
+        <link refid="abstractgroup.h"/>
+        <childnode refid="831" relation="include">
+        </childnode>
+        <childnode refid="832" relation="include">
+        </childnode>
+        <childnode refid="833" relation="include">
+        </childnode>
+        <childnode refid="835" relation="include">
+        </childnode>
+      </node>
+      <node id="831">
+        <label>string</label>
+      </node>
+      <node id="838">
+        <label>typeinfo</label>
+      </node>
+      <node id="832">
+        <label>vector</label>
+      </node>
+      <node id="834">
+        <label>abstractstorage.h</label>
+        <link refid="de/d16/abstractstorage_8h"/>
+        <childnode refid="831" relation="include">
+        </childnode>
+        <childnode refid="832" relation="include">
+        </childnode>
+        <childnode refid="833" relation="include">
+        </childnode>
+      </node>
+      <node id="833">
+        <label>storableobject.h</label>
+        <link refid="d5/d07/storableobject_8h"/>
+        <childnode refid="831" relation="include">
+        </childnode>
+        <childnode refid="832" relation="include">
+        </childnode>
+        <childnode refid="834" relation="include">
+        </childnode>
+      </node>
+      <node id="836">
+        <label>sstream</label>
+      </node>
+      <node id="837">
+        <label>usersobject.h</label>
+        <link refid="d2/dcb/usersobject_8h"/>
+        <childnode refid="831" relation="include">
+        </childnode>
+        <childnode refid="832" relation="include">
+        </childnode>
+        <childnode refid="838" relation="include">
+        </childnode>
+      </node>
+      <node id="835">
+        <label>person.h</label>
+        <link refid="dc/d3e/include_2person_8h"/>
+        <childnode refid="831" relation="include">
+        </childnode>
+        <childnode refid="836" relation="include">
+        </childnode>
+        <childnode refid="832" relation="include">
+        </childnode>
+        <childnode refid="833" relation="include">
+        </childnode>
+        <childnode refid="837" relation="include">
+        </childnode>
+        <childnode refid="830" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="841">
+        <label>src/include/group.h</label>
+        <link refid="d3/d25/include_2group_8h"/>
+      </node>
+      <node id="839">
+        <label>src/include/abstractgroup.h</label>
+        <link refid="abstractgroup.h"/>
+        <childnode refid="840" relation="include">
+        </childnode>
+        <childnode refid="841" relation="include">
+        </childnode>
+        <childnode refid="842" relation="include">
+        </childnode>
+      </node>
+      <node id="842">
+        <label>src/include/person.h</label>
+        <link refid="dc/d3e/include_2person_8h"/>
+        <childnode refid="839" relation="include">
+        </childnode>
+      </node>
+      <node id="840">
+        <label>src/include/event.h</label>
+        <link refid="d1/d8f/include_2event_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="dd/d68/classCore_1_1AbstractGroup" prot="public">Core::AbstractGroup</innerclass>
+    <innernamespace refid="d3/d7a/namespaceCore">Core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d5/d07/storableobject_8h" kindref="compound">storableobject.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dc/d3e/include_2person_8h" kindref="compound">person.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="d3/d7a/namespaceCore" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Core<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="dd/d68/classCore_1_1AbstractGroup" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Storage::StorableObject,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>UI::UsersObject<sp/>{</highlight></codeline>
+<codeline lineno="12" refid="dd/d68/classCore_1_1AbstractGroup_1a2697825715974a353728f0d4d5658112" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d2/d30/classCore_1_1Group" kindref="compound" tooltip="Class keeps information about group of people.">Group</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>name_;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AbstractGroup<sp/>*&gt;<sp/>child_groups_;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;class<sp/>Person<sp/>*&gt;<sp/>people_;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="dd/d68/classCore_1_1AbstractGroup_1abf219d714e6a17d5e712b2fcb60395d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1abf219d714e6a17d5e712b2fcb60395d2" kindref="member">add_child</ref>(<ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref><sp/>*<sp/><ref refid="dc/db3/group__content_8h_1a27517aa1480ab2d9bfe5d62e693b33eb" kindref="member">group</ref>)<sp/>{<sp/>child_groups_.push_back(group);<sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1aa81866b9c414c24d25ca26311b4b4330" kindref="member">del_child</ref>(<ref refid="dd/d68/classCore_1_1AbstractGroup" kindref="compound">AbstractGroup</ref><sp/>*<sp/><ref refid="dc/db3/group__content_8h_1a27517aa1480ab2d9bfe5d62e693b33eb" kindref="member">group</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1ab8cc5ad1c04d67c24af785f9adb2d67c" kindref="member">save</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1ace41b51dd585a95b61990b69f078a283" kindref="member">load</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" kindref="member">AbstractGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref>&amp;<sp/>storage):</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" kindref="member">StorableObject</ref>(id,<sp/>storage)<sp/>{}</highlight></codeline>
+<codeline lineno="30" refid="dd/d68/classCore_1_1AbstractGroup_1a2b6c9e7b2d618019fe626d28a53ddd06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a9d5c82db4ed051f674e6a3f5586ad5e0" kindref="member">AbstractGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">Storage::AbstractStorage</ref>&amp;<sp/>storage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" kindref="member">StorableObject</ref>(id,<sp/>storage),<sp/>name_(name)<sp/>{}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>name_;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1acbc75be98b4a9b9ceab55967124c0351" kindref="member">add_person</ref>(<ref refid="d9/d71/classCore_1_1Person" kindref="compound" tooltip="Class keeps person unique data.">Person</ref><sp/>*<sp/><ref refid="dc/db3/group__content_8h_1ab8664e6fd42f01eeaad084b5e20eb54e" kindref="member">person</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a378e2ab0f4db0a47906c4341846a143b" kindref="member">del_person</ref>(<ref refid="d9/d71/classCore_1_1Person" kindref="compound" tooltip="Class keeps person unique data.">Person</ref><sp/>*<sp/><ref refid="dc/db3/group__content_8h_1ab8664e6fd42f01eeaad084b5e20eb54e" kindref="member">person</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a0306b58e715d164aef3e29de0ec659bd" kindref="member">read</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a7e15ec9b621230659a5ca2f0be724d83" kindref="member">read_int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a907fc505a7f7828fcd2e7f6eaf5e27cd" kindref="member">read_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1af52530d29e3b8f0047a0c0675dc6c912" kindref="member">read_time</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a2f373e90feaad172563c6256ae30a6a6" kindref="member">read_enum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;UI::UsersObject<sp/>*&gt;<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1ab582f4364426a152875742278ba0d999" kindref="member">read_vector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" kindref="member">update</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" kindref="member">update</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>value)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" kindref="member">update</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>value)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a1f379a7c4d54b49db4d20127521a238a" kindref="member">update_enum</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a139cc0a6451f2dbca1f74d96f28741f0" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>value)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d68/classCore_1_1AbstractGroup_1a18d88f5abb55fa9c829bf6600be58c90" kindref="member">update</ref>(<ref refid="df/d0b/classUI_1_1UsersObject" kindref="compound">UI::UsersObject</ref><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>linked)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>(std::bad_cast);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/include/abstractgroup.h"/>
+  </compounddef>
+</doxygen>

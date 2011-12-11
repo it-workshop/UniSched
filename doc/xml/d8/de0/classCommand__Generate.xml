@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d8/de0/classCommand__Generate" kind="class" prot="public">
+    <compoundname>Command_Generate</compoundname>
+    <includes refid="d5/d90/commands_8h" local="no">commands.h</includes>
+    <briefdescription>
+<para>Class of ,,generate @(id) (begin)`` command. </para>    </briefdescription>
+    <detaileddescription>
+<para>* class <ref refid="d8/de0/classCommand__Generate" kindref="compound">Command_Generate</ref>: protected Command { public: Command_Generate(UserInterface *ui); *&lt; Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to <ref refid="df/de1/classUserInterface" kindref="compound">UserInterface</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+void run(vector&lt;string&gt; args); *&lt; Delete one object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector {&quot;generate&quot;, &quot;@(id)&quot;, &quot;(begin)&quot;}. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/commands.h" line="229"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

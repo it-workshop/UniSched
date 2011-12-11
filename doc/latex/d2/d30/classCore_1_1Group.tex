@@ -1,0 +1,151 @@
+\hypertarget{classCore_1_1Group}{
+\section{Core::Group Class Reference}
+\label{d2/d30/classCore_1_1Group}\index{Core::Group@{Core::Group}}
+}
+
+
+Class keeps information about group of people.  
+
+
+
+
+{\ttfamily \#include $<$group.h$>$}
+
+Inheritance diagram for Core::Group:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d2/d30/classCore_1_1Group}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1Group_a39511a091570283cb5fb2a4b8f0a841a}{Group} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage)
+\item 
+void \hyperlink{classCore_1_1Group_a05760e4e45ae6fec2674d216f0a5a6e9}{add\_\-parent\_\-group} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+void \hyperlink{classCore_1_1Group_a93e4626dde0f84e68f1460e557daaed0}{del\_\-parent\_\-group} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+\item 
+virtual const std::string \hyperlink{classCore_1_1Group_a5fe3fef1b6709f953e5487841d90bbb9}{read} () const 
+\begin{DoxyCompactList}\small\item\em Returns full object information. \item\end{DoxyCompactList}\item 
+virtual const std::vector$<$ \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$ $>$ \hyperlink{classCore_1_1Group_a52e48b1f92f6354b4e3a32d710b9c7b3}{read\_\-vector} (const std::string name) const   throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em Return vector value of requested field. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classCore_1_1Group_a12d2636d65f1baea3666bb492320b5c1}{update} (\hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$object, const bool linked)  throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em change current link value of field. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class keeps information about group of people. $<$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1Group_a39511a091570283cb5fb2a4b8f0a841a}{
+\index{Core::Group@{Core::Group}!Group@{Group}}
+\index{Group@{Group}!Core::Group@{Core::Group}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}Core::Group::Group (
+\begin{DoxyParamCaption}
+\item[{const int}]{id, }
+\item[{{\bf Storage::AbstractStorage} \&}]{storage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d2/d30/classCore_1_1Group_a39511a091570283cb5fb2a4b8f0a841a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1Group_a05760e4e45ae6fec2674d216f0a5a6e9}{
+\index{Core::Group@{Core::Group}!add\_\-parent\_\-group@{add\_\-parent\_\-group}}
+\index{add\_\-parent\_\-group@{add\_\-parent\_\-group}!Core::Group@{Core::Group}}
+\subsubsection[{add\_\-parent\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Group::add\_\-parent\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf AbstractGroup} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d2/d30/classCore_1_1Group_a05760e4e45ae6fec2674d216f0a5a6e9}
+\hypertarget{classCore_1_1Group_a93e4626dde0f84e68f1460e557daaed0}{
+\index{Core::Group@{Core::Group}!del\_\-parent\_\-group@{del\_\-parent\_\-group}}
+\index{del\_\-parent\_\-group@{del\_\-parent\_\-group}!Core::Group@{Core::Group}}
+\subsubsection[{del\_\-parent\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void Group::del\_\-parent\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf AbstractGroup} $\ast$}]{group}
+\end{DoxyParamCaption}
+)}}
+\label{d2/d30/classCore_1_1Group_a93e4626dde0f84e68f1460e557daaed0}
+\hypertarget{classCore_1_1Group_a5fe3fef1b6709f953e5487841d90bbb9}{
+\index{Core::Group@{Core::Group}!read@{read}}
+\index{read@{read}!Core::Group@{Core::Group}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Group::read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d2/d30/classCore_1_1Group_a5fe3fef1b6709f953e5487841d90bbb9}
+
+
+Returns full object information. 
+
+\begin{DoxyReturn}{Returns}
+Object`s information in the string.
+\end{DoxyReturn}
+Method declared in the \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} use to retrive all information about object.
+
+Inherited classes must to redefine and call this one. 
+
+Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}{Core::AbstractGroup}.
+
+\hypertarget{classCore_1_1Group_a52e48b1f92f6354b4e3a32d710b9c7b3}{
+\index{Core::Group@{Core::Group}!read\_\-vector@{read\_\-vector}}
+\index{read\_\-vector@{read\_\-vector}!Core::Group@{Core::Group}}
+\subsubsection[{read\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ {\bf UI::UsersObject} $\ast$ $>$ Group::read\_\-vector (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d2/d30/classCore_1_1Group_a52e48b1f92f6354b4e3a32d710b9c7b3}
+
+
+Return vector value of requested field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of field which must be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector value of requested field.
+\end{DoxyReturn}
+Use this for child\_\-groups and people fields. Throws exception in the other cases. 
+
+Reimplemented from \hyperlink{classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999}{Core::AbstractGroup}.
+
+\hypertarget{classCore_1_1Group_a12d2636d65f1baea3666bb492320b5c1}{
+\index{Core::Group@{Core::Group}!update@{update}}
+\index{update@{update}!Core::Group@{Core::Group}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Group::update (
+\begin{DoxyParamCaption}
+\item[{{\bf UI::UsersObject} $\ast$}]{object, }
+\item[{const bool}]{linked}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{d2/d30/classCore_1_1Group_a12d2636d65f1baea3666bb492320b5c1}
+
+
+change current link value of field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object link with that must be changed. \\
+\hline
+{\em linked} & New state of thi link.\\
+\hline
+\end{DoxyParams}
+This method tries to add or delete object to the group as the \hyperlink{classCore_1_1Person}{Person}. dynamic\_\-cast will throw std::bad\_\-cast if object is not \hyperlink{classCore_1_1Person}{Person}.
+
+You can not set child group by this method use redefined method in \hyperlink{classCore_1_1Group}{Group} class to add parent group. 
+
+Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54dbb8}{Core::AbstractGroup}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{include_2group_8h}{group.h}\item 
+src/core/\hyperlink{core_2group_8cpp}{group.cpp}\end{DoxyCompactItemize}

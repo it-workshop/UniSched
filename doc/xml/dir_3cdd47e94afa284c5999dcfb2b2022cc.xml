@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="dir_3cdd47e94afa284c5999dcfb2b2022cc" kind="dir">
+    <compoundname>src/core/</compoundname>
+    <innerfile refid="dd/da0/abstractgroup_8cpp">abstractgroup.cpp</innerfile>
+    <innerfile refid="d2/d72/core_2event_8cpp">event.cpp</innerfile>
+    <innerfile refid="db/d77/core_2group_8cpp">group.cpp</innerfile>
+    <innerfile refid="d8/d2c/core_2person_8cpp">person.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/core/"/>
+  </compounddef>
+</doxygen>

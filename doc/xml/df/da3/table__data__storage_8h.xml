@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="df/da3/table__data__storage_8h" kind="file">
+    <compoundname>table_data_storage.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="d9/d49/types_8h" local="yes">types.h</includes>
+    <includedby refid="d5/d2b/data__storage_8h" local="yes">src/data_storage.h</includedby>
+    <includedby refid="d9/d60/file__storage_8h" local="yes">src/file_storage.h</includedby>
+    <includedby refid="d6/dcc/table__data__storage_8cpp" local="yes">src/table_data_storage.cpp</includedby>
+    <incdepgraph>
+      <node id="1031">
+        <label>string</label>
+      </node>
+      <node id="1030">
+        <label>src/table_data_storage.h</label>
+        <link refid="table_data_storage.h"/>
+        <childnode refid="1031" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1033" relation="include">
+        </childnode>
+      </node>
+      <node id="1033">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="1032">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1041">
+        <label>src/main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="1035">
+        <label>src/data_storage.h</label>
+        <link refid="d5/d2b/data__storage_8h"/>
+        <childnode refid="1036" relation="include">
+        </childnode>
+        <childnode refid="1058" relation="include">
+        </childnode>
+        <childnode refid="1059" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+      </node>
+      <node id="1043">
+        <label>src/command_clone.cpp</label>
+        <link refid="d8/deb/command__clone_8cpp"/>
+      </node>
+      <node id="1047">
+        <label>src/command_exclude.cpp</label>
+        <link refid="d6/d72/command__exclude_8cpp"/>
+      </node>
+      <node id="1040">
+        <label>src/event_template.cpp</label>
+        <link refid="d1/d6f/event__template_8cpp"/>
+      </node>
+      <node id="1052">
+        <label>src/command_link.cpp</label>
+        <link refid="dc/d5f/command__link_8cpp"/>
+      </node>
+      <node id="1050">
+        <label>src/command_help.cpp</label>
+        <link refid="d8/d4a/command__help_8cpp"/>
+      </node>
+      <node id="1036">
+        <label>src/userinterface.h</label>
+        <link refid="df/d52/userinterface_8h"/>
+        <childnode refid="1037" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+        <childnode refid="1057" relation="include">
+        </childnode>
+      </node>
+      <node id="1044">
+        <label>src/command_delete.cpp</label>
+        <link refid="d3/d58/command__delete_8cpp"/>
+      </node>
+      <node id="1055">
+        <label>src/command_select.cpp</label>
+        <link refid="d6/d5c/command__select_8cpp"/>
+      </node>
+      <node id="1034">
+        <label>src/table_data_storage.h</label>
+        <link refid="table_data_storage.h"/>
+        <childnode refid="1035" relation="include">
+        </childnode>
+        <childnode refid="1059" relation="include">
+        </childnode>
+        <childnode refid="1061" relation="include">
+        </childnode>
+      </node>
+      <node id="1037">
+        <label>src/commands.h</label>
+        <link refid="d5/d90/commands_8h"/>
+        <childnode refid="1038" relation="include">
+        </childnode>
+        <childnode refid="1036" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1042" relation="include">
+        </childnode>
+        <childnode refid="1043" relation="include">
+        </childnode>
+        <childnode refid="1044" relation="include">
+        </childnode>
+        <childnode refid="1045" relation="include">
+        </childnode>
+        <childnode refid="1046" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+        <childnode refid="1048" relation="include">
+        </childnode>
+        <childnode refid="1049" relation="include">
+        </childnode>
+        <childnode refid="1050" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1053" relation="include">
+        </childnode>
+        <childnode refid="1054" relation="include">
+        </childnode>
+        <childnode refid="1055" relation="include">
+        </childnode>
+        <childnode refid="1056" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+      </node>
+      <node id="1057">
+        <label>src/userinterface.cpp</label>
+        <link refid="d4/dcb/userinterface_8cpp"/>
+      </node>
+      <node id="1042">
+        <label>src/command_all.cpp</label>
+        <link refid="d7/d45/command__all_8cpp"/>
+      </node>
+      <node id="1058">
+        <label>src/data_storage.cpp</label>
+        <link refid="d6/d9a/data__storage_8cpp"/>
+      </node>
+      <node id="1046">
+        <label>src/command_enqueue.cpp</label>
+        <link refid="df/d57/command__enqueue_8cpp"/>
+      </node>
+      <node id="1038">
+        <label>src/command_add.cpp</label>
+        <link refid="d8/df6/command__add_8cpp"/>
+      </node>
+      <node id="1056">
+        <label>src/commands.cpp</label>
+        <link refid="d5/d77/commands_8cpp"/>
+      </node>
+      <node id="1061">
+        <label>src/table_data_storage.cpp</label>
+        <link refid="d6/dcc/table__data__storage_8cpp"/>
+      </node>
+      <node id="1059">
+        <label>src/file_storage.h</label>
+        <link refid="d9/d60/file__storage_8h"/>
+        <childnode refid="1060" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+      </node>
+      <node id="1051">
+        <label>src/command_include.cpp</label>
+        <link refid="df/da9/command__include_8cpp"/>
+      </node>
+      <node id="1039">
+        <label>src/event_template.h</label>
+        <link refid="d1/d38/event__template_8h"/>
+        <childnode refid="1035" relation="include">
+        </childnode>
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+      </node>
+      <node id="1054">
+        <label>src/command_print.cpp</label>
+        <link refid="df/d67/command__print_8cpp"/>
+      </node>
+      <node id="1048">
+        <label>src/command_exit.cpp</label>
+        <link refid="d6/db1/command__exit_8cpp"/>
+      </node>
+      <node id="1053">
+        <label>src/command_merge.cpp</label>
+        <link refid="de/d05/command__merge_8cpp"/>
+      </node>
+      <node id="1045">
+        <label>src/command_dequeue.cpp</label>
+        <link refid="d2/de0/command__dequeue_8cpp"/>
+      </node>
+      <node id="1049">
+        <label>src/command_generate.cpp</label>
+        <link refid="d6/d54/command__generate_8cpp"/>
+      </node>
+      <node id="1060">
+        <label>src/file_storage.cpp</label>
+        <link refid="de/d3e/file__storage_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="de/d6b/structstorage_1_1dsrow__" prot="public">storage::dsrow_</innerclass>
+    <innerclass refid="df/d87/classstorage_1_1TableDataStorage" prot="public">storage::TableDataStorage</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d49/types_8h" kindref="compound">types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::string;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::vector;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="de/d6b/structstorage_1_1dsrow__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="de/d6b/structstorage_1_1dsrow__" kindref="compound">storage::dsrow_</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="de/d6b/structstorage_1_1dsrow___1afd086e21b6eb76e655f91e8887ce6aff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/><ref refid="de/d6b/structstorage_1_1dsrow___1afd086e21b6eb76e655f91e8887ce6aff" kindref="member">fields</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="df/d87/classstorage_1_1TableDataStorage" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d87/classstorage_1_1TableDataStorage" kindref="compound">storage::TableDataStorage</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a91d68894f40a7ed48041d6da83bcbb6f" kindref="member">TableDataStorage</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a6e988f0e5213f79711eaa15dce114df4" kindref="member">~TableDataStorage</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a659685562ccafaa19e8f1e58ce6576c1" kindref="member">create_table</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fields_count);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a6f62b42d9309e7792f029d53b51816ba" kindref="member">add_row</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fields[]);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1ab2aee9b1629a1bd21daf490d85e39c29" kindref="member">rem_row</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a4366051dffb6a58c1c2d9c9b6bb5c4b0" kindref="member">get_cell_value</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>field);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a8562901c5f3864d68e8df2e68f334640" kindref="member">set_cell_value</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>field,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6be" kindref="member">Errors</ref><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a6b4bfe6422d92d6561b14e4c5b4bc423" kindref="member">get_last_error</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a6f3a1ad98a2018e095f6bbcffdfeb9a8" kindref="member">load_table</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a408e93fa9efee49c3809e4afcc0d58e0" kindref="member">save_table</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filename);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a6f3a1ad98a2018e095f6bbcffdfeb9a8" kindref="member">load_table</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>host,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>user,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pass,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>bdname);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a408e93fa9efee49c3809e4afcc0d58e0" kindref="member">save_table</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>host,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>user,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pass,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>bdname);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a49af804e3b872ae12f67d4d0b78ca7ab" kindref="member">get_rows_count</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="df/d87/classstorage_1_1TableDataStorage_1a2a1cad158e2c20292f9474403ca4c6ef" kindref="member">get_fields_count</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fields_count_;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows_count_;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d0/daa/namespacestorage_1aedd3c880e9744762de535deb2adcf6be" kindref="member">Errors</ref><sp/>error_;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;dsrow&gt;<sp/>rows_;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/table_data_storage.h"/>
+  </compounddef>
+</doxygen>

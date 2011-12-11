@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d8/de5/person_8cpp" kind="file">
+    <compoundname>person.cpp</compoundname>
+    <includes refid="d4/d98/person_8h" local="yes">person.h</includes>
+    <incdepgraph>
+      <node id="479">
+        <label>person.h</label>
+        <link refid="d4/d98/person_8h"/>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+      <node id="487">
+        <label>calendar.h</label>
+        <link refid="da/d4a/calendar_8h"/>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+      <node id="488">
+        <label>event.h</label>
+        <link refid="dd/d20/event_8h"/>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="480">
+        <label>string</label>
+      </node>
+      <node id="485">
+        <label>group.h</label>
+        <link refid="d9/dd1/group_8h"/>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="478">
+        <label>src/person.cpp</label>
+        <link refid="person.cpp"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="483">
+        <label>types.h</label>
+        <link refid="d9/d49/types_8h"/>
+      </node>
+      <node id="481">
+        <label>vector</label>
+      </node>
+      <node id="482">
+        <label>time.h</label>
+      </node>
+      <node id="486">
+        <label>iostream</label>
+      </node>
+      <node id="484">
+        <label>group_content.h</label>
+        <link refid="dc/db3/group__content_8h"/>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d4/d98/person_8h" kindref="compound">person.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="d1/d63/classPerson_1a3f28ee718c6ed2692ecf767ed1b2a86f" kindref="member">Person::Person</ref>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>std::string<sp/>name,<sp/>std::string<sp/>surname,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1a328ea8d2e8c2674688c7f944fab70b6b" kindref="member">Person::Sex</ref><sp/>sex,<sp/>time_t<sp/>birthday)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">:<sp/>id_<sp/>(id),</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/>name_<sp/>(name),</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/>surname_<sp/>(surname),</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/>sex_<sp/>(sex),</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/>birthday_<sp/>(birthday)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="d1/d63/classPerson_1a700ffd693321c5fe6880262acf43d4da" kindref="member">Person::~Person</ref>()</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;Group_Content<sp/>*&gt;::iterator<sp/>it<sp/>=<sp/>groups_.begin();<sp/>it<sp/>!=<sp/>groups_.end();<sp/>it<sp/>++)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*it)-&gt;group-&gt;delete_person(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/><ref refid="d1/d63/classPerson_1addbe4758044124636fb0f9d3094c6fcb" kindref="member">Person::get_id</ref>()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id_;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1ab71f6c7ca2abd23309282a7a93b4d639" kindref="member">Person::set_id</ref>(<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>id_<sp/>=<sp/>id;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">std::string<sp/><ref refid="d1/d63/classPerson_1a1837ca2f4ba804aeee2a70c1a1fdd468" kindref="member">Person::get_name</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>name_;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">std::string<sp/><ref refid="d1/d63/classPerson_1aad33f79ec5c96aa3ab30c9c4c989fb4b" kindref="member">Person::get_surname</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>surname_;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">std::vector&lt;Group_Content*&gt;<sp/>*<ref refid="d1/d63/classPerson_1a24cd3ad56c42c1cd34505b1094e6e7d5" kindref="member">Person::get_groups</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;groups_;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1aa17159e6bb16f2a42a1c4bcae08ae903" kindref="member">Person::add_group</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="d9/d96/structGroup__Content__" kindref="compound">Group_Content_</ref><sp/>*adding)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>groups_.push_back(adding);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1a93dfe7e17e0316b1f7dddebf5fd3f7ce" kindref="member">Person::delete_group</ref>(<ref refid="d0/db7/classGroup" kindref="compound" tooltip="Class keeps information about group of people.">Group</ref><sp/>*deleting)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;Group_Content*&gt;::iterator<sp/>it<sp/>=<sp/>groups_.begin();<sp/>it<sp/>!=<sp/>groups_.end();<sp/>it<sp/>++)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*it)-&gt;group<sp/>==<sp/>deleting)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>groups_.erase(it);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1a328ea8d2e8c2674688c7f944fab70b6b" kindref="member">Person::Sex</ref><sp/><ref refid="d1/d63/classPerson_1ae73331abe20c0f03fcb04de8a6adde46" kindref="member">Person::sex</ref>()</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sex_;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">time_t<sp/><ref refid="d1/d63/classPerson_1aec14dd73ca58227cc70c4ba3a5065d02" kindref="member">Person::birthday</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>birthday_;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*<ref refid="d1/d63/classPerson_1abaaac95db5394d3ad78ad08221b1d231" kindref="member">Person::get_calendar</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref><sp/>*all<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="dd/dac/classCalendar" kindref="compound" tooltip="Class keeps information about calendar.">Calendar</ref>((<ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref>)0);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;Group_Content<sp/>*&gt;::iterator<sp/>it<sp/>=<sp/>groups_.begin();<sp/>it<sp/>!=<sp/>groups_.end();<sp/>it<sp/>++)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>all-&gt;<ref refid="dd/dac/classCalendar_1a9ed5161b06c2a2acc8e5febbeeeb39b0" kindref="member">merge_calendar</ref>((*it)-&gt;group-&gt;get_calendar());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>all;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1a57689e959d613756a806e5d32654d3e8" kindref="member">Person::add_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*adding,<sp/>std::string<sp/><ref refid="dc/db3/group__content_8h_1ab4d38e7365d935f2a5f1403eec29127e" kindref="member">status</ref>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>adding-&gt;<ref refid="d5/da5/classEvent_1a77077d8d27027113b2e20b4374a00a61" kindref="member">add_person</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>status);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d1/d63/classPerson_1ab788997b3b66a72e51f924d416029ff5" kindref="member">Person::delete_event</ref>(<ref refid="d5/da5/classEvent" kindref="compound" tooltip="Class keeps information about event.">Event</ref><sp/>*deleting)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>deleting-&gt;<ref refid="d5/da5/classEvent_1a5e071ee79b9ac9520fa5f26d763ce662" kindref="member">delete_person</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alex/code/UniSched/src/person.cpp"/>
+  </compounddef>
+</doxygen>

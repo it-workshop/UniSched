@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d4/deb/classStorage_1_1StorableObject" kind="class" prot="public">
+    <compoundname>Storage::StorableObject</compoundname>
+    <derivedcompoundref refid="dd/d68/classCore_1_1AbstractGroup" prot="public" virt="non-virtual">Core::AbstractGroup</derivedcompoundref>
+    <derivedcompoundref refid="d9/d71/classCore_1_1Person" prot="public" virt="non-virtual">Core::Person</derivedcompoundref>
+    <includes refid="d5/d07/storableobject_8h" local="no">storableobject.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d4/deb/classStorage_1_1StorableObject_1a8d384f3e1d366a9f5aa2a8afa3cf96b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class AbstractStorage</definition>
+        <argsstring></argsstring>
+        <name>AbstractStorage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="9" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/deb/classStorage_1_1StorableObject_1aca982c8da56f09f642afa8ab64662942" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Storage::StorableObject::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="11" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/deb/classStorage_1_1StorableObject_1a04a699f3ac3e266fab9e7ef36a5c70dc" prot="private" static="no" mutable="no">
+        <type>class <ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">AbstractStorage</ref> &amp;</type>
+        <definition>class AbstractStorage&amp; Storage::StorableObject::storage_</definition>
+        <argsstring></argsstring>
+        <name>storage_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="12" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int Storage::StorableObject::id</definition>
+        <argsstring>() const </argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="15" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int StorableObject::get_field_int</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_int</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="17" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="5" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string StorableObject::get_field_string</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_string</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="18" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const time_t</type>
+        <definition>const time_t StorableObject::get_field_time</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_time</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="19" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string StorableObject::get_field_enum</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_enum</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="20" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref> &amp;</type>
+        <definition>const StorableObject &amp; StorableObject::get_field_object</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_object</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="21" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref> * &gt;</type>
+        <definition>std::vector&lt; StorableObject * &gt; StorableObject::get_field_vector</definition>
+        <argsstring>(const std::string name) const </argsstring>
+        <name>get_field_vector</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="22" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field</definition>
+        <argsstring>(const std::string name, const int value)</argsstring>
+        <name>set_field</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="24" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a95c8d3440fa0ef6bce0f8d3bbac1f477" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field</definition>
+        <argsstring>(const std::string name, const std::string value)</argsstring>
+        <name>set_field</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="25" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1af16a9fb211fd421a5aa89d741a67c2fb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field</definition>
+        <argsstring>(const std::string name, const time_t value)</argsstring>
+        <name>set_field</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const time_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="26" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field_enum</definition>
+        <argsstring>(const std::string name, const std::string)</argsstring>
+        <name>set_field_enum</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="27" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a97dd82cb4f99d421e84e3bac17dc8c8b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field</definition>
+        <argsstring>(const std::string name, const StorableObject &amp;value)</argsstring>
+        <name>set_field</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="28" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StorableObject::set_field_vector</definition>
+        <argsstring>(const std::string name, const std::vector&lt; StorableObject * &gt; &amp;vector)</argsstring>
+        <name>set_field_vector</name>
+        <param>
+          <type>const std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="d4/deb/classStorage_1_1StorableObject" kindref="compound">StorableObject</ref> * &gt; &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="29" bodyfile="/home/alex/code/UniSched/src/storage/storableobject.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Storage::StorableObject::save</definition>
+        <argsstring>()=0</argsstring>
+        <name>save</name>
+        <reimplementedby refid="d9/d71/classCore_1_1Person_1a846fa55a79f6da0258d711adc88a1a30">save</reimplementedby>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a88deac78fd6b251e9854f6f42a772be1">save</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a6dbea64bf650e7e36d55539cf59a66e7">save</reimplementedby>
+        <reimplementedby refid="dd/d68/classCore_1_1AbstractGroup_1ab8cc5ad1c04d67c24af785f9adb2d67c">save</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="31"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Storage::StorableObject::load</definition>
+        <argsstring>()=0</argsstring>
+        <name>load</name>
+        <reimplementedby refid="d9/d71/classCore_1_1Person_1ae88c1b9c89b03ac7f4ba3ddcff4c62a7">load</reimplementedby>
+        <reimplementedby refid="d2/d30/classCore_1_1Group_1a8fa43f7c7fb91a1840b5839b91aae500">load</reimplementedby>
+        <reimplementedby refid="d9/d42/classCore_1_1Event_1a63462f7c20234f5c7f18e9c5e19d72b9">load</reimplementedby>
+        <reimplementedby refid="dd/d68/classCore_1_1AbstractGroup_1ace41b51dd585a95b61990b69f078a283">load</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Storage::StorableObject::StorableObject</definition>
+        <argsstring>(const int id, AbstractStorage &amp;storage)</argsstring>
+        <name>StorableObject</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/da0/classStorage_1_1AbstractStorage" kindref="compound">AbstractStorage</ref> &amp;</type>
+          <declname>storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="36" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="362">
+        <label>Core::Event</label>
+        <link refid="d9/d42/classCore_1_1Event"/>
+        <childnode refid="361" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="364">
+        <label>Core::Person</label>
+        <link refid="d9/d71/classCore_1_1Person"/>
+        <childnode refid="360" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="360">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+      </node>
+      <node id="361">
+        <label>Core::AbstractGroup</label>
+        <link refid="dd/d68/classCore_1_1AbstractGroup"/>
+        <childnode refid="360" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="363">
+        <label>Core::Group</label>
+        <link refid="d2/d30/classCore_1_1Group"/>
+        <childnode refid="361" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="366">
+        <label>Storage::AbstractStorage</label>
+        <link refid="d6/da0/classStorage_1_1AbstractStorage"/>
+      </node>
+      <node id="365">
+        <label>Storage::StorableObject</label>
+        <link refid="d4/deb/classStorage_1_1StorableObject"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>storage_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/include/storableobject.h" line="8" bodyfile="/home/alex/code/UniSched/src/include/storableobject.h" bodystart="8" bodyend="37"/>
+    <listofallmembers>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a8d384f3e1d366a9f5aa2a8afa3cf96b3" prot="private" virt="non-virtual"><scope>Storage::StorableObject</scope><name>AbstractStorage</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1abcaf10bdc0f2db297c53cbd9ca0acd4d" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a11a172f37f8805453225be4fa98e87ae" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_int</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a1f48a3363218ebfe985149b33d072067" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_object</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a533b48a050009b86e376269e886d3eeb" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_string</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a8c4e071ed59d2cdd5d2a00806211b4e1" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_time</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ad6df389823d8f812e4c64994d440475b" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>get_field_vector</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ae3e389b184651f78594df7f83f944a2c" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>id</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1aca982c8da56f09f642afa8ab64662942" prot="private" virt="non-virtual"><scope>Storage::StorableObject</scope><name>id_</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ab92526b66762a9099d720cf28bfc4151" prot="protected" virt="pure-virtual"><scope>Storage::StorableObject</scope><name>load</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a85609f4a18b49c7e0eed0205ee6df5d9" prot="protected" virt="pure-virtual"><scope>Storage::StorableObject</scope><name>save</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a4c15433a6719f4036705d989828e4933" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a95c8d3440fa0ef6bce0f8d3bbac1f477" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1af16a9fb211fd421a5aa89d741a67c2fb" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a97dd82cb4f99d421e84e3bac17dc8c8b" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a14764d884ae0cfc51aab3c391423f781" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field_enum</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1adb46898ef1cc21af62eeff54a583e8d4" prot="protected" virt="non-virtual"><scope>Storage::StorableObject</scope><name>set_field_vector</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1ac55bb0a7b94a98ff8f14e4164150ecb0" prot="public" virt="non-virtual"><scope>Storage::StorableObject</scope><name>StorableObject</name></member>
+      <member refid="d4/deb/classStorage_1_1StorableObject_1a04a699f3ac3e266fab9e7ef36a5c70dc" prot="private" virt="non-virtual"><scope>Storage::StorableObject</scope><name>storage_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="db/d0b/structstorage_1_1QueueBunch__" kind="struct" prot="public">
+    <compoundname>storage::QueueBunch_</compoundname>
+    <includes refid="d5/d2b/data__storage_8h" local="no">data_storage.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/d0b/structstorage_1_1QueueBunch___1a2665693a394fa79076cf6983b91354a4" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type storage::QueueBunch_::QueueID</definition>
+        <argsstring></argsstring>
+        <name>QueueID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/data_storage.h" line="35" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d0b/structstorage_1_1QueueBunch___1ac4d1b2ea07850fa32ca7fceb5db12ff8" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type storage::QueueBunch_::GroupID</definition>
+        <argsstring></argsstring>
+        <name>GroupID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/data_storage.h" line="36" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/data_storage.h" line="34" bodyfile="/home/alex/code/UniSched/src/data_storage.h" bodystart="34" bodyend="37"/>
+    <listofallmembers>
+      <member refid="db/d0b/structstorage_1_1QueueBunch___1ac4d1b2ea07850fa32ca7fceb5db12ff8" prot="public" virt="non-virtual"><scope>storage::QueueBunch_</scope><name>GroupID</name></member>
+      <member refid="db/d0b/structstorage_1_1QueueBunch___1a2665693a394fa79076cf6983b91354a4" prot="public" virt="non-virtual"><scope>storage::QueueBunch_</scope><name>QueueID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

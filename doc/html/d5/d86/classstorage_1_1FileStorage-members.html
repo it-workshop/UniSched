@@ -29,6 +29,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -73,6 +74,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 This is the complete list of members for <a class="el" href="../../d8/da7/classstorage_1_1FileStorage.html">storage::FileStorage</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#adc094f1bdcad1fd0940c947d2b0529b9">calendars_</a></td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a22825d40495dae6a5df46d629fb26a3f">DataStorage</a>()</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#ac87846227576aff38920d4a0a56718b5">delete_calendar</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a92302162f0c37753f7acadfb82a951f4">delete_event</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a72e75a91ab796b9b219443da461928e4">delete_event_template</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#afdcd88ea1431926e2573ecbca72cf7a9">delete_group</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a16ec2023c236757fd8ff7abab2ecf74d">delete_person</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#ae4741645dcf5d1efd8bfbaa4422c929a">delete_queue</a>(id_type id)</td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a96b081918351159d88994b382f1b97e2">event_templates_</a></td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html#a16f699e52132096d7e8ec8d43c73ad1f">events_</a></td><td><a class="el" href="../../da/db4/classstorage_1_1DataStorage.html">storage::DataStorage</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="../../d8/da7/classstorage_1_1FileStorage.html#a3a88a71218e6e8cb6c7af942ac1daf47">FileStorage</a>()</td><td><a class="el" href="../../d8/da7/classstorage_1_1FileStorage.html">storage::FileStorage</a></td><td></td></tr>
@@ -112,7 +119,7 @@ This is the complete list of members for <a class="el" href="../../d8/da7/classs
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +128,7 @@ This is the complete list of members for <a class="el" href="../../d8/da7/classs
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Aug 18 2011 13:50:35 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 01:43:06 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

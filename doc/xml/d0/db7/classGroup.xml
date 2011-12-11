@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d0/db7/classGroup" kind="class" prot="public">
+    <compoundname>Group</compoundname>
+    <includes refid="d9/dd1/group_8h" local="no">group.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/db7/classGroup_1a431c8971f3da64265d5b0c35e777bdff" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type Group::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group&apos;s identificator in the database. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="21" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db7/classGroup_1a59dee0a4ab9aceb52091ffdcd7d9c6f2" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Group::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group&apos;s name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="22" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db7/classGroup_1aed2309f3d03fd376e02f30cb000520ed" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Group::description_</definition>
+        <argsstring></argsstring>
+        <name>description_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group&apos;s description. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="23" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db7/classGroup_1a5c8f86e031ec6f9007874988a78dae05" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d2/d04/structGroup__Content" kindref="compound">Group_Content</ref> * &gt;</type>
+        <definition>vector&lt;Group_Content *&gt; Group::people_</definition>
+        <argsstring></argsstring>
+        <name>people_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>People in this group. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="24" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db7/classGroup_1a3b0eb8097769110ef54f76895a1a647d" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> *</type>
+        <definition>Calendar* Group::calendar_</definition>
+        <argsstring></argsstring>
+        <name>calendar_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group&apos;s calendar. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="25" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/db7/classGroup_1ae2cf7fd2aae55c47454fa3072ccc45f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Group::Group</definition>
+        <argsstring>(id_type id, string name, string description)</argsstring>
+        <name>Group</name>
+        <param>
+          <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Group&apos;s identificator in the database. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Group&apos;s name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">description</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Group&apos;s description. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a4b68e3ee36ef3270af3ecfae4b043c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Group::Group</definition>
+        <argsstring>(Group *group)</argsstring>
+        <name>Group</name>
+        <param>
+          <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> from which get information. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="36" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="11" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1aed00a22ff227ee2657ae44a5cbcedf7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Group::~Group</definition>
+        <argsstring>()</argsstring>
+        <name>~Group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="37" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1aab2e4ec29eda3a490dede01eb9411f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>std::string Group::get_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get group&apos;s name. <simplesect kind="return"><para>Group&apos;s name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="41" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1abdd86767799c3c3b6d2f7204b1945bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type Group::get_id</definition>
+        <argsstring>()</argsstring>
+        <name>get_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get group&apos;s identificator. <simplesect kind="return"><para>Group&apos;s identificator. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="44" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a1b7657c13a5cad2a8ad931c8fed8ecfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::set_id</definition>
+        <argsstring>(id_type id)</argsstring>
+        <name>set_id</name>
+        <param>
+          <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set Group&apos;s id. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Group&apos;s id. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="47" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1ade4eb90fbeb5f50dfb2ccb262cd39ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>std::string Group::get_description</definition>
+        <argsstring>()</argsstring>
+        <name>get_description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get group&apos;s description. <simplesect kind="return"><para>Group&apos;s description. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="50" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a10f85a428de5c1215fd7d319bd1a9ca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> *</type>
+        <definition>Calendar * Group::get_calendar</definition>
+        <argsstring>()</argsstring>
+        <name>get_calendar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get group&apos;s calendar. <simplesect kind="return"><para>Group&apos;s calendar. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="53" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1abea5d93d27820a64c84792e3011f1394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::add_event</definition>
+        <argsstring>(Event *event, string status)</argsstring>
+        <name>add_event</name>
+        <param>
+          <type><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add event to the group&apos;s calendar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> to add. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Status of link. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="57" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="105" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a70b5f6f47818f5d4912926b29faa96bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::delete_event</definition>
+        <argsstring>(Event *event)</argsstring>
+        <name>delete_event</name>
+        <param>
+          <type><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete event from group&apos;s calendar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d5/da5/classEvent" kindref="compound">Event</ref> to delete. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="60" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a8578c69459be6971dd31e76357f934dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="d2/d04/structGroup__Content" kindref="compound">Group_Content</ref> * &gt; *</type>
+        <definition>std::vector&lt; Group_Content * &gt; * Group::get_people</definition>
+        <argsstring>()</argsstring>
+        <name>get_people</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get group&apos;s people. <simplesect kind="return"><para>group&apos;s people. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="65" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a2aca17525330aeaf591e0bc243a8149e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::merge_group</definition>
+        <argsstring>(Group *group)</argsstring>
+        <name>merge_group</name>
+        <param>
+          <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Merge group with this. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> to merge. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="68" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="62" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1a7fccd60929bd2e36db09fe37fffe0548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::exclude_group</definition>
+        <argsstring>(Group *group)</argsstring>
+        <name>exclude_group</name>
+        <param>
+          <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exclude group from this. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> to exclude. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="71" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1ac753fa2674ec19ab156645f978654961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::include_group</definition>
+        <argsstring>(Group *group)</argsstring>
+        <name>include_group</name>
+        <param>
+          <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Select includes in group. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> to include. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="74" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="74" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1afc2080f42e091f6831fd9d80e7b8f0d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::add_person</definition>
+        <argsstring>(Person *person, string status)</argsstring>
+        <name>add_person</name>
+        <param>
+          <type><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add person to the group. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> to add. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s status in this group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="79"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db7/classGroup_1ad00847c4219c29fd3b94c6784870b629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::delete_person</definition>
+        <argsstring>(Person *person)</argsstring>
+        <name>delete_person</name>
+        <param>
+          <type><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete person from group. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> to delete. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/group.h" line="82" bodyfile="/home/alex/code/UniSched/src/group.cpp" bodystart="117" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class keeps information about group of people. </para>    </briefdescription>
+    <detaileddescription>
+<para>&lt; </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="318">
+        <label>Calendar</label>
+        <link refid="dd/dac/classCalendar"/>
+        <childnode refid="319" relation="usage">
+          <edgelabel>events_</edgelabel>
+        </childnode>
+      </node>
+      <node id="317">
+        <label>string</label>
+      </node>
+      <node id="316">
+        <label>vector&lt; Group_Content * &gt;</label>
+      </node>
+      <node id="315">
+        <label>Group</label>
+        <link refid="d0/db7/classGroup"/>
+        <childnode refid="316" relation="usage">
+          <edgelabel>people_</edgelabel>
+        </childnode>
+        <childnode refid="317" relation="usage">
+          <edgelabel>description_</edgelabel>
+          <edgelabel>name_</edgelabel>
+        </childnode>
+        <childnode refid="318" relation="usage">
+          <edgelabel>calendar_</edgelabel>
+        </childnode>
+      </node>
+      <node id="319">
+        <label>vector&lt; Event * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/group.h" line="19" bodyfile="/home/alex/code/UniSched/src/group.h" bodystart="19" bodyend="83"/>
+    <listofallmembers>
+      <member refid="d0/db7/classGroup_1abea5d93d27820a64c84792e3011f1394" prot="public" virt="non-virtual"><scope>Group</scope><name>add_event</name></member>
+      <member refid="d0/db7/classGroup_1afc2080f42e091f6831fd9d80e7b8f0d9" prot="public" virt="non-virtual"><scope>Group</scope><name>add_person</name></member>
+      <member refid="d0/db7/classGroup_1a3b0eb8097769110ef54f76895a1a647d" prot="private" virt="non-virtual"><scope>Group</scope><name>calendar_</name></member>
+      <member refid="d0/db7/classGroup_1a70b5f6f47818f5d4912926b29faa96bf" prot="public" virt="non-virtual"><scope>Group</scope><name>delete_event</name></member>
+      <member refid="d0/db7/classGroup_1ad00847c4219c29fd3b94c6784870b629" prot="public" virt="non-virtual"><scope>Group</scope><name>delete_person</name></member>
+      <member refid="d0/db7/classGroup_1aed2309f3d03fd376e02f30cb000520ed" prot="private" virt="non-virtual"><scope>Group</scope><name>description_</name></member>
+      <member refid="d0/db7/classGroup_1a7fccd60929bd2e36db09fe37fffe0548" prot="public" virt="non-virtual"><scope>Group</scope><name>exclude_group</name></member>
+      <member refid="d0/db7/classGroup_1a10f85a428de5c1215fd7d319bd1a9ca3" prot="public" virt="non-virtual"><scope>Group</scope><name>get_calendar</name></member>
+      <member refid="d0/db7/classGroup_1ade4eb90fbeb5f50dfb2ccb262cd39ce8" prot="public" virt="non-virtual"><scope>Group</scope><name>get_description</name></member>
+      <member refid="d0/db7/classGroup_1abdd86767799c3c3b6d2f7204b1945bd3" prot="public" virt="non-virtual"><scope>Group</scope><name>get_id</name></member>
+      <member refid="d0/db7/classGroup_1aab2e4ec29eda3a490dede01eb9411f03" prot="public" virt="non-virtual"><scope>Group</scope><name>get_name</name></member>
+      <member refid="d0/db7/classGroup_1a8578c69459be6971dd31e76357f934dc" prot="public" virt="non-virtual"><scope>Group</scope><name>get_people</name></member>
+      <member refid="d0/db7/classGroup_1ae2cf7fd2aae55c47454fa3072ccc45f1" prot="public" virt="non-virtual"><scope>Group</scope><name>Group</name></member>
+      <member refid="d0/db7/classGroup_1a4b68e3ee36ef3270af3ecfae4b043c4c" prot="public" virt="non-virtual"><scope>Group</scope><name>Group</name></member>
+      <member refid="d0/db7/classGroup_1a431c8971f3da64265d5b0c35e777bdff" prot="private" virt="non-virtual"><scope>Group</scope><name>id_</name></member>
+      <member refid="d0/db7/classGroup_1ac753fa2674ec19ab156645f978654961" prot="public" virt="non-virtual"><scope>Group</scope><name>include_group</name></member>
+      <member refid="d0/db7/classGroup_1a2aca17525330aeaf591e0bc243a8149e" prot="public" virt="non-virtual"><scope>Group</scope><name>merge_group</name></member>
+      <member refid="d0/db7/classGroup_1a59dee0a4ab9aceb52091ffdcd7d9c6f2" prot="private" virt="non-virtual"><scope>Group</scope><name>name_</name></member>
+      <member refid="d0/db7/classGroup_1a5c8f86e031ec6f9007874988a78dae05" prot="private" virt="non-virtual"><scope>Group</scope><name>people_</name></member>
+      <member refid="d0/db7/classGroup_1a1b7657c13a5cad2a8ad931c8fed8ecfb" prot="public" virt="non-virtual"><scope>Group</scope><name>set_id</name></member>
+      <member refid="d0/db7/classGroup_1aed00a22ff227ee2657ae44a5cbcedf7c" prot="public" virt="non-virtual"><scope>Group</scope><name>~Group</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

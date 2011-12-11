@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d5/da5/classEvent" kind="class" prot="public">
+    <compoundname>Event</compoundname>
+    <includes refid="dd/d20/event_8h" local="no">event.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/da5/classEvent_1a12576f27897812783eb5c782a686d34d" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type Event::id_</definition>
+        <argsstring></argsstring>
+        <name>id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s identificator in the database. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="21" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1afa92ca7e9e238807797ebf07b9ce78b3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Event::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="22" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1a9abb6abe7b82e5ce77ae6acb74217960" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Event::description_</definition>
+        <argsstring></argsstring>
+        <name>description_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s description. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="23" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1a5e813e2d29ec25eee68b7386e7807d05" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t Event::begin_</definition>
+        <argsstring></argsstring>
+        <name>begin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s begin time. Number of seconds since the Epoch UNIX 1th Jan 1970, 00:00:00. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="24" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1ad0b789465a3f6217358a38c5dda2bc6a" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t Event::end_</definition>
+        <argsstring></argsstring>
+        <name>end_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s end time. Number of seconds since the Epoch UNIX 1th JAN 1970, 00:00:00. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="25" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1ae552aaa8077e421db35822fb065b8440" prot="private" static="no" mutable="no">
+        <type>class <ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+        <definition>class Group* Event::people_</definition>
+        <argsstring></argsstring>
+        <name>people_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s group. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="26" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da5/classEvent_1ac41c2abda9fb4c6c533838f6bf9a75cb" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> * &gt;</type>
+        <definition>vector&lt;Calendar *&gt; Event::related_calendars_</definition>
+        <argsstring></argsstring>
+        <name>related_calendars_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event&apos;s related calendars. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="27" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/da5/classEvent_1a150a1c9476acae579c6664d8736a59c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Event::Event</definition>
+        <argsstring>(id_type id, string name, time_t begin, time_t end, string description)</argsstring>
+        <name>Event</name>
+        <param>
+          <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s identificator in the database. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s begin time. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s end time. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">description</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s description. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="37" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="3" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a7704ec01ce91e673885792054214b3d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Event::~Event</definition>
+        <argsstring>()</argsstring>
+        <name>~Event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="38" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1aa82316746fdf73be1da9b5b8840f5e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+        <definition>id_type Event::get_id</definition>
+        <argsstring>()</argsstring>
+        <name>get_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s identificator. <simplesect kind="return"><para>Event&apos;s identificator in the database. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="42" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a69a17e50e894d6ef113b7895ff6d517f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Event::set_id</definition>
+        <argsstring>(id_type id)</argsstring>
+        <name>set_id</name>
+        <param>
+          <type><ref refid="d9/d49/types_8h_1a0b60c08a3ab1435cccc5643d32d8ccee" kindref="member">id_type</ref></type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set event&apos;s identificator in the database. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event&apos;s id. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="45" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a99325a5304e3b73cd4df1f356a185cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Event::get_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s name. <simplesect kind="return"><para>Event&apos;s name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="48" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a07fdb4a55424b028bfb64db3cea94c07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Event::get_description</definition>
+        <argsstring>()</argsstring>
+        <name>get_description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s description. <simplesect kind="return"><para>Event&apos;s description. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="51" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1aa0177bde2838d761774f6e9a50f1e76c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t Event::get_begin</definition>
+        <argsstring>()</argsstring>
+        <name>get_begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s begin time. <simplesect kind="return"><para>Event&apos;s begin time. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="54" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a25baaf84cc87da4b866f266f946c1d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t Event::get_end</definition>
+        <argsstring>()</argsstring>
+        <name>get_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s end time. <simplesect kind="return"><para>Event&apos;s end time. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="57" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a5736ec29101416a0358b709c964bf50d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/db7/classGroup" kindref="compound">Group</ref> *</type>
+        <definition>Group * Event::get_group</definition>
+        <argsstring>()</argsstring>
+        <name>get_group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s group. <simplesect kind="return"><para>Event&apos;s group. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="60" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1ab2329f2021caee686920d5ab2cfa8569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> * &gt; *</type>
+        <definition>vector&lt; Calendar * &gt; * Event::get_related_calendars</definition>
+        <argsstring>()</argsstring>
+        <name>get_related_calendars</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get event&apos;s related calendars. <simplesect kind="return"><para>Event&apos;s related calendars. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="63" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a1d59dc31b3358bb9d9d1e75cb735c6ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Event::add_related_calendar</definition>
+        <argsstring>(Calendar *calendar)</argsstring>
+        <name>add_related_calendar</name>
+        <param>
+          <type><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> *</type>
+          <declname>calendar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add related calendar to event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">calendar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="67" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1ac4bc91dab8ca340c58aed7c91a8376a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Event::delete_related_calendar</definition>
+        <argsstring>(Calendar *calendar)</argsstring>
+        <name>delete_related_calendar</name>
+        <param>
+          <type><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> *</type>
+          <declname>calendar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete related calendar from event. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">calendar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="dd/dac/classCalendar" kindref="compound">Calendar</ref> to delete. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="70" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="64" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a77077d8d27027113b2e20b4374a00a61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Event::add_person</definition>
+        <argsstring>(class Person *person, string status)</argsstring>
+        <name>add_person</name>
+        <param>
+          <type>class <ref refid="d1/d63/classPerson" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add person to the event&apos;s group. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> to add. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Person&apos;s status in the event&apos;s group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="74" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da5/classEvent_1a5e071ee79b9ac9520fa5f26d763ce662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Event::delete_person</definition>
+        <argsstring>(class Person *person)</argsstring>
+        <name>delete_person</name>
+        <param>
+          <type>class <ref refid="d1/d63/classPerson" kindref="compound">Person</ref> *</type>
+          <declname>person</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete person from the event&apos;s group. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">person</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d1/d63/classPerson" kindref="compound">Person</ref> to delete. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alex/code/UniSched/src/event.h" line="77" bodyfile="/home/alex/code/UniSched/src/event.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class keeps information about event. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="281">
+        <label>Event</label>
+        <link refid="d5/da5/classEvent"/>
+        <childnode refid="282" relation="usage">
+          <edgelabel>description_</edgelabel>
+          <edgelabel>name_</edgelabel>
+        </childnode>
+        <childnode refid="283" relation="usage">
+          <edgelabel>related_calendars_</edgelabel>
+        </childnode>
+        <childnode refid="284" relation="usage">
+          <edgelabel>people_</edgelabel>
+        </childnode>
+      </node>
+      <node id="286">
+        <label>Calendar</label>
+        <link refid="dd/dac/classCalendar"/>
+        <childnode refid="287" relation="usage">
+          <edgelabel>events_</edgelabel>
+        </childnode>
+      </node>
+      <node id="282">
+        <label>string</label>
+      </node>
+      <node id="285">
+        <label>vector&lt; Group_Content * &gt;</label>
+      </node>
+      <node id="284">
+        <label>Group</label>
+        <link refid="d0/db7/classGroup"/>
+        <childnode refid="285" relation="usage">
+          <edgelabel>people_</edgelabel>
+        </childnode>
+        <childnode refid="282" relation="usage">
+          <edgelabel>description_</edgelabel>
+          <edgelabel>name_</edgelabel>
+        </childnode>
+        <childnode refid="286" relation="usage">
+          <edgelabel>calendar_</edgelabel>
+        </childnode>
+      </node>
+      <node id="287">
+        <label>vector&lt; Event * &gt;</label>
+      </node>
+      <node id="283">
+        <label>vector&lt; Calendar * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alex/code/UniSched/src/event.h" line="19" bodyfile="/home/alex/code/UniSched/src/event.h" bodystart="19" bodyend="78"/>
+    <listofallmembers>
+      <member refid="d5/da5/classEvent_1a77077d8d27027113b2e20b4374a00a61" prot="public" virt="non-virtual"><scope>Event</scope><name>add_person</name></member>
+      <member refid="d5/da5/classEvent_1a1d59dc31b3358bb9d9d1e75cb735c6ef" prot="public" virt="non-virtual"><scope>Event</scope><name>add_related_calendar</name></member>
+      <member refid="d5/da5/classEvent_1a5e813e2d29ec25eee68b7386e7807d05" prot="private" virt="non-virtual"><scope>Event</scope><name>begin_</name></member>
+      <member refid="d5/da5/classEvent_1a5e071ee79b9ac9520fa5f26d763ce662" prot="public" virt="non-virtual"><scope>Event</scope><name>delete_person</name></member>
+      <member refid="d5/da5/classEvent_1ac4bc91dab8ca340c58aed7c91a8376a7" prot="public" virt="non-virtual"><scope>Event</scope><name>delete_related_calendar</name></member>
+      <member refid="d5/da5/classEvent_1a9abb6abe7b82e5ce77ae6acb74217960" prot="private" virt="non-virtual"><scope>Event</scope><name>description_</name></member>
+      <member refid="d5/da5/classEvent_1ad0b789465a3f6217358a38c5dda2bc6a" prot="private" virt="non-virtual"><scope>Event</scope><name>end_</name></member>
+      <member refid="d5/da5/classEvent_1a150a1c9476acae579c6664d8736a59c1" prot="public" virt="non-virtual"><scope>Event</scope><name>Event</name></member>
+      <member refid="d5/da5/classEvent_1aa0177bde2838d761774f6e9a50f1e76c" prot="public" virt="non-virtual"><scope>Event</scope><name>get_begin</name></member>
+      <member refid="d5/da5/classEvent_1a07fdb4a55424b028bfb64db3cea94c07" prot="public" virt="non-virtual"><scope>Event</scope><name>get_description</name></member>
+      <member refid="d5/da5/classEvent_1a25baaf84cc87da4b866f266f946c1d8f" prot="public" virt="non-virtual"><scope>Event</scope><name>get_end</name></member>
+      <member refid="d5/da5/classEvent_1a5736ec29101416a0358b709c964bf50d" prot="public" virt="non-virtual"><scope>Event</scope><name>get_group</name></member>
+      <member refid="d5/da5/classEvent_1aa82316746fdf73be1da9b5b8840f5e2d" prot="public" virt="non-virtual"><scope>Event</scope><name>get_id</name></member>
+      <member refid="d5/da5/classEvent_1a99325a5304e3b73cd4df1f356a185cfc" prot="public" virt="non-virtual"><scope>Event</scope><name>get_name</name></member>
+      <member refid="d5/da5/classEvent_1ab2329f2021caee686920d5ab2cfa8569" prot="public" virt="non-virtual"><scope>Event</scope><name>get_related_calendars</name></member>
+      <member refid="d5/da5/classEvent_1a12576f27897812783eb5c782a686d34d" prot="private" virt="non-virtual"><scope>Event</scope><name>id_</name></member>
+      <member refid="d5/da5/classEvent_1afa92ca7e9e238807797ebf07b9ce78b3" prot="private" virt="non-virtual"><scope>Event</scope><name>name_</name></member>
+      <member refid="d5/da5/classEvent_1ae552aaa8077e421db35822fb065b8440" prot="private" virt="non-virtual"><scope>Event</scope><name>people_</name></member>
+      <member refid="d5/da5/classEvent_1ac41c2abda9fb4c6c533838f6bf9a75cb" prot="private" virt="non-virtual"><scope>Event</scope><name>related_calendars_</name></member>
+      <member refid="d5/da5/classEvent_1a69a17e50e894d6ef113b7895ff6d517f" prot="public" virt="non-virtual"><scope>Event</scope><name>set_id</name></member>
+      <member refid="d5/da5/classEvent_1a7704ec01ce91e673885792054214b3d2" prot="public" virt="non-virtual"><scope>Event</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

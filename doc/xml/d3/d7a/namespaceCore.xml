@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="d3/d7a/namespaceCore" kind="namespace">
+    <compoundname>Core</compoundname>
+    <innerclass refid="dd/d68/classCore_1_1AbstractGroup" prot="public">Core::AbstractGroup</innerclass>
+    <innerclass refid="d9/d42/classCore_1_1Event" prot="public">Core::Event</innerclass>
+    <innerclass refid="d2/d30/classCore_1_1Group" prot="public">Core::Group</innerclass>
+    <innerclass refid="d9/d71/classCore_1_1Person" prot="public">Core::Person</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alex/code/UniSched/src/include/abstractgroup.h" line="9"/>
+  </compounddef>
+</doxygen>
