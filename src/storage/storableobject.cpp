@@ -22,7 +22,7 @@ const std::string StorableObject::get_field_enum (const std::string name) const
     return storage_.get_field_enum(id_, name);
 }
 
-const StorableObject& StorableObject::get_field_object (const std::string name) const
+const StorableObject * StorableObject::get_field_object (const std::string name) const
 {
     return storage_.get_field_object (id_, name);
 }
@@ -52,7 +52,7 @@ void StorableObject::set_field_enum(const std::string name, const std::string va
     storage_.set_field_enum(id_, name, value);
 }
 
-void StorableObject::set_field(const std::string name, const StorableObject& value)
+void StorableObject::set_field(const std::string name, StorableObject * value)
 {
     storage_.set_field(id_, name, value);
 }

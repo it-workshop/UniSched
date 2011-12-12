@@ -78,6 +78,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="Storage::AbstractStorage" -->
+<p>Abstract interface for storage.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../de/d16/abstractstorage_8h_source.html">abstractstorage.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Storage::AbstractStorage:</div>
@@ -94,32 +97,49 @@ Inheritance diagram for Storage::AbstractStorage:</div>
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">an auxiliary structure to make search query and create objects.  <a href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a73fd0acd5b0f71febf5254db391416c0">AbstractStorage</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a5d114117d4954e01fd650251b829fdbf">remove</a> (<a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *object)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a5d114117d4954e01fd650251b829fdbf">remove</a> (<a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *object)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove object from the storage.  <a href="#a5d114117d4954e01fd650251b829fdbf"></a><br/></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a108af124f19c0ae9a4a461aee6abc3ec">create</a> (std::vector&lt; const <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a> * &gt; &amp;parameters)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::vector<br class="typebreak"/>
-&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ac85363cc08204d6158d6f68d7c51764a">search</a> (std::vector&lt; <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a> * &gt; &amp;parameters)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a21ff57c954664abb78d1d658a1da7afa">object</a> (const int id) const </td></tr>
+&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a9304eea8cd6fffd77b1ccd26f85a061c">search</a> (std::vector&lt; <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a> * &gt; &amp;parameters)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Search objects by some parameters.  <a href="#a9304eea8cd6fffd77b1ccd26f85a061c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a21ff57c954664abb78d1d658a1da7afa">object</a> (const int id) const   throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return object by id.  <a href="#a21ff57c954664abb78d1d658a1da7afa"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a80a7e4ab87a0326aa8b5571b09d55eaa">get_field_int</a> (const int id, const std::string field) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ad12a3abb791ef5a696196c28e643ec22">get_field_string</a> (const int id, const std::string field) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a87fe8d51934ab2403758d905ef313272">get_field_time</a> (const int id, const std::string field) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acd7e88a005b6873632c7f20245e5f3f7">get_field_enum</a> (const int id, const std::string field) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ac795e31d42a58c501702f443259b4d43">get_field_object</a> (const int id, const std::string field) const =0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a80a7e4ab87a0326aa8b5571b09d55eaa">get_field_int</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return integer value of requested field.  <a href="#a80a7e4ab87a0326aa8b5571b09d55eaa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ad12a3abb791ef5a696196c28e643ec22">get_field_string</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return string value of requested field.  <a href="#ad12a3abb791ef5a696196c28e643ec22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a87fe8d51934ab2403758d905ef313272">get_field_time</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return time value of requested field.  <a href="#a87fe8d51934ab2403758d905ef313272"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acd7e88a005b6873632c7f20245e5f3f7">get_field_enum</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return enum value of requested field.  <a href="#acd7e88a005b6873632c7f20245e5f3f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#aaff107d1f51e456f26c03861beb0fff7">get_field_object</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return object value of requested field.  <a href="#aaff107d1f51e456f26c03861beb0fff7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const std::vector<br class="typebreak"/>
-&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10">get_field_vector</a> (const int id, const std::string field) const =0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c">set_field</a> (const int id, const std::string field, const int value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae5ee00e647f121b68ebada0f094058bc">set_field</a> (const int id, const std::string field, const std::string value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a50ee4a829bc067a9291a11aa99ec0f16">set_field</a> (const int id, const std::string field, const time_t value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a50925678c74c09acd8549a541fdbbe9f">set_field_enum</a> (const int id, const std::string field, const std::string value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a3a92c35a35f7c2d798f5455ec8156d15">set_field</a> (const int id, const std::string field, const <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> &amp;value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39">set_field_vector</a> (const int id, const std::string field, const std::vector&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt; vector)=0</td></tr>
+&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10">get_field_vector</a> (const int id, const std::string field) const =0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return vector value of requested field.  <a href="#ae7c30697d68dc9d7de595388030d8e10"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c">set_field</a> (const int id, const std::string field, const int value)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set integer value of requested field.  <a href="#acdd090d0beb6a8241914e7d78a7f2c0c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae5ee00e647f121b68ebada0f094058bc">set_field</a> (const int id, const std::string field, const std::string value)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set string value of requested field.  <a href="#ae5ee00e647f121b68ebada0f094058bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a50ee4a829bc067a9291a11aa99ec0f16">set_field</a> (const int id, const std::string field, const time_t value)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set time value of requested field.  <a href="#a50ee4a829bc067a9291a11aa99ec0f16"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a7ef9f70b3fcbaa2863de2be695dc77c1">set_field</a> (const int id, const std::string field, <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *value)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set object value of requested field.  <a href="#a7ef9f70b3fcbaa2863de2be695dc77c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a50925678c74c09acd8549a541fdbbe9f">set_field_enum</a> (const int id, const std::string field, const std::string value)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set enum value of requested field.  <a href="#a50925678c74c09acd8549a541fdbbe9f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39">set_field_vector</a> (const int id, const std::string field, const std::vector&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt; vector)=0  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set vector value of requested field.  <a href="#a24af03b9a68ace199b0a6fa812abad39"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a641a6b75fe34c51943902d846ff66328">set_object</a> (<a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *object)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set integer value of requested field.  <a href="#a641a6b75fe34c51943902d846ff66328"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ab9e323067a58b74a7d1c835f0d1832c8">new_id</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return new object identificator and reserve cell for it in the objects vector.  <a href="#ab9e323067a58b74a7d1c835f0d1832c8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a54758736009f559baf85a2d477b4d370">objects_</a></td></tr>
@@ -127,24 +147,10 @@ Protected Attributes</h2></td></tr>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ac344c900799ce1069f4324f043f17763">StorableObject</a></td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a73fd0acd5b0f71febf5254db391416c0"></a><!-- doxytag: member="Storage::AbstractStorage::AbstractStorage" ref="a73fd0acd5b0f71febf5254db391416c0" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Storage::AbstractStorage::AbstractStorage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Abstract interface for storage. </p>
+<p>Each storage backend must to inherit this class. It can be chahged later, it is too simple to work fast now. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a108af124f19c0ae9a4a461aee6abc3ec"></a><!-- doxytag: member="Storage::AbstractStorage::create" ref="a108af124f19c0ae9a4a461aee6abc3ec" args="(std::vector&lt; const Argument * &gt; &amp;parameters)" -->
 <div class="memitem">
 <div class="memproto">
@@ -161,6 +167,15 @@ template&lt;class T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">parameters</td><td>Create an object of the T type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parameters</td><td>new object`s data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to the created object.</dd></dl>
+<p>This method must be called from the user interface to create new object. </p>
 
 </div>
 </div>
@@ -183,11 +198,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Return enum value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a1101739c23fbf79b009558553180ef1a">DummyStorage</a>.</p>
 
@@ -212,22 +238,33 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
+<p>Return integer value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
+
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a275263eba82a652005292f01a120af8e">DummyStorage</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac795e31d42a58c501702f443259b4d43"></a><!-- doxytag: member="Storage::AbstractStorage::get_field_object" ref="ac795e31d42a58c501702f443259b4d43" args="(const int id, const std::string field) const =0" -->
+<a class="anchor" id="aaff107d1f51e456f26c03861beb0fff7"></a><!-- doxytag: member="Storage::AbstractStorage::get_field_object" ref="aaff107d1f51e456f26c03861beb0fff7" args="(const int id, const std::string field) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a>&amp; Storage::AbstractStorage::get_field_object </td>
+          <td class="memname">virtual <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a>* Storage::AbstractStorage::get_field_object </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -241,13 +278,24 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a62ead126a3be7736995227fcb3a7e5cd">DummyStorage</a>.</p>
+<p>Return object value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
+
+<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a7135d171d9b83c2fbf72851fa9ea852a">DummyStorage</a>.</p>
 
 </div>
 </div>
@@ -270,11 +318,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Return string value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a410ef9d239193e25f830c49140e18293">DummyStorage</a>.</p>
 
@@ -299,11 +358,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Return time value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a978ef9d688175e3739bb478f4c9b5313">DummyStorage</a>.</p>
 
@@ -328,11 +398,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const<code> [protected, pure virtual]</code></td>
+          <td></td><td> const  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Return vector value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>requested value.</dd></dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field does not exists or keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#afe36af3f3147027ebb6447192201c790">DummyStorage</a>.</p>
 
@@ -352,6 +433,11 @@ template&lt;class T &gt; </div>
 </div>
 <div class="memdoc">
 
+<p>Return new object identificator and reserve cell for it in the objects vector. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>New id.</dd></dl>
+<p>You can redefine this method if you want to keep objects in other order.</p>
+<p>Do not use this method anywhere, it used by create method. </p>
+
 </div>
 </div>
 <a class="anchor" id="a21ff57c954664abb78d1d658a1da7afa"></a><!-- doxytag: member="Storage::AbstractStorage::object" ref="a21ff57c954664abb78d1d658a1da7afa" args="(const int id) const " -->
@@ -363,11 +449,21 @@ template&lt;class T &gt; </div>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
-          <td> const<code> [inline, virtual]</code></td>
+          <td> const  throw (std::bad_cast)<code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Return object by id. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Requested object.</dd></dl>
+<p>Use this method carefully. It can be moved to the protected or private on future. </p>
 
 </div>
 </div>
@@ -380,20 +476,29 @@ template&lt;class T &gt; </div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td>
           <td class="paramname"><em>object</em></td><td>)</td>
-          <td></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
+<p>Remove object from the storage. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">object</td><td>Object to delete.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>You can redefine this method if you want to store objects in the other order. </p>
+
 </div>
 </div>
-<a class="anchor" id="ac85363cc08204d6158d6f68d7c51764a"></a><!-- doxytag: member="Storage::AbstractStorage::search" ref="ac85363cc08204d6158d6f68d7c51764a" args="(std::vector&lt; Argument * &gt; &amp;parameters)=0" -->
+<a class="anchor" id="a9304eea8cd6fffd77b1ccd26f85a061c"></a><!-- doxytag: member="Storage::AbstractStorage::search" ref="a9304eea8cd6fffd77b1ccd26f85a061c" args="(std::vector&lt; Argument * &gt; &amp;parameters)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::vector&lt;<a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&gt;&amp; Storage::AbstractStorage::search </td>
+          <td class="memname">virtual std::vector&lt;<a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&gt;* Storage::AbstractStorage::search </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>parameters</em></td><td>)</td>
@@ -403,7 +508,17 @@ template&lt;class T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#abef91708b67fec5a4b35e073a19c8b2a">DummyStorage</a>.</p>
+<p>Search objects by some parameters. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parameters</td><td>Search parameters. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Vector of found objects.</dd></dl>
+<p>Parameters are connected by logical AND. If parameter have not got a name, search value by the any field of specified type. If value is empty that all objects will satisfied. </p>
+
+<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#adea6bbcbaacaea1a728f09602d7c8d1d">DummyStorage</a>.</p>
 
 </div>
 </div>
@@ -432,17 +547,28 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
+<p>Set string value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
+
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#aaa0d3249ea3207fae78253b191b80854">DummyStorage</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3a92c35a35f7c2d798f5455ec8156d15"></a><!-- doxytag: member="Storage::AbstractStorage::set_field" ref="a3a92c35a35f7c2d798f5455ec8156d15" args="(const int id, const std::string field, const StorableObject &amp;value)=0" -->
+<a class="anchor" id="a7ef9f70b3fcbaa2863de2be695dc77c1"></a><!-- doxytag: member="Storage::AbstractStorage::set_field" ref="a7ef9f70b3fcbaa2863de2be695dc77c1" args="(const int id, const std::string field, StorableObject *value)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -461,19 +587,30 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">StorableObject</a> *&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#ac1674d9c4106af70139f4672a8702285">DummyStorage</a>.</p>
+<p>Set object value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
+
+<p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#ae2e39a3cee22fd90790a7528f0c7ad59">DummyStorage</a>.</p>
 
 </div>
 </div>
@@ -502,11 +639,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Set time value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a51662a853e821fda1828e8756d58f1df">DummyStorage</a>.</p>
 
@@ -537,11 +685,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Set integer value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#ab22488d00b8969af5356bc344672bd18">DummyStorage</a>.</p>
 
@@ -572,11 +731,22 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Set enum value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a0655a6f7c822adbe174d1c7fe7c9ea34">DummyStorage</a>.</p>
 
@@ -607,11 +777,21 @@ template&lt;class T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [protected, pure virtual]</code></td>
+          <td></td><td>  throw (std::bad_cast)<code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Set vector value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name.  [in] value New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
 
 <p>Implemented in <a class="el" href="../../d0/df2/classDummyStorage.html#a6102ef89119b0ee1525439b3fd7043ce">DummyStorage</a>.</p>
 
@@ -631,6 +811,16 @@ template&lt;class T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Set integer value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Object</td><td>to save.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>You can redefine this method if you want to keep objects in other order.</p>
+<p>Do not use this method anywhere, it used by create method. </p>
 
 </div>
 </div>
@@ -659,6 +849,8 @@ template&lt;class T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
+<p>Model objects. Each object must be saved here for correct work of storage.</p>
+<p>You must use this only with <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a21ff57c954664abb78d1d658a1da7afa" title="Return object by id.">object()</a>, set_object and <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ab9e323067a58b74a7d1c835f0d1832c8" title="Return new object identificator and reserve cell for it in the objects vector.">new_id()</a> mehods, you can redefine this methods but do not use this field in other code. </p>
 
 </div>
 </div>
@@ -681,7 +873,7 @@ template&lt;class T &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 01:43:06 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:24 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

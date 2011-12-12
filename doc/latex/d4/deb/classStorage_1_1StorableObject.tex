@@ -30,7 +30,7 @@ const time\_\-t \hyperlink{classStorage_1_1StorableObject_a8c4e071ed59d2cdd5d2a0
 \item 
 const std::string \hyperlink{classStorage_1_1StorableObject_abcaf10bdc0f2db297c53cbd9ca0acd4d}{get\_\-field\_\-enum} (const std::string name) const 
 \item 
-const \hyperlink{classStorage_1_1StorableObject}{StorableObject} \& \hyperlink{classStorage_1_1StorableObject_a1f48a3363218ebfe985149b33d072067}{get\_\-field\_\-object} (const std::string name) const 
+const \hyperlink{classStorage_1_1StorableObject}{StorableObject} $\ast$ \hyperlink{classStorage_1_1StorableObject_a19bd5f8f17473ffac0042a6ef5c66da7}{get\_\-field\_\-object} (const std::string name) const 
 \item 
 std::vector$<$ \hyperlink{classStorage_1_1StorableObject}{StorableObject} $\ast$ $>$ \hyperlink{classStorage_1_1StorableObject_ad6df389823d8f812e4c64994d440475b}{get\_\-field\_\-vector} (const std::string name) const 
 \item 
@@ -42,7 +42,7 @@ void \hyperlink{classStorage_1_1StorableObject_af16a9fb211fd421a5aa89d741a67c2fb
 \item 
 void \hyperlink{classStorage_1_1StorableObject_a14764d884ae0cfc51aab3c391423f781}{set\_\-field\_\-enum} (const std::string name, const std::string)
 \item 
-void \hyperlink{classStorage_1_1StorableObject_a97dd82cb4f99d421e84e3bac17dc8c8b}{set\_\-field} (const std::string name, const \hyperlink{classStorage_1_1StorableObject}{StorableObject} \&value)
+void \hyperlink{classStorage_1_1StorableObject_accb8821bf03946d15bd04ab3555ab20e}{set\_\-field} (const std::string name, \hyperlink{classStorage_1_1StorableObject}{StorableObject} $\ast$value)
 \item 
 void \hyperlink{classStorage_1_1StorableObject_adb46898ef1cc21af62eeff54a583e8d4}{set\_\-field\_\-vector} (const std::string name, const std::vector$<$ \hyperlink{classStorage_1_1StorableObject}{StorableObject} $\ast$ $>$ \&vector)
 \item 
@@ -89,15 +89,15 @@ class \hyperlink{classStorage_1_1StorableObject_a8d384f3e1d366a9f5aa2a8afa3cf96b
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{d4/deb/classStorage_1_1StorableObject_a11a172f37f8805453225be4fa98e87ae}
-\hypertarget{classStorage_1_1StorableObject_a1f48a3363218ebfe985149b33d072067}{
+\hypertarget{classStorage_1_1StorableObject_a19bd5f8f17473ffac0042a6ef5c66da7}{
 \index{Storage::StorableObject@{Storage::StorableObject}!get\_\-field\_\-object@{get\_\-field\_\-object}}
 \index{get\_\-field\_\-object@{get\_\-field\_\-object}!Storage::StorableObject@{Storage::StorableObject}}
-\subsubsection[{get\_\-field\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf StorableObject} \& StorableObject::get\_\-field\_\-object (
+\subsubsection[{get\_\-field\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf StorableObject} $\ast$ StorableObject::get\_\-field\_\-object (
 \begin{DoxyParamCaption}
 \item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{d4/deb/classStorage_1_1StorableObject_a1f48a3363218ebfe985149b33d072067}
+\label{d4/deb/classStorage_1_1StorableObject_a19bd5f8f17473ffac0042a6ef5c66da7}
 \hypertarget{classStorage_1_1StorableObject_a533b48a050009b86e376269e886d3eeb}{
 \index{Storage::StorableObject@{Storage::StorableObject}!get\_\-field\_\-string@{get\_\-field\_\-string}}
 \index{get\_\-field\_\-string@{get\_\-field\_\-string}!Storage::StorableObject@{Storage::StorableObject}}
@@ -170,16 +170,16 @@ Implemented in \hyperlink{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9ad
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{d4/deb/classStorage_1_1StorableObject_a95c8d3440fa0ef6bce0f8d3bbac1f477}
-\hypertarget{classStorage_1_1StorableObject_a97dd82cb4f99d421e84e3bac17dc8c8b}{
+\hypertarget{classStorage_1_1StorableObject_accb8821bf03946d15bd04ab3555ab20e}{
 \index{Storage::StorableObject@{Storage::StorableObject}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!Storage::StorableObject@{Storage::StorableObject}}
 \subsubsection[{set\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}void StorableObject::set\_\-field (
 \begin{DoxyParamCaption}
 \item[{const std::string}]{name, }
-\item[{const {\bf StorableObject} \&}]{value}
+\item[{{\bf StorableObject} $\ast$}]{value}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{d4/deb/classStorage_1_1StorableObject_a97dd82cb4f99d421e84e3bac17dc8c8b}
+\label{d4/deb/classStorage_1_1StorableObject_accb8821bf03946d15bd04ab3555ab20e}
 \hypertarget{classStorage_1_1StorableObject_af16a9fb211fd421a5aa89d741a67c2fb}{
 \index{Storage::StorableObject@{Storage::StorableObject}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!Storage::StorableObject@{Storage::StorableObject}}

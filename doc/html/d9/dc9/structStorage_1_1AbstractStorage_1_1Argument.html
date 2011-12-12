@@ -70,12 +70,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <h1>Storage::AbstractStorage::Argument Struct Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Storage::AbstractStorage::Argument" -->
+<p>an auxiliary structure to make search query and create objects.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../de/d16/abstractstorage_8h_source.html">abstractstorage.h</a>&gt;</code></p>
 
 <p><a href="../../d9/d50/structStorage_1_1AbstractStorage_1_1Argument-members.html">List of all members.</a></p>
@@ -87,6 +91,16 @@ Public Types</h2></td></tr>
 <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a92adab5cf7e02947e2e75fba5e11446ca6f9cbb024f036014248e8322253da11e">TIME</a>, 
 <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a92adab5cf7e02947e2e75fba5e11446ca37240303f27a558e24e9e07d1abfa215">ENUMERATION</a>
  }</td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a7c5544b8651222b7170e486e1cdd19ec">Argument</a> (const std::string <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ad48a91372dd1a9445b4ddcee0bc8336a">field</a>, const std::string value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for string type.  <a href="#a7c5544b8651222b7170e486e1cdd19ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a36dd1d2e038f327be2845c196fed4928">Argument</a> (const std::string <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ad48a91372dd1a9445b4ddcee0bc8336a">field</a>, const int value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for integer type.  <a href="#a36dd1d2e038f327be2845c196fed4928"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#aeb57bbf6db33ce77ae686e53416a670e">Argument</a> (const std::string <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ad48a91372dd1a9445b4ddcee0bc8336a">field</a>, const time_t value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for time type.  <a href="#aeb57bbf6db33ce77ae686e53416a670e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a185bd271874dc64a7848382f2df995d5">Argument</a> (const std::string <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ad48a91372dd1a9445b4ddcee0bc8336a">field</a>, const std::string value, const int number)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for enumeration type.  <a href="#a185bd271874dc64a7848382f2df995d5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ad48a91372dd1a9445b4ddcee0bc8336a">field</a></td></tr>
@@ -96,7 +110,11 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
 <tr><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a6b20329db4720c44c45d8380f840dbec">integer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#ae6cc69656647a6cccf725a0156373a51">time</a></td></tr>
 </table>
-<hr/><h2>Member Enumeration Documentation</h2>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>an auxiliary structure to make search query and create objects. </p>
+<p>set to the field name of the field (empty string for searching in the all fields of the type), set type and the value.</p>
+<p>Use constructors instead of manual editing. </p>
+</div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a92adab5cf7e02947e2e75fba5e11446c"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::@0" ref="a92adab5cf7e02947e2e75fba5e11446c" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -122,6 +140,158 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
 
 </div>
 </div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7c5544b8651222b7170e486e1cdd19ec"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::Argument" ref="a7c5544b8651222b7170e486e1cdd19ec" args="(const std::string field, const std::string value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Storage::AbstractStorage::Argument::Argument </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for string type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Name of the field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>String value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a36dd1d2e038f327be2845c196fed4928"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::Argument" ref="a36dd1d2e038f327be2845c196fed4928" args="(const std::string field, const int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Storage::AbstractStorage::Argument::Argument </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for integer type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Name of the field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Integer value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb57bbf6db33ce77ae686e53416a670e"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::Argument" ref="aeb57bbf6db33ce77ae686e53416a670e" args="(const std::string field, const time_t value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Storage::AbstractStorage::Argument::Argument </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const time_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for time type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Name of the field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Time value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a185bd271874dc64a7848382f2df995d5"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::Argument" ref="a185bd271874dc64a7848382f2df995d5" args="(const std::string field, const std::string value, const int number)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Storage::AbstractStorage::Argument::Argument </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor for enumeration type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Name of the field. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Enumeration value in the string representation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>Enumoration value in the integer representation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ad48a91372dd1a9445b4ddcee0bc8336a"></a><!-- doxytag: member="Storage::AbstractStorage::Argument::field" ref="ad48a91372dd1a9445b4ddcee0bc8336a" args="" -->
 <div class="memitem">
@@ -133,6 +303,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
       </table>
 </div>
 <div class="memdoc">
+<p>Name of requested field. </p>
 
 </div>
 </div>
@@ -146,6 +317,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
       </table>
 </div>
 <div class="memdoc">
+<p>Integer value. </p>
 
 </div>
 </div>
@@ -159,6 +331,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
       </table>
 </div>
 <div class="memdoc">
+<p>String or enum value. </p>
 
 </div>
 </div>
@@ -172,6 +345,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
       </table>
 </div>
 <div class="memdoc">
+<p>Time value. </p>
 
 </div>
 </div>
@@ -185,6 +359,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
       </table>
 </div>
 <div class="memdoc">
+<p>Type of the field. </p>
 
 </div>
 </div>
@@ -206,7 +381,7 @@ Storage::AbstractStorage::Argument:: { ... } &#160;</td><td class="memItemRight"
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 01:43:06 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:24 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -4,6 +4,11 @@
 }
 
 
+an auxiliary structure to make search query and create objects.  
+
+
+
+
 {\ttfamily \#include $<$abstractstorage.h$>$}
 
 \subsection*{Public Types}
@@ -15,6 +20,17 @@ enum \{ \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a92adab5cf7e0294
 \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a92adab5cf7e02947e2e75fba5e11446ca37240303f27a558e24e9e07d1abfa215}{ENUMERATION}
  \}
 \end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a7c5544b8651222b7170e486e1cdd19ec}{Argument} (const std::string \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}{field}, const std::string value)
+\begin{DoxyCompactList}\small\item\em Constructor for string type. \item\end{DoxyCompactList}\item 
+\hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a36dd1d2e038f327be2845c196fed4928}{Argument} (const std::string \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}{field}, const int value)
+\begin{DoxyCompactList}\small\item\em Constructor for integer type. \item\end{DoxyCompactList}\item 
+\hyperlink{structStorage_1_1AbstractStorage_1_1Argument_aeb57bbf6db33ce77ae686e53416a670e}{Argument} (const std::string \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}{field}, const time\_\-t value)
+\begin{DoxyCompactList}\small\item\em Constructor for time type. \item\end{DoxyCompactList}\item 
+\hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a185bd271874dc64a7848382f2df995d5}{Argument} (const std::string \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}{field}, const std::string value, const int number)
+\begin{DoxyCompactList}\small\item\em Constructor for enumeration type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,6 +45,11 @@ const int \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_a6b20329db4720
 const time\_\-t \hyperlink{structStorage_1_1AbstractStorage_1_1Argument_ae6cc69656647a6cccf725a0156373a51}{time}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+an auxiliary structure to make search query and create objects. set to the field name of the field (empty string for searching in the all fields of the type), set type and the value.
+
+Use constructors instead of manual editing. 
 
 \subsection{Member Enumeration Documentation}
 \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a92adab5cf7e02947e2e75fba5e11446c}{
@@ -58,33 +79,123 @@ ENUMERATION}
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a7c5544b8651222b7170e486e1cdd19ec}{
+\index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
+\subsubsection[{Argument}]{\setlength{\rightskip}{0pt plus 5cm}Storage::AbstractStorage::Argument::Argument (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{field, }
+\item[{const std::string}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_a7c5544b8651222b7170e486e1cdd19ec}
+
+
+Constructor for string type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em value} & String value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a36dd1d2e038f327be2845c196fed4928}{
+\index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
+\subsubsection[{Argument}]{\setlength{\rightskip}{0pt plus 5cm}Storage::AbstractStorage::Argument::Argument (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{field, }
+\item[{const int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_a36dd1d2e038f327be2845c196fed4928}
+
+
+Constructor for integer type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em value} & Integer value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_aeb57bbf6db33ce77ae686e53416a670e}{
+\index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
+\subsubsection[{Argument}]{\setlength{\rightskip}{0pt plus 5cm}Storage::AbstractStorage::Argument::Argument (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{field, }
+\item[{const time\_\-t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_aeb57bbf6db33ce77ae686e53416a670e}
+
+
+Constructor for time type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em value} & Time value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a185bd271874dc64a7848382f2df995d5}{
+\index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
+\subsubsection[{Argument}]{\setlength{\rightskip}{0pt plus 5cm}Storage::AbstractStorage::Argument::Argument (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{field, }
+\item[{const std::string}]{value, }
+\item[{const int}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_a185bd271874dc64a7848382f2df995d5}
+
+
+Constructor for enumeration type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em value} & Enumeration value in the string representation. \\
+\hline
+\mbox{\tt in}  & {\em number} & Enumoration value in the integer representation. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Data Documentation}
 \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}{
 \index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!field@{field}}
 \index{field@{field}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
 \subsubsection[{field}]{\setlength{\rightskip}{0pt plus 5cm}const std::string {\bf Storage::AbstractStorage::Argument::field}}}
 \label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_ad48a91372dd1a9445b4ddcee0bc8336a}
-\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a6b20329db4720c44c45d8380f840dbec}{
+Name of requested field. \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a6b20329db4720c44c45d8380f840dbec}{
 \index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!integer@{integer}}
 \index{integer@{integer}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
 \subsubsection[{integer}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf Storage::AbstractStorage::Argument::integer}}}
 \label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_a6b20329db4720c44c45d8380f840dbec}
-\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_ab8ea8281cdefeb901a267261ed2e0478}{
+Integer value. \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_ab8ea8281cdefeb901a267261ed2e0478}{
 \index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!string@{string}}
 \index{string@{string}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
 \subsubsection[{string}]{\setlength{\rightskip}{0pt plus 5cm}const std::string {\bf Storage::AbstractStorage::Argument::string}}}
 \label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_ab8ea8281cdefeb901a267261ed2e0478}
-\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_ae6cc69656647a6cccf725a0156373a51}{
+String or enum value. \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_ae6cc69656647a6cccf725a0156373a51}{
 \index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!time@{time}}
 \index{time@{time}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
 \subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t {\bf Storage::AbstractStorage::Argument::time}}}
 \label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_ae6cc69656647a6cccf725a0156373a51}
-\hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a77f04e835f26305c4222df78c07f8efd}{
+Time value. \hypertarget{structStorage_1_1AbstractStorage_1_1Argument_a77f04e835f26305c4222df78c07f8efd}{
 \index{Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}!type@{type}}
 \index{type@{type}!Storage::AbstractStorage::Argument@{Storage::AbstractStorage::Argument}}
 \subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \}   {\bf Storage::AbstractStorage::Argument::type}}}
 \label{d9/dc9/structStorage_1_1AbstractStorage_1_1Argument_a77f04e835f26305c4222df78c07f8efd}
-
+Type of the field. 
 
 The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
 \item 

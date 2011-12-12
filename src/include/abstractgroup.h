@@ -6,7 +6,7 @@
 #include <storableobject.h>
 #include <person.h>
 
-/**@namespace core
+/**@namespace Core
  * @brief Core model classes.
  */
 namespace Core {
@@ -24,7 +24,7 @@ private:
     std::string name_;
                         /**< Name of the group. */
 
-    std::vector<class Group *> child_groups_;
+    std::vector<AbstractGroup *> child_groups_;
                         /**< Child groups. Them can be only groups not events. */
     
     std::vector<class Person *> people_;

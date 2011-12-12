@@ -29,12 +29,14 @@ void AbstractUI::search(std::vector<Storage::AbstractStorage::Argument *>& param
     cache_.clear();
 
     {
-        std::vector<Storage::StorableObject *> temp_cast_vector = storage_.search(parameters);
+        std::vector<Storage::StorableObject *> *temp_cast_vector = storage_.search(parameters);
 
-        for (std::vector<Storage::StorableObject *>::iterator it = temp_cast_vector.begin(); it != temp_cast_vector.end(); it++)
+        for (std::vector<Storage::StorableObject *>::iterator it = temp_cast_vector->begin(); it != temp_cast_vector->end(); it++)
         {
             cache_.push_back(dynamic_cast<UsersObject *>(*it));
         }
+
+        delete[] temp_cast_vector;
     }
 }
 
