@@ -7,7 +7,7 @@ namespace UI {
 
 class AbstractUI {
 private:
-    Storage::AbstractStorage& storage_;
+    Storage::AbstractStorage *storage_;
     std::vector<UsersObject *> cache_;
 protected:
     std::vector<UsersObject *>& cache() { return cache_; }
@@ -21,8 +21,14 @@ protected:
 
 public:
 
-    AbstractUI (Storage::AbstractStorage& storage):
+    AbstractUI (Storage::AbstractStorage * storage):
         storage_(storage) {}
+
+    AbstractUI ()
+        {}
+
+    void set_storage(Storage::AbstractStorage * storage)
+        { storage_ = storage; }
 };
 
 };
