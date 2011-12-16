@@ -28,7 +28,7 @@ public:
             backends.push_back(this);
         }
     
-    virtual void init(const std::vector<const std::string>& args) = 0;
+    virtual void init(const std::vector<std::string>& args) = 0;
         /* Initilize required resources. Such as memory, shared objects,
          * create auxiliary objects, etc.
          */
