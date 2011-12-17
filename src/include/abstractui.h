@@ -3,9 +3,11 @@
 #include <usersobject.h>
 #include <abstractstorage.h>
 
+#include <backend.h>
+
 namespace UI {
 
-class AbstractUI {
+class AbstractUI: public AbstractBackend {
 private:
     Storage::AbstractStorage *storage_;
     std::vector<UsersObject *> cache_;
@@ -22,9 +24,10 @@ protected:
 public:
 
     AbstractUI (Storage::AbstractStorage * storage):
-        storage_(storage) {}
+        AbstractBackend(AbstractBackend::UI), storage_(storage) {}
 
-    AbstractUI ()
+    AbstractUI ():
+        AbstractBackend(AbstractBackend::UI)
         {}
 
     void set_storage(Storage::AbstractStorage * storage)

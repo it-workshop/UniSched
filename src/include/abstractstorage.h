@@ -6,6 +6,8 @@
 
 #include <storableobject.h>
 
+#include <backend.h>
+
 /**@namespace Storage
  * @brief Storage classes.
  */
@@ -17,7 +19,7 @@ namespace Storage {
  * Each storage backend must to inherit this class. It can be chahged later,
  * it is too simple to work fast now.
  */
-class AbstractStorage {
+class AbstractStorage: public AbstractBackend {
 friend class StorableObject;
 private:
 protected:
@@ -209,6 +211,12 @@ protected:
                          * method.
                          */
 public:
+    AbstractStorage():
+            AbstractBackend(AbstractBackend::STORAGE)
+            {}
+                        /**< @brief Constructor.
+                         */
+
     /**@struct Argument
      * @brief an auxiliary structure to make search query and create objects.
      *

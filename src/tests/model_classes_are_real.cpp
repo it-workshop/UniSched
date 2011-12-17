@@ -32,6 +32,8 @@ public:
 
     virtual std::vector<Storage::StorableObject *> * search(std::vector<Argument *>&)
             { return &objects_; }
+
+    virtual void init(const std::vector<std::string>& args) {}
 };
 
 #include <person.h>
