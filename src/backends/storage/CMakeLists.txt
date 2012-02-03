@@ -1,5 +1,15 @@
 cmake_minimum_required (VERSION 2.8.3)
 
-add_library (sqlitestorage sqlite.cpp)
-target_link_libraries (sqlitestorage sqlite3)
+if (NOT DEFINED WITH_SQLITE)
+set (WITH_SQLITE "True")
+endif (NOT DEFINED WITH_SQLITE)
 
+if (WITH_SQLITE)
+    check_include_file_cxx ("sqlite3.h" HAVE_SQLITE)
+    if (HAVE_SQLITE)
+        add_library (sqlitestorage sqlite.cpp)
+        target_link_libraries (sqlitestorage sqlite3)
+    else(HAVE_SQLITE)
+        message (FAIL_ERROR "sqlite3.h not found on your system, but sqlite backend build requested.")
+    endif (HAVE_SQLITE)
+endif (WITH_SQLITE)

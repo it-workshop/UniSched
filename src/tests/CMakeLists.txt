@@ -8,5 +8,8 @@ add_test (test_model_classes_are_real model_classes_are_real)
 add_executable (architecture_with_backends architecture_with_backends.cpp
                 ../backend.cpp)
 target_link_libraries (architecture_with_backends core storage ui)
+if (HAVE_SQLITE)
+    target_link_libraries (architecture_with_backends sqlitestorage)
+endif (HAVE_SQLITE)
 add_test (test_arcitecture_with_backends architecture_with_backends)
 

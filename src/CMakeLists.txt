@@ -15,8 +15,10 @@ add_executable (raspisator calendar.cpp command_add.cpp command_all.cpp
     data_storage.cpp event.cpp event_template.cpp file_storage.cpp group.cpp
     main.cpp person.cpp queue.cpp table_data_storage.cpp userinterface.cpp
     backend.cpp)
-
-target_link_libraries (raspisator core storage ui sqlitestorage)
+target_link_libraries (raspisator core storage ui)
+if (HAVE_SQLITE)
+    target_link_libraries (raspisator sqlitestorage)
+endif (HAVE_SQLITE)
 
 add_test(test_batch raspisator ../tests/test.txt)
 
