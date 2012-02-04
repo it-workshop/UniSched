@@ -4,85 +4,89 @@
 
 #include <iostream>
 
-#define _START_ERRORS_DISPATCHING \
-    { \
-        bool error = false;
-
-#define _ERROR_MESSAGE(message) \
-        std::cerr << "Error: " << message << std::endl
-
-#define _CHECK_ERROR(check, message) \
-        if (!check) \
-        { \
-            error = true; \
-            _ERROR_MESSAGE(message); \
+bool
+load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
+               std::vector<std::string>& args)
+{
+    *storage = nullptr;
+    *ui = nullptr;
+    for (AbstractBackend *backend: backends())
+    {
+        if (*storage && *ui)
+        {
+            break;
         }
 
-#define _WARNING_MESSAGE(message) \
-        std::cerr << "Warning: " << message << std::endl
+        if (backend->type() == AbstractBackend::STORAGE)
+        {
+            if (*storage)
+            {
+                continue;
+            }
+            try
+            {
+                *storage = dynamic_cast<Storage::AbstractStorage *>(backend);
+                backend->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid storage backend!" << e.what() <<
+		    std::endl;
+                *storage = nullptr;
+            }
+            continue;
+        }
 
-#define _CHECK_WARNING(check, message) \
-        if (!check) \
-            { _WARNING(message); }
-
-#define _END_ERRORS_DISPATCHING \
-        if (error) \
-            { abort(); } \
+        if (backend->type() == AbstractBackend::UI)
+        {
+            if (*ui)
+            {
+                continue;
+            }
+            try
+            {
+                *ui = dynamic_cast<UI::AbstractUI *>(backend);
+                backend->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid ui backend!" << e.what() <<
+                    std::endl;
+                *ui = nullptr;
+            }
+            continue;
+        }
     }
+
+    bool error = false;
+    if (!*storage)
+    {
+        error = true;
+        std::cerr << "Error: storage backend not found!" << std::endl;
+    }
+    if (!*ui)
+    {
+        error = true;
+        std::cerr << "Error: ui backend not found!" << std::endl;
+    }
+
+    return error;
+}
 
 int
 main(int argc, char *argv[])
 {
-    // TODO: rename NULL to nullptr
-    Storage::AbstractStorage *storage = NULL;
-    UI::AbstractUI *ui = NULL;
+    Storage::AbstractStorage *storage = nullptr;
+    UI::AbstractUI *ui = nullptr;
 
     std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
 
-    for (auto it = backends.begin(); it != backends.end() && !storage && !ui; it++)
+    if (load_backends(&storage, &ui, args))
     {
-        if (!storage && (*it)->type() == AbstractBackend::STORAGE)
-        {
-            try
-            {
-                storage = dynamic_cast<Storage::AbstractStorage *>(*it);
-                (*it)->init(args);
-            }
-            catch(std::bad_cast e)
-            {
-                _WARNING_MESSAGE("Invalid storage backend!");
-                e.what();
-            }
-
-            continue;
-        }
-
-        if ((*it)->type() == AbstractBackend::UI)
-        {
-            try
-            {
-                ui = dynamic_cast<UI::AbstractUI *>(*it);
-                (*it)->init(args);
-            }
-            catch(std::bad_cast e)
-            {
-                _WARNING_MESSAGE("Invalid ui backend!");
-                e.what();
-            }
-
-            continue;
-        }
+        return -1;
     }
-
-    _START_ERRORS_DISPATCHING
-
-    _CHECK_ERROR(storage, "Could not find any storage Backend.");
-
-    _CHECK_ERROR(ui, "Could not find any ui backend.");
-
-    _END_ERRORS_DISPATCHING
 
     return 0;
 }

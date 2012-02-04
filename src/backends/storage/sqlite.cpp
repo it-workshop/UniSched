@@ -160,5 +160,5 @@ SQLiteStorage::search(std::vector<Storage::AbstractStorage::Argument*>& args)
     //TODO: empty method :(
 }
 
-static SQLiteStorage _object;
+SQLiteStorage _object;
 

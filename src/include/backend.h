@@ -3,10 +3,8 @@
 #include <vector>
 #include <string>
 
-#ifndef _BACKEND_CPP_
-extern
-#endif /* _BACKEND_CPP_ */
-std::vector<class AbstractBackend *> backends;
+#include <iostream>
+
 
 class AbstractBackend {
 public:
@@ -19,11 +17,7 @@ private:
     const Type type_;
 
 public:
-    AbstractBackend (const enum Type type):
-        type_(type)
-        {
-            backends.push_back(this);
-        }
+    AbstractBackend (const enum Type type);
     
     virtual void init(const std::vector<std::string>& args) = 0;
         /* Initilize required resources. Such as memory, shared objects,
@@ -33,4 +27,6 @@ public:
     const Type type() const throw ()
         { return type_; }
 };
+
+std::vector<AbstractBackend *>& backends();
 

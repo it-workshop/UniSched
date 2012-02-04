@@ -30,8 +30,10 @@ public:
         AbstractBackend(AbstractBackend::UI)
         {}
 
-    void set_storage(Storage::AbstractStorage * storage)
+    void storage(Storage::AbstractStorage * storage)
         { storage_ = storage; }
+
+    virtual int run() = 0;
 };
 
 };

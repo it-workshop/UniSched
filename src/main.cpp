@@ -1,42 +1,93 @@
+#include <abstractstorage.h>
+#include <abstractui.h>
+#include <backend.h>
+
 #include <iostream>
-#include <time.h>
-#include <vector>
 
-#include "types.h"
-#include "event_template.h"
-#include "queue.h"
-#include "commands.h"
-#include "userinterface.h"
-#include "person.h"
-#include "group.h"
-#include "event.h"
-#include "data_storage.h"
-#include "file_storage.h"
-
-int main (int argc, char *argv[])
+bool
+load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
+               std::vector<std::string>& args)
 {
-    storage::DataStorage *db = new storage::FileStorage ();
-    db->setup ("database/", "", "", "");
-    db->load ();
-    db->init ();
+    *storage = nullptr;
+    *ui = nullptr;
+    for (AbstractBackend *backend: backends())
+    {
+        if (*storage && *ui)
+        {
+            break;
+        }
 
-    UserInterface *ui = new UserInterface ();
-    ui->set_db (db);
+        if (backend->type() == AbstractBackend::STORAGE)
+        {
+            if (*storage)
+            {
+                continue;
+            }
+            try
+            {
+                *storage = dynamic_cast<Storage::AbstractStorage *>(backend);
+                backend->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid storage backend!" << e.what() <<
+		    std::endl;
+                *storage = nullptr;
+            }
+            continue;
+        }
 
-    uiconsole::initiate(ui);
-    
-//    Event_Template *test = new Event_Template("all $\nall @\nall %\nall #\nexit\n", 12);
+        if (backend->type() == AbstractBackend::UI)
+        {
+            if (*ui)
+            {
+                continue;
+            }
+            try
+            {
+                *ui = dynamic_cast<UI::AbstractUI *>(backend);
+                backend->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid ui backend!" << e.what() <<
+                    std::endl;
+                *ui = nullptr;
+            }
+            continue;
+        }
+    }
 
-//    test->get_requered_people();
+    bool error = false;
+    if (!*storage)
+    {
+        error = true;
+        std::cerr << "Error: storage backend not found!" << std::endl;
+    }
+    if (!*ui)
+    {
+        error = true;
+        std::cerr << "Error: ui backend not found!" << std::endl;
+    }
 
-    if (argc == 2)
-		freopen (argv[1], "r", stdin);
-    
-	ui->listen();
+    return error;
+}
 
-    db->sync ();
-    db->save ();
+int
+main(int argc, char *argv[])
+{
+    Storage::AbstractStorage *storage = nullptr;
+    UI::AbstractUI *ui = nullptr;
 
-    return 0;
+    std::vector<std::string> args;
+    for (unsigned int i = 1; i < argc; i++)
+        { args.push_back(std::string(argv[i])); }
+
+    if (load_backends(&storage, &ui, args))
+    {
+        return -1;
+    }
+
+    return ui->run();
 }
 
