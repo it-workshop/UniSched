@@ -50,18 +50,21 @@ void Event::update(const std::string name, const time_t value) throw(std::bad_ca
     if (name == "begin")
     {
         begin_ = value;
+        set_field("begin", begin_);
         return;
     }
 
     if (name == "duration")
     {
         duration_ = value;
+        set_field("duration", duration_);
         return;
     }
 
     if (name == "end")
     {
         duration_ = value - begin_;
+        set_field("duration", duration_);
         return;
     }
 

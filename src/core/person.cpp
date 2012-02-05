@@ -121,12 +121,14 @@ void Person::update(const std::string name, const std::string value) throw (std:
     if (name == "name")
     {
         name_ = value;
+        set_field("name", name_);
         return;
     }
 
     if (name == "surname")
     {
         surname_ = value;
+        set_field("surname", surname_);
         return;
     }
 
@@ -135,9 +137,10 @@ void Person::update(const std::string name, const std::string value) throw (std:
 
 void Person::update(const std::string name, const time_t value) throw (std::bad_cast)
 {
-    if (name == "time")
+    if (name == "birthday")
     {
         birthday_ = value;
+	set_field("birthday", birthday_);
         return;
     }
 
@@ -149,6 +152,7 @@ void Person::update_enum(const std::string name, const std::string value) throw 
     if (name == "sex")
     {
         sex_ == _(value);
+	set_field_enum("sex", _(sex_));
         return;
     }
 
@@ -157,6 +161,6 @@ void Person::update_enum(const std::string name, const std::string value) throw 
 
 void Person::update(UI::UsersObject * object, bool linked) throw (std::bad_cast)
 {
-    (dynamic_cast<AbstractGroup *>(object))->update(this, linked);
+    (dynamic_cast<AbstractGroup *>(object))->update(this, linked);    
 }
 

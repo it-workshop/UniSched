@@ -14,6 +14,12 @@ void Group::add_parent_group(AbstractGroup *group)
 
     parent_groups_.push_back(group);
     group->add_child(this);
+
+    {
+        auto temp_vector = get_field_vector("parent_groups");
+        temp_vector.push_back(group);
+        set_field_vector("parent_groups", temp_vector);
+    }
 }
 
 void Group::del_parent_group(AbstractGroup *group)
@@ -24,6 +30,16 @@ void Group::del_parent_group(AbstractGroup *group)
         {
             parent_groups_.erase(it);
             group->del_child(this);
+            break;
+        }
+    }
+
+    auto temp_vector = get_field_vector("parent_groups");
+    for (auto it = temp_vector.begin(); it != temp_vector.end(); it++)
+    {
+        if (*it == group)
+        {
+            temp_vector.erase(it);
             break;
         }
     }

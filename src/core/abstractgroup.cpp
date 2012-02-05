@@ -3,6 +3,14 @@
 
 using namespace Core;
 
+void AbstractGroup::add_child(AbstractGroup * group)
+{
+    child_groups_.push_back(group);
+    auto temp_vector = get_field_vector("child_groups");
+    temp_vector.push_back(group);
+    set_field_vector("child_groups", temp_vector);
+}
+
 void AbstractGroup::del_child(AbstractGroup * group)
 {
     for (auto it = child_groups_.begin(); it != child_groups_.end(); it++)
@@ -13,6 +21,17 @@ void AbstractGroup::del_child(AbstractGroup * group)
             break;
         }
     }
+
+    auto temp_vector = get_field_vector("child_groups");
+    for (auto it = temp_vector.begin(); it != temp_vector.end(); it++)
+    {
+        if (*it == group)
+        {
+            temp_vector.erase(it);
+            break;
+        }
+    }
+    set_field_vector("child_groups", temp_vector);
 }
 
 void AbstractGroup::add_person(Person * person)
@@ -27,6 +46,10 @@ void AbstractGroup::add_person(Person * person)
 
     people_.push_back(person);
     person->add_group(this);
+
+    auto temp_vector = get_field_vector("people");
+    temp_vector.push_back(person);
+    set_field_vector("person", temp_vector);
 }
 
 void AbstractGroup::del_person(Person * person)
@@ -39,6 +62,17 @@ void AbstractGroup::del_person(Person * person)
             break;
         }
     }
+
+    auto temp_vector = get_field_vector("people");
+    for (auto it = temp_vector.begin(); it != temp_vector.end(); it++)
+    {
+        if (*it == person)
+        {
+            temp_vector.erase(it);
+            break;
+        }
+    }
+    set_field_vector("person", temp_vector);
 }
 
 void AbstractGroup::save()
@@ -124,7 +158,7 @@ const int AbstractGroup::read_int(const std::string name) const throw (std::bad_
 const std::string AbstractGroup::read_string(const std::string name) const throw (std::bad_cast)
 {
     if (name == "name")
-        { return name_; }
+    { return name_; }
 
     throw std::bad_cast();
 }
@@ -172,6 +206,7 @@ void AbstractGroup::update(const std::string name, const std::string value) thro
     if (name == "name")
     {
         name_ = value;
+        set_field("name", name_);
         return;
     }
 

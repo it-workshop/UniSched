@@ -31,8 +31,7 @@ private:
                         /**< People of the group. */
 
 protected:
-    void add_child(AbstractGroup * group)
-            { child_groups_.push_back(group); }
+    void add_child(AbstractGroup * group);
                         /**< @brief Method to add child group.
                          * @param group Group to add.
                          *
