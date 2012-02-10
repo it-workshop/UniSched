@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$dd/d68/classCore_1_1AbstractGroup.html#aef90e91087aa5fcf4a94f0f2677f8f56" title="Method to add child group." alt="" coords="259,44,464,73"/>
+<area shape="rect" id="node5" href="$d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="512,5,773,35"/>
+<area shape="rect" id="node9" href="$d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="512,71,773,100"/>
+<area shape="rect" id="node7" href="$d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="821,5,1091,35"/>
+<area shape="rect" id="node11" href="$d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="821,71,1091,100"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$d4/deb/classStorage_1_1StorableObject.html" title="{Storage::StorableObject\n|&#45; id_\l&#45; storage_\l|+ StorableObject()\l# id()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l# save()\l# load()\l}" alt="" coords="9,640,169,1003"/>
+<area shape="rect" id="node4" href="$d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="5,176,173,573"/>
+<area shape="rect" id="node6" href="$db/d37/classAbstractBackend.html" title="{AbstractBackend\n|&#45; type_\l|+ AbstractBackend()\l+ init()\l+ type()\l}" alt="" coords="19,5,160,125"/>
+<area shape="rect" id="node8" href="$df/d0b/classUI_1_1UsersObject.html" title="{UI::UsersObject\n||+ read()\l+ read_int()\l+ read_string()\l+ read_time()\l+ read_enum()\l+ read_vector()\l+ update()\l+ update()\l+ update()\l+ update_enum()\l+ update()\l}" alt="" coords="193,692,313,951"/>
+</map>

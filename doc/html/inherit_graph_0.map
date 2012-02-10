@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$db/d37/classAbstractBackend.html" title="AbstractBackend" alt="" coords="5,59,128,88"/>
+<area shape="rect" id="node3" href="$d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="177,32,345,61"/>
+<area shape="rect" id="node9" href="$de/dda/classUI_1_1AbstractUI.html" title="UI::AbstractUI" alt="" coords="208,85,315,115"/>
+<area shape="rect" id="node5" href="$d0/df2/classDummyStorage.html" title="DummyStorage" alt="" coords="396,5,508,35"/>
+<area shape="rect" id="node7" href="$db/d2a/classSQLiteStorage.html" title="SQLiteStorage" alt="" coords="399,59,505,88"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d9/d71/classCore_1_1Person.html#a88e1d40e7be7d95e6cec9bc623d6e076" title="Core::Person::_" alt="" coords="257,5,372,35"/>
+<area shape="rect" id="node5" href="$d4/deb/classStorage_1_1StorableObject.html#a533b48a050009b86e376269e886d3eeb" title="Storage::StorableObject::get_field_string" alt="" coords="187,59,443,88"/>
+<area shape="rect" id="node9" href="$d4/deb/classStorage_1_1StorableObject.html#a8c4e071ed59d2cdd5d2a00806211b4e1" title="Storage::StorableObject::get_field_time" alt="" coords="189,112,440,141"/>
+<area shape="rect" id="node13" href="$d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="184,165,445,195"/>
+<area shape="rect" id="node7" href="$d6/da0/classStorage_1_1AbstractStorage.html#ad12a3abb791ef5a696196c28e643ec22" title="Return string value of requested field." alt="" coords="496,59,760,88"/>
+<area shape="rect" id="node11" href="$d6/da0/classStorage_1_1AbstractStorage.html#a87fe8d51934ab2403758d905ef313272" title="Return time value of requested field." alt="" coords="499,112,757,141"/>
+<area shape="rect" id="node15" href="$d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="493,165,763,195"/>
+</map>

@@ -6,10 +6,36 @@
 
 {\ttfamily \#include $<$abstractui.h$>$}
 
+
+
+Inheritance diagram for UI::AbstractUI:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{de/d4d/classUI_1_1AbstractUI__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UI::AbstractUI:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{d3/d7d/classUI_1_1AbstractUI__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classUI_1_1AbstractUI_a35092e69be8cc4406582540286db5a69}{AbstractUI} (\hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage)
+\hyperlink{classUI_1_1AbstractUI_a1e1e9c38734ce06605ab34ae178255de}{AbstractUI} (\hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} $\ast$storage)
+\item 
+\hyperlink{classUI_1_1AbstractUI_ab7eccb3e8bbaf0161d6a2c60197ede66}{AbstractUI} ()
+\item 
+void \hyperlink{classUI_1_1AbstractUI_ac724d598f9b90d72ec9dc4777f92d43b}{storage} (\hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} $\ast$storage)
+\item 
+virtual int \hyperlink{classUI_1_1AbstractUI_af9b66b441b76c88fe645a02d33138159}{run} ()=0
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -25,15 +51,24 @@ void \hyperlink{classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}{remove}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classUI_1_1AbstractUI_a35092e69be8cc4406582540286db5a69}{
+\hypertarget{classUI_1_1AbstractUI_a1e1e9c38734ce06605ab34ae178255de}{
 \index{UI::AbstractUI@{UI::AbstractUI}!AbstractUI@{AbstractUI}}
 \index{AbstractUI@{AbstractUI}!UI::AbstractUI@{UI::AbstractUI}}
 \subsubsection[{AbstractUI}]{\setlength{\rightskip}{0pt plus 5cm}UI::AbstractUI::AbstractUI (
 \begin{DoxyParamCaption}
-\item[{{\bf Storage::AbstractStorage} \&}]{storage}
+\item[{{\bf Storage::AbstractStorage} $\ast$}]{storage}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{de/dda/classUI_1_1AbstractUI_a35092e69be8cc4406582540286db5a69}
+\label{de/dda/classUI_1_1AbstractUI_a1e1e9c38734ce06605ab34ae178255de}
+\hypertarget{classUI_1_1AbstractUI_ab7eccb3e8bbaf0161d6a2c60197ede66}{
+\index{UI::AbstractUI@{UI::AbstractUI}!AbstractUI@{AbstractUI}}
+\index{AbstractUI@{AbstractUI}!UI::AbstractUI@{UI::AbstractUI}}
+\subsubsection[{AbstractUI}]{\setlength{\rightskip}{0pt plus 5cm}UI::AbstractUI::AbstractUI (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{de/dda/classUI_1_1AbstractUI_ab7eccb3e8bbaf0161d6a2c60197ede66}
 
 
 \subsection{Member Function Documentation}
@@ -55,6 +90,18 @@ void \hyperlink{classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}{remove}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{de/dda/classUI_1_1AbstractUI_a485b7a347d6b07f6dc44a3174cb96eaa}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{de/dda/classUI_1_1AbstractUI_a485b7a347d6b07f6dc44a3174cb96eaa_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}{
 \index{UI::AbstractUI@{UI::AbstractUI}!remove@{remove}}
 \index{remove@{remove}!UI::AbstractUI@{UI::AbstractUI}}
@@ -64,6 +111,39 @@ void \hyperlink{classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}{remove}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{de/dda/classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{de/dda/classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classUI_1_1AbstractUI_af9b66b441b76c88fe645a02d33138159}{
+\index{UI::AbstractUI@{UI::AbstractUI}!run@{run}}
+\index{run@{run}!UI::AbstractUI@{UI::AbstractUI}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual int UI::AbstractUI::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{de/dda/classUI_1_1AbstractUI_af9b66b441b76c88fe645a02d33138159}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{de/dda/classUI_1_1AbstractUI_af9b66b441b76c88fe645a02d33138159_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classUI_1_1AbstractUI_aaa55abbdeb863b8189393e929f643335}{
 \index{UI::AbstractUI@{UI::AbstractUI}!search@{search}}
 \index{search@{search}!UI::AbstractUI@{UI::AbstractUI}}
@@ -73,6 +153,51 @@ void \hyperlink{classUI_1_1AbstractUI_a160bde97ba2106267a8850db226d9790}{remove}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{de/dda/classUI_1_1AbstractUI_aaa55abbdeb863b8189393e929f643335}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=394pt]{de/dda/classUI_1_1AbstractUI_aaa55abbdeb863b8189393e929f643335_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classUI_1_1AbstractUI_ac724d598f9b90d72ec9dc4777f92d43b}{
+\index{UI::AbstractUI@{UI::AbstractUI}!storage@{storage}}
+\index{storage@{storage}!UI::AbstractUI@{UI::AbstractUI}}
+\subsubsection[{storage}]{\setlength{\rightskip}{0pt plus 5cm}void UI::AbstractUI::storage (
+\begin{DoxyParamCaption}
+\item[{{\bf Storage::AbstractStorage} $\ast$}]{storage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{de/dda/classUI_1_1AbstractUI_ac724d598f9b90d72ec9dc4777f92d43b}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{de/dda/classUI_1_1AbstractUI_ac724d598f9b90d72ec9dc4777f92d43b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{de/dda/classUI_1_1AbstractUI_ac724d598f9b90d72ec9dc4777f92d43b_icgraph}
+\end{center}
+\end{figure}
+
+
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

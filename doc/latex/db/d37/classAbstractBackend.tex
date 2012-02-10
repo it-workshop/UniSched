@@ -1,0 +1,123 @@
+\hypertarget{classAbstractBackend}{
+\section{AbstractBackend Class Reference}
+\label{db/d37/classAbstractBackend}\index{AbstractBackend@{AbstractBackend}}
+}
+
+
+{\ttfamily \#include $<$backend.h$>$}
+
+
+
+Inheritance diagram for AbstractBackend:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{d7/dd9/classAbstractBackend__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2}{Type} \{ \hyperlink{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2ac0a0df2995db93384337b95598559a36}{STORAGE}, 
+\hyperlink{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2adcd5d3a3c71967aa82d09038477173ba}{UI}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAbstractBackend_ad91e2394ca45125ab197a15056e6a628}{AbstractBackend} (const enum \hyperlink{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2}{Type} type)
+\item 
+virtual void \hyperlink{classAbstractBackend_afce49841a79e3093a1fbf199bfd9f698}{init} (const std::vector$<$ std::string $>$ \&args)=0
+\item 
+const \hyperlink{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2}{Type} \hyperlink{classAbstractBackend_ae4f1fd32e7cff9d9d86e7b9fc6852668}{type} () const   throw ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2}{
+\index{AbstractBackend@{AbstractBackend}!Type@{Type}}
+\index{Type@{Type}!AbstractBackend@{AbstractBackend}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf AbstractBackend::Type}}}
+\label{db/d37/classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{STORAGE@{STORAGE}!AbstractBackend@{AbstractBackend}}\index{AbstractBackend@{AbstractBackend}!STORAGE@{STORAGE}}\item[{\em 
+\hypertarget{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2ac0a0df2995db93384337b95598559a36}{
+STORAGE}
+\label{db/d37/classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2ac0a0df2995db93384337b95598559a36}
+}]\index{UI@{UI}!AbstractBackend@{AbstractBackend}}\index{AbstractBackend@{AbstractBackend}!UI@{UI}}\item[{\em 
+\hypertarget{classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2adcd5d3a3c71967aa82d09038477173ba}{
+UI}
+\label{db/d37/classAbstractBackend_a09da2d2fbf0862fb2af3928b438535d2adcd5d3a3c71967aa82d09038477173ba}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAbstractBackend_ad91e2394ca45125ab197a15056e6a628}{
+\index{AbstractBackend@{AbstractBackend}!AbstractBackend@{AbstractBackend}}
+\index{AbstractBackend@{AbstractBackend}!AbstractBackend@{AbstractBackend}}
+\subsubsection[{AbstractBackend}]{\setlength{\rightskip}{0pt plus 5cm}AbstractBackend::AbstractBackend (
+\begin{DoxyParamCaption}
+\item[{const enum {\bf Type}}]{type}
+\end{DoxyParamCaption}
+)}}
+\label{db/d37/classAbstractBackend_ad91e2394ca45125ab197a15056e6a628}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d37/classAbstractBackend_ad91e2394ca45125ab197a15056e6a628_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAbstractBackend_afce49841a79e3093a1fbf199bfd9f698}{
+\index{AbstractBackend@{AbstractBackend}!init@{init}}
+\index{init@{init}!AbstractBackend@{AbstractBackend}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AbstractBackend::init (
+\begin{DoxyParamCaption}
+\item[{const std::vector$<$ std::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{db/d37/classAbstractBackend_afce49841a79e3093a1fbf199bfd9f698}
+
+
+Implemented in \hyperlink{classSQLiteStorage_a1abd27f3824567fef222479a7c7a2333}{SQLiteStorage}, and \hyperlink{classDummyStorage_ac52f6e7c6941108e4686f606a4d88d6b}{DummyStorage}.
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{db/d37/classAbstractBackend_afce49841a79e3093a1fbf199bfd9f698_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classAbstractBackend_ae4f1fd32e7cff9d9d86e7b9fc6852668}{
+\index{AbstractBackend@{AbstractBackend}!type@{type}}
+\index{type@{type}!AbstractBackend@{AbstractBackend}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} AbstractBackend::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{db/d37/classAbstractBackend_ae4f1fd32e7cff9d9d86e7b9fc6852668}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{backend_8h}{backend.h}\item 
+src/\hyperlink{backend_8cpp}{backend.cpp}\end{DoxyCompactItemize}

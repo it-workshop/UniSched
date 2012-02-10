@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$d4/deb/classStorage_1_1StorableObject.html" title="Storage::StorableObject" alt="" coords="7,32,167,61"/>
+<area shape="rect" id="node3" href="$dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases." alt="" coords="217,32,359,61"/>
+<area shape="rect" id="node9" href="$d9/d71/classCore_1_1Person.html" title="Class keeps person unique data." alt="" coords="239,85,337,115"/>
+<area shape="rect" id="node5" href="$d9/d42/classCore_1_1Event.html" title="Core::Event" alt="" coords="409,5,500,35"/>
+<area shape="rect" id="node7" href="$d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people." alt="" coords="408,59,501,88"/>
+<area shape="rect" id="node10" href="$df/d0b/classUI_1_1UsersObject.html" title="UI::UsersObject" alt="" coords="28,85,145,115"/>
+</map>

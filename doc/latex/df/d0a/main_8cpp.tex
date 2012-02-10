@@ -2,27 +2,63 @@
 \section{src/main.cpp File Reference}
 \label{df/d0a/main_8cpp}\index{src/main.cpp@{src/main.cpp}}
 }
+{\ttfamily \#include $<$abstractstorage.h$>$}\par
+{\ttfamily \#include $<$abstractui.h$>$}\par
+{\ttfamily \#include $<$backend.h$>$}\par
 {\ttfamily \#include $<$iostream$>$}\par
-{\ttfamily \#include $<$time.h$>$}\par
-{\ttfamily \#include $<$vector$>$}\par
-{\ttfamily \#include \char`\"{}types.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}event\_\-template.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}queue.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}commands.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}userinterface.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}person.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}group.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}event.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}data\_\-storage.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}file\_\-storage.h\char`\"{}}\par
+Include dependency graph for main.cpp:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{da/dce/main_8cpp__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60}{load\_\-backends} (\hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} $\ast$$\ast$storage, \hyperlink{classUI_1_1AbstractUI}{UI::AbstractUI} $\ast$$\ast$ui, std::vector$<$ std::string $>$ \&args)
 \item 
 int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\hypertarget{main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60}{
+\index{main.cpp@{main.cpp}!load\_\-backends@{load\_\-backends}}
+\index{load\_\-backends@{load\_\-backends}!main.cpp@{main.cpp}}
+\subsubsection[{load\_\-backends}]{\setlength{\rightskip}{0pt plus 5cm}bool load\_\-backends (
+\begin{DoxyParamCaption}
+\item[{{\bf Storage::AbstractStorage} $\ast$$\ast$}]{storage, }
+\item[{{\bf UI::AbstractUI} $\ast$$\ast$}]{ui, }
+\item[{std::vector$<$ std::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{
 \index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
@@ -33,3 +69,15 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \end{DoxyParamCaption}
 )}}
 \label{df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+

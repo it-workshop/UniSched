@@ -65,25 +65,75 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h1>src/main.cpp File Reference</h1>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;time.h&gt;</code><br/>
-<code>#include &lt;vector&gt;</code><br/>
-<code>#include &quot;<a class="el" href="../../d9/d49/types_8h_source.html">types.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d1/d38/event__template_8h_source.html">event_template.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d8/d38/queue_8h_source.html">queue.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d5/d90/commands_8h_source.html">commands.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../df/d52/userinterface_8h_source.html">userinterface.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d4/d98/person_8h_source.html">person.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d9/dd1/group_8h_source.html">group.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../dd/d20/event_8h_source.html">event.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d5/d2b/data__storage_8h_source.html">data_storage.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="../../d9/d60/file__storage_8h_source.html">file_storage.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &lt;abstractstorage.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d1/d7a/abstractui_8h_source.html">abstractui.h</a>&gt;</code><br/>
+<code>#include &lt;backend.h&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dce/main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
+<map name="src_2main_8cpp" id="src_2main_8cpp">
+<area shape="rect" id="node5" href="../../d1/d7a/abstractui_8h.html" title="abstractui.h" alt="" coords="390,83,481,112"/><area shape="rect" id="node7" href="../../d2/dcb/usersobject_8h.html" title="usersobject.h" alt="" coords="15,160,114,189"/><area shape="rect" id="node15" href="../../de/d16/abstractstorage_8h.html" title="abstractstorage.h" alt="" coords="205,160,327,189"/><area shape="rect" id="node25" href="../../de/d34/backend_8h.html" title="backend.h" alt="" coords="398,237,481,267"/><area shape="rect" id="node20" href="../../d5/d07/storableobject_8h.html" title="storableobject.h" alt="" coords="209,237,323,267"/></map>
+</div>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a8b3ddd91124b7bb8c0b91c530505dd60">load_backends</a> (<a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> **storage, <a class="el" href="../../de/dda/classUI_1_1AbstractUI.html">UI::AbstractUI</a> **ui, std::vector&lt; std::string &gt; &amp;args)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a8b3ddd91124b7bb8c0b91c530505dd60"></a><!-- doxytag: member="main.cpp::load_backends" ref="a8b3ddd91124b7bb8c0b91c530505dd60" args="(Storage::AbstractStorage **storage, UI::AbstractUI **ui, std::vector&lt; std::string &gt; &amp;args)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool load_backends </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> **&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/classUI_1_1AbstractUI.html">UI::AbstractUI</a> **&#160;</td>
+          <td class="paramname"><em>ui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_cgraph.png" border="0" usemap="#df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_cgraph" alt=""/></div>
+<map name="df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_cgraph" id="df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_cgraph">
+<area shape="rect" id="node3" href="../../d6/d84/backend_8cpp.html#a52651e1c45f0418eb99bf5ac128c6c77" title="backends" alt="" coords="197,29,275,59"/><area shape="rect" id="node6" href="../../db/d37/classAbstractBackend.html#afce49841a79e3093a1fbf199bfd9f698" title="AbstractBackend::init" alt="" coords="163,83,309,112"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_icgraph.png" border="0" usemap="#df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_icgraph" alt=""/></div>
+<map name="df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_icgraph" id="df/d0a/main_8cpp_a8b3ddd91124b7bb8c0b91c530505dd60_icgraph">
+<area shape="rect" id="node3" href="../../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="163,5,213,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a><!-- doxytag: member="main.cpp::main" ref="a0ddf1224851353fc92bfbff6f499fa97" args="(int argc, char *argv[])" -->
 <div class="memitem">
 <div class="memproto">
@@ -109,6 +159,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
+<map name="df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="df/d0a/main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" id="node3" href="../../df/d0a/main_8cpp.html#a8b3ddd91124b7bb8c0b91c530505dd60" title="load_backends" alt="" coords="116,56,225,85"/><area shape="rect" id="node10" href="../../de/dda/classUI_1_1AbstractUI.html#af9b66b441b76c88fe645a02d33138159" title="UI::AbstractUI::run" alt="" coords="104,109,237,139"/><area shape="rect" id="node5" href="../../d6/d84/backend_8cpp.html#a52651e1c45f0418eb99bf5ac128c6c77" title="backends" alt="" coords="320,29,397,59"/><area shape="rect" id="node8" href="../../db/d37/classAbstractBackend.html#afce49841a79e3093a1fbf199bfd9f698" title="AbstractBackend::init" alt="" coords="285,83,432,112"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div>
@@ -117,7 +176,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -126,7 +185,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:22 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

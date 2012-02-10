@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="67,173,235,571"/>
+<area shape="rect" id="node9" href="$de/dda/classUI_1_1AbstractUI.html" title="{UI::AbstractUI\n|&#45; storage_\l&#45; cache_\l|+ AbstractUI()\l+ AbstractUI()\l+ storage()\l+ run()\l# cache()\l# search()\l# create()\l# remove()\l}" alt="" coords="259,260,365,484"/>
+<area shape="rect" id="node5" href="$d0/df2/classDummyStorage.html" title="{DummyStorage\n||+ search()\l+ init()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l}" alt="" coords="5,619,139,930"/>
+<area shape="rect" id="node7" href="$db/d2a/classSQLiteStorage.html" title="{SQLiteStorage\n||+ init()\l+ search()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l}" alt="" coords="163,619,296,930"/>
+</map>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Universal Scheduler: src/person.h Source File</title>
+<title>Universal Scheduler: src/include/person.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/search.js"></script>
@@ -59,56 +59,77 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>src/person.h</h1>  </div>
+<h1>src/include/person.h</h1>  </div>
 </div>
 <div class="contents">
-<a href="../../d4/d98/person_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00002"></a>00002 <span class="preprocessor">#pragma once</span>
-<a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;string&gt;</span>
+<a href="../../d4/d98/person_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;sstream&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;time.h&gt;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#ifdef HAVE_CONFIG_H</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#include &lt;config.h&gt;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#endif </span><span class="comment">/* HAVE_CONFIG_H */</span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="../../d9/d49/types_8h.html">types.h</a>&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="../../dc/db3/group__content_8h.html">group_content.h</a>&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="../../d9/dd1/group_8h.html">group.h</a>&quot;</span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="../../da/d4a/calendar_8h.html">calendar.h</a>&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="../../dd/d20/event_8h.html">event.h</a>&quot;</span>
-<a name="l00017"></a>00017 
-<a name="l00021"></a><a class="code" href="../../d1/d63/classPerson.html">00021</a> <span class="keyword">class </span><a class="code" href="../../d1/d63/classPerson.html" title="Class keeps person unique data.">Person</a> {
-<a name="l00022"></a>00022 <span class="keyword">public</span>:
-<a name="l00024"></a><a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">00024</a>     <span class="keyword">enum</span> <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a> {
-<a name="l00025"></a><a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4">00025</a>         <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4">MALE</a>,
-<a name="l00026"></a><a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064">00026</a>         <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064">FEMALE</a>
-<a name="l00027"></a>00027     };
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <a class="code" href="../../d1/d63/classPerson.html#a3f28ee718c6ed2692ecf767ed1b2a86f">Person</a>(<a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> <span class="keywordtype">id</span>, std::string name, std::string surname, <span class="keyword">enum</span> <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a> <a class="code" href="../../d1/d63/classPerson.html#ae73331abe20c0f03fcb04de8a6adde46">sex</a>, time_t <a class="code" href="../../d1/d63/classPerson.html#aec14dd73ca58227cc70c4ba3a5065d02">birthday</a>);
-<a name="l00037"></a>00037     <a class="code" href="../../d1/d63/classPerson.html#a700ffd693321c5fe6880262acf43d4da">~Person</a>();                  
-<a name="l00040"></a>00040     <a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> <a class="code" href="../../d1/d63/classPerson.html#addbe4758044124636fb0f9d3094c6fcb">get_id</a>();               
-<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="../../d1/d63/classPerson.html#ab71f6c7ca2abd23309282a7a93b4d639">set_id</a> (<a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> <span class="keywordtype">id</span>);           
-<a name="l00046"></a>00046     std::string <a class="code" href="../../d1/d63/classPerson.html#a1837ca2f4ba804aeee2a70c1a1fdd468">get_name</a>();             
-<a name="l00049"></a>00049     std::string <a class="code" href="../../d1/d63/classPerson.html#aad33f79ec5c96aa3ab30c9c4c989fb4b">get_surname</a>();          
-<a name="l00052"></a>00052     <span class="keyword">enum</span> <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a> <a class="code" href="../../d1/d63/classPerson.html#ae73331abe20c0f03fcb04de8a6adde46">sex</a>();             
-<a name="l00055"></a>00055     time_t <a class="code" href="../../d1/d63/classPerson.html#aec14dd73ca58227cc70c4ba3a5065d02">birthday</a>();              
-<a name="l00059"></a>00059     std::vector&lt;Group_Content *&gt; *<a class="code" href="../../d1/d63/classPerson.html#a24cd3ad56c42c1cd34505b1094e6e7d5">get_groups</a>();
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="../../d1/d63/classPerson.html#aa17159e6bb16f2a42a1c4bcae08ae903">add_group</a>(<a class="code" href="../../d2/d04/structGroup__Content.html">Group_Content</a> * <a class="code" href="../../dc/db3/group__content_8h.html#a27517aa1480ab2d9bfe5d62e693b33eb">group</a>);  
-<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="../../d1/d63/classPerson.html#a93dfe7e17e0316b1f7dddebf5fd3f7ce">delete_group</a>(<a class="code" href="../../d0/db7/classGroup.html" title="Class keeps information about group of people.">Group</a>* <a class="code" href="../../dc/db3/group__content_8h.html#a27517aa1480ab2d9bfe5d62e693b33eb">group</a>);        
-<a name="l00069"></a>00069     <a class="code" href="../../dd/dac/classCalendar.html" title="Class keeps information about calendar.">Calendar</a> *<a class="code" href="../../d1/d63/classPerson.html#abaaac95db5394d3ad78ad08221b1d231">get_calendar</a>();           
-<a name="l00072"></a>00072     <span class="keywordtype">void</span> <a class="code" href="../../d1/d63/classPerson.html#a57689e959d613756a806e5d32654d3e8">add_event</a>(<a class="code" href="../../d5/da5/classEvent.html" title="Class keeps information about event.">Event</a>* event, std::string <a class="code" href="../../dc/db3/group__content_8h.html#ab4d38e7365d935f2a5f1403eec29127e">status</a>);
-<a name="l00077"></a>00077     <span class="keywordtype">void</span> <a class="code" href="../../d1/d63/classPerson.html#ab788997b3b66a72e51f924d416029ff5">delete_event</a>(<a class="code" href="../../d5/da5/classEvent.html" title="Class keeps information about event.">Event</a>* event);        
-<a name="l00080"></a>00080 <span class="keyword">private</span>:
-<a name="l00081"></a>00081     <a class="code" href="../../d9/d49/types_8h.html#a0b60c08a3ab1435cccc5643d32d8ccee">id_type</a> id_;                
-<a name="l00082"></a>00082     std::string name_;              
-<a name="l00083"></a>00083     std::string surname_;           
-<a name="l00084"></a>00084     std::vector&lt;Group_Content *&gt; groups_;   
-<a name="l00085"></a>00085     <span class="keyword">enum</span> <a class="code" href="../../d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6b">Sex</a> sex_;              
-<a name="l00086"></a>00086     time_t birthday_;               
-<a name="l00088"></a>00088 };
-<a name="l00089"></a>00089 
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;<a class="code" href="../../d5/d07/storableobject_8h.html">storableobject.h</a>&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;<a class="code" href="../../d2/dcb/usersobject_8h.html">usersobject.h</a>&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;<a class="code" href="../../df/de3/abstractgroup_8h.html">abstractgroup.h</a>&gt;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>Core {
+<a name="l00012"></a>00012 
+<a name="l00016"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html">00016</a> <span class="keyword">class </span><a class="code" href="../../d9/d71/classCore_1_1Person.html" title="Class keeps person unique data.">Person</a>: <span class="keyword">public</span> Storage::StorableObject, <span class="keyword">public</span> UI::UsersObject {
+<a name="l00017"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a8be971ab18693e55f617c7dc8abc3e26">00017</a> <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a>;
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00020"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">00020</a>     <span class="keyword">enum</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> {
+<a name="l00021"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9">00021</a>         <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9">MALE</a>,
+<a name="l00022"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1">00022</a>         <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1">FEMALE</a>
+<a name="l00023"></a>00023     };
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a88e1d40e7be7d95e6cec9bc623d6e076">00025</a>     <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a88e1d40e7be7d95e6cec9bc623d6e076">_</a>(<span class="keyword">const</span> std::string str)
+<a name="l00026"></a>00026         { <span class="keywordflow">return</span> (str == <span class="stringliteral">&quot;MALE&quot;</span>) ? <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9">MALE</a> : <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1">FEMALE</a>; }
+<a name="l00032"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a7ded3b871b2e7f6ce35b7b1f4e1738ee">00032</a>     <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a88e1d40e7be7d95e6cec9bc623d6e076">_</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a0d70ad24edf86e3c0f88e913342aa24d">sex</a>)
+<a name="l00033"></a>00033         { <span class="keywordflow">return</span> (sex == <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9">MALE</a>) ? <span class="stringliteral">&quot;MALE&quot;</span> : <span class="stringliteral">&quot;FEMALE&quot;</span>; }
+<a name="l00039"></a>00039 <span class="keyword">private</span>:
+<a name="l00040"></a>00040     std::string name_;
+<a name="l00042"></a>00042     std::string surname_;
+<a name="l00044"></a>00044     <span class="keyword">enum</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> sex_;
+<a name="l00046"></a>00046     time_t birthday_;
+<a name="l00049"></a>00049     std::vector&lt;class AbstractGroup *&gt; groups_;
+<a name="l00052"></a>00052 <span class="keyword">protected</span>:
+<a name="l00053"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#aa9b9581966365e7272d43e77f7a220e4">00053</a>     <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#aa9b9581966365e7272d43e77f7a220e4">add_group</a>(<span class="keyword">class</span> <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a> * group)
+<a name="l00054"></a>00054             { groups_.push_back(group); }
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a0057f7bd335dd35e470e67ad2e22b0d5">del_group</a>(<span class="keyword">class</span> <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a> <span class="keyword">const</span> * group);
+<a name="l00064"></a>00064     <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a846fa55a79f6da0258d711adc88a1a30">save</a>();
+<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#ae88c1b9c89b03ac7f4ba3ddcff4c62a7">load</a>();
+<a name="l00069"></a>00069 <span class="keyword">public</span>:
+<a name="l00070"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a3f7bca52408bae72dd0213b2a92827f0">00070</a>     <a class="code" href="../../d9/d71/classCore_1_1Person.html#a3f7bca52408bae72dd0213b2a92827f0">Person</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage.">Storage::AbstractStorage</a>&amp; storage):
+<a name="l00071"></a>00071             <a class="code" href="../../d4/deb/classStorage_1_1StorableObject.html#ac55bb0a7b94a98ff8f14e4164150ecb0">StorableObject</a>(id, storage)
+<a name="l00072"></a>00072             {}
+<a name="l00078"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#aa1b55740d1dd9f2543ad27f4ecca8e72">00078</a>     <a class="code" href="../../d9/d71/classCore_1_1Person.html#a3f7bca52408bae72dd0213b2a92827f0">Person</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage.">Storage::AbstractStorage</a>&amp; storage,
+<a name="l00079"></a>00079         <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>, <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a5572207d53649af10cd9bb62fe21995c">surname</a>,
+<a name="l00080"></a>00080         <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a0d70ad24edf86e3c0f88e913342aa24d">sex</a>, <span class="keyword">const</span> time_t <a class="code" href="../../d9/d71/classCore_1_1Person.html#ab0d1836a97254798585fc6c97a63680e">birthday</a>):
+<a name="l00081"></a>00081             <a class="code" href="../../d4/deb/classStorage_1_1StorableObject.html#ac55bb0a7b94a98ff8f14e4164150ecb0">StorableObject</a>(id, storage), name_(name),
+<a name="l00082"></a>00082             surname_(surname), sex_(sex), birthday_(birthday)
+<a name="l00083"></a>00083             {}
+<a name="l00093"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">00093</a>     <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> name_; }
+<a name="l00098"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a5572207d53649af10cd9bb62fe21995c">00098</a>     <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a5572207d53649af10cd9bb62fe21995c">surname</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> surname_; }
+<a name="l00103"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#a0d70ad24edf86e3c0f88e913342aa24d">00103</a>     <span class="keyword">const</span> <span class="keyword">enum</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764">Sex</a> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a0d70ad24edf86e3c0f88e913342aa24d">sex</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> sex_; }
+<a name="l00108"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#ab0d1836a97254798585fc6c97a63680e">00108</a>     <span class="keyword">const</span> time_t <a class="code" href="../../d9/d71/classCore_1_1Person.html#ab0d1836a97254798585fc6c97a63680e">birthday</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> birthday_; }
+<a name="l00113"></a><a class="code" href="../../d9/d71/classCore_1_1Person.html#ae6dc9f0c0ca2caf326b69b72d81aea84">00113</a>     <span class="keyword">const</span> std::vector&lt;class AbstractGroup *&gt;&amp; <a class="code" href="../../d9/d71/classCore_1_1Person.html#ae6dc9f0c0ca2caf326b69b72d81aea84">groups</a>()
+<a name="l00114"></a>00114             { <span class="keywordflow">return</span> groups_; }
+<a name="l00119"></a>00119     <span class="keyword">virtual</span> <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a3b86cab797444527364376dad2a0c300">read</a>() <span class="keyword">const</span>;
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a9b1601502537f54b7c33fc593f8df590">read_int</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00122"></a>00122     <span class="keyword">virtual</span> <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a4b7d0b1c545c2c4876b3f410b914f3a2">read_string</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00123"></a>00123     <span class="keyword">virtual</span> <span class="keyword">const</span> time_t <a class="code" href="../../d9/d71/classCore_1_1Person.html#ad0485ff28f4f80aeb0da9f8a6ae2f6d0">read_time</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00124"></a>00124     <span class="keyword">virtual</span> <span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a5dfa21d7b0a58e09f71e07a4298f0f62">read_enum</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00125"></a>00125     <span class="keyword">virtual</span> <span class="keyword">const</span> std::vector&lt;UI::UsersObject *&gt; <a class="code" href="../../d9/d71/classCore_1_1Person.html#ab28c3e468d265c16bce1d4488493c5a6">read_vector</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span>(std::bad_cast);
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#ac2900dc24258c00ea1de17350c3f4658">update</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> value) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00128"></a>00128     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#ac2900dc24258c00ea1de17350c3f4658">update</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>, <span class="keyword">const</span> std::string value) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00129"></a>00129     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#ac2900dc24258c00ea1de17350c3f4658">update</a>(<span class="keyword">const</span> std::string <a class="code" href="../../d9/d71/classCore_1_1Person.html#a14d39111fb34383818154a26b0d248f5">name</a>, <span class="keyword">const</span> time_t value) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00130"></a>00130     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#a1c6826659c2413189dae536f7c83af98">update_enum</a>(<span class="keyword">const</span> std::string, <span class="keyword">const</span> std::string value) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00131"></a>00131     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d71/classCore_1_1Person.html#ac2900dc24258c00ea1de17350c3f4658">update</a>(UsersObject *, <span class="keywordtype">bool</span> linked) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00132"></a>00132 };
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134 };
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -116,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:22 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

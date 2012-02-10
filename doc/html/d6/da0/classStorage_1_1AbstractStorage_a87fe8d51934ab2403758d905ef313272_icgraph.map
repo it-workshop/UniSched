@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d4/deb/classStorage_1_1StorableObject.html#a8c4e071ed59d2cdd5d2a00806211b4e1" title="Storage::StorableObject::get_field_time" alt="" coords="312,32,563,61"/>
+<area shape="rect" id="node5" href="$d9/d71/classCore_1_1Person.html#ae88c1b9c89b03ac7f4ba3ddcff4c62a7" title="Core::Person::load" alt="" coords="611,5,741,35"/>
+<area shape="rect" id="node7" href="$d9/d42/classCore_1_1Event.html#a63462f7c20234f5c7f18e9c5e19d72b9" title="Method to load all data from the storage." alt="" coords="615,59,737,88"/>
+</map>

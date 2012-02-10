@@ -11,10 +11,24 @@ Base group functionality. You need to use it instead of \hyperlink{classCore_1_1
 
 {\ttfamily \#include $<$abstractgroup.h$>$}
 
-Inheritance diagram for Core::AbstractGroup:\begin{figure}[H]
+
+
+Inheritance diagram for Core::AbstractGroup:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{dd/d68/classCore_1_1AbstractGroup}
+\includegraphics[height=600pt]{d2/d03/classCore_1_1AbstractGroup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Core::AbstractGroup:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{dd/dad/classCore_1_1AbstractGroup__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -26,9 +40,9 @@ Inheritance diagram for Core::AbstractGroup:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
 const std::string \hyperlink{classCore_1_1AbstractGroup_a139cc0a6451f2dbca1f74d96f28741f0}{name} () const 
 \begin{DoxyCompactList}\small\item\em Returns group`s name. \item\end{DoxyCompactList}\item 
-void \hyperlink{classCore_1_1AbstractGroup_acbc75be98b4a9b9ceab55967124c0351}{add\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
+void \hyperlink{classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}{add\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$person)
 \begin{DoxyCompactList}\small\item\em Add person to the group. \item\end{DoxyCompactList}\item 
-void \hyperlink{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{del\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$\hyperlink{group__content_8h_ab8664e6fd42f01eeaad084b5e20eb54e}{person})
+void \hyperlink{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{del\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$person)
 \begin{DoxyCompactList}\small\item\em Delete person from the group. \item\end{DoxyCompactList}\item 
 virtual const std::string \hyperlink{classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}{read} () const 
 \begin{DoxyCompactList}\small\item\em Returns full object information. \item\end{DoxyCompactList}\item 
@@ -55,9 +69,9 @@ virtual void \hyperlink{classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classCore_1_1AbstractGroup_abf219d714e6a17d5e712b2fcb60395d2}{add\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+void \hyperlink{classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}{add\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$group)
 \begin{DoxyCompactList}\small\item\em Method to add child group. \item\end{DoxyCompactList}\item 
-void \hyperlink{classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}{del\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$\hyperlink{group__content_8h_a27517aa1480ab2d9bfe5d62e693b33eb}{group})
+void \hyperlink{classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}{del\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$group)
 \begin{DoxyCompactList}\small\item\em Method to delete child group. \item\end{DoxyCompactList}\item 
 virtual void \hyperlink{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}{save} ()
 \begin{DoxyCompactList}\small\item\em Method to save all data in the storage. \item\end{DoxyCompactList}\item 
@@ -126,15 +140,15 @@ Constructor.
 This constructor called from inherited classes. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classCore_1_1AbstractGroup_abf219d714e6a17d5e712b2fcb60395d2}{
+\hypertarget{classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!add\_\-child@{add\_\-child}}
 \index{add\_\-child@{add\_\-child}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{add\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}void Core::AbstractGroup::add\_\-child (
+\subsubsection[{add\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::add\_\-child (
 \begin{DoxyParamCaption}
 \item[{{\bf AbstractGroup} $\ast$}]{group}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_abf219d714e6a17d5e712b2fcb60395d2}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}
 
 
 Method to add child group. 
@@ -144,15 +158,39 @@ Method to add child group.
 {\em group} & \hyperlink{classCore_1_1Group}{Group} to add.\\
 \hline
 \end{DoxyParams}
-This method does not controlls that group in not a child already. This check must be in function Group::add\_\-parent(). That function must be only the one place where this caled from. \hypertarget{classCore_1_1AbstractGroup_acbc75be98b4a9b9ceab55967124c0351}{
+This method does not controlls that group in not a child already. This check must be in function Group::add\_\-parent(). That function must be only the one place where this caled from. 
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!add\_\-person@{add\_\-person}}
 \index{add\_\-person@{add\_\-person}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void Group::add\_\-person (
+\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::add\_\-person (
 \begin{DoxyParamCaption}
 \item[{{\bf Person} $\ast$}]{person}
 \end{DoxyParamCaption}
 )}}
-\label{dd/d68/classCore_1_1AbstractGroup_acbc75be98b4a9b9ceab55967124c0351}
+\label{dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}
 
 
 Add person to the group. 
@@ -162,7 +200,19 @@ Add person to the group.
 {\em person} & \hyperlink{classCore_1_1Person}{Person} to add.\\
 \hline
 \end{DoxyParams}
-Do not use this directly. It must be moved into protected or private. This method called from update method. \hypertarget{classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}{
+Do not use this directly. It must be moved into protected or private. This method called from update method. 
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!del\_\-child@{del\_\-child}}
 \index{del\_\-child@{del\_\-child}!Core::AbstractGroup@{Core::AbstractGroup}}
 \subsubsection[{del\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::del\_\-child (
@@ -180,7 +230,31 @@ Method to delete child group.
 {\em group} & \hyperlink{classCore_1_1Group}{Group} to delete.\\
 \hline
 \end{DoxyParams}
-This method looks for requested group and deletes it. Group::del\_\-parent() must be only the one place where this method called from. \hypertarget{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{
+This method looks for requested group and deletes it. Group::del\_\-parent() must be only the one place where this method called from. 
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!del\_\-person@{del\_\-person}}
 \index{del\_\-person@{del\_\-person}!Core::AbstractGroup@{Core::AbstractGroup}}
 \subsubsection[{del\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::del\_\-person (
@@ -198,7 +272,19 @@ Delete person from the group.
 {\em person} & to delete.\\
 \hline
 \end{DoxyParams}
-Do not use this directly. It must be moved into protected or private. This method called from update method. \hypertarget{classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}{
+Do not use this directly. It must be moved into protected or private. This method called from update method. 
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!load@{load}}
 \index{load@{load}!Core::AbstractGroup@{Core::AbstractGroup}}
 \subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::load (
@@ -218,6 +304,18 @@ Implements \hyperlink{classStorage_1_1StorableObject_ab92526b66762a9099d720cf28b
 
 
 Reimplemented in \hyperlink{classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9}{Core::Event}.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classCore_1_1AbstractGroup_a139cc0a6451f2dbca1f74d96f28741f0}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!name@{name}}
@@ -369,6 +467,18 @@ Implements \hyperlink{classUI_1_1UsersObject_a490536c477c5a796724ce26fd010c680}{
 
 Reimplemented in \hyperlink{classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a}{Core::Event}.
 
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-vector@{read\_\-vector}}
 \index{read\_\-vector@{read\_\-vector}!Core::AbstractGroup@{Core::AbstractGroup}}
@@ -398,6 +508,18 @@ Implements \hyperlink{classUI_1_1UsersObject_a6899d8a06268abb8f2a13feba9921ce5}{
 
 Reimplemented in \hyperlink{classCore_1_1Group_a52e48b1f92f6354b4e3a32d710b9c7b3}{Core::Group}.
 
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!save@{save}}
 \index{save@{save}!Core::AbstractGroup@{Core::AbstractGroup}}
@@ -418,6 +540,18 @@ Implements \hyperlink{classStorage_1_1StorableObject_a85609f4a18b49c7e0eed0205ee
 
 
 Reimplemented in \hyperlink{classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7}{Core::Event}.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
@@ -445,6 +579,18 @@ Never return really.
 Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. 
 
 Implements \hyperlink{classUI_1_1UsersObject_a9b30123c0a25a66715bce9a58a27d37e}{UI::UsersObject}.
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=364pt]{dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classCore_1_1AbstractGroup_a39c1a34ff912b5abd298f58bf6196a45}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
@@ -569,5 +715,4 @@ Implements \hyperlink{classUI_1_1UsersObject_a925f50c5cb5123a13493f76029ae6f06}{
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
 src/include/\hyperlink{abstractgroup_8h}{abstractgroup.h}\item 
-src/core/\hyperlink{abstractgroup_8cpp}{abstractgroup.cpp}\item 
-src/\hyperlink{group_8cpp}{group.cpp}\end{DoxyCompactItemize}
+src/core/\hyperlink{abstractgroup_8cpp}{abstractgroup.cpp}\end{DoxyCompactItemize}

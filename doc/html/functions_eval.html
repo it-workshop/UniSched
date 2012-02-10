@@ -55,7 +55,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -77,20 +77,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>FEMALE
 : <a class="el" href="d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764a0c4f3aef529b75d197d411a6336ec3a1">Core::Person</a>
-, <a class="el" href="d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba8ee21010fb2d8e8794ef72be368da064">Person</a>
 </li>
 <li>INTEGER
 : <a class="el" href="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a92adab5cf7e02947e2e75fba5e11446ca4f57d3a5ac601598730fb58b08c81540">Storage::AbstractStorage::Argument</a>
 </li>
 <li>MALE
 : <a class="el" href="d9/d71/classCore_1_1Person.html#a01e6eee93727f9ce06525eca689b4764aeb7355bb082d0aa0d2b315e5dfaa2de9">Core::Person</a>
-, <a class="el" href="d1/d63/classPerson.html#a328ea8d2e8c2674688c7f944fab70b6ba16691f7cc6595f87b71d9b43ad23fcb4">Person</a>
+</li>
+<li>STORAGE
+: <a class="el" href="db/d37/classAbstractBackend.html#a09da2d2fbf0862fb2af3928b438535d2ac0a0df2995db93384337b95598559a36">AbstractBackend</a>
 </li>
 <li>STRING
 : <a class="el" href="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a92adab5cf7e02947e2e75fba5e11446ca3268a68276a4ac73701de323858c945b">Storage::AbstractStorage::Argument</a>
 </li>
 <li>TIME
 : <a class="el" href="d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html#a92adab5cf7e02947e2e75fba5e11446ca6f9cbb024f036014248e8322253da11e">Storage::AbstractStorage::Argument</a>
+</li>
+<li>UI
+: <a class="el" href="db/d37/classAbstractBackend.html#a09da2d2fbf0862fb2af3928b438535d2adcd5d3a3c71967aa82d09038477173ba">AbstractBackend</a>
 </li>
 </ul>
 </div>
@@ -99,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:22 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

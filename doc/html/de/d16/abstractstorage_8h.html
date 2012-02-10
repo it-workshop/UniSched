@@ -70,6 +70,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;typeinfo&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d5/d07/storableobject_8h_source.html">storableobject.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../de/d34/backend_8h_source.html">backend.h</a>&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for abstractstorage.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/db3/abstractstorage_8h__incl.png" border="0" usemap="#src_2include_2abstractstorage_8h" alt=""/></div>
+<map name="src_2include_2abstractstorage_8h" id="src_2include_2abstractstorage_8h">
+<area shape="rect" id="node9" href="../../d5/d07/storableobject_8h.html" title="storableobject.h" alt="" coords="172,83,287,112"/><area shape="rect" id="node14" href="../../de/d34/backend_8h.html" title="backend.h" alt="" coords="65,83,148,112"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d72/abstractstorage_8h__dep__incl.png" border="0" usemap="#src_2include_2abstractstorage_8hdep" alt=""/></div>
+<map name="src_2include_2abstractstorage_8hdep" id="src_2include_2abstractstorage_8hdep">
+<area shape="rect" id="node3" href="../../d9/df4/sqlite_8cpp.html" title="src/backends/storage/sqlite.cpp" alt="" coords="5,83,211,112"/><area shape="rect" id="node5" href="../../d5/d07/storableobject_8h.html" title="src/include/storableobject.h" alt="" coords="235,83,416,112"/><area shape="rect" id="node23" href="../../d1/d7a/abstractui_8h.html" title="src/include/abstractui.h" alt="" coords="440,83,597,112"/><area shape="rect" id="node8" href="../../df/de3/abstractgroup_8h.html" title="src/include/abstractgroup.h" alt="" coords="261,237,440,267"/><area shape="rect" id="node12" href="../../d4/d98/person_8h.html" title="src/include/person.h" alt="" coords="281,160,420,189"/><area shape="rect" id="node10" href="../../dd/da0/abstractgroup_8cpp.html" title="src/core/abstractgroup.cpp" alt="" coords="85,315,261,344"/><area shape="rect" id="node15" href="../../dd/d20/event_8h.html" title="src/include/event.h" alt="" coords="285,315,416,344"/><area shape="rect" id="node19" href="../../d9/dd1/group_8h.html" title="src/include/group.h" alt="" coords="440,315,571,344"/><area shape="rect" id="node17" href="../../df/d1b/event_8cpp.html" title="src/core/event.cpp" alt="" coords="363,392,493,421"/><area shape="rect" id="node25" href="../../df/d0a/main_8cpp.html" title="src/main.cpp" alt="" coords="471,160,567,189"/></map>
+</div>
 </div>
 <p><a href="../../de/d16/abstractstorage_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,7 +108,7 @@ Namespaces</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,7 +117,7 @@ Namespaces</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:22 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

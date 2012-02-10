@@ -55,7 +55,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="../../hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,12 +71,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <!-- doxytag: class="DummyStorage" --><!-- doxytag: inherits="Storage::AbstractStorage" --><div class="dynheader">
 Inheritance diagram for DummyStorage:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="../../d0/df2/classDummyStorage.png" usemap="#DummyStorage_map" alt=""/>
-  <map id="DummyStorage_map" name="DummyStorage_map">
-<area href="../../d6/da0/classStorage_1_1AbstractStorage.html" alt="Storage::AbstractStorage" shape="rect" coords="0,0,153,24"/>
-</map>
- </div></div>
+<div class="center"><img src="../../da/d63/classDummyStorage__inherit__graph.png" border="0" usemap="#DummyStorage_inherit__map" alt="Inheritance graph"/></div>
+<map name="DummyStorage_inherit__map" id="DummyStorage_inherit__map">
+<area shape="rect" id="node2" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="5,173,173,571"/><area shape="rect" id="node4" href="../../db/d37/classAbstractBackend.html" title="{AbstractBackend\n|&#45; type_\l|+ AbstractBackend()\l+ init()\l+ type()\l}" alt="" coords="19,5,160,125"/></map>
+<center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for DummyStorage:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/da0/classDummyStorage__coll__graph.png" border="0" usemap="#DummyStorage_coll__map" alt="Collaboration graph"/></div>
+<map name="DummyStorage_coll__map" id="DummyStorage_coll__map">
+<area shape="rect" id="node2" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="5,173,173,571"/><area shape="rect" id="node4" href="../../db/d37/classAbstractBackend.html" title="{AbstractBackend\n|&#45; type_\l|+ AbstractBackend()\l+ init()\l+ type()\l}" alt="" coords="19,5,160,125"/></map>
+<center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="../../dd/da0/classDummyStorage-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -85,6 +90,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::vector<br class="typebreak"/>
 &lt; <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">Storage::StorableObject</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df2/classDummyStorage.html#adea6bbcbaacaea1a728f09602d7c8d1d">search</a> (std::vector&lt; <a class="el" href="../../d9/dc9/structStorage_1_1AbstractStorage_1_1Argument.html">Argument</a> * &gt; &amp;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Search objects by some parameters.  <a href="#adea6bbcbaacaea1a728f09602d7c8d1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df2/classDummyStorage.html#ac52f6e7c6941108e4686f606a4d88d6b">init</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df2/classDummyStorage.html#a275263eba82a652005292f01a120af8e">get_field_int</a> (const int id, const std::string name) const   throw (std::bad_cast)</td></tr>
@@ -354,6 +360,25 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac52f6e7c6941108e4686f606a4d88d6b"></a><!-- doxytag: member="DummyStorage::init" ref="ac52f6e7c6941108e4686f606a4d88d6b" args="(const std::vector&lt; std::string &gt; &amp;args)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DummyStorage::init </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="../../db/d37/classAbstractBackend.html#afce49841a79e3093a1fbf199bfd9f698">AbstractBackend</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="adea6bbcbaacaea1a728f09602d7c8d1d"></a><!-- doxytag: member="DummyStorage::search" ref="adea6bbcbaacaea1a728f09602d7c8d1d" args="(std::vector&lt; Argument * &gt; &amp;)" -->
 <div class="memitem">
 <div class="memproto">
@@ -380,52 +405,6 @@ Protected Member Functions</h2></td></tr>
 <p>Parameters are connected by logical AND. If parameter have not got a name, search value by the any field of specified type. If value is empty that all objects will satisfied. </p>
 
 <p>Implements <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a9304eea8cd6fffd77b1ccd26f85a061c">Storage::AbstractStorage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab22488d00b8969af5356bc344672bd18"></a><!-- doxytag: member="DummyStorage::set_field" ref="ab22488d00b8969af5356bc344672bd18" args="(const int id, const std::string name, const int value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void DummyStorage::set_field </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [inline, protected, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set integer value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
-
-<p>Implements <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c">Storage::AbstractStorage</a>.</p>
 
 </div>
 </div>
@@ -518,6 +497,52 @@ Protected Member Functions</h2></td></tr>
 <p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
 
 <p>Implements <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a7ef9f70b3fcbaa2863de2be695dc77c1">Storage::AbstractStorage</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab22488d00b8969af5356bc344672bd18"></a><!-- doxytag: member="DummyStorage::set_field" ref="ab22488d00b8969af5356bc344672bd18" args="(const int id, const std::string name, const int value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DummyStorage::set_field </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (std::bad_cast)<code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set integer value of requested field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Object identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Field name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method must be realized in inherited classes. Throw an std::bad_cast exception if requested field keeped in another type. </p>
+
+<p>Implements <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c">Storage::AbstractStorage</a>.</p>
 
 </div>
 </div>
@@ -667,7 +692,7 @@ Protected Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -676,7 +701,7 @@ Protected Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Dec 12 2011 18:02:22 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

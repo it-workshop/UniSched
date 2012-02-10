@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d6/da0/classStorage_1_1AbstractStorage.html#a108af124f19c0ae9a4a461aee6abc3ec" title="Storage::AbstractStorage::create" alt="" coords="283,59,496,88"/>
+<area shape="rect" id="node9" href="$d4/deb/classStorage_1_1StorableObject.html#a4c15433a6719f4036705d989828e4933" title="Storage::StorableObject::set_field" alt="" coords="280,139,499,168"/>
+<area shape="rect" id="node5" href="$de/dda/classUI_1_1AbstractUI.html#a485b7a347d6b07f6dc44a3174cb96eaa" title="UI::AbstractUI::create" alt="" coords="561,5,711,35"/>
+<area shape="rect" id="node7" href="$df/d1b/model__classes__are__real_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="611,59,661,88"/>
+<area shape="rect" id="node11" href="$d9/d71/classCore_1_1Person.html#a846fa55a79f6da0258d711adc88a1a30" title="Core::Person::save" alt="" coords="569,112,703,141"/>
+<area shape="rect" id="node13" href="$d9/d42/classCore_1_1Event.html#a6dbea64bf650e7e36d55539cf59a66e7" title="Method to save all data in the storage." alt="" coords="572,165,700,195"/>
+<area shape="rect" id="node15" href="$dd/d68/classCore_1_1AbstractGroup.html#ab8cc5ad1c04d67c24af785f9adb2d67c" title="Method to save all data in the storage." alt="" coords="547,219,725,248"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d4/deb/classStorage_1_1StorableObject.html#a533b48a050009b86e376269e886d3eeb" title="Storage::StorableObject::get_field_string" alt="" coords="321,32,577,61"/>
+<area shape="rect" id="node5" href="$d9/d71/classCore_1_1Person.html#ae88c1b9c89b03ac7f4ba3ddcff4c62a7" title="Core::Person::load" alt="" coords="649,5,780,35"/>
+<area shape="rect" id="node7" href="$dd/d68/classCore_1_1AbstractGroup.html#ace41b51dd585a95b61990b69f078a283" title="Method to load all data from the storage." alt="" coords="628,59,801,88"/>
+</map>
