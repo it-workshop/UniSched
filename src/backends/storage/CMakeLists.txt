@@ -1,9 +1,5 @@
 cmake_minimum_required (VERSION 2.8.3)
 
-if (NOT DEFINED WITH_SQLITE)
-set (WITH_SQLITE "True")
-endif (NOT DEFINED WITH_SQLITE)
-
 if (WITH_SQLITE)
     check_include_file_cxx ("sqlite3.h" HAVE_SQLITE)
     if (HAVE_SQLITE)
