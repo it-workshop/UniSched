@@ -1,38 +1,38 @@
-#include <abstractstorage.h>
+#include <manager.h>
 #include <abstractui.h>
 #include <backend.h>
 
 #include <iostream>
 
 bool
-load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
+load_backends (Core::Manager **manager, UI::AbstractUI **ui,
                std::vector<std::string>& args)
 {
-    *storage = nullptr;
+    *manager = nullptr;
     *ui = nullptr;
     for (AbstractBackend *backend: backends())
     {
-        if (*storage && *ui)
+        if (*manager && *ui)
         {
             break;
         }
 
         if (backend->type() == AbstractBackend::STORAGE)
         {
-            if (*storage)
+            if (*manager)
             {
                 continue;
             }
             try
             {
-                *storage = dynamic_cast<Storage::AbstractStorage *>(backend);
+                *manager = dynamic_cast<Core::Manager *>(backend);
                 backend->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid storage backend!" << e.what() <<
+                std::cerr << "Warning: invalid manager backend!" << e.what() <<
 		    std::endl;
-                *storage = nullptr;
+                *manager = nullptr;
             }
             continue;
         }
@@ -59,10 +59,10 @@ load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
     }
 
     bool error = false;
-    if (!*storage)
+    if (!*manager)
     {
         error = true;
-        std::cerr << "Error: storage backend not found!" << std::endl;
+        std::cerr << "Error: manager backend not found!" << std::endl;
     }
     if (!*ui)
     {
@@ -76,14 +76,14 @@ load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
 int
 main(int argc, char *argv[])
 {
-    Storage::AbstractStorage *storage = nullptr;
+    Core::Manager *manager = nullptr;
     UI::AbstractUI *ui = nullptr;
 
     std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
 
-    if (load_backends(&storage, &ui, args))
+    if (load_backends(&manager, &ui, args))
     {
         return -1;
     }

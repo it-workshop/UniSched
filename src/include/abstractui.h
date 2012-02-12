@@ -1,7 +1,7 @@
 #pragma once
 
 #include <usersobject.h>
-#include <abstractstorage.h>
+#include <manager.h>
 
 #include <backend.h>
 
@@ -9,29 +9,29 @@ namespace UI {
 
 class AbstractUI: public AbstractBackend {
 private:
-    Storage::AbstractStorage *storage_;
+    Core::Manager *manager_;
     std::vector<UsersObject *> cache_;
 protected:
     std::vector<UsersObject *>& cache() { return cache_; }
 
-    void search(std::vector<Storage::AbstractStorage::Argument *>& parameters);
+    void search(std::vector<Core::Manager::Argument *>& parameters);
 
     template <class T>
-    void create(const std::vector<const Storage::AbstractStorage::Argument>& parameters);
+    void create(const std::vector<const Core::Manager::Argument>& parameters);
 
     void remove(UsersObject * object);
 
 public:
 
-    AbstractUI (Storage::AbstractStorage * storage):
-        AbstractBackend(AbstractBackend::UI), storage_(storage) {}
+    AbstractUI (Core::Manager * manager):
+        AbstractBackend(AbstractBackend::UI), manager_(manager) {}
 
     AbstractUI ():
         AbstractBackend(AbstractBackend::UI)
         {}
 
-    void storage(Storage::AbstractStorage * storage)
-        { storage_ = storage; }
+    void manager(Core::Manager * manager)
+        { manager_ = manager; }
 
     virtual int run() = 0;
 };

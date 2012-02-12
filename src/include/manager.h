@@ -4,26 +4,23 @@
 #include <vector>
 #include <typeinfo>
 
-#include <storableobject.h>
+#include <managersobject.h>
 
 #include <backend.h>
 
-/**@namespace Storage
- * @brief Storage classes.
- */
-namespace Storage {
+namespace Core {
 
-/**@class AbstractStorage
+/**@class Manager
  * @brief Abstract interface for storage.
  *
  * Each storage backend must to inherit this class. It can be chahged later,
  * it is too simple to work fast now.
  */
-class AbstractStorage: public AbstractBackend {
-friend class StorableObject;
+class Manager {
+friend class ManagersObject;
 private:
 protected:
-    std::vector<StorableObject *> objects_;
+    std::vector<ManagersObject *> objects_;
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
@@ -84,7 +81,7 @@ protected:
                          * does not exists or keeped in another type.
                          */
 
-    virtual StorableObject *
+    virtual ManagersObject *
     get_field_object(const int id, const std::string field) const
             throw (std::bad_cast) = 0;
                         /**< @brief Return object value of requested field.
@@ -97,7 +94,7 @@ protected:
                          * does not exists or keeped in another type.
                          */
 
-    virtual const std::vector<StorableObject *>
+    virtual const std::vector<ManagersObject *>
     get_field_vector(const int id, const std::string field) const
             throw (std::bad_cast) = 0;
                         /**< @brief Return vector value of requested field.
@@ -149,7 +146,7 @@ protected:
                          * keeped in another type.
                          */
     virtual void 
-    set_field(const int id, const std::string field, StorableObject * value)
+    set_field(const int id, const std::string field, ManagersObject * value)
             throw (std::bad_cast) = 0;
                         /**< @brief Set object value of requested field.
                          * @param [in] id Object identificator.
@@ -176,7 +173,7 @@ protected:
                          */
     virtual void
     set_field_vector(const int id, const std::string field,
-        const std::vector<StorableObject *> vector)
+        const std::vector<ManagersObject *> vector)
             throw (std::bad_cast) = 0;
                         /**< @brief Set vector value of requested field.
                          * @param [in] id Object identificator.
@@ -188,7 +185,7 @@ protected:
                          * keeped in another type.
                          */
 
-    virtual void set_object(StorableObject * object);
+    virtual void set_object(ManagersObject * object);
                         /**< @brief Set integer value of requested field.
                          * @param [in] Object to save.
                          *
@@ -211,12 +208,6 @@ protected:
                          * method.
                          */
 public:
-    AbstractStorage():
-            AbstractBackend(AbstractBackend::STORAGE)
-            {}
-                        /**< @brief Constructor.
-                         */
-
     /**@struct Argument
      * @brief an auxiliary structure to make search query and create objects.
      *
@@ -282,7 +273,7 @@ public:
  
     };
 
-    virtual void remove(StorableObject * object);
+    virtual void remove(ManagersObject * object);
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
                          *
@@ -291,7 +282,7 @@ public:
                          */
 
     template <class T>
-    StorableObject * create(std::vector<const Argument *>& parameters)
+    ManagersObject * create(std::vector<const Argument *>& parameters)
                         /**< @brief Create an object of the T type
                          * @param [in] parameters new object`s data.
                          * @return pointer to the created object.
@@ -300,7 +291,7 @@ public:
                          * create new object.
                          */
     {
-        StorableObject * object = new T(new_id(), *this);
+        ManagersObject * object = new T(new_id(), *this);
     
         set_object(object);
 
@@ -331,7 +322,7 @@ public:
         return object;
     }
 
-    virtual std::vector<StorableObject *> *
+    virtual std::vector<ManagersObject *> *
     search(std::vector<Argument *>& parameters) = 0;
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
@@ -343,7 +334,7 @@ public:
                          * is empty that all objects will satisfied.
                          */
 
-    virtual StorableObject * object(const int id) const throw (std::bad_cast)
+    virtual ManagersObject * object(const int id) const throw (std::bad_cast)
             { return objects_[id]; }
                         /**< @brief Return object by id.
                          * @param [in] id Object identificator.

@@ -4,7 +4,7 @@
 #include <sstream>
 #include <vector>
 
-#include <storableobject.h>
+#include <managersobject.h>
 #include <usersobject.h>
 #include <abstractgroup.h>
 
@@ -13,7 +13,7 @@ namespace Core {
 /** @class Person
  * @brief Class keeps person unique data.
  */
-class Person: public Storage::StorableObject, public UI::UsersObject {
+class Person: public ManagersObject, public UI::UsersObject {
 friend class AbstractGroup;
 public:
     /** @enum Sex enum of sex */
@@ -62,28 +62,28 @@ protected:
                              */
 
     void save();
-                            /**< Save all data into storage. Virtual in Storage::StorableObject. */
+                            /**< Save all data into manager. Virtual in Core::ManagersObject. */
     void load();
-                            /**< Load all data from starage. Viltual in Storage::StorableObject. */
+                            /**< Load all data from starage. Viltual in Core::ManagersObject. */
 
 public:
-    Person(const int id, Storage::AbstractStorage& storage):
-            StorableObject(id, storage)
+    Person(const int id, Manager& manager):
+            ManagersObject(id, manager)
             {}
-                            /**< Constructor. Call at Storage::AbstractStorage::create<Person>().
+                            /**< Constructor. Call at Core::Manager::create<Person>().
                              * @param [in] id Person's identificator.
-                             * @param [in] storage Data storage.
+                             * @param [in] manager Data manager.
                              */
 
-    Person(const int id, Storage::AbstractStorage& storage,
+    Person(const int id, Manager& manager,
         const std::string name, const std::string surname,
         const enum Sex sex, const time_t birthday):
-            StorableObject(id, storage), name_(name),
+            ManagersObject(id, manager), name_(name),
             surname_(surname), sex_(sex), birthday_(birthday)
             {}
     						/**< @deprecated Constructor.
     						 * @param [in] id Person's identificator.
-                             * @param [in] storage Data storage.
+                             * @param [in] manager Data manager.
     						 * @param [in] name Person's name.
     						 * @param [in] surname Person's surname.
     						 * @param [in] sex Person's sex.

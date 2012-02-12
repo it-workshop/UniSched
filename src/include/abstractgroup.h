@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include <storableobject.h>
+#include <managersobject.h>
 #include <person.h>
 
 /**@namespace Core
@@ -18,7 +18,7 @@ namespace Core {
  * This is a generalization of groups and events. It allows to work with them
  * easy. It have not parent group as an Event, but Group have.
  */
-class AbstractGroup: public Storage::StorableObject, public UI::UsersObject {
+class AbstractGroup: public ManagersObject, public UI::UsersObject {
 friend class Group;
 private:
     std::string name_;
@@ -51,39 +51,39 @@ protected:
                          */
 
     virtual void save();
-                        /**< @brief Method to save all data in the storage.
+                        /**< @brief Method to save all data in the manager.
                          *
-                         * Declared in the Storage::StorableObject. This method
+                         * Declared in the ManagersObject. This method
                          * saves name, child groups and people. Inherited
                          * classes must to redefine and call this one.
                          */
 
     virtual void load();
-                        /**< @brief Method to load all data from the storage.
+                        /**< @brief Method to load all data from the manager.
                          *
-                         * Declared in the Storage::StorableObject. Thil method
+                         * Declared in the ManagersObject. Thil method
                          * loads name, child groups and people. Inherited
                          * classes must to redefine and coll this one.
                          */
 
 public:
-    AbstractGroup(const int id, Storage::AbstractStorage& storage):
-            StorableObject(id, storage)
+    AbstractGroup(const int id, Manager& manager):
+            ManagersObject(id, manager)
             {}
                         /**< @brief Constructor
-                         * @param id Storable object`s identificator.
-                         * @param storage Storage.
+                         * @param id Managers object`s identificator.
+                         * @param manager Storage.
                          *
                          * This constructor called from inherited classes.
                          */
 
-    AbstractGroup(const int id, Storage::AbstractStorage& storage,
+    AbstractGroup(const int id, Manager& manager,
         const std::string name):
-            StorableObject(id, storage), name_(name)
+            ManagersObject(id, manager), name_(name)
             {}
                         /**< @brief Constructor
-                         * @param id Storable object`s identificotor.
-                         * @param storage Storage.
+                         * @param id Managers object`s identificotor.
+                         * @param manager Storage.
                          * @param name Group`s name.
                          *
                          * @deprecated This constructor keeped for debug. Using

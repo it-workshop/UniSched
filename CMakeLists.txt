@@ -11,7 +11,7 @@ set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}/bin)
 
 enable_testing()
 
-option(WITH_SQLITE "Build with SQLite support." Y)
+option(WITH_SQLITE "Build with SQLite support." N)
 
 add_subdirectory (src)
 

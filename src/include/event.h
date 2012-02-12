@@ -14,11 +14,11 @@ protected:
     virtual void load();
 
 public:
-    Event (const int id, Storage::AbstractStorage& storage):
-            AbstractGroup(id, storage) {}
-    Event (const int id, Storage::AbstractStorage& storage,
+    Event (const int id, Manager& manager):
+            AbstractGroup(id, manager) {}
+    Event (const int id, Manager& manager,
         const std::string name, const time_t begin, const time_t duration):
-            AbstractGroup(id, storage, name), begin_(begin),
+            AbstractGroup(id, manager, name), begin_(begin),
             duration_(duration) {}
 
     const time_t begin() const { return begin_; }

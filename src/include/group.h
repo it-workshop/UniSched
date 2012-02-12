@@ -17,8 +17,8 @@ private:
     virtual void load();
 
 public:
-    Group(const int id, Storage::AbstractStorage& storage):
-            AbstractGroup(id, storage)
+    Group(const int id, Manager& manager):
+            AbstractGroup(id, manager)
             {}
 
     void add_parent_group(AbstractGroup *group);
