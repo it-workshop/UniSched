@@ -7,7 +7,9 @@ include (CheckIncludeFileCXX)
 
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
 
-set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}/bin)
+if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
+    message (SEND_ERROR "In source build not allowed.")
+endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 
 enable_testing()
 
