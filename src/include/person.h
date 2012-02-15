@@ -28,7 +28,7 @@ private:
                             /**< Person's groups. */
 
 protected:
-    void add_group(class AbstractGroup * group)
+    void add_group(ManageableObject * group)
                             /**< Add group to person, call in AbstractGroup::add_person()
                              * @param [in] group to add.
                              */
@@ -36,7 +36,7 @@ protected:
         groups_.add(group);
     }
 
-    void del_group(class AbstractGroup * group)
+    void del_group(ManageableObject * group)
                             /**< Delete group from person.
                              * @param [in] group.
                              */

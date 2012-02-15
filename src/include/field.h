@@ -134,13 +134,13 @@ public:
     {}
 
     
-    const std::pair<ManageableObject *, bool>&
+    std::pair<ManageableObject *, bool>
     value(const std::pair<ManageableObject *, bool>& value) throw()
     {
         return value_ = value;
     }
 
-    const std::pair<ManageableObject *, bool>&
+    std::pair<ManageableObject *, bool>
     value() const throw()
     {
         return value_;

@@ -1,7 +1,7 @@
 #include <abstractui.h>
 
 using namespace UI;
-
+/*
 template <class T>
 void AbstractUI::create(const std::vector<const Core::Manager::Argument>& parameters)
 {
@@ -39,4 +39,4 @@ void AbstractUI::search(std::vector<Core::Manager::Argument *>& parameters)
         delete[] temp_cast_vector;
     }
 }
-
+*/
