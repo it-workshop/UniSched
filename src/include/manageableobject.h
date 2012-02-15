@@ -23,7 +23,7 @@ public:
     ManageableObject(const int id, Manager& manager): id_(id), manager_(manager)
     {}
 
-    virtual const Field& read(const std::string& name) = 0;
+    virtual const Field& read(const std::string& name) const = 0;
     virtual void update(const Field& field) = 0;
 };
 

@@ -43,7 +43,7 @@ public:
                          * This constructor called from inherited classes.
                          */
 
-    virtual const Field& read(const std::string& name) throw(std::bad_cast);
+    virtual const Field& read(const std::string& name) const throw(std::bad_cast);
     virtual void update(const Field& field) throw(std::bad_cast);
 };
 

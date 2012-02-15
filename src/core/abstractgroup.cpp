@@ -25,7 +25,7 @@ void AbstractGroup::del_child(AbstractGroup * group)
     push(FieldLink("child_groups", std::make_pair(group, false)));
 }
 
-const Field& AbstractGroup::read(const std::string& name) throw (std::bad_cast)
+const Field& AbstractGroup::read(const std::string& name) const throw (std::bad_cast)
 {
     if (name == "name")
     {
