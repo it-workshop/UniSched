@@ -50,7 +50,7 @@ void Group::save()
     AbstractGroup::save();
 
     {
-        std::vector<ManagersObject *> temp_cast_vector;
+        std::vector<ManageableObject *> temp_cast_vector;
         for (auto it = parent_groups_.begin(); it != parent_groups_.end(); it++)
         {
             temp_cast_vector.push_back(*it);

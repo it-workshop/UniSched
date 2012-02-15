@@ -80,7 +80,7 @@ void AbstractGroup::save()
     set_field("name", name_);
 
     {
-        std::vector<ManagersObject *> temp_cast_vector;
+        std::vector<ManageableObject *> temp_cast_vector;
         for (auto it = people_.begin(); it != people_.end(); it++)
         {
             temp_cast_vector.push_back(*it);
@@ -90,7 +90,7 @@ void AbstractGroup::save()
     }
 
     {
-        std::vector<ManagersObject *> temp_cast_vector;
+        std::vector<ManageableObject *> temp_cast_vector;
         for (auto it = child_groups_.begin(); it != child_groups_.end(); it++)
         {
             temp_cast_vector.push_back(*it);

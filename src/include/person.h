@@ -13,7 +13,7 @@ namespace Core {
 /** @class Person
  * @brief Class keeps person unique data.
  */
-class Person: public ManagersObject, public UI::UsersObject {
+class Person: public ManageableObject, public UI::UsersObject {
 friend class AbstractGroup;
 public:
     /** @enum Sex enum of sex */
@@ -62,13 +62,13 @@ protected:
                              */
 
     void save();
-                            /**< Save all data into manager. Virtual in Core::ManagersObject. */
+                            /**< Save all data into manager. Virtual in Core::ManageableObject. */
     void load();
-                            /**< Load all data from starage. Viltual in Core::ManagersObject. */
+                            /**< Load all data from starage. Viltual in Core::ManageableObject. */
 
 public:
     Person(const int id, Manager& manager):
-            ManagersObject(id, manager)
+            ManageableObject(id, manager)
             {}
                             /**< Constructor. Call at Core::Manager::create<Person>().
                              * @param [in] id Person's identificator.
@@ -78,7 +78,7 @@ public:
     Person(const int id, Manager& manager,
         const std::string name, const std::string surname,
         const enum Sex sex, const time_t birthday):
-            ManagersObject(id, manager), name_(name),
+            ManageableObject(id, manager), name_(name),
             surname_(surname), sex_(sex), birthday_(birthday)
             {}
     						/**< @deprecated Constructor.
