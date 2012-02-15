@@ -10,18 +10,33 @@
 namespace Core {
 
 class Field {
+public:
+    enum Type {
+        STRING,
+        TIME,
+        ENUM,
+        LINK,
+        VECTOR
+    };
+
 private:
     const std::string name_;
+    const enum Type type_;
 
 protected:
 public:
-    Field(const std::string& name) throw ():
-        name_(name)
+    Field(const Type type, const std::string& name) throw ():
+        type_(type), name_(name)
     {}
 
     const std::string& name() const throw()
     {
         return name_;
+    }
+
+    const Type type() const throw()
+    {
+        return type_;
     }
 
     virtual const Field& operator=(const Field& field) = 0;
@@ -34,7 +49,7 @@ protected:
 public:
     FieldString(const std::string& name, const std::string& value = "")
         throw ():
-        Field(name), value_(value)
+        Field(STRING, name), value_(value)
     {}
 
     const std::string& value(const std::string& value) throw ()
@@ -61,7 +76,7 @@ protected:
 public:
     FieldTime(const std::string& name, const time_t& value = 0)
         throw ():
-        Field(name), value_(value)
+        Field(TIME, name), value_(value)
     {}
 
     const time_t value(const time_t& value) throw ()
@@ -90,12 +105,12 @@ protected:
 public:
     FieldEnum(const std::string& name, const std::set<std::string>& valid,
               const std::string& value):
-        Field(name), valid_(valid), value_(*valid.find(value))
+        Field(ENUM, name), valid_(valid), value_(*valid.find(value))
     {}
 
     FieldEnum(const std::string& name, const std::set<std::string>& valid)
         throw ():
-        Field(name), valid_(valid), value_(*valid.begin())
+        Field(ENUM, name), valid_(valid), value_(*valid.begin())
     {}
 
     const std::string& value(const std::string& value)
@@ -123,7 +138,7 @@ protected:
 public:
     FieldLink(const std::string& name,
                 const std::pair<ManagersObject *, bool>& value) throw():
-        Field(name), value_(value)
+        Field(LINK, name), value_(value)
     {}
 
     
@@ -153,7 +168,7 @@ protected:
 public:
     FieldVector(const std::string& name,
                 const std::vector<ManagersObject *>& vector) throw():
-        Field(name), vector_(vector)
+        Field(VECTOR, name), vector_(vector)
     {}
 
     const std::vector<ManagersObject *>&
