@@ -317,8 +317,6 @@ public:
             }
         }
 
-        object->load();
-
         return object;
     }
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <set>
 #include <utility>
 #include <vector>
 
@@ -98,27 +97,20 @@ public:
 
 class FieldEnum : public Field {
 private:
-    const std::set<std::string>& valid_;
     std::string value_;
 
 protected:
 public:
-    FieldEnum(const std::string& name, const std::set<std::string>& valid,
-              const std::string& value):
-        Field(ENUM, name), valid_(valid), value_(*valid.find(value))
+    FieldEnum(const std::string& name, const std::string& value) throw ():
+        Field(ENUM, name), value_(value)
     {}
 
-    FieldEnum(const std::string& name, const std::set<std::string>& valid)
-        throw ():
-        Field(ENUM, name), valid_(valid), value_(*valid.begin())
-    {}
-
-    const std::string& value(const std::string& value)
+    const std::string& value(const std::string& value) throw ()
     {
-        return value_ = *(valid_.find(value));
+        return value_ = value;
     }
 
-    const std::string& value() const throw()
+    const std::string& value() const throw ()
     {
         return value_;
     }
@@ -169,6 +161,10 @@ public:
     FieldVector(const std::string& name,
                 const std::vector<ManageableObject *>& vector) throw():
         Field(VECTOR, name), vector_(vector)
+    {}
+
+    FieldVector(const std::string& name) throw():
+        Field(VECTOR, name)
     {}
 
     const std::vector<ManageableObject *>&
