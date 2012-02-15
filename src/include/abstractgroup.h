@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include <managersobject.h>
+#include <manageableobject.h>
 #include <person.h>
 
 /**@namespace Core

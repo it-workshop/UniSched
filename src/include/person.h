@@ -4,7 +4,7 @@
 #include <sstream>
 #include <vector>
 
-#include <managersobject.h>
+#include <manageableobject.h>
 #include <usersobject.h>
 #include <abstractgroup.h>
 

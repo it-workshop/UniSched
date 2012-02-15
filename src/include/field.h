@@ -5,7 +5,7 @@
 #include <utility>
 #include <vector>
 
-#include <managersobject.h>
+#include <manageableobject.h>
 
 namespace Core {
 

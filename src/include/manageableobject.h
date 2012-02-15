@@ -13,8 +13,8 @@ private:
 
 protected:
     const int id() const { return id_; };
-    
-const int get_field_int(const std::string name) const;
+
+    const int get_field_int(const std::string name) const;
     const std::string get_field_string(const std::string name) const;
     const time_t get_field_time(const std::string name) const;
     const std::string get_field_enum(const std::string name) const;
@@ -32,6 +32,7 @@ const int get_field_int(const std::string name) const;
     virtual void load() = 0;
 
 public:
+
     ManageableObject(const int id, Manager& manager): id_(id), manager_(manager) {}
 };
 

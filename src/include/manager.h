@@ -4,7 +4,7 @@
 #include <vector>
 #include <typeinfo>
 
-#include <managersobject.h>
+#include <manageableobject.h>
 
 #include <backend.h>
 
@@ -17,10 +17,10 @@ namespace Core {
  * it is too simple to work fast now.
  */
 class Manager {
-friend class ManagersObject;
+friend class ManageableObject;
 private:
 protected:
-    std::vector<ManagersObject *> objects_;
+    std::vector<ManageableObject *> objects_;
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
@@ -81,7 +81,7 @@ protected:
                          * does not exists or keeped in another type.
                          */
 
-    virtual ManagersObject *
+    virtual ManageableObject *
     get_field_object(const int id, const std::string field) const
             throw (std::bad_cast) = 0;
                         /**< @brief Return object value of requested field.
@@ -94,7 +94,7 @@ protected:
                          * does not exists or keeped in another type.
                          */
 
-    virtual const std::vector<ManagersObject *>
+    virtual const std::vector<ManageableObject *>
     get_field_vector(const int id, const std::string field) const
             throw (std::bad_cast) = 0;
                         /**< @brief Return vector value of requested field.
@@ -146,7 +146,7 @@ protected:
                          * keeped in another type.
                          */
     virtual void 
-    set_field(const int id, const std::string field, ManagersObject * value)
+    set_field(const int id, const std::string field, ManageableObject * value)
             throw (std::bad_cast) = 0;
                         /**< @brief Set object value of requested field.
                          * @param [in] id Object identificator.
@@ -173,7 +173,7 @@ protected:
                          */
     virtual void
     set_field_vector(const int id, const std::string field,
-        const std::vector<ManagersObject *> vector)
+        const std::vector<ManageableObject *> vector)
             throw (std::bad_cast) = 0;
                         /**< @brief Set vector value of requested field.
                          * @param [in] id Object identificator.
@@ -185,7 +185,7 @@ protected:
                          * keeped in another type.
                          */
 
-    virtual void set_object(ManagersObject * object);
+    virtual void set_object(ManageableObject * object);
                         /**< @brief Set integer value of requested field.
                          * @param [in] Object to save.
                          *
@@ -273,7 +273,7 @@ public:
  
     };
 
-    virtual void remove(ManagersObject * object);
+    virtual void remove(ManageableObject * object);
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
                          *
@@ -282,7 +282,7 @@ public:
                          */
 
     template <class T>
-    ManagersObject * create(std::vector<const Argument *>& parameters)
+    ManageableObject * create(std::vector<const Argument *>& parameters)
                         /**< @brief Create an object of the T type
                          * @param [in] parameters new object`s data.
                          * @return pointer to the created object.
@@ -291,7 +291,7 @@ public:
                          * create new object.
                          */
     {
-        ManagersObject * object = new T(new_id(), *this);
+        ManageableObject * object = new T(new_id(), *this);
     
         set_object(object);
 
@@ -322,7 +322,7 @@ public:
         return object;
     }
 
-    virtual std::vector<ManagersObject *> *
+    virtual std::vector<ManageableObject *> *
     search(std::vector<Argument *>& parameters) = 0;
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
@@ -334,7 +334,7 @@ public:
                          * is empty that all objects will satisfied.
                          */
 
-    virtual ManagersObject * object(const int id) const throw (std::bad_cast)
+    virtual ManageableObject * object(const int id) const throw (std::bad_cast)
             { return objects_[id]; }
                         /**< @brief Return object by id.
                          * @param [in] id Object identificator.

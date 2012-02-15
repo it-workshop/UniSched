@@ -2,7 +2,7 @@
 
 using namespace Core;
 
-void Manager::remove(ManagersObject * object)
+void Manager::remove(ManageableObject * object)
 {
     delete object;
 }
@@ -14,7 +14,7 @@ const int Manager::new_id()
     return id;
 }
 
-void Manager::set_object(ManagersObject * object)
+void Manager::set_object(ManageableObject * object)
 {
     objects_[object->id()] = object;
 }
