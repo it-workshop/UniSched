@@ -5,7 +5,7 @@ using namespace Core;
 
 AbstractGroup::AbstractGroup(const int id, Manager& manager)
         throw (std::bad_cast):
-    ManageableObject(id, manager), name_("name"),
+    Object(id, manager), name_("name"),
     child_groups_("child_groups"), people_("people")
     {
         name_ = dynamic_cast<const FieldString&>(pull("name"));

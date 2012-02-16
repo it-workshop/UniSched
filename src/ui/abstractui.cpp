@@ -21,7 +21,7 @@ void AbstractUI::remove(UsersObject * object)
         }
     }
 
-    manager_->remove(dynamic_cast<Core::ManageableObject *>(object));
+    manager_->remove(dynamic_cast<Core::Object *>(object));
 }
 
 void AbstractUI::search(std::vector<Core::Manager::Argument *>& parameters)
@@ -29,9 +29,9 @@ void AbstractUI::search(std::vector<Core::Manager::Argument *>& parameters)
     cache_.clear();
 
     {
-        std::vector<Core::ManageableObject *> *temp_cast_vector = manager_->search(parameters);
+        std::vector<Core::Object *> *temp_cast_vector = manager_->search(parameters);
 
-        for (std::vector<Core::ManageableObject *>::iterator it = temp_cast_vector->begin(); it != temp_cast_vector->end(); it++)
+        for (std::vector<Core::Object *>::iterator it = temp_cast_vector->begin(); it != temp_cast_vector->end(); it++)
         {
             cache_.push_back(dynamic_cast<UsersObject *>(*it));
         }

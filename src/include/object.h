@@ -5,7 +5,7 @@
 
 namespace Core {
 
-class ManageableObject {
+class Object {
 friend class Manager;
 private:
     const int id_;
@@ -20,7 +20,7 @@ protected:
 
 public:
 
-    ManageableObject(const int id, Manager& manager): id_(id), manager_(manager)
+    Object(const int id, Manager& manager): id_(id), manager_(manager)
     {}
 
     virtual const Field& read(const std::string& name) const = 0;

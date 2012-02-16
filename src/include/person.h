@@ -4,7 +4,7 @@
 #include <sstream>
 #include <vector>
 
-#include <manageableobject.h>
+#include <object.h>
 #include <usersobject.h>
 #include <abstractgroup.h>
 
@@ -13,7 +13,7 @@ namespace Core {
 /** @class Person
  * @brief Class keeps person unique data.
  */
-class Person: public ManageableObject, public UI::UsersObject {
+class Person: public Object, public UI::UsersObject {
 friend class AbstractGroup;
 private:
     FieldString name_;
@@ -28,7 +28,7 @@ private:
                             /**< Person's groups. */
 
 protected:
-    void add_group(ManageableObject * group)
+    void add_group(Object * group)
                             /**< Add group to person, call in AbstractGroup::add_person()
                              * @param [in] group to add.
                              */
@@ -36,14 +36,14 @@ protected:
         groups_.add(group);
     }
 
-    void del_group(ManageableObject * group)
+    void del_group(Object * group)
                             /**< Delete group from person.
                              * @param [in] group.
                              */
     {
         groups_.del(group);
     }
-                            /**< Load all data from starage. Viltual in Core::ManageableObject. */
+                            /**< Load all data from starage. Viltual in Core::Object. */
 
 public:
     Person(const int id, Manager& manager) throw (std::bad_cast);

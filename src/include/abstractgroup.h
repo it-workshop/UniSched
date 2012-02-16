@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include <manageableobject.h>
+#include <object.h>
 #include <person.h>
 
 /**@namespace Core
@@ -18,7 +18,7 @@ namespace Core {
  * This is a generalization of groups and events. It allows to work with them
  * easy. It have not parent group as an Event, but Group have.
  */
-class AbstractGroup: public ManageableObject, public UI::UsersObject {
+class AbstractGroup: public Object, public UI::UsersObject {
 friend class Group;
 private:
     FieldString name_;

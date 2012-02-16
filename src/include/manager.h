@@ -3,10 +3,10 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <typeinfo>
 
-#include <manageableobject.h>
-
-#include <backend.h>
+#include <field.h>
+#include <object.h>
 
 namespace Core {
 
@@ -17,9 +17,9 @@ namespace Core {
  * it is too simple to work fast now.
  */
 class Manager {
-friend class ManageableObject;
+friend class Object;
 private:
-    std::vector<ManageableObject *> objects_;
+    std::vector<Object *> objects_;
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
@@ -47,7 +47,7 @@ private:
     std::vector<Field *> parameters_;
     std::map<const int, std::vector<Field *>> records_;
 
-    ManageableObject * object(ManageableObject * object)
+    Object * object(Object * object)
     {
         return objects_[object->id()] = object;
     }
@@ -131,7 +131,7 @@ public:
         new_id_(0)
     {}
 
-    void remove(ManageableObject * object)
+    void remove(Object * object)
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
                          *
@@ -143,7 +143,7 @@ public:
         {
             if (record->type() == Field::VECTOR)
             {
-                for (ManageableObject* obj:
+                for (Object* obj:
                     (dynamic_cast<FieldVector *>(record))->vector())
                 {
                     object->update(FieldLink(record->name(),
@@ -160,7 +160,7 @@ public:
     }
 
     template <class T>
-    ManageableObject * create(std::vector<const Field>& parameters)
+    Object * create(std::vector<const Field>& parameters)
                         /**< @brief Create an object of the T type
                          * @param [in] parameters new object`s data.
                          * @return pointer to the created object.
@@ -174,7 +174,7 @@ public:
         return object(new T(new_id(), *this));
     }
 
-    std::vector<ManageableObject *>&
+    std::vector<Object *>&
     search(const std::vector<const Field *>& parameters) const
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
@@ -186,7 +186,7 @@ public:
                          * is empty that all objects will satisfied.
                          */
     {
-        static std::vector<ManageableObject *> results;
+        static std::vector<Object *> results;
 
         results.clear();
 
@@ -208,7 +208,7 @@ public:
         return results;
     }
 
-    ManageableObject * object(const int id) const throw (std::bad_cast)
+    Object * object(const int id) const throw (std::bad_cast)
                         /**< @brief Return object by id.
                          * @param [in] id Object identificator.
                          * @return Requested object.

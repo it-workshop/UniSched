@@ -4,7 +4,7 @@
 #include <utility>
 #include <vector>
 
-#include <manageableobject.h>
+#include <object.h>
 
 namespace Core {
 
@@ -124,23 +124,23 @@ public:
 
 class FieldLink : public Field {
 private:
-    std::pair<ManageableObject *, bool> value_;
+    std::pair<Object *, bool> value_;
 
 protected:
 public:
     FieldLink(const std::string& name,
-                const std::pair<ManageableObject *, bool>& value) throw():
+                const std::pair<Object *, bool>& value) throw():
         Field(LINK, name), value_(value)
     {}
 
     
-    std::pair<ManageableObject *, bool>
-    value(const std::pair<ManageableObject *, bool>& value) throw()
+    std::pair<Object *, bool>
+    value(const std::pair<Object *, bool>& value) throw()
     {
         return value_ = value;
     }
 
-    std::pair<ManageableObject *, bool>
+    std::pair<Object *, bool>
     value() const throw()
     {
         return value_;
@@ -155,11 +155,11 @@ public:
 
 class FieldVector : public Field {
 private:
-    std::vector<ManageableObject *> vector_;
+    std::vector<Object *> vector_;
 protected:
 public:
     FieldVector(const std::string& name,
-                const std::vector<ManageableObject *>& vector) throw():
+                const std::vector<Object *>& vector) throw():
         Field(VECTOR, name), vector_(vector)
     {}
 
@@ -167,13 +167,13 @@ public:
         Field(VECTOR, name)
     {}
 
-    const std::vector<ManageableObject *>&
-    vector(const std::vector<ManageableObject *>& vector) throw()
+    const std::vector<Object *>&
+    vector(const std::vector<Object *>& vector) throw()
     {
         return vector_ = vector;
     }
 
-    const std::vector<ManageableObject *>& vector() const throw()
+    const std::vector<Object *>& vector() const throw()
     {
         return vector_;
     }
@@ -184,9 +184,9 @@ public:
         return *this;
     }
 
-    void add(ManageableObject * object)
+    void add(Object * object)
     {
-        for (ManageableObject *obj : vector_)
+        for (Object *obj : vector_)
         {
             if (obj == object)
             {
@@ -196,7 +196,7 @@ public:
         vector_.push_back(object);
     }
 
-    void del(ManageableObject * object)
+    void del(Object * object)
     {
         for (auto it = vector_.begin(); it != vector_.end(); it++)
         {

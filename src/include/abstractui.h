@@ -1,6 +1,6 @@
 #pragma once
 
-#include <usersobject.h>
+#include <object.h>
 #include <manager.h>
 
 #include <backend.h>
@@ -10,16 +10,16 @@ namespace UI {
 class AbstractUI: public AbstractBackend {
 private:
     Core::Manager *manager_;
-    std::vector<UsersObject *> cache_;
+    std::vector<Core::Object *> cache_;
 protected:
-    std::vector<UsersObject *>& cache() { return cache_; }
+    std::vector<Core::Object *>& cache() { return cache_; }
 
     void search(std::vector<Core::Manager::Argument *>& parameters);
 
     template <class T>
     void create(const std::vector<const Core::Manager::Argument>& parameters);
 
-    void remove(UsersObject * object);
+    void remove(Core::Object * object);
 
 public:
 
