@@ -3,7 +3,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include <typeinfo>
 #include <object.h>
 
 namespace Core {
@@ -38,7 +38,10 @@ public:
         return type_;
     }
 
-    virtual const Field& operator=(const Field& field) = 0;
+    virtual const Field& operator=(const Field& field)
+            throw (std::bad_cast) = 0;
+    virtual const bool operator==(const Field& field) const
+            throw (std::bad_cast) = 0;
 };
 
 class FieldString : public Field {
@@ -61,10 +64,16 @@ public:
         return value_;
     }
 
-    virtual Field& operator=(const Field& field)
+    virtual Field& operator=(const Field& field) throw (std::bad_cast)
     {
         value(dynamic_cast<const FieldString&>(field).value());
         return *this;
+    }
+
+    virtual const bool operator==(const Field& field) const throw (std::bad_cast)
+    {
+        return (value() == dynamic_cast<const FieldString&>(field).value() 
+                && name() == field.name());
     }
 };
 
@@ -88,10 +97,16 @@ public:
         return value_;
     }
 
-    virtual const Field& operator=(const Field& field)
+    virtual const Field& operator=(const Field& field) throw (std::bad_cast)
     {
         value(dynamic_cast<const FieldTime&>(field).value());
         return *this;
+    }
+
+    virtual const bool operator==(const Field& field) const throw (std::bad_cast)
+    {
+        return (value() == dynamic_cast<const FieldTime&>(field).value()
+                && name() == field.name());
     }
 };
 
@@ -115,10 +130,16 @@ public:
         return value_;
     }
 
-    virtual const Field& operator=(const Field& field) 
+    virtual const Field& operator=(const Field& field) throw (std::bad_cast) 
     {
         value(dynamic_cast<const FieldEnum&>(field).value());
         return *this;
+    }
+
+    virtual const bool operator==(const Field& field) const throw (std::bad_cast)
+    {
+        return (value() == dynamic_cast<const FieldEnum&>(field).value()
+                && name() == field.name());
     }
 };
 
@@ -146,10 +167,16 @@ public:
         return value_;
     }
 
-    virtual const Field& operator=(const Field& field)
+    virtual const Field& operator=(const Field& field) throw (std::bad_cast)
     {
         value(dynamic_cast<const FieldLink&>(field).value());
         return *this;
+    }
+
+    virtual const bool operator==(const Field& field) const throw (std::bad_cast)
+    {
+        return (value() == dynamic_cast<const FieldLink&>(field).value()
+                && name() == field.name());
     }
 };
 
@@ -178,10 +205,15 @@ public:
         return vector_;
     }
 
-    virtual const Field& operator=(const Field& field)
+    virtual const Field& operator=(const Field& field) throw (std::bad_cast)
     {
         vector(dynamic_cast<const FieldVector&>(field).vector());
         return *this;
+    }
+
+    virtual const bool operator==(const Field& field) const throw (std::bad_cast)
+    {
+        throw std::bad_cast();
     }
 
     void add(Object * object)

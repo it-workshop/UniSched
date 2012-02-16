@@ -9,6 +9,6 @@ const Field& Object::pull(const std::string& name) const
 
 void Object::push(const Field& field)
 {
-    return field_.push(id(), field);
+    return manager_.push(id(), field);
 }
 

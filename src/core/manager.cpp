@@ -2,20 +2,65 @@
 
 using namespace Core;
 
-void Manager::remove(Object * object)
+const Field& Manager::pull(const std::string& name) const throw (std::bad_cast)
 {
-    delete object;
+    for (const Field* parameter: parameters_)
+    {
+        if (parameter->name() == name)
+        {
+            return *parameter;
+        }
+    }
+    throw std::bad_cast();
 }
 
-const int Manager::new_id()
+std::vector<Object *>&
+Manager::search(const std::vector<const Field *>& parameters) const
 {
-    const int id = objects_.size();
-    objects_.reserve(objects_.size() + 1);
-    return id;
+    static std::vector<Object *> results;
+
+    results.clear();
+
+    bool append = true;
+
+    for (const Field * parameter: parameters)
+    {
+        if (append)
+        {
+            for (std::pair<const int, Object *> obj : objects_)
+            {
+                try
+                {
+                    if (*parameter == obj.second->read(parameter->name()))
+                    {
+                        results.push_back(obj.second);
+                    }
+                }
+                catch (std::bad_cast) /* Object has not field with that
+                                       * name, or it's type is not like
+                                       * field.
+                                       */
+                {}
+            }
+            append = false;
+            continue;
+        }
+        for (auto it = results.begin(); it != results.end(); it++)
+        {
+            try
+            {
+                if (*parameter == (*it)->read(parameter->name()))
+                {
+                    continue;
+                }
+            }
+            catch (std::bad_cast)
+            {}
+            it = results.erase(it);
+        }
+    }
+
+    return results;
 }
 
-void Manager::set_object(Object * object)
-{
-    objects_[object->id()] = object;
-}
 

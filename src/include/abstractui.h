@@ -9,29 +9,58 @@ namespace UI {
 
 class AbstractUI: public AbstractBackend {
 private:
-    Core::Manager *manager_;
+    Core::Manager manager_;
     std::vector<Core::Object *> cache_;
 protected:
-    std::vector<Core::Object *>& cache() { return cache_; }
+    std::vector<Core::Object *>& cache()
+    {
+        return cache_;
+    }
 
-    void search(std::vector<Core::Manager::Argument *>& parameters);
+    void search(const std::vector<const Core::Field *>& parameters)
+    {
+        auto tmp = manager_.search(parameters);
+
+        for (Core::Object * object: tmp)
+        {
+            cache_.push_back(object);
+        }
+    }
 
     template <class T>
-    void create(const std::vector<const Core::Manager::Argument>& parameters);
+    void create(const std::vector<const Core::Field *>& parameters)
+    {
+        cache_.push_back(manager_.create<T>());
+    }
 
-    void remove(Core::Object * object);
+    void remove(Core::Object * object)
+    {
+        for (auto it = cache_.begin(); it != cache_.end(); it++)
+        {
+            if (*it == object)
+            {
+                cache_.erase(it);
+                manager_.remove(object);
+                return;
+            }
+        }
+    }
+
+    void reset_cache() throw ()
+    {
+        cache_.clear();
+    }
 
 public:
 
-    AbstractUI (Core::Manager * manager):
-        AbstractBackend(AbstractBackend::UI), manager_(manager) {}
-
     AbstractUI ():
         AbstractBackend(AbstractBackend::UI)
-        {}
+    {}
 
-    void manager(Core::Manager * manager)
-        { manager_ = manager; }
+    Core::Manager& manager() throw ()
+    {
+        return manager_;
+    }
 
     virtual int run() = 0;
 };

@@ -5,7 +5,6 @@
 #include <vector>
 
 #include <object.h>
-#include <usersobject.h>
 #include <abstractgroup.h>
 
 namespace Core {
@@ -13,7 +12,7 @@ namespace Core {
 /** @class Person
  * @brief Class keeps person unique data.
  */
-class Person: public Object, public UI::UsersObject {
+class Person: public Object {
 friend class AbstractGroup;
 private:
     FieldString name_;
