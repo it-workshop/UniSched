@@ -5,7 +5,6 @@
 #include <vector>
 
 #include <object.h>
-#include <usersobject.h>
 #include <abstractgroup.h>
 
 namespace Core {
