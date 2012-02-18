@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <fstream>
 #include <map>
 #include <typeinfo>
 
@@ -23,7 +24,7 @@ private:
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
-                         * You must use this only with object(), set_object and
+                         * You must use this only with object(), set_object() and
                          * new_id() mehods, you can redefine this methods but do
                          * not use this field in other code.
                          */
@@ -45,7 +46,10 @@ private:
 
     std::vector<Field *> parameters_;
 
-    Object * object(Object * object)
+    Object * set_object(Object * object)
+                        /**< @brief Apply changes in an object.
+                         * @param [in] object Object to apply.
+                         */
     {
         return objects_[object->id()] = object;
     }
@@ -60,6 +64,8 @@ public:
     Manager() throw ():
         new_id_(0)
     {}
+
+    Manager(std::fstream input_storage);
 
     void remove(Object * object)
                         /**< @brief Remove object from the storage.

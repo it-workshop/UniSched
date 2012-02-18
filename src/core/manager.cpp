@@ -1,6 +1,20 @@
 #include <manager.h>
+#include <yaml-cpp/yaml.h>
 
 using namespace Core;
+
+Manager::Manager(std::fstream input_storage)
+{
+    YAML::Parser parser(input_storage);
+    YAML::Node doc;
+    parser.GetNextDocument(doc);
+    for (int i = 0; i < doc.size(); i ++)
+    {
+        int old_id;
+        doc[i]["ID"] >> old_id;
+        //...
+    }
+}
 
 const Field& Manager::pull(const std::string& name) const throw (std::bad_cast)
 {
