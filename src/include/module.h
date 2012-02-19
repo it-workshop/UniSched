@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-class AbstractBackend {
+class Module {
 public:
     enum Type {
         STORAGE,
@@ -17,7 +17,7 @@ private:
     const Type type_;
 
 public:
-    AbstractBackend (const enum Type type);
+    Module (const enum Type type);
     
     virtual void init(const std::vector<std::string>& args) = 0;
         /* Initilize required resources. Such as memory, shared objects,
@@ -28,5 +28,5 @@ public:
         { return type_; }
 };
 
-std::vector<AbstractBackend *>& backends();
+std::vector<Module *>& modules();
 

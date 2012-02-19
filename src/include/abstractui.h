@@ -3,11 +3,11 @@
 #include <object.h>
 #include <manager.h>
 
-#include <backend.h>
+#include <module.h>
 
 namespace UI {
 
-class AbstractUI: public AbstractBackend {
+class AbstractUI: public Module {
 private:
     Core::Manager manager_;
     std::vector<Core::Object *> cache_;
@@ -54,7 +54,7 @@ protected:
 public:
 
     AbstractUI ():
-        AbstractBackend(AbstractBackend::UI)
+        Module(Module::UI)
     {}
 
     Core::Manager& manager() throw ()

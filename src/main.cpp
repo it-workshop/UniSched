@@ -1,23 +1,23 @@
 #include <manager.h>
 #include <abstractui.h>
-#include <backend.h>
+#include <module.h>
 
 #include <iostream>
 
 bool
-load_backends (Core::Manager **manager, UI::AbstractUI **ui,
+load_modules (Core::Manager **manager, UI::AbstractUI **ui,
                std::vector<std::string>& args)
 {
     *manager = nullptr;
     *ui = nullptr;
-    for (AbstractBackend *backend: backends())
+    for (Module *module: modules())
     {
         if (*manager && *ui)
         {
             break;
         }
 
-        if (backend->type() == AbstractBackend::STORAGE)
+        if (module->type() == Module::STORAGE)
         {
             if (*manager)
             {
@@ -25,19 +25,19 @@ load_backends (Core::Manager **manager, UI::AbstractUI **ui,
             }
             try
             {
-                *manager = dynamic_cast<Core::Manager *>(backend);
-                backend->init(args);
+                *manager = dynamic_cast<Core::Manager *>(module);
+                module->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid manager backend!" << e.what() <<
+                std::cerr << "Warning: invalid manager module!" << e.what() <<
 		    std::endl;
                 *manager = nullptr;
             }
             continue;
         }
 
-        if (backend->type() == AbstractBackend::UI)
+        if (module->type() == Module::UI)
         {
             if (*ui)
             {
@@ -45,12 +45,12 @@ load_backends (Core::Manager **manager, UI::AbstractUI **ui,
             }
             try
             {
-                *ui = dynamic_cast<UI::AbstractUI *>(backend);
-                backend->init(args);
+                *ui = dynamic_cast<UI::AbstractUI *>(module);
+                module->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid ui backend!" << e.what() <<
+                std::cerr << "Warning: invalid ui module!" << e.what() <<
                     std::endl;
                 *ui = nullptr;
             }
@@ -62,12 +62,12 @@ load_backends (Core::Manager **manager, UI::AbstractUI **ui,
     if (!*manager)
     {
         error = true;
-        std::cerr << "Error: manager backend not found!" << std::endl;
+        std::cerr << "Error: manager module not found!" << std::endl;
     }
     if (!*ui)
     {
         error = true;
-        std::cerr << "Error: ui backend not found!" << std::endl;
+        std::cerr << "Error: ui module not found!" << std::endl;
     }
 
     return error;
@@ -83,7 +83,7 @@ main(int argc, char *argv[])
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
 
-    if (load_backends(&manager, &ui, args))
+    if (load_modules(&manager, &ui, args))
     {
         return -1;
     }

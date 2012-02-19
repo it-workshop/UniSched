@@ -14,7 +14,7 @@ namespace Core {
 /**@class Manager
  * @brief Abstract interface for storage.
  *
- * Each storage backend must to inherit this class. It can be chahged later,
+ * Each storage module must to inherit this class. It can be chahged later,
  * it is too simple to work fast now.
  */
 class Manager {
@@ -95,7 +95,7 @@ public:
     {
         int id = new_id();
         parameters_ = parameters;
-        return object(new T(new_id(), *this));
+        return set_object(new T(new_id(), *this));
     }
     std::vector<Object *>&
     search(const std::vector<const Field *>& parameters) const;

@@ -1,23 +1,23 @@
 #include <manager.h>
 #include <abstractui.h>
-#include <backend.h>
+#include <module.h>
 
 #include <iostream>
 
 bool
-load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
+load_modules (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
                std::vector<std::string>& args)
 {
     *storage = nullptr;
     *ui = nullptr;
-    for (AbstractBackend *backend: backends())
+    for (Module *module: modules())
     {
         if (*storage && *ui)
         {
             break;
         }
 
-        if (backend->type() == AbstractBackend::STORAGE)
+        if (module->type() == Module::STORAGE)
         {
             if (*storage)
             {
@@ -25,19 +25,19 @@ load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
             }
             try
             {
-                *storage = dynamic_cast<Storage::AbstractStorage *>(backend);
-                backend->init(args);
+                *storage = dynamic_cast<Storage::AbstractStorage *>(module);
+                module->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid storage backend!" << e.what() <<
+                std::cerr << "Warning: invalid storage module!" << e.what() <<
 		    std::endl;
                 *storage = nullptr;
             }
             continue;
         }
 
-        if (backend->type() == AbstractBackend::UI)
+        if (module->type() == Module::UI)
         {
             if (*ui)
             {
@@ -45,12 +45,12 @@ load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
             }
             try
             {
-                *ui = dynamic_cast<UI::AbstractUI *>(backend);
-                backend->init(args);
+                *ui = dynamic_cast<UI::AbstractUI *>(module);
+                module->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid ui backend!" << e.what() <<
+                std::cerr << "Warning: invalid ui module!" << e.what() <<
                     std::endl;
                 *ui = nullptr;
             }
@@ -62,12 +62,12 @@ load_backends (Storage::AbstractStorage **storage, UI::AbstractUI **ui,
     if (!*storage)
     {
         error = true;
-        std::cerr << "Error: storage backend not found!" << std::endl;
+        std::cerr << "Error: storage module not found!" << std::endl;
     }
     if (!*ui)
     {
         error = true;
-        std::cerr << "Error: ui backend not found!" << std::endl;
+        std::cerr << "Error: ui module not found!" << std::endl;
     }
 
     return error;
@@ -83,7 +83,7 @@ main(int argc, char *argv[])
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
 
-    if (load_backends(&storage, &ui, args))
+    if (load_modules(&storage, &ui, args))
     {
         return -1;
     }
