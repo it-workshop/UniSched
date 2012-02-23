@@ -2,8 +2,8 @@
 
 static std::vector<class Module *> modules_;
 
-Module::Module (const enum Type type):
-    type_(type)
+Module::Module (const enum Type type, const std::string& name):
+    type_(type), name_(name)
 {
     modules().push_back(this);
 }

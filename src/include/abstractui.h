@@ -53,8 +53,8 @@ protected:
 
 public:
 
-    AbstractUI ():
-        Module(Module::UI)
+    AbstractUI (const std::string& name):
+        Module(Module::UI, name)
     {}
 
     Core::Manager& manager() throw ()
