@@ -2,8 +2,8 @@
 
 using namespace Core;
 
-Person::Person(const int id, Manager& manager) throw (std::bad_cast):
-    Object(id, manager), name_("name"), surname_("surname"),
+Person::Person(const int id, AbstractUI& ui) throw (std::bad_cast):
+    Object(id, ui), name_("name"), surname_("surname"),
     sex_("sex", "MALE"), birthday_("birthday"), groups_("groups")
 {
     name_ = dynamic_cast<const FieldString&>(pull("name"));

@@ -1,4 +1,4 @@
-#include <manager.h>
+#include <abstractui.h>
 
 class SQLiteStorage: public Storage::AbstractStorage {
 

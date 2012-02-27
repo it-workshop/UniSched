@@ -51,10 +51,10 @@ protected:
                          */
 
 public:
-    AbstractGroup(const int id, Manager& manager) throw(std::bad_cast);
+    AbstractGroup(const int id, AbstractUI& ui) throw(std::bad_cast);
                         /**< @brief Constructor
-                         * @param id Managers object`s identificator.
-                         * @param manager Storage.
+                         * @param id AbstractUIs object`s identificator.
+                         * @param ui Storage.
                          * @internal This constructor called from inherited
                          * classes.
                          */

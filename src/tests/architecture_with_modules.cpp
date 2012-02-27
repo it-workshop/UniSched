@@ -1,4 +1,4 @@
-#include <manager.h>
+#include <abstractui.h>
 #include <abstractui.h>
 #include <module.h>
 

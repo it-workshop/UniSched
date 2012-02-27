@@ -43,7 +43,7 @@ protected:
                          * @internal For inherited classes only.
                          */
     {}
-protected:
+public:
 
     const std::string& name() const throw()
                         /**< @brief Get name of the field.

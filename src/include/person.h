@@ -45,7 +45,7 @@ protected:
                             /**< Load all data from starage. Viltual in Core::Object. */
 
 public:
-    Person(const int id, Manager& manager) throw (std::bad_cast);
+    Person(const int id, AbstractUI& ui) throw (std::bad_cast);
    
     virtual const Field& read(const std::string& name) const throw (std::bad_cast);
     virtual void update(const Field& field) throw (std::bad_cast);

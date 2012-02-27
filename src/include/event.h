@@ -15,8 +15,8 @@ private:
                         /**< Duration of event. */
 protected:
 public:
-    Event (const int id, Manager& manager) throw (std::bad_cast):
-            AbstractGroup(id, manager), begin_("begin"), duration_("duration")
+    Event (const int id, AbstractUI& ui) throw (std::bad_cast):
+            AbstractGroup(id, ui), begin_("begin"), duration_("duration")
                         /**< @brief Constructor. */
     {
         begin_ = dynamic_cast<const FieldTime&>(pull("begin"));
@@ -25,15 +25,16 @@ public:
 
     virtual const Field& read(const std::string& name) const
         throw (std::bad_cast);
-                        /**< @copydoc Core::AbstractGroup::read
+                        /**< @copydoc AbstractGroup::read
                          * Specific fields names: "begin", "duration".
-                         * Object type: Core::FieldTime.
+                         * Object type: FieldTime.
                          */
 
     virtual void update(const Field& field) throw (std::bad_cast);
-                        /**< @copydoc Core::AbstractGroup::update
+                        /**< @copydoc AbstractGroup::update
                          * Specific fields names: "begin", "duration".
-                         * Object type: Core::FieldTime.
+                         * Object type: FieldTime.
+                         */
 };
 
 };

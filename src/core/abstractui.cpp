@@ -1,9 +1,10 @@
-#include <manager.h>
+#include <abstractui.h>
 #include <yaml-cpp/yaml.h>
 
 using namespace Core;
 
-Manager::Manager(std::fstream input_storage)
+AbstractUI::AbstractUI(std::fstream input_storage, const std::string& name):
+        Module(Module::UI, name)
 {
     YAML::Parser parser(input_storage);
     YAML::Node doc;
@@ -16,7 +17,7 @@ Manager::Manager(std::fstream input_storage)
     }
 }
 
-const Field& Manager::pull(const std::string& name) const throw (std::bad_cast)
+const Field& AbstractUI::pull(const std::string& name) const throw (std::bad_cast)
 {
     for (const Field* parameter: parameters_)
     {
@@ -28,13 +29,9 @@ const Field& Manager::pull(const std::string& name) const throw (std::bad_cast)
     throw std::bad_cast();
 }
 
-std::vector<Object *>&
-Manager::search(const std::vector<const Field *>& parameters) const
+void AbstractUI::search(const std::vector<const Field *>& parameters)
 {
-    static std::vector<Object *> results;
-
-    results.clear();
-
+    std::vector<Object *> results;
     bool append = true;
 
     for (const Field * parameter: parameters)
@@ -74,7 +71,9 @@ Manager::search(const std::vector<const Field *>& parameters) const
         }
     }
 
-    return results;
+    for (Object * object: results)
+    {
+        cache_.push_back(object);
+    }
 }
-
 

@@ -1,87 +1,132 @@
 #pragma once
 
+#include <string>
+#include <vector>
+#include <fstream>
+#include <map>
+#include <typeinfo>
+
+#include <field.h>
 #include <object.h>
-#include <manager.h>
 
 #include <module.h>
 
-/** @namespace UI
+/** @namespace Core
  * @brief UserInterface Objects.
  */
-namespace UI {
+namespace Core {
 
 /** @class AbstractUI
  * @brief Interface for frontend modules.
  */
 class AbstractUI: public Module {
+friend class Object;
 private:
-    Core::Manager manager_;
-                        /**< Manager of the objects. */
-    std::vector<Core::Object *> cache_;
+    std::map<const int, Object *> objects_;
+                        /**< Model objects. Each object must be saved here for
+                         * correct work of storage.
+                         *
+                         * You must use this only with object(), set_object() and
+                         * new_id() mehods, you can redefine this methods but do
+                         * not use this field in other code.
+                         */
+    std::vector<Object *> cache_;
                         /**< Search cache. */
+    int new_id_;
+    const int new_id()
+    {
+        return new_id_++;
+    }
+                        /**< @brief Return new object identificator and reserve
+                         * cell for it in the objects vector.
+                         * @return New id.
+                         *
+                         * You can redefine this method if you want to keep
+                         * objects in other order.
+                         *
+                         * Do not use this method anywhere, it used by create
+                         * method.
+                         */
+
+    std::vector<Field *> parameters_;
+
+    Object * set_object(Object * object)
+                        /**< @brief Apply changes in an object.
+                         * @param [in] object Object to apply.
+                         */
+    {
+        return objects_[object->id()] = object;
+    }
+
 protected:
-    std::vector<Core::Object *>& cache()
+    void push(const int id, const Field& field)
+                        /**< @brief Save @a field of object with @a id it hte
+                         * database
+                         * @param [in] id Identificator of object.
+                         * @param [in] field Field to save.
+                         */
+    {}
+
+    const Field& pull(const std::string& name) const throw (std::bad_cast);
+
+    void remove(Object * object)
+                        /**< @brief Remove object from the storage.
+                         * @param [in] object Object to delete.
+                         */
+    {
+        objects_.erase(objects_.find(object->id()));
+        delete [] object;
+
+        for (auto it = cache_.begin(); it != cache_.end(); it++)
+        {
+            if (*it == object)
+            {
+                cache_.erase(it);
+                return;
+            }
+        }
+    }
+
+    template <class T>
+    void create(std::vector<const Field>& parameters)
+                        /**< @brief Create an object of the T type
+                         * @param [in] parameters new object`s data.
+                         */
+    {
+        int id = new_id();
+        parameters_ = parameters;
+        cache_.push_back(set_object(new T(new_id(), *this)));
+    }
+
+    
+    void search(const std::vector<const Field *>& parameters);
+                        /**< @brief Search objects by some parameters.
+                         * @param [in] parameters Search parameters.
+                         *
+                         * Parameters are connected by logical AND.
+                         * If parameter have not got a name, search value
+                         * by the any field of specified type. If value
+                         * is empty that all objects will satisfied.
+                         */
+    Object * object(const int id) const throw (std::bad_cast)
+                        /**< @brief Return object by id.
+                         * @param [in] id Object identificator.
+                         * @return Requested object.
+                         *
+                         * Use this method carefully. It can be moved to the
+                         * protected or private on future.
+                         */
+    {                    
+        return objects_.at(id);
+    }
+
+    std::vector<Object *>& cache()
                         /**< @brief Get search cache.
                          * @return Search cache.
                          * @internal For this and inherited classes only.
                          */
     {
         return cache_;
-    }
-
-    void search(const std::vector<const Core::Field *>& parameters)
-                        /**< @brief Find objects by parameters and store into
-                         * the search cache.
-                         * @param parameters Search parameters.
-                         * @internal For this and inherited classes only.
-                         *
-                         * Default search algorithm in Core::Manager class
-                         * looks for objects that are suitable for all
-                         * parameters it can be changed later.
-                         *
-                         * @see Core::Manager::search()
-                         */
-    {
-        auto tmp = manager_.search(parameters);
-
-        for (Core::Object * object: tmp)
-        {
-            cache_.push_back(object);
-        }
-    }
-
-    template <class T>
-    void create(const std::vector<const Core::Field *>& parameters)
-                        /**< @brief Tell manager to create object of T class and
-                         * with given parameters.
-                         * @param parameters Fields of new object.
-                         * @internal For this and inherited classes only.
-                         *
-                         * If class T is not inherited from Core::Object then
-                         * call of this method will fail program build.
-                         */
-    {
-        cache_.push_back(manager_.create<T>());
-    }
-
-    void remove(Core::Object * object)
-                        /**< @brief Tell manager to delete object.
-                         * @param object Object to delete.
-                         * @internal For this and inherited classes only.
-                         *
-                         * Manager deletes all links with other objects, object
-                         * and pointer to the object in the internal collection.
-                         */
-    {
-        for (auto it = cache_.begin(); it != cache_.end(); it++)
-        {
-            if (*it == object)
-            {
-                cache_.erase(it);
-                manager_.remove(object);
-                return;
-            }
-        }
     }
 
     void reset_cache() throw ()
@@ -97,19 +142,13 @@ protected:
 public:
 
     AbstractUI (const std::string& name):
-        Module(Module::UI, name)
+        Module(Module::UI, name), new_id_(0)
                         /**< @brief constructor.
                          * @param name Name of the frontend.
                          */
     {}
 
-    Core::Manager& manager() throw ()
-                        /**< @brief Get manager of objects.
-                         * @return Manager object.
-                         */
-    {
-        return manager_;
-    }
+    AbstractUI(std::fstream input_storage, const std::string& name);
 
     virtual int run() = 0;
                         /**< @brief Main method of frontend class. It is called

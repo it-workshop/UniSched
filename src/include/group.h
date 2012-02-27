@@ -14,8 +14,8 @@ private:
     FieldVector parent_groups_;
 
 public:
-    Group(const int id, Manager& manager):
-            AbstractGroup(id, manager), parent_groups_("parent_groups")
+    Group(const int id, AbstractUI& ui):
+            AbstractGroup(id, ui), parent_groups_("parent_groups")
     {
         parent_groups_ = 
             dynamic_cast<const FieldVector&>(pull("parent_groups"));

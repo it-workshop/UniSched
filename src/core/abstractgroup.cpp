@@ -3,9 +3,9 @@
 
 using namespace Core;
 
-AbstractGroup::AbstractGroup(const int id, Manager& manager)
+AbstractGroup::AbstractGroup(const int id, AbstractUI& ui)
         throw (std::bad_cast):
-    Object(id, manager), name_("name"),
+    Object(id, ui), name_("name"),
     child_groups_("child_groups"), people_("people")
     {
         name_ = dynamic_cast<const FieldString&>(pull("name"));

@@ -6,10 +6,10 @@
 namespace Core {
 
 class Object {
-friend class Manager;
+friend class AbstractUI;
 private:
     const int id_;
-    class Manager& manager_;
+    class AbstractUI& ui_;
 
 protected:
     const int id() const { return id_; };
@@ -20,7 +20,7 @@ protected:
 
 public:
 
-    Object(const int id, Manager& manager): id_(id), manager_(manager)
+    Object(const int id, AbstractUI& ui): id_(id), ui_(ui)
     {}
 
     virtual const Field& read(const std::string& name) const = 0;
@@ -29,5 +29,5 @@ public:
 
 };
 
-#include <manager.h>
+#include <abstractui.h>
 #include <field.h>

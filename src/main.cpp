@@ -1,14 +1,14 @@
-#include <manager.h>
+#include <abstractui.h>
 #include <abstractui.h>
 #include <module.h>
 
 #include <iostream>
 
 bool
-load_modules (/*Core::Manager **manager,*/ UI::AbstractUI **ui,
+load_modules (Core::AbstractUI **ui,
                std::vector<std::string>& args)
 {
-/*    *manager = nullptr;*/
+/*    *ui = nullptr;*/
     *ui = nullptr;
     std::string uiname;
     for (auto it = args.begin(); it != args.end(); it++)
@@ -20,26 +20,26 @@ load_modules (/*Core::Manager **manager,*/ UI::AbstractUI **ui,
     }
     for (Module *module: modules())
     {
-/*        if (*manager && *ui)
+/*        if (*ui && *ui)
         {
             break;
         }
         if (module->type() == Module::STORAGE)
         {
-            if (*manager)
+            if (*ui)
             {
                 continue;
             }
             try
             {
-                *manager = dynamic_cast<Core::Manager *>(module);
+                *ui = dynamic_cast<Core::AbstractUI *>(module);
                 module->init(args);
             }
             catch (std::bad_cast e)
             {
-                std::cerr << "Warning: invalid manager module!" << e.what() <<
+                std::cerr << "Warning: invalid ui module!" << e.what() <<
 		            std::endl;
-                *manager = nullptr;
+                *ui = nullptr;
             }
             continue;
         }*/
@@ -52,7 +52,7 @@ load_modules (/*Core::Manager **manager,*/ UI::AbstractUI **ui,
             }
             try
             {
-                *ui = dynamic_cast<UI::AbstractUI *>(module);
+                *ui = dynamic_cast<Core::AbstractUI *>(module);
                 module->init(args);
             }
             catch (std::bad_cast e)
@@ -66,10 +66,10 @@ load_modules (/*Core::Manager **manager,*/ UI::AbstractUI **ui,
     }
 
     bool error = false;
-/*    if (!*manager)
+/*    if (!*ui)
     {
         error = true;
-        std::cerr << "Error: manager module not found!" << std::endl;
+        std::cerr << "Error: ui module not found!" << std::endl;
     }*//* storage module is not always needed. */
     if (!*ui)
     {
@@ -83,14 +83,14 @@ load_modules (/*Core::Manager **manager,*/ UI::AbstractUI **ui,
 int
 main(int argc, char *argv[])
 {
-/*    Core::Manager *manager = nullptr;*/
-    UI::AbstractUI *ui = nullptr;
+/*    Core::AbstractUI *ui = nullptr;*/
+    Core::AbstractUI *ui = nullptr;
 
     std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
 
-    if (load_modules(/*&manager,*/ &ui, args))
+    if (load_modules(/*&ui,*/ &ui, args))
     {
         return -1;
     }
