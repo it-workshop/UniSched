@@ -5,7 +5,7 @@
 #include <iostream>
 
 bool
-load_modules (Core::AbstractUI **ui,
+select_modules (Core::AbstractUI **ui,
                std::vector<std::string>& args)
 {
     *ui = nullptr;
@@ -17,9 +17,9 @@ load_modules (Core::AbstractUI **ui,
             uiname = *++it;
         }
     }
-    for (Module *module: modules())
+    for (Core::Module *module: *Core::Module::modules())
     {
-        if (module->type() == Module::UI)
+        if (module->type() == Core::Module::UI)
         {
             if (*ui || (!uiname.empty() && module->name() != uiname))
             {
@@ -54,16 +54,16 @@ int
 main(int argc, char *argv[])
 {
     Core::AbstractUI *ui = nullptr;
-
     std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
-
-    if (load_modules(&ui, args))
+    Core::Module::load_modules();
+    if (select_modules(&ui, args))
     {
         return -1;
     }
-
-    return ui->run();
+    int code = ui->run();
+    Core::Module::unload_modules();
+    return code;
 }
 

@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-#include <iostream>
+namespace Core {
 
 /** @class Module
  * @brief An abstract class for module.
@@ -33,12 +33,16 @@ private:
                          * @internal Use in the name() method and constructor
                          * only.
                          */
+    void *handle_;
 
 public:
-    Module (const enum Type type, const std::string& name);
+    Module (const enum Type type, const std::string& name,
+            std::vector<Module *>* modules, void *handle);
                         /**< @brief Constructor.
                          * @param [in] type Type of the module.
                          * @param [in] name Name of the module.
+                         * @param [in] modules Collection of modules.
+                         * @param [in] handle Handle of the module.
                          * @internal use only in the classes implementing this 
                          * one.
                          */
@@ -64,11 +68,11 @@ public:
     {
         return name_;
     }
+
+    static void unload_modules();
+    static void load_modules();
+    static std::vector<Module *> * modules();
 };
 
-/** @brief Get collection of loaded modules.
- * @return Vector with object of classes implementing Module class.
- */
-std::vector<Module *>& modules();
-
+}
 

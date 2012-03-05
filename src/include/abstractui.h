@@ -144,14 +144,13 @@ protected:
 
 public:
 
-    AbstractUI (const std::string& name):
-        Module(Module::UI, name), new_id_(0)
+    AbstractUI (const std::string& name, std::vector<Module *>* modules,
+            void *handle):
+        Module(Module::UI, name, modules, handle), new_id_(0)
                         /**< @brief constructor.
                          * @param name Name of the frontend.
                          */
     {}
-
-    AbstractUI(std::fstream input_storage, const std::string& name);
 
     virtual int run() = 0;
                         /**< @brief Main method of frontend class. It is called

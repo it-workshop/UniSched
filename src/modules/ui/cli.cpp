@@ -1,5 +1,6 @@
 #include <abstractui.h>
 
+#include <iostream>
 #include <readline/readline.h>
 #include <readline/history.h>
 
@@ -8,7 +9,7 @@ class CommandLineInterface: public Core::AbstractUI {
 public:
     void init (const std::vector< std::string > &args);
     int run();
-    CommandLineInterface();
+    CommandLineInterface(std::vector<Module *> *modules, void *handle);
 };
 
 void CommandLineInterface::init(const std::vector<std::string>& args)
@@ -16,8 +17,10 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     std::cout << "CommandLine Interface INIT" << std::endl;
 }
 
-CommandLineInterface::CommandLineInterface() : AbstractUI("CLI") {
-}
+CommandLineInterface::CommandLineInterface(std::vector<Module *> *modules,
+        void *handle):
+    AbstractUI("CLI", modules, handle)
+{}
 
 int CommandLineInterface::run()
 {
@@ -40,4 +43,12 @@ int CommandLineInterface::run()
     return 0;
 }
 
-CommandLineInterface _object;
+extern "C" {
+
+void init(std::vector<Core::Module *> *modules, void *handle)
+{
+    new CommandLineInterface(modules, handle);
+}
+
+};
+

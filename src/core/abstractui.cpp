@@ -3,20 +3,6 @@
 
 using namespace Core;
 
-AbstractUI::AbstractUI(std::fstream input_storage, const std::string& name):
-        Module(Module::UI, name)
-{
-    YAML::Parser parser(input_storage);
-    YAML::Node doc;
-    parser.GetNextDocument(doc);
-    for (int i = 0; i < doc.size(); i ++)
-    {
-        int old_id;
-        doc[i]["ID"] >> old_id;
-        //...
-    }
-}
-
 const Field& AbstractUI::pull(const std::string& name) const throw (std::bad_cast)
 {
     for (const Field* parameter: parameters_)
