@@ -15,6 +15,7 @@ enable_testing()
 
 option(WITH_SQLITE "Build with SQLite support." N)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
+option(WITH_CLI "Build with CLI support." Y)
 
 add_subdirectory (src)
 
