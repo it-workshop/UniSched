@@ -1,5 +1,8 @@
 #include <abstractui.h>
 
+#include <readline/readline.h>
+#include <readline/history.h>
+
 class CommandLineInterface: public Core::AbstractUI {
 
 public:
