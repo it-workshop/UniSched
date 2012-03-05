@@ -1,0 +1,203 @@
+\hypertarget{classCore_1_1FieldTime}{
+\section{Core::FieldTime Class Reference}
+\label{d3/d8b/classCore_1_1FieldTime}\index{Core::FieldTime@{Core::FieldTime}}
+}
+
+
+field of time\_\-t type.  
+
+
+
+
+{\ttfamily \#include $<$field.h$>$}
+
+
+
+Inheritance diagram for Core::FieldTime:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{d7/d6a/classCore_1_1FieldTime__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Core::FieldTime:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{d7/d8c/classCore_1_1FieldTime__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1FieldTime_ad1b0b00de785462e57fd625d1ef6beb6}{FieldTime} (const std::string \&name, const time\_\-t \&value=0)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+const time\_\-t \hyperlink{classCore_1_1FieldTime_aeaf4283ac92d2a718d6225a717073a17}{value} (const time\_\-t \&value)  throw ()
+\item 
+const time\_\-t \hyperlink{classCore_1_1FieldTime_aca53dd5590b476699aeb670068b4592e}{value} () const   throw ()
+\item 
+virtual const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1FieldTime_ab0b9e7fe5ee619d3d584dfd3a9be5015}{operator=} (const \hyperlink{classCore_1_1Field}{Field} \&field)  throw (std::bad\_\-cast)
+\item 
+virtual const bool \hyperlink{classCore_1_1FieldTime_aa48c2e4d7c6ad13794f66f3e59849843}{operator==} (const \hyperlink{classCore_1_1Field}{Field} \&field) const   throw (std::bad\_\-cast)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+field of time\_\-t type. Simple class contains name and time\_\-t value. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1FieldTime_ad1b0b00de785462e57fd625d1ef6beb6}{
+\index{Core::FieldTime@{Core::FieldTime}!FieldTime@{FieldTime}}
+\index{FieldTime@{FieldTime}!Core::FieldTime@{Core::FieldTime}}
+\subsubsection[{FieldTime}]{\setlength{\rightskip}{0pt plus 5cm}Core::FieldTime::FieldTime (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name, }
+\item[{const time\_\-t \&}]{value = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d3/d8b/classCore_1_1FieldTime_ad1b0b00de785462e57fd625d1ef6beb6}
+
+
+Constructor. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em value} & Value of the field. Zero by default. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1FieldTime_ab0b9e7fe5ee619d3d584dfd3a9be5015}{
+\index{Core::FieldTime@{Core::FieldTime}!operator=@{operator=}}
+\index{operator=@{operator=}!Core::FieldTime@{Core::FieldTime}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Field}\& Core::FieldTime::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{d3/d8b/classCore_1_1FieldTime_ab0b9e7fe5ee619d3d584dfd3a9be5015}
+$<$ Assigment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This field.
+\end{DoxyReturn}
+Assign this field's value to another fields value, if they have one type.  Implementation for time\_\-t type. 
+
+Implements \hyperlink{classCore_1_1Field_a3300f5867380b0e55bcd6c1918815e1f}{Core::Field}.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{d3/d8b/classCore_1_1FieldTime_ab0b9e7fe5ee619d3d584dfd3a9be5015_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldTime_aa48c2e4d7c6ad13794f66f3e59849843}{
+\index{Core::FieldTime@{Core::FieldTime}!operator==@{operator==}}
+\index{operator==@{operator==}!Core::FieldTime@{Core::FieldTime}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}virtual const bool Core::FieldTime::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{d3/d8b/classCore_1_1FieldTime_aa48c2e4d7c6ad13794f66f3e59849843}
+$<$ Comparison operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of comparison.
+\end{DoxyReturn}
+Compare values of two fields, if they have one type.  Implementation for time\_\-t type. 
+
+Implements \hyperlink{classCore_1_1Field_ae2db5ff861ee23a5d5cc43913544a4ab}{Core::Field}.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=372pt]{d3/d8b/classCore_1_1FieldTime_aa48c2e4d7c6ad13794f66f3e59849843_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldTime_aeaf4283ac92d2a718d6225a717073a17}{
+\index{Core::FieldTime@{Core::FieldTime}!value@{value}}
+\index{value@{value}!Core::FieldTime@{Core::FieldTime}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::FieldTime::value (
+\begin{DoxyParamCaption}
+\item[{const time\_\-t \&}]{value}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d3/d8b/classCore_1_1FieldTime_aeaf4283ac92d2a718d6225a717073a17}
+$<$  
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d3/d8b/classCore_1_1FieldTime_aeaf4283ac92d2a718d6225a717073a17_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldTime_aca53dd5590b476699aeb670068b4592e}{
+\index{Core::FieldTime@{Core::FieldTime}!value@{value}}
+\index{value@{value}!Core::FieldTime@{Core::FieldTime}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::FieldTime::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d3/d8b/classCore_1_1FieldTime_aca53dd5590b476699aeb670068b4592e}
+$<$ Change value. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em New} & value of the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the field AFTER assigment. 
+\end{DoxyReturn}
+ 
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=372pt]{d3/d8b/classCore_1_1FieldTime_aca53dd5590b476699aeb670068b4592e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{field_8h}{field.h}\end{DoxyCompactItemize}

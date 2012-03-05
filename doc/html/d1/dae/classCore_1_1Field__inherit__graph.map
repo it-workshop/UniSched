@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d3/db7/classCore_1_1FieldEnum.html" title="Field of std::string type but used for enumeration." alt="" coords="5,253,125,408"/>
+<area shape="rect" id="node5" href="$d9/d23/classCore_1_1FieldLink.html" title="Link of two objects." alt="" coords="149,253,259,408"/>
+<area shape="rect" id="node7" href="$dd/d02/classCore_1_1FieldString.html" title="Field of string type." alt="" coords="283,253,403,408"/>
+<area shape="rect" id="node9" href="$d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type." alt="" coords="427,253,541,408"/>
+<area shape="rect" id="node11" href="$dc/d7f/classCore_1_1FieldVector.html" title="Field of vector type." alt="" coords="565,227,688,434"/>
+</map>

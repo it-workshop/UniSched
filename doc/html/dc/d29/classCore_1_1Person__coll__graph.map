@@ -1,6 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$d4/deb/classStorage_1_1StorableObject.html" title="{Storage::StorableObject\n|&#45; id_\l&#45; storage_\l|+ StorableObject()\l# id()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l# save()\l# load()\l}" alt="" coords="9,640,169,1003"/>
-<area shape="rect" id="node4" href="$d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="5,176,173,573"/>
-<area shape="rect" id="node6" href="$db/d37/classAbstractBackend.html" title="{AbstractBackend\n|&#45; type_\l|+ AbstractBackend()\l+ init()\l+ type()\l}" alt="" coords="19,5,160,125"/>
-<area shape="rect" id="node8" href="$df/d0b/classUI_1_1UsersObject.html" title="{UI::UsersObject\n||+ read()\l+ read_int()\l+ read_string()\l+ read_time()\l+ read_enum()\l+ read_vector()\l+ update()\l+ update()\l+ update()\l+ update_enum()\l+ update()\l}" alt="" coords="193,692,313,951"/>
+<area shape="rect" id="node2" href="$dc/dc7/classCore_1_1Object.html" title="Universal interface of core objects." alt="" coords="17,633,113,823"/>
+<area shape="rect" id="node4" href="$d1/d45/classCore_1_1AbstractUI.html" title="Interface for frontend modules." alt="" coords="5,211,125,557"/>
+<area shape="rect" id="node6" href="$d3/d9c/classModule.html" title="An abstract class for module." alt="" coords="24,5,107,160"/>
+<area shape="rect" id="node8" href="$d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type." alt="" coords="137,651,252,805"/>
+<area shape="rect" id="node10" href="$dc/d16/classCore_1_1Field.html" title="Base class for fields of different types." alt="" coords="356,298,460,470"/>
+<area shape="rect" id="node12" href="$dd/d02/classCore_1_1FieldString.html" title="Field of string type." alt="" coords="276,651,396,805"/>
+<area shape="rect" id="node15" href="$d3/db7/classCore_1_1FieldEnum.html" title="Field of std::string type but used for enumeration." alt="" coords="420,651,540,805"/>
+<area shape="rect" id="node18" href="$dc/d7f/classCore_1_1FieldVector.html" title="Field of vector type." alt="" coords="564,625,687,831"/>
 </map>

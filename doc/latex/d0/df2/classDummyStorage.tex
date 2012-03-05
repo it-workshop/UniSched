@@ -2,60 +2,40 @@
 \section{DummyStorage Class Reference}
 \label{d0/df2/classDummyStorage}\index{DummyStorage@{DummyStorage}}
 }
-
-
-Inheritance diagram for DummyStorage:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=600pt]{da/d63/classDummyStorage__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for DummyStorage:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=600pt]{df/da0/classDummyStorage__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual std::vector$<$ \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject} $\ast$ $>$ $\ast$ \hyperlink{classDummyStorage_adea6bbcbaacaea1a728f09602d7c8d1d}{search} (std::vector$<$ \hyperlink{structStorage_1_1AbstractStorage_1_1Argument}{Argument} $\ast$ $>$ \&)
-\begin{DoxyCompactList}\small\item\em Search objects by some parameters. \item\end{DoxyCompactList}\item 
+virtual std::vector$<$ Storage::StorableObject $\ast$ $>$ $\ast$ \hyperlink{classDummyStorage_adea6bbcbaacaea1a728f09602d7c8d1d}{search} (std::vector$<$ Argument $\ast$ $>$ \&)
+\item 
 virtual void \hyperlink{classDummyStorage_ac52f6e7c6941108e4686f606a4d88d6b}{init} (const std::vector$<$ std::string $>$ \&args)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual const int \hyperlink{classDummyStorage_a275263eba82a652005292f01a120af8e}{get\_\-field\_\-int} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return integer value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual const std::string \hyperlink{classDummyStorage_a410ef9d239193e25f830c49140e18293}{get\_\-field\_\-string} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return string value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual const time\_\-t \hyperlink{classDummyStorage_a978ef9d688175e3739bb478f4c9b5313}{get\_\-field\_\-time} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return time value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual const std::string \hyperlink{classDummyStorage_a1101739c23fbf79b009558553180ef1a}{get\_\-field\_\-enum} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return enum value of requested field. \item\end{DoxyCompactList}\item 
-virtual \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject} $\ast$ \hyperlink{classDummyStorage_a7135d171d9b83c2fbf72851fa9ea852a}{get\_\-field\_\-object} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return object value of requested field. \item\end{DoxyCompactList}\item 
-virtual const std::vector$<$ \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject} $\ast$ $>$ \hyperlink{classDummyStorage_afe36af3f3147027ebb6447192201c790}{get\_\-field\_\-vector} (const int id, const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return vector value of requested field. \item\end{DoxyCompactList}\item 
+\item 
+virtual Storage::StorableObject $\ast$ \hyperlink{classDummyStorage_a7135d171d9b83c2fbf72851fa9ea852a}{get\_\-field\_\-object} (const int id, const std::string name) const   throw (std::bad\_\-cast)
+\item 
+virtual const std::vector$<$ Storage::StorableObject $\ast$ $>$ \hyperlink{classDummyStorage_afe36af3f3147027ebb6447192201c790}{get\_\-field\_\-vector} (const int id, const std::string name) const   throw (std::bad\_\-cast)
+\item 
 virtual void \hyperlink{classDummyStorage_ab22488d00b8969af5356bc344672bd18}{set\_\-field} (const int id, const std::string name, const int value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set integer value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual void \hyperlink{classDummyStorage_aaa0d3249ea3207fae78253b191b80854}{set\_\-field} (const int id, const std::string name, const std::string value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set string value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual void \hyperlink{classDummyStorage_a51662a853e821fda1828e8756d58f1df}{set\_\-field} (const int id, const std::string name, const time\_\-t value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set time value of requested field. \item\end{DoxyCompactList}\item 
+\item 
 virtual void \hyperlink{classDummyStorage_a0655a6f7c822adbe174d1c7fe7c9ea34}{set\_\-field\_\-enum} (const int id, const std::string name, const std::string value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set enum value of requested field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classDummyStorage_ae2e39a3cee22fd90790a7528f0c7ad59}{set\_\-field} (const int id, const std::string name, \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject} $\ast$value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set object value of requested field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classDummyStorage_a6102ef89119b0ee1525439b3fd7043ce}{set\_\-field\_\-vector} (const int id, const std::string name, const std::vector$<$ \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject} $\ast$ $>$ value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Set vector value of requested field. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classDummyStorage_ae2e39a3cee22fd90790a7528f0c7ad59}{set\_\-field} (const int id, const std::string name, Storage::StorableObject $\ast$value)  throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classDummyStorage_a6102ef89119b0ee1525439b3fd7043ce}{set\_\-field\_\-vector} (const int id, const std::string name, const std::vector$<$ Storage::StorableObject $\ast$ $>$ value)  throw (std::bad\_\-cast)
+\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -65,168 +45,60 @@ virtual void \hyperlink{classDummyStorage_a6102ef89119b0ee1525439b3fd7043ce}{set
 \subsubsection[{get\_\-field\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string DummyStorage::get\_\-field\_\-enum (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a1101739c23fbf79b009558553180ef1a}
-
-
-Return enum value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_acd7e88a005b6873632c7f20245e5f3f7}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a275263eba82a652005292f01a120af8e}{
 \index{DummyStorage@{DummyStorage}!get\_\-field\_\-int@{get\_\-field\_\-int}}
 \index{get\_\-field\_\-int@{get\_\-field\_\-int}!DummyStorage@{DummyStorage}}
 \subsubsection[{get\_\-field\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}virtual const int DummyStorage::get\_\-field\_\-int (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a275263eba82a652005292f01a120af8e}
-
-
-Return integer value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a80a7e4ab87a0326aa8b5571b09d55eaa}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a7135d171d9b83c2fbf72851fa9ea852a}{
 \index{DummyStorage@{DummyStorage}!get\_\-field\_\-object@{get\_\-field\_\-object}}
 \index{get\_\-field\_\-object@{get\_\-field\_\-object}!DummyStorage@{DummyStorage}}
-\subsubsection[{get\_\-field\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Storage::StorableObject}$\ast$ DummyStorage::get\_\-field\_\-object (
+\subsubsection[{get\_\-field\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}virtual Storage::StorableObject$\ast$ DummyStorage::get\_\-field\_\-object (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a7135d171d9b83c2fbf72851fa9ea852a}
-
-
-Return object value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_aaff107d1f51e456f26c03861beb0fff7}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a410ef9d239193e25f830c49140e18293}{
 \index{DummyStorage@{DummyStorage}!get\_\-field\_\-string@{get\_\-field\_\-string}}
 \index{get\_\-field\_\-string@{get\_\-field\_\-string}!DummyStorage@{DummyStorage}}
 \subsubsection[{get\_\-field\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string DummyStorage::get\_\-field\_\-string (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a410ef9d239193e25f830c49140e18293}
-
-
-Return string value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_ad12a3abb791ef5a696196c28e643ec22}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a978ef9d688175e3739bb478f4c9b5313}{
 \index{DummyStorage@{DummyStorage}!get\_\-field\_\-time@{get\_\-field\_\-time}}
 \index{get\_\-field\_\-time@{get\_\-field\_\-time}!DummyStorage@{DummyStorage}}
 \subsubsection[{get\_\-field\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}virtual const time\_\-t DummyStorage::get\_\-field\_\-time (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a978ef9d688175e3739bb478f4c9b5313}
-
-
-Return time value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a87fe8d51934ab2403758d905ef313272}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_afe36af3f3147027ebb6447192201c790}{
 \index{DummyStorage@{DummyStorage}!get\_\-field\_\-vector@{get\_\-field\_\-vector}}
 \index{get\_\-field\_\-vector@{get\_\-field\_\-vector}!DummyStorage@{DummyStorage}}
-\subsubsection[{get\_\-field\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::vector$<${\bf Storage::StorableObject} $\ast$$>$ DummyStorage::get\_\-field\_\-vector (
+\subsubsection[{get\_\-field\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::vector$<$Storage::StorableObject $\ast$$>$ DummyStorage::get\_\-field\_\-vector (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field}
+\item[{const std::string}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_afe36af3f3147027ebb6447192201c790}
-
-
-Return vector value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-requested value.
-\end{DoxyReturn}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field does not exists or keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_ae7c30697d68dc9d7de595388030d8e10}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_ac52f6e7c6941108e4686f606a4d88d6b}{
 \index{DummyStorage@{DummyStorage}!init@{init}}
 \index{init@{init}!DummyStorage@{DummyStorage}}
@@ -236,201 +108,81 @@ Implements \hyperlink{classStorage_1_1AbstractStorage_ae7c30697d68dc9d7de5953880
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_ac52f6e7c6941108e4686f606a4d88d6b}
-
-
-Implements \hyperlink{classAbstractBackend_afce49841a79e3093a1fbf199bfd9f698}{AbstractBackend}.
-
 \hypertarget{classDummyStorage_adea6bbcbaacaea1a728f09602d7c8d1d}{
 \index{DummyStorage@{DummyStorage}!search@{search}}
 \index{search@{search}!DummyStorage@{DummyStorage}}
-\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::vector$<${\bf Storage::StorableObject} $\ast$$>$$\ast$ DummyStorage::search (
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::vector$<$Storage::StorableObject $\ast$$>$$\ast$ DummyStorage::search (
 \begin{DoxyParamCaption}
-\item[{std::vector$<$ {\bf Argument} $\ast$ $>$ \&}]{parameters}
+\item[{std::vector$<$ Argument $\ast$ $>$ \&}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_adea6bbcbaacaea1a728f09602d7c8d1d}
-
-
-Search objects by some parameters. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em parameters} & Search parameters. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Vector of found objects.
-\end{DoxyReturn}
-Parameters are connected by logical AND. If parameter have not got a name, search value by the any field of specified type. If value is empty that all objects will satisfied. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a9304eea8cd6fffd77b1ccd26f85a061c}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_aaa0d3249ea3207fae78253b191b80854}{
 \index{DummyStorage@{DummyStorage}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
+\item[{const std::string}]{name, }
 \item[{const std::string}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_aaa0d3249ea3207fae78253b191b80854}
-
-
-Set string value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\mbox{\tt in}  & {\em value} & New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_ae5ee00e647f121b68ebada0f094058bc}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_ae2e39a3cee22fd90790a7528f0c7ad59}{
 \index{DummyStorage@{DummyStorage}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
-\item[{{\bf Storage::StorableObject} $\ast$}]{value}
+\item[{const std::string}]{name, }
+\item[{Storage::StorableObject $\ast$}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_ae2e39a3cee22fd90790a7528f0c7ad59}
-
-
-Set object value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\mbox{\tt in}  & {\em value} & New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a7ef9f70b3fcbaa2863de2be695dc77c1}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_ab22488d00b8969af5356bc344672bd18}{
 \index{DummyStorage@{DummyStorage}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
+\item[{const std::string}]{name, }
 \item[{const int}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_ab22488d00b8969af5356bc344672bd18}
-
-
-Set integer value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\mbox{\tt in}  & {\em value} & New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_acdd090d0beb6a8241914e7d78a7f2c0c}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a51662a853e821fda1828e8756d58f1df}{
 \index{DummyStorage@{DummyStorage}!set\_\-field@{set\_\-field}}
 \index{set\_\-field@{set\_\-field}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
+\item[{const std::string}]{name, }
 \item[{const time\_\-t}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a51662a853e821fda1828e8756d58f1df}
-
-
-Set time value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\mbox{\tt in}  & {\em value} & New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a50ee4a829bc067a9291a11aa99ec0f16}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a0655a6f7c822adbe174d1c7fe7c9ea34}{
 \index{DummyStorage@{DummyStorage}!set\_\-field\_\-enum@{set\_\-field\_\-enum}}
 \index{set\_\-field\_\-enum@{set\_\-field\_\-enum}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field\_\-enum (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
+\item[{const std::string}]{name, }
 \item[{const std::string}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a0655a6f7c822adbe174d1c7fe7c9ea34}
-
-
-Set enum value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name. \\
-\hline
-\mbox{\tt in}  & {\em value} & New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a50925678c74c09acd8549a541fdbbe9f}{Storage::AbstractStorage}.
-
 \hypertarget{classDummyStorage_a6102ef89119b0ee1525439b3fd7043ce}{
 \index{DummyStorage@{DummyStorage}!set\_\-field\_\-vector@{set\_\-field\_\-vector}}
 \index{set\_\-field\_\-vector@{set\_\-field\_\-vector}!DummyStorage@{DummyStorage}}
 \subsubsection[{set\_\-field\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DummyStorage::set\_\-field\_\-vector (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{const std::string}]{field, }
-\item[{const std::vector$<$ {\bf Storage::StorableObject} $\ast$ $>$}]{vector}
+\item[{const std::string}]{name, }
+\item[{const std::vector$<$ Storage::StorableObject $\ast$ $>$}]{value}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected, virtual\mbox{]}}}}
 \label{d0/df2/classDummyStorage_a6102ef89119b0ee1525439b3fd7043ce}
-
-
-Set vector value of requested field. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & Object identificator. \\
-\hline
-\mbox{\tt in}  & {\em field} & Field name.  \mbox{[}in\mbox{]} value New value.\\
-\hline
-\end{DoxyParams}
-This method must be realized in inherited classes. Throw an std::bad\_\-cast exception if requested field keeped in another type. 
-
-Implements \hyperlink{classStorage_1_1AbstractStorage_a24af03b9a68ace199b0a6fa812abad39}{Storage::AbstractStorage}.
-
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

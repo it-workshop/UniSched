@@ -1,6 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="256,5,517,35"/>
-<area shape="rect" id="node7" href="$d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="256,59,517,88"/>
-<area shape="rect" id="node5" href="$d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="565,5,835,35"/>
-<area shape="rect" id="node9" href="$d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="565,59,835,88"/>
+<area shape="rect" id="node3" href="$dc/d7f/classCore_1_1FieldVector.html#a998eb9129eab985880411f7c564879d3" title="Core::FieldVector::del" alt="" coords="256,5,405,35"/>
+<area shape="rect" id="node5" href="$dc/dc7/classCore_1_1Object.html#a2e66bbfecbaebbf8695d94b9081796dd" title="Set new value of the field in the database." alt="" coords="265,59,396,88"/>
+<area shape="rect" id="node7" href="$d1/d45/classCore_1_1AbstractUI.html#a2744c5f015639a849c3f76dd7cc2656a" title="Core::AbstractUI::push" alt="" coords="453,59,611,88"/>
 </map>

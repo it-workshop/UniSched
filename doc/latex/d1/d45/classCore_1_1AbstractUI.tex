@@ -1,0 +1,326 @@
+\hypertarget{classCore_1_1AbstractUI}{
+\section{Core::AbstractUI Class Reference}
+\label{d1/d45/classCore_1_1AbstractUI}\index{Core::AbstractUI@{Core::AbstractUI}}
+}
+
+
+Interface for frontend modules.  
+
+
+
+
+{\ttfamily \#include $<$abstractui.h$>$}
+
+
+
+Inheritance diagram for Core::AbstractUI:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d4/d85/classCore_1_1AbstractUI__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Core::AbstractUI:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d0/d9b/classCore_1_1AbstractUI__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1AbstractUI_a498c009d8806964b22d13ac2cf27479f}{AbstractUI} (const std::string \&name)
+\begin{DoxyCompactList}\small\item\em constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classCore_1_1AbstractUI_a92f84695ae72af96d9e5e3f024d2bafe}{AbstractUI} (std::fstream input\_\-storage, const std::string \&name)
+\item 
+virtual int \hyperlink{classCore_1_1AbstractUI_ac832b32700b97b1e0a6651efe7a1ce06}{run} ()=0
+\begin{DoxyCompactList}\small\item\em Main method of frontend class. It is called from main. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCore_1_1AbstractUI_a2744c5f015639a849c3f76dd7cc2656a}{push} (const int id, const \hyperlink{classCore_1_1Field}{Field} \&field)
+\item 
+const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1AbstractUI_a2f70b789e482b7cf8a8b8574d29dc07b}{pull} (const std::string \&name) const   throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em Load field with {\itshape name\/} of created object. \item\end{DoxyCompactList}\item 
+void \hyperlink{classCore_1_1AbstractUI_abfdd0df1f1b2eeeab68536fa45d06c79}{remove} (\hyperlink{classCore_1_1Object}{Object} $\ast$object)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classCore_1_1AbstractUI_ac49885c7a9e25368e15172057f05d6a9}{create} (std::vector$<$ const \hyperlink{classCore_1_1Field}{Field} $>$ \&parameters)
+\item 
+void \hyperlink{classCore_1_1AbstractUI_aeffc2f4b846f5df74016a5bbed4f5549}{search} (const std::vector$<$ const \hyperlink{classCore_1_1Field}{Field} $\ast$ $>$ \&parameters)
+\begin{DoxyCompactList}\small\item\em Search objects by some parameters. \item\end{DoxyCompactList}\item 
+\hyperlink{classCore_1_1Object}{Object} $\ast$ \hyperlink{classCore_1_1AbstractUI_aa362757c2e56131d494986f34d31a5ad}{object} (const int id) const   throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em Return object by id. \item\end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$ \& \hyperlink{classCore_1_1AbstractUI_afb9ec6d8636888b77cfcdc37713d5abc}{cache} ()
+\item 
+void \hyperlink{classCore_1_1AbstractUI_ade9be0dbb4b274ed6ef4d0d427152916}{reset\_\-cache} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Clears search cache. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCore_1_1AbstractUI_a0720b5f434e636e22a3ed34f847eec57}{Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for frontend modules. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1AbstractUI_a498c009d8806964b22d13ac2cf27479f}{
+\index{Core::AbstractUI@{Core::AbstractUI}!AbstractUI@{AbstractUI}}
+\index{AbstractUI@{AbstractUI}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{AbstractUI}]{\setlength{\rightskip}{0pt plus 5cm}Core::AbstractUI::AbstractUI (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_a498c009d8806964b22d13ac2cf27479f}
+
+
+constructor. 
+
+$<$ 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the frontend. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCore_1_1AbstractUI_a92f84695ae72af96d9e5e3f024d2bafe}{
+\index{Core::AbstractUI@{Core::AbstractUI}!AbstractUI@{AbstractUI}}
+\index{AbstractUI@{AbstractUI}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{AbstractUI}]{\setlength{\rightskip}{0pt plus 5cm}AbstractUI::AbstractUI (
+\begin{DoxyParamCaption}
+\item[{std::fstream}]{input\_\-storage, }
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{d1/d45/classCore_1_1AbstractUI_a92f84695ae72af96d9e5e3f024d2bafe}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1AbstractUI_afb9ec6d8636888b77cfcdc37713d5abc}{
+\index{Core::AbstractUI@{Core::AbstractUI}!cache@{cache}}
+\index{cache@{cache}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{cache}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Object} $\ast$$>$\& Core::AbstractUI::cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_afb9ec6d8636888b77cfcdc37713d5abc}
+\hypertarget{classCore_1_1AbstractUI_ac49885c7a9e25368e15172057f05d6a9}{
+\index{Core::AbstractUI@{Core::AbstractUI}!create@{create}}
+\index{create@{create}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void Core::AbstractUI::create (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ const {\bf Field} $>$ \&}]{parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_ac49885c7a9e25368e15172057f05d6a9}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em parameters} & Create an object of the T type \\
+\hline
+\mbox{\tt in}  & {\em parameters} & new object`s data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCore_1_1AbstractUI_aa362757c2e56131d494986f34d31a5ad}{
+\index{Core::AbstractUI@{Core::AbstractUI}!object@{object}}
+\index{object@{object}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object}$\ast$ Core::AbstractUI::object (
+\begin{DoxyParamCaption}
+\item[{const int}]{id}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_aa362757c2e56131d494986f34d31a5ad}
+
+
+Return object by id. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & \hyperlink{classCore_1_1Object}{Object} identificator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Requested object.
+\end{DoxyReturn}
+Use this method carefully. It can be moved to the protected or private on future. 
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{d1/d45/classCore_1_1AbstractUI_aa362757c2e56131d494986f34d31a5ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractUI_a2f70b789e482b7cf8a8b8574d29dc07b}{
+\index{Core::AbstractUI@{Core::AbstractUI}!pull@{pull}}
+\index{pull@{pull}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{pull}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Field} \& AbstractUI::pull (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_a2f70b789e482b7cf8a8b8574d29dc07b}
+
+
+Load field with {\itshape name\/} of created object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Corresponding field. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{d1/d45/classCore_1_1AbstractUI_a2f70b789e482b7cf8a8b8574d29dc07b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractUI_a2744c5f015639a849c3f76dd7cc2656a}{
+\index{Core::AbstractUI@{Core::AbstractUI}!push@{push}}
+\index{push@{push}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void Core::AbstractUI::push (
+\begin{DoxyParamCaption}
+\item[{const int}]{id, }
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_a2744c5f015639a849c3f76dd7cc2656a}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em field} & Save {\itshape field\/} of object with {\itshape id\/} it hte database \\
+\hline
+\mbox{\tt in}  & {\em id} & Identificator of object. \\
+\hline
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} to save.\\
+\hline
+\end{DoxyParams}
+TODO: Empty method. Write it, when create database class. 
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{d1/d45/classCore_1_1AbstractUI_a2744c5f015639a849c3f76dd7cc2656a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractUI_abfdd0df1f1b2eeeab68536fa45d06c79}{
+\index{Core::AbstractUI@{Core::AbstractUI}!remove@{remove}}
+\index{remove@{remove}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Core::AbstractUI::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_abfdd0df1f1b2eeeab68536fa45d06c79}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em object} & Remove object from the storage. \\
+\hline
+\mbox{\tt in}  & {\em object} & \hyperlink{classCore_1_1Object}{Object} to delete. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{d1/d45/classCore_1_1AbstractUI_abfdd0df1f1b2eeeab68536fa45d06c79_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractUI_ade9be0dbb4b274ed6ef4d0d427152916}{
+\index{Core::AbstractUI@{Core::AbstractUI}!reset\_\-cache@{reset\_\-cache}}
+\index{reset\_\-cache@{reset\_\-cache}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{reset\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}void Core::AbstractUI::reset\_\-cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_ade9be0dbb4b274ed6ef4d0d427152916}
+
+
+Clears search cache. 
+
+$<$ \hypertarget{classCore_1_1AbstractUI_ac832b32700b97b1e0a6651efe7a1ce06}{
+\index{Core::AbstractUI@{Core::AbstractUI}!run@{run}}
+\index{run@{run}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Core::AbstractUI::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_ac832b32700b97b1e0a6651efe7a1ce06}
+
+
+Main method of frontend class. It is called from main. 
+
+\begin{DoxyReturn}{Returns}
+Program return code. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{d1/d45/classCore_1_1AbstractUI_ac832b32700b97b1e0a6651efe7a1ce06_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1AbstractUI_aeffc2f4b846f5df74016a5bbed4f5549}{
+\index{Core::AbstractUI@{Core::AbstractUI}!search@{search}}
+\index{search@{search}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractUI::search (
+\begin{DoxyParamCaption}
+\item[{const std::vector$<$ const {\bf Field} $\ast$ $>$ \&}]{parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_aeffc2f4b846f5df74016a5bbed4f5549}
+
+
+Search objects by some parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parameters} & Search parameters.\\
+\hline
+\end{DoxyParams}
+Parameters are connected by logical AND. If parameter have not got a name, search value by the any field of specified type. If value is empty that all objects will satisfied. 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCore_1_1AbstractUI_a0720b5f434e636e22a3ed34f847eec57}{
+\index{Core::AbstractUI@{Core::AbstractUI}!Object@{Object}}
+\index{Object@{Object}!Core::AbstractUI@{Core::AbstractUI}}
+\subsubsection[{Object}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Object}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{d1/d45/classCore_1_1AbstractUI_a0720b5f434e636e22a3ed34f847eec57}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{abstractui_8h}{abstractui.h}\item 
+src/core/\hyperlink{abstractui_8cpp}{abstractui.cpp}\end{DoxyCompactItemize}

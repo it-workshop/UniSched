@@ -29,7 +29,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
@@ -68,35 +67,26 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a name="l00004"></a>00004 
 <a name="l00005"></a>00005 <span class="keyword">namespace </span>Core {
 <a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html">00007</a> <span class="keyword">class </span><a class="code" href="../../d9/d42/classCore_1_1Event.html">Event</a>: <span class="keyword">public</span> <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a> {
-<a name="l00008"></a>00008 <span class="keyword">private</span>:
-<a name="l00009"></a>00009     time_t begin_;
-<a name="l00010"></a>00010     time_t duration_;
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">protected</span>:
-<a name="l00013"></a>00013     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d42/classCore_1_1Event.html#a6dbea64bf650e7e36d55539cf59a66e7" title="Method to save all data in the storage.">save</a>();
-<a name="l00014"></a>00014     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d42/classCore_1_1Event.html#a63462f7c20234f5c7f18e9c5e19d72b9" title="Method to load all data from the storage.">load</a>();
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00017"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#a067e37070ea0fa9b39d7d1171c2f9a2d">00017</a>     <a class="code" href="../../d9/d42/classCore_1_1Event.html#a067e37070ea0fa9b39d7d1171c2f9a2d">Event</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage.">Storage::AbstractStorage</a>&amp; storage):
-<a name="l00018"></a>00018             <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a>(id, storage) {}
-<a name="l00019"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#aa4a154dde2ab0f1e011fc2f41909cb43">00019</a>     <a class="code" href="../../d9/d42/classCore_1_1Event.html#a067e37070ea0fa9b39d7d1171c2f9a2d">Event</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage.">Storage::AbstractStorage</a>&amp; storage,
-<a name="l00020"></a>00020         <span class="keyword">const</span> std::string <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html#a139cc0a6451f2dbca1f74d96f28741f0" title="Returns group`s name.">name</a>, <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#a829b19b781b4d5989928c021b3a3553a">begin</a>, <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#ad83a2109fa632352f63adfdafe2dc86f">duration</a>):
-<a name="l00021"></a>00021             <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a>(id, storage, name), begin_(begin),
-<a name="l00022"></a>00022             duration_(duration) {}
-<a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#a829b19b781b4d5989928c021b3a3553a">00024</a>     <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#a829b19b781b4d5989928c021b3a3553a">begin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> begin_; }
-<a name="l00025"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#ad83a2109fa632352f63adfdafe2dc86f">00025</a>     <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#ad83a2109fa632352f63adfdafe2dc86f">duration</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> duration_; }
-<a name="l00026"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#af83b91c07834359638a4f7473abad5c5">00026</a>     <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#af83b91c07834359638a4f7473abad5c5">end</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> begin_ + duration_; }
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> <span class="keyword">const</span> std::string <a class="code" href="../../d9/d42/classCore_1_1Event.html#a8dd94bcb05cb3c5ef065fa204cd724f9" title="Returns full object information.">read</a>() <span class="keyword">const</span>;
-<a name="l00029"></a>00029     <span class="keyword">virtual</span> <span class="keyword">const</span> time_t <a class="code" href="../../d9/d42/classCore_1_1Event.html#a4977832cb03001d8afe46bcddc60ce1a" title="Return time value of requested field.">read_time</a>(<span class="keyword">const</span> std::string <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html#a139cc0a6451f2dbca1f74d96f28741f0" title="Returns group`s name.">name</a>) <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::bad_cast);
-<a name="l00030"></a>00030     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d42/classCore_1_1Event.html#aaa4b9def6b65cc896e0054210b2d5dae" title="change current time value of field.">update</a>(<span class="keyword">const</span> std::string <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html#a139cc0a6451f2dbca1f74d96f28741f0" title="Returns group`s name.">name</a>, <span class="keyword">const</span> time_t value) <span class="keywordflow">throw</span> (std::bad_cast);
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d42/classCore_1_1Event.html#aaa4b9def6b65cc896e0054210b2d5dae" title="change current time value of field.">update</a>(<a class="code" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> * <span class="keywordtype">object</span>, <span class="keyword">const</span> <span class="keywordtype">bool</span> linked) <span class="keywordflow">throw</span> (std::bad_cast);
-<a name="l00032"></a>00032 };
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
+<a name="l00010"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html">00010</a> <span class="keyword">class </span><a class="code" href="../../d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time.">Event</a>: <span class="keyword">public</span> <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases.">AbstractGroup</a> {
+<a name="l00011"></a>00011 <span class="keyword">private</span>:
+<a name="l00012"></a>00012     <a class="code" href="../../d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type.">FieldTime</a> begin_;
+<a name="l00014"></a>00014     <a class="code" href="../../d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type.">FieldTime</a> duration_;
+<a name="l00016"></a>00016 <span class="keyword">protected</span>:
+<a name="l00017"></a>00017 <span class="keyword">public</span>:
+<a name="l00018"></a><a class="code" href="../../d9/d42/classCore_1_1Event.html#ae95aab029470950df22a02c95e6bce5b">00018</a>     <a class="code" href="../../d9/d42/classCore_1_1Event.html#ae95aab029470950df22a02c95e6bce5b">Event</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d1/d45/classCore_1_1AbstractUI.html" title="Interface for frontend modules.">AbstractUI</a>&amp; ui) <span class="keywordflow">throw</span> (std::bad_cast):
+<a name="l00019"></a>00019             <a class="code" href="../../dd/d68/classCore_1_1AbstractGroup.html#a413d72742d0f92f44615dba99e3430fd" title="Constructor.">AbstractGroup</a>(<span class="keywordtype">id</span>, ui), begin_(<span class="stringliteral">&quot;begin&quot;</span>), duration_(<span class="stringliteral">&quot;duration&quot;</span>)
+<a name="l00021"></a>00021     {
+<a name="l00022"></a>00022         begin_ = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type.">FieldTime</a>&amp;<span class="keyword">&gt;</span>(<a class="code" href="../../dc/dc7/classCore_1_1Object.html#a0f63419b097657c014bf618baeb62c41" title="Get id of the object.">pull</a>(<span class="stringliteral">&quot;begin&quot;</span>));
+<a name="l00023"></a>00023         duration_ = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d3/d8b/classCore_1_1FieldTime.html" title="field of time_t type.">FieldTime</a>&amp;<span class="keyword">&gt;</span>(<a class="code" href="../../dc/dc7/classCore_1_1Object.html#a0f63419b097657c014bf618baeb62c41" title="Get id of the object.">pull</a>(<span class="stringliteral">&quot;duration&quot;</span>));
+<a name="l00024"></a>00024     }
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../dc/d16/classCore_1_1Field.html" title="Base class for fields of different types.">Field</a>&amp; <a class="code" href="../../d9/d42/classCore_1_1Event.html#ac78ff90453b84d3342971772bba5c265">read</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>
+<a name="l00027"></a>00027         <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d42/classCore_1_1Event.html#a8e147f35e8ee4fd0891a290424b098d3">update</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d16/classCore_1_1Field.html" title="Base class for fields of different types.">Field</a>&amp; field) <span class="keywordflow">throw</span> (std::bad_cast);
+<a name="l00038"></a>00038 };
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 };
+<a name="l00041"></a>00041 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -113,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 5 2012 17:31:39 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

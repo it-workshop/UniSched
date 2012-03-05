@@ -4,6 +4,11 @@
 }
 
 
+\hyperlink{classCore_1_1Group}{Group} of people, doing something in the some time.  
+
+
+
+
 {\ttfamily \#include $<$event.h$>$}
 
 
@@ -13,7 +18,7 @@ Inheritance diagram for Core::Event:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=600pt]{d2/d0e/classCore_1_1Event__inherit__graph}
+\includegraphics[width=186pt]{d2/d0e/classCore_1_1Event__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -29,191 +34,76 @@ Collaboration diagram for Core::Event:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCore_1_1Event_a067e37070ea0fa9b39d7d1171c2f9a2d}{Event} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage)
+\hyperlink{classCore_1_1Event_ae95aab029470950df22a02c95e6bce5b}{Event} (const int id, \hyperlink{classCore_1_1AbstractUI}{AbstractUI} \&ui)  throw (std::bad\_\-cast)
 \item 
-\hyperlink{classCore_1_1Event_aa4a154dde2ab0f1e011fc2f41909cb43}{Event} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage, const std::string name, const time\_\-t begin, const time\_\-t duration)
+virtual const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1Event_ac78ff90453b84d3342971772bba5c265}{read} (const std::string \&name) const   throw (std::bad\_\-cast)
 \item 
-const time\_\-t \hyperlink{classCore_1_1Event_a829b19b781b4d5989928c021b3a3553a}{begin} () const 
-\item 
-const time\_\-t \hyperlink{classCore_1_1Event_ad83a2109fa632352f63adfdafe2dc86f}{duration} () const 
-\item 
-const time\_\-t \hyperlink{classCore_1_1Event_af83b91c07834359638a4f7473abad5c5}{end} () const 
-\item 
-virtual const std::string \hyperlink{classCore_1_1Event_a8dd94bcb05cb3c5ef065fa204cd724f9}{read} () const 
-\begin{DoxyCompactList}\small\item\em Returns full object information. \item\end{DoxyCompactList}\item 
-virtual const time\_\-t \hyperlink{classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a}{read\_\-time} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return time value of requested field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1Event_aaa4b9def6b65cc896e0054210b2d5dae}{update} (const std::string name, const time\_\-t value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current time value of field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1Event_a308ae7ad334b8c9a166dc57cfd6a0524}{update} (\hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$object, const bool linked)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current link value of field. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \hyperlink{classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7}{save} ()
-\begin{DoxyCompactList}\small\item\em Method to save all data in the storage. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9}{load} ()
-\begin{DoxyCompactList}\small\item\em Method to load all data from the storage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classCore_1_1Event_a8e147f35e8ee4fd0891a290424b098d3}{update} (const \hyperlink{classCore_1_1Field}{Field} \&field)  throw (std::bad\_\-cast)
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\hyperlink{classCore_1_1Group}{Group} of people, doing something in the some time. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCore_1_1Event_a067e37070ea0fa9b39d7d1171c2f9a2d}{
+\hypertarget{classCore_1_1Event_ae95aab029470950df22a02c95e6bce5b}{
 \index{Core::Event@{Core::Event}!Event@{Event}}
 \index{Event@{Event}!Core::Event@{Core::Event}}
 \subsubsection[{Event}]{\setlength{\rightskip}{0pt plus 5cm}Core::Event::Event (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{{\bf Storage::AbstractStorage} \&}]{storage}
+\item[{{\bf AbstractUI} \&}]{ui}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a067e37070ea0fa9b39d7d1171c2f9a2d}
-\hypertarget{classCore_1_1Event_aa4a154dde2ab0f1e011fc2f41909cb43}{
-\index{Core::Event@{Core::Event}!Event@{Event}}
-\index{Event@{Event}!Core::Event@{Core::Event}}
-\subsubsection[{Event}]{\setlength{\rightskip}{0pt plus 5cm}Core::Event::Event (
-\begin{DoxyParamCaption}
-\item[{const int}]{id, }
-\item[{{\bf Storage::AbstractStorage} \&}]{storage, }
-\item[{const std::string}]{name, }
-\item[{const time\_\-t}]{begin, }
-\item[{const time\_\-t}]{duration}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_aa4a154dde2ab0f1e011fc2f41909cb43}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d9/d42/classCore_1_1Event_ae95aab029470950df22a02c95e6bce5b}
+$<$ Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & AbstractUIs object`s identificator. \\
+\hline
+\mbox{\tt in}  & {\em ui} & Storage. \\
+\hline
+\end{DoxyParams}
+ 
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{d9/d42/classCore_1_1Event_ae95aab029470950df22a02c95e6bce5b_cgraph}
+\end{center}
+\end{figure}
+
+
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classCore_1_1Event_a829b19b781b4d5989928c021b3a3553a}{
-\index{Core::Event@{Core::Event}!begin@{begin}}
-\index{begin@{begin}!Core::Event@{Core::Event}}
-\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::Event::begin (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a829b19b781b4d5989928c021b3a3553a}
-\hypertarget{classCore_1_1Event_ad83a2109fa632352f63adfdafe2dc86f}{
-\index{Core::Event@{Core::Event}!duration@{duration}}
-\index{duration@{duration}!Core::Event@{Core::Event}}
-\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::Event::duration (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_ad83a2109fa632352f63adfdafe2dc86f}
-\hypertarget{classCore_1_1Event_af83b91c07834359638a4f7473abad5c5}{
-\index{Core::Event@{Core::Event}!end@{end}}
-\index{end@{end}!Core::Event@{Core::Event}}
-\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Core::Event::end (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_af83b91c07834359638a4f7473abad5c5}
-\hypertarget{classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9}{
-\index{Core::Event@{Core::Event}!load@{load}}
-\index{load@{load}!Core::Event@{Core::Event}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void Event::load (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9}
-
-
-Method to load all data from the storage. 
-
-Declared in the \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. Thil method loads name, child groups and people. Inherited classes must to redefine and coll this one. 
-
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}{Core::AbstractGroup}.
-
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{d9/d42/classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1Event_a8dd94bcb05cb3c5ef065fa204cd724f9}{
+\hypertarget{classCore_1_1Event_ac78ff90453b84d3342971772bba5c265}{
 \index{Core::Event@{Core::Event}!read@{read}}
 \index{read@{read}!Core::Event@{Core::Event}}
-\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Event::read (
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Field} \& Event::read (
 \begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a8dd94bcb05cb3c5ef065fa204cd724f9}
-
-
-Returns full object information. 
-
-\begin{DoxyReturn}{Returns}
-Object`s information in the string.
-\end{DoxyReturn}
-Method declared in the \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} use to retrive all information about object.
-
-Inherited classes must to redefine and call this one. 
-
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}{Core::AbstractGroup}.
-
-\hypertarget{classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a}{
-\index{Core::Event@{Core::Event}!read\_\-time@{read\_\-time}}
-\index{read\_\-time@{read\_\-time}!Core::Event@{Core::Event}}
-\subsubsection[{read\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t Event::read\_\-time (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name}
+\item[{const std::string \&}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a}
+\label{d9/d42/classCore_1_1Event_ac78ff90453b84d3342971772bba5c265}
+Get field of the object. 
 
 
-Return time value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be returned. Ignored really. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the field to get. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Time value of requested field. Never return really.
+Corresponding field. 
 \end{DoxyReturn}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. Method used in event class which redefines this. 
+ Get values of fields with those names: \char`\"{}name\char`\"{}, \char`\"{}people\char`\"{}, \char`\"{}child\_\-groups\char`\"{}.
 
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912}{Core::AbstractGroup}.
+Method returns object of \hyperlink{classCore_1_1FieldString}{Core::FieldString} or \hyperlink{classCore_1_1FieldVector}{Core::FieldVector} types.  Specific fields names: \char`\"{}begin\char`\"{}, \char`\"{}duration\char`\"{}. \hyperlink{classCore_1_1Object}{Object} type: \hyperlink{classCore_1_1FieldTime}{FieldTime}. 
 
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=390pt]{d9/d42/classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7}{
-\index{Core::Event@{Core::Event}!save@{save}}
-\index{save@{save}!Core::Event@{Core::Event}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void Event::save (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7}
-
-
-Method to save all data in the storage. 
-
-Declared in the \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. This method saves name, child groups and people. Inherited classes must to redefine and call this one. 
-
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}{Core::AbstractGroup}.
+Reimplemented from \hyperlink{classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d}{Core::AbstractGroup}.
 
 
 
@@ -222,37 +112,32 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{d9/d42/classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7_cgraph}
+\includegraphics[width=342pt]{d9/d42/classCore_1_1Event_ac78ff90453b84d3342971772bba5c265_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classCore_1_1Event_a308ae7ad334b8c9a166dc57cfd6a0524}{
+\hypertarget{classCore_1_1Event_a8e147f35e8ee4fd0891a290424b098d3}{
 \index{Core::Event@{Core::Event}!update@{update}}
 \index{update@{update}!Core::Event@{Core::Event}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Event::update (
 \begin{DoxyParamCaption}
-\item[{{\bf UI::UsersObject} $\ast$}]{object, }
-\item[{const bool}]{linked}
+\item[{const {\bf Field} \&}]{field}
 \end{DoxyParamCaption}
 )  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_a308ae7ad334b8c9a166dc57cfd6a0524}
+\label{d9/d42/classCore_1_1Event_a8e147f35e8ee4fd0891a290424b098d3}
+Change field of the object. 
 
 
-change current link value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em object} & Object link with that must be changed. \\
-\hline
-{\em linked} & New state of thi link.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} to change. \\
 \hline
 \end{DoxyParams}
-This method tries to add or delete object to the group as the \hyperlink{classCore_1_1Person}{Person}. dynamic\_\-cast will throw std::bad\_\-cast if object is not \hyperlink{classCore_1_1Person}{Person}.
+ Change values of fields with those names: \char`\"{}name\char`\"{}, \char`\"{}people\char`\"{}, \char`\"{}child\_\-groups\char`\"{}.
 
-You can not set child group by this method use redefined method in \hyperlink{classCore_1_1Group}{Group} class to add parent group. 
+Methods accepts object of \hyperlink{classCore_1_1FieldString}{Core::FieldString}, \hyperlink{classCore_1_1FieldLink}{Core::FieldLink} or \hyperlink{classCore_1_1FieldVector}{Core::FieldVector} types.  Specific fields names: \char`\"{}begin\char`\"{}, \char`\"{}duration\char`\"{}. \hyperlink{classCore_1_1Object}{Object} type: \hyperlink{classCore_1_1FieldTime}{FieldTime}. 
 
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54dbb8}{Core::AbstractGroup}.
+Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5}{Core::AbstractGroup}.
 
 
 
@@ -261,44 +146,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=362pt]{d9/d42/classCore_1_1Event_a308ae7ad334b8c9a166dc57cfd6a0524_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1Event_aaa4b9def6b65cc896e0054210b2d5dae}{
-\index{Core::Event@{Core::Event}!update@{update}}
-\index{update@{update}!Core::Event@{Core::Event}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Event::update (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name, }
-\item[{const time\_\-t}]{value}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{d9/d42/classCore_1_1Event_aaa4b9def6b65cc896e0054210b2d5dae}
-
-
-change current time value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be changed. Ignored really. \\
-\hline
-{\em value} & New value of field. Ignored really.\\
-\hline
-\end{DoxyParams}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. \hyperlink{classCore_1_1Event}{Event} class must to redefine this one. 
-
-Reimplemented from \hyperlink{classCore_1_1AbstractGroup_a9891a3850584dc3677563aea603fb9c2}{Core::AbstractGroup}.
-
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=362pt]{d9/d42/classCore_1_1Event_aaa4b9def6b65cc896e0054210b2d5dae_cgraph}
+\includegraphics[width=362pt]{d9/d42/classCore_1_1Event_a8e147f35e8ee4fd0891a290424b098d3_cgraph}
 \end{center}
 \end{figure}
 

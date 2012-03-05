@@ -18,7 +18,7 @@ Inheritance diagram for Core::AbstractGroup:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=600pt]{d2/d03/classCore_1_1AbstractGroup__inherit__graph}
+\includegraphics[width=254pt]{d2/d03/classCore_1_1AbstractGroup__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -34,49 +34,19 @@ Collaboration diagram for Core::AbstractGroup:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCore_1_1AbstractGroup_a9d5c82db4ed051f674e6a3f5586ad5e0}{AbstractGroup} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage)
+\hyperlink{classCore_1_1AbstractGroup_a413d72742d0f92f44615dba99e3430fd}{AbstractGroup} (const int id, \hyperlink{classCore_1_1AbstractUI}{AbstractUI} \&ui)  throw (std::bad\_\-cast)
 \begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
-\hyperlink{classCore_1_1AbstractGroup_a2b6c9e7b2d618019fe626d28a53ddd06}{AbstractGroup} (const int id, \hyperlink{classStorage_1_1AbstractStorage}{Storage::AbstractStorage} \&storage, const std::string name)
-\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
-const std::string \hyperlink{classCore_1_1AbstractGroup_a139cc0a6451f2dbca1f74d96f28741f0}{name} () const 
-\begin{DoxyCompactList}\small\item\em Returns group`s name. \item\end{DoxyCompactList}\item 
-void \hyperlink{classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}{add\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$person)
-\begin{DoxyCompactList}\small\item\em Add person to the group. \item\end{DoxyCompactList}\item 
-void \hyperlink{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{del\_\-person} (\hyperlink{classCore_1_1Person}{Person} $\ast$person)
-\begin{DoxyCompactList}\small\item\em Delete person from the group. \item\end{DoxyCompactList}\item 
-virtual const std::string \hyperlink{classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}{read} () const 
-\begin{DoxyCompactList}\small\item\em Returns full object information. \item\end{DoxyCompactList}\item 
-virtual const int \hyperlink{classCore_1_1AbstractGroup_a7e15ec9b621230659a5ca2f0be724d83}{read\_\-int} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return integer value of requested field. \item\end{DoxyCompactList}\item 
-virtual const std::string \hyperlink{classCore_1_1AbstractGroup_a907fc505a7f7828fcd2e7f6eaf5e27cd}{read\_\-string} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return string value of requested field. \item\end{DoxyCompactList}\item 
-virtual const time\_\-t \hyperlink{classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912}{read\_\-time} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return time value of requested field. \item\end{DoxyCompactList}\item 
-virtual const std::string \hyperlink{classCore_1_1AbstractGroup_a2f373e90feaad172563c6256ae30a6a6}{read\_\-enum} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return enum value of requested field. \item\end{DoxyCompactList}\item 
-virtual const std::vector$<$ \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$ $>$ \hyperlink{classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999}{read\_\-vector} (const std::string name) const   throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em Return vector value of requested field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90}{update} (const std::string name, const int value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current integer value of field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_a39c1a34ff912b5abd298f58bf6196a45}{update} (const std::string name, const std::string value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current string value of field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_a9891a3850584dc3677563aea603fb9c2}{update} (const std::string name, const time\_\-t value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current time value of field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_a1f379a7c4d54b49db4d20127521a238a}{update\_\-enum} (const std::string name, const std::string value)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current enum value of field. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54dbb8}{update} (\hyperlink{classUI_1_1UsersObject}{UI::UsersObject} $\ast$object, const bool linked)  throw (std::bad\_\-cast)
-\begin{DoxyCompactList}\small\item\em change current link value of field. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d}{read} (const std::string \&name) const   throw (std::bad\_\-cast)
+\item 
+virtual void \hyperlink{classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5}{update} (const \hyperlink{classCore_1_1Field}{Field} \&field)  throw (std::bad\_\-cast)
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}{add\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$group)
-\begin{DoxyCompactList}\small\item\em Method to add child group. \item\end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add child group to this one. \item\end{DoxyCompactList}\item 
 void \hyperlink{classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}{del\_\-child} (\hyperlink{classCore_1_1AbstractGroup}{AbstractGroup} $\ast$group)
-\begin{DoxyCompactList}\small\item\em Method to delete child group. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}{save} ()
-\begin{DoxyCompactList}\small\item\em Method to save all data in the storage. \item\end{DoxyCompactList}\item 
-virtual void \hyperlink{classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}{load} ()
-\begin{DoxyCompactList}\small\item\em Method to load all data from the storage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Delete child group from this one. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -85,59 +55,31 @@ class \hyperlink{classCore_1_1AbstractGroup_a2697825715974a353728f0d4d5658112}{G
 
 
 \subsection{Detailed Description}
-Base group functionality. You need to use it instead of \hyperlink{classCore_1_1Group}{Group} or \hyperlink{classCore_1_1Event}{Event} in most cases. This is a generalization of groups and events. It allows to work with them easy. It have not parent group as an \hyperlink{classCore_1_1Event}{Event}, but \hyperlink{classCore_1_1Group}{Group} have. 
+Base group functionality. You need to use it instead of \hyperlink{classCore_1_1Group}{Group} or \hyperlink{classCore_1_1Event}{Event} in most cases. This is a generalization of groups and events. It allows to work easy with them. It have not parent group as an \hyperlink{classCore_1_1Event}{Event}, but \hyperlink{classCore_1_1Group}{Group} have. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCore_1_1AbstractGroup_a9d5c82db4ed051f674e6a3f5586ad5e0}{
+\hypertarget{classCore_1_1AbstractGroup_a413d72742d0f92f44615dba99e3430fd}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!AbstractGroup@{AbstractGroup}}
 \index{AbstractGroup@{AbstractGroup}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{AbstractGroup}]{\setlength{\rightskip}{0pt plus 5cm}Core::AbstractGroup::AbstractGroup (
+\subsubsection[{AbstractGroup}]{\setlength{\rightskip}{0pt plus 5cm}AbstractGroup::AbstractGroup (
 \begin{DoxyParamCaption}
 \item[{const int}]{id, }
-\item[{{\bf Storage::AbstractStorage} \&}]{storage}
+\item[{{\bf AbstractUI} \&}]{ui}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a9d5c82db4ed051f674e6a3f5586ad5e0}
+)  throw (std::bad\_\-cast)}}
+\label{dd/d68/classCore_1_1AbstractGroup_a413d72742d0f92f44615dba99e3430fd}
 
 
 Constructor. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em id} & Storable object`s identificator. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & AbstractUIs object`s identificator. \\
 \hline
-{\em storage} & \hyperlink{namespaceStorage}{Storage}.\\
-\hline
-\end{DoxyParams}
-This constructor called from inherited classes. \hypertarget{classCore_1_1AbstractGroup_a2b6c9e7b2d618019fe626d28a53ddd06}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!AbstractGroup@{AbstractGroup}}
-\index{AbstractGroup@{AbstractGroup}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{AbstractGroup}]{\setlength{\rightskip}{0pt plus 5cm}Core::AbstractGroup::AbstractGroup (
-\begin{DoxyParamCaption}
-\item[{const int}]{id, }
-\item[{{\bf Storage::AbstractStorage} \&}]{storage, }
-\item[{const std::string}]{name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a2b6c9e7b2d618019fe626d28a53ddd06}
-
-
-Constructor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id} & Storable object`s identificotor. \\
-\hline
-{\em storage} & \hyperlink{namespaceStorage}{Storage}. \\
-\hline
-{\em name} & Group`s name.\\
+\mbox{\tt in}  & {\em ui} & Storage. \\
 \hline
 \end{DoxyParams}
-\begin{Desc}
-\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]This constructor keeped for debug. Using can be very hard. Must be deleted later.\end{Desc}
 
-
-This constructor called from inherited classes. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}{
@@ -151,14 +93,14 @@ This constructor called from inherited classes.
 \label{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56}
 
 
-Method to add child group. 
+Add child group to this one. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em group} & \hyperlink{classCore_1_1Group}{Group} to add.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & \hyperlink{classCore_1_1Group}{Group} to add. \\
 \hline
 \end{DoxyParams}
-This method does not controlls that group in not a child already. This check must be in function Group::add\_\-parent(). That function must be only the one place where this caled from. 
+
 
 Here is the call graph for this function:
 \nopagebreak
@@ -166,48 +108,6 @@ Here is the call graph for this function:
 \begin{center}
 \leavevmode
 \includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!add\_\-person@{add\_\-person}}
-\index{add\_\-person@{add\_\-person}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{add\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::add\_\-person (
-\begin{DoxyParamCaption}
-\item[{{\bf Person} $\ast$}]{person}
-\end{DoxyParamCaption}
-)}}
-\label{dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f}
-
-
-Add person to the group. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em person} & \hyperlink{classCore_1_1Person}{Person} to add.\\
-\hline
-\end{DoxyParams}
-Do not use this directly. It must be moved into protected or private. This method called from update method. 
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph}
 \end{center}
 \end{figure}
 
@@ -223,14 +123,14 @@ Here is the call graph for this function:
 \label{dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330}
 
 
-Method to delete child group. 
+Delete child group from this one. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em group} & \hyperlink{classCore_1_1Group}{Group} to delete.\\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & \hyperlink{classCore_1_1Group}{Group} to delete.  For use in \hyperlink{classCore_1_1Group_a9878d4ec0b02890502c6cff69da1e332}{Core::Group::update} method only.\\
 \hline
 \end{DoxyParams}
-This method looks for requested group and deletes it. Group::del\_\-parent() must be only the one place where this method called from. 
+You must not use this method directly Use update methods instead. 
 
 Here is the call graph for this function:
 \nopagebreak
@@ -242,230 +142,34 @@ Here is the call graph for this function:
 \end{figure}
 
 
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!del\_\-person@{del\_\-person}}
-\index{del\_\-person@{del\_\-person}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{del\_\-person}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::del\_\-person (
-\begin{DoxyParamCaption}
-\item[{{\bf Person} $\ast$}]{person}
-\end{DoxyParamCaption}
-)}}
-\label{dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b}
-
-
-Delete person from the group. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em person} & to delete.\\
-\hline
-\end{DoxyParams}
-Do not use this directly. It must be moved into protected or private. This method called from update method. 
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!load@{load}}
-\index{load@{load}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::load (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283}
-
-
-Method to load all data from the storage. 
-
-Declared in the \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. Thil method loads name, child groups and people. Inherited classes must to redefine and coll this one. 
-
-Implements \hyperlink{classStorage_1_1StorableObject_ab92526b66762a9099d720cf28bfc4151}{Storage::StorableObject}.
-
-
-
-Reimplemented in \hyperlink{classCore_1_1Event_a63462f7c20234f5c7f18e9c5e19d72b9}{Core::Event}.
-
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_a139cc0a6451f2dbca1f74d96f28741f0}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!name@{name}}
-\index{name@{name}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const std::string Core::AbstractGroup::name (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a139cc0a6451f2dbca1f74d96f28741f0}
-
-
-Returns group`s name. 
-
-\begin{DoxyReturn}{Returns}
-Name of group.
-\end{DoxyReturn}
-\begin{Desc}
-\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]This method keeped for debug. Using can be comfortable, but not universal, you must to use UI::UsersObject::get\_\-field\_\-string(\char`\"{}name\char`\"{}) instead. Must be deleted later.\end{Desc}
-
-
-Use this for debug. \hypertarget{classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}{
+\hypertarget{classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d}{
 \index{Core::AbstractGroup@{Core::AbstractGroup}!read@{read}}
 \index{read@{read}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const std::string AbstractGroup::read (
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Field} \& AbstractGroup::read (
 \begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a0306b58e715d164aef3e29de0ec659bd}
-
-
-Returns full object information. 
-
-\begin{DoxyReturn}{Returns}
-Object`s information in the string.
-\end{DoxyReturn}
-Method declared in the \hyperlink{classUI_1_1UsersObject}{UI::UsersObject} use to retrive all information about object.
-
-Inherited classes must to redefine and call this one. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a68d5297258a2f4da4ff58f4809690db3}{UI::UsersObject}.
-
-
-
-Reimplemented in \hyperlink{classCore_1_1Event_a8dd94bcb05cb3c5ef065fa204cd724f9}{Core::Event}, and \hyperlink{classCore_1_1Group_a5fe3fef1b6709f953e5487841d90bbb9}{Core::Group}.
-
-\hypertarget{classCore_1_1AbstractGroup_a2f373e90feaad172563c6256ae30a6a6}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-enum@{read\_\-enum}}
-\index{read\_\-enum@{read\_\-enum}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}const std::string AbstractGroup::read\_\-enum (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name}
+\item[{const std::string \&}]{name}
 \end{DoxyParamCaption}
 ) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a2f373e90feaad172563c6256ae30a6a6}
+\label{dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d}
+Get field of the object. 
 
 
-Return enum value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be returned. Ignored really. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the field to get. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Time value of requested field. Never return really.
+Corresponding field. 
 \end{DoxyReturn}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. 
+ Get values of fields with those names: \char`\"{}name\char`\"{}, \char`\"{}people\char`\"{}, \char`\"{}child\_\-groups\char`\"{}.
 
-Implements \hyperlink{classUI_1_1UsersObject_a20ea26010f60e60f38d380fdaa9240d5}{UI::UsersObject}.
+Method returns object of \hyperlink{classCore_1_1FieldString}{Core::FieldString} or \hyperlink{classCore_1_1FieldVector}{Core::FieldVector} types. 
 
-\hypertarget{classCore_1_1AbstractGroup_a7e15ec9b621230659a5ca2f0be724d83}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-int@{read\_\-int}}
-\index{read\_\-int@{read\_\-int}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}const int AbstractGroup::read\_\-int (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name}
-\end{DoxyParamCaption}
-) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a7e15ec9b621230659a5ca2f0be724d83}
-
-
-Return integer value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of the field which must be returned. Ignored really. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Integer value of requested field. Never return really.
-\end{DoxyReturn}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a63ab79bb54b6134a483b2e384c824c7e}{UI::UsersObject}.
-
-\hypertarget{classCore_1_1AbstractGroup_a907fc505a7f7828fcd2e7f6eaf5e27cd}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-string@{read\_\-string}}
-\index{read\_\-string@{read\_\-string}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const std::string AbstractGroup::read\_\-string (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name}
-\end{DoxyParamCaption}
-) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a907fc505a7f7828fcd2e7f6eaf5e27cd}
-
-
-Return string value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of the field which must be returned. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-String value of requested field.
-\end{DoxyReturn}
-Use this for name field. Throws exception in other cases. 
-
-Implements \hyperlink{classUI_1_1UsersObject_aed80fcf20b550a0e3484fbe6beb24c19}{UI::UsersObject}.
-
-\hypertarget{classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-time@{read\_\-time}}
-\index{read\_\-time@{read\_\-time}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const time\_\-t AbstractGroup::read\_\-time (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name}
-\end{DoxyParamCaption}
-) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912}
-
-
-Return time value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be returned. Ignored really. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Time value of requested field. Never return really.
-\end{DoxyReturn}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. Method used in event class which redefines this. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a490536c477c5a796724ce26fd010c680}{UI::UsersObject}.
+Implements \hyperlink{classCore_1_1Object_a90137d9981bd680bd395460e643c6560}{Core::Object}.
 
 
 
-Reimplemented in \hyperlink{classCore_1_1Event_a4977832cb03001d8afe46bcddc60ce1a}{Core::Event}.
+Reimplemented in \hyperlink{classCore_1_1Event_ac78ff90453b84d3342971772bba5c265}{Core::Event}, and \hyperlink{classCore_1_1Group_a0f4f5f00e11faeaaf09600d5b4943012}{Core::Group}.
 
 
 
@@ -474,39 +178,36 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=390pt]{dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph}
+\includegraphics[width=344pt]{dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!read\_\-vector@{read\_\-vector}}
-\index{read\_\-vector@{read\_\-vector}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{read\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ {\bf UI::UsersObject} $\ast$ $>$ AbstractGroup::read\_\-vector (
+\hypertarget{classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5}{
+\index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
+\index{update@{update}!Core::AbstractGroup@{Core::AbstractGroup}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update (
 \begin{DoxyParamCaption}
-\item[{const std::string}]{name}
+\item[{const {\bf Field} \&}]{field}
 \end{DoxyParamCaption}
-) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5}
+Change field of the object. 
 
 
-Return vector value of requested field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be returned. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} to change. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Vector value of requested field.
-\end{DoxyReturn}
-Use this for child\_\-groups and people fields. Throws exception in the other cases. 
+ Change values of fields with those names: \char`\"{}name\char`\"{}, \char`\"{}people\char`\"{}, \char`\"{}child\_\-groups\char`\"{}.
 
-Implements \hyperlink{classUI_1_1UsersObject_a6899d8a06268abb8f2a13feba9921ce5}{UI::UsersObject}.
+Methods accepts object of \hyperlink{classCore_1_1FieldString}{Core::FieldString}, \hyperlink{classCore_1_1FieldLink}{Core::FieldLink} or \hyperlink{classCore_1_1FieldVector}{Core::FieldVector} types. 
 
+Implements \hyperlink{classCore_1_1Object_a53328d659235e29f418ff4890cc3bdb3}{Core::Object}.
 
 
-Reimplemented in \hyperlink{classCore_1_1Group_a52e48b1f92f6354b4e3a32d710b9c7b3}{Core::Group}.
+
+Reimplemented in \hyperlink{classCore_1_1Event_a8e147f35e8ee4fd0891a290424b098d3}{Core::Event}, and \hyperlink{classCore_1_1Group_a9878d4ec0b02890502c6cff69da1e332}{Core::Group}.
 
 
 
@@ -515,192 +216,10 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph}
+\includegraphics[width=364pt]{dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5_icgraph}
 \end{center}
 \end{figure}
 
-
-\hypertarget{classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!save@{save}}
-\index{save@{save}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::save (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c}
-
-
-Method to save all data in the storage. 
-
-Declared in the \hyperlink{classStorage_1_1StorableObject}{Storage::StorableObject}. This method saves name, child groups and people. Inherited classes must to redefine and call this one. 
-
-Implements \hyperlink{classStorage_1_1StorableObject_a85609f4a18b49c7e0eed0205ee6df5d9}{Storage::StorableObject}.
-
-
-
-Reimplemented in \hyperlink{classCore_1_1Event_a6dbea64bf650e7e36d55539cf59a66e7}{Core::Event}.
-
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
-\index{update@{update}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name, }
-\item[{const int}]{value}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90}
-
-
-change current integer value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be changed. Ignored really. \\
-\hline
-{\em value} & New value of field. Ignored really.\\
-\hline
-\end{DoxyParams}
-Never return really.
-
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a9b30123c0a25a66715bce9a58a27d37e}{UI::UsersObject}.
-
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=364pt]{dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classCore_1_1AbstractGroup_a39c1a34ff912b5abd298f58bf6196a45}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
-\index{update@{update}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name, }
-\item[{const std::string}]{value}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a39c1a34ff912b5abd298f58bf6196a45}
-
-
-change current string value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be changed. \\
-\hline
-{\em value} & New value of field.\\
-\hline
-\end{DoxyParams}
-Use this for name field. Throws exception in the other cases. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a4c86312e8400ce3e1b5d2c17552ce5f5}{UI::UsersObject}.
-
-\hypertarget{classCore_1_1AbstractGroup_a9891a3850584dc3677563aea603fb9c2}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
-\index{update@{update}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name, }
-\item[{const time\_\-t}]{value}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a9891a3850584dc3677563aea603fb9c2}
-
-
-change current time value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be changed. Ignored really. \\
-\hline
-{\em value} & New value of field. Ignored really.\\
-\hline
-\end{DoxyParams}
-Call of this method possible from the user interface, but really useless. This method throws std::bad\_\-cast directly. \hyperlink{classCore_1_1Event}{Event} class must to redefine this one. 
-
-Implements \hyperlink{classUI_1_1UsersObject_add0bfcc5674bd3f56eeb68919c640bb7}{UI::UsersObject}.
-
-
-
-Reimplemented in \hyperlink{classCore_1_1Event_aaa4b9def6b65cc896e0054210b2d5dae}{Core::Event}.
-
-\hypertarget{classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54dbb8}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!update@{update}}
-\index{update@{update}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update (
-\begin{DoxyParamCaption}
-\item[{{\bf UI::UsersObject} $\ast$}]{object, }
-\item[{const bool}]{linked}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a1b3a59bf11da1ea7bd9a0735cb54dbb8}
-
-
-change current link value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em object} & Object link with that must be changed. \\
-\hline
-{\em linked} & New state of thi link.\\
-\hline
-\end{DoxyParams}
-This method tries to add or delete object to the group as the \hyperlink{classCore_1_1Person}{Person}. dynamic\_\-cast will throw std::bad\_\-cast if object is not \hyperlink{classCore_1_1Person}{Person}.
-
-You can not set child group by this method use redefined method in \hyperlink{classCore_1_1Group}{Group} class to add parent group. 
-
-Implements \hyperlink{classUI_1_1UsersObject_af4cdeca80652e7c57d34aacc7d0a5dc3}{UI::UsersObject}.
-
-
-
-Reimplemented in \hyperlink{classCore_1_1Event_a308ae7ad334b8c9a166dc57cfd6a0524}{Core::Event}, and \hyperlink{classCore_1_1Group_a12d2636d65f1baea3666bb492320b5c1}{Core::Group}.
-
-\hypertarget{classCore_1_1AbstractGroup_a1f379a7c4d54b49db4d20127521a238a}{
-\index{Core::AbstractGroup@{Core::AbstractGroup}!update\_\-enum@{update\_\-enum}}
-\index{update\_\-enum@{update\_\-enum}!Core::AbstractGroup@{Core::AbstractGroup}}
-\subsubsection[{update\_\-enum}]{\setlength{\rightskip}{0pt plus 5cm}void AbstractGroup::update\_\-enum (
-\begin{DoxyParamCaption}
-\item[{const std::string}]{name, }
-\item[{const std::string}]{value}
-\end{DoxyParamCaption}
-)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{dd/d68/classCore_1_1AbstractGroup_a1f379a7c4d54b49db4d20127521a238a}
-
-
-change current enum value of field. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Name of field which must be changed. Ignored really. \\
-\hline
-{\em value} & New value of field. Ignored really.\\
-\hline
-\end{DoxyParams}
-Call of this method possible from the user interface, but never useless. This method throws std::bad\_\-cast directly. 
-
-Implements \hyperlink{classUI_1_1UsersObject_a925f50c5cb5123a13493f76029ae6f06}{UI::UsersObject}.
 
 
 

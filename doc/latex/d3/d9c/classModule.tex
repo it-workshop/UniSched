@@ -1,0 +1,184 @@
+\hypertarget{classModule}{
+\section{Module Class Reference}
+\label{d3/d9c/classModule}\index{Module@{Module}}
+}
+
+
+An abstract class for module.  
+
+
+
+
+{\ttfamily \#include $<$module.h$>$}
+
+
+
+Inheritance diagram for Module:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{d6/d1a/classModule__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccd}{Type} \{ \hyperlink{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccda55575c34a17869158e59e881b0691fc1}{UI}
+ \}
+\begin{DoxyCompactList}\small\item\em Provides module type identification without typeid operator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModule_a1ceed15223d919e56fcbb1ad6273168f}{Module} (const enum \hyperlink{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccd}{Type} type, const std::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{classModule_a1fb63a59af1664c757f8179dfd68a13d}{init} (const std::vector$<$ std::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Initilize required resources. Such as memory, shared objects, create auxiliary objects, etc. \item\end{DoxyCompactList}\item 
+const \hyperlink{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccd}{Type} \hyperlink{classModule_a605c4ec6c922fa6fb2b2757b082bbc5b}{type} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Get type of the module. \item\end{DoxyCompactList}\item 
+const std::string \& \hyperlink{classModule_ad6cd28a1d45bba06b1d525ae61b745cf}{name} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Get name of the module. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract class for module. Every module must be an shared object which contains static objec of class implementing this one. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccd}{
+\index{Module@{Module}!Type@{Type}}
+\index{Type@{Type}!Module@{Module}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Module::Type}}}
+\label{d3/d9c/classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccd}
+
+
+Provides module type identification without typeid operator. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{UI@{UI}!Module@{Module}}\index{Module@{Module}!UI@{UI}}\item[{\em 
+\hypertarget{classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccda55575c34a17869158e59e881b0691fc1}{
+UI}
+\label{d3/d9c/classModule_aa9bdbe3fbb5096298ed3a404fb0d2ccda55575c34a17869158e59e881b0691fc1}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classModule_a1ceed15223d919e56fcbb1ad6273168f}{
+\index{Module@{Module}!Module@{Module}}
+\index{Module@{Module}!Module@{Module}}
+\subsubsection[{Module}]{\setlength{\rightskip}{0pt plus 5cm}Module::Module (
+\begin{DoxyParamCaption}
+\item[{const enum {\bf Type}}]{type, }
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{d3/d9c/classModule_a1ceed15223d919e56fcbb1ad6273168f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em type} & Type of the module. \\
+\hline
+\mbox{\tt in}  & {\em name} & Name of the module. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{d3/d9c/classModule_a1ceed15223d919e56fcbb1ad6273168f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classModule_a1fb63a59af1664c757f8179dfd68a13d}{
+\index{Module@{Module}!init@{init}}
+\index{init@{init}!Module@{Module}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Module::init (
+\begin{DoxyParamCaption}
+\item[{const std::vector$<$ std::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{d3/d9c/classModule_a1fb63a59af1664c757f8179dfd68a13d}
+
+
+Initilize required resources. Such as memory, shared objects, create auxiliary objects, etc. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em args} & Command line program arguments. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d3/d9c/classModule_a1fb63a59af1664c757f8179dfd68a13d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModule_ad6cd28a1d45bba06b1d525ae61b745cf}{
+\index{Module@{Module}!name@{name}}
+\index{name@{name}!Module@{Module}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& Module::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d3/d9c/classModule_ad6cd28a1d45bba06b1d525ae61b745cf}
+
+
+Get name of the module. 
+
+$<$ \begin{DoxyReturn}{Returns}
+Name of the module. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d3/d9c/classModule_ad6cd28a1d45bba06b1d525ae61b745cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModule_a605c4ec6c922fa6fb2b2757b082bbc5b}{
+\index{Module@{Module}!type@{type}}
+\index{type@{type}!Module@{Module}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} Module::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{d3/d9c/classModule_a605c4ec6c922fa6fb2b2757b082bbc5b}
+
+
+Get type of the module. 
+
+$<$ \begin{DoxyReturn}{Returns}
+Type identificator. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{module_8h}{module.h}\item 
+src/\hyperlink{module_8cpp}{module.cpp}\end{DoxyCompactItemize}

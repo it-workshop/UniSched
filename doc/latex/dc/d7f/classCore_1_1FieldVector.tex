@@ -1,0 +1,290 @@
+\hypertarget{classCore_1_1FieldVector}{
+\section{Core::FieldVector Class Reference}
+\label{dc/d7f/classCore_1_1FieldVector}\index{Core::FieldVector@{Core::FieldVector}}
+}
+
+
+\hyperlink{classCore_1_1Field}{Field} of vector type.  
+
+
+
+
+{\ttfamily \#include $<$field.h$>$}
+
+
+
+Inheritance diagram for Core::FieldVector:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d9/d80/classCore_1_1FieldVector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Core::FieldVector:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d8/d31/classCore_1_1FieldVector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1FieldVector_ae0a35cb365468b2434527ecff44bff9d}{FieldVector} (const std::string \&name, const std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$ \&vector=std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$())  throw ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+const std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$ \& \hyperlink{classCore_1_1FieldVector_ae2855da313c104367b35b97eb98097dc}{vector} (const std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$ \&vector)  throw ()
+\begin{DoxyCompactList}\small\item\em Change vector. \item\end{DoxyCompactList}\item 
+const std::vector$<$ \hyperlink{classCore_1_1Object}{Object} $\ast$ $>$ \& \hyperlink{classCore_1_1FieldVector_a75f050f282ad9848aceae2efbb9d72cd}{vector} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Get vector. \item\end{DoxyCompactList}\item 
+virtual const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1FieldVector_a8482c272e2bc4e5b09194b903bead7f7}{operator=} (const \hyperlink{classCore_1_1Field}{Field} \&field)  throw (std::bad\_\-cast)
+\item 
+virtual const bool \hyperlink{classCore_1_1FieldVector_a79df85b6378b5ce608ca579bd3e23027}{operator==} (const \hyperlink{classCore_1_1Field}{Field} \&field) const   throw (std::bad\_\-cast)
+\item 
+void \hyperlink{classCore_1_1FieldVector_ab99c7d1efa922626c965378513eea97c}{add} (\hyperlink{classCore_1_1Object}{Object} $\ast$object)
+\item 
+void \hyperlink{classCore_1_1FieldVector_a998eb9129eab985880411f7c564879d3}{del} (\hyperlink{classCore_1_1Object}{Object} $\ast$object)
+\item 
+void \hyperlink{classCore_1_1FieldVector_a62af016fcb50e445db4ad64123281106}{commit} (const \hyperlink{classCore_1_1FieldLink}{FieldLink} \&field)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCore_1_1Field}{Field} of vector type. Class contains name and std::vector$<$Object $\ast$$>$ vector. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1FieldVector_ae0a35cb365468b2434527ecff44bff9d}{
+\index{Core::FieldVector@{Core::FieldVector}!FieldVector@{FieldVector}}
+\index{FieldVector@{FieldVector}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{FieldVector}]{\setlength{\rightskip}{0pt plus 5cm}Core::FieldVector::FieldVector (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name, }
+\item[{const std::vector$<$ {\bf Object} $\ast$ $>$ \&}]{vector = {\ttfamily std::vector$<${\bf Object}~$\ast$$>$()}}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_ae0a35cb365468b2434527ecff44bff9d}
+
+
+Constructor. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the field. \\
+\hline
+\mbox{\tt in}  & {\em vector} & Vector of the objects. Empty by default. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1FieldVector_ab99c7d1efa922626c965378513eea97c}{
+\index{Core::FieldVector@{Core::FieldVector}!add@{add}}
+\index{add@{add}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Core::FieldVector::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_ab99c7d1efa922626c965378513eea97c}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em object} & Add object to the vector. \\
+\hline
+\mbox{\tt in}  & {\em object} & \hyperlink{classCore_1_1Object}{Object} to add. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=386pt]{dc/d7f/classCore_1_1FieldVector_ab99c7d1efa922626c965378513eea97c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldVector_a62af016fcb50e445db4ad64123281106}{
+\index{Core::FieldVector@{Core::FieldVector}!commit@{commit}}
+\index{commit@{commit}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{commit}]{\setlength{\rightskip}{0pt plus 5cm}void Core::FieldVector::commit (
+\begin{DoxyParamCaption}
+\item[{const {\bf FieldLink} \&}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_a62af016fcb50e445db4ad64123281106}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em field} & apply link to the vector. \\
+\hline
+\mbox{\tt in}  & {\em field} & Link to apply. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{dc/d7f/classCore_1_1FieldVector_a62af016fcb50e445db4ad64123281106_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldVector_a998eb9129eab985880411f7c564879d3}{
+\index{Core::FieldVector@{Core::FieldVector}!del@{del}}
+\index{del@{del}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}void Core::FieldVector::del (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_a998eb9129eab985880411f7c564879d3}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em object} & Delete object to the vector. \\
+\hline
+\mbox{\tt in}  & {\em object} & \hyperlink{classCore_1_1Object}{Object} to delete. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{dc/d7f/classCore_1_1FieldVector_a998eb9129eab985880411f7c564879d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldVector_a8482c272e2bc4e5b09194b903bead7f7}{
+\index{Core::FieldVector@{Core::FieldVector}!operator=@{operator=}}
+\index{operator=@{operator=}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Field}\& Core::FieldVector::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_a8482c272e2bc4e5b09194b903bead7f7}
+$<$ Assigment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This field.
+\end{DoxyReturn}
+Assign this field's value to another fields value, if they have one type.  
+
+Implements \hyperlink{classCore_1_1Field_a3300f5867380b0e55bcd6c1918815e1f}{Core::Field}.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{dc/d7f/classCore_1_1FieldVector_a8482c272e2bc4e5b09194b903bead7f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldVector_a79df85b6378b5ce608ca579bd3e23027}{
+\index{Core::FieldVector@{Core::FieldVector}!operator==@{operator==}}
+\index{operator==@{operator==}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}virtual const bool Core::FieldVector::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_a79df85b6378b5ce608ca579bd3e23027}
+$<$ Comparison operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of comparison.
+\end{DoxyReturn}
+Compare values of two fields, if they have one type.  
+
+Implements \hyperlink{classCore_1_1Field_ae2db5ff861ee23a5d5cc43913544a4ab}{Core::Field}.
+
+\hypertarget{classCore_1_1FieldVector_ae2855da313c104367b35b97eb98097dc}{
+\index{Core::FieldVector@{Core::FieldVector}!vector@{vector}}
+\index{vector@{vector}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf Object} $\ast$$>$\& Core::FieldVector::vector (
+\begin{DoxyParamCaption}
+\item[{const std::vector$<$ {\bf Object} $\ast$ $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_ae2855da313c104367b35b97eb98097dc}
+
+
+Change vector. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vector} & New vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector AFTER assigment. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{dc/d7f/classCore_1_1FieldVector_ae2855da313c104367b35b97eb98097dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1FieldVector_a75f050f282ad9848aceae2efbb9d72cd}{
+\index{Core::FieldVector@{Core::FieldVector}!vector@{vector}}
+\index{vector@{vector}!Core::FieldVector@{Core::FieldVector}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf Object} $\ast$$>$\& Core::FieldVector::vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d7f/classCore_1_1FieldVector_a75f050f282ad9848aceae2efbb9d72cd}
+
+
+Get vector. 
+
+$<$ \begin{DoxyReturn}{Returns}
+Current vector.
+\end{DoxyReturn}
+This method does not change the vector. 
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{dc/d7f/classCore_1_1FieldVector_a75f050f282ad9848aceae2efbb9d72cd_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{field_8h}{field.h}\end{DoxyCompactItemize}

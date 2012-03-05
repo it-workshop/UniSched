@@ -29,7 +29,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -75,8 +74,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h1>Core::AbstractGroup Class Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Core::AbstractGroup" --><!-- doxytag: inherits="Storage::StorableObject,UI::UsersObject" -->
-<p>Base group functionality. You need to use it instead of <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> or <a class="el" href="../../d9/d42/classCore_1_1Event.html">Event</a> in most cases.  
+<!-- doxytag: class="Core::AbstractGroup" --><!-- doxytag: inherits="Core::Object" -->
+<p>Base group functionality. You need to use it instead of <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> or <a class="el" href="../../d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time.">Event</a> in most cases.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../df/de3/abstractgroup_8h_source.html">abstractgroup.h</a>&gt;</code></p>
@@ -85,77 +84,44 @@ Inheritance diagram for Core::AbstractGroup:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d03/classCore_1_1AbstractGroup__inherit__graph.png" border="0" usemap="#Core_1_1AbstractGroup_inherit__map" alt="Inheritance graph"/></div>
 <map name="Core_1_1AbstractGroup_inherit__map" id="Core_1_1AbstractGroup_inherit__map">
-<area shape="rect" id="node7" href="../../d9/d42/classCore_1_1Event.html" title="{Core::Event\n|&#45; begin_\l&#45; duration_\l|+ Event()\l+ Event()\l+ begin()\l+ duration()\l+ end()\l+ read()\l+ read_time()\l+ update()\l+ update()\l# save()\l# load()\l}" alt="" coords="45,915,144,1191"/><area shape="rect" id="node9" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people." alt="" coords="168,950,312,1157"/><area shape="rect" id="node2" href="../../d4/deb/classStorage_1_1StorableObject.html" title="{Storage::StorableObject\n|&#45; id_\l&#45; storage_\l|+ StorableObject()\l# id()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l# save()\l# load()\l}" alt="" coords="5,5,165,368"/><area shape="rect" id="node4" href="../../df/d0b/classUI_1_1UsersObject.html" title="{UI::UsersObject\n||+ read()\l+ read_int()\l+ read_string()\l+ read_time()\l+ read_enum()\l+ read_vector()\l+ update()\l+ update()\l+ update()\l+ update_enum()\l+ update()\l}" alt="" coords="189,57,309,316"/></map>
+<area shape="rect" id="node5" href="../../d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time." alt="" coords="5,481,96,618"/><area shape="rect" id="node7" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people." alt="" coords="120,489,237,609"/><area shape="rect" id="node2" href="../../dc/dc7/classCore_1_1Object.html" title="Universal interface of core objects." alt="" coords="67,5,163,195"/></map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Core::AbstractGroup:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dad/classCore_1_1AbstractGroup__coll__graph.png" border="0" usemap="#Core_1_1AbstractGroup_coll__map" alt="Collaboration graph"/></div>
 <map name="Core_1_1AbstractGroup_coll__map" id="Core_1_1AbstractGroup_coll__map">
-<area shape="rect" id="node2" href="../../d4/deb/classStorage_1_1StorableObject.html" title="{Storage::StorableObject\n|&#45; id_\l&#45; storage_\l|+ StorableObject()\l# id()\l# get_field_int()\l# get_field_string()\l# get_field_time()\l# get_field_enum()\l# get_field_object()\l# get_field_vector()\l# set_field()\l# set_field()\l# set_field()\l# set_field_enum()\l# set_field()\l# set_field_vector()\l# save()\l# load()\l}" alt="" coords="9,640,169,1003"/><area shape="rect" id="node4" href="../../d6/da0/classStorage_1_1AbstractStorage.html" title="Abstract interface for storage." alt="" coords="5,176,173,573"/><area shape="rect" id="node6" href="../../db/d37/classAbstractBackend.html" title="{AbstractBackend\n|&#45; type_\l|+ AbstractBackend()\l+ init()\l+ type()\l}" alt="" coords="19,5,160,125"/><area shape="rect" id="node8" href="../../df/d0b/classUI_1_1UsersObject.html" title="{UI::UsersObject\n||+ read()\l+ read_int()\l+ read_string()\l+ read_time()\l+ read_enum()\l+ read_vector()\l+ update()\l+ update()\l+ update()\l+ update_enum()\l+ update()\l}" alt="" coords="193,692,313,951"/></map>
+<area shape="rect" id="node2" href="../../dc/dc7/classCore_1_1Object.html" title="Universal interface of core objects." alt="" coords="17,633,113,823"/><area shape="rect" id="node4" href="../../d1/d45/classCore_1_1AbstractUI.html" title="Interface for frontend modules." alt="" coords="5,211,125,557"/><area shape="rect" id="node6" href="../../d3/d9c/classModule.html" title="An abstract class for module." alt="" coords="24,5,107,160"/><area shape="rect" id="node8" href="../../dd/d02/classCore_1_1FieldString.html" title="Field of string type." alt="" coords="137,651,257,805"/><area shape="rect" id="node10" href="../../dc/d16/classCore_1_1Field.html" title="Base class for fields of different types." alt="" coords="192,298,296,470"/><area shape="rect" id="node12" href="../../dc/d7f/classCore_1_1FieldVector.html" title="Field of vector type." alt="" coords="281,625,404,831"/></map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="../../dc/dbe/classCore_1_1AbstractGroup-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a9d5c82db4ed051f674e6a3f5586ad5e0">AbstractGroup</a> (const int id, <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> &amp;storage)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a9d5c82db4ed051f674e6a3f5586ad5e0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a2b6c9e7b2d618019fe626d28a53ddd06">AbstractGroup</a> (const int id, <a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> &amp;storage, const std::string name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a2b6c9e7b2d618019fe626d28a53ddd06"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a139cc0a6451f2dbca1f74d96f28741f0">name</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns group`s name.  <a href="#a139cc0a6451f2dbca1f74d96f28741f0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a8c59706bf4c5f8e6dc8f931368d97b7f">add_person</a> (<a class="el" href="../../d9/d71/classCore_1_1Person.html">Person</a> *person)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add person to the group.  <a href="#a8c59706bf4c5f8e6dc8f931368d97b7f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a378e2ab0f4db0a47906c4341846a143b">del_person</a> (<a class="el" href="../../d9/d71/classCore_1_1Person.html">Person</a> *person)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete person from the group.  <a href="#a378e2ab0f4db0a47906c4341846a143b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a0306b58e715d164aef3e29de0ec659bd">read</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns full object information.  <a href="#a0306b58e715d164aef3e29de0ec659bd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a7e15ec9b621230659a5ca2f0be724d83">read_int</a> (const std::string name) const   throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return integer value of requested field.  <a href="#a7e15ec9b621230659a5ca2f0be724d83"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a907fc505a7f7828fcd2e7f6eaf5e27cd">read_string</a> (const std::string name) const   throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return string value of requested field.  <a href="#a907fc505a7f7828fcd2e7f6eaf5e27cd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#af52530d29e3b8f0047a0c0675dc6c912">read_time</a> (const std::string name) const   throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return time value of requested field.  <a href="#af52530d29e3b8f0047a0c0675dc6c912"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a2f373e90feaad172563c6256ae30a6a6">read_enum</a> (const std::string name) const   throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return enum value of requested field.  <a href="#a2f373e90feaad172563c6256ae30a6a6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const std::vector<br class="typebreak"/>
-&lt; <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#ab582f4364426a152875742278ba0d999">read_vector</a> (const std::string name) const   throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return vector value of requested field.  <a href="#ab582f4364426a152875742278ba0d999"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a18d88f5abb55fa9c829bf6600be58c90">update</a> (const std::string name, const int value)  throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change current integer value of field.  <a href="#a18d88f5abb55fa9c829bf6600be58c90"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a39c1a34ff912b5abd298f58bf6196a45">update</a> (const std::string name, const std::string value)  throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change current string value of field.  <a href="#a39c1a34ff912b5abd298f58bf6196a45"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a9891a3850584dc3677563aea603fb9c2">update</a> (const std::string name, const time_t value)  throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change current time value of field.  <a href="#a9891a3850584dc3677563aea603fb9c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a1f379a7c4d54b49db4d20127521a238a">update_enum</a> (const std::string name, const std::string value)  throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change current enum value of field.  <a href="#a1f379a7c4d54b49db4d20127521a238a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a1b3a59bf11da1ea7bd9a0735cb54dbb8">update</a> (<a class="el" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> *object, const bool linked)  throw (std::bad_cast)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change current link value of field.  <a href="#a1b3a59bf11da1ea7bd9a0735cb54dbb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a413d72742d0f92f44615dba99e3430fd">AbstractGroup</a> (const int id, <a class="el" href="../../d1/d45/classCore_1_1AbstractUI.html">AbstractUI</a> &amp;ui)  throw (std::bad_cast)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a413d72742d0f92f44615dba99e3430fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../dc/d16/classCore_1_1Field.html">Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#afd7a53d0bc49a5dbdc15505a686fca3d">read</a> (const std::string &amp;name) const   throw (std::bad_cast)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a397f639a0ee32efbc5a3ead8002745d5">update</a> (const <a class="el" href="../../dc/d16/classCore_1_1Field.html">Field</a> &amp;field)  throw (std::bad_cast)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#aef90e91087aa5fcf4a94f0f2677f8f56">add_child</a> (<a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html">AbstractGroup</a> *group)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to add child group.  <a href="#aef90e91087aa5fcf4a94f0f2677f8f56"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add child group to this one.  <a href="#aef90e91087aa5fcf4a94f0f2677f8f56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#aa81866b9c414c24d25ca26311b4b4330">del_child</a> (<a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html">AbstractGroup</a> *group)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to delete child group.  <a href="#aa81866b9c414c24d25ca26311b4b4330"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#ab8cc5ad1c04d67c24af785f9adb2d67c">save</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to save all data in the storage.  <a href="#ab8cc5ad1c04d67c24af785f9adb2d67c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#ace41b51dd585a95b61990b69f078a283">load</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to load all data from the storage.  <a href="#ace41b51dd585a95b61990b69f078a283"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete child group from this one.  <a href="#aa81866b9c414c24d25ca26311b4b4330"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d68/classCore_1_1AbstractGroup.html#a2697825715974a353728f0d4d5658112">Group</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base group functionality. You need to use it instead of <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> or <a class="el" href="../../d9/d42/classCore_1_1Event.html">Event</a> in most cases. </p>
-<p>This is a generalization of groups and events. It allows to work with them easy. It have not parent group as an <a class="el" href="../../d9/d42/classCore_1_1Event.html">Event</a>, but <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> have. </p>
+<div class="textblock"><p>Base group functionality. You need to use it instead of <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> or <a class="el" href="../../d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time.">Event</a> in most cases. </p>
+<p>This is a generalization of groups and events. It allows to work easy with them. It have not parent group as an <a class="el" href="../../d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time.">Event</a>, but <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> have. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a9d5c82db4ed051f674e6a3f5586ad5e0"></a><!-- doxytag: member="Core::AbstractGroup::AbstractGroup" ref="a9d5c82db4ed051f674e6a3f5586ad5e0" args="(const int id, Storage::AbstractStorage &amp;storage)" -->
+<a class="anchor" id="a413d72742d0f92f44615dba99e3430fd"></a><!-- doxytag: member="Core::AbstractGroup::AbstractGroup" ref="a413d72742d0f92f44615dba99e3430fd" args="(const int id, AbstractUI &amp;ui)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Core::AbstractGroup::AbstractGroup </td>
+          <td class="memname">AbstractGroup::AbstractGroup </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -163,13 +129,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> &amp;&#160;</td>
-          <td class="paramname"><em>storage</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d45/classCore_1_1AbstractUI.html">AbstractUI</a> &amp;&#160;</td>
+          <td class="paramname"><em>ui</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td>  throw (std::bad_cast)</td>
         </tr>
       </table>
 </div>
@@ -178,57 +144,11 @@ Friends</h2></td></tr>
 <p>Constructor. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Storable object`s identificator. </td></tr>
-    <tr><td class="paramname">storage</td><td><a class="el" href="../../de/d4e/namespaceStorage.html" title="Storage classes.">Storage</a>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>AbstractUIs object`s identificator. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ui</td><td>Storage. </td></tr>
   </table>
   </dd>
 </dl>
-<p>This constructor called from inherited classes. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2b6c9e7b2d618019fe626d28a53ddd06"></a><!-- doxytag: member="Core::AbstractGroup::AbstractGroup" ref="a2b6c9e7b2d618019fe626d28a53ddd06" args="(const int id, Storage::AbstractStorage &amp;storage, const std::string name)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Core::AbstractGroup::AbstractGroup </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/da0/classStorage_1_1AbstractStorage.html">Storage::AbstractStorage</a> &amp;&#160;</td>
-          <td class="paramname"><em>storage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Constructor. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>Storable object`s identificotor. </td></tr>
-    <tr><td class="paramname">storage</td><td><a class="el" href="../../de/d4e/namespaceStorage.html" title="Storage classes.">Storage</a>. </td></tr>
-    <tr><td class="paramname">name</td><td>Group`s name.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>This constructor keeped for debug. Using can be very hard. Must be deleted later.</dd></dl>
-<p>This constructor called from inherited classes. </p>
 
 </div>
 </div>
@@ -248,65 +168,20 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Method to add child group. </p>
+<p>Add child group to this one. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">group</td><td><a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> to add.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td><a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> to add. </td></tr>
   </table>
   </dd>
 </dl>
-<p>This method does not controlls that group in not a child already. This check must be in function Group::add_parent(). That function must be only the one place where this caled from. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph" alt=""/></div>
 <map name="dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph" id="dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_cgraph">
-<area shape="rect" id="node3" href="../../d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="259,5,520,35"/><area shape="rect" id="node7" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="259,59,520,88"/><area shape="rect" id="node5" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="568,5,837,35"/><area shape="rect" id="node9" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="568,59,837,88"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph" id="dd/d68/classCore_1_1AbstractGroup_aef90e91087aa5fcf4a94f0f2677f8f56_icgraph">
-<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a05760e4e45ae6fec2674d216f0a5a6e9" title="Core::Group::add_parent_group" alt="" coords="260,5,463,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a8c59706bf4c5f8e6dc8f931368d97b7f"></a><!-- doxytag: member="Core::AbstractGroup::add_person" ref="a8c59706bf4c5f8e6dc8f931368d97b7f" args="(Person *person)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::add_person </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/d71/classCore_1_1Person.html">Person</a> *&#160;</td>
-          <td class="paramname"><em>person</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Add person to the group. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">person</td><td><a class="el" href="../../d9/d71/classCore_1_1Person.html" title="Class keeps person unique data.">Person</a> to add.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Do not use this directly. It must be moved into protected or private. This method called from update method. </p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph" id="dd/d68/classCore_1_1AbstractGroup_a8c59706bf4c5f8e6dc8f931368d97b7f_cgraph">
-<area shape="rect" id="node3" href="../../d9/d71/classCore_1_1Person.html#aa9b9581966365e7272d43e77f7a220e4" title="Core::Person::add_group" alt="" coords="320,5,485,35"/><area shape="rect" id="node5" href="../../d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="272,59,533,88"/><area shape="rect" id="node9" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="272,112,533,141"/><area shape="rect" id="node7" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="581,59,851,88"/><area shape="rect" id="node11" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="581,112,851,141"/></map>
+<area shape="rect" id="node3" href="../../dc/d7f/classCore_1_1FieldVector.html#ab99c7d1efa922626c965378513eea97c" title="Core::FieldVector::add" alt="" coords="260,5,412,35"/><area shape="rect" id="node5" href="../../dc/dc7/classCore_1_1Object.html#a2e66bbfecbaebbf8695d94b9081796dd" title="Set new value of the field in the database." alt="" coords="271,59,401,88"/><area shape="rect" id="node7" href="../../d1/d45/classCore_1_1AbstractUI.html#a2744c5f015639a849c3f76dd7cc2656a" title="Core::AbstractUI::push" alt="" coords="461,59,619,88"/></map>
 </div>
 </p>
 
@@ -327,554 +202,102 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Method to delete child group. </p>
+<p>Delete child group from this one. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">group</td><td><a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> to delete.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td><a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> to delete.  For use in <a class="el" href="../../d2/d30/classCore_1_1Group.html#a9878d4ec0b02890502c6cff69da1e332">Core::Group::update</a> method only.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This method looks for requested group and deletes it. Group::del_parent() must be only the one place where this method called from. </p>
+<p>You must not use this method directly Use update methods instead. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_cgraph" alt=""/></div>
 <map name="dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_cgraph" id="dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_cgraph">
-<area shape="rect" id="node3" href="../../d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="256,5,517,35"/><area shape="rect" id="node7" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="256,59,517,88"/><area shape="rect" id="node5" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="565,5,835,35"/><area shape="rect" id="node9" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="565,59,835,88"/></map>
+<area shape="rect" id="node3" href="../../dc/d7f/classCore_1_1FieldVector.html#a998eb9129eab985880411f7c564879d3" title="Core::FieldVector::del" alt="" coords="256,5,405,35"/><area shape="rect" id="node5" href="../../dc/dc7/classCore_1_1Object.html#a2e66bbfecbaebbf8695d94b9081796dd" title="Set new value of the field in the database." alt="" coords="265,59,396,88"/><area shape="rect" id="node7" href="../../d1/d45/classCore_1_1AbstractUI.html#a2744c5f015639a849c3f76dd7cc2656a" title="Core::AbstractUI::push" alt="" coords="453,59,611,88"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="afd7a53d0bc49a5dbdc15505a686fca3d"></a><!-- doxytag: member="Core::AbstractGroup::read" ref="afd7a53d0bc49a5dbdc15505a686fca3d" args="(const std::string &amp;name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/d16/classCore_1_1Field.html">Field</a> &amp; AbstractGroup::read </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get field of the object. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the field to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Corresponding field. </dd></dl>
+ Get values of fields with those names: "name", "people", "child_groups".</p>
+<p>Method returns object of <a class="el" href="../../dd/d02/classCore_1_1FieldString.html" title="Field of string type.">Core::FieldString</a> or <a class="el" href="../../dc/d7f/classCore_1_1FieldVector.html" title="Field of vector type.">Core::FieldVector</a> types. </p>
+
+<p>Implements <a class="el" href="../../dc/dc7/classCore_1_1Object.html#a90137d9981bd680bd395460e643c6560">Core::Object</a>.</p>
+
+<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#ac78ff90453b84d3342971772bba5c265">Core::Event</a>, and <a class="el" href="../../d2/d30/classCore_1_1Group.html#a0f4f5f00e11faeaaf09600d5b4943012">Core::Group</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph" id="dd/d68/classCore_1_1AbstractGroup_aa81866b9c414c24d25ca26311b4b4330_icgraph">
-<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a93e4626dde0f84e68f1460e557daaed0" title="Core::Group::del_parent_group" alt="" coords="256,5,456,35"/></map>
+<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d_icgraph" alt=""/></div>
+<map name="dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d_icgraph" id="dd/d68/classCore_1_1AbstractGroup_afd7a53d0bc49a5dbdc15505a686fca3d_icgraph">
+<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a0f4f5f00e11faeaaf09600d5b4943012" title="Core::Group::read" alt="" coords="231,5,356,35"/><area shape="rect" id="node5" href="../../d9/d42/classCore_1_1Event.html#ac78ff90453b84d3342971772bba5c265" title="Core::Event::read" alt="" coords="231,59,356,88"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a378e2ab0f4db0a47906c4341846a143b"></a><!-- doxytag: member="Core::AbstractGroup::del_person" ref="a378e2ab0f4db0a47906c4341846a143b" args="(Person *person)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::del_person </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/d71/classCore_1_1Person.html">Person</a> *&#160;</td>
-          <td class="paramname"><em>person</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Delete person from the group. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">person</td><td>to delete.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Do not use this directly. It must be moved into protected or private. This method called from update method. </p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph" id="dd/d68/classCore_1_1AbstractGroup_a378e2ab0f4db0a47906c4341846a143b_cgraph">
-<area shape="rect" id="node3" href="../../d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="267,5,528,35"/><area shape="rect" id="node7" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="267,59,528,88"/><area shape="rect" id="node5" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="576,5,845,35"/><area shape="rect" id="node9" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="576,59,845,88"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ace41b51dd585a95b61990b69f078a283"></a><!-- doxytag: member="Core::AbstractGroup::load" ref="ace41b51dd585a95b61990b69f078a283" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::load </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Method to load all data from the storage. </p>
-<p>Declared in the <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">Storage::StorableObject</a>. Thil method loads name, child groups and people. Inherited classes must to redefine and coll this one. </p>
-
-<p>Implements <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html#ab92526b66762a9099d720cf28bfc4151">Storage::StorableObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a63462f7c20234f5c7f18e9c5e19d72b9">Core::Event</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph" id="dd/d68/classCore_1_1AbstractGroup_ace41b51dd585a95b61990b69f078a283_cgraph">
-<area shape="rect" id="node3" href="../../d4/deb/classStorage_1_1StorableObject.html#a533b48a050009b86e376269e886d3eeb" title="Storage::StorableObject::get_field_string" alt="" coords="232,5,488,35"/><area shape="rect" id="node7" href="../../d4/deb/classStorage_1_1StorableObject.html#ad6df389823d8f812e4c64994d440475b" title="Storage::StorableObject::get_field_vector" alt="" coords="229,59,491,88"/><area shape="rect" id="node11" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="229,112,491,141"/><area shape="rect" id="node5" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ad12a3abb791ef5a696196c28e643ec22" title="Return string value of requested field." alt="" coords="541,5,805,35"/><area shape="rect" id="node9" href="../../d6/da0/classStorage_1_1AbstractStorage.html#ae7c30697d68dc9d7de595388030d8e10" title="Return vector value of requested field." alt="" coords="539,59,808,88"/><area shape="rect" id="node13" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="539,112,808,141"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a139cc0a6451f2dbca1f74d96f28741f0"></a><!-- doxytag: member="Core::AbstractGroup::name" ref="a139cc0a6451f2dbca1f74d96f28741f0" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string Core::AbstractGroup::name </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns group`s name. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Name of group.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>This method keeped for debug. Using can be comfortable, but not universal, you must to use UI::UsersObject::get_field_string("name") instead. Must be deleted later.</dd></dl>
-<p>Use this for debug. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0306b58e715d164aef3e29de0ec659bd"></a><!-- doxytag: member="Core::AbstractGroup::read" ref="a0306b58e715d164aef3e29de0ec659bd" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string AbstractGroup::read </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns full object information. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Object`s information in the string.</dd></dl>
-<p>Method declared in the <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> use to retrive all information about object.</p>
-<p>Inherited classes must to redefine and call this one. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a68d5297258a2f4da4ff58f4809690db3">UI::UsersObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a8dd94bcb05cb3c5ef065fa204cd724f9">Core::Event</a>, and <a class="el" href="../../d2/d30/classCore_1_1Group.html#a5fe3fef1b6709f953e5487841d90bbb9">Core::Group</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2f373e90feaad172563c6256ae30a6a6"></a><!-- doxytag: member="Core::AbstractGroup::read_enum" ref="a2f373e90feaad172563c6256ae30a6a6" args="(const std::string name) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string AbstractGroup::read_enum </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Return enum value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be returned. Ignored really. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Time value of requested field. Never return really.</dd></dl>
-<p>Call of this method possible from the user interface, but really useless. This method throws std::bad_cast directly. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a20ea26010f60e60f38d380fdaa9240d5">UI::UsersObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7e15ec9b621230659a5ca2f0be724d83"></a><!-- doxytag: member="Core::AbstractGroup::read_int" ref="a7e15ec9b621230659a5ca2f0be724d83" args="(const std::string name) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int AbstractGroup::read_int </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Return integer value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of the field which must be returned. Ignored really. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Integer value of requested field. Never return really.</dd></dl>
-<p>Call of this method possible from the user interface, but really useless. This method throws std::bad_cast directly. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a63ab79bb54b6134a483b2e384c824c7e">UI::UsersObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a907fc505a7f7828fcd2e7f6eaf5e27cd"></a><!-- doxytag: member="Core::AbstractGroup::read_string" ref="a907fc505a7f7828fcd2e7f6eaf5e27cd" args="(const std::string name) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string AbstractGroup::read_string </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Return string value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of the field which must be returned. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>String value of requested field.</dd></dl>
-<p>Use this for name field. Throws exception in other cases. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#aed80fcf20b550a0e3484fbe6beb24c19">UI::UsersObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af52530d29e3b8f0047a0c0675dc6c912"></a><!-- doxytag: member="Core::AbstractGroup::read_time" ref="af52530d29e3b8f0047a0c0675dc6c912" args="(const std::string name) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const time_t AbstractGroup::read_time </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Return time value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be returned. Ignored really. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Time value of requested field. Never return really.</dd></dl>
-<p>Call of this method possible from the user interface, but really useless. This method throws std::bad_cast directly. Method used in event class which redefines this. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a490536c477c5a796724ce26fd010c680">UI::UsersObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a4977832cb03001d8afe46bcddc60ce1a">Core::Event</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph" id="dd/d68/classCore_1_1AbstractGroup_af52530d29e3b8f0047a0c0675dc6c912_icgraph">
-<area shape="rect" id="node3" href="../../d9/d42/classCore_1_1Event.html#a4977832cb03001d8afe46bcddc60ce1a" title="Return time value of requested field." alt="" coords="261,5,419,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ab582f4364426a152875742278ba0d999"></a><!-- doxytag: member="Core::AbstractGroup::read_vector" ref="ab582f4364426a152875742278ba0d999" args="(const std::string name) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> * &gt; AbstractGroup::read_vector </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Return vector value of requested field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be returned. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Vector value of requested field.</dd></dl>
-<p>Use this for child_groups and people fields. Throws exception in the other cases. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a6899d8a06268abb8f2a13feba9921ce5">UI::UsersObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d2/d30/classCore_1_1Group.html#a52e48b1f92f6354b4e3a32d710b9c7b3">Core::Group</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph" id="dd/d68/classCore_1_1AbstractGroup_ab582f4364426a152875742278ba0d999_icgraph">
-<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a52e48b1f92f6354b4e3a32d710b9c7b3" title="Return vector value of requested field." alt="" coords="273,5,441,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ab8cc5ad1c04d67c24af785f9adb2d67c"></a><!-- doxytag: member="Core::AbstractGroup::save" ref="ab8cc5ad1c04d67c24af785f9adb2d67c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::save </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Method to save all data in the storage. </p>
-<p>Declared in the <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html">Storage::StorableObject</a>. This method saves name, child groups and people. Inherited classes must to redefine and call this one. </p>
-
-<p>Implements <a class="el" href="../../d4/deb/classStorage_1_1StorableObject.html#a85609f4a18b49c7e0eed0205ee6df5d9">Storage::StorableObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a6dbea64bf650e7e36d55539cf59a66e7">Core::Event</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph" id="dd/d68/classCore_1_1AbstractGroup_ab8cc5ad1c04d67c24af785f9adb2d67c_cgraph">
-<area shape="rect" id="node3" href="../../d4/deb/classStorage_1_1StorableObject.html#a4c15433a6719f4036705d989828e4933" title="Storage::StorableObject::set_field" alt="" coords="253,5,472,35"/><area shape="rect" id="node7" href="../../d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="232,59,493,88"/><area shape="rect" id="node5" href="../../d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c" title="Set integer value of requested field." alt="" coords="563,5,789,35"/><area shape="rect" id="node9" href="../../d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="541,59,811,88"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a18d88f5abb55fa9c829bf6600be58c90"></a><!-- doxytag: member="Core::AbstractGroup::update" ref="a18d88f5abb55fa9c829bf6600be58c90" args="(const std::string name, const int value)" -->
+<a class="anchor" id="a397f639a0ee32efbc5a3ead8002745d5"></a><!-- doxytag: member="Core::AbstractGroup::update" ref="a397f639a0ee32efbc5a3ead8002745d5" args="(const Field &amp;field)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void AbstractGroup::update </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [virtual]</code></td>
+          <td class="paramtype">const <a class="el" href="../../dc/d16/classCore_1_1Field.html">Field</a> &amp;&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td>  throw (std::bad_cast)<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>change current integer value of field. </p>
+<p>Change field of the object. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be changed. Ignored really. </td></tr>
-    <tr><td class="paramname">value</td><td>New value of field. Ignored really.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td><a class="el" href="../../dc/d16/classCore_1_1Field.html" title="Base class for fields of different types.">Field</a> to change. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Never return really.</p>
-<p>Call of this method possible from the user interface, but really useless. This method throws std::bad_cast directly. </p>
+ Change values of fields with those names: "name", "people", "child_groups".</p>
+<p>Methods accepts object of <a class="el" href="../../dd/d02/classCore_1_1FieldString.html" title="Field of string type.">Core::FieldString</a>, <a class="el" href="../../d9/d23/classCore_1_1FieldLink.html" title="Link of two objects.">Core::FieldLink</a> or <a class="el" href="../../dc/d7f/classCore_1_1FieldVector.html" title="Field of vector type.">Core::FieldVector</a> types. </p>
 
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a9b30123c0a25a66715bce9a58a27d37e">UI::UsersObject</a>.</p>
+<p>Implements <a class="el" href="../../dc/dc7/classCore_1_1Object.html#a53328d659235e29f418ff4890cc3bdb3">Core::Object</a>.</p>
+
+<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a8e147f35e8ee4fd0891a290424b098d3">Core::Event</a>, and <a class="el" href="../../d2/d30/classCore_1_1Group.html#a9878d4ec0b02890502c6cff69da1e332">Core::Group</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph" alt=""/></div>
-<map name="dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph" id="dd/d68/classCore_1_1AbstractGroup_a18d88f5abb55fa9c829bf6600be58c90_icgraph">
-<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a12d2636d65f1baea3666bb492320b5c1" title="change current link value of field." alt="" coords="244,5,383,35"/><area shape="rect" id="node5" href="../../d9/d42/classCore_1_1Event.html#aaa4b9def6b65cc896e0054210b2d5dae" title="change current time value of field." alt="" coords="244,59,383,88"/></map>
+<div class="center"><img src="../../dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5_icgraph.png" border="0" usemap="#dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5_icgraph" alt=""/></div>
+<map name="dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5_icgraph" id="dd/d68/classCore_1_1AbstractGroup_a397f639a0ee32efbc5a3ead8002745d5_icgraph">
+<area shape="rect" id="node3" href="../../d2/d30/classCore_1_1Group.html#a9878d4ec0b02890502c6cff69da1e332" title="Core::Group::update" alt="" coords="244,5,383,35"/><area shape="rect" id="node5" href="../../d9/d42/classCore_1_1Event.html#a8e147f35e8ee4fd0891a290424b098d3" title="Core::Event::update" alt="" coords="244,59,383,88"/></map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="a39c1a34ff912b5abd298f58bf6196a45"></a><!-- doxytag: member="Core::AbstractGroup::update" ref="a39c1a34ff912b5abd298f58bf6196a45" args="(const std::string name, const std::string value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::update </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>change current string value of field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be changed. </td></tr>
-    <tr><td class="paramname">value</td><td>New value of field.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Use this for name field. Throws exception in the other cases. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a4c86312e8400ce3e1b5d2c17552ce5f5">UI::UsersObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9891a3850584dc3677563aea603fb9c2"></a><!-- doxytag: member="Core::AbstractGroup::update" ref="a9891a3850584dc3677563aea603fb9c2" args="(const std::string name, const time_t value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::update </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const time_t&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>change current time value of field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be changed. Ignored really. </td></tr>
-    <tr><td class="paramname">value</td><td>New value of field. Ignored really.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Call of this method possible from the user interface, but really useless. This method throws std::bad_cast directly. <a class="el" href="../../d9/d42/classCore_1_1Event.html">Event</a> class must to redefine this one. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#add0bfcc5674bd3f56eeb68919c640bb7">UI::UsersObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#aaa4b9def6b65cc896e0054210b2d5dae">Core::Event</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1b3a59bf11da1ea7bd9a0735cb54dbb8"></a><!-- doxytag: member="Core::AbstractGroup::update" ref="a1b3a59bf11da1ea7bd9a0735cb54dbb8" args="(UI::UsersObject *object, const bool linked)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/d0b/classUI_1_1UsersObject.html">UI::UsersObject</a> *&#160;</td>
-          <td class="paramname"><em>object</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>linked</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>change current link value of field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td>Object link with that must be changed. </td></tr>
-    <tr><td class="paramname">linked</td><td>New state of thi link.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This method tries to add or delete object to the group as the <a class="el" href="../../d9/d71/classCore_1_1Person.html" title="Class keeps person unique data.">Person</a>. dynamic_cast will throw std::bad_cast if object is not <a class="el" href="../../d9/d71/classCore_1_1Person.html" title="Class keeps person unique data.">Person</a>.</p>
-<p>You can not set child group by this method use redefined method in <a class="el" href="../../d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people.">Group</a> class to add parent group. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#af4cdeca80652e7c57d34aacc7d0a5dc3">UI::UsersObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="../../d9/d42/classCore_1_1Event.html#a308ae7ad334b8c9a166dc57cfd6a0524">Core::Event</a>, and <a class="el" href="../../d2/d30/classCore_1_1Group.html#a12d2636d65f1baea3666bb492320b5c1">Core::Group</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1f379a7c4d54b49db4d20127521a238a"></a><!-- doxytag: member="Core::AbstractGroup::update_enum" ref="a1f379a7c4d54b49db4d20127521a238a" args="(const std::string name, const std::string value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractGroup::update_enum </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>  throw (std::bad_cast)<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>change current enum value of field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of field which must be changed. Ignored really. </td></tr>
-    <tr><td class="paramname">value</td><td>New value of field. Ignored really.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Call of this method possible from the user interface, but never useless. This method throws std::bad_cast directly. </p>
-
-<p>Implements <a class="el" href="../../df/d0b/classUI_1_1UsersObject.html#a925f50c5cb5123a13493f76029ae6f06">UI::UsersObject</a>.</p>
 
 </div>
 </div>
@@ -911,7 +334,7 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 10 2012 23:32:01 for Universal Scheduler by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 5 2012 17:31:40 for Universal Scheduler by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

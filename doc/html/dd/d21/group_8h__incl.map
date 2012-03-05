@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node5" href="$df/de3/abstractgroup_8h.html" title="abstractgroup.h" alt="" coords="216,83,328,112"/>
-<area shape="rect" id="node10" href="$d5/d07/storableobject_8h.html" title="storableobject.h" alt="" coords="319,237,433,267"/>
-<area shape="rect" id="node27" href="$d4/d98/person_8h.html" title="person.h" alt="" coords="236,160,308,189"/>
-<area shape="rect" id="node14" href="$de/d16/abstractstorage_8h.html" title="abstractstorage.h" alt="" coords="335,315,457,344"/>
-<area shape="rect" id="node21" href="$de/d34/backend_8h.html" title="backend.h" alt="" coords="387,392,469,421"/>
-<area shape="rect" id="node34" href="$d2/dcb/usersobject_8h.html" title="usersobject.h" alt="" coords="212,315,311,344"/>
+<area shape="rect" id="node5" href="$df/de3/abstractgroup_8h.html" title="abstractgroup.h" alt="" coords="129,83,241,112"/>
+<area shape="rect" id="node10" href="$de/d10/object_8h.html" title="object.h" alt="" coords="240,237,307,267"/>
+<area shape="rect" id="node40" href="$d4/d98/person_8h.html" title="person.h" alt="" coords="149,160,221,189"/>
+<area shape="rect" id="node14" href="$d1/d7a/abstractui_8h.html" title="abstractui.h" alt="" coords="323,315,413,344"/>
+<area shape="rect" id="node24" href="$d5/d5a/field_8h.html" title="field.h" alt="" coords="245,392,301,421"/>
+<area shape="rect" id="node33" href="$d5/d16/module_8h.html" title="module.h" alt="" coords="376,392,451,421"/>
 </map>

@@ -1,0 +1,218 @@
+\hypertarget{classCore_1_1Field}{
+\section{Core::Field Class Reference}
+\label{dc/d16/classCore_1_1Field}\index{Core::Field@{Core::Field}}
+}
+
+
+Base class for fields of different types.  
+
+
+
+
+{\ttfamily \#include $<$field.h$>$}
+
+
+
+Inheritance diagram for Core::Field:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{d1/dae/classCore_1_1Field__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9f}{Type} \{ \par
+\hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa286532cb5e3b52e8a222bed52a0ef230}{STRING}, 
+\hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9face3d1796b60e1f8a33a3ba5fc05e183d}{TIME}, 
+\hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa2b11372a326173242efdcb15bd28c567}{ENUM}, 
+\hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa9df866ca894748e77c04eda4bc9d32ee}{LINK}, 
+\par
+\hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa57e09ea5a6d18aa8ebfae9c9bdcc9509}{VECTOR}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible field's types. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std::string \& \hyperlink{classCore_1_1Field_a3e49efbf0b184847c9fec35967268455}{name} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Get name of the field. \item\end{DoxyCompactList}\item 
+const \hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9f}{Type} \hyperlink{classCore_1_1Field_a92b8fa2a9a299655f8d4bd582023a7fa}{type} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Get type of the field. \item\end{DoxyCompactList}\item 
+virtual const \hyperlink{classCore_1_1Field}{Field} \& \hyperlink{classCore_1_1Field_a3300f5867380b0e55bcd6c1918815e1f}{operator=} (const \hyperlink{classCore_1_1Field}{Field} \&field)=0  throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em Assigment operator. \item\end{DoxyCompactList}\item 
+virtual const bool \hyperlink{classCore_1_1Field_ae2db5ff861ee23a5d5cc43913544a4ab}{operator==} (const \hyperlink{classCore_1_1Field}{Field} \&field) const =0  throw (std::bad\_\-cast)
+\begin{DoxyCompactList}\small\item\em Comparison operator. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCore_1_1Field_aeadb5d1caecc973dcaa12974443edba4}{Field} (const \hyperlink{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9f}{Type} type, const std::string \&name)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for fields of different types. \hyperlink{classCore_1_1Object}{Object} consist of field name, type and value. Value must be implemented in inherited classes. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9f}{
+\index{Core::Field@{Core::Field}!Type@{Type}}
+\index{Type@{Type}!Core::Field@{Core::Field}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Core::Field::Type}}}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9f}
+
+
+Enumeration of possible field's types. 
+
+Used to check field type without typeid operator. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{STRING@{STRING}!Core::Field@{Core::Field}}\index{Core::Field@{Core::Field}!STRING@{STRING}}\item[{\em 
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa286532cb5e3b52e8a222bed52a0ef230}{
+STRING}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa286532cb5e3b52e8a222bed52a0ef230}
+}]\index{TIME@{TIME}!Core::Field@{Core::Field}}\index{Core::Field@{Core::Field}!TIME@{TIME}}\item[{\em 
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9face3d1796b60e1f8a33a3ba5fc05e183d}{
+TIME}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9face3d1796b60e1f8a33a3ba5fc05e183d}
+}]\index{ENUM@{ENUM}!Core::Field@{Core::Field}}\index{Core::Field@{Core::Field}!ENUM@{ENUM}}\item[{\em 
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa2b11372a326173242efdcb15bd28c567}{
+ENUM}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa2b11372a326173242efdcb15bd28c567}
+}]\index{LINK@{LINK}!Core::Field@{Core::Field}}\index{Core::Field@{Core::Field}!LINK@{LINK}}\item[{\em 
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa9df866ca894748e77c04eda4bc9d32ee}{
+LINK}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa9df866ca894748e77c04eda4bc9d32ee}
+}]\index{VECTOR@{VECTOR}!Core::Field@{Core::Field}}\index{Core::Field@{Core::Field}!VECTOR@{VECTOR}}\item[{\em 
+\hypertarget{classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa57e09ea5a6d18aa8ebfae9c9bdcc9509}{
+VECTOR}
+\label{dc/d16/classCore_1_1Field_abd8b92d37ab4c79a2a15ec647c38cc9fa57e09ea5a6d18aa8ebfae9c9bdcc9509}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCore_1_1Field_aeadb5d1caecc973dcaa12974443edba4}{
+\index{Core::Field@{Core::Field}!Field@{Field}}
+\index{Field@{Field}!Core::Field@{Core::Field}}
+\subsubsection[{Field}]{\setlength{\rightskip}{0pt plus 5cm}Core::Field::Field (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type}}]{type, }
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\label{dc/d16/classCore_1_1Field_aeadb5d1caecc973dcaa12974443edba4}
+
+
+Constructor. 
+
+$<$ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em type} & Type of field. \\
+\hline
+\mbox{\tt in}  & {\em name} & Name of field. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCore_1_1Field_a3e49efbf0b184847c9fec35967268455}{
+\index{Core::Field@{Core::Field}!name@{name}}
+\index{name@{name}!Core::Field@{Core::Field}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& Core::Field::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d16/classCore_1_1Field_a3e49efbf0b184847c9fec35967268455}
+
+
+Get name of the field. 
+
+$<$ \begin{DoxyReturn}{Returns}
+field's name. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{dc/d16/classCore_1_1Field_a3e49efbf0b184847c9fec35967268455_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCore_1_1Field_a3300f5867380b0e55bcd6c1918815e1f}{
+\index{Core::Field@{Core::Field}!operator=@{operator=}}
+\index{operator=@{operator=}!Core::Field@{Core::Field}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Field}\& Core::Field::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+)  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{dc/d16/classCore_1_1Field_a3300f5867380b0e55bcd6c1918815e1f}
+
+
+Assigment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This field.
+\end{DoxyReturn}
+Assign this field's value to another fields value, if they have one type. 
+
+Implemented in \hyperlink{classCore_1_1FieldString_a78a8bc98252c1be096848c5cdebb2868}{Core::FieldString}, \hyperlink{classCore_1_1FieldTime_ab0b9e7fe5ee619d3d584dfd3a9be5015}{Core::FieldTime}, \hyperlink{classCore_1_1FieldEnum_ab0e6e56ee028b5ba08e47edb14d76be1}{Core::FieldEnum}, \hyperlink{classCore_1_1FieldLink_a3690c623f44e77dee5a70dd13e713a76}{Core::FieldLink}, and \hyperlink{classCore_1_1FieldVector_a8482c272e2bc4e5b09194b903bead7f7}{Core::FieldVector}.
+
+\hypertarget{classCore_1_1Field_ae2db5ff861ee23a5d5cc43913544a4ab}{
+\index{Core::Field@{Core::Field}!operator==@{operator==}}
+\index{operator==@{operator==}!Core::Field@{Core::Field}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}virtual const bool Core::Field::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+) const  throw (std::bad\_\-cast)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{dc/d16/classCore_1_1Field_ae2db5ff861ee23a5d5cc43913544a4ab}
+
+
+Comparison operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em field} & \hyperlink{classCore_1_1Field}{Field} with value to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of comparison.
+\end{DoxyReturn}
+Compare values of two fields, if they have one type. 
+
+Implemented in \hyperlink{classCore_1_1FieldString_adacfe0012314f6840b2657d63ffe8c49}{Core::FieldString}, \hyperlink{classCore_1_1FieldTime_aa48c2e4d7c6ad13794f66f3e59849843}{Core::FieldTime}, \hyperlink{classCore_1_1FieldEnum_a49097e37b11fb74375e89f365aee9c31}{Core::FieldEnum}, \hyperlink{classCore_1_1FieldLink_abffb8e3af41aabd4d82671e6e6cefb14}{Core::FieldLink}, and \hyperlink{classCore_1_1FieldVector_a79df85b6378b5ce608ca579bd3e23027}{Core::FieldVector}.
+
+\hypertarget{classCore_1_1Field_a92b8fa2a9a299655f8d4bd582023a7fa}{
+\index{Core::Field@{Core::Field}!type@{type}}
+\index{type@{type}!Core::Field@{Core::Field}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} Core::Field::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{dc/d16/classCore_1_1Field_a92b8fa2a9a299655f8d4bd582023a7fa}
+
+
+Get type of the field. 
+
+$<$ \begin{DoxyReturn}{Returns}
+field's type. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/include/\hyperlink{field_8h}{field.h}\end{DoxyCompactItemize}
