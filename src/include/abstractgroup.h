@@ -34,7 +34,7 @@ private:
 protected:
     void add_child(AbstractGroup * group);
                         /**< @brief Add child group to this one.
-                         * @param group Group to add.
+                         * @param [in] group Group to add.
                          * @internal For use in Core::Group::update method only.
                          *
                          * You must not use this method directly. Use update
@@ -43,7 +43,7 @@ protected:
 
     void del_child(AbstractGroup * group);
                         /**< @brief Delete child group from this one.
-                         * @param group Group to delete.
+                         * @param [in] group Group to delete.
                          * @intertal For use in Core::Group::update method only.
                          *
                          * You must not use this method directly Use update
@@ -53,8 +53,8 @@ protected:
 public:
     AbstractGroup(const int id, AbstractUI& ui) throw(std::bad_cast);
                         /**< @brief Constructor
-                         * @param id AbstractUIs object`s identificator.
-                         * @param ui Storage.
+                         * @param [in] id AbstractUIs object`s identificator.
+                         * @param [in] ui Storage.
                          * @internal This constructor called from inherited
                          * classes.
                          */

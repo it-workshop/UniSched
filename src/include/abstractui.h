@@ -26,9 +26,9 @@ private:
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
-                         * You must use this only with object(), set_object() and
-                         * new_id() mehods, you can redefine this methods but do
-                         * not use this field in other code.
+                         * @intertal You must use this only with object(),
+                         * set_object() and new_id() mehods, you can redefine
+                         * this methods but do not use this field in other code.
                          */
     std::vector<Object *> cache_;
                         /**< Search cache. */
@@ -41,11 +41,8 @@ private:
                          * cell for it in the objects vector.
                          * @return New id.
                          *
-                         * You can redefine this method if you want to keep
-                         * objects in other order.
-                         *
-                         * Do not use this method anywhere, it used by create
-                         * method.
+                         * @intertal Do not use this method anywhere, it used by
+                         * create method.
                          */
 
     std::vector<Field *> parameters_;
@@ -64,10 +61,17 @@ protected:
                          * database
                          * @param [in] id Identificator of object.
                          * @param [in] field Field to save.
+                         *
+                         * TODO: Empty method. Write it, when create database
+                         * class.
                          */
     {}
 
     const Field& pull(const std::string& name) const throw (std::bad_cast);
+                        /**< @brief Load field with @a name of created object
+                         * @param [in] name Name of the field.
+                         * @return Corresponding field.
+                         */
 
     void remove(Object * object)
                         /**< @brief Remove object from the storage.
@@ -93,7 +97,6 @@ protected:
                          * @param [in] parameters new object`s data.
                          */
     {
-        int id = new_id();
         parameters_ = parameters;
         cache_.push_back(set_object(new T(new_id(), *this)));
     }

@@ -17,7 +17,7 @@ protected:
 public:
     Event (const int id, AbstractUI& ui) throw (std::bad_cast):
             AbstractGroup(id, ui), begin_("begin"), duration_("duration")
-                        /**< @brief Constructor. */
+                         /**< @copydoc AbstractGroup::AbstractGroup */
     {
         begin_ = dynamic_cast<const FieldTime&>(pull("begin"));
         duration_ = dynamic_cast<const FieldTime&>(pull("duration"));

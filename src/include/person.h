@@ -42,13 +42,16 @@ protected:
     {
         groups_.del(group);
     }
-                            /**< Load all data from starage. Viltual in Core::Object. */
 
 public:
     Person(const int id, AbstractUI& ui) throw (std::bad_cast);
+                            /**< @copydoc Object::Object */
    
-    virtual const Field& read(const std::string& name) const throw (std::bad_cast);
+    virtual const Field& read(const std::string& name) const
+        throw (std::bad_cast);
+                            /**< @copydoc Object::read */
     virtual void update(const Field& field) throw (std::bad_cast);
+                            /**< @copydoc Object::update */
 };
 
 };

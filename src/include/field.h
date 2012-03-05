@@ -38,8 +38,8 @@ protected:
     Field(const Type type, const std::string& name) throw ():
         type_(type), name_(name)
                         /**< @brief Constructor
-                         * @param type Type of field.
-                         * @param name Name of field.
+                         * @param [in] type Type of field.
+                         * @param [in] name Name of field.
                          * @internal For inherited classes only.
                          */
     {}
@@ -64,7 +64,7 @@ public:
     virtual const Field& operator=(const Field& field)
             throw (std::bad_cast) = 0;
                         /**< @brief Assigment operator.
-                         * @param field Field with value to assign.
+                         * @param [in] field Field with value to assign.
                          * @return This field.
                          *
                          * Assign this field's value to another fields value, if
@@ -74,7 +74,7 @@ public:
     virtual const bool operator==(const Field& field) const
             throw (std::bad_cast) = 0;
                         /**< @brief Comparison operator.
-                         * @param field Field with value to compare.
+                         * @param [in] field Field with value to compare.
                          * @return result of comparison.
                          *
                          * Compare values of two fields, if they have one type.
@@ -96,14 +96,14 @@ public:
         throw ():
         Field(STRING, name), value_(value)
                         /**< @brief Constructor.
-                         * @param name Name of the field.
-                         * @param value Value of the field. Empty by default.
+                         * @param [in] name Name of the field.
+                         * @param [in] value Value of the field. Empty by default.
                          */
     {}
 
     const std::string& value(const std::string& value) throw ()
                         /**< @brief Change value.
-                         * @param New value of the field.
+                         * @param [in] New value of the field.
                          * @return Value of the field AFTER assigment.
                          */
     {
@@ -154,8 +154,8 @@ public:
         throw ():
         Field(TIME, name), value_(value)
                         /**< @brief Constructor.
-                         * @param name Name of the field.
-                         * @param value Value of the field. Zero by default.
+                         * @param [in] name Name of the field.
+                         * @param [in] value Value of the field. Zero by default.
                          */
     {}
 
@@ -225,8 +225,8 @@ public:
     FieldEnum(const std::string& name, const std::string& value) throw ():
         Field(ENUM, name), value_(value)
                         /**< @brief Constructor.
-                         * @param name Name of the field.
-                         * @param value Value of the field.
+                         * @param [in] name Name of the field.
+                         * @param [in] value Value of the field.
                          */
     {}
 
@@ -280,8 +280,8 @@ public:
                 const std::pair<Object *, bool>& value) throw():
         Field(LINK, name), value_(value)
                         /**< @brief Constructor.
-                         * @param name Name of the field.
-                         * @param value Object and state of link.
+                         * @param [in] name Name of the field.
+                         * @param [in] value Object and state of link.
                          */
     {}
 
@@ -336,8 +336,8 @@ public:
         throw():
             Field(VECTOR, name), vector_(vector)
                         /**< @brief Constructor.
-                         * @param name Name of the field.
-                         * @param vector Vector of the objects. Empty by
+                         * @param [in] name Name of the field.
+                         * @param [in] vector Vector of the objects. Empty by
                          * default.
                          */
     {}
@@ -345,7 +345,7 @@ public:
     const std::vector<Object *>&
     vector(const std::vector<Object *>& vector) throw()
                         /**< @brief Change vector.
-                         * @param vector New vector.
+                         * @param [in] vector New vector.
                          * @return Vector AFTER assigment.
                          */
     {
@@ -377,7 +377,7 @@ public:
 
     void add(Object * object)
                         /**< @brief Add object to the vector.
-                         * @param object Object to add.
+                         * @param [in] object Object to add.
                          */
     {
         for (Object *obj : vector_)
@@ -392,7 +392,7 @@ public:
 
     void del(Object * object)
                         /**< @brief Delete object to the vector.
-                         * @param object Object to delete.
+                         * @param [in] object Object to delete.
                          */
     {
         for (auto it = vector_.begin(); it != vector_.end(); it++)
@@ -407,7 +407,7 @@ public:
 
     void commit(const FieldLink& field)
                         /**< @brief apply link to the vector.
-                         * @param field Link to apply.
+                         * @param [in] field Link to apply.
                          */
     {
         if (field.value().second)
