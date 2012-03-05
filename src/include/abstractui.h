@@ -79,7 +79,7 @@ protected:
                          */
     {
         objects_.erase(objects_.find(object->id()));
-        delete [] object;
+        delete object;
 
         for (auto it = cache_.begin(); it != cache_.end(); it++)
         {
