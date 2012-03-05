@@ -5,7 +5,7 @@ add_subdirectory (modules)
 
 add_subdirectory (tests)
 
-add_library (module SHARED module.cpp)
+add_library (module module.cpp)
 
 add_executable (raspisator main.cpp)
 

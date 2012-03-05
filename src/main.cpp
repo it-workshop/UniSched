@@ -46,7 +46,7 @@ load_modules (Core::AbstractUI **ui,
 
         if (module->type() == Module::UI)
         {
-            if (*ui || uiname.empty() || module->name() != uiname)
+            if (*ui || (!uiname.empty() && module->name() != uiname))
             {
                 continue;
             }
