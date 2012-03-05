@@ -14,6 +14,7 @@ endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 enable_testing()
 
 option(WITH_SQLITE "Build with SQLite support." N)
+option(WITH_DUMMYUI "Build with DummyUI support." N)
 
 add_subdirectory (src)
 
