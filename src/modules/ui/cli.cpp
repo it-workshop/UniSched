@@ -62,13 +62,12 @@ int CommandLineInterface::run()
         if ((buf = readline("\n >> ")) == NULL)  {
             done = true;
         }
-        std::cout << "DEBUG: " << &buf << std::endl;
-
-        std::cout << " << " << buf << std::endl;
 
         if(buf[0] != 0) {
             add_history(buf);
         }
+
+        std::cout << " << " << buf << std::endl;
 
         if (commands.find(buf) != commands.end()) {
             // DON'T TOUCH THE LINE BELOW, MOTHEFUCKER
