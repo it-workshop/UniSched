@@ -61,6 +61,8 @@ int CommandLineInterface::run()
     while (!done) {
         if ((buf = readline("\n >> ")) == NULL)  {
             done = true;
+            break; // Зачем тебе в программе два JMP подряд?
+                   // а вдруг первый не сработает...
         }
 
         if(buf[0] != 0) {
