@@ -4,20 +4,23 @@
 #include <malloc.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include "Readline.hpp"
 
 class CommandLineInterface;
-typedef int (CommandLineInterface::*CLIMemFunc)(void);
+typedef void (CommandLineInterface::*CLIMemFunc)(void);
 
 class CommandLineInterface: public Core::AbstractUI {
 
 private:
-    std::map<std::string, CLIMemFunc> commands;
+    std::map<std::string, CLIMemFunc> NoArgsCommands;
     bool done;
+    readlinecpp::Readline reader;
 
 public:
     void init (const std::vector< std::string > &args);
-    int usage();
-    int quit();
+    void usage();
+    void quit();
+    void history();
     int run();
     CommandLineInterface(std::vector<Module *> *modules, void *handle);
 };
@@ -32,53 +35,48 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
 {
     std::cout << "CommandLine Interface INIT" << std::endl;
     done = false;
-    commands.insert(std::make_pair("quit", &CommandLineInterface::quit));
-    commands.insert(std::make_pair("usage", &CommandLineInterface::usage));
-    commands.insert(std::make_pair("help", &CommandLineInterface::usage));
+    NoArgsCommands.insert(std::make_pair("quit", &CommandLineInterface::quit));
+    NoArgsCommands.insert(std::make_pair("usage", &CommandLineInterface::usage));
+    NoArgsCommands.insert(std::make_pair("help", &CommandLineInterface::usage));
+    NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
 }
 
-int CommandLineInterface::quit() {
+void CommandLineInterface::quit() {
     done = true;
-    return 0;
 }
 
-int CommandLineInterface::usage() {
+void CommandLineInterface::history() {
+    std::cout << "Historrrrry: " << std::endl;
+    reader.save_history(std::cout);
+}
+
+void CommandLineInterface::usage() {
     std::cout << "Usage information on our little UniSched Sandbox Edition\n";
     std::cout << "Not so much so far! :]\n";
     std::cout << "\n";
     std::cout << " quit -- quit\n";
     std::cout << " help -- this text\n";
     std::cout << " usage -- this text.\n";
+    std::cout << " history -- commands history.\n";
     std::cout << "\n";
     std::cout << " See? Told you so!" << std::endl;
-    return 0;
 }
 
 int CommandLineInterface::run()
 {
-    // Nasty nasty C-style
-    char *buf;
-    while (!done) {
-        if ((buf = readline("\n >> ")) == NULL)  {
-            done = true;
-            break; // Зачем тебе в программе два JMP подряд?
-                   // а вдруг первый не сработает...
+    std::string input;
+    std::string prompt = "RASPISATOR-REX>> ";
+    do {
+        input = reader.readline(prompt, done);
+        if(done) break;
+        if(input.empty()) continue;
+        if (NoArgsCommands.find(input) != NoArgsCommands.end()) {
+            // DON'T TOUCH THE LINE BELOW, MOTHERFUCKER
+            (this->*NoArgsCommands[input])();
+            continue;
         }
-
-        if(buf[0] != 0) {
-            add_history(buf);
-        }
-
-        std::cout << " << " << buf << std::endl;
-
-        if (commands.find(buf) != commands.end()) {
-            // DON'T TOUCH THE LINE BELOW, MOTHEFUCKER
-            (this->*commands[buf])();
-        }
-        free (buf);
-    }
-
-    return 0;
+        std::cout << "Unknown command: " << input << std::endl;
+    } while(!done);
 }
 
 extern "C" {
