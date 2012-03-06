@@ -1,7 +1,10 @@
-#include <abstractui.h>
-
 #include <iostream>
 #include <malloc.h>
+
+#include <abstractui.h>
+#include <person.h>
+#include <field.h>
+
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "Readline.hpp"
@@ -21,6 +24,7 @@ public:
     void usage();
     void quit();
     void history();
+    void test_person();
     int run();
     CommandLineInterface(std::vector<Module *> *modules, void *handle);
 };
@@ -39,6 +43,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     NoArgsCommands.insert(std::make_pair("usage", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("help", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
+    NoArgsCommands.insert(std::make_pair("test_person", &CommandLineInterface::test_person));
 }
 
 void CommandLineInterface::quit() {
@@ -60,6 +65,12 @@ void CommandLineInterface::usage() {
     std::cout << " history -- commands history.\n";
     std::cout << "\n";
     std::cout << " See? Told you so!" << std::endl;
+}
+
+void CommandLineInterface::test_person() {
+    //std::vector<Field *> arguments;
+    //Core::AbstractUI::create<Core::Person>(arguments);
+    std::cout << "Not implemented yet";
 }
 
 int CommandLineInterface::run()
