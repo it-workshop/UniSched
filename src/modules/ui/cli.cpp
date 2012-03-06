@@ -1,6 +1,7 @@
 #include <abstractui.h>
 
 #include <iostream>
+#include <malloc.h>
 #include <readline/readline.h>
 #include <readline/history.h>
 
@@ -56,11 +57,12 @@ int CommandLineInterface::usage() {
 int CommandLineInterface::run()
 {
     // Nasty nasty C-style
-    char *buf = new char(255);
+    char *buf;
     while (!done) {
         if ((buf = readline("\n >> ")) == NULL)  {
             done = true;
         }
+        std::cout << "DEBUG: " << &buf << std::endl;
 
         std::cout << " << " << buf << std::endl;
 
@@ -72,9 +74,8 @@ int CommandLineInterface::run()
             // DON'T TOUCH THE LINE BELOW, MOTHEFUCKER
             (this->*commands[buf])();
         }
-
+        free (buf);
     }
-    free (buf);
 
     return 0;
 }
