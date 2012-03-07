@@ -68,9 +68,13 @@ void CommandLineInterface::usage() {
 }
 
 void CommandLineInterface::test_person() {
-    //std::vector<Field *> arguments;
-    //Core::AbstractUI::create<Core::Person>(arguments);
-    std::cout << "Not implemented yet";
+    // faaaaaail
+    std::vector<Core::Field> args;
+    args.push_back(Core::FieldString("name", "Test"));
+    args.push_back(Core::FieldString("surname", "Test"));
+    args.push_back(Core::FieldString("sex", "Male"));
+    Core::AbstractUI::create<Core::Person>(args);
+    std::cout << "Created test_person" << std::endl;
 }
 
 int CommandLineInterface::run()
