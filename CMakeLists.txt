@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 2.8.3)
 project (UniSched CXX)
 
+include (cmake/c++11/CheckCXX11Features.cmake)
+
 add_definitions (-std=c++0x)
 
 include (CheckIncludeFileCXX)
