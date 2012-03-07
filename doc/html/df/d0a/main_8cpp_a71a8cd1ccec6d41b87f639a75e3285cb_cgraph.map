@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$d3/d9c/classModule.html#a1fb63a59af1664c757f8179dfd68a13d" title="Initilize required resources. Such as memory, shared objects, create auxiliary objects, etc." alt="" coords="165,5,253,35"/>
-<area shape="rect" id="node5" href="$d5/d16/module_8h.html#a0de0da89acfb6c7965424fc02211b534" title="Get collection of loaded modules." alt="" coords="175,83,244,112"/>
-<area shape="rect" id="node8" href="$d3/d9c/classModule.html#ad6cd28a1d45bba06b1d525ae61b745cf" title="Get name of the module." alt="" coords="157,136,261,165"/>
-</map>

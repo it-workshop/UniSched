@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$dd/d68/classCore_1_1AbstractGroup.html" title="Base group functionality. You need to use it instead of Group or Event in most cases." alt="" coords="44,260,185,449"/>
-<area shape="rect" id="node9" href="$d9/d71/classCore_1_1Person.html" title="Class keeps person unique data." alt="" coords="209,243,311,467"/>
-<area shape="rect" id="node5" href="$d9/d42/classCore_1_1Event.html" title="Group of people, doing something in the some time." alt="" coords="5,515,96,653"/>
-<area shape="rect" id="node7" href="$d2/d30/classCore_1_1Group.html" title="Class keeps information about group of people." alt="" coords="120,524,237,644"/>
-</map>

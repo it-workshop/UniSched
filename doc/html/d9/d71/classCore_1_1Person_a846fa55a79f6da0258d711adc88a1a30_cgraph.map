@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$d9/d71/classCore_1_1Person.html#a88e1d40e7be7d95e6cec9bc623d6e076" title="Core::Person::_" alt="" coords="263,5,377,35"/>
-<area shape="rect" id="node5" href="$d4/deb/classStorage_1_1StorableObject.html#a4c15433a6719f4036705d989828e4933" title="Storage::StorableObject::set_field" alt="" coords="211,59,429,88"/>
-<area shape="rect" id="node9" href="$d4/deb/classStorage_1_1StorableObject.html#a14764d884ae0cfc51aab3c391423f781" title="Storage::StorableObject::set_field_enum" alt="" coords="192,112,448,141"/>
-<area shape="rect" id="node13" href="$d4/deb/classStorage_1_1StorableObject.html#adb46898ef1cc21af62eeff54a583e8d4" title="Storage::StorableObject::set_field_vector" alt="" coords="189,165,451,195"/>
-<area shape="rect" id="node7" href="$d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c" title="Set integer value of requested field." alt="" coords="520,59,747,88"/>
-<area shape="rect" id="node11" href="$d6/da0/classStorage_1_1AbstractStorage.html#a50925678c74c09acd8549a541fdbbe9f" title="Set enum value of requested field." alt="" coords="501,112,765,141"/>
-<area shape="rect" id="node15" href="$d6/da0/classStorage_1_1AbstractStorage.html#a24af03b9a68ace199b0a6fa812abad39" title="Set vector value of requested field." alt="" coords="499,165,768,195"/>
-</map>

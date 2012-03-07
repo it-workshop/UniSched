@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$df/d0a/main_8cpp.html#a71a8cd1ccec6d41b87f639a75e3285cb" title="load_modules" alt="" coords="127,83,228,112"/>
-<area shape="rect" id="node12" href="$d1/d45/classCore_1_1AbstractUI.html#ac832b32700b97b1e0a6651efe7a1ce06" title="Main method of frontend class. It is called from main." alt="" coords="104,136,251,165"/>
-<area shape="rect" id="node5" href="$d3/d9c/classModule.html#a1fb63a59af1664c757f8179dfd68a13d" title="Initilize required resources. Such as memory, shared objects, create auxiliary objects, etc." alt="" coords="307,5,395,35"/>
-<area shape="rect" id="node7" href="$d5/d16/module_8h.html#a0de0da89acfb6c7965424fc02211b534" title="Get collection of loaded modules." alt="" coords="316,83,385,112"/>
-<area shape="rect" id="node10" href="$d3/d9c/classModule.html#ad6cd28a1d45bba06b1d525ae61b745cf" title="Get name of the module." alt="" coords="299,136,403,165"/>
-</map>

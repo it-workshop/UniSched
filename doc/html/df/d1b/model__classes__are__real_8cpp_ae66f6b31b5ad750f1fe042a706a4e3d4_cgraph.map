@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$d6/da0/classStorage_1_1AbstractStorage.html#a108af124f19c0ae9a4a461aee6abc3ec" title="Storage::AbstractStorage::create" alt="" coords="104,137,317,167"/>
-<area shape="rect" id="node5" href="$d4/deb/classStorage_1_1StorableObject.html#ae3e389b184651f78594df7f83f944a2c" title="Storage::StorableObject::id" alt="" coords="409,5,588,35"/>
-<area shape="rect" id="node7" href="$d6/da0/classStorage_1_1AbstractStorage.html#ab9e323067a58b74a7d1c835f0d1832c8" title="Return new object identificator and reserve cell for it in the objects vector." alt="" coords="389,59,608,88"/>
-<area shape="rect" id="node9" href="$d6/da0/classStorage_1_1AbstractStorage.html#a21ff57c954664abb78d1d658a1da7afa" title="Return object by id." alt="" coords="681,191,892,220"/>
-<area shape="rect" id="node11" href="$d6/da0/classStorage_1_1AbstractStorage.html#acdd090d0beb6a8241914e7d78a7f2c0c" title="Set integer value of requested field." alt="" coords="385,163,612,192"/>
-<area shape="rect" id="node13" href="$d6/da0/classStorage_1_1AbstractStorage.html#a50925678c74c09acd8549a541fdbbe9f" title="Set enum value of requested field." alt="" coords="367,216,631,245"/>
-<area shape="rect" id="node15" href="$d6/da0/classStorage_1_1AbstractStorage.html#a641a6b75fe34c51943902d846ff66328" title="Set integer value of requested field." alt="" coords="380,269,617,299"/>
-</map>
