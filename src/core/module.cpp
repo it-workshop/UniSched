@@ -40,7 +40,7 @@ void Module::load_modules()
         }
         for (struct dirent *entry = readdir(dir); entry; entry = readdir(dir))
         {
-            if (!has_ending(entry->d_name, ".so")) {
+            if ('.' == *(entry->d_name) || !has_ending(entry->d_name, ".so")) {
                     continue;
             }
             std::cout << "Loading " << entry->d_name << "\t";
