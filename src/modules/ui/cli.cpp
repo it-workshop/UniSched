@@ -84,12 +84,12 @@ void CommandLineInterface::usage() {
 }
 
 void CommandLineInterface::test_person() {
-    std::vector<Core::Field*> args;
-    args.push_back(new Core::FieldString("name", "Test"));
-    args.push_back(new Core::FieldString("surname", "Test"));
-    args.push_back(new Core::FieldString("sex", "Male"));
+    std::vector<Core::FieldString> args;
+    args.push_back(Core::FieldString("name", "Test"));
+    args.push_back(Core::FieldString("surname", "Test"));
+    args.push_back(Core::FieldString("sex", "Male"));
     // faaaaaail
-    //Core::AbstractUI::create<Core::Person>(args);
+    Core::AbstractUI::create<Core::Person>(args);
     std::cout << "Sorry. Some mess with the creation" << std::endl;
 }
 
