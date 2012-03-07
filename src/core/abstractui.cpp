@@ -1,7 +1,66 @@
 #include <abstractui.h>
 #include <yaml-cpp/yaml.h>
+#include <person.h>
+#include <group.h>
+#include <event.h>
 
 using namespace Core;
+
+void AbstractUI::dump(const std::string& base_fname) const
+{
+    YAML::Node out;
+    
+    for (std::map<objid_t, Object *>::const_iterator iter = objects_.begin();
+         iter != objects_.end(); iter ++)
+    {
+        YAML::Node obj;
+        obj["Object"] = (unsigned) iter->second->type();
+        obj["ID"] = (unsigned) iter->first;
+        // Just fuck-off, dude :)
+        switch (iter->second->type()) {
+        case PERSON:
+            obj["VCard"] = *static_cast<Person *>(iter->second);
+        break;
+        case GROUP:
+            obj["VCard"] = *static_cast<Group *>(iter->second);
+        break;
+        case EVENT:
+            obj["VCard"] = *static_cast<Event *>(iter->second);
+        break;
+        default:
+            obj["VCard"] = "Unknown";
+        break;
+        }
+        out.push_back(obj);
+    }
+
+    std::ofstream base(base_fname);
+
+    base << out.as<std::string>();
+    
+    base.close();
+}
+
+void AbstractUI::load(const std::string& base_fname)
+{
+    YAML::Node in = YAML::LoadFile(base_fname);
+/*
+    for (YAML::const_iterator iter = in.begin(); iter != in.end(); iter ++)
+    {
+        switch ((*iter)["Object"].as<obj_t>()) {
+        case PERSON:
+            objects_[(*iter)["ID"]] = (*iter)["VCard"].as<Person>();
+        break;
+        case GROUP:
+        break;
+        case EVENT:
+        break;
+        default:
+        break;
+        }
+    }
+*/
+}
 
 const Field& AbstractUI::pull(const std::string& name) const throw (std::bad_cast)
 {

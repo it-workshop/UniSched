@@ -51,7 +51,7 @@ protected:
                          */
 
 public:
-    AbstractGroup(const int id, AbstractUI& ui) throw(std::bad_cast);
+    AbstractGroup(obj_t type, objid_t id, AbstractUI& ui) throw(std::bad_cast);
                         /**< @brief Constructor
                          * @param [in] id AbstractUIs object`s identificator.
                          * @param [in] ui Storage.

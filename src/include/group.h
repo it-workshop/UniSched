@@ -16,8 +16,8 @@ private:
     FieldVector parent_groups_;
 
 public:
-    Group(const int id, AbstractUI& ui):
-            AbstractGroup(id, ui), parent_groups_("parent_groups")
+    Group(obj_t type, objid_t id, AbstractUI& ui):
+            AbstractGroup(type, id, ui), parent_groups_("parent_groups")
                         /**< @copydoc AbstractGroup::AbstractGroup */
     {
         parent_groups_ = 
@@ -39,4 +39,25 @@ public:
 };
 
 };
+
+namespace YAML {
+    template<>
+    struct convert<Core::Group> {
+        static Node encode(const Core::Group& g)
+        {
+            Node node;
+            node["name"] =
+                dynamic_cast<const Core::FieldString &>(g.read("name")).value();
+            return node;
+        }
+        static bool decode(const Node& node, Core::Group& g)
+        {
+            // Check if node is the right mask for class Person
+            //if (!node.IsMap()) return false;
+            //if (!node.size() == 3) return false;
+            g.update(Core::FieldString("name", node["name"].as<std::string>()));
+            return true;
+        }
+    };
+}
 

@@ -6,6 +6,8 @@
 #include <map>
 #include <typeinfo>
 
+#include <yaml-cpp/yaml.h>
+
 #include <field.h>
 #include <object.h>
 
@@ -22,7 +24,7 @@ namespace Core {
 class AbstractUI: public Module {
 friend class Object;
 private:
-    std::map<const int, Object *> objects_;
+    std::map<objid_t, Object *> objects_;
                         /**< Model objects. Each object must be saved here for
                          * correct work of storage.
                          *
@@ -143,7 +145,6 @@ protected:
     }
 
 public:
-
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
         Module(Module::UI, name, modules, handle), new_id_(0)
@@ -157,6 +158,8 @@ public:
                          * from main.
                          * @return Program return code.
                          */
+    void dump(const std::string& base_fname) const;
+    void load(const std::string& base_fname);
 };
 
 };
