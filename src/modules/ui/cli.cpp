@@ -62,19 +62,20 @@ void CommandLineInterface::usage() {
     std::cout << " quit -- quit\n";
     std::cout << " help -- this text\n";
     std::cout << " usage -- this text.\n";
+    std::cout << " test_person -- this text.\n";
     std::cout << " history -- commands history.\n";
     std::cout << "\n";
     std::cout << " See? Told you so!" << std::endl;
 }
 
 void CommandLineInterface::test_person() {
+    std::vector<Core::Field*> args;
+    args.push_back(new Core::FieldString("name", "Test"));
+    args.push_back(new Core::FieldString("surname", "Test"));
+    args.push_back(new Core::FieldString("sex", "Male"));
     // faaaaaail
-    std::vector<Core::Field> args;
-    args.push_back(Core::FieldString("name", "Test"));
-    args.push_back(Core::FieldString("surname", "Test"));
-    args.push_back(Core::FieldString("sex", "Male"));
-    Core::AbstractUI::create<Core::Person>(args);
-    std::cout << "Created test_person" << std::endl;
+    //Core::AbstractUI::create<Core::Person>(args);
+    std::cout << "Sorry. Some mess with the creation" << std::endl;
 }
 
 int CommandLineInterface::run()
