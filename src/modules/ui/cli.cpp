@@ -11,7 +11,6 @@
 
 class CommandLineInterface;
 typedef void (CommandLineInterface::*CLIMemFunc)(void);
-typedef std::map<std::string, CLIMemFunc> NoArgsCommands;
 
 class CommandLineInterface: public Core::AbstractUI {
 
@@ -50,11 +49,13 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
     NoArgsCommands.insert(std::make_pair("test_person", &CommandLineInterface::test_person));
 
-    for(auto it = NoArgsCommands.begin(); it != NoArgsCommands.end(); it++) {
-        Completions.push_back(it->first);
-    }
-    Reader.RegisterCompletions(Completions);
+    std::for_each(NoArgsCommands.begin(), 
+        NoArgsCommands.end(), 
+        [this] (std::pair<const std::string, CLIMemFunc>& p) 
+    { Completions.push_back(p.first); } );
 
+
+    Reader.RegisterCompletions(Completions);
 }
 
 void CommandLineInterface::quit() {
@@ -89,7 +90,7 @@ void CommandLineInterface::test_person() {
     args.push_back(Core::FieldString("surname", "Test"));
     args.push_back(Core::FieldString("sex", "Male"));
     // faaaaaail
-    Core::AbstractUI::create<Core::Person>(args);
+    //Core::AbstractUI::create<Core::Person>(args);
     std::cout << "Sorry. Some mess with the creation" << std::endl;
 }
 
