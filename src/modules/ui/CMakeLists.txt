@@ -7,7 +7,7 @@ endif (WITH_DUMMYUI)
 
 if (WITH_CLI)
     if (READLINE_FOUND)
-        add_library (cli SHARED cli.cpp Readline.cpp)
+        add_library (cli SHARED cli.cpp)
         target_link_libraries (cli readline ${Boost_LIBRARIES})
     else (READLINE_FOUND)
         message (FAIL_ERROR " readline not found, but cli build requested.")

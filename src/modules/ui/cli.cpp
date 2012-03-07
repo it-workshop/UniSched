@@ -23,12 +23,14 @@ private:
 
 public:
     void init (const std::vector< std::string > &args);
-    void usage();
-    void quit();
-    void history();
-    void test_person();
     int run();
     CommandLineInterface(std::vector<Module *> *modules, void *handle);
+
+    void usage();
+    void quit();
+    void clear();
+    void history();
+    void test_person();
 };
 
 
@@ -42,6 +44,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     std::cout << "CommandLine Interface INIT" << std::endl;
     done = false;
     NoArgsCommands.insert(std::make_pair("quit", &CommandLineInterface::quit));
+    NoArgsCommands.insert(std::make_pair("clear", &CommandLineInterface::clear));
     NoArgsCommands.insert(std::make_pair("usage", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("help", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
@@ -51,6 +54,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
         Completions.push_back(it->first);
     }
     Reader.RegisterCompletions(Completions);
+
 }
 
 void CommandLineInterface::quit() {
@@ -92,8 +96,9 @@ void CommandLineInterface::test_person() {
 int CommandLineInterface::run()
 {
     std::string input;
-    std::string prompt = "RASPISATOR-REX>> ";
-    std::cout << "Whoops" << std::endl;
+    const std::string prompt = "RASPISATOR-REX>> ";
+    const std::string history_path = "/tmp/raspisator"; // NB should be customizable
+    Reader.LoadHistory(history_path);
     do {
         input = Reader.GetLine(prompt, done);
         if(done) break;
@@ -105,6 +110,8 @@ int CommandLineInterface::run()
         }
         std::cout << "Unknown command: " << input << std::endl;
     } while(!done);
+
+    Reader.SaveHistory(history_path);
 }
 
 extern "C" {
