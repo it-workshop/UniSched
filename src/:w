@@ -3,12 +3,10 @@
 #include <string>
 #include <vector>
 
-#include <yaml-cpp/yaml.h>
-
 namespace Core {
 
 enum obj_t {UNKNOWN, PERSON, GROUP, EVENT};
-typedef unsigned long int objid_t;
+typedef const unsigned int objid_t;
 
 /**< @class Object
  * @brief Universal interface of core objects.
@@ -69,7 +67,7 @@ protected:
 
 public:
 
-    Object(const obj_t type, const objid_t id, AbstractUI& ui): type_(type), id_(id), ui_(ui)
+    Object(obj_t type, objid_t id, AbstractUI& ui): type_(type), id_(id), ui_(ui)
                         /**< @brief Constructor.
                          * @param [in] id Identificator of the object.
                          * @param [in] ui Manager of objects.
@@ -96,12 +94,7 @@ namespace YAML {
         static Node encode(const Core::obj_t& ot)
         {
             Node node;
-            switch (ot) {
-            case Core::PERSON: node[0] = "Person"; return node;
-            case Core::GROUP: node[0] = "Group"; return node;
-            case Core::EVENT: node[0] = "Event"; return node;
-            default: node[0] = "Unknown"; return node;
-            }
+            node[0] = (unsigned) ot;
             return node;
         }
         static bool decode(const Node& node, Core::obj_t& ot)
@@ -117,25 +110,6 @@ namespace YAML {
             return true;
         }
     };
-  /* 
-    template<> 
-    struct convert<Core::objid_t> {
-        static Node encode(const Core::objid_t& oid)
-        {
-            Node node;
-            node[0] = (unsigned) oid;
-            return node;
-        }
-        static bool decode(const Node& node, Core::objid_t& oid)
-        {
-            // Check if node is the right mask for Core::objid_t
-            if (!node.IsScalar()) return false;
-            if (!node.size() == 1) return false;
-            oid = (const unsigned) node[0].as<unsigned>();
-            return true;
-        }
-    };
-    */
 }
 
 #include <abstractui.h>

@@ -16,7 +16,7 @@ private:
     FieldVector parent_groups_;
 
 public:
-    Group(obj_t type, objid_t id, AbstractUI& ui):
+    Group(const obj_t type, const objid_t id, AbstractUI& ui):
             AbstractGroup(type, id, ui), parent_groups_("parent_groups")
                         /**< @copydoc AbstractGroup::AbstractGroup */
     {

@@ -15,7 +15,7 @@ private:
                         /**< Duration of event. */
 protected:
 public:
-    Event (obj_t type, objid_t id, AbstractUI& ui) throw (std::bad_cast):
+    Event (const obj_t type, const objid_t id, AbstractUI& ui) throw (std::bad_cast):
             AbstractGroup(type, id, ui), begin_("begin"), duration_("duration")
                          /**< @copydoc AbstractGroup::AbstractGroup */
     {

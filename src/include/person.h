@@ -46,7 +46,7 @@ protected:
     }
 
 public:
-    Person(obj_t type, objid_t id, AbstractUI& ui) throw (std::bad_cast);
+    Person(const objid_t id, AbstractUI& ui) throw (std::bad_cast);
                             /**< @copydoc Object::Object */
    
     virtual const Field& read(const std::string& name) const
