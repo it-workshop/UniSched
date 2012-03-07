@@ -7,15 +7,17 @@ add_definitions (-std=c++0x)
 
 include (CheckIncludeFileCXX)
 
-include_directories ("${PROJECT_SOURCE_DIR}/src/include")
-
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
+
 find_package (Readline REQUIRED)
+find_package (Boost REQUIRED)
+
+include_directories ("${PROJECT_SOURCE_DIR}/src/include")
+include_directories ("${Boost_INCLUDE_DIRS}")
 
 if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
     message (SEND_ERROR "In source build not allowed.")
 endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
-
 
 enable_testing()
 
