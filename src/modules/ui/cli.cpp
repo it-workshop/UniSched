@@ -1,23 +1,25 @@
 #include <iostream>
 #include <malloc.h>
 
+#include <boost/format.hpp>
+
 #include <abstractui.h>
 #include <person.h>
 #include <field.h>
 
-#include <readline/readline.h>
-#include <readline/history.h>
-#include "Readline.hpp"
+#include "SReadline.h"
 
 class CommandLineInterface;
 typedef void (CommandLineInterface::*CLIMemFunc)(void);
+typedef std::map<std::string, CLIMemFunc> NoArgsCommands;
 
 class CommandLineInterface: public Core::AbstractUI {
 
 private:
     std::map<std::string, CLIMemFunc> NoArgsCommands;
     bool done;
-    readlinecpp::Readline reader;
+    swift::SReadline Reader;
+    std::vector<std::string> Completions;
 
 public:
     void init (const std::vector< std::string > &args);
@@ -44,15 +46,24 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     NoArgsCommands.insert(std::make_pair("help", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
     NoArgsCommands.insert(std::make_pair("test_person", &CommandLineInterface::test_person));
+
+    for(auto it = NoArgsCommands.begin(); it != NoArgsCommands.end(); it++) {
+        Completions.push_back(it->first);
+    }
+    Reader.RegisterCompletions(Completions);
 }
 
 void CommandLineInterface::quit() {
     done = true;
 }
 
+void CommandLineInterface::clear() {
+    Reader.ClearHistory();
+}
+
 void CommandLineInterface::history() {
-    std::cout << "Historrrrry: " << std::endl;
-    reader.save_history(std::cout);
+    std::cout << "Historrrrry listing not working yet :)" << std::endl;
+    //reader.save_history(std::cout);
 }
 
 void CommandLineInterface::usage() {
@@ -82,8 +93,9 @@ int CommandLineInterface::run()
 {
     std::string input;
     std::string prompt = "RASPISATOR-REX>> ";
+    std::cout << "Whoops" << std::endl;
     do {
-        input = reader.readline(prompt, done);
+        input = Reader.GetLine(prompt, done);
         if(done) break;
         if(input.empty()) continue;
         if (NoArgsCommands.find(input) != NoArgsCommands.end()) {
