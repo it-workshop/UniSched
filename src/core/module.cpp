@@ -19,6 +19,11 @@ Module::Module (const enum Type type, const std::string& name,
 
 static std::vector<Module *> modules_;
 
+bool has_ending(std::string input, std::string ending) {
+    unsigned int last_match_position = input.rfind(ending);
+    return (last_match_position != std::string::npos);
+}
+
 void Module::load_modules()
 {
     std::stringstream modules_path;
@@ -35,6 +40,9 @@ void Module::load_modules()
         }
         for (struct dirent *entry = readdir(dir); entry; entry = readdir(dir))
         {
+            if (!has_ending(entry->d_name, ".so")) {
+                    continue;
+            }
             std::cout << "Loading " << entry->d_name << "\t";
             std::string module_name = std::string(dir_name) + "/" + entry->d_name;
             void *module_handle = dlopen(module_name.c_str(), RTLD_NOW);
