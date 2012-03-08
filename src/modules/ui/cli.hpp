@@ -13,13 +13,14 @@
 
 
 class CommandLineInterface;
-typedef void (CommandLineInterface::*CLIMemCommand)(const std::vector<std::string> &);
+typedef int (CommandLineInterface::*CLIMemCommand)(const std::vector<std::string> &);
 
 class CommandLineInterface: public Core::AbstractUI {
 
 private:
     std::map<std::string, CLIMemCommand> Commands;
     bool done;
+    bool debug;
     swift::SReadline Reader;
     std::vector<std::string> Completions;
 
@@ -28,12 +29,13 @@ public:
     int run();
     CommandLineInterface(std::vector<Module *> *modules, void *handle);
 
-    void usage(const std::vector<std::string>& unused);
-    void quit(const std::vector<std::string>& unused);
-    void clear(const std::vector<std::string>& unused);
-    void history(const std::vector<std::string>& unused);
+    int usage(const std::vector<std::string>& unused);
+    int quit(const std::vector<std::string>& unused);
+    int clear(const std::vector<std::string>& unused);
+    int history(const std::vector<std::string>& unused);
+    int toggle_debug(const std::vector<std::string>& unused);
 
-    void new_person(const std::vector<std::string>& fields);
-    void new_group(const std::vector<std::string>& fields);
+    int new_person(const std::vector<std::string>& tokens);
+    int new_group(const std::vector<std::string>& tokens);
 };
 
