@@ -19,14 +19,23 @@ Module::Module (const enum Type type, const std::string& name,
 
 static std::vector<Module *> modules_;
 
-bool has_ending(std::string input, std::string ending) {
+static bool has_ending(std::string input, std::string ending) {
     unsigned int last_match_position = input.rfind(ending);
     return (last_match_position != std::string::npos);
+}
+
+static const bool is_module_name(const std::string& name) {
+    if (!has_ending(name, ".so"))
+    {
+        return false;
+    }
+    return '.' != *(name.c_str());
 }
 
 void Module::load_modules()
 {
     std::stringstream modules_path;
+    setenv("UNISCHED_MODULES_PATH", ".", 0);
     modules_path << getenv("UNISCHED_MODULES_PATH");
     char dir_name[4096];
     for (modules_path.getline(dir_name, 4096, ':'); !modules_path.eof() || *dir_name;
@@ -40,8 +49,9 @@ void Module::load_modules()
         }
         for (struct dirent *entry = readdir(dir); entry; entry = readdir(dir))
         {
-            if ('.' == *(entry->d_name) || !has_ending(entry->d_name, ".so")) {
-                    continue;
+            if (!is_module_name(entry->d_name))
+            {
+                continue;
             }
             std::cout << "Loading " << entry->d_name << "\t";
             std::string module_name = std::string(dir_name) + "/" + entry->d_name;
