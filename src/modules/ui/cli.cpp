@@ -1,36 +1,4 @@
-#include <iostream>
-#include <malloc.h>
-
-#include <boost/format.hpp>
-
-#include <abstractui.h>
-#include <person.h>
-
-#include "SReadline.h"
-
-class CommandLineInterface;
-typedef void (CommandLineInterface::*CLIMemFunc)(void);
-
-class CommandLineInterface: public Core::AbstractUI {
-
-private:
-    std::map<std::string, CLIMemFunc> NoArgsCommands;
-    bool done;
-    swift::SReadline Reader;
-    std::vector<std::string> Completions;
-
-public:
-    void init (const std::vector< std::string > &args);
-    int run();
-    CommandLineInterface(std::vector<Module *> *modules, void *handle);
-
-    void usage();
-    void quit();
-    void clear();
-    void history();
-    void test_person();
-};
-
+#include "cli.hpp"
 
 CommandLineInterface::CommandLineInterface(std::vector<Module *> *modules,
         void *handle):
@@ -71,16 +39,16 @@ void CommandLineInterface::history() {
 }
 
 void CommandLineInterface::usage() {
-    std::cout << "Usage information on our little UniSched Sandbox Edition\n";
-    std::cout << "Not so much so far! :]\n";
-    std::cout << "\n";
-    std::cout << " quit -- quit\n";
-    std::cout << " help -- this text\n";
-    std::cout << " usage -- this text.\n";
-    std::cout << " test_person -- this text.\n";
-    std::cout << " history -- commands history.\n";
-    std::cout << "\n";
-    std::cout << " See? Told you so!" << std::endl;
+    std::cout << "Usage information on our little UniSched Sandbox Edition\n"
+        << "Not so much so far! :]\n"
+        << "\n"
+        << " quit -- quit\n"
+        << " help -- this text\n"
+        << " usage -- this text.\n"
+        << " test_person -- this text.\n"
+        << " history -- commands history.\n"
+        << "\n"
+        << " See? Told you so!" << std::endl;
 }
 
 void CommandLineInterface::test_person() {
@@ -88,12 +56,10 @@ void CommandLineInterface::test_person() {
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
-    std::cout << "It's works!" << std::endl;
-    std::cout << "Name: " << boost::any_cast<std::string>(person->read("name"))
-        << std::endl
-        << "Surname: " << boost::any_cast<std::string>(person->read("surname"))
-        << std::endl
-        << "Sex: " << boost::any_cast<std::string>(person->read("sex"))
+    std::cout << "It's works!\n"
+        << "Name: " << boost::any_cast<std::string>(person->read("name"))
+        << "\nSurname: " << boost::any_cast<std::string>(person->read("surname"))
+        << "\nSex: " << boost::any_cast<std::string>(person->read("sex"))
         << std::endl;
 }
 
