@@ -53,11 +53,11 @@ void CommandLineInterface::usage(const std::vector<std::string>& unused) {
         << " See? Told you so!" << std::endl;
 }
 
-void new_group(const std::vector<std::string>& fields) {
+void CommandLineInterface::new_group(const std::vector<std::string>& fields) {
     std::cout << "TODO: implement" << std::endl;
 }
 
-void new_person(const std::vector<std::string>& fields) {
+void CommandLineInterface::new_person(const std::vector<std::string>& fields) {
     std::cout << "TODO: implement" << std::endl;
 }
 
