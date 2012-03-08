@@ -96,10 +96,28 @@
     следует собирать и запускать этот проект :)
 
 
-Code Style
-==========
+#Code Style
 
 Предлагается следование следующим правилам:
+
+В коде с реализацией класса единственный include с хэдером для этого класса.
+Порядок инклюдов:
+    
+    #include <iostream>
+    #include <string>
+    #include <vector>
+
+    #include <boost/format.hpp>
+    #include <boost/filesystem.hpp>
+
+    #include <abstractui.h>
+    #include <group.h>
+
+    #include "utils.hpp"
+
+Т.е. сначала общесистемные+STL, потом boost, потом уже наши хэдеры, между ними одна пустая строка, потом, если есть, какие-то совсем локальные хэдеры. После последнего #include - две пустые строки
+
+Помимо этого, правила для vera++:
 
     F001 Source files should not use the '\r' (CR) character
     F002 File names should be well-formed

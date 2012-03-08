@@ -4,9 +4,9 @@
 #include <boost/format.hpp>
 
 #include <abstractui.h>
-#include <person.h>
 
 #include "SReadline.h"
+
 
 class CommandLineInterface;
 typedef void (CommandLineInterface::*CLIMemFunc)(void);
@@ -28,6 +28,5 @@ public:
     void quit();
     void clear();
     void history();
-    void test_person();
 };
 

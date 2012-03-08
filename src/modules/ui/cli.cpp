@@ -14,7 +14,6 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     NoArgsCommands.insert(std::make_pair("usage", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("help", &CommandLineInterface::usage));
     NoArgsCommands.insert(std::make_pair("history", &CommandLineInterface::history));
-    NoArgsCommands.insert(std::make_pair("test_person", &CommandLineInterface::test_person));
 
     std::for_each(NoArgsCommands.begin(), 
         NoArgsCommands.end(), 
@@ -51,17 +50,6 @@ void CommandLineInterface::usage() {
         << " See? Told you so!" << std::endl;
 }
 
-void CommandLineInterface::test_person() {
-    auto person = create<Core::Person>();
-    person->update("name", std::string("John"));
-    person->update("surname", std::string("Connor"));
-    person->update("sex", std::string("MALE"));
-    std::cout << "It works!\n"
-        << "Name: " << boost::any_cast<std::string>(person->read("name"))
-        << "\nSurname: " << boost::any_cast<std::string>(person->read("surname"))
-        << "\nSex: " << boost::any_cast<std::string>(person->read("sex"))
-        << std::endl;
-}
 
 int CommandLineInterface::run()
 {
