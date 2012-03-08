@@ -5,7 +5,7 @@
 #include <event.h>
 
 using namespace Core;
-
+/*
 void AbstractUI::dump(const std::string& base_fname) const
 {
     YAML::Node out;
@@ -60,26 +60,35 @@ void AbstractUI::load(const std::string& base_fname)
         }
     }
 */
+/*
 }
-
-const Field& AbstractUI::pull(const std::string& name) const throw (std::bad_cast)
+*/
+static const bool operator==(const boost::any& lhs, const boost::any& rhs)
+    throw (boost::bad_any_cast)
 {
-    for (const Field* parameter: parameters_)
+    if (lhs.empty() != rhs.empty())
     {
-        if (parameter->name() == name)
-        {
-            return *parameter;
-        }
+        return false;
     }
-    throw std::bad_cast();
+    if (typeid(std::string) == lhs.type())
+    {
+        return boost::any_cast<std::string>(lhs)
+            == boost::any_cast<std::string>(rhs);
+    }
+    if (typeid(time_t) == lhs.type())
+    {
+        return boost::any_cast<time_t>(lhs)
+            == boost::any_cast<time_t>(rhs);
+    }
+    throw boost::bad_any_cast();
 }
 
-void AbstractUI::search(const std::vector<const Field *>& parameters)
+void AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& parameters)
 {
     std::vector<Object *> results;
     bool append = true;
 
-    for (const Field * parameter: parameters)
+    for (std::pair<std::string, boost::any> parameter: parameters)
     {
         if (append)
         {
@@ -87,7 +96,7 @@ void AbstractUI::search(const std::vector<const Field *>& parameters)
             {
                 try
                 {
-                    if (*parameter == obj.second->read(parameter->name()))
+                    if (parameter.second == obj.second->read(parameter.first))
                     {
                         results.push_back(obj.second);
                     }
@@ -105,7 +114,7 @@ void AbstractUI::search(const std::vector<const Field *>& parameters)
         {
             try
             {
-                if (*parameter == (*it)->read(parameter->name()))
+                if (parameter.second == (*it)->read(parameter.first))
                 {
                     continue;
                 }

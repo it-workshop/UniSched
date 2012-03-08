@@ -2,85 +2,46 @@
 
 using namespace Core;
 
-Person::Person(obj_t type, objid_t id, AbstractUI& ui) throw (std::bad_cast):
-    Object(type, id, ui), name_("name"), surname_("surname"),
-    sex_("sex", "MALE"), birthday_("birthday"), groups_("groups")
+Person::Person(objid_t id, AbstractUI& ui) throw (std::bad_cast):
+    Object(id, ui)
 {
-    name_ = dynamic_cast<const FieldString&>(pull("name"));
-    surname_ = dynamic_cast<const FieldString&>(pull("surname"));
-    {
-        auto tmp= dynamic_cast<const FieldEnum&>(pull("sex"));
-        if (tmp.value() == "MALE" || tmp.value() == "FEMALE")
-        {
-            sex_ = tmp;
-        }
-        throw std::bad_cast();
-    }
-    birthday_ = dynamic_cast<const FieldTime&>(pull("birthday"));
-    groups_ = dynamic_cast<const FieldTime&>(pull("groups"));
 }
 
-const Field& Person::read(const std::string& name) const throw (std::bad_cast)
+void Person::check_field(const std::string& name, const boost::any& value) const
+        throw(boost::bad_any_cast)
 {
-    if (name == "name")
+    if ("name" == name)
     {
-        return name_;
-    }
-    if (name == "surname")
-    {
-        return surname_;
-    }
-    if (name == "sex")
-    {
-        return sex_;
-    }
-    if (name == "birthday")
-    {
-        return birthday_;
-    }
-    if (name == "groups")
-    {
-        return groups_;
-    }
-    throw std::bad_cast();
-}
-
-void Person::update(const Field& field) throw (std::bad_cast)
-{
-    if (field.name() == "name")
-    {
-        name_ = dynamic_cast<const FieldString&>(field);
+        boost::any_cast<std::string>(value);
         return;
     }
-    if (field.name() == "surname")
+    if ("surname" == name)
     {
-        surname_ = dynamic_cast<const FieldString&>(field);
+        boost::any_cast<std::string>(value);
         return;
     }
-    if (field.name() == "sex")
+    if ("birtday" == name)
     {
-        auto tmp = dynamic_cast<const FieldEnum&>(field);
-        if (tmp.value() == "MALE" || tmp.value() == "FEMALE")
+        boost::any_cast<time_t>(value);
+        return;
+    }
+    if ("sex" == name)
+    {
+        auto tmp = boost::any_cast<std::string>(value);
+        if ("MALE" != tmp && "FEMALE" != tmp)
         {
-            sex_ = tmp;
-            return;
+            throw boost::bad_any_cast();
         }
-        throw std::bad_cast();
-    }
-    if (field.name() == "birthday")
-    {
-        birthday_ = dynamic_cast<const FieldTime&>(field);
         return;
     }
-    if (field.name() == "groups")
+    if ("groups" == name)
     {
-        if (groups_.type() == Field::LINK)
+        if (typeid(std::vector<Object*>) != value.type()
+        && typeid(std::pair<Object *,bool>) != value.type())
         {
-            groups_.commit(dynamic_cast<const FieldLink&>(field));
-            return;
+            throw boost::bad_any_cast();
         }
-        groups_ = dynamic_cast<const FieldVector&>(field);
+        return;
     }
-    throw std::bad_cast();
 }
 

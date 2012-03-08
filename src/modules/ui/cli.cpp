@@ -5,7 +5,6 @@
 
 #include <abstractui.h>
 #include <person.h>
-#include <field.h>
 
 #include "SReadline.h"
 
@@ -85,13 +84,17 @@ void CommandLineInterface::usage() {
 }
 
 void CommandLineInterface::test_person() {
-    std::vector<Core::FieldString> args;
-    args.push_back(Core::FieldString("name", "Test"));
-    args.push_back(Core::FieldString("surname", "Test"));
-    args.push_back(Core::FieldString("sex", "Male"));
-    // faaaaaail
-    //Core::AbstractUI::create<Core::Person>(args);
-    std::cout << "Sorry. Some mess with the creation" << std::endl;
+    auto person = create<Core::Person>();
+    person->update("name", std::string("John"));
+    person->update("surname", std::string("Connor"));
+    person->update("sex", std::string("MALE"));
+    std::cout << "It's works!" << std::endl;
+    std::cout << "Name: " << boost::any_cast<std::string>(person->read("name"))
+        << std::endl
+        << "Surname: " << boost::any_cast<std::string>(person->read("surname"))
+        << std::endl
+        << "Sex: " << boost::any_cast<std::string>(person->read("sex"))
+        << std::endl;
 }
 
 int CommandLineInterface::run()

@@ -2,30 +2,18 @@
 
 using namespace Core;
 
-const Field& Group::read(const std::string& name) const throw (std::bad_cast)
+void Group::check_field(const std::string& name, const boost::any& value) const
+    throw(boost::bad_any_cast, std::bad_cast)
 {
-    if (name == "parent_groups")
+    AbstractGroup::check_field(name, value);
+    if ("parent_groups" == name)
     {
-        return parent_groups_;
-    }
-    return AbstractGroup::read(name);
-}
-
-void Group::update(const Field& field) throw (std::bad_cast)
-{
-    if (field.name() == "parent_groups")
-    {
-        if (field.type() == Field::LINK)
+        if (typeid(std::vector<Object *>) != value.type())
         {
-            auto tmp = dynamic_cast<const FieldLink&>(field);
-            (dynamic_cast<AbstractGroup *>(tmp.value().first))->add_child(this);
-            parent_groups_.commit(tmp);
-            push(tmp);
-            return;
+            dynamic_cast<AbstractGroup *>(
+                boost::any_cast<std::pair<Object *, bool>>(value).first);
         }
-        parent_groups_ = dynamic_cast<const FieldVector&>(field);
         return;
     }
-    AbstractGroup::update(field);
 }
 

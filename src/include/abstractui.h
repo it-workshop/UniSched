@@ -8,7 +8,6 @@
 
 #include <yaml-cpp/yaml.h>
 
-#include <field.h>
 #include <object.h>
 
 #include <module.h>
@@ -47,8 +46,6 @@ private:
                          * create method.
                          */
 
-    std::vector<Field *> parameters_;
-
     Object * set_object(Object * object)
                         /**< @brief Apply changes in an object.
                          * @param [in] object Object to apply.
@@ -58,7 +55,7 @@ private:
     }
 
 protected:
-    void push(const int id, const Field& field)
+    void push(const int id, const std::string& name, const boost::any& value)
                         /**< @brief Save @a field of object with @a id it hte
                          * database
                          * @param [in] id Identificator of object.
@@ -68,12 +65,6 @@ protected:
                          * class.
                          */
     {}
-
-    const Field& pull(const std::string& name) const throw (std::bad_cast);
-                        /**< @brief Load field with @a name of created object
-                         * @param [in] name Name of the field.
-                         * @return Corresponding field.
-                         */
 
     void remove(Object * object)
                         /**< @brief Remove object from the storage.
@@ -94,17 +85,17 @@ protected:
     }
 
     template <class T>
-    void create(std::vector<const Field>& parameters)
+    Object * create()
                         /**< @brief Create an object of the T type
                          * @param [in] parameters new object`s data.
                          */
     {
-        parameters_ = parameters;
         cache_.push_back(set_object(new T(new_id(), *this)));
+        return cache_.back();
     }
 
     
-    void search(const std::vector<const Field *>& parameters);
+    void search(const std::vector<std::pair<std::string, boost::any>>& parameters);
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
                          *

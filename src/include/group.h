@@ -12,34 +12,17 @@ namespace Core {
  * This group can be child group in contrast to AbstractGroup or Event.
  */
 class Group: public AbstractGroup {
-private:
-    FieldVector parent_groups_;
-
+protected:
+    void check_field(const std::string& name, const boost::any& value) const
+        throw(boost::bad_any_cast, std::bad_cast);
 public:
-    Group(obj_t type, objid_t id, AbstractUI& ui):
-            AbstractGroup(type, id, ui), parent_groups_("parent_groups")
-                        /**< @copydoc AbstractGroup::AbstractGroup */
-    {
-        parent_groups_ = 
-            dynamic_cast<const FieldVector&>(pull("parent_groups"));
-    }
-
-    virtual const Field& read(const std::string& name) const
-            throw (std::bad_cast);
-                        /**< @copydoc AbstractGroup::read
-                         *
-                         * Possible names are: parent_group.
-                         */
-
-    virtual void update(const Field& field) throw (std::bad_cast);
-                        /**< @copydoc AbstractGroup::update
-                         * 
-                         * Possible names are: parent_group.
-                         */
+    Group(objid_t id, AbstractUI& ui):
+            AbstractGroup(id, ui)
+    {}
 };
 
 };
-
+/*
 namespace YAML {
     template<>
     struct convert<Core::Group> {
@@ -60,4 +43,4 @@ namespace YAML {
         }
     };
 }
-
+*/

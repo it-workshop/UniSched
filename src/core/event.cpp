@@ -2,30 +2,14 @@
 
 using namespace Core;
 
-const Field& Event::read(const std::string& name) const throw (std::bad_cast)
+void Event::check_field(const std::string& name, const boost::any& value) const
+    throw (boost::bad_any_cast, std::bad_cast)
 {
-    if (name == "begin")
+    AbstractGroup::check_field(name, value);
+    if ("begin" == name || "duration" == name)
     {
-        return begin_;
-    }
-    if (name == "duration")
-    {
-        return duration_;
-    }
-    return AbstractGroup::read(name);
-}
-
-void Event::update(const Field& field) throw (std::bad_cast)
-{
-    if (field.name() == "begin")
-    {
-        begin_ = dynamic_cast<const FieldTime&>(field);
+        boost::any_cast<time_t>(value);
         return;
     }
-    if (field.name() == "duration")
-    {
-        duration_ = dynamic_cast<const FieldTime&>(field);
-    }
-    AbstractGroup::update(field);
 }
 
