@@ -56,7 +56,7 @@ void CommandLineInterface::test_person() {
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
-    std::cout << "It's works!\n"
+    std::cout << "It works!\n"
         << "Name: " << boost::any_cast<std::string>(person->read("name"))
         << "\nSurname: " << boost::any_cast<std::string>(person->read("surname"))
         << "\nSex: " << boost::any_cast<std::string>(person->read("sex"))
