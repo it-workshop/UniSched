@@ -12,10 +12,9 @@ protected:
     void check_field(const std::string& name, const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast);
 public:
-    Event (objid_t id, AbstractUI& ui) throw (std::bad_cast):
+    Event (const objid_t id, AbstractUI& ui) throw (std::bad_cast):
             AbstractGroup(id, ui)
-    {
-    }
+    {}
 };
 
 };

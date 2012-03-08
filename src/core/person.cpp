@@ -2,7 +2,7 @@
 
 using namespace Core;
 
-Person::Person(objid_t id, AbstractUI& ui) throw (std::bad_cast):
+Person::Person(const objid_t id, AbstractUI& ui) throw (std::bad_cast):
     Object(id, ui)
 {
 }

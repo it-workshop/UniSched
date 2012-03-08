@@ -14,8 +14,8 @@ void AbstractUI::dump(const std::string& base_fname) const
          iter != objects_.end(); iter ++)
     {
         YAML::Node obj;
-        obj["Object"] = (unsigned) iter->second->type();
-        obj["ID"] = (unsigned) iter->first;
+        obj["Object"] = iter->second->type();
+        obj["ID"] = iter->first;
         // Just fuck-off, dude :)
         switch (iter->second->type()) {
         case PERSON:
@@ -44,12 +44,16 @@ void AbstractUI::dump(const std::string& base_fname) const
 void AbstractUI::load(const std::string& base_fname)
 {
     YAML::Node in = YAML::LoadFile(base_fname);
-/*
+
     for (YAML::const_iterator iter = in.begin(); iter != in.end(); iter ++)
     {
-        switch ((*iter)["Object"].as<obj_t>()) {
+        const obj_t new_obj_type = (const obj_t) (*iter)["Object"].as<obj_t>();
+        const objid_t new_obj_id = (const objid_t) (*iter)["ID"].as<objid_t>();
+        
+        switch (new_obj_type) {
         case PERSON:
-            objects_[(*iter)["ID"]] = (*iter)["VCard"].as<Person>();
+            objects_[new_obj_id] = new Person(new_obj_id, *this);
+//          objects_[new_obj_id] = (*iter)["VCard"].as<Person>();
         break;
         case GROUP:
         break;
@@ -59,8 +63,6 @@ void AbstractUI::load(const std::string& base_fname)
         break;
         }
     }
-*/
-/*
 }
 */
 static const bool operator==(const boost::any& lhs, const boost::any& rhs)

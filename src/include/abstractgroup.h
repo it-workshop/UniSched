@@ -23,7 +23,7 @@ protected:
     void check_field(const std::string& name, const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast);
 public:
-    AbstractGroup(objid_t id, AbstractUI& ui);
+    AbstractGroup(const objid_t id, AbstractUI& ui);
                         /**< @brief Constructor
                          * @param [in] id AbstractUIs object`s identificator.
                          * @param [in] ui Storage.
