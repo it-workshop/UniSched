@@ -108,13 +108,13 @@ public:
                          */
     {}
 
-    const boost::any& read(const std::string& name)
+    const boost::any& read(const std::string& name) const
                         /**< @brief Get field of the object.
                          * @param [in] name Name of the field to get.
                          * @return Corresponding field.
                          */
     {
-        return fields_[name];
+        return *(fields_.find(name));
     }
 
     void update(const std::string& name, const boost::any& value);
