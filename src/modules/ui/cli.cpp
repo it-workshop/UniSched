@@ -99,9 +99,10 @@ int CommandLineInterface::new_person(const std::vector<std::string>& tokens) {
 
     if (debug) {
         std::cout << "[DEBUG]\n";
-        for_each(person_fields.begin(), person_fields.end(), [&p] (std::string f) {
+        for(auto& f: person_fields) {
             std::cout << boost::format("%s: %s\n") % f % boost::any_cast<std::string>(p->read(f));
-        });
+        }
+
     }
 
     std::cout << "CREATED NEW PERSON" << std::endl;
@@ -143,10 +144,7 @@ int CommandLineInterface::run()
         if(tokens.empty()) continue;
         if(debug) {
             std::cout << "[DEBUG] Tokens: \n";
-            std::for_each(tokens.begin(), 
-                tokens.end(), 
-                [] (std::string s) 
-            { std::cout << "\t" << s; } );
+            for(auto& i: tokens) std::cout << "\t" << i;
             std::cout << std::endl;
         }
         if (Commands.find(tokens[0]) != Commands.end()) {
