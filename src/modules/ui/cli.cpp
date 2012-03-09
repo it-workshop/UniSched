@@ -72,28 +72,40 @@ int CommandLineInterface::usage(const std::vector<std::string>& unused) {
 
 int CommandLineInterface::new_person(const std::vector<std::string>& tokens) {
     if (tokens.size() != 4) {
-        std::cout << boost::format("Weird amount of args (was hoping for 3, got %s)\n") % (tokens.size() - 1)
+        std::cout << boost::format("Weird amount of args (was hoping for 3, got %s)") % (tokens.size() - 1)
             << std::endl;
         return -1;
     }
 
-    if ((tokens[3] != "MALE") && (tokens[3] != "FEMALE")) {
-        std::cout << "Bad gender. Expected MALE or FEMALE" << std::endl;
-        return -2;
-    }
-
     auto p = create<Core::Person>();
-    p->update("name", tokens[1]);
-    p->update("surname", tokens[2]);
-    p->update("sex", tokens[3]);
+
+    std::vector<std::string> person_fields;
+    person_fields.push_back("name");
+    person_fields.push_back("surname");
+    person_fields.push_back("sex");
+
+    for (int i = 0; i < 3; ++i)
+    {
+        try 
+        {
+            p->update(person_fields[i], tokens[i+1]);
+        }
+        catch (boost::bad_any_cast& bc)
+        {
+            std::cerr << boost::format("Bad cast happened in field '%s'") % (person_fields[i]) << std::endl;
+            return -2;
+        }
+    }
 
     if (debug) {
-        std::cout << "CREATED NEW PERSON\n"
-            << "Name: " << boost::any_cast<std::string>(p->read("name"))
-            << "\nSurname: " << boost::any_cast<std::string>(p->read("surname"))
-            << "\nSex: " << boost::any_cast<std::string>(p->read("sex"))
-            << std::endl;
+        std::cout << "[DEBUG]\n";
+        for_each(person_fields.begin(), person_fields.end(), [&p] (std::string f) {
+            std::cout << boost::format("%s: %s\n") % f % boost::any_cast<std::string>(p->read(f));
+        });
     }
+
+    std::cout << "CREATED NEW PERSON" << std::endl;
+
 
     return 0;
 }
@@ -133,8 +145,8 @@ int CommandLineInterface::run()
             std::cout << "[DEBUG] Tokens: \n";
             std::for_each(tokens.begin(), 
                 tokens.end(), 
-                [&] (std::string s) 
-            { std::cout << "\t" << s << "\n"; } );
+                [] (std::string s) 
+            { std::cout << "\t" << s; } );
             std::cout << std::endl;
         }
         if (Commands.find(tokens[0]) != Commands.end()) {
