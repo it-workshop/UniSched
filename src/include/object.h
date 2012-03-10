@@ -119,6 +119,11 @@ public:
         return *(fields_.find(name));
     }
 
+    const std::map<boost::any>& read() const
+    {
+        return fields_;
+    }
+
     void update(const std::string& name, const boost::any& value);
                         /**< @brief Change field of the object.
                          * @param [in] field Field to change.
