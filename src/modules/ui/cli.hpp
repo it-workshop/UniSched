@@ -46,7 +46,8 @@ public:
     int new_person(const std::vector<std::string>& tokens);
     int new_group(const std::vector<std::string>& tokens);
     int new_event(const std::vector<std::string>& tokens);
-    int search(const std::vector<std::string>& tokens);
+    int dig_for_objects(const std::vector<std::string>& tokens);
     int load_csv(const std::vector<std::string>& tokens);
+    int dump_csv(const std::vector<std::string>& tokens);
 };
 

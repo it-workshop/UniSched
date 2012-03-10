@@ -17,27 +17,42 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("help", &CommandLineInterface::usage));
     Commands.insert(std::make_pair("history", &CommandLineInterface::history));
     Commands.insert(std::make_pair("toggle_debug", &CommandLineInterface::toggle_debug));
-    Commands.insert(std::make_pair("search", &CommandLineInterface::search));
 
     Commands.insert(std::make_pair("person", &CommandLineInterface::new_person));
+    Commands.insert(std::make_pair("search", &CommandLineInterface::dig_for_objects));
     Commands.insert(std::make_pair("group", &CommandLineInterface::new_group));
     Commands.insert(std::make_pair("event", &CommandLineInterface::new_event));
     Commands.insert(std::make_pair("load_csv", &CommandLineInterface::load_csv));
+    Commands.insert(std::make_pair("dump_csv", &CommandLineInterface::dump_csv));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
         [this] (std::pair<const std::string, CLIMemCommand>& p) 
     { Completions.push_back(p.first); } );
 
-    Completions.push_back("load_csv person %file");
-    Completions.push_back("load_csv group %file");
-    Completions.push_back("load_csv event %file");
+    std::vector<std::string> dump_load_func_compl;
+    dump_load_func_compl.push_back("load_csv");
+    dump_load_func_compl.push_back("save_csv");
+    std::vector<std::string> datatypes;
+    datatypes.push_back("person");
+    datatypes.push_back("group");
+    datatypes.push_back("event");
+    for (auto f: dump_load_func_compl)  {
+        for (auto dt: datatypes) {
+            Completions.push_back(boost::str(boost::format("%s %s %file") % dt % f));
+        }
+    }
 
     Reader.RegisterCompletions(Completions);
 }
 
 int CommandLineInterface::quit(const std::vector<std::string>& unused) {
     done = true;
+    return 0;
+}
+
+int CommandLineInterface::dump_csv(const std::vector<std::string>& unused) {
+    std::cout << "NOT IMPLEMENTED YET" << std::endl;
     return 0;
 }
 
@@ -51,11 +66,12 @@ int CommandLineInterface::toggle_debug(const std::vector<std::string>& unused) {
     }
 }
 
-int CommandLineInterface::search(const std::vector<std::string>& tokens) {
+int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
+    //search(tokens) ?
     //for(auto f = p->read().begin(); f != p->read().end(); f++) {
         //std::cout << f->first;
     //}
-    std::cout << "Not implemented\n" << std::endl;
+    std::cout << "Not implemented yet\n" << std::endl;
 }
 
 std::vector<std::string> parse_line(std::string line) {
