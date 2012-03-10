@@ -22,6 +22,7 @@ void AbstractUI::dump(const std::string& base_fname) const
         obj["Object"] = iter->second->type();
         obj["ID"] = iter->first;
         // Just fuck-off, dude :)
+        /*
         switch (iter->second->type()) {
         case PERSON:
             obj["VCard"] = *static_cast<Person *>(iter->second);
@@ -36,12 +37,14 @@ void AbstractUI::dump(const std::string& base_fname) const
             obj["VCard"] = "No information";
         break;
         }
+        */
         out.push_back(obj);
+        
     }
 
     std::ofstream base(base_fname);
 
-    base << out.as<std::string>();
+    base << out;
     
     base.close();
 }
@@ -106,33 +109,14 @@ static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     throw boost::bad_any_cast();
 }
 
-void AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& parameters)
+std::vector<Object *> AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& parameters)
 {
     std::vector<Object *> results;
-    bool append = true;
-
+    for (auto m: objects_) {
+        results.push_back(m.second);
+    }
     for (std::pair<std::string, boost::any> parameter: parameters)
     {
-        if (append)
-        {
-            for (std::pair<const int, Object *> obj : objects_)
-            {
-                try
-                {
-                    if (parameter.second == obj.second->read(parameter.first))
-                    {
-                        results.push_back(obj.second);
-                    }
-                }
-                catch (std::bad_cast) /* Object has not field with that
-                                       * name, or it's type is not like
-                                       * field.
-                                       */
-                {}
-            }
-            append = false;
-            continue;
-        }
         for (auto it = results.begin(); it != results.end(); it++)
         {
             try
@@ -152,6 +136,8 @@ void AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& p
     {
         cache_.push_back(object);
     }
+
+    return results;
 }
 
 void AbstractUI::push(const int id, const std::string& name,

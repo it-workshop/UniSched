@@ -212,13 +212,13 @@ namespace YAML {
         static Node encode(const boost::any& a)
         { // Just in case someone forgets about converting boost::any to std::string in this case
             Node node;
-            node[0] = boost::any_cast<const std::string &>(a);
+            node = boost::any_cast<const std::string &>(a);
             return node;
         }
         static bool decode(const Node& node, boost::any& a)
         { // Currently works only with scalar boost::any-args
             if (!node.IsScalar()) return false;
-            a = node[0].as<std::string>();
+            a = node.as<std::string>();
             return true;
         }
     };
@@ -229,10 +229,10 @@ namespace YAML {
         {
             Node node;
             switch (ot) {
-            case Core::PERSON: node[0] = "Person"; return node;
-            case Core::GROUP: node[0] = "Group"; return node;
-            case Core::EVENT: node[0] = "Event"; return node;
-            default: node[0] = "Unknown"; return node;
+            case Core::PERSON: node = "Person"; return node;
+            case Core::GROUP: node = "Group"; return node;
+            case Core::EVENT: node = "Event"; return node;
+            default: node = "Unknown"; return node;
             }
             return node;
         }
@@ -241,7 +241,7 @@ namespace YAML {
             // Check if node is the right mask for Core::obj_t
             if (!node.IsScalar()) return false;
             if (!node.size() == 1) return false;
-            auto type = node[0].as<std::string>();
+            auto type = node.as<std::string>();
             if (type == "Person") ot = Core::PERSON;
             else if (type == "Group") ot = Core::GROUP;
             if (type == "Event") ot = Core::EVENT;
@@ -249,24 +249,6 @@ namespace YAML {
             return true;
         }
     };
-  /* 
-    template<> 
-    struct convert<Core::objid_t> {
-        static Node encode(const Core::objid_t& oid)
-        {
-            Node node;
-            node[0] = (unsigned) oid;
-            return node;
-        }
-        static bool decode(const Node& node, Core::objid_t& oid)
-        {
-            // Check if node is the right mask for Core::objid_t
-            if (!node.IsScalar()) return false;
-            if (!node.size() == 1) return false;
-            oid = (const unsigned) node[0].as<unsigned>();
-            return true;
-        }
-    };*/
 }
 
 #endif /* WITH_YAML */

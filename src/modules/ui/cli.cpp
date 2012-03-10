@@ -18,19 +18,41 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("history", &CommandLineInterface::history));
     Commands.insert(std::make_pair("toggle_debug", &CommandLineInterface::toggle_debug));
 
-    Commands.insert(std::make_pair("new_person", &CommandLineInterface::new_person));
-    Commands.insert(std::make_pair("new_group", &CommandLineInterface::new_group));
+    Commands.insert(std::make_pair("person", &CommandLineInterface::new_person));
+    Commands.insert(std::make_pair("search", &CommandLineInterface::dig_for_objects));
+    Commands.insert(std::make_pair("group", &CommandLineInterface::new_group));
+    Commands.insert(std::make_pair("event", &CommandLineInterface::new_event));
+    Commands.insert(std::make_pair("load_csv", &CommandLineInterface::load_csv));
+    Commands.insert(std::make_pair("dump_csv", &CommandLineInterface::dump_csv));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
         [this] (std::pair<const std::string, CLIMemCommand>& p) 
     { Completions.push_back(p.first); } );
 
+    std::vector<std::string> dump_load_func_compl;
+    dump_load_func_compl.push_back("load_csv");
+    dump_load_func_compl.push_back("save_csv");
+    std::vector<std::string> datatypes;
+    datatypes.push_back("person");
+    datatypes.push_back("group");
+    datatypes.push_back("event");
+    for (auto f: dump_load_func_compl)  {
+        for (auto dt: datatypes) {
+            Completions.push_back(boost::str(boost::format("%s %s %file") % dt % f));
+        }
+    }
+
     Reader.RegisterCompletions(Completions);
 }
 
 int CommandLineInterface::quit(const std::vector<std::string>& unused) {
     done = true;
+    return 0;
+}
+
+int CommandLineInterface::dump_csv(const std::vector<std::string>& unused) {
+    std::cout << "NOT IMPLEMENTED YET" << std::endl;
     return 0;
 }
 
@@ -41,6 +63,97 @@ int CommandLineInterface::toggle_debug(const std::vector<std::string>& unused) {
     }
     else {
         std::cout << "DEBUG OFF" << std::endl;
+    }
+}
+
+int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
+    //search(tokens) ?
+    //for(auto f = p->read().begin(); f != p->read().end(); f++) {
+        //std::cout << f->first;
+    //}
+    std::cout << "Not implemented yet\n" << std::endl;
+}
+
+std::vector<std::string> parse_line(std::string line) {
+    Tokenizer tok(line);
+    std::vector<std::string> v;
+    v.assign(tok.begin(), tok.end());
+
+    return v;
+}
+
+Core::Object* CommandLineInterface::mini_conveyer(std::string product_type) {
+    if (product_type == "person") {
+        return create<Core::Person>();
+    }
+    if (product_type == "event") {
+        return create<Core::Event>();
+    }
+    if (product_type == "group") {
+        return create<Core::Group>();
+    }
+}
+
+int CommandLineInterface::crazy_factory(std::string product_type, std::map<std::string, std::string> fields) {
+    auto o = mini_conveyer(product_type);
+    for (auto m: fields) {
+        o->update(m.first, m.second);
+    }
+    return 0;
+}
+
+int CommandLineInterface::load_csv(const std::vector<std::string>& tokens) {
+
+    std::ifstream in(tokens[2].c_str());
+
+    if(!in.is_open()) {
+        std::cout << boost::format("Couldn't open '%s'") % tokens[2] << std::endl;
+        return -1;
+    }
+
+    std::vector<std::string> v;
+    std::string line;
+    std::vector<std::string> legend;
+
+    if (std::getline(in, line)) {
+        legend = parse_line(line);
+        if (debug) {
+            std::cout << "[DEBUG]\n got legend:\n";
+            for(auto i: legend) {
+                std::cout << "\t" << i << "\n";
+            }
+        }
+    }
+    else {
+        std::cout << "Malformed legend (first line)" << std::endl;
+    }
+
+    auto counter = 0, notify = 10;
+    while(std::getline(in, line))
+    {
+        if (debug) {
+            counter++;
+            if (!(counter % notify)) {
+                std::cout << boost::format("parsing lines %s..%s\n") % counter % (counter + notify);
+            }
+        }
+        v = parse_line(line);
+
+        if(v.size() != legend.size()) continue;
+
+        if (debug) {
+            std::cout << "[DEBUG] fields on this line:\n";
+            for(auto i: v) {
+                std::cout << i << "\n";
+            }
+        }
+
+        auto o = mini_conveyer(tokens[1]);
+
+        for(auto i = 0; i < legend.size(); i++) {
+            o->update(legend[i], v[i]);
+        }
+        
     }
 }
 
@@ -123,6 +236,25 @@ int CommandLineInterface::new_group(const std::vector<std::string>& tokens) {
 
     if (debug) {
         std::cout << "CREATED NEW GROUP\n"
+            << "Name: " << boost::any_cast<std::string>(g->read("name"))
+            << std::endl;
+    }
+
+    return 0;
+}
+
+int CommandLineInterface::new_event(const std::vector<std::string>& tokens) {
+    if (tokens.size() != 2) {
+        std::cout << boost::format("Weird amount of args (was hoping for 1, got %s)") % (tokens.size() - 1)
+            << std::endl;
+        return -1;
+    }
+
+    auto g = create<Core::Group>();
+    g->update("name", tokens[1]);
+
+    if (debug) {
+        std::cout << "CREATED NEW EVENT\n"
             << "Name: " << boost::any_cast<std::string>(g->read("name"))
             << std::endl;
     }

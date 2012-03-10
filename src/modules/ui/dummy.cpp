@@ -23,6 +23,8 @@ void DummyInterface::test_person() {
         << "\nSurname: " << boost::any_cast<const std::string &>(person->read("surname"))
         << "\nSex: " << boost::any_cast<const std::string &>(person->read("sex"))
         << std::endl;
+
+    //dump("database.yaml");
 }
 
 void DummyInterface::test_group() {
