@@ -17,30 +17,29 @@ protected:
         throw(boost::bad_any_cast, std::bad_cast);
 public:
     Group(objid_t id, AbstractUI& ui):
-            AbstractGroup(id, ui)
+            AbstractGroup(GROUP, id, ui)
     {}
 };
 
 };
-/*
+
 namespace YAML {
     template<>
     struct convert<Core::Group> {
         static Node encode(const Core::Group& g)
         {
             Node node;
-            node["name"] =
-                dynamic_cast<const Core::FieldString &>(g.read("name")).value();
+            node["name"] = boost::any_cast<const std::string &>(g.read("name"));
             return node;
         }
         static bool decode(const Node& node, Core::Group& g)
         {
-            // Check if node is the right mask for class Person
-            //if (!node.IsMap()) return false;
+            // Check if node is the right mask for class Group
+            if (!node.IsMap()) return false;
             //if (!node.size() == 3) return false;
-            g.update(Core::FieldString("name", node["name"].as<std::string>()));
+            g.update("name", node["name"].as<std::string>());
             return true;
         }
     };
 }
-*/
+

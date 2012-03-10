@@ -5,7 +5,7 @@
 #include <event.h>
 
 using namespace Core;
-/*
+
 void AbstractUI::dump(const std::string& base_fname) const
 {
     YAML::Node out;
@@ -28,7 +28,7 @@ void AbstractUI::dump(const std::string& base_fname) const
             obj["VCard"] = *static_cast<Event *>(iter->second);
         break;
         default:
-            obj["VCard"] = "Unknown";
+            obj["VCard"] = "No information";
         break;
         }
         out.push_back(obj);
@@ -63,6 +63,17 @@ void AbstractUI::load(const std::string& base_fname)
         break;
         }
     }
+}
+/*
+template <typename T>
+void AbstractUI::add_object(objid_t id, std::map<const std::string, boost:any>& fields)
+{
+    Object *new_obj = new T(id, this);
+    for (auto iter = fields.begin(); iter != fields.end(); iter ++)
+    {
+        new_obj->update(iter->first, iter->second);
+    }
+    objects_[id] = new_obj;
 }
 */
 static const bool operator==(const boost::any& lhs, const boost::any& rhs)

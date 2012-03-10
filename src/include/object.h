@@ -24,6 +24,7 @@ private:
                          * classes which implement storage or manager
                          * functions.
                          */
+    obj_t type_;
 
     class AbstractUI& ui_;
                         /**< Manager of the objects.
@@ -32,12 +33,13 @@ private:
                          */
     std::map<const std::string, boost::any> fields_;
 protected:
-    const objid_t id() const { return id_; };
+    const objid_t id() const { return id_; }
                         /**< @brief Get id of the object.
                          * @return id of object.
                          * @internal Use this method in the manager and storage
                          * classes only.
                          */
+    const obj_t type() const { return type_; }
 protected:
     virtual void check_field(const std::string& name,
             const boost::any& value) const
@@ -100,15 +102,15 @@ protected:
 
 public:
 
-    Object(const objid_t id, AbstractUI& ui):
-        id_(id), ui_(ui)
+    Object(const obj_t type, const objid_t id, AbstractUI& ui):
+        type_(type), id_(id), ui_(ui)
                         /**< @brief Constructor.
                          * @param [in] id Identificator of the object.
                          * @param [in] ui Manager of objects.
                          */
     {}
 
-    const boost::any& read(const std::string& name) const
+    const boost::any read(const std::string& name) const
                         /**< @brief Get field of the object.
                          * @param [in] name Name of the field to get.
                          * @return Corresponding field.
@@ -125,7 +127,6 @@ public:
 
 };
 
-/*
 namespace YAML {
     template<>
     struct convert<Core::obj_t> {
@@ -170,10 +171,8 @@ namespace YAML {
             oid = (const unsigned) node[0].as<unsigned>();
             return true;
         }
-    };
-    */
-    /*
+    };*/
 }
-*/
+
 #include <abstractui.h>
 

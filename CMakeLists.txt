@@ -11,6 +11,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 find_package (Readline REQUIRED)
 find_package (Boost REQUIRED)
+find_library (YAML_CPP yaml-cpp)
 
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
 include_directories ("${Boost_INCLUDE_DIRS}")

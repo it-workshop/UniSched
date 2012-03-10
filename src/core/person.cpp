@@ -3,7 +3,7 @@
 using namespace Core;
 
 Person::Person(const objid_t id, AbstractUI& ui) throw (std::bad_cast):
-    Object(id, ui)
+    Object(PERSON, id, ui)
 {
 }
 

@@ -25,33 +25,27 @@ public:
 
 };
 
-/*
- * What the fuck? Why does this makes errors on build?
 namespace YAML {
     template<>
     struct convert<Core::Person> {
         static Node encode(const Core::Person& p)
         {
             Node node;
-            node["name"] = 
-                dynamic_cast<const Core::FieldString &>(p.read("name")).value();
-            node["surname"] =
-                dynamic_cast<const Core::FieldString &>(p.read("surname")).value();
-            node["sex"] =
-                dynamic_cast<const Core::FieldString &>(p.read("sex")).value();
+            node["name"] = boost::any_cast<const std::string &>(p.read("name")); 
+            node["surname"] = boost::any_cast<const std::string &>(p.read("surname"));
+            node["sex"] = boost::any_cast<const std::string &>(p.read("sex"));
             return node;
         }
         static bool decode(const Node& node, Core::Person& p)
         {
             // Check if node is the right mask for class Person
-            //if (!node.IsMap()) return false;
+            if (!node.IsMap()) return false;
             //if (!node.size() == 3) return false;
-            p.update(Core::FieldString("name", node["name"].as<std::string>()));
-            p.update(Core::FieldString("surname", node["surname"].as<std::string>()));
-            p.update(Core::FieldEnum("sex", node["sex"].as<std::string>()));
+            p.update("name", node["name"].as<std::string>());
+            p.update("surname", node["surname"].as<std::string>());
+            p.update("sex", node["sex"].as<std::string>());
             return true;
         }
     };
 }
-*/
 

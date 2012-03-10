@@ -3,8 +3,8 @@
 
 using namespace Core;
 
-AbstractGroup::AbstractGroup(objid_t id, AbstractUI& ui):
-    Object(id, ui)
+AbstractGroup::AbstractGroup(obj_t type, objid_t id, AbstractUI& ui):
+    Object(type, id, ui)
 {
 }
 
