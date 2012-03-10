@@ -119,7 +119,7 @@ int CommandLineInterface::load_csv(const std::vector<std::string>& tokens) {
     {
         if (debug) {
             counter++;
-            if (counter % notify) {
+            if (!(counter % notify)) {
                 std::cout << boost::format("parsing lines %s..%s\n") % counter % (counter + notify);
             }
         }
