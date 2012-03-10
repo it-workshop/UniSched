@@ -6,6 +6,8 @@
 #include <group.h>
 #include <person.h>
 
+#include "paths.hpp"
+
 
 class DummyInterface: public Core::AbstractUI {
 

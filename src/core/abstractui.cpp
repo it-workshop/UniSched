@@ -44,7 +44,7 @@ void AbstractUI::dump(const std::string& base_fname) const
 
     std::ofstream base(base_fname);
 
-    base << out;
+    base << out << std::endl;
     
     base.close();
 }

@@ -1,0 +1,6 @@
+#ifdef WITH_YAML
+#define DATABASE_YAML "${CMAKE_SOURCE_DIR}/fixtures/database.yaml"
+#endif
+#define GROUPS_CSV "${CMAKE_SOURCE_DIR}/fixtures/groups.csv"
+#define PERSONS_CSV "${CMAKE_SOURCE_DIR}/fixtures/persons.csv"
+#define EVENTS_CSV "${CMAKE_SOURCE_DIR}/fixtures/events.csv"

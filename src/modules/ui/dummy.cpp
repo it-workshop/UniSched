@@ -28,7 +28,7 @@ void DummyInterface::test_person() {
 
 #ifdef WITH_YAML
 void DummyInterface::yaml_load_dump() {
-    std::cout<<load("database.yaml")<<std::endl;
+    std::cout<<load(DATABASE_YAML)<<std::endl;
 
     dump("new_database.yaml");
 

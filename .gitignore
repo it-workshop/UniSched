@@ -3,4 +3,5 @@ raspisator
 *~
 *.swp
 *.swo
+src/modules/ui/paths.hpp
 
