@@ -16,9 +16,9 @@ option(WITH_YAML "Build with YAML support." Y)
 
 find_package (Boost REQUIRED)
 
-if (NOT WITH_DUMMYUI AND NOT WITH_CLI)
+if (WITH_CLI)
     find_package (Readline REQUIRED)
-endif (NOT WITH_DUMMYUI AND NOT WITH_CLI)
+endif (WITH_CLI)
 
 if (WITH_YAML)
     add_definitions(-DWITH_YAML)
