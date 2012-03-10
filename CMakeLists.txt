@@ -6,7 +6,7 @@ option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." Y)
 option(WITH_YAML "Build with YAML support." Y)
 option(WITH_TESTS_CXX11 "Check if the compiler handles the new stuff right." Y)
-option(WITH_TESTS_CORE "Build with Core tests." Y)
+option(WITH_TESTS_CORE "Build with Core tests." N)
 
 if (WITH_TESTS_CXX11)
     include (cmake/c++11/CheckCXX11Features.cmake)
