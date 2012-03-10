@@ -34,14 +34,18 @@ void Person::check_field(const std::string& name, const boost::any& value) const
         }
         return;
     }
-    if ("groups" == name)
-    {
-        if (typeid(std::vector<Object*>) != value.type()
-        && typeid(std::pair<Object *,bool>) != value.type())
-        {
-            throw boost::bad_any_cast();
-        }
-        return;
-    }
+}
+
+const std::string Person::link_field(const Object *object) const
+        throw (std::bad_cast)
+{
+    dynamic_cast<const AbstractGroup *>(object);
+    return "groups";
+}
+
+const std::string Person::back_link_field(const Object *object) const
+        throw (std::bad_cast)
+{
+    return link_field(object);
 }
 

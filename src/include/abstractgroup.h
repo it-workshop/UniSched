@@ -21,7 +21,11 @@ namespace Core {
 class AbstractGroup: public Object {
 protected:
     void check_field(const std::string& name, const boost::any& value) const
-        throw(boost::bad_any_cast, std::bad_cast);
+            throw(boost::bad_any_cast, std::bad_cast);
+    virtual const std::string link_field(const Object *object) const
+            throw (std::bad_cast);
+    virtual const std::string back_link_field(const Object *object) const
+            throw (std::bad_cast);
 public:
     AbstractGroup(const obj_t type, const objid_t id, AbstractUI& ui);
                         /**< @brief Constructor

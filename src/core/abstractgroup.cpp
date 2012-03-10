@@ -1,5 +1,5 @@
 #include <abstractgroup.h>
-#include <sstream>
+#include <group.h>
 
 using namespace Core;
 
@@ -21,14 +21,27 @@ void AbstractGroup::check_field(const std::string& name,
         boost::any_cast<time_t>(value);
         return;
     }
-    if ("child_groups" == name)
+}
+
+const std::string AbstractGroup::link_field(const Object *object) const
+        throw (std::bad_cast)
+{
+    try
     {
-        if (typeid(std::vector<Object*>) != value.type())
-        {
-            dynamic_cast<AbstractGroup *>(
-                boost::any_cast<std::pair<Object *,bool>>(value).first);
-        }
-        return;
+        dynamic_cast<const Person *>(object);
+        return "people";
     }
+    catch (std::bad_cast)
+    {}
+
+    dynamic_cast<const Group *>(object);
+    return "children_groups";
+}
+
+const std::string AbstractGroup::back_link_field(const Object *object) const
+        throw (std::bad_cast)
+{
+    dynamic_cast<const Person *>(object);
+    return "people";
 }
 

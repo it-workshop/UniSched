@@ -2,11 +2,13 @@
 
 #include <string>
 #include <map>
+
 #include <boost/any.hpp>
 
 #ifdef WITH_YAML
 #include <yaml-cpp/yaml.h>
 #endif /* WITH_YAML */
+
 
 namespace Core {
 
@@ -42,7 +44,7 @@ protected:
                          * classes only.
                          */
     const obj_t type() const { return type_; }
-protected:
+
     virtual void check_field(const std::string& name,
             const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast) = 0;
@@ -101,7 +103,32 @@ protected:
                          *
                          * @endcode
                          */
+    virtual const std::string link_field(const Object * object) const
+            throw (std::bad_cast) = 0;
+                        /**< @brief Check, can this object link that one and
+                         * return name of the corresponding field of this
+                         * object.
+                         * @param [in] object Object to check.
+                         * 
+                         * This method must throw std::bad_cast, when connect
+                         * can not be set.
+                         */
+    virtual const std::string back_link_field(const Object * object) const
+            throw (std::bad_cast) = 0;
+                        /**< @brief Check, can this object link that one and
+                         * return name of the corresponding field of this
+                         * object on the second link.
+                         *
+                         * This method must throw std::bad_cast, when connect
+                         * can not be set.
+                         */
+    void update(const std::string& name, Object * object, const bool connect)
+            throw (boost::bad_any_cast);
 
+    void back_connect(Object * object, const bool connect) throw (std::bad_cast)
+    {
+        update(back_link_field(object), object, connect);
+    }
 public:
 
     Object(const obj_t type, const objid_t id, AbstractUI& ui):
@@ -130,6 +157,12 @@ public:
                         /**< @brief Change field of the object.
                          * @param [in] field Field to change.
                          */
+    void connect(Object * object, const bool connect = true) throw (std::bad_cast)
+    {
+        update(link_field(object), object, connect);
+        object->back_connect(this, connect);
+    }
+
 };
 
 };

@@ -2,18 +2,16 @@
 
 using namespace Core;
 
-void Group::check_field(const std::string& name, const boost::any& value) const
-    throw(boost::bad_any_cast, std::bad_cast)
+const std::string Group::back_link_field(const Object *object) const
+        throw (std::bad_cast)
 {
-    AbstractGroup::check_field(name, value);
-    if ("parent_groups" == name)
+    try
     {
-        if (typeid(std::vector<Object *>) != value.type())
-        {
-            dynamic_cast<AbstractGroup *>(
-                boost::any_cast<std::pair<Object *, bool>>(value).first);
-        }
-        return;
+        dynamic_cast<const AbstractGroup *>(object);
+        return "parent_groups";
     }
+    catch (std::bad_cast)
+    {}
+    return AbstractGroup::back_link_field(object);
 }
 

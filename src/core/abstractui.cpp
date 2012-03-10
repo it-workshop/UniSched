@@ -72,9 +72,7 @@ bool AbstractUI::load(const std::string& base_fname)
         }
     }
 }
-
-#endif /* WITH_YAML */
-
+/* Template method in the .cpp? No way if it is not internal. Be careful. */
 template <typename T>
 void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)
 {
@@ -85,6 +83,8 @@ void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost:
     }
     objects_[id] = new_obj;
 }
+
+#endif /* WITH_YAML */
 
 static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     throw (boost::bad_any_cast)
