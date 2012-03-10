@@ -36,6 +36,15 @@ private:
                          * methods only.
                          */
     std::map<const std::string, boost::any> fields_;
+
+    void update(const std::string& name, Object * object, const bool connect)
+            throw (boost::bad_any_cast);
+
+    void back_connect(Object * object, const bool connect) throw (std::bad_cast)
+    {
+        update(back_link_field(object), object, connect);
+    }
+
 protected:
     const objid_t id() const { return id_; }
                         /**< @brief Get id of the object.
@@ -122,13 +131,6 @@ protected:
                          * This method must throw std::bad_cast, when connect
                          * can not be set.
                          */
-    void update(const std::string& name, Object * object, const bool connect)
-            throw (boost::bad_any_cast);
-
-    void back_connect(Object * object, const bool connect) throw (std::bad_cast)
-    {
-        update(back_link_field(object), object, connect);
-    }
 public:
 
     Object(const obj_t type, const objid_t id, AbstractUI& ui):
