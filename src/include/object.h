@@ -129,6 +129,52 @@ public:
 
 namespace YAML {
     template<>
+    struct convert<std::map<const std::string, boost::any>> {
+        static Node encode(const std::map<const std::string, boost::any>& fields) 
+        { // This convertion must match only for the object's VCard
+            Node node;
+            // Shouldn't I write something about const_iterator? Nah
+            for (auto iter = fields.begin(); iter != fields.end(); iter ++)
+            {
+                if (iter->first == "name" or
+                    iter->first == "surname" or
+                    iter->first == "sex")
+                    node[iter->first] = boost::any_cast<const std::string &>(iter->second);
+                else 
+                if (iter->first == "begin" or
+                    iter->first == "duration" or
+                    iter->first == "birthday")
+                    node[iter->first] = boost::any_cast<const time_t &>(iter->second);
+            }
+        }
+        static bool decode(const Node& node, std::map<const std::string, boost::any>& fields)
+        {
+            if (!node.IsMap()) return false;
+            for (auto iter = node.begin(); iter != node.end(); iter ++)
+            {
+                fields[iter->first.as<std::string>()] = iter->second.as<std::string>();
+            }
+            return true;
+        }
+    };
+
+    template<>
+    struct convert<boost::any> {
+        static Node encode(const boost::any& a)
+        { // Just in case someone forgets about converting boost::any to std::string in this case
+            Node node;
+            node[0] = boost::any_cast<const std::string &>(a);
+            return node;
+        }
+        static bool decode(const Node& node, boost::any& a)
+        { // Currently works only with scalar boost::any-args
+            if (!node.IsScalar()) return false;
+            a = node[0].as<std::string>();
+            return true;
+        }
+    };
+
+    template<>
     struct convert<Core::obj_t> {
         static Node encode(const Core::obj_t& ot)
         {
@@ -146,7 +192,7 @@ namespace YAML {
             // Check if node is the right mask for Core::obj_t
             if (!node.IsScalar()) return false;
             if (!node.size() == 1) return false;
-            const std::string type = node[0].as<std::string>();
+            auto type = node[0].as<std::string>();
             if (type == "Person") ot = Core::PERSON;
             else if (type == "Group") ot = Core::GROUP;
             if (type == "Event") ot = Core::EVENT;

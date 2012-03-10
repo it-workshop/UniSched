@@ -55,6 +55,9 @@ private:
     }
 
 protected:
+    template <typename T>
+    void add_object(objid_t id, const std::map<const std::string, boost::any>& fields);
+
     void push(const int id, const std::string& name, const boost::any& value)
                         /**< @brief Save @a field of object with @a id it hte
                          * database
@@ -150,7 +153,7 @@ public:
                          * @return Program return code.
                          */
     void dump(const std::string& base_fname) const;
-    void load(const std::string& base_fname);
+    bool load(const std::string& base_fname);
 };
 
 };

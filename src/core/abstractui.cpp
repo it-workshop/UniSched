@@ -41,41 +41,44 @@ void AbstractUI::dump(const std::string& base_fname) const
     base.close();
 }
 
-void AbstractUI::load(const std::string& base_fname)
+bool AbstractUI::load(const std::string& base_fname)
 {
     YAML::Node in = YAML::LoadFile(base_fname);
 
     for (YAML::const_iterator iter = in.begin(); iter != in.end(); iter ++)
     {
-        const obj_t new_obj_type = (const obj_t) (*iter)["Object"].as<obj_t>();
-        const objid_t new_obj_id = (const objid_t) (*iter)["ID"].as<objid_t>();
-        
-        switch (new_obj_type) {
+        const obj_t type = (*iter)["Object"].as<obj_t>();
+        const objid_t id = (*iter)["ID"].as<objid_t>();
+        const std::map<const std::string, boost::any> vcard =
+            (*iter)["VCard"].as<std::map<const std::string, boost::any>>();
+        switch (type) {
         case PERSON:
-            objects_[new_obj_id] = new Person(new_obj_id, *this);
-//          objects_[new_obj_id] = (*iter)["VCard"].as<Person>();
+            add_object<Person>(id, vcard);
         break;
         case GROUP:
+            add_object<Group>(id, vcard);
         break;
         case EVENT:
+            add_object<Event>(id, vcard);
         break;
         default:
+            return false;
         break;
         }
     }
 }
-/*
+
 template <typename T>
-void AbstractUI::add_object(objid_t id, std::map<const std::string, boost:any>& fields)
+void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)
 {
-    Object *new_obj = new T(id, this);
+    Object *new_obj = new T(id, *this);
     for (auto iter = fields.begin(); iter != fields.end(); iter ++)
     {
         new_obj->update(iter->first, iter->second);
     }
     objects_[id] = new_obj;
 }
-*/
+
 static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     throw (boost::bad_any_cast)
 {
