@@ -57,38 +57,27 @@ private:
         return objects_[object->id()] = object;
     }
 
+    class AbstractStorage *storage_;
+
+    void create_in_storage(const Object *object);
+
 protected:
+#ifdef WITH_YAML
     template <typename T>
     void add_object(objid_t id, const std::map<const std::string, boost::any>& fields);
+#endif /* WITH_YAML */
 
-    void push(const int id, const std::string& name, const boost::any& value)
+    void push(const int id, const std::string& name, const boost::any& value);
                         /**< @brief Save @a field of object with @a id it hte
                          * database
                          * @param [in] id Identificator of object.
-                         * @param [in] field Field to save.
-                         *
-                         * TODO: Empty method. Write it, when create database
-                         * class.
+                         * @param [in] name Name of the field to save.
+                         * @param [in] value Value of the field to save.
                          */
-    {}
-
-    void remove(Object * object)
+    void remove(Object * object);
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
                          */
-    {
-        objects_.erase(objects_.find(object->id()));
-        delete object;
-
-        for (auto it = cache_.begin(); it != cache_.end(); it++)
-        {
-            if (*it == object)
-            {
-                cache_.erase(it);
-                return;
-            }
-        }
-    }
 
     template <class T>
     Object * create()
@@ -97,6 +86,7 @@ protected:
                          */
     {
         cache_.push_back(set_object(new T(new_id(), *this)));
+        create_in_storage(cache_.back());
         return cache_.back();
     }
 
@@ -141,6 +131,11 @@ protected:
         cache_.clear();
     }
 
+    void set_storage(class AbstractStorage *storage)
+    {
+        storage_ = storage;
+    }
+
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
@@ -155,8 +150,11 @@ public:
                          * from main.
                          * @return Program return code.
                          */
+
+#ifdef WITH_YAML
     void dump(const std::string& base_fname) const;
     bool load(const std::string& base_fname);
+#endif /* WITH_YAML */
 };
 
 };

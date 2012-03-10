@@ -30,11 +30,11 @@ public:
         ui_ = ui;
     }
 
-    virtual void load() = 0;
-
-    virtual void push(const std::string& name, const boost::any& value) = 0;
-
-    virtual void save() = 0;
+    virtual void push(const objid_t id, const std::string& name, const boost::any& value) = 0;
+    virtual void connect() = 0;
+    virtual void disconnect() = 0;
+    virtual void create(const Object *object) = 0;
+    virtual void remove(const objid_t id) = 0;
 };
 
 }

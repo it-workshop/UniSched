@@ -154,3 +154,40 @@ void AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& p
     }
 }
 
+void AbstractUI::push(const int id, const std::string& name,
+        const boost::any& value)
+{
+    if (storage_)
+    {
+        storage_->push(id, name, value);
+    }
+}
+
+void AbstractUI::remove(Object *object)
+
+{
+    int id = object->id();
+    objects_.erase(objects_.find(id));
+    delete object;
+    if (storage_)
+    {
+        storage_->remove(id);
+    }
+    for (auto it = cache_.begin(); it != cache_.end(); it++)
+    {
+        if (*it == object)
+        {
+            cache_.erase(it);
+            return;
+        }
+    }
+}
+
+void AbstractUI::create_in_storage(const Object *object)
+{
+    if (storage_)
+    {
+        storage_->create(object);
+    }
+}
+
