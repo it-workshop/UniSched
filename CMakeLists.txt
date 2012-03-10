@@ -3,7 +3,7 @@ project (UniSched CXX)
 
 option(WITH_SQLITE "Build with SQLite support." N)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
-option(WITH_CLI "Build with CLI support." N)
+option(WITH_CLI "Build with CLI support." Y)
 option(WITH_YAML "Build with YAML support." Y)
 option(WITH_TESTS_CXX11 "Check if the compiler handles the new stuff right." N)
 option(WITH_TESTS_CORE "Build with Core tests." N)

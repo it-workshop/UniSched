@@ -1,0 +1,22 @@
+- Object: Person
+  ID: 3
+  VCard:
+    name: Usama
+    surname: Ben Laden
+    sex: MALE
+- Object: Person
+  ID: 0
+  VCard:
+    name: John
+    surname: Connor
+    sex: MALE
+- Object: Person
+  ID: 1
+  VCard:
+    name: Harry
+    surname: Potta
+    sex: MALE
+- Object: Group
+  ID: 2
+  VCard:
+    name: Suppa-p Truppa-pa...
