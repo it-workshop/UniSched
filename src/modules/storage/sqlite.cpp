@@ -1,14 +1,16 @@
+#include <sstream>
+
 #include <abstractui.h>
 
 #include <sqlite3.h>
 
 class SQLiteStorage: public Core::AbstractStorage {
-friend SQLiteStorage_read_callback();
+friend void SQLiteStorage_read_callback(void *object, int, char**, int**);
 private:
     std::string db_name_;
-    bool create;
-    sqlite3 connection_;
-    objid_t current_id_;
+    bool create_;
+    sqlite3 *connection_;
+    Core::objid_t current_id_;
     std::string field_name_;
     std::string string_value_;
     std::string name_;
@@ -25,7 +27,7 @@ private:
         CHECK_OTHER
     } read_state_;
 
-    void check_create();
+    void create_tables();
     void load();
 public:
     SQLiteStorage(std::vector<Core::Module *>* modules, void *handle):
@@ -41,6 +43,10 @@ public:
     virtual void create(const Core::Object *object);
     virtual void remove(const Core::objid_t id);
 };
+
+int SQLiteStorage_read_callback(void *object, int, char**, char**)
+{
+}
 
 void SQLiteStorage::init(const std::vector<std::string>& args)
 {
@@ -61,20 +67,22 @@ void SQLiteStorage::init(const std::vector<std::string>& args)
 void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         const boost::any& value)
 {
+    std::stringstream query;
+    query << "SELECT * FROM fields WHERE object=" << id << " AND name="
+          << name << ";";
+
     if (typeid(std::string) == value.type())
     {
         read_state_ = CHECK_STRING;
-        sqlite3_exec(connection_,
-            "SELECT * FROM fields WHERE object=" + id + " AND name=" + name +
-                ";", SQLiteStorage_read_callback, this, nullptr);
+        sqlite3_exec(connection_, query.str().c_str(),
+                    SQLiteStorage_read_callback, this, nullptr);
         return;
     }
     if (typeid(std::string) == value.type())
     {
         read_state_ = CHECK_TIME;
-        sqlite3_exec(connection_,
-            "SELECT * FROM fields WHERE object=" + id + " AND name=" + name +
-                ";", SQLiteStorage_read_callback, this, nullptr);
+        sqlite3_exec(connection_, query.str().c_str(),
+                    SQLiteStorage_read_callback, this, nullptr);
         return;
     }
     throw boost::bad_any_cast();
@@ -82,22 +90,22 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
 
 void SQLiteStorage::connect()
 {
-    sqlite3_open(db_name_, &connection_);
+    sqlite3_open(db_name_.c_str(), &connection_);
 
-    if (SQLITE_OK != sqlite3_errcode(db))
+    if (SQLITE_OK != sqlite3_errcode(connection_))
     {
-        throw db;
+        throw;
     }
 
     if (create_)
     {
-        create();
+        create_tables();
     }
 
-    load()
+    load();
 }
 
-void SQLiteStorage::create()
+void SQLiteStorage::create_tables()
 {
     sqlite3_exec( connection_,
         "DROP TABLE IF EXISTS objects;"\
@@ -133,14 +141,17 @@ void SQLiteStorage::disconnect()
 
 void SQLiteStorage::create(const Core::Object *object)
 {
-    sqlite3_exec(connection_, "INSERT INTO objects (type) VALUES (" +
-        object->type() + ");", nullptr, nullptr, nullptr);
+    std::stringstream query;
+    query << "INSERT INTO objects (type) VALUES (" << object->type() << ");";
+    sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, nullptr);
 }
 
 void SQLiteStorage::remove(const Core::objid_t id)
 {
-    sqlite3_exec(connection_, "DELETE FROM fields WHERE object=" + id + ");"\
-        "DELETE FROM objects WHERE id=" + id + ");", nullptr, nullptr, nullptr);
+    std::stringstream query;
+    query << "DELETE FROM fields WHERE object=" << id << ";"
+          << "DELETE FROM objects WHERE id=" << id << ";";
+    sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, nullptr);
 }
 
 extern "C" {

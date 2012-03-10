@@ -52,8 +52,6 @@ protected:
                          * @internal Use this method in the manager and storage
                          * classes only.
                          */
-    const obj_t type() const { return type_; }
-
     virtual void check_field(const std::string& name,
             const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast) = 0;
@@ -132,6 +130,7 @@ protected:
                          * can not be set.
                          */
 public:
+    const obj_t type() const { return type_; }
 
     Object(const obj_t type, const objid_t id, AbstractUI& ui):
         type_(type), id_(id), ui_(ui)
