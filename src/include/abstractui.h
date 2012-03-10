@@ -100,7 +100,7 @@ protected:
     }
 
     
-    void search(const std::vector<std::pair<std::string, boost::any>>& parameters);
+    std::vector<Object*> search(const std::vector<std::pair<std::string, boost::any>>& parameters);
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
                          *
