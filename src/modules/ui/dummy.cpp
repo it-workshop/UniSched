@@ -26,12 +26,14 @@ void DummyInterface::test_person() {
 
 }
 
+#ifdef WITH_YAML
 void DummyInterface::yaml_load_dump() {
     std::cout<<load("database.yaml")<<std::endl;
 
     dump("new_database.yaml");
 
 }
+#endif
 
 void DummyInterface::test_group() {
     auto g = create<Core::Group>();
@@ -67,8 +69,10 @@ int DummyInterface::run()
     show_objects();
     std::cout << "[DummyInterface::show_objects] SEARCH works!";
 
+#ifdef WITH_YAML
     yaml_load_dump();
     std::cout << "[DummyInterface::yaml_load_dump] YAML LOAD/DUMP works!" << std::endl;
+#endif
 
     return 0;
 }
