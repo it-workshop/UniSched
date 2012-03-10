@@ -15,3 +15,6 @@ add_test (create_event_test tester --iface TESTINGUI_CREATE_EVENT)
 add_library (set_defined_field_right SHARED set_defined_field_right.cpp)
 add_test (set_defined_field_right_test tester --iface TESTINGUI_SET_DEFINED_FIELD_RIGHT)
 
+add_library (set_defined_field_wrong SHARED set_defined_field_wrong.cpp)
+add_test (set_defined_field_wrong_test tester --iface TESTINGUI_SET_DEFINED_FIELD_WRONG)
+
