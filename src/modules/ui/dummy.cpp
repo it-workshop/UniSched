@@ -38,7 +38,7 @@ void DummyInterface::test_group() {
 void DummyInterface::show_objects() {
     auto rez = this->search();
 
-    std::cout << "[DummyInterface::show_objects] SEARCH works!\nDumping results";
+    std::cout << "[DummyInterface::show_objects] SEARCH works!\nDumping results\n";
 
     for (auto o : rez) {
         std::cout << "--OBJ--\n";
