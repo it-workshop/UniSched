@@ -91,7 +91,7 @@ protected:
     }
 
 
-    std::vector<Object*> search(const std::vector<std::pair<std::string, boost::any>>& parameters);
+    std::vector<Object*> search(const std::map<std::string, boost::any>& parameters);
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
                          *
@@ -103,7 +103,7 @@ protected:
 
     std::vector<Object*> search()
     {
-        std::vector<std::pair<std::string, boost::any>> no_parameters;
+        std::map<std::string, boost::any> no_parameters;
         return this->search(no_parameters);
     }
                         /**< @brief Search objects by some parameters.

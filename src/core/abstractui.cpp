@@ -113,19 +113,19 @@ static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     throw boost::bad_any_cast();
 }
 
-std::vector<Object *> AbstractUI::search(const std::vector<std::pair<std::string, boost::any>>& parameters)
+std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>& parameters)
 {
     std::vector<Object *> results;
     for (auto m: objects_) {
         results.push_back(m.second);
     }
-    for (std::pair<std::string, boost::any> parameter: parameters)
+    for (auto p: parameters)
     {
         for (auto it = results.begin(); it != results.end(); it++)
         {
             try
             {
-                if (parameter.second == (*it)->read(parameter.first))
+                if (p.second == (*it)->read(p.first))
                 {
                     continue;
                 }
