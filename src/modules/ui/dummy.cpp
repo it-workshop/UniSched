@@ -43,7 +43,6 @@ void DummyInterface::show_objects() {
     for (auto o : rez) {
         std::cout << "--OBJ--\n";
         for (auto f : o->read()) {
-            //std::cout << boost::any_cast<const std::string>(o->read("name")) << "\n";
             std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
         }
     }

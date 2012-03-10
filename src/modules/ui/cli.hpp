@@ -30,7 +30,7 @@ private:
     swift::SReadline Reader;
     std::vector<std::string> Completions;
     int crazy_factory(std::string product_type, std::map<std::string, std::string> fields);
-    Core::Object* mini_conveyer(std::string product_type);
+    Core::Object* mini_conveyor(std::string product_type);
 
 public:
     void init (const std::vector< std::string > &args);

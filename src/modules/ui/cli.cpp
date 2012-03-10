@@ -39,7 +39,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     datatypes.push_back("event");
     for (auto f: dump_load_func_compl)  {
         for (auto dt: datatypes) {
-            Completions.push_back(boost::str(boost::format("%s %s %file") % dt % f));
+            Completions.push_back(boost::str(boost::format("%s %s %%file") % f % dt));
         }
     }
 
@@ -67,10 +67,14 @@ int CommandLineInterface::toggle_debug(const std::vector<std::string>& unused) {
 }
 
 int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
-    //search(tokens) ?
+    auto rez = this->search();
+    for (auto o : rez) {
+        for (auto f : o->read()) {
+            std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+        }
+    }
     //for(auto f = p->read().begin(); f != p->read().end(); f++) {
         //std::cout << f->first;
-    //}
     std::cout << "Not implemented yet\n" << std::endl;
 }
 
@@ -82,7 +86,7 @@ std::vector<std::string> parse_line(std::string line) {
     return v;
 }
 
-Core::Object* CommandLineInterface::mini_conveyer(std::string product_type) {
+Core::Object* CommandLineInterface::mini_conveyor(std::string product_type) {
     if (product_type == "person") {
         return create<Core::Person>();
     }
@@ -95,7 +99,7 @@ Core::Object* CommandLineInterface::mini_conveyer(std::string product_type) {
 }
 
 int CommandLineInterface::crazy_factory(std::string product_type, std::map<std::string, std::string> fields) {
-    auto o = mini_conveyer(product_type);
+    auto o = mini_conveyor(product_type);
     for (auto m: fields) {
         o->update(m.first, m.second);
     }
@@ -148,7 +152,7 @@ int CommandLineInterface::load_csv(const std::vector<std::string>& tokens) {
             }
         }
 
-        auto o = mini_conveyer(tokens[1]);
+        auto o = mini_conveyor(tokens[1]);
 
         for(auto i = 0; i < legend.size(); i++) {
             o->update(legend[i], v[i]);
