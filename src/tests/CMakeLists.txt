@@ -11,3 +11,7 @@ add_test (create_group_test tester --iface TESTINGUI_CREATE_GROUP)
 
 add_library (create_event SHARED create_event.cpp)
 add_test (create_event_test tester --iface TESTINGUI_CREATE_EVENT)
+
+add_library (set_defined_field_right SHARED set_defined_field_right.cpp)
+add_test (set_defined_field_right_test tester --iface TESTINGUI_SET_DEFINED_FIELD_RIGHT)
+
