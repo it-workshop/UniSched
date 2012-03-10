@@ -17,7 +17,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("help", &CommandLineInterface::usage));
     Commands.insert(std::make_pair("history", &CommandLineInterface::history));
     Commands.insert(std::make_pair("toggle_debug", &CommandLineInterface::toggle_debug));
-    Commands.insert(std::make_pair("search", &CommandLineInterface::toggle_debug));
+    Commands.insert(std::make_pair("search", &CommandLineInterface::search));
 
     Commands.insert(std::make_pair("person", &CommandLineInterface::new_person));
     Commands.insert(std::make_pair("group", &CommandLineInterface::new_group));
@@ -56,8 +56,6 @@ int CommandLineInterface::search(const std::vector<std::string>& tokens) {
         //std::cout << f->first;
     //}
     std::cout << "Not implemented\n" << std::endl;
-
-
 }
 
 std::vector<std::string> parse_line(std::string line) {
