@@ -69,7 +69,9 @@ void DummyInterface::show_objects() {
     for (auto o : rez) {
         std::cout << "--OBJ--\n";
         for (auto f : o->read()) {
-            std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+            if (f.first != "groups" && f.first != "people") {
+                std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+            }
         }
     }
 
