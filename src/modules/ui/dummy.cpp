@@ -45,6 +45,24 @@ void DummyInterface::test_group() {
 
 }
 
+void DummyInterface::test_connect() {
+    auto g = create<Core::Group>();
+    g->update("name", std::string("SW gang"));
+
+    auto r2d2 = create<Core::Person>();
+    r2d2->update("name", std::string("r2"));
+    r2d2->update("surname", std::string("d2"));
+    r2d2->update("sex", std::string("MALE"));
+
+    auto c3po = create<Core::Person>();
+    r2d2->update("name", std::string("c3"));
+    r2d2->update("surname", std::string("po"));
+    r2d2->update("sex", std::string("MALE"));
+
+    g->connect(r2d2);
+    g->connect(c3po);
+}
+
 void DummyInterface::show_objects() {
     auto rez = this->search();
 
@@ -66,6 +84,9 @@ int DummyInterface::run()
     
     test_group();
     std::cout << "[DummyInterface::test_group] GROUP CREATION works!\n";
+
+    test_connect();
+    std::cout << "[DummyInterface::test_connect] CONNECT works!" << std::endl;
 
     show_objects();
     std::cout << "[DummyInterface::show_objects] SEARCH works!" << std::endl;

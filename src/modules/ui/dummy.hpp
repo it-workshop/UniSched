@@ -16,6 +16,7 @@ public:
     int run();
     void test_person();
     void test_group();
+    void test_connect();
     void show_objects();
     bool yaml_load();
     void yaml_dump();
