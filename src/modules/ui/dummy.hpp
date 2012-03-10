@@ -15,6 +15,7 @@ public:
     void test_person();
     void test_group();
     void show_objects();
+    void yaml_load_dump();
     DummyInterface(std::vector<Module *>* module, void *handle);
 };
 

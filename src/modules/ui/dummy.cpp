@@ -23,33 +23,27 @@ void DummyInterface::test_person() {
     pers->update("name", std::string("Harry"));
     pers->update("surname", std::string("Potta"));
     pers->update("sex", std::string("MALE"));
-    
-    auto suppa_truppa = create<Core::Group>();
-    suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
 
-    std::cout
-        << "Name: " << boost::any_cast<const std::string &>(person->read("name"))
-        << "\nSurname: " << boost::any_cast<const std::string &>(person->read("surname"))
-        << "\nSex: " << boost::any_cast<const std::string &>(person->read("sex"))
-        << std::endl;
+}
 
+void DummyInterface::yaml_load_dump() {
     std::cout<<load("database.yaml")<<std::endl;
 
     dump("new_database.yaml");
+
 }
 
 void DummyInterface::test_group() {
     auto g = create<Core::Group>();
     g->update("name", std::string("Miles Davis band"));
-    std::cout << "[DummyInterface::test_group] GROUP CREATION works!\n"
-        << "Name: " << boost::any_cast<const std::string &>(g->read("name"))
-        << std::endl;
+
+    auto suppa_truppa = create<Core::Group>();
+    suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
+
 }
 
 void DummyInterface::show_objects() {
     auto rez = this->search();
-
-    std::cout << "[DummyInterface::show_objects] SEARCH works!\nDumping results\n";
 
     for (auto o : rez) {
         std::cout << "--OBJ--\n";
@@ -58,16 +52,24 @@ void DummyInterface::show_objects() {
         }
     }
 
-    std::cout << "[DummyInterface::show_objects] DONE." << std::endl;
-
 }
 
 int DummyInterface::run()
 {
     std::cout << "[DummyInterface::run] testing" << std::endl;
+
     test_person();
+    std::cout << "[DummyInterface::test_person] PERSON CREATION works!" << std::endl;
+    
     test_group();
+    std::cout << "[DummyInterface::test_group] GROUP CREATION works!" << std::endl;
+
     show_objects();
+    std::cout << "[DummyInterface::show_objects] SEARCH works!";
+
+    yaml_load_dump();
+    std::cout << "[DummyInterface::yaml_load_dump] YAML LOAD/DUMP works!" << std::endl;
+
     return 0;
 }
 
