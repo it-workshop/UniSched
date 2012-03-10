@@ -27,11 +27,12 @@ void DummyInterface::test_person() {
 }
 
 #ifdef WITH_YAML
-void DummyInterface::yaml_load_dump() {
-    std::cout<<load(DATABASE_YAML)<<std::endl;
+bool DummyInterface::yaml_load() {
+    return load(DATABASE_YAML);
+}
 
+void DummyInterface::yaml_dump() {
     dump("new_database.yaml");
-
 }
 #endif
 
@@ -58,20 +59,25 @@ void DummyInterface::show_objects() {
 
 int DummyInterface::run()
 {
-    std::cout << "[DummyInterface::run] testing" << std::endl;
+    std::cout << "[DummyInterface::run] testing\n";
 
     test_person();
-    std::cout << "[DummyInterface::test_person] PERSON CREATION works!" << std::endl;
+    std::cout << "[DummyInterface::test_person] PERSON CREATION works!\n";
     
     test_group();
-    std::cout << "[DummyInterface::test_group] GROUP CREATION works!" << std::endl;
+    std::cout << "[DummyInterface::test_group] GROUP CREATION works!\n";
 
     show_objects();
-    std::cout << "[DummyInterface::show_objects] SEARCH works!";
+    std::cout << "[DummyInterface::show_objects] SEARCH works!" << std::endl;
 
 #ifdef WITH_YAML
-    yaml_load_dump();
-    std::cout << "[DummyInterface::yaml_load_dump] YAML LOAD/DUMP works!" << std::endl;
+    if (yaml_load())
+        std::cout << "[DummyInterface::yaml_load] YAML LOAD works!\n";
+    else {
+        std::cout << "[DummyInterface::yaml_load] YAML LOAD FAILED :(\n";
+    }
+    yaml_dump();
+    std::cout << "[DummyInterface::yaml_dump] YAML DUMP works! check out 'new_database.yaml'" << std::endl;
 #endif
 
     return 0;
