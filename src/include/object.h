@@ -165,6 +165,12 @@ public:
         object->back_connect(this, connect);
     }
 
+    void disconnect(Object *object)
+        throw (std::bad_cast)
+    {
+        connect(object, false);
+    }
+
 };
 
 };
