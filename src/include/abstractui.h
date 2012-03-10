@@ -90,7 +90,7 @@ protected:
         return cache_.back();
     }
 
-    
+
     std::vector<Object*> search(const std::vector<std::pair<std::string, boost::any>>& parameters);
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
@@ -100,6 +100,17 @@ protected:
                          * by the any field of specified type. If value
                          * is empty that all objects will satisfied.
                          */
+
+    std::vector<Object*> search()
+    {
+        std::vector<std::pair<std::string, boost::any>> no_parameters;
+        return this->search(no_parameters);
+    }
+                        /**< @brief Search objects by some parameters.
+                         * return all objects
+                         * 
+                         */
+    
     Object * object(const int id) const throw (std::bad_cast)
                         /**< @brief Return object by id.
                          * @param [in] id Object identificator.

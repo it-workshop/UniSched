@@ -35,11 +35,29 @@ void DummyInterface::test_group() {
         << std::endl;
 }
 
+void DummyInterface::show_objects() {
+    auto rez = this->search();
+
+    std::cout << "[DummyInterface::show_objects] SEARCH works!\nDumping results";
+
+    for (auto o : rez) {
+        std::cout << "--OBJ--\n";
+        for (auto f : o->read()) {
+            //std::cout << boost::any_cast<const std::string>(o->read("name")) << "\n";
+            std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+        }
+    }
+
+    std::cout << "[DummyInterface::show_objects] DONE." << std::endl;
+
+}
+
 int DummyInterface::run()
 {
     std::cout << "[DummyInterface::run] testing" << std::endl;
     test_person();
     test_group();
+    show_objects();
     return 0;
 }
 
