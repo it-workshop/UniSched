@@ -8,3 +8,6 @@ add_test (create_person_test tester --iface TESTINGUI_CREATE_PERSON)
 
 add_library (create_group SHARED create_group.cpp)
 add_test (create_group_test tester --iface TESTINGUI_CREATE_GROUP)
+
+add_library (create_event SHARED create_event.cpp)
+add_test (create_event_test tester --iface TESTINGUI_CREATE_EVENT)
