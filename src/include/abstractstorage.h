@@ -28,6 +28,7 @@ public:
     void set_UI(AbstractUI* ui)
     {
         ui_ = ui;
+        ui->set_storage(this);
     }
 
     virtual void push(const objid_t id, const std::string& name, const boost::any& value) = 0;
