@@ -22,7 +22,7 @@ void AbstractUI::dump(const std::string& base_fname) const
         obj["Object"] = iter->second->type();
         obj["ID"] = iter->first;
         // Just fuck-off, dude :)
-        /*
+        
         switch (iter->second->type()) {
         case PERSON:
             obj["VCard"] = *static_cast<Person *>(iter->second);
@@ -37,7 +37,7 @@ void AbstractUI::dump(const std::string& base_fname) const
             obj["VCard"] = "No information";
         break;
         }
-        */
+        
         out.push_back(obj);
         
     }
@@ -51,13 +51,16 @@ void AbstractUI::dump(const std::string& base_fname) const
 
 bool AbstractUI::load(const std::string& base_fname)
 {
+    bool result = true;
+
     YAML::Node in = YAML::LoadFile(base_fname);
 
-    for (YAML::const_iterator iter = in.begin(); iter != in.end(); iter ++)
+    for (auto iter = in.begin(); iter != in.end(); iter ++)
     {
-        const obj_t type = (*iter)["Object"].as<obj_t>();
-        const objid_t id = (*iter)["ID"].as<objid_t>();
-        const std::map<const std::string, boost::any> vcard =
+        auto type = (*iter)["Object"].as<obj_t>();
+        auto id = (*iter)["ID"].as<objid_t>();
+        //const std::map<const std::string, boost::any> vcard =
+        auto vcard =
             (*iter)["VCard"].as<std::map<const std::string, boost::any>>();
         switch (type) {
         case PERSON:
@@ -70,10 +73,11 @@ bool AbstractUI::load(const std::string& base_fname)
             add_object<Event>(id, vcard);
         break;
         default:
-            return false;
+            result = false;
         break;
         }
     }
+    return result;
 }
 /* Template method in the .cpp? No way if it is not internal. Be careful. */
 template <typename T>
