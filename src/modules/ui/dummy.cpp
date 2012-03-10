@@ -17,6 +17,7 @@ void DummyInterface::test_person() {
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
+
     std::cout << "[DummyInterface::test_person] TEST PERSON CREATION works!\n"
         << "Name: " << boost::any_cast<const std::string &>(person->read("name"))
         << "\nSurname: " << boost::any_cast<const std::string &>(person->read("surname"))
@@ -28,7 +29,7 @@ void DummyInterface::test_group() {
     auto g = create<Core::Group>();
     g->update("name", std::string("Miles Davis band"));
     std::cout << "[DummyInterface::test_group] GROUP CREATION works!\n"
-        << "Name: " << boost::any_cast<const std::string&>(g->read("name"))
+        << "Name: " << boost::any_cast<const std::string &>(g->read("name"))
         << std::endl;
 }
 

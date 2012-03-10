@@ -147,7 +147,7 @@ public:
                          * @return Corresponding field.
                          */
     {
-        return *(fields_.find(name));
+        return (*fields_.find(name)).second;
     }
 
     const std::map<const std::string,boost::any>& read() const
