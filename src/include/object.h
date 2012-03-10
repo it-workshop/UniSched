@@ -240,12 +240,11 @@ namespace YAML {
         {
             // Check if node is the right mask for Core::obj_t
             if (!node.IsScalar()) return false;
-            if (!node.size() == 1) return false;
             auto type = node.as<std::string>();
-            if (type == "Person") ot = Core::PERSON;
-            else if (type == "Group") ot = Core::GROUP;
-            if (type == "Event") ot = Core::EVENT;
-            else ot = Core::UNKNOWN;
+                 if (type == "Person") ot = Core::PERSON;
+            else if (type == "Group")  ot = Core::GROUP;
+            else if (type == "Event")  ot = Core::EVENT;
+            else                       ot = Core::UNKNOWN;
             return true;
         }
     };

@@ -13,18 +13,29 @@ DummyInterface::DummyInterface(std::vector<Module *>* modules, void *handle):
 }
 
 void DummyInterface::test_person() {
+
     auto person = create<Core::Person>();
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
 
-    std::cout << "[DummyInterface::test_person] TEST PERSON CREATION works!\n"
+    auto pers = create<Core::Person>();
+    pers->update("name", std::string("Harry"));
+    pers->update("surname", std::string("Potta"));
+    pers->update("sex", std::string("MALE"));
+    
+    auto suppa_truppa = create<Core::Group>();
+    suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
+
+    std::cout
         << "Name: " << boost::any_cast<const std::string &>(person->read("name"))
         << "\nSurname: " << boost::any_cast<const std::string &>(person->read("surname"))
         << "\nSex: " << boost::any_cast<const std::string &>(person->read("sex"))
         << std::endl;
 
-    //dump("database.yaml");
+    std::cout<<load("database.yaml")<<std::endl;
+
+    dump("new_database.yaml");
 }
 
 void DummyInterface::test_group() {
