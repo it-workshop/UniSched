@@ -1,18 +1,22 @@
 cmake_minimum_required (VERSION 2.8.3)
 project (UniSched CXX)
 
-include (cmake/c++11/CheckCXX11Features.cmake)
+option(WITH_SQLITE "Build with SQLite support." N)
+option(WITH_DUMMYUI "Build with DummyUI support." Y)
+option(WITH_CLI "Build with CLI support." N)
+option(WITH_YAML "Build with YAML support." N)
+option(WITH_TESTS_CXX11 "Check if the compiler handles the new stuff right." N)
+option(WITH_TESTS_CORE "Build with Core tests." N)
+
+if (WITH_TESTS_CXX11)
+    include (cmake/c++11/CheckCXX11Features.cmake)
+endif (WITH_TESTS_CXX11)
 
 add_definitions (-std=c++0x)
 
 include (CheckIncludeFileCXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
-
-option(WITH_SQLITE "Build with SQLite support." N)
-option(WITH_DUMMYUI "Build with DummyUI support." Y)
-option(WITH_CLI "Build with CLI support." N)
-option(WITH_YAML "Build with YAML support." N)
 
 find_package (Boost REQUIRED)
 

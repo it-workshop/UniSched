@@ -22,6 +22,7 @@ void AbstractUI::dump(const std::string& base_fname) const
         obj["Object"] = iter->second->type();
         obj["ID"] = iter->first;
         // Just fuck-off, dude :)
+        /*
         switch (iter->second->type()) {
         case PERSON:
             obj["VCard"] = *static_cast<Person *>(iter->second);
@@ -36,12 +37,14 @@ void AbstractUI::dump(const std::string& base_fname) const
             obj["VCard"] = "No information";
         break;
         }
+        */
         out.push_back(obj);
+        
     }
 
     std::ofstream base(base_fname);
 
-    base << out.as<std::string>();
+    base << out;
     
     base.close();
 }
