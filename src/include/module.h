@@ -17,8 +17,7 @@ public:
      * @brief Provides module type identification without typeid operator.
      */
     enum Type {
-/* TODO: uncomment it, when create database class. */
-/*        STORAGE,*/
+        STORAGE,
         UI
     };
 

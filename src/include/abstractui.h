@@ -24,6 +24,7 @@ namespace Core {
  */
 class AbstractUI: public Module {
 friend class Object;
+friend class AbstractStorage;
 private:
     std::map<objid_t, Object *> objects_;
                         /**< Model objects. Each object must be saved here for
@@ -160,3 +161,4 @@ public:
 
 };
 
+#include <abstractstorage.h>
