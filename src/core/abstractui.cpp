@@ -1,10 +1,15 @@
 #include <abstractui.h>
-#include <yaml-cpp/yaml.h>
 #include <person.h>
 #include <group.h>
 #include <event.h>
 
+#ifdef WITH_YAML
+#include <yaml-cpp/yaml.h>
+#endif /* WITH_YAML */
+
 using namespace Core;
+
+#ifdef WITH_YAML
 
 void AbstractUI::dump(const std::string& base_fname) const
 {
@@ -67,6 +72,8 @@ bool AbstractUI::load(const std::string& base_fname)
         }
     }
 }
+
+#endif /* WITH_YAML */
 
 template <typename T>
 void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)

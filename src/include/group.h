@@ -23,6 +23,8 @@ public:
 
 };
 
+#ifdef WITH_YAML
+
 namespace YAML {
     template<>
     struct convert<Core::Group> {
@@ -42,4 +44,6 @@ namespace YAML {
         }
     };
 }
+
+#endif /* WITH_YAML */
 

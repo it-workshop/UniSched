@@ -4,7 +4,9 @@
 #include <map>
 #include <boost/any.hpp>
 
+#ifdef WITH_YAML
 #include <yaml-cpp/yaml.h>
+#endif /* WITH_YAML */
 
 namespace Core {
 
@@ -119,7 +121,7 @@ public:
         return *(fields_.find(name));
     }
 
-    const std::map<boost::any>& read() const
+    const std::map<const std::string,boost::any>& read() const
     {
         return fields_;
     }
@@ -131,6 +133,8 @@ public:
 };
 
 };
+
+#ifdef WITH_YAML
 
 namespace YAML {
     template<>
@@ -224,6 +228,8 @@ namespace YAML {
         }
     };*/
 }
+
+#endif /* WITH_YAML */
 
 #include <abstractui.h>
 

@@ -7,5 +7,5 @@ add_subdirectory (tests)
 
 add_executable (raspisator main.cpp)
 
-target_link_libraries (raspisator core dl)
+target_link_libraries (raspisator core)
 

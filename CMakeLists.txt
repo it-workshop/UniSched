@@ -11,7 +11,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 find_package (Readline REQUIRED)
 find_package (Boost REQUIRED)
-find_library (YAML_CPP yaml-cpp)
 
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
 include_directories ("${Boost_INCLUDE_DIRS}")
@@ -25,6 +24,12 @@ enable_testing()
 option(WITH_SQLITE "Build with SQLite support." N)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." N)
+option(WITH_YAML "Build with YAML support." Y)
+
+if (WITH_YAML)
+    add_definitions(-DWITH_YAML)
+    find_package (yaml-cpp REQUIRED)
+endif (WITH_YAML)
 
 add_subdirectory (src)
 

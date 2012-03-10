@@ -19,6 +19,8 @@ public:
 
 };
 
+#ifdef WITH_YAML
+
 namespace YAML {
     template<>
     struct convert<Core::Event> {
@@ -43,3 +45,4 @@ namespace YAML {
     };
 }
 
+#endif /* WITH_YAML */
