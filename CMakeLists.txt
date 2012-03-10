@@ -9,27 +9,31 @@ include (CheckIncludeFileCXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
-find_package (Readline REQUIRED)
-find_package (Boost REQUIRED)
-
-include_directories ("${PROJECT_SOURCE_DIR}/src/include")
-include_directories ("${Boost_INCLUDE_DIRS}")
-
-if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
-    message (SEND_ERROR "In source build not allowed.")
-endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
-
-enable_testing()
-
 option(WITH_SQLITE "Build with SQLite support." N)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." N)
 option(WITH_YAML "Build with YAML support." Y)
 
+find_package (Boost REQUIRED)
+
+if (NOT WITH_DUMMYUI AND NOT WITH_CLI)
+    find_package (Readline REQUIRED)
+endif (NOT WITH_DUMMYUI AND NOT WITH_CLI)
+
 if (WITH_YAML)
     add_definitions(-DWITH_YAML)
     find_package (yaml-cpp REQUIRED)
 endif (WITH_YAML)
+
+include_directories ("${Boost_INCLUDE_DIRS}")
+include_directories ("${PROJECT_SOURCE_DIR}/src/include")
+
+
+if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
+    message (SEND_ERROR "Building in sources not allowed.")
+endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
+
+enable_testing()
 
 add_subdirectory (src)
 
