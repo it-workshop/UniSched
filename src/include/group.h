@@ -23,27 +23,5 @@ public:
 
 };
 
-#ifdef WITH_YAML
 
-namespace YAML {
-    template<>
-    struct convert<Core::Group> {
-        static Node encode(const Core::Group& g)
-        {
-            Node node;
-            node["name"] = boost::any_cast<const std::string &>(g.read("name"));
-            return node;
-        }
-        static bool decode(const Node& node, Core::Group& g)
-        {
-            // Check if node is the right mask for class Group
-            if (!node.IsMap()) return false;
-            //if (!node.size() == 3) return false;
-            g.update("name", node["name"].as<std::string>());
-            return true;
-        }
-    };
-}
-
-#endif /* WITH_YAML */
 

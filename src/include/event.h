@@ -19,30 +19,4 @@ public:
 
 };
 
-#ifdef WITH_YAML
 
-namespace YAML {
-    template<>
-    struct convert<Core::Event> {
-        static Node encode(const Core::Event& ev)
-        {
-            Node node;
-            node["name"] = boost::any_cast<const std::string &>(ev.read("name"));
-            node["begin"] = boost::any_cast<const time_t &>(ev.read("begin"));
-            node["duration"] = boost::any_cast<const time_t &>(ev.read("duration"));
-            return node;
-        }
-        static bool decode(const Node& node, Core::Event& ev)
-        {
-            // Check if node is the right mask for class Event
-            if (!node.IsMap()) return false;
-            //if (!node.size() == 3) return false;
-            ev.update("name", node["name"].as<std::string>());
-            ev.update("begin", node["begin"].as<time_t>());
-            ev.update("duration", node["duration"].as<time_t>());
-            return true;
-        }
-    };
-}
-
-#endif /* WITH_YAML */

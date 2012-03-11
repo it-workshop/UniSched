@@ -31,43 +31,4 @@ public:
 
 };
 
-#ifdef WITH_YAML
-
-namespace YAML {
-    template<>
-    struct convert<Core::Person> {
-        static Node encode(const Core::Person& p)
-        {
-            Node node;
-            node["name"] = boost::any_cast<const std::string &>(p.read("name")); 
-            node["surname"] = boost::any_cast<const std::string &>(p.read("surname"));
-            node["sex"] = boost::any_cast<const std::string &>(p.read("sex"));
-            node["birthday"] = boost::any_cast<const time_t &>(p.read("birthday"));
-            //auto membership = boost::any_cast<const std::vector<Core::objid_t> &>(p.read("groups"));
-            //for (int i = 0; i < membership.size(); i ++)
-            //{
-            //    node["groups"][i] = membership[i];
-            //}
-            return node;
-        }
-        static bool decode(const Node& node, Core::Person& p)
-        {
-            // Check if node is the right mask for class Person
-            if (!node.IsMap()) return false;
-//            if (!node.size() == 5) return false;
-            p.update("name", node["name"].as<std::string>());
-            p.update("surname", node["surname"].as<std::string>());
-            p.update("sex", node["sex"].as<std::string>());
-            p.update("birthday", node["birthday"].as<time_t>());
-            /*
-            for (int i = 0; i < node["groups"].size(); i ++)
-            {
-                p.connect(p.UI().object(node["groups"][i].as<int>()), true);
-            }*/
-            return true;
-        }
-    };
-}
-
-#endif /* WITH_YAML */
 

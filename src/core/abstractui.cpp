@@ -5,7 +5,8 @@
 
 #ifdef WITH_YAML
 #include <yaml-cpp/yaml.h>
-#endif /* WITH_YAML */
+#include <yaml.h>
+#endif
 
 using namespace Core;
 
@@ -21,7 +22,6 @@ void AbstractUI::dump(const std::string& base_fname) const
         YAML::Node obj;
         obj["Object"] = iter->second->type();
         obj["ID"] = iter->first;
-        // Just fuck-off, dude :)
         
         switch (iter->second->type()) {
         case PERSON:
@@ -58,9 +58,8 @@ bool AbstractUI::load(const std::string& base_fname)
     {
         auto type = (*iter)["Object"].as<obj_t>();
         auto id = (*iter)["ID"].as<objid_t>();
-        //const std::map<const std::string, boost::any> vcard =
-        auto vcard =
-            (*iter)["VCard"].as<std::map<const std::string, boost::any>>();
+        auto vcard = (*iter)["VCard"].as<std::map<const std::string, boost::any>>();
+        
         switch (type) {
         case PERSON:
             add_object<Person>(id, vcard);
@@ -78,6 +77,7 @@ bool AbstractUI::load(const std::string& base_fname)
     }
     return result;
 }
+
 /* Template method in the .cpp? No way if it is not internal. Be careful. */
 template <typename T>
 void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)

@@ -6,6 +6,7 @@ add_library (core SHARED person.cpp abstractgroup.cpp group.cpp event.cpp
 target_link_libraries (core dl ${Boost_LIBRARIES})
 
 if (WITH_YAML)
-    target_link_libraries (core yaml-cpp)
+    add_library (yaml yaml.cpp)
+    target_link_libraries (core yaml yaml-cpp)
 endif (WITH_YAML)
 

@@ -18,12 +18,13 @@ void DummyInterface::test_person() {
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
+    person->update("birthday", time_t(300400));
 
     auto pers = create<Core::Person>();
     pers->update("name", std::string("Harry"));
     pers->update("surname", std::string("Potta"));
     pers->update("sex", std::string("MALE"));
-
+    pers->update("birthday", time_t(19283740));
 }
 
 #ifdef WITH_YAML
@@ -37,6 +38,7 @@ void DummyInterface::yaml_dump() {
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
     person->update("sex", std::string("MALE"));
+    person->update("birthday", time_t(1100220033));
     
     auto g = create<Core::Group>();
     g->update("name", std::string("Miles Davis band"));
@@ -53,22 +55,23 @@ void DummyInterface::test_group() {
 
     auto suppa_truppa = create<Core::Group>();
     suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
-
 }
 
 void DummyInterface::test_connect() {
     auto g = create<Core::Group>();
-    g->update("name", std::string("SW gang"));
+    g->update("name", std::string("SW gang")); // Soungs like Swamp Soft, rip
 
     auto r2d2 = create<Core::Person>();
     r2d2->update("name", std::string("r2"));
     r2d2->update("surname", std::string("d2"));
     r2d2->update("sex", std::string("MALE"));
+    r2d2->update("birthday", time_t(100500));
 
     auto c3po = create<Core::Person>();
-    r2d2->update("name", std::string("c3"));
-    r2d2->update("surname", std::string("po"));
-    r2d2->update("sex", std::string("MALE"));
+    c3po->update("name", std::string("c3"));
+    c3po->update("surname", std::string("po"));
+    c3po->update("sex", std::string("MALE"));
+    c3po->update("birthday", time_t(300700));
 
     g->connect(r2d2);
     g->connect(c3po);
@@ -90,7 +93,7 @@ void DummyInterface::show_objects() {
 
 int DummyInterface::run()
 {
-    std::cout << "[DummyInterface::run] testingi...\n";
+    std::cout << "[DummyInterface::run] testing...\n";
 #ifdef WITH_TESTS_CORE
     test_person();
     std::cout << "[DummyInterface::test_person] PERSON CREATION works!\n";
