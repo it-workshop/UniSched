@@ -142,7 +142,7 @@ void SQLiteStorage::disconnect()
 void SQLiteStorage::create(const Core::Object *object)
 {
     std::stringstream query;
-    query << "INSERT INTO objects (type) VALUES (" << object->type() << ");";
+    query << "INSERT INTO objects (type) VALUES (" << object_type(object) << ");";
     sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, nullptr);
 }
 

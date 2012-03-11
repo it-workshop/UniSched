@@ -20,7 +20,7 @@ typedef unsigned long int objid_t;
  */
 class Object {
 friend class AbstractUI;
-/* TODO: Add database class to friend when create this. */
+friend class AbstractStorage;
 private:
     objid_t id_;
                         /**< Identificator of the object.

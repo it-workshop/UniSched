@@ -19,6 +19,11 @@ protected:
         return ui_->objects_;
     }
 
+    static const obj_t object_type(const Object *object)
+    {
+        return object->type();
+    }
+
 public:
     AbstractStorage(const std::string name, std::vector<Module *>* modules,
             void *handle):
