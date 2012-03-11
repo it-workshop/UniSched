@@ -1,11 +1,11 @@
 cmake_minimum_required (VERSION 2.8.3)
 project (UniSched CXX)
 
-option(WITH_SQLITE "Build with SQLite support." N)
 if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
     message (SEND_ERROR "Building in sources not allowed.")
 endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 
+option(WITH_SQLITE "Build with SQLite support." N)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." Y)
 option(WITH_YAML "Build with YAML support." Y)
