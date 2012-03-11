@@ -32,7 +32,7 @@ bool DummyInterface::yaml_load() {
 }
 
 void DummyInterface::yaml_dump() {
-/*
+
     auto person = create<Core::Person>();
     person->update("name", std::string("John"));
     person->update("surname", std::string("Connor"));
@@ -40,7 +40,7 @@ void DummyInterface::yaml_dump() {
     
     auto g = create<Core::Group>();
     g->update("name", std::string("Miles Davis band"));
-*/  
+  
     //g->connect(person);
 
     dump("new_database.yaml");
