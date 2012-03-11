@@ -4,19 +4,23 @@
     name: Usama
     surname: Ben Laden
     sex: MALE
+    birthday: 1100220033
 - Object: Person
   ID: 0
   VCard:
     name: John
     surname: Connor
     sex: MALE
+    birthday: 1100220044
 - Object: Person
   ID: 1
   VCard:
     name: Harry
     surname: Potta
     sex: MALE
+    birthday: 1100220055
 - Object: Group
   ID: 2
   VCard:
     name: Suppa-p Truppa-pa...
+    #people: [0, 3]

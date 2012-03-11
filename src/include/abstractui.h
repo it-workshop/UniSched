@@ -111,18 +111,6 @@ protected:
                          * 
                          */
     
-    Object * object(const int id) const throw (std::bad_cast)
-                        /**< @brief Return object by id.
-                         * @param [in] id Object identificator.
-                         * @return Requested object.
-                         *
-                         * Use this method carefully. It can be moved to the
-                         * protected or private on future.
-                         */
-    {                    
-        return objects_.at(id);
-    }
-
     std::vector<Object *>& cache()
                         /**< @brief Get search cache.
                          * @return Search cache.
@@ -161,6 +149,18 @@ public:
                          * from main.
                          * @return Program return code.
                          */
+
+    Object * object(const int id) const throw (std::bad_cast)
+                        /**< @brief Return object by id.
+                         * @param [in] id Object identificator.
+                         * @return Requested object.
+                         *
+                         * Use this method carefully. It can be moved to the
+                         * protected or private on future.
+                         */
+    {                    
+        return objects_.at(id);
+    }
 
 #ifdef WITH_YAML
     void dump(const std::string& base_fname) const;

@@ -24,11 +24,16 @@ friend class AbstractUI;
 private:
     objid_t id_;
                         /**< Identificator of the object.
-                         * @internal This identificator must be used only in
+                         * @internal This field must be used only in
                          * classes which implement storage or manager
                          * functions.
                          */
     obj_t type_;
+                        /**< Type of the object.
+                         * @internal This field must be used only in
+                         * classes which implement storage or manager
+                         * functions.
+                         */
 
     class AbstractUI& ui_;
                         /**< Manager of the objects.
@@ -49,6 +54,12 @@ protected:
     const objid_t id() const { return id_; }
                         /**< @brief Get id of the object.
                          * @return id of object.
+                         * @internal Use this method in the manager and storage
+                         * classes only.
+                         */
+    const obj_t type() const { return type_; }
+                        /**< @brief Get type of the object.
+                         * @return type of object.
                          * @internal Use this method in the manager and storage
                          * classes only.
                          */
@@ -112,8 +123,8 @@ protected:
                          */
     virtual const std::string link_field(const Object * object) const
             throw (std::bad_cast) = 0;
-                        /**< @brief Check, can this object link that one and
-                         * return name of the corresponding field of this
+                        /**< @brief Check if one object could link another one 
+                         * and return name of the corresponding field of first
                          * object.
                          * @param [in] object Object to check.
                          * 
@@ -122,16 +133,18 @@ protected:
                          */
     virtual const std::string back_link_field(const Object * object) const
             throw (std::bad_cast) = 0;
-                        /**< @brief Check, can this object link that one and
-                         * return name of the corresponding field of this
+                        /**< @brief Check if one object links another one and
+                         * return name of the corresponding field of first
                          * object on the second link.
                          *
                          * This method must throw std::bad_cast, when connect
                          * can not be set.
                          */
 public:
-    const obj_t type() const { return type_; }
-
+    const AbstractUI& UI() const { return ui_; }
+                        /**< @brief Get User Interface which manages the object.
+                         * @return User Interface of object.
+                         */
     Object(const obj_t type, const objid_t id, AbstractUI& ui):
         type_(type), id_(id), ui_(ui)
                         /**< @brief Constructor.
@@ -185,23 +198,47 @@ namespace YAML {
             // Shouldn't I write something about const_iterator? Nah
             for (auto iter = fields.begin(); iter != fields.end(); iter ++)
             {
+                // Strings
                 if (iter->first == "name" or
                     iter->first == "surname" or
                     iter->first == "sex")
                     node[iter->first] = boost::any_cast<const std::string &>(iter->second);
                 else 
+                // Dates&Times
                 if (iter->first == "begin" or
                     iter->first == "duration" or
                     iter->first == "birthday")
                     node[iter->first] = boost::any_cast<const time_t &>(iter->second);
+                else
+                // Sequences
+                if (iter->first == "groups" or
+                    iter->first == "parent_groups" or
+                    iter->first == "child_groups" or
+                    iter->first == "people")
+                    for (int i = 0; i < iter->first.size(); i ++)
+                    {
+                        node[iter->first] = boost::any_cast<const std::vector<Core::objid_t> &>(iter->second) [i];
+                    }
             }
+
+            return node;
         }
         static bool decode(const Node& node, std::map<const std::string, boost::any>& fields)
-        {
+        { /* TODO: Make the loop to call bool YAML::decode(const YAML::Node& node, Core::Object)
+                   instead of parsing everything again. */
             if (!node.IsMap()) return false;
             for (auto iter = node.begin(); iter != node.end(); iter ++)
             {
-                fields[iter->first.as<std::string>()] = iter->second.as<std::string>();
+                if (iter->second.IsSequence()) // is sequence
+                    fields[iter->second.as<std::string>()] = iter->second.as<std::vector<Core::objid_t>>();
+                else // is scalar 
+                {
+                    if (iter->first.as<std::string>() == "birthday" or 
+                        iter->first.as<std::string>() == "begin" or 
+                        iter->first.as<std::string>() == "duration") 
+                         fields[iter->first.as<std::string>()] = iter->second.as<time_t>();
+                    else fields[iter->first.as<std::string>()] = iter->second.as<std::string>();
+                }
             }
             return true;
         }
@@ -210,7 +247,7 @@ namespace YAML {
     template<>
     struct convert<boost::any> {
         static Node encode(const boost::any& a)
-        { // Just in case someone forgets about converting boost::any to std::string in this case
+        { // Just in case someone forgets about converting boost::any to std::string
             Node node;
             node = boost::any_cast<const std::string &>(a);
             return node;

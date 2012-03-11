@@ -27,6 +27,10 @@ if (WITH_YAML)
     find_package (yaml-cpp REQUIRED)
 endif (WITH_YAML)
 
+if (WITH_TESTS_CORE)
+   add_definitions(-DWITH_TESTS_CORE)
+endif (WITH_TESTS_CORE)
+
 include_directories ("${Boost_INCLUDE_DIRS}")
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
 

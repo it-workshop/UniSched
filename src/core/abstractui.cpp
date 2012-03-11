@@ -38,8 +38,7 @@ void AbstractUI::dump(const std::string& base_fname) const
         break;
         }
         
-        out.push_back(obj);
-        
+        out.push_back(obj); 
     }
 
     std::ofstream base(base_fname);
@@ -84,6 +83,7 @@ template <typename T>
 void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)
 {
     Object *new_obj = new T(id, *this);
+    //auto = create<T>();
     for (auto iter = fields.begin(); iter != fields.end(); iter ++)
     {
         new_obj->update(iter->first, iter->second);
