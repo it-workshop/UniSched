@@ -32,6 +32,17 @@ bool DummyInterface::yaml_load() {
 }
 
 void DummyInterface::yaml_dump() {
+/*
+    auto person = create<Core::Person>();
+    person->update("name", std::string("John"));
+    person->update("surname", std::string("Connor"));
+    person->update("sex", std::string("MALE"));
+    
+    auto g = create<Core::Group>();
+    g->update("name", std::string("Miles Davis band"));
+*/  
+    //g->connect(person);
+
     dump("new_database.yaml");
 }
 #endif
@@ -79,8 +90,8 @@ void DummyInterface::show_objects() {
 
 int DummyInterface::run()
 {
-    std::cout << "[DummyInterface::run] testing\n";
-
+    std::cout << "[DummyInterface::run] testingi...\n";
+#ifdef WITH_TESTS_CORE
     test_person();
     std::cout << "[DummyInterface::test_person] PERSON CREATION works!\n";
     
@@ -92,7 +103,7 @@ int DummyInterface::run()
 
     show_objects();
     std::cout << "[DummyInterface::show_objects] SEARCH works!" << std::endl;
-
+#else
 #ifdef WITH_YAML
     if (yaml_load())
         std::cout << "[DummyInterface::yaml_load] YAML LOAD works!\n";
@@ -102,7 +113,7 @@ int DummyInterface::run()
     yaml_dump();
     std::cout << "[DummyInterface::yaml_dump] YAML DUMP works! check out 'new_database.yaml'" << std::endl;
 #endif
-
+#endif
     return 0;
 }
 

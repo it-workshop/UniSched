@@ -43,7 +43,7 @@ namespace YAML {
             node["surname"] = boost::any_cast<const std::string &>(p.read("surname"));
             node["sex"] = boost::any_cast<const std::string &>(p.read("sex"));
             node["birthday"] = boost::any_cast<const time_t &>(p.read("birthday"));
-            //auto membership = boost::any_cast<const std::vector<Core::objid_t>>(p.read("groups"));
+            //auto membership = boost::any_cast<const std::vector<Core::objid_t> &>(p.read("groups"));
             //for (int i = 0; i < membership.size(); i ++)
             //{
             //    node["groups"][i] = membership[i];
