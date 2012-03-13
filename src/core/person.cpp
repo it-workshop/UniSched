@@ -34,6 +34,10 @@ void Person::check_field(const std::string& name, const boost::any& value) const
         }
         return;
     }
+    if ("groups" == name)
+    {
+        throw boost::bad_any_cast();
+    }
 }
 
 const std::string Person::link_field(const Object *object) const

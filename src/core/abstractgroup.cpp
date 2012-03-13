@@ -16,23 +16,19 @@ void AbstractGroup::check_field(const std::string& name,
         boost::any_cast<std::string>(value);
         return;
     }
-    if ("begin" == name || "duration" == name)
+    if ("people" == name || "children_groups")
     {
-        boost::any_cast<time_t>(value);
-        return;
+        throw boost::bad_any_cast();
     }
 }
 
 const std::string AbstractGroup::link_field(const Object *object) const
         throw (std::bad_cast)
 {
-    try
+    if (typeid(object) == typeid(const Person *))
     {
-        dynamic_cast<const Person *>(object);
         return "people";
     }
-    catch (std::bad_cast)
-    {}
 
     dynamic_cast<const Group *>(object);
     return "children_groups";
