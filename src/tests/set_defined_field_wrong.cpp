@@ -21,7 +21,7 @@ int TestingUI::run()
     }
     catch (boost::bad_any_cast& e)
     {   
-        std::cout << e.what() << std::endl;
+        std::cout << "Catched exception :) "<< e.what() << std::endl;
         return 0;
     }
 
