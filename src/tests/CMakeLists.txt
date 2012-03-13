@@ -24,5 +24,8 @@ if (WITH_TESTS_CORE)
 
     add_library (set_undefined_field_wrong SHARED set_undefined_field_wrong.cpp)
     add_test (set_undefined_field_wrong_test tester --iface TESTINGUI_SET_UNDEFINED_FIELD_WRONG)
+    
+    add_library (set_link_field SHARED set_link_field.cpp)
+    add_test (set_link_field_test tester --iface TESTINGUI_SET_LINK_FIELD)
 
 endif (WITH_TESTS_CORE)
