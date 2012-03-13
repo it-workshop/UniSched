@@ -45,10 +45,7 @@ private:
     void update(const std::string& name, Object * object, const bool connect)
             throw (boost::bad_any_cast);
 
-    void back_connect(Object * object, const bool connect) throw (std::bad_cast)
-    {
-        update(back_link_field(object), object, connect);
-    }
+    void back_connect(Object * object, const bool connect) throw (std::bad_cast);
 
 protected:
     const objid_t id() const { return id_; }
@@ -171,18 +168,10 @@ public:
                         /**< @brief Change field of the object.
                          * @param [in] field Field to change.
                          */
-    void connect(Object * object, const bool connect = true) throw (std::bad_cast)
-    {
-        update(link_field(object), object, connect);
-        object->back_connect(this, connect);
-    }
+    void connect(Object * object, const bool connect = true)
+            throw (std::bad_cast);
 
-    void disconnect(Object *object)
-        throw (std::bad_cast)
-    {
-        connect(object, false);
-    }
-
+    void disconnect(Object *object) throw (std::bad_cast);
 };
 
 };

@@ -14,9 +14,16 @@ void Object::update(const std::string& name, Object *object, const bool connect)
 {
     if (fields_[name].empty())
     {
-        fields_[name] = std::vector<Object *>();
+        if (!connect)
+        {
+            return;
+        }
+        std::vector<Object *> vector;
+        vector.push_back(object);
+        fields_[name] = vector;
+        return;
     }
-    auto vector = boost::any_cast<std::vector<Object *>&>(fields_[name]);
+    auto& vector = boost::any_cast<std::vector<Object *>&>(fields_[name]);
     if (connect)
     {
         for (auto &it : vector)
@@ -37,5 +44,23 @@ void Object::update(const std::string& name, Object *object, const bool connect)
             return;
         }
     }
+}
+
+void Object::back_connect(Object * object, const bool connect)
+        throw (std::bad_cast)
+{
+    update(back_link_field(object), object, connect);
+}
+
+void Object::connect(Object * object, const bool connect)
+        throw (std::bad_cast)
+{
+    update(link_field(object), object, connect);
+    object->back_connect(this, connect);
+}
+
+void Object::disconnect(Object *object) throw (std::bad_cast)
+{
+    connect(object, false);
 }
 

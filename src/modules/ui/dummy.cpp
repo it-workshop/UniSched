@@ -83,8 +83,15 @@ void DummyInterface::show_objects() {
     for (auto o : rez) {
         std::cout << "--OBJ--\n";
         for (auto f : o->read()) {
-            if (f.first != "groups" && f.first != "people") {
+            if (typeid(std::string) == f.second.type()) {
                 std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+            }
+            else if (typeid(std::vector<Core::Object *>) == f.second.type()) {
+                auto vect = boost::any_cast<std::vector<Core::Object *>&>(f.second);
+                std::cout << f.first << ":\n";
+                for (auto& item : vect) {
+                    std::cout << "\t" << boost::any_cast<std::string>(item->read("name")) << "\n";
+                }
             }
         }
     }
