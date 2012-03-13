@@ -27,5 +27,8 @@ if (WITH_TESTS_CORE)
     
     add_library (set_link_field SHARED set_link_field.cpp)
     add_test (set_link_field_test tester --iface TESTINGUI_SET_LINK_FIELD)
+    
+    add_library (connect_person SHARED connect_person.cpp)
+    add_test (connect_person_test tester --iface TESTINGUI_CONNECT_PERSON)
 
 endif (WITH_TESTS_CORE)
