@@ -5,6 +5,10 @@ using namespace Core;
 void Object::update(const std::string& name, const boost::any& value)
 {
     check_field(name, value);
+    if (!fields_[name].empty() && fields_[name].type() != value.type())
+    {
+        throw boost::bad_any_cast();
+    }
     fields_[name] = value;
     ui_.push(id(), name, value);
 }
