@@ -9,7 +9,7 @@ void DummyInterface::init(const std::vector<std::string>& args)
 DummyInterface::DummyInterface(std::vector<Module *>* modules, void *handle):
     AbstractUI("DummyUI", modules, handle)
 {
-    std::cout << "Hello constructor!" << std::endl;
+    std::cout << "(Dummy Interface constructor) ";
 }
 
 void DummyInterface::test_person() {

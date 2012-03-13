@@ -1,0 +1,2 @@
+#define CLI_PY_LIB_NAME "lib${CLI_PY_LIB}"
+#define CLI_PY_LIB_CLEAN_NAME lib${CLI_PY_LIB}

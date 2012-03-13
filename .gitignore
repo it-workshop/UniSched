@@ -4,4 +4,4 @@ raspisator
 *.swp
 *.swo
 src/modules/ui/paths.hpp
-
+src/include/cli_py_names.hpp

@@ -1,12 +1,15 @@
-#include <module.h>
-
-#include <sstream>
-#include <iostream>
-
 #include <stdlib.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <dlfcn.h>
+
+#include <sstream>
+#include <iostream>
+
+#include <module.h>
+#ifdef WITH_EXT_PYTHON_CLI
+#include <cli_py_names.hpp>
+#endif
 
 using namespace Core;
 
@@ -25,6 +28,12 @@ static bool has_ending(std::string input, std::string ending) {
 }
 
 static const bool is_module_name(const std::string& name) {
+#ifdef WITH_EXT_PYTHON_CLI
+    if (name.find(CLI_PY_LIB_NAME) != std::string::npos)
+    {
+        return false;
+    }
+#endif
     if (!has_ending(name, ".so"))
     {
         return false;
@@ -51,6 +60,7 @@ void Module::load_modules()
         {
             if (!is_module_name(entry->d_name))
             {
+                std::cout << "Пропускаю " << entry->d_name << "\n";
                 continue;
             }
             std::cout << "Loading " << entry->d_name << "\t";
