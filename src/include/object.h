@@ -48,18 +48,6 @@ private:
     void back_connect(Object * object, const bool connect) throw (std::bad_cast);
 
 protected:
-    const objid_t id() const { return id_; }
-                        /**< @brief Get id of the object.
-                         * @return id of object.
-                         * @internal Use this method in the manager and storage
-                         * classes only.
-                         */
-    const obj_t type() const { return type_; }
-                        /**< @brief Get type of the object.
-                         * @return type of object.
-                         * @internal Use this method in the manager and storage
-                         * classes only.
-                         */
     virtual void check_field(const std::string& name,
             const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast) = 0;
@@ -138,6 +126,18 @@ protected:
                          * can not be set.
                          */
 public:
+    const objid_t id() const { return id_; }
+                        /**< @brief Get id of the object.
+                         * @return id of object.
+                         * @internal Use this method in the manager and storage
+                         * classes only.
+                         */
+    const obj_t type() const { return type_; }
+                        /**< @brief Get type of the object.
+                         * @return type of object.
+                         * @internal Use this method in the manager and storage
+                         * classes only.
+                         */
     const AbstractUI& UI() const { return ui_; }
                         /**< @brief Get User Interface which manages the object.
                          * @return User Interface of object.
@@ -175,7 +175,6 @@ public:
 };
 
 };
-
 
 #include <abstractui.h>
 

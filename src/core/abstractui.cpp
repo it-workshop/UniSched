@@ -16,22 +16,21 @@ void AbstractUI::dump(const std::string& base_fname) const
 {
     YAML::Node out;
     
-    for (std::map<objid_t, Object *>::const_iterator iter = objects_.begin();
-         iter != objects_.end(); iter ++)
+    for (auto iter : objects_)
     {
         YAML::Node obj;
-        obj["Object"] = iter->second->type();
-        obj["ID"] = iter->first;
+        obj["Object"] = iter.second->type();
+        obj["ID"] = iter.first;
         
-        switch (iter->second->type()) {
+        switch (iter.second->type()) {
         case PERSON:
-            obj["VCard"] = *static_cast<Person *>(iter->second);
+            obj["VCard"] = *dynamic_cast<Person *>(iter.second);
         break;
         case GROUP:
-            obj["VCard"] = *static_cast<Group *>(iter->second);
+            obj["VCard"] = *dynamic_cast<Group *>(iter.second);
         break;
         case EVENT:
-            obj["VCard"] = *static_cast<Event *>(iter->second);
+            obj["VCard"] = *dynamic_cast<Event *>(iter.second);
         break;
         default:
             obj["VCard"] = "No information";

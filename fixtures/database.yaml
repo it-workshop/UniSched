@@ -1,26 +1,42 @@
 - Object: Person
-  ID: 3
-  VCard:
-    name: Usama
-    surname: Ben Laden
-    sex: MALE
-    birthday: 1100220033
-- Object: Person
   ID: 0
   VCard:
-    name: John
-    surname: Connor
-    sex: MALE
-    birthday: 1100220044
-- Object: Person
-  ID: 1
-  VCard:
-    name: Harry
     surname: Potta
+    name: Harry
+    birthday: 19283740
+    groups:
+      - 4
+      - 3
     sex: MALE
-    birthday: 1100220055
-- Object: Group
-  ID: 2
+- VCard:
+    surname: Connor
+    birthday: 1100220033
+    sex: MALE
+    name: John
+    groups:
+      - 2
+  Object: Person
+  ID: 1
+- ID: 2
   VCard:
-    name: Suppa-p Truppa-pa...
-    #people: [0, 3]
+    name: Miles Davis band
+    people:
+      - 1
+      - 3
+      - 4
+  Object: Group
+- VCard:
+    name: Suppa-pa... Truppa-pa...
+    people:
+      - 0
+      - 3
+      - 4
+  Object: Group
+  ID: 3
+- Object: Group
+  ID: 4
+  VCard:
+    name: Abba
+    people:
+      - 0
+      - 2

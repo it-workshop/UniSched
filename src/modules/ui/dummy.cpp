@@ -29,10 +29,18 @@ void DummyInterface::test_person() {
 
 #ifdef WITH_YAML
 bool DummyInterface::yaml_load() {
-    return load(DATABASE_YAML);
+    std::cout << " Loading data from file: " << DATABASE_YAML << std::endl;
+    bool rez = load(DATABASE_YAML);
+    //dump("new_database.yaml");
+    return rez;
 }
 
 void DummyInterface::yaml_dump() {
+    auto pers = create<Core::Person>();
+    pers->update("name", std::string("Harry"));
+    pers->update("surname", std::string("Potta"));
+    pers->update("sex", std::string("MALE"));
+    pers->update("birthday", time_t(19283740));
 
     auto person = create<Core::Person>();
     person->update("name", std::string("John"));
@@ -42,9 +50,30 @@ void DummyInterface::yaml_dump() {
     
     auto g = create<Core::Group>();
     g->update("name", std::string("Miles Davis band"));
-  
-    //g->connect(person);
-
+    
+    auto suppa_truppa = create<Core::Group>();
+    suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
+    
+    auto suppa_groupa = create<Core::Group>();
+    suppa_groupa->update("name", std::string("Abba"));
+    
+    
+    suppa_groupa->connect(pers);
+    suppa_truppa->connect(pers);
+    pers->connect(suppa_groupa);
+    
+    g->connect(person);
+    person->connect(g);
+    
+    g->connect(suppa_truppa);
+    suppa_groupa->connect(g);
+    
+    suppa_groupa->connect(g);
+    g->connect(suppa_groupa);
+    
+    suppa_truppa->connect(suppa_truppa);
+    suppa_truppa->connect(suppa_groupa);
+    
     dump("new_database.yaml");
 }
 #endif
