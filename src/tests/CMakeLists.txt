@@ -36,5 +36,8 @@ if (WITH_TESTS_CORE)
     
     add_library (connect_event SHARED connect_event.cpp)
     add_test (connect_event_test tester --iface TESTINGUI_CONNECT_EVENT)
+    
+    add_library (disconnect_person SHARED disconnect_person.cpp)
+    add_test (disconnect_person_test tester --iface TESTINGUI_DISCONNECT_PERSON)
 
 endif (WITH_TESTS_CORE)
