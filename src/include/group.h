@@ -13,9 +13,11 @@ namespace Core {
  */
 class Group: public AbstractGroup {
 protected:
-    const std::string back_link_field(const Object *object) const
+    virtual void check_field(const std::string& name, const boost::any& value)
+            const throw (boost::bad_any_cast);
+    virtual const std::string back_link_field(const Object *object) const
             throw (std::bad_cast);
-    const bool disconnect_way(const std::string& name) const
+    virtual const bool disconnect_way(const std::string& name) const
             throw (std::bad_cast);
 public:
     Group(objid_t id, AbstractUI& ui):

@@ -58,4 +58,7 @@ if (WITH_TESTS_CORE)
     add_library (remove_connected_object SHARED remove_connected_object.cpp)
     add_test (remove_connected_object_test tester --iface TESTINGUI_REMOVE_CONNECTED_OBJECT)
 
+    add_library (search SHARED search.cpp)
+    add_test (search_test tester --iface TESTINGUI_SEARCH)
+
 endif (WITH_TESTS_CORE)
