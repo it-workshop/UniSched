@@ -48,5 +48,8 @@ if (WITH_TESTS_CORE)
     
     add_library (remove_person SHARED remove_person.cpp)
     add_test (remove_person_test tester --iface TESTINGUI_REMOVE_PERSON)
+    
+    add_library (remove_group SHARED remove_group.cpp)
+    add_test (remove_group_test tester --iface TESTINGUI_REMOVE_GROUP)
 
 endif (WITH_TESTS_CORE)
