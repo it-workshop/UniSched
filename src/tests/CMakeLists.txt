@@ -51,5 +51,8 @@ if (WITH_TESTS_CORE)
     
     add_library (remove_group SHARED remove_group.cpp)
     add_test (remove_group_test tester --iface TESTINGUI_REMOVE_GROUP)
+    
+    add_library (remove_event SHARED remove_event.cpp)
+    add_test (remove_event_test tester --iface TESTINGUI_REMOVE_EVENT)
 
 endif (WITH_TESTS_CORE)
