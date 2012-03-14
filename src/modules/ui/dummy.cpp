@@ -23,7 +23,7 @@ void DummyInterface::test_person() {
     std::map<std::string, boost::any> fields;
     fields["name"] = std::string("Harry");
     fields["surname"] = std::string("Potter");
-    fields["sex"] = std::string("SEX");
+    fields["sex"] = std::string("MALE");
     fields["birthday"] = time_t(19283740);
 
     auto pers = create<Core::Person>();
