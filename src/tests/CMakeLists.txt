@@ -30,5 +30,8 @@ if (WITH_TESTS_CORE)
     
     add_library (connect_person SHARED connect_person.cpp)
     add_test (connect_person_test tester --iface TESTINGUI_CONNECT_PERSON)
+    
+    add_library (connect_group SHARED connect_group.cpp)
+    add_test (connect_group_test tester --iface TESTINGUI_CONNECT_GROUP)
 
 endif (WITH_TESTS_CORE)

@@ -43,11 +43,11 @@ void Person::check_field(const std::string& name, const boost::any& value) const
 const std::string Person::link_field(const Object *object) const
         throw (std::bad_cast)
 {
-    if (GROUP != object->type() && EVENT != object->type())
+    if (GROUP == object->type() || EVENT == object->type())
     {
-        throw std::bad_cast();
+        return "groups";
     }
-    return "groups";
+    throw std::bad_cast();
 }
 
 const std::string Person::back_link_field(const Object *object) const
