@@ -1,5 +1,4 @@
 #include <abstractgroup.h>
-#include <group.h>
 
 using namespace Core;
 
@@ -25,19 +24,24 @@ void AbstractGroup::check_field(const std::string& name,
 const std::string AbstractGroup::link_field(const Object *object) const
         throw (std::bad_cast)
 {
-    if (typeid(object) == typeid(const Person *))
+    if (object->type() == PERSON)
     {
         return "people";
     }
-
-    dynamic_cast<const Group *>(object);
-    return "children_groups";
+    if (object->type() == GROUP)
+    {
+        return "children_groups";
+    }
+    throw std::bad_cast();
 }
 
 const std::string AbstractGroup::back_link_field(const Object *object) const
         throw (std::bad_cast)
 {
-    dynamic_cast<const Person *>(object);
-    return "people";
+    if (PERSON == object->type())
+    {
+        return "people";
+    }
+    throw std::bad_cast();
 }
 

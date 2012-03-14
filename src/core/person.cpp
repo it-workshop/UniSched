@@ -43,7 +43,10 @@ void Person::check_field(const std::string& name, const boost::any& value) const
 const std::string Person::link_field(const Object *object) const
         throw (std::bad_cast)
 {
-    dynamic_cast<const AbstractGroup *>(object);
+    if (GROUP != object->type() && EVENT != object->type())
+    {
+        throw std::bad_cast();
+    }
     return "groups";
 }
 
