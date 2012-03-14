@@ -39,5 +39,8 @@ if (WITH_TESTS_CORE)
     
     add_library (disconnect_person SHARED disconnect_person.cpp)
     add_test (disconnect_person_test tester --iface TESTINGUI_DISCONNECT_PERSON)
+    
+    add_library (disconnect_group SHARED disconnect_group.cpp)
+    add_test (disconnect_group_test tester --iface TESTINGUI_DISCONNECT_GROUP)
 
 endif (WITH_TESTS_CORE)
