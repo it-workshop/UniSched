@@ -1,6 +1,12 @@
 cmake_minimum_required (VERSION 2.8.3)
 
 if (WITH_DUMMYUI)
+    if(NOT WITH_YAML)
+        message("опция сборки YAML отключена, часть функционала не будет использована в DummyUI")
+    endif(NOT WITH_YAML)
+    if(NOT WITH_TESTS_CORE)
+        message("опция тестирвания функционала ядра системы отключена, часть функционала не будет использована в DummyUI")
+    endif(NOT WITH_TESTS_CORE)
     add_library (dummyui SHARED dummy.cpp)
 #    target_link_libraries (dummyui)
 endif (WITH_DUMMYUI)
