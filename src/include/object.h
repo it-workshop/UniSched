@@ -125,6 +125,15 @@ protected:
                          * This method must throw std::bad_cast, when connect
                          * can not be set.
                          */
+    virtual const bool disconnect_way(const std::string& name) const
+            throw (std::bad_cast) = 0;
+                        /**< @brief Check if connections in fields with given
+                         * name must be disconnected in the forward or backward
+                         * direction.
+                         * @param [in] name of the field.
+                         * @return True if objects disconects in forward
+                         * direction.
+                         */
 public:
     const objid_t id() const { return id_; }
                         /**< @brief Get id of the object.
@@ -149,6 +158,12 @@ public:
                          * @param [in] ui Manager of objects.
                          */
     {}
+
+    void cleanup();
+                        /**< @brief Cleanup connections.
+                         * 
+                         * @important Call it before delete object.
+                         */
 
     const boost::any read(const std::string& name) const
                         /**< @brief Get field of the object.

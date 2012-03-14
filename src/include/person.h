@@ -24,6 +24,8 @@ protected:
             throw (std::bad_cast);
     virtual const std::string  back_link_field(const Object * object) const
             throw (std::bad_cast);
+    virtual const bool disconnect_way(const std::string& name) const
+            throw (std::bad_cast);
 public:
     Person(objid_t id, AbstractUI& ui) throw (std::bad_cast);
                             /**< @copydoc Object::Object */

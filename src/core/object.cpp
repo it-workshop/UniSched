@@ -68,3 +68,27 @@ void Object::disconnect(Object *object) throw (std::bad_cast)
     connect(object, false);
 }
 
+void Object::cleanup()
+{
+    for (auto& field : fields_)
+    {
+        if (typeid(std::vector<Object *>) != field.second.type())
+        {
+            continue;
+        }
+        auto& vector = boost::any_cast<std::vector<Object *>&>(field.second);
+        if (disconnect_way(field.first))
+        {
+            for (auto& object : vector)
+            {
+                disconnect(object);
+            }
+            continue;
+        }
+        for (auto& object : vector)
+        {
+            object->disconnect(this);
+        }
+    }
+}
+

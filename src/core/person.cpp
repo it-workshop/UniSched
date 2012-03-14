@@ -56,3 +56,13 @@ const std::string Person::back_link_field(const Object *object) const
     return link_field(object);
 }
 
+const bool Person::disconnect_way(const std::string& name) const
+        throw (std::bad_cast)
+{
+    if ("groups" == name)
+    {
+        return true;
+    }
+    throw std::bad_cast();
+}
+

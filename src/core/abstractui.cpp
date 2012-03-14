@@ -157,6 +157,7 @@ void AbstractUI::remove(Object *object)
 {
     int id = object->id();
     objects_.erase(objects_.find(id));
+    object->cleanup();
     delete object;
     if (storage_)
     {

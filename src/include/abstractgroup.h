@@ -26,6 +26,8 @@ protected:
             throw (std::bad_cast);
     virtual const std::string back_link_field(const Object *object) const
             throw (std::bad_cast);
+    virtual const bool disconnect_way(const std::string& name) const
+            throw (std::bad_cast);
 public:
     AbstractGroup(const obj_t type, const objid_t id, AbstractUI& ui);
                         /**< @brief Constructor

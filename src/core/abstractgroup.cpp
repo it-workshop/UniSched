@@ -45,3 +45,13 @@ const std::string AbstractGroup::back_link_field(const Object *object) const
     throw std::bad_cast();
 }
 
+const bool AbstractGroup::disconnect_way(const std::string& name) const
+        throw (std::bad_cast)
+{
+    if ("people" == name || "children_groups" == name)
+    {
+        return true;
+    }
+    throw std::bad_cast();
+}
+

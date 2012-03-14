@@ -12,3 +12,13 @@ const std::string Group::back_link_field(const Object *object) const
     return AbstractGroup::back_link_field(object);
 }
 
+const bool Group::disconnect_way(const std::string& name) const
+        throw (std::bad_cast)
+{
+    if ("parent_groups" == name)
+    {
+        return false;
+    }
+    return AbstractGroup::disconnect_way(name);
+}
+
