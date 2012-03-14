@@ -138,7 +138,7 @@ protected:
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
-        Module(Module::UI, name, modules, handle), new_id_(0)
+        Module(Module::UI, name, modules, handle), new_id_(0), storage_(nullptr)
                         /**< @brief constructor.
                          * @param name Name of the frontend.
                          */
