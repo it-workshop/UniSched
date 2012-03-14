@@ -45,5 +45,8 @@ if (WITH_TESTS_CORE)
     
     add_library (disconnect_event SHARED disconnect_event.cpp)
     add_test (disconnect_event_test tester --iface TESTINGUI_DISCONNECT_EVENT)
+    
+    add_library (remove_person SHARED remove_person.cpp)
+    add_test (remove_person_test tester --iface TESTINGUI_REMOVE_PERSON)
 
 endif (WITH_TESTS_CORE)
