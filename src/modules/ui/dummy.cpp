@@ -20,11 +20,14 @@ void DummyInterface::test_person() {
     person->update("sex", std::string("MALE"));
     person->update("birthday", time_t(300400));
 
+    std::map<std::string, boost::any> fields;
+    fields["name"] = std::string("Harry");
+    fields["surname"] = std::string("Potter");
+    fields["sex"] = std::string("SEX");
+    fields["birthday"] = time_t(19283740);
+
     auto pers = create<Core::Person>();
-    pers->update("name", std::string("Harry"));
-    pers->update("surname", std::string("Potta"));
-    pers->update("sex", std::string("MALE"));
-    pers->update("birthday", time_t(19283740));
+    pers->update(fields);
 }
 
 #ifdef WITH_YAML

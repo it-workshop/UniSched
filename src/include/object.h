@@ -183,6 +183,11 @@ public:
                         /**< @brief Change field of the object.
                          * @param [in] field Field to change.
                          */
+    void update(const std::map<std::string, boost::any>& fields);
+                        /**< @brief bulk change fields of the object.
+                         * @param [in] fields map of fields to change.
+                         */
+
     void connect(Object * object, const bool connect = true)
             throw (std::bad_cast);
 

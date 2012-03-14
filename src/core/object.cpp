@@ -13,6 +13,13 @@ void Object::update(const std::string& name, const boost::any& value)
     ui_.push(id(), name, value);
 }
 
+void Object::update(const std::map<std::string, boost::any>& fields)
+{
+    for (auto f: fields) {
+        this->update(f.first, f.second);
+    }
+}
+
 void Object::update(const std::string& name, Object *object, const bool connect)
     throw (boost::bad_any_cast)
 {
