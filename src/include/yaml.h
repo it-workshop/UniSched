@@ -9,59 +9,24 @@
 
 namespace YAML {
    /*--------------------------------------------------*/
-  /*               General Convertations              */
+  /*                   Decoding YAML                  */
  /*--------------------------------------------------*/
     template<>
-    struct convert<std::map<const std::string, boost::any>> {
-        /*
-        static Node encode(const std::map<const std::string, boost::any>& fields) 
-        { // This convertion must match only for the object's VCard
-            Node node;
-            // Shouldn't I write something about const_iterator? Nah
-            for (auto iter = fields.begin(); iter != fields.end(); iter ++)
-            {
-                // Strings
-                if (iter->first == "name" or
-                    iter->first == "surname" or
-                    iter->first == "sex")
-                    node[iter->first] = boost::any_cast<const std::string &>(iter->second);
-                else 
-                // Dates&Times
-                if (iter->first == "begin" or
-                    iter->first == "duration" or
-                    iter->first == "birthday")
-                    node[iter->first] = boost::any_cast<const time_t &>(iter->second);
-                else
-                // Sequences
-                if (iter->first == "groups" or
-                    iter->first == "parent_groups" or
-                    iter->first == "child_groups" or
-                    iter->first == "people")
-                    for (int i = 0; i < iter->first.size(); i ++)
-                    {
-                        node[iter->first] = boost::any_cast<const std::vector<Core::objid_t> &>(iter->second) [i];
-                    }
-            }
-
-            return node;
-        }*/
-        
+    struct convert<std::map<const std::string, boost::any>> {        
         static bool decode(const Node& node, std::map<const std::string, boost::any>& fields)
-        { // TODO: Make the loop to call bool YAML::decode(const YAML::Node& node, Core::Object)
-          //         instead of parsing everything again.
+        {
             if (!node.IsMap()) return false;
             for (auto iter = node.begin(); iter != node.end(); iter ++)
-            {
+            {                
                 if (iter->second.IsSequence()) // is sequence
                 {
-                    for (auto jter = iter->begin(); jter != iter->end(); jter ++)
-                        fields[jter->as<std::string>()] = jter->as<std::vector<Core::objid_t>>();
+                    //return false;
                 }
-                else // is scalar 
+                else // is scalar
                 {
-                    if (iter->first.as<std::string>() == "birthday" or 
-                        iter->first.as<std::string>() == "begin" or 
-                        iter->first.as<std::string>() == "duration") 
+                    if (iter->first.as<std::string>() == "birthday" or
+                        iter->first.as<std::string>() == "begin"    or
+                        iter->first.as<std::string>() == "duration")
                          fields[iter->first.as<std::string>()] = iter->second.as<time_t>();
                     else fields[iter->first.as<std::string>()] = iter->second.as<std::string>();
                 }
@@ -69,23 +34,22 @@ namespace YAML {
             return true;
         }
     };
-/*
+   /*--------------------------------------------------*/
+  /*               General Convertations              */
+ /*--------------------------------------------------*/
     template<>
-    struct convert<boost::any> {
-        static Node encode(const boost::any& a)
-        { // Just in case someone forgets about converting boost::any to std::string
+    struct convert<std::vector<Core::Object *>> {
+        static Node encode(const std::vector<Core::Object *>& vector)
+        {
             Node node;
-            node = boost::any_cast<const std::string &>(a);
+            for (auto iter : vector)
+            {
+                node.push_back( iter->id() );
+            }
             return node;
         }
-        static bool decode(const Node& node, boost::any& a)
-        { // Currently works only with scalar boost::any-args
-            if (!node.IsScalar()) return false;
-            a = node.as<std::string>();
-            return true;
-        }
     };
-*/
+ 
     template<>
     struct convert<Core::obj_t> {
         static Node encode(const Core::obj_t& ot)
@@ -113,7 +77,7 @@ namespace YAML {
     };
     
    /*-------------------------------------------------*/
-  /*            Core::Person Convertations           */
+  /*              Encoding Core::Person              */
  /*-------------------------------------------------*/
     template<>
     struct convert<Core::Person> {
@@ -124,33 +88,12 @@ namespace YAML {
             node["surname"] = boost::any_cast<const std::string &>(p.read("surname"));
             node["sex"] = boost::any_cast<const std::string &>(p.read("sex"));
             node["birthday"] = boost::any_cast<const time_t &>(p.read("birthday"));
-            {    
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(p.read("groups"));
-                for (auto iter : membership) node["groups"].push_back( iter->id() );
-            }
             return node;
-        }
-        static bool decode(const Node& node, Core::Person& p)
-        {
-            // Check if node is the right mask for class Person
-            if (!node.IsMap()) return false;
-//            if (!node.size() == 5) return false;
-            p.update("name", node["name"].as<std::string>());
-            p.update("surname", node["surname"].as<std::string>());
-            p.update("sex", node["sex"].as<std::string>());
-            p.update("birthday", node["birthday"].as<time_t>());
-
-            for (auto iter = node["groups"].begin(); iter != node["groups"].end(); iter ++)
-            {
-                p.connect(p.UI().object(iter->as<int>()), true);
-            }
-            
-            return true;
         }
     };
 
    /*-------------------------------------------------*/
-  /*             Core::Group Convertations           */
+  /*              Encoding Core::Group               */
  /*-------------------------------------------------*/
     template<>
     struct convert<Core::Group> {
@@ -158,37 +101,12 @@ namespace YAML {
         {
             Node node;
             node["name"] = boost::any_cast<const std::string &>(g.read("name"));
-            {
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(g.read("people")); 
-                for (auto iter : membership) node["people"].push_back( iter->id() );
-            }
-/*            {
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(g.read("parent_groups")); 
-                for (auto iter : membership) node["parent_groups"].push_back( iter->id() );
-            }
-            {
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(g.read("child_groups")); 
-                for (auto iter : membership) node["child_groups"].push_back( iter->id() );
-            }             
-            */
             return node;
-        }
-        static bool decode(const Node& node, Core::Group& g)
-        {
-            // Check if node is the right mask for class Group
-            if (!node.IsMap()) return false;
-            //if (!node.size() == 3) return false;
-            g.update("name", node["name"].as<std::string>());/*
-            for (auto iter = node["people"].begin(); iter != node["people"].end(); iter ++)
-            {
-                g.connect(g.UI().object(iter->as<int>()), true);
-            }*/
-            return true;
         }
     };
 
    /*-------------------------------------------------*/
-  /*             Core::Event Convertations           */
+  /*              Encoding Core::Event               */
  /*-------------------------------------------------*/
     template<>
     struct convert<Core::Event> {
@@ -198,25 +116,7 @@ namespace YAML {
             node["name"] = boost::any_cast<const std::string &>(ev.read("name"));
             node["begin"] = boost::any_cast<const time_t &>(ev.read("begin"));
             node["duration"] = boost::any_cast<const time_t &>(ev.read("duration"));
-            {
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(ev.read("people")); 
-                for (auto iter : membership) node["people"].push_back( iter->id() );
-            }             
-            {
-                auto membership = boost::any_cast<const std::vector<Core::Object *> &>(ev.read("child_groups")); 
-                for (auto iter : membership) node["child_groups"].push_back( iter->id() );
-            }             
             return node;
-        }
-        static bool decode(const Node& node, Core::Event& ev)
-        {
-            // Check if node is the right mask for class Event
-            if (!node.IsMap()) return false;
-            //if (!node.size() == 3) return false;
-            ev.update("name", node["name"].as<std::string>());
-            ev.update("begin", node["begin"].as<time_t>());
-            ev.update("duration", node["duration"].as<time_t>());
-            return true;
         }
     };
 }

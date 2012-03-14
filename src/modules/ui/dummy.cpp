@@ -20,7 +20,7 @@ void DummyInterface::test_person() {
     person->update("sex", std::string("MALE"));
     person->update("birthday", time_t(300400));
 
-    std::map<std::string, boost::any> fields;
+    std::map<const std::string, boost::any> fields;
     fields["name"] = std::string("Harry");
     fields["surname"] = std::string("Potter");
     fields["sex"] = std::string("MALE");
@@ -34,7 +34,7 @@ void DummyInterface::test_person() {
 bool DummyInterface::yaml_load() {
     std::cout << " Loading data from file: " << DATABASE_YAML << std::endl;
     bool rez = load(DATABASE_YAML);
-    //dump("new_database.yaml");
+    dump("copied_database.yaml");
     return rez;
 }
 
@@ -77,7 +77,7 @@ void DummyInterface::yaml_dump() {
     suppa_truppa->connect(suppa_truppa);
     suppa_truppa->connect(suppa_groupa);
     
-    dump("new_database.yaml");
+    dump("dump_database.yaml");
 }
 #endif
 
@@ -153,7 +153,7 @@ int DummyInterface::run()
         std::cout << "[DummyInterface::yaml_load] YAML LOAD FAILED :(\n";
     }
     yaml_dump();
-    std::cout << "[DummyInterface::yaml_dump] YAML DUMP works! check out 'new_database.yaml'" << std::endl;
+    std::cout << "[DummyInterface::yaml_dump] YAML DUMP works! check out 'dump_database.yaml'" << std::endl;
 #endif
 #endif
     return 0;

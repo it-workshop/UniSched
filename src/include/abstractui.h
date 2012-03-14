@@ -62,11 +62,6 @@ private:
     void create_in_storage(const Object *object);
 
 protected:
-#ifdef WITH_YAML
-    template <typename T>
-    void add_object(objid_t id, const std::map<const std::string, boost::any>& fields);
-#endif /* WITH_YAML */
-
     void push(const int id, const std::string& name, const boost::any& value);
                         /**< @brief Save @a field of object with @a id it hte
                          * database
@@ -134,7 +129,22 @@ protected:
     {
         storage_ = storage;
     }
-
+    
+    #ifdef WITH_YAML
+    template <typename T>
+    void add_object(objid_t id, const std::map<const std::string, boost::any>& fields);
+    
+    inline void link(const std::map<const objid_t, std::vector<objid_t>> connections);
+                        /**< @brief Connects sequence of objects to
+                         * a sequence of sequences of other objects
+                         * @param [in] map with connections.
+                         *
+                         * This method expects a map as input data format, 
+                         * containing pairs: (objid_t A, vector<objid_t> B),
+                         * where object with id A connects all objects with
+                         * ids from vector B.
+                         */    
+    #endif /* WITH_YAML */
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
