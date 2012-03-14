@@ -42,5 +42,8 @@ if (WITH_TESTS_CORE)
     
     add_library (disconnect_group SHARED disconnect_group.cpp)
     add_test (disconnect_group_test tester --iface TESTINGUI_DISCONNECT_GROUP)
+    
+    add_library (disconnect_event SHARED disconnect_event.cpp)
+    add_test (disconnect_event_test tester --iface TESTINGUI_DISCONNECT_EVENT)
 
 endif (WITH_TESTS_CORE)
