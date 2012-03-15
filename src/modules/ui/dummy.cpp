@@ -20,7 +20,7 @@ void DummyInterface::test_person() {
     person->update("sex", std::string("MALE"));
     person->update("birthday", time_t(300400));
 
-    std::map<const std::string, boost::any> fields;
+    std::map<std::string, boost::any> fields;
     fields["name"] = std::string("Harry");
     fields["surname"] = std::string("Potter");
     fields["sex"] = std::string("MALE");
