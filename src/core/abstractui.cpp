@@ -26,36 +26,35 @@ void AbstractUI::dump(const std::string& base_fname) const
         case PERSON:
             obj["VCard"] = *dynamic_cast<Person *>(iter.second);
             
-            obj["Groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["groups"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("groups"));
                 
         break;
         case GROUP:
             obj["VCard"] = *dynamic_cast<Group *>(iter.second);
             
-            obj["Links"]["people"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["people"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("people"));
             
-            obj["Links"]["parent_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["parent_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("parent_groups"));
             
-            obj["Links"]["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("children_groups"));
             
         break;
         case EVENT:
             obj["VCard"] = *dynamic_cast<Event *>(iter.second);
             
-            obj["Links"]["people"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["people"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("people"));
             
-            obj["Links"]["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("children_groups"));
                 
         break;
         default:
             obj["VCard"] = "No information";
-            obj["Links"] = "No links";
         break;
         }
         
@@ -88,24 +87,24 @@ bool AbstractUI::load(const std::string& base_fname)
         switch (type) {
         case PERSON:
             add_object<Person>(id, vcard);
-            for (auto jter  = (*iter)["Groups"].begin();
-                      jter != (*iter)["Groups"].end(); jter ++)
+            for (auto jter  = (*iter)["groups"].begin();
+                      jter != (*iter)["groups"].end(); jter ++)
             {
                  links_person[id].push_back( jter->as<Core::objid_t>() );
             }
         break;
         case GROUP:
             add_object<Group>(id, vcard);
-            for (auto jter  = (*iter)["Links"]["children_groups"].begin();
-                      jter != (*iter)["Links"]["children_groups"].end(); jter ++)
+            for (auto jter  = (*iter)["children_groups"].begin();
+                      jter != (*iter)["children_groups"].end(); jter ++)
             {
                  links_group[id].push_back( jter->as<Core::objid_t>() );
             }
         break;
         case EVENT:
-            add_object<Event>(id, vcard);
-            for (auto jter  = (*iter)["Links"]["children_groups"].begin();
-                      jter != (*iter)["Links"]["children_groups"].end(); jter ++)
+	            add_object<Event>(id, vcard);
+            for (auto jter  = (*iter)["children_groups"].begin();
+                      jter != (*iter)["children_groups"].end(); jter ++)
             {
                  links_event[id].push_back( jter->as<Core::objid_t>() );
             }
