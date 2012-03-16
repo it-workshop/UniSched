@@ -84,10 +84,17 @@ namespace YAML {
         static Node encode(const Core::Person& p)
         {
             Node node;
-            node["name"] = boost::any_cast<const std::string &>(p.read("name")); 
-            node["surname"] = boost::any_cast<const std::string &>(p.read("surname"));
-            node["sex"] = boost::any_cast<const std::string &>(p.read("sex"));
-            node["birthday"] = boost::any_cast<const time_t &>(p.read("birthday"));
+            
+            try {
+                node["name"]     = boost::any_cast<const std::string &>(p.read("name")); 
+                node["surname"]  = boost::any_cast<const std::string &>(p.read("surname"));
+                node["sex"]      = boost::any_cast<const std::string &>(p.read("sex"));
+                node["birthday"] = boost::any_cast<const time_t &>     (p.read("birthday"));
+            }
+            catch(YAML::KeyNotFound& e) {
+                std::cout << e.what() << "\n";
+            }
+            
             return node;
         }
     };
@@ -113,9 +120,9 @@ namespace YAML {
         static Node encode(const Core::Event& ev)
         {
             Node node;
-            node["name"] = boost::any_cast<const std::string &>(ev.read("name"));
-            node["begin"] = boost::any_cast<const time_t &>(ev.read("begin"));
-            node["duration"] = boost::any_cast<const time_t &>(ev.read("duration"));
+            node["name"]     = boost::any_cast<const std::string &>(ev.read("name"));
+            node["begin"]    = boost::any_cast<const time_t &>     (ev.read("begin"));
+            node["duration"] = boost::any_cast<const time_t &>     (ev.read("duration"));
             return node;
         }
     };
