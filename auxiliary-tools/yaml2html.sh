@@ -22,6 +22,12 @@ cat << EOF
     border-radius: 5px;
     font: 10pt Verdana;
   }
+  table.object.Group {
+    background: #99FF66;
+  }
+  table.object.Event {
+    background: #699EF7;
+  }
   table.object td,th {
     width: 150px;
   }
