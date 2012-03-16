@@ -12,8 +12,8 @@ namespace YAML {
   /*                   Decoding YAML                  */
  /*--------------------------------------------------*/
     template<>
-    struct convert<std::map<const std::string, boost::any>> {        
-        static bool decode(const Node& node, std::map<const std::string, boost::any>& fields)
+    struct convert<std::map<std::string, boost::any>> {        
+        static bool decode(const Node& node, std::map<std::string, boost::any>& fields)
         {
             if (!node.IsMap()) return false;
             for (auto iter = node.begin(); iter != node.end(); iter ++)

@@ -65,9 +65,9 @@ protected:
     void push(const int id, const std::string& name, const boost::any& value);
                         /**< @brief Save @a field of object with @a id it hte
                          * database
-                         * @param [in] id Identificator of object.
-                         * @param [in] name Name of the field to save.
-                         * @param [in] value Value of the field to save.
+                         * @param [in] id Identificator of the object.
+                         * @param [in] name Name of the field to be saved.
+                         * @param [in] value Value of the field to be saved.
                          */
     void remove(Object * object);
                         /**< @brief Remove object from the storage.
@@ -76,7 +76,7 @@ protected:
 
     template <class T>
     Object * create()
-                        /**< @brief Create an object of the T type
+                        /**< @brief Create an object of the T type.
                          * @param [in] parameters new object`s data.
                          */
     {
@@ -85,6 +85,20 @@ protected:
         return cache_.back();
     }
 
+    template <class T>
+    Object * create(const objid_t new_id)
+                        /**< @brief Create an object of the T type with given id.
+                         * This method is designed to be used only in the 
+                         * AbstractStorage class.
+                         * @param [in] id Identificator of the new object.
+                         * @param [in] parameters new object`s data.
+                         */
+    {
+        cache_.push_back(set_object(new T(new_id, *this)));
+        create_in_storage(cache_.back());
+        if (new_id_ <= new_id) { new_id_ = new_id + 1; }
+        return cache_.back();
+    }
 
     std::vector<Object*> search(const std::map<std::string, boost::any>& parameters);
                         /**< @brief Search objects by some parameters.
@@ -97,14 +111,19 @@ protected:
                          */
 
     std::vector<Object*> search()
-    {
-        std::map<std::string, boost::any> no_parameters;
-        return this->search(no_parameters);
-    }
                         /**< @brief Search objects by some parameters.
                          * return all objects
                          * 
                          */
+    {
+        std::map<std::string, boost::any> no_parameters;
+        return this->search(no_parameters);
+    }
+    
+    const std::map<objid_t, Object *>& objects() const
+    {
+        return objects_;
+    }
     
     std::vector<Object *>& cache()
                         /**< @brief Get search cache.
@@ -132,7 +151,7 @@ protected:
     
     #ifdef WITH_YAML
     template <typename T>
-    void add_object(objid_t id, const std::map<const std::string, boost::any>& fields);
+    void add_object(objid_t id, const std::map<std::string, boost::any>& fields);
     
     inline void link(const std::map<const objid_t, std::vector<objid_t>> connections);
                         /**< @brief Connects sequence of objects to
@@ -159,6 +178,8 @@ public:
                          * from main.
                          * @return Program return code.
                          */
+                         
+    void create(const objid_t newid, Object *new_o) { objects_[newid] = new_o; }
 
     Object * object(const int id) const throw (std::bad_cast)
                         /**< @brief Return object by id.
@@ -170,6 +191,11 @@ public:
                          */
     {                    
         return objects_.at(id);
+    }
+    
+    void connect(const objid_t left, const objid_t right)
+    {
+        objects_[left]->connect( objects_[right] );
     }
 
 #ifdef WITH_YAML

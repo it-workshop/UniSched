@@ -82,7 +82,7 @@ bool AbstractUI::load(const std::string& base_fname)
     {
         auto type = (*iter)["Object"].as<obj_t>();
         auto id = (*iter)["ID"].as<objid_t>();        
-        auto vcard = (*iter)["VCard"].as<std::map<const std::string, boost::any>>();
+        auto vcard = (*iter)["VCard"].as<std::map<std::string, boost::any>>();
         
         switch (type) {
         case PERSON:
@@ -135,7 +135,7 @@ inline void AbstractUI::link(const std::map<const objid_t, std::vector<objid_t>>
 
 /* Template method in the .cpp? No way if it is not internal. Be careful. */
 template <typename T>
-void AbstractUI::add_object(objid_t id, const std::map<const std::string, boost::any>& fields)
+void AbstractUI::add_object(objid_t id, const std::map<std::string, boost::any>& fields)
 {
     Object *new_obj = new T(id, *this);
     

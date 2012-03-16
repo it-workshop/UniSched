@@ -1,5 +1,9 @@
 cmake_minimum_required (VERSION 2.8.3)
 
+if (WITH_YAML)
+    add_library (filestorage SHARED filestorage.cpp)
+endif (WITH_YAML)
+
 if (WITH_SQLITE)
     check_include_file_cxx ("sqlite3.h" HAVE_SQLITE)
     if (HAVE_SQLITE)

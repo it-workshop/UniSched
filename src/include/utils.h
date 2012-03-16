@@ -28,10 +28,11 @@ select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
     }
     for (Core::Module *module: *Core::Module::modules())
     {
+        std::cout << "Module found!\n";
         if (module->type() == Core::Module::STORAGE)
         {
-            if (*storage || storagename.empty()
-                || module-> name() != storagename)
+
+            if (*storage || (!storagename.empty() && module-> name() != storagename))
             {
                 continue;
             }
@@ -76,7 +77,7 @@ select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
         std::cerr << "Error: ui module not found!" << std::endl;
     }
 
-    if (!storagename.empty() && !*storage)
+    if (/*!storagename.empty() && */!*storage)
     {
         error = true;
         std::cerr << "Error: Requested storage module not found!" << std::endl;
