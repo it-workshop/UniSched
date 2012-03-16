@@ -6,16 +6,34 @@ FileStorage::FileStorage(std::vector<Module *>* modules, void *handle):
     std::cout << "(FileStorage Interface constructor) ";
 }
    
-void FileStorage::push(const Core::objid_t id, const std::string& name, const boost::any& value) {}
-void FileStorage::connect() {}
-void FileStorage::disconnect() {}
-void FileStorage::create(const Core::Object *object) {}
-void FileStorage::remove(const Core::objid_t id) {}
-    
+void FileStorage::push(const Core::objid_t id, const std::string& name, const boost::any& value)
+{}
+
+void FileStorage::connect()
+{ std::cout << "FileStorage module connected. Ready for service." << std::endl; }
+
+void FileStorage::disconnect()
+{ std::cout << "FileStorage module disconnected. Bye bye." << std::endl; }
+
+void FileStorage::create(const Core::Object *object)
+{}
+
+void FileStorage::remove(const Core::objid_t id)
+{}
     
 void FileStorage::init (const std::vector<std::string>& args)
 {
     std::cout << "FileStorage INIT" << std::endl;
+}
+
+void FileStorage::dump() const
+{
+    dump(dbase_fname());
+}
+
+bool FileStorage::load()
+{
+    load(dbase_fname());
 }
 
 void FileStorage::dump(const std::string& dbase_fname)
@@ -74,7 +92,7 @@ void FileStorage::dump(const std::string& dbase_fname)
     base.close();
 }
 
-inline void FileStorage::link(const std::map<const Core::Object *, std::vector<const Core::objid_t>> connections)
+inline void FileStorage::link(const std::map<Core::Object *, std::vector<Core::objid_t>>& connections)
 {
     for (auto iter : connections)
     {
@@ -85,11 +103,11 @@ inline void FileStorage::link(const std::map<const Core::Object *, std::vector<c
     }   
 }
 
-const Core::Object * find_object(const Core::objid_t key_id)
+Core::Object * FileStorage::find_object(const Core::objid_t key_id)
 {
     for (auto iter : objects())
     {
-        if (iter->first == key_id) return iter->second;
+        if (iter.first == key_id) return iter.second;
     }
     return nullptr;
 }
@@ -98,10 +116,9 @@ bool FileStorage::load(const std::string& dbase_fname)
 {
     YAML::Node in = YAML::LoadFile(dbase_fname);
     
-    std::map< const Core::Object *,
-              std::vector<const Core::objid_t> > links_person,
-                                                 links_group,
-                                                 links_event;
+    std::map<Core::Object *, std::vector<Core::objid_t>> links_person,
+                                                         links_group,
+                                                         links_event;
 
     for (auto iter = in.begin(); iter != in.end(); iter ++)
     {

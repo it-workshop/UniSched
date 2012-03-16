@@ -5,7 +5,7 @@
 
 class FileStorage : public Core::AbstractStorage {
 private:
-    inline void link(const std::map<const Core::Object, std::vector<const Core::objid_t>> connections);
+    inline void link(const std::map<Core::Object *, std::vector<Core::objid_t>>& connections);
                         /**< @brief Connects sequence of objects from
                          * the UI to a sequence of sequences of other UI's
                          * objects.
@@ -17,7 +17,7 @@ private:
                          * ids from vector B.
                          */
                          
-     const Core::Object * find_object(const Core::objid_t key_id);
+     Core::Object * find_object(const Core::objid_t key_id);
 
 public:
     FileStorage(std::vector<Module *>* modules, void *handle);

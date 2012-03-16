@@ -1,6 +1,5 @@
 #include "dummy.hpp"
 
-
 void DummyInterface::init(const std::vector<std::string>& args)
 {
     std::cout << "Dummy Interface INIT" << std::endl;
@@ -77,7 +76,8 @@ void DummyInterface::yaml_dump() {
     suppa_truppa->connect(suppa_truppa);
     suppa_truppa->connect(suppa_groupa);
     
-    dump("dump_database.yaml");
+    //dump("dump_database.yaml");
+    
 }
 #endif
 
