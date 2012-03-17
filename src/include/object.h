@@ -5,11 +5,6 @@
 
 #include <boost/any.hpp>
 
-#ifdef WITH_YAML
-#include <yaml-cpp/yaml.h>
-#endif /* WITH_YAML */
-
-
 namespace Core {
 
 enum obj_t {UNKNOWN, PERSON, GROUP, EVENT};

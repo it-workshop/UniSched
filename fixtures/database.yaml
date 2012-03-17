@@ -1,55 +1,55 @@
 - Object: Person
-  VCard:
-    sex: MALE
-    birthday: 19283740
-    surname: Potta
-    name: Harry
   ID: 0
+  VCard:
+    name: Harry
+    surname: Potta
+    birthday: 19283740
+    sex: MALE
   groups:
     - 4
     - 3
-- groups:
-    - 2
-  ID: 1
+- Object: Person
   VCard:
+    birthday: 1100220033
     name: John
     surname: Connor
     sex: MALE
-    birthday: 1100220033
-  Object: Person
-- VCard:
-    name: Miles Davis band
-  Object: Group
-  children_groups:
+  groups:
+    - 2
+  ID: 1
+- children_groups:
     - 3
     - 4
+  ID: 2
+  Object: Group
+  VCard:
+    name: Miles Davis band
   people:
     - 1
-  ID: 2
   parent_groups:
     - 4
-- VCard:
+- children_groups:
+    - 3
+    - 4
+  VCard:
     name: Suppa-pa... Truppa-pa...
-  people:
-    - 0
   Object: Group
   ID: 3
   parent_groups:
     - 2
     - 3
-  children_groups:
-    - 3
-    - 4
-- parent_groups:
-    - 2
-    - 3
-  children_groups:
-    - 2
-  ID: 4
-  VCard:
-    name: Abba
   people:
     - 0
+- children_groups:
+    - 2
+  parent_groups:
+    - 2
+    - 3
+  people:
+    - 0
+  VCard:
+    name: Abba
+  ID: 4
   Object: Group
 - groups:
     - 9
@@ -59,8 +59,8 @@
   VCard:
     surname: Potta
     sex: MALE
-    birthday: 19283740
     name: Harry
+    birthday: 19283740
 - groups:
     - 7
   Object: Person
@@ -70,22 +70,22 @@
     birthday: 1100220033
     name: John
     surname: Connor
-- ID: 7
-  VCard:
-    name: Miles Davis band
-  Object: Group
-  people:
+- people:
     - 6
   parent_groups:
     - 9
+  VCard:
+    name: Miles Davis band
+  ID: 7
+  Object: Group
   children_groups:
     - 8
     - 9
-- children_groups:
+- ID: 8
+  Object: Group
+  children_groups:
     - 8
     - 9
-  Object: Group
-  ID: 8
   VCard:
     name: Suppa-pa... Truppa-pa...
   people:
@@ -98,41 +98,41 @@
     name: Abba
   people:
     - 5
-  Object: Group
   parent_groups:
     - 7
     - 8
   children_groups:
     - 7
+  Object: Group
 - VCard:
     name: Harry
     surname: Potta
     sex: MALE
     birthday: 19283740
+  Object: Person
+  ID: 10
   groups:
     - 14
     - 13
-  Object: Person
-  ID: 10
-- Object: Person
+- groups:
+    - 12
   ID: 11
   VCard:
     name: John
     surname: Connor
     sex: MALE
     birthday: 1100220033
-  groups:
-    - 12
-- Object: Group
-  ID: 12
+  Object: Person
+- children_groups:
+    - 13
+    - 14
+  Object: Group
   VCard:
     name: Miles Davis band
+  ID: 12
   people:
     - 11
   parent_groups:
-    - 14
-  children_groups:
-    - 13
     - 14
 - people:
     - 10

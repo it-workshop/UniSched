@@ -4,10 +4,6 @@
 #include <sstream>
 #include <vector>
 
-#ifdef WITH_YAML
-#include <yaml-cpp/yaml.h>
-#endif /* WITH_YAML */
-
 #include <object.h>
 #include <abstractgroup.h>
 
@@ -32,5 +28,4 @@ public:
 };
 
 };
-
 
