@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#include "../paths.hpp"
+
+
 class FileStorage : public Core::AbstractStorage {
 private:
     inline void link(const std::map<Core::Object *, std::vector<Core::objid_t>>& connections);
@@ -24,7 +27,7 @@ public:
     
     void dump(const std::string& dbase_fname);
     bool load(const std::string& dbase_fname);
-    void dump() const;
+    void dump();
     bool load();
     
     void push(const Core::objid_t id, const std::string& name, const boost::any& value);

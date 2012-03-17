@@ -60,7 +60,7 @@ void Module::load_modules()
         {
             if (!is_module_name(entry->d_name))
             {
-                std::cout << "Пропускаю " << entry->d_name << "\n";
+                //std::cout << "Skipping " << entry->d_name << "\n";
                 continue;
             }
             std::cout << "Loading " << entry->d_name << "\t";

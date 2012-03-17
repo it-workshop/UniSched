@@ -28,7 +28,7 @@ select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
     }
     for (Core::Module *module: *Core::Module::modules())
     {
-        std::cout << "Module found!\n";
+        std::cout << "Module ready for init: ";
         if (module->type() == Core::Module::STORAGE)
         {
 

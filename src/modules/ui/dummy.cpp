@@ -76,7 +76,7 @@ void DummyInterface::yaml_dump() {
     suppa_truppa->connect(suppa_truppa);
     suppa_truppa->connect(suppa_groupa);
     
-    //dump("dump_database.yaml");
+    dump("dump_database.yaml");
     
 }
 #endif
@@ -91,7 +91,7 @@ void DummyInterface::test_group() {
 
 void DummyInterface::test_connect() {
     auto g = create<Core::Group>();
-    g->update("name", std::string("SW gang")); // Soungs like Swamp Soft, rip
+    g->update("name", std::string("SW gang")); // Sounds like Swamp Soft, rip
 
     auto r2d2 = create<Core::Person>();
     r2d2->update("name", std::string("r2"));
@@ -156,6 +156,7 @@ int DummyInterface::run()
     std::cout << "[DummyInterface::yaml_dump] YAML DUMP works! check out 'dump_database.yaml'" << std::endl;
 #endif
 #endif
+
     return 0;
 }
 

@@ -1,32 +1,46 @@
 #include "filestorage.hpp"
     
 FileStorage::FileStorage(std::vector<Module *>* modules, void *handle):
-        AbstractStorage("FileStorage", "database.yaml", modules, handle)
+        AbstractStorage("FileStorage", DATABASE_YAML, modules, handle)
 {
     std::cout << "(FileStorage Interface constructor) ";
 }
    
 void FileStorage::push(const Core::objid_t id, const std::string& name, const boost::any& value)
-{}
+{
+    std::cout << ">>> FileStorage: Property pushed." << std::endl;
+}
 
 void FileStorage::connect()
-{ std::cout << "FileStorage module connected. Ready for service." << std::endl; }
+{
+    std::cout << ">>> FileStorage: Module connected. Ready for service.\n"
+              << ">>> FileStorage: Using database: " << dbase_fname() << std::endl;
+    load();
+}
 
 void FileStorage::disconnect()
-{ std::cout << "FileStorage module disconnected. Bye bye." << std::endl; }
+{
+    //dump("brand_new_database.yaml");
+    dump();
+    std::cout << "<<< FileStorage: Module disconnected. Bye bye." << std::endl;
+}
 
 void FileStorage::create(const Core::Object *object)
-{}
+{
+    std::cout << ">>> FileStorage: Object created." << std::endl;
+}
 
 void FileStorage::remove(const Core::objid_t id)
-{}
+{
+    std::cout << ">>> FileStorage: Object removed." << std::endl;
+}
     
 void FileStorage::init (const std::vector<std::string>& args)
 {
     std::cout << "FileStorage INIT" << std::endl;
 }
 
-void FileStorage::dump() const
+void FileStorage::dump()
 {
     dump(dbase_fname());
 }

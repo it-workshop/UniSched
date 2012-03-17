@@ -8,10 +8,10 @@
 #include <yaml.h>
 #endif
 
+
 using namespace Core;
 
 #ifdef WITH_YAML
-
 void AbstractUI::dump(const std::string& base_fname) const
 {
     YAML::Node out;
