@@ -25,8 +25,8 @@ protected:
     Object * create_in_memory(const objid_t id) { return ui_->create<T>(id); }
 
 public:
-    AbstractStorage(const std::string name, const std::string dbase_fname, std::vector<Module *>* modules,
-            void *handle):
+    AbstractStorage(const std::string name, const std::string dbase_fname,
+        std::vector<Module *>* modules, void *handle):
         Module(Module::STORAGE, name, modules, handle),
         dbase_fname_ (dbase_fname)
     {}

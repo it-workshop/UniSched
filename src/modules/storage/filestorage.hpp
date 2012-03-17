@@ -1,7 +1,7 @@
+#include <iostream>
+
 #include <abstractui.h>
 #include <yaml.h>
-
-#include <iostream>
 
 #include "../paths.hpp"
 

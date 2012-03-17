@@ -1,4 +1,6 @@
-#include "filestorage.hpp"
+#include "filestorage.hpp"    
+
+#include <yaml-cpp/yaml.h>
     
 FileStorage::FileStorage(std::vector<Module *>* modules, void *handle):
         AbstractStorage("FileStorage", DATABASE_YAML, modules, handle)
@@ -174,8 +176,6 @@ bool FileStorage::load(const std::string& dbase_fname)
             return false;
         break;
         }
-        
-        ui()->create(id, new_object);
     }
     
     try {

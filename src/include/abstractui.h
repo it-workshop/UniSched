@@ -6,12 +6,7 @@
 #include <map>
 #include <typeinfo>
 
-#ifdef WITH_YAML
-#include <yaml-cpp/yaml.h>
-#endif /* WITH_YAML */
-
 #include <object.h>
-
 #include <module.h>
 
 /** @namespace Core
@@ -94,6 +89,7 @@ protected:
                          * @param [in] parameters new object`s data.
                          */
     {
+        if ( objects_.count(new_id) ) return nullptr;
         cache_.push_back(set_object(new T(new_id, *this)));
         create_in_storage(cache_.back());
         if (new_id_ <= new_id) { new_id_ = new_id + 1; }
@@ -148,22 +144,7 @@ protected:
     {
         storage_ = storage;
     }
-    
-    #ifdef WITH_YAML
-    template <typename T>
-    void add_object(objid_t id, const std::map<std::string, boost::any>& fields);
-    
-    inline void link(const std::map<const objid_t, std::vector<objid_t>> connections);
-                        /**< @brief Connects sequence of objects to
-                         * a sequence of sequences of other objects
-                         * @param [in] map with connections.
-                         *
-                         * This method expects a map as input data format, 
-                         * containing pairs: (objid_t A, vector<objid_t> B),
-                         * where object with id A connects all objects with
-                         * ids from vector B.
-                         */    
-    #endif /* WITH_YAML */
+
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
@@ -178,8 +159,6 @@ public:
                          * from main.
                          * @return Program return code.
                          */
-                         
-    void create(const objid_t newid, Object *new_o) { objects_[newid] = new_o; }
 
     Object * object(const int id) const throw (std::bad_cast)
                         /**< @brief Return object by id.
@@ -187,21 +166,11 @@ public:
                          * @return Requested object.
                          *
                          * Use this method carefully. It can be moved to the
-                         * protected or private on future.
+                         * protected or private section in the future.
                          */
     {                    
         return objects_.at(id);
     }
-    
-    void connect(const objid_t left, const objid_t right)
-    {
-        objects_[left]->connect( objects_[right] );
-    }
-
-#ifdef WITH_YAML
-    void dump(const std::string& base_fname) const;
-    bool load(const std::string& base_fname);
-#endif /* WITH_YAML */
 };
 
 };
