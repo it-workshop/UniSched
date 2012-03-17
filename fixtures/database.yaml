@@ -1,120 +1,121 @@
-- VCard:
+- Object: Person
+  VCard:
     sex: MALE
-    surname: Potta
     birthday: 19283740
+    surname: Potta
     name: Harry
-  Object: Person
   ID: 0
   groups:
     - 4
     - 3
 - groups:
     - 2
+  ID: 1
   VCard:
-    birthday: 1100220033
+    name: John
     surname: Connor
     sex: MALE
-    name: John
-  ID: 1
+    birthday: 1100220033
   Object: Person
-- ID: 2
-  VCard:
+- VCard:
     name: Miles Davis band
+  Object: Group
   children_groups:
     - 3
     - 4
   people:
     - 1
+  ID: 2
   parent_groups:
     - 4
-  Object: Group
-- parent_groups:
-    - 3
-    - 2
-  ID: 3
-  children_groups:
-    - 3
-    - 4
-  Object: Group
-  VCard:
+- VCard:
     name: Suppa-pa... Truppa-pa...
   people:
     - 0
-- parent_groups:
-    - 3
+  Object: Group
+  ID: 3
+  parent_groups:
     - 2
-  people:
-    - 0
+    - 3
+  children_groups:
+    - 3
+    - 4
+- parent_groups:
+    - 2
+    - 3
+  children_groups:
+    - 2
   ID: 4
   VCard:
     name: Abba
-  children_groups:
-    - 2
+  people:
+    - 0
   Object: Group
-- Object: Person
+- groups:
+    - 9
+    - 8
+  Object: Person
   ID: 5
   VCard:
     surname: Potta
     sex: MALE
     birthday: 19283740
     name: Harry
-  groups:
-    - 9
-    - 8
-- ID: 6
-  VCard:
-    surname: Connor
-    sex: MALE
-    name: John
-    birthday: 1100220033
-  groups:
+- groups:
     - 7
   Object: Person
-- children_groups:
-    - 8
-    - 9
-  ID: 7
-  Object: Group
+  ID: 6
+  VCard:
+    sex: MALE
+    birthday: 1100220033
+    name: John
+    surname: Connor
+- ID: 7
   VCard:
     name: Miles Davis band
+  Object: Group
   people:
     - 6
   parent_groups:
     - 9
-- ID: 8
+  children_groups:
+    - 8
+    - 9
+- children_groups:
+    - 8
+    - 9
+  Object: Group
+  ID: 8
   VCard:
     name: Suppa-pa... Truppa-pa...
   people:
     - 5
-  Object: Group
   parent_groups:
     - 7
     - 8
-  children_groups:
-    - 8
-    - 9
-- parent_groups:
-    - 7
-    - 8
-  children_groups:
-    - 7
-  ID: 9
+- ID: 9
   VCard:
     name: Abba
   people:
     - 5
   Object: Group
-- groups:
+  parent_groups:
+    - 7
+    - 8
+  children_groups:
+    - 7
+- VCard:
+    name: Harry
+    surname: Potta
+    sex: MALE
+    birthday: 19283740
+  groups:
     - 14
     - 13
   Object: Person
   ID: 10
-  VCard:
-    surname: Potta
-    sex: MALE
-    birthday: 19283740
-    name: Harry
-- ID: 11
+- Object: Person
+  ID: 11
   VCard:
     name: John
     surname: Connor
@@ -122,7 +123,6 @@
     birthday: 1100220033
   groups:
     - 12
-  Object: Person
 - Object: Group
   ID: 12
   VCard:
@@ -137,15 +137,15 @@
 - people:
     - 10
   parent_groups:
-    - 13
     - 12
+    - 13
   children_groups:
     - 13
     - 14
-  Object: Group
   ID: 13
   VCard:
     name: Suppa-pa... Truppa-pa...
+  Object: Group
 - Object: Group
   ID: 14
   VCard:
@@ -153,7 +153,7 @@
   people:
     - 10
   parent_groups:
-    - 13
     - 12
+    - 13
   children_groups:
     - 12

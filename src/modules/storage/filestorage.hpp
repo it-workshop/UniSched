@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../paths.hpp"
+#include <paths.hpp>
 
 #include <abstractui.h>
 
