@@ -5,3 +5,4 @@ raspisator
 *.swo
 src/include/paths.hpp
 src/include/cli_py_names.hpp
+doc/
