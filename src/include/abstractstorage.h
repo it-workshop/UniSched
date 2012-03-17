@@ -25,8 +25,8 @@ protected:
     Object * create_in_memory(const objid_t id) { return ui_->create<T>(id); }
 
 public:
-    AbstractStorage(const std::string name, const std::string dbase_fname, std::vector<Module *>* modules,
-            void *handle):
+    AbstractStorage(const std::string name, const std::string dbase_fname,
+        std::vector<Module *>* modules, void *handle):
         Module(Module::STORAGE, name, modules, handle),
         dbase_fname_ (dbase_fname)
     {}
@@ -42,11 +42,6 @@ public:
     virtual void disconnect() = 0;
     virtual void create(const Object *object) = 0;
     virtual void remove(const objid_t id) = 0;
-    virtual void dump() = 0; // Ok, You probably don't need 
-                             // this for the SQLite DB, but
-    virtual bool load() = 0; // it could be useful to make a 
-                             // somewhat DB-backup-method for
-                             // emergancy cases (in the future).
 };
 
 }
