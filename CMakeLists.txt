@@ -21,7 +21,7 @@ add_definitions (-std=c++0x)
 
 include (CheckIncludeFileCXX)
 
-configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/modules/paths.hpp)
+configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/include/paths.hpp)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
