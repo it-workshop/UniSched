@@ -3,7 +3,7 @@
 #include <abstractui.h>
 #include <yaml.h>
 
-#include "../paths.hpp"
+#include <paths.hpp>
 
 
 class FileStorage : public Core::AbstractStorage {
