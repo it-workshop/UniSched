@@ -1,7 +1,9 @@
 cmake_minimum_required (VERSION 2.8.3)
 
 if (WITH_YAML)
+    #add_library (yaml SHARED yaml.cpp)
     add_library (filestorage SHARED filestorage.cpp)
+    target_link_libraries (filestorage yaml-cpp)
 endif (WITH_YAML)
 
 if (WITH_SQLITE)

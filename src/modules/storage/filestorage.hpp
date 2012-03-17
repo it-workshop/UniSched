@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include <abstractui.h>
-#include <yaml.h>
-
 #include "../paths.hpp"
 
+#include <abstractui.h>
+
+#include "yaml.h"
 
 class FileStorage : public Core::AbstractStorage {
 private:
