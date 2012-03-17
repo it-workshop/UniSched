@@ -27,8 +27,6 @@ public:
     
     void dump(const std::string& dbase_fname);
     bool load(const std::string& dbase_fname);
-    void dump();
-    bool load();
     
     void push(const Core::objid_t id, const std::string& name, const boost::any& value);
     void connect();

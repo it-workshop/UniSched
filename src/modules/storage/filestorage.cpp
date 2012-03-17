@@ -17,13 +17,13 @@ void FileStorage::connect()
 {
     std::cout << ">>> FileStorage: Module connected. Ready for service.\n"
               << ">>> FileStorage: Using database: " << dbase_fname() << std::endl;
-    load();
+    load(dbase_fname());
 }
 
 void FileStorage::disconnect()
 {
     //dump("brand_new_database.yaml");
-    dump();
+    dump(dbase_fname());
     std::cout << "<<< FileStorage: Module disconnected. Bye bye." << std::endl;
 }
 
@@ -40,16 +40,6 @@ void FileStorage::remove(const Core::objid_t id)
 void FileStorage::init (const std::vector<std::string>& args)
 {
     std::cout << "FileStorage INIT" << std::endl;
-}
-
-void FileStorage::dump()
-{
-    dump(dbase_fname());
-}
-
-bool FileStorage::load()
-{
-    load(dbase_fname());
 }
 
 void FileStorage::dump(const std::string& dbase_fname)

@@ -42,11 +42,6 @@ public:
     virtual void disconnect() = 0;
     virtual void create(const Object *object) = 0;
     virtual void remove(const objid_t id) = 0;
-    virtual void dump() = 0; // Ok, You probably don't need 
-                             // this for the SQLite DB, but
-    virtual bool load() = 0; // it could be useful to make a 
-                             // somewhat DB-backup-method for
-                             // emergancy cases (in the future).
 };
 
 }
