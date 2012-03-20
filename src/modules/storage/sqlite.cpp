@@ -44,10 +44,6 @@ SQLiteStorage::SQLiteStorage(std::vector<Core::Module *>* modules,
     db_name_(".raspisator.db"), create_(false)
 {}
 
-int SQLiteStorage_read_callback(void *object, int, char**, char**)
-{
-}
-
 void SQLiteStorage::init(const std::vector<std::string>& args)
 {
     for (auto it = args.begin(); it != args.end(); it++)
@@ -64,9 +60,55 @@ void SQLiteStorage::init(const std::vector<std::string>& args)
     }
 }
 
+static int SQLiteStorage_push_select(void *found, int, char **, char **)
+{
+    *((bool *)found) = true;
+}
+
 void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         const boost::any& value)
 {
+    std::stringstream query;
+    bool found = false;
+    char *error = nullptr;
+    query.str("SELECT * FROM ");
+    if (typeid(const time_t) == value.type())
+    {
+        query << "times";
+    }
+    else
+    {
+        query << "strings";
+    }
+    query << " WHERE object=" << id << " AND name='" << name << '\'';
+    if (sqlite3_exec(connection_, query.str().c_str(),
+        SQLiteStorage_push_select, &found, &error))
+    {
+        std::cerr << "SQLITE: push: " << error << std::endl;
+        sqlite3_free(error);
+        return;
+    }
+
+    query.str(found ? "UPDATE " : "INSERT ");
+    if (typeid(const time_t) == value.type())
+    {
+        query << "times" << (found ? " SET value=" : "(value, object, name) (")
+            << boost::any_cast<const time_t>(value);
+    }
+    else
+    {
+        query << "strings"
+            << (found ? " SET value='" : "(value, object, name) (")
+            << boost::any_cast<const std::string&>(value) << '\'';
+    }
+    query << (found ? " WHERE object=" : ", ") << id
+        << (found ? " AND name='" : ", '") << name << (found ? "'" : "')");
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr,
+        &error))
+    {
+        std::cerr << "SQLITE: push: " << error << std::endl;
+        sqlite3_free(error);
+    }
 }
 
 void SQLiteStorage::connect()
