@@ -65,6 +65,14 @@ void AbstractUI::push(const int id, const std::string& name,
     }
 }
 
+void AbstractUI::push(Object * object, Object * with, bool connect)
+{
+    if (storage_)
+    {
+        storage_->push_connect(object->id(), with->id(), connect);
+    }
+}
+
 void AbstractUI::remove(Object *object)
 
 {

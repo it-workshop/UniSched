@@ -36,6 +36,7 @@ public:
     }
 
     virtual void push(const objid_t id, const std::string& name, const boost::any& value) = 0;
+    virtual void push_connect(objid_t id, objid_t with, bool connect) = 0;
     virtual void connect() = 0;
     virtual void disconnect() = 0;
     virtual void create(const Object *object) = 0;

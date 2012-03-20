@@ -40,6 +40,9 @@ private:
     void update(const std::string& name, Object * object, const bool connect)
             throw (boost::bad_any_cast);
 
+    void back_update(const std::string& name, Object * object, const bool connect)
+            throw (boost::bad_any_cast);
+
     void back_connect(Object * object, const bool connect) throw (std::bad_cast);
 
 protected:

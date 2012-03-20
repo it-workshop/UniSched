@@ -32,6 +32,8 @@ public:
     virtual void init(const std::vector<std::string>& args);
     virtual void push(const Core::objid_t id, const std::string& name,
             const boost::any& value);
+    virtual void push_connect(Core::objid_t id, Core::objid_t with,
+            bool connect);
     virtual void connect();
     virtual void disconnect();
     virtual void create(const Core::Object *object);
@@ -110,6 +112,24 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         sqlite3_free(error);
     }
 }
+
+void SQLiteStorage::push_connect(const Core::objid_t id,
+    const Core::objid_t with, bool connect)
+{
+    std::stringstream query;
+    char *error = nullptr;
+    query.str(connect ? "INSERT INTO" : "DELETE FROM");
+    query << " connections"
+        << (connect ? "(object, with) VALUES(" : " WHERE object=") << id
+        << (connect ? ", " : " AND with=") << with << (connect ? ")" : "");
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
+    {
+        std::cerr << "SQLITE: push_connect: " << error << std::endl;
+        sqlite3_free(error);
+        return;
+    }
+}
+
 
 void SQLiteStorage::connect()
 {

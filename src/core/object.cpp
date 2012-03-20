@@ -55,12 +55,51 @@ void Object::update(const std::string& name, Object *object, const bool connect)
             return;
         }
     }
+    ui_.push(this, object, connect);
 }
+
+void Object::back_update(const std::string& name, Object *object, const bool connect)
+    throw (boost::bad_any_cast)
+{
+    if (fields_[name].empty())
+    {
+        if (!connect)
+        {
+            return;
+        }
+        std::vector<Object *> vector;
+        vector.push_back(object);
+        fields_[name] = vector;
+        return;
+    }
+    auto& vector = boost::any_cast<std::vector<Object *>&>(fields_[name]);
+    if (connect)
+    {
+        for (auto &it : vector)
+        {
+            if (it == object)
+            {
+                return;
+            }
+        }
+        vector.push_back(object);
+        return;
+    }
+    for (auto it = vector.begin(); it != vector.end(); it++)
+    {
+        if (*it == object)
+        {
+            vector.erase(it);
+            return;
+        }
+    }
+}
+
 
 void Object::back_connect(Object * object, const bool connect)
         throw (std::bad_cast)
 {
-    update(back_link_field(object), object, connect);
+    back_update(back_link_field(object), object, connect);
 }
 
 void Object::connect(Object * object, const bool connect)

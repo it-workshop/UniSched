@@ -64,6 +64,8 @@ protected:
                          * @param [in] name Name of the field to be saved.
                          * @param [in] value Value of the field to be saved.
                          */
+    void push(Object *object, Object *with, bool connect);
+
     void remove(Object * object);
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
@@ -96,7 +98,7 @@ protected:
         return cache_.back();
     }
 
-    std::vector<Object*> search(const std::map<std::string, boost::any>& parameters);
+    std::vector<Object*> search(const std::map<std::string, boost::any>& parameters = std::map<std::string, boost::any>());
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
                          *
@@ -106,16 +108,6 @@ protected:
                          * is empty that all objects will satisfied.
                          */
 
-    std::vector<Object*> search()
-                        /**< @brief Search objects by some parameters.
-                         * return all objects
-                         * 
-                         */
-    {
-        std::map<std::string, boost::any> no_parameters;
-        return this->search(no_parameters);
-    }
-    
     const std::map<objid_t, Object *>& objects() const
     {
         return objects_;
