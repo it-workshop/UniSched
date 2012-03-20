@@ -14,6 +14,7 @@ protected:
     std::map<objid_t, Object *>& objects() { return ui_->objects_; }
     
     static const obj_t object_type(const Object *object) { return object->type(); }
+    static const objid_t object_id(const Object *object) { return object->id(); }
 
     const std::map<objid_t, Object *>& objects() const { return ui_->objects(); }
     

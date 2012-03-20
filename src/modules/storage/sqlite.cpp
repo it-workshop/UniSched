@@ -362,9 +362,9 @@ void SQLiteStorage::create(const Core::Object *object)
 {
     char *error = nullptr;
     std::stringstream query;
-    query << "INSERT INTO objects (type) VALUES(" << int(object->type())
-        << ");";
-    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, error))
+    query << "INSERT INTO objects (id, type) VALUES(" << object_id(object)
+        << ", " << int(object->type())<< ")";
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
     {
         std::cerr << "SQLITE: create: " << error << std::endl;
         sqlite3_free(error);
@@ -374,6 +374,15 @@ void SQLiteStorage::create(const Core::Object *object)
 
 void SQLiteStorage::remove(const Core::objid_t id)
 {
+    char *error = nullptr;
+    std::stringstream query;
+    query << "DELETE FROM objects WHERE id = " << id;
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
+    {
+        std::cerr << "SQLITE: remove: " << error << std::endl;
+        sqlite3_free(error);
+        return;
+    }
 }
 
 extern "C" {
