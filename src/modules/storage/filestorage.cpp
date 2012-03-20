@@ -3,43 +3,45 @@
 #include <yaml-cpp/yaml.h>
     
 FileStorage::FileStorage(std::vector<Module *>* modules, void *handle):
-        AbstractStorage("FileStorage", DATABASE_YAML, modules, handle)
+        AbstractStorage("FileStorage", modules, handle),
+        file_name_("database.yaml")
 {
-    std::cout << "(FileStorage Interface constructor) ";
 }
    
-void FileStorage::push(const Core::objid_t id, const std::string& name, const boost::any& value)
+void FileStorage::push(const Core::objid_t id, const std::string& name,
+        const boost::any& value)
 {
-    std::cout << ">>> FileStorage: Property pushed." << std::endl;
 }
 
 void FileStorage::connect()
 {
     std::cout << ">>> FileStorage: Module connected. Ready for service.\n"
-              << ">>> FileStorage: Using database: " << dbase_fname() << std::endl;
-    load(dbase_fname());
+              << ">>> FileStorage: Using database: " << file_name_ << std::endl;
+    load(file_name_);
 }
 
 void FileStorage::disconnect()
 {
-    //dump("brand_new_database.yaml");
-    dump(dbase_fname());
+    dump(file_name_);
     std::cout << "<<< FileStorage: Module disconnected. Bye bye." << std::endl;
 }
 
 void FileStorage::create(const Core::Object *object)
 {
-    std::cout << ">>> FileStorage: Object created." << std::endl;
 }
 
 void FileStorage::remove(const Core::objid_t id)
 {
-    std::cout << ">>> FileStorage: Object removed." << std::endl;
 }
     
 void FileStorage::init (const std::vector<std::string>& args)
 {
-    std::cout << "FileStorage INIT" << std::endl;
+    for (auto it = args.begin(); it != args.end(); it++) {
+        if ("--yaml-file" == *it) {
+            file_name_ = *++it;
+            continue;
+        }
+    }
 }
 
 void FileStorage::dump(const std::string& dbase_fname)
@@ -66,10 +68,12 @@ void FileStorage::dump(const std::string& dbase_fname)
             obj["people"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("people"));
             
-            obj["parent_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["parent_groups"] = 
+                boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("parent_groups"));
             
-            obj["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["children_groups"] = 
+                boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("children_groups"));
             
         break;
@@ -79,7 +83,8 @@ void FileStorage::dump(const std::string& dbase_fname)
             obj["people"] = boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("people"));
             
-            obj["children_groups"] = boost::any_cast<const std::vector<Core::Object *> &>
+            obj["children_groups"] =
+                boost::any_cast<const std::vector<Core::Object *> &>
                 (iter.second->read("children_groups"));
                 
         break;
@@ -98,7 +103,8 @@ void FileStorage::dump(const std::string& dbase_fname)
     base.close();
 }
 
-inline void FileStorage::link(const std::map<Core::Object *, std::vector<Core::objid_t>>& connections)
+inline void FileStorage::link(const std::map<Core::Object *,
+        std::vector<Core::objid_t>>& connections)
 {
     for (auto iter : connections)
     {

@@ -8,11 +8,7 @@ namespace Core {
 class AbstractStorage : public Module {
 private:
     AbstractUI *ui_;
-    const std::string dbase_fname_;
-    
 protected:
-    const std::string& dbase_fname() { return dbase_fname_; }
-
     AbstractUI * ui() { return ui_; }
     
     std::map<objid_t, Object *>& objects() { return ui_->objects_; }
@@ -25,10 +21,9 @@ protected:
     Object * create_in_memory(const objid_t id) { return ui_->create<T>(id); }
 
 public:
-    AbstractStorage(const std::string name, const std::string dbase_fname,
-        std::vector<Module *>* modules, void *handle):
-        Module(Module::STORAGE, name, modules, handle),
-        dbase_fname_ (dbase_fname)
+    AbstractStorage(const std::string name, std::vector<Module *>* modules,
+            void *handle):
+        Module(Module::STORAGE, name, modules, handle)
     {}
 
     void set_UI(AbstractUI* ui)

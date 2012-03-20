@@ -19,8 +19,9 @@ private:
                          * where object with id A connects all objects with
                          * ids from vector B.
                          */
+    std::string file_name_;
                          
-     Core::Object * find_object(const Core::objid_t key_id);
+    Core::Object * find_object(const Core::objid_t key_id);
 
 public:
     FileStorage(std::vector<Module *>* modules, void *handle);
