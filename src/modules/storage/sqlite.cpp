@@ -373,7 +373,7 @@ int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
         std::cerr << "SQLITE: load: id is not integer!" << std::endl;
         return -1;
     }
-    self->set_new_id(id);
+    self->set_new_id(id + 1);
     return 0;
 }
 
