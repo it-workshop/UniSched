@@ -30,6 +30,7 @@ public:
     bool load(const std::string& dbase_fname);
     
     void push(const Core::objid_t id, const std::string& name, const boost::any& value);
+    void push(const Core::objid_t id, const Core::objid_t, const bool);
     void connect();
     void disconnect();
     void create(const Core::Object *object);

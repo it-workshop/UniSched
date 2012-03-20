@@ -13,6 +13,9 @@ void FileStorage::push(const Core::objid_t id, const std::string& name,
 {
 }
 
+void FileStorage::push(const Core::objid_t , const Core::objid_t , const bool)
+{}
+
 void FileStorage::connect()
 {
     std::cout << ">>> FileStorage: Module connected. Ready for service.\n"
