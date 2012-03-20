@@ -17,6 +17,8 @@ friend int SQLiteStorage_load_string(void *self_, int fields_count,
         char **values, char **fields);
 friend int SQLiteStorage_load_connections(void *self_, int fields_count,
         char **values, char **fields);
+friend int SQLiteStorage_load_id(void *self_, int fields_count,
+        char **values, char **fields);
 private:
     std::string db_name_;
     bool create_;
@@ -303,18 +305,47 @@ int SQLiteStorage_load_connections(void *self_, int fields_count,
     self->objects()[id]->connect(self->objects()[with]);
 }
 
+int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
+        char **fields)
+{
+    SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self);
+    if (fields_count != 1)
+    {
+        std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
+        return -1;
+    }
+    if ("id" != std::string(*fields))
+    {
+        std::cerr << "SQLITE: load: unknown field: " << *fields << std::endl;
+        return -1;
+    }
+    std::stringstream stream;
+    stream << *values;
+    Core::objid_t id;
+    stream >> id;
+    if (stream.fail())
+    {
+        std::cerr << "SQLITE: load: id is not integer!" << std::endl;
+        return -1;
+    }
+    self->set_new_id(id);
+    return 0;
+}
+
 void SQLiteStorage::load()
 {
     char *error = nullptr;
-    if (sqlite3_exec (connection_, "SELECT id, type FROM objects;",
+    if (sqlite3_exec (connection_, "SELECT id, type FROM objects",
             SQLiteStorage_load_type, this, &error)
     || sqlite3_exec(connection_,
-        "SELECT object, name, value FROM times;", SQLiteStorage_load_time, 
+        "SELECT object, name, value FROM times", SQLiteStorage_load_time, 
         this, &error)
-    || sqlite3_exec(connection_, "SELECT object, name, value FROM strings;",
+    || sqlite3_exec(connection_, "SELECT object, name, value FROM strings",
         SQLiteStorage_load_string, this, &error)
-    || sqlite3_exec(connection_, "SELECT object, with FROM connections;",
-        SQLiteStorage_load_connections, this, &error))
+    || sqlite3_exec(connection_, "SELECT object, with FROM connections",
+        SQLiteStorage_load_connections, this, &error)
+    || sqlite3_exec(connection_, "SELECT max(id) FROM (SELECT id FROM objects)",
+        SQLiteStorage_load_id, this, &error))
     {
         std::cerr << "SQLITE: load: " << error << std::endl;
         sqlite3_free(error);
@@ -329,6 +360,16 @@ void SQLiteStorage::disconnect()
 
 void SQLiteStorage::create(const Core::Object *object)
 {
+    char *error = nullptr;
+    std::stringstream query;
+    query << "INSERT INTO objects (type) VALUES(" << int(object->type())
+        << ");";
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, error))
+    {
+        std::cerr << "SQLITE: create: " << error << std::endl;
+        sqlite3_free(error);
+        return;
+    }
 }
 
 void SQLiteStorage::remove(const Core::objid_t id)

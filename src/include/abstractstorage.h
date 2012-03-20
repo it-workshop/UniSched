@@ -20,6 +20,8 @@ protected:
     template <typename T>
     Object * create_in_memory(const objid_t id) { return ui_->create<T>(id); }
 
+    void set_new_id(const objid_t id) {ui_->new_id_ = id;}
+
 public:
     AbstractStorage(const std::string name, std::vector<Module *>* modules,
             void *handle):
