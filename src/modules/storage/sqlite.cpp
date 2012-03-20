@@ -88,18 +88,21 @@ void SQLiteStorage::connect()
 
 void SQLiteStorage::create_tables()
 {
-    sqlite3_exec( connection_,
+    char *error = nullptr;
+    if (sqlite3_exec( connection_,
         "DROP TABLE IF EXISTS objects;"\
-        "CREATE TABLE objects (id INT PRIMARY KEY AUTOINCREMENT, type INT);"\
-        "DROP TABLE IF EXISTS fields;"\
-        "CREATE TABLE fields (object INT, name VARCHAR(32), type INT, value INT);"\
+        "CREATE TABLE objects (id INT, type INT);"\
+        "DROP TABLE IF EXISTS times;"\
+        "CREATE TABLE times (object INT, name VARCHAR(32), value INT);"\
         "DROP TABLE IF EXISTS strings;"\
-        "CREATE TABLE strings (id INT PRIMARY KEY, value TEXT);"\
-        "DROP TABLE IF EXISTS timestamps;"\
-        "CREATE TABLE timestamps (id INT PRIMARY KEY, value TIMESTAMP);"\
+        "CREATE TABLE strings (id INT, name VARCHAR(32), value TEXT);"\
         "DROP TABLE IF EXISTS connections;"\
-        "CREATE TABLE connections (id INT, with INT);",
-         nullptr, nullptr, nullptr);
+        "CREATE TABLE connections (id INT, with INT)",
+         nullptr, nullptr, &error))
+    {
+        std::cerr << "SQLITE: create_tables: " << error << std::endl;
+        sqlite3_free(error);
+    }
 }
  
 int SQLiteStorage_load_type(void *self_, int fields_count, char **values,
