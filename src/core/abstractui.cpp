@@ -28,8 +28,9 @@ static const bool operator==(const boost::any& lhs, const boost::any& rhs)
 std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>& parameters)
 {
     std::vector<Object *> results;
-    for (auto m: objects_) {
-        results.push_back(m.second);
+    for(auto object : objects_)
+    {
+        results.push_back(object.second);
     }
     for (auto p: parameters)
     {
@@ -45,14 +46,13 @@ std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>
             catch (std::bad_cast)
             {}
             it = results.erase(it);
+            it--;
         }
     }
-
     for (Object * object: results)
     {
         cache_.push_back(object);
     }
-
     return results;
 }
 
