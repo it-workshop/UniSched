@@ -23,6 +23,7 @@ private:
     std::string db_name_;
     bool create_;
     sqlite3 *connection_;
+    bool loading_;
 
     void create_tables();
     void load();
@@ -70,10 +71,14 @@ static int SQLiteStorage_push_select(void *found, int, char **, char **)
 void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         const boost::any& value)
 {
+    if (loading_)
+    {
+        return;
+    }
     std::stringstream query;
     bool found = false;
     char *error = nullptr;
-    query.str("SELECT * FROM ");
+    query << "SELECT * FROM ";
     if (typeid(const time_t) == value.type())
     {
         query << "times";
@@ -82,7 +87,7 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
     {
         query << "strings";
     }
-    query << " WHERE object=" << id << " AND name='" << name << '\'';
+    query << " WHERE object=" << id << " AND name='" << name << "';";
     if (sqlite3_exec(connection_, query.str().c_str(),
         SQLiteStorage_push_select, &found, &error))
     {
@@ -91,20 +96,20 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         return;
     }
 
-    query.str(found ? "UPDATE " : "INSERT ");
+    query << (found ? "UPDATE " : "INSERT INTO ");
     if (typeid(const time_t) == value.type())
     {
-        query << "times" << (found ? " SET value=" : "(value, object, name) (")
+        query << "times" << (found ? " SET value=" : "(value, object, name) VALUES(")
             << boost::any_cast<const time_t>(value);
     }
     else
     {
         query << "strings"
-            << (found ? " SET value='" : "(value, object, name) (")
+            << (found ? " SET value='" : "(value, object, name) VALUES('")
             << boost::any_cast<const std::string&>(value) << '\'';
     }
     query << (found ? " WHERE object=" : ", ") << id
-        << (found ? " AND name='" : ", '") << name << (found ? "'" : "')");
+        << (found ? " AND name='" : ", '") << name << (found ? "';" : "');");
     if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr,
         &error))
     {
@@ -116,12 +121,16 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
 void SQLiteStorage::push_connect(const Core::objid_t id,
     const Core::objid_t with, bool connect)
 {
+    if (loading_)
+    {
+        return;
+    }
     std::stringstream query;
     char *error = nullptr;
-    query.str(connect ? "INSERT INTO" : "DELETE FROM");
+    query << (connect ? "INSERT INTO" : "DELETE FROM");
     query << " connections"
         << (connect ? "(object, with) VALUES(" : " WHERE object=") << id
-        << (connect ? ", " : " AND with=") << with << (connect ? ")" : "");
+        << (connect ? ", " : " AND with=") << with << (connect ? ");" : ";");
     if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
     {
         std::cerr << "SQLITE: push_connect: " << error << std::endl;
@@ -133,13 +142,10 @@ void SQLiteStorage::push_connect(const Core::objid_t id,
 
 void SQLiteStorage::connect()
 {
-    sqlite3_open(db_name_.c_str(), &connection_);
-
-    if (SQLITE_OK != sqlite3_errcode(connection_))
+    if (SQLITE_OK != sqlite3_open(db_name_.c_str(), &connection_))
     {
-        throw;
+        throw sqlite3_errcode(connection_);
     }
-
     if (create_)
     {
         create_tables();
@@ -157,9 +163,9 @@ void SQLiteStorage::create_tables()
         "DROP TABLE IF EXISTS times;"\
         "CREATE TABLE times (object INT, name VARCHAR(32), value INT);"\
         "DROP TABLE IF EXISTS strings;"\
-        "CREATE TABLE strings (id INT, name VARCHAR(32), value TEXT);"\
+        "CREATE TABLE strings (object INT, name VARCHAR(32), value TEXT);"\
         "DROP TABLE IF EXISTS connections;"\
-        "CREATE TABLE connections (id INT, with INT)",
+        "CREATE TABLE connections (object INT, with INT);",
          nullptr, nullptr, &error))
     {
         std::cerr << "SQLITE: create_tables: " << error << std::endl;
@@ -399,23 +405,25 @@ int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
 
 void SQLiteStorage::load()
 {
+    loading_ = true;
     char *error = nullptr;
-    if (sqlite3_exec (connection_, "SELECT id, type FROM objects",
+    if (sqlite3_exec (connection_, "SELECT id, type FROM objects;",
             SQLiteStorage_load_type, this, &error)
     || sqlite3_exec(connection_,
-        "SELECT object, name, value FROM times", SQLiteStorage_load_time, 
+        "SELECT object, name, value FROM times;", SQLiteStorage_load_time, 
         this, &error)
-    || sqlite3_exec(connection_, "SELECT object, name, value FROM strings",
+    || sqlite3_exec(connection_, "SELECT object, name, value FROM strings;",
         SQLiteStorage_load_string, this, &error)
-    || sqlite3_exec(connection_, "SELECT object, with FROM connections",
+    || sqlite3_exec(connection_, "SELECT object, with FROM connections;",
         SQLiteStorage_load_connections, this, &error)
-    || sqlite3_exec(connection_, "SELECT max(id) FROM (SELECT id FROM objects)",
+    || sqlite3_exec(connection_, "SELECT max(id) FROM (SELECT id FROM objects);",
         SQLiteStorage_load_id, this, &error))
     {
         std::cerr << "SQLITE: load: " << error << std::endl;
         sqlite3_free(error);
         return;
     }
+    loading_ = false;
 }
 
 void SQLiteStorage::disconnect()
@@ -425,6 +433,10 @@ void SQLiteStorage::disconnect()
 
 void SQLiteStorage::create(const Core::Object *object)
 {
+    if (loading_)
+    {
+        return;
+    }
     char *error = nullptr;
     std::stringstream query;
     query << "INSERT INTO objects (id, type) VALUES(" << object_id(object)
