@@ -30,9 +30,7 @@ void Object::update(const std::string& name, Object *object, const bool connect)
             return;
         }
         std::vector<Object *> vector;
-        vector.push_back(object);
         fields_[name] = vector;
-        return;
     }
     auto& vector = boost::any_cast<std::vector<Object *>&>(fields_[name]);
     if (connect)
@@ -45,14 +43,16 @@ void Object::update(const std::string& name, Object *object, const bool connect)
             }
         }
         vector.push_back(object);
-        return;
     }
-    for (auto it = vector.begin(); it != vector.end(); it++)
+    else
     {
-        if (*it == object)
+        for (auto it = vector.begin(); it != vector.end(); it++)
         {
-            vector.erase(it);
-            return;
+            if (*it == object)
+            {
+                vector.erase(it);
+                return;
+            }
         }
     }
     ui_.push(this, object, connect);
