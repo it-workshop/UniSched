@@ -5,7 +5,7 @@ if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
     message (SEND_ERROR "Building in sources not allowed.")
 endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 
-option(WITH_SQLITE "Build with SQLite support." N)
+option(WITH_SQLITE "Build with SQLite support." Y)
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." Y)
 option(WITH_YAML "Build with YAML support." Y)
