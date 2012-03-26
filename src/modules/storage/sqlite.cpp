@@ -212,7 +212,7 @@ int SQLiteStorage_load_type(void *self_, int fields_count, char **values,
             }
             continue;
         }
-        std::cerr << "SQLITE: load: unknown field! " << values[i]
+        std::cerr << "SQLITE: load: unknown field! " << fields[i]
             << std::endl;
         return -1;
     }
@@ -278,8 +278,9 @@ int SQLiteStorage_load_time(void *self_, int fields_count, char **values,
         if ("name" == std::string(fields[i]))
         {
             name = values[i];
+            continue;
         }
-        std::cerr << "SQLITE: load: unknown field!" << std::endl;
+        std::cerr << "SQLITE: load: unknown field!" << fields[i] << std::endl;
         return -1;
     }
     self->objects()[id]->update(name, value);
@@ -328,6 +329,7 @@ int SQLiteStorage_load_string(void *self_, int fields_count, char **values,
         return -1;
     }
     self->objects()[id]->update(name, value);
+    return 0;
 }
 
 int SQLiteStorage_load_connections(void *self_, int fields_count,
@@ -374,18 +376,19 @@ int SQLiteStorage_load_connections(void *self_, int fields_count,
         return -1;
     }
     self->objects()[id]->connect(self->objects()[with]);
+    return 0;
 }
 
 int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
         char **fields)
 {
-    SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self);
+    SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 1)
     {
         std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
-    if ("id" != std::string(*fields))
+    if ("max(id)" != std::string(*fields))
     {
         std::cerr << "SQLITE: load: unknown field: " << *fields << std::endl;
         return -1;
