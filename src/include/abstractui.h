@@ -146,6 +146,14 @@ public:
                          */
     {}
 
+    ~AbstractUI ()
+    {
+        for (auto object : objects_)
+        {
+            delete object;
+        }
+    }
+
     virtual int run() = 0;
                         /**< @brief Main method of frontend class. It is called
                          * from main.
