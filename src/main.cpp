@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <locale.h>
+
 #include <abstractui.h>
 #include <abstractstorage.h>
 #include <module.h>
@@ -14,6 +16,7 @@ main(int argc, char *argv[])
     std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
+    setlocale(LC_ALL, "");
     Core::Module::load_modules();
     if (utils::select_modules(&ui, &storage, args))
     {
