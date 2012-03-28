@@ -40,3 +40,8 @@ if (WITH_EXT_PYTHON_CLI)
     ADD_LIBRARY(${CLI_PY_LIB} SHARED cli_py.cpp)
     target_link_libraries(${CLI_PY_LIB} core dummyui)
 endif(WITH_EXT_PYTHON_CLI)
+
+if (WITH_DUMMYUI)
+    add_subdirectory(ncurses)
+endif (WITH_DUMMYUI)
+

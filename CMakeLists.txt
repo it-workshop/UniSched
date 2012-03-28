@@ -12,6 +12,7 @@ option(WITH_YAML "Build with YAML support." Y)
 option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y)
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
+option(WITH_NCURSES "Build ncurses frontend." Y)
 
 if (WITH_TESTS_CXX11)
     include (cmake/c++11/CheckCXX11Features.cmake)
@@ -39,6 +40,14 @@ endif (WITH_TESTS_CORE)
 if (WITH_EXT_PYTHON_CLI)
     add_definitions(-DWITH_EXT_PYTHON_CLI)
 endif(WITH_EXT_PYTHON_CLI)
+
+if (WITH_SQLITE)
+    find_package (sqlite REQUIRED)
+endif (WITH_SQLITE)
+
+if (WITH_NCURSES)
+    find_package (ncurses REQUIRED)
+endif (WITH_NCURSES)
 
 include_directories ("${Boost_INCLUDE_DIRS}")
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
