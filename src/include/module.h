@@ -27,7 +27,7 @@ private:
                          * @internal Use in the type() method and constructor
                          * only.
                          */
-    const std::string name_;
+    const std::wstring name_;
                         /**< Name of the module.
                          * @internal Use in the name() method and constructor
                          * only.
@@ -35,7 +35,7 @@ private:
     void *handle_;
 
 public:
-    Module (const enum Type type, const std::string& name,
+    Module (const enum Type type, const std::wstring& name,
             std::vector<Module *>* modules, void *handle);
                         /**< @brief Constructor.
                          * @param [in] type Type of the module.
@@ -46,7 +46,7 @@ public:
                          * one.
                          */
     
-    virtual void init(const std::vector<std::string>& args) = 0;
+    virtual void init(const std::vector<std::wstring>& args) = 0;
                         /**< @brief Initilize required resources. Such as memory,
                          * shared objects, create auxiliary objects, etc.
                          * @param [in] args Command line program arguments.
@@ -60,7 +60,7 @@ public:
         return type_;
     }
 
-    const std::string& name() const throw()
+    const std::wstring& name() const throw()
                         /**< @brief Get name of the module.
                          * @return Name of the module.
                          */

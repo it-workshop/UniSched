@@ -20,13 +20,13 @@ namespace Core {
  */
 class AbstractGroup: public Object {
 protected:
-    void check_field(const std::string& name, const boost::any& value) const
+    void check_field(const std::wstring& name, const boost::any& value) const
             throw(boost::bad_any_cast, std::bad_cast);
-    virtual const std::string link_field(const Object *object) const
+    virtual const std::wstring link_field(const Object *object) const
             throw (std::bad_cast);
-    virtual const std::string back_link_field(const Object *object) const
+    virtual const std::wstring back_link_field(const Object *object) const
             throw (std::bad_cast);
-    virtual const bool disconnect_way(const std::string& name) const
+    virtual const bool disconnect_way(const std::wstring& name) const
             throw (std::bad_cast);
 public:
     AbstractGroup(const obj_t type, const objid_t id, AbstractUI& ui);

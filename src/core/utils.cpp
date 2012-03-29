@@ -71,19 +71,19 @@ const wchar_t *utils::iconv(const std::string& string)
 
 bool
 utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
-               std::vector<std::string>& args)
+               std::vector<std::wstring>& args)
 {
     *ui = nullptr;
     *storage = nullptr;
-    std::string uiname;
-    std::string storagename;
+    std::wstring uiname;
+    std::wstring storagename;
     for (auto it = args.begin(); it != args.end(); it++)
     {
-        if (*it == "--iface")
+        if (*it == L"--iface")
         {
             uiname = *++it;
         }
-        if (*it == "--storage")
+        if (*it == L"--storage")
         {
             storagename = *++it;
         }

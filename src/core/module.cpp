@@ -13,7 +13,7 @@
 
 using namespace Core;
 
-Module::Module (const enum Type type, const std::string& name,
+Module::Module (const enum Type type, const std::wstring& name,
         std::vector<Module *>* modules, void * handle):
     type_(type), name_(name), handle_(handle)
 {

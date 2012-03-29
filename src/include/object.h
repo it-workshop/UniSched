@@ -35,18 +35,18 @@ private:
                          * @internal This field must be used in pull and push
                          * methods only.
                          */
-    std::map<const std::string, boost::any> fields_;
+    std::map<const std::wstring, boost::any> fields_;
 
-    void update(const std::string& name, Object * object, const bool connect)
+    void update(const std::wstring& name, Object * object, const bool connect)
             throw (boost::bad_any_cast);
 
-    void back_update(const std::string& name, Object * object, const bool connect)
+    void back_update(const std::wstring& name, Object * object, const bool connect)
             throw (boost::bad_any_cast);
 
     void back_connect(Object * object, const bool connect) throw (std::bad_cast);
 
 protected:
-    virtual void check_field(const std::string& name,
+    virtual void check_field(const std::wstring& name,
             const boost::any& value) const
         throw(boost::bad_any_cast, std::bad_cast) = 0;
                         /**< @brief Check type and value of the field
@@ -60,7 +60,7 @@ protected:
                          *
                          * class SomeCoreObject : public Core::Object {
                          * protected:
-                         *     virtual void check_field(const std::string& name,
+                         *     virtual void check_field(const std::wstring& name,
                          *             const boost::any& value) const
                          *             throw(boost::bad_any_cast);
                          * public:
@@ -70,12 +70,12 @@ protected:
                          * };
                          *
                          * void
-                         * SomeCoreObject::check_field(const std::string& name,
+                         * SomeCoreObject::check_field(const std::wstring& name,
                          *                      const boost::any& value) const
                          * {
                          *     if ("name" == name)
                          *     {
-                         *         if (value.type() != typeid(std::string))
+                         *         if (value.type() != typeid(std::wstring))
                          *         {
                          *             throw boost::bad_any_cast();
                          *         }
@@ -91,9 +91,9 @@ protected:
                          *     }
                          *     if ("sex" == name)
                          *     {
-                         *         if (boost::any_cast<std::string>(value)
+                         *         if (boost::any_cast<std::wstring>(value)
                          *                 != "MALE"
-                         *             && boost::any_cast<std::string>(value)
+                         *             && boost::any_cast<std::wstring>(value)
                          *                 != "FEMALE")
                          *         {
                          *             throw boost::bad_any_cast();
@@ -104,7 +104,7 @@ protected:
                          *
                          * @endcode
                          */
-    virtual const std::string link_field(const Object * object) const
+    virtual const std::wstring link_field(const Object * object) const
             throw (std::bad_cast) = 0;
                         /**< @brief Check if one object could link another one 
                          * and return name of the corresponding field of first
@@ -114,7 +114,7 @@ protected:
                          * This method must throw std::bad_cast, when connect
                          * can not be set.
                          */
-    virtual const std::string back_link_field(const Object * object) const
+    virtual const std::wstring back_link_field(const Object * object) const
             throw (std::bad_cast) = 0;
                         /**< @brief Check if one object links another one and
                          * return name of the corresponding field of first
@@ -123,7 +123,7 @@ protected:
                          * This method must throw std::bad_cast, when connect
                          * can not be set.
                          */
-    virtual const bool disconnect_way(const std::string& name) const
+    virtual const bool disconnect_way(const std::wstring& name) const
             throw (std::bad_cast) = 0;
                         /**< @brief Check if connections in fields with given
                          * name must be disconnected in the forward or backward
@@ -163,7 +163,7 @@ public:
                          * @important Call it before delete object.
                          */
 
-    const boost::any read(const std::string& name) const
+    const boost::any read(const std::wstring& name) const
                         /**< @brief Get field of the object.
                          * @param [in] name Name of the field to get.
                          * @return Corresponding field.
@@ -172,16 +172,16 @@ public:
         return (*fields_.find(name)).second;
     }
 
-    const std::map<const std::string,boost::any>& read() const
+    const std::map<const std::wstring,boost::any>& read() const
     {
         return fields_;
     }
 
-    void update(const std::string& name, const boost::any& value);
+    void update(const std::wstring& name, const boost::any& value);
                         /**< @brief Change field of the object.
                          * @param [in] field Field to change.
                          */
-    void update(const std::map<std::string, boost::any>& fields);
+    void update(const std::map<std::wstring, boost::any>& fields);
                         /**< @brief bulk change fields of the object.
                          * @param [in] fields map of fields to change.
                          */

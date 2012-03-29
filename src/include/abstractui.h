@@ -57,7 +57,7 @@ private:
     void create_in_storage(const Object *object);
 
 protected:
-    void push(const int id, const std::string& name, const boost::any& value);
+    void push(const int id, const std::wstring& name, const boost::any& value);
                         /**< @brief Save @a field of object with @a id it hte
                          * database
                          * @param [in] id Identificator of the object.
@@ -98,7 +98,7 @@ protected:
         return cache_.back();
     }
 
-    std::vector<Object*> search(const std::map<std::string, boost::any>& parameters = std::map<std::string, boost::any>());
+    std::vector<Object*> search(const std::map<std::wstring, boost::any>& parameters = std::map<std::wstring, boost::any>());
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
                          *
@@ -138,7 +138,7 @@ protected:
     }
 
 public:
-    AbstractUI (const std::string& name, std::vector<Module *>* modules,
+    AbstractUI (const std::wstring& name, std::vector<Module *>* modules,
             void *handle):
         Module(Module::UI, name, modules, handle), new_id_(0), storage_(nullptr)
                         /**< @brief constructor.

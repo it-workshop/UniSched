@@ -9,7 +9,7 @@ namespace utils {
 
 bool
 select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
-               std::vector<std::string>& args);
+               std::vector<std::wstring>& args);
 
 void init_iconv();
 void deinit_iconv();

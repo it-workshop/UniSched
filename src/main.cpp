@@ -13,9 +13,9 @@ main(int argc, char *argv[])
 {
     Core::AbstractUI *ui = nullptr;
     Core::AbstractStorage *storage = nullptr;
-    std::vector<std::string> args;
+    std::vector<std::wstring> args;
     for (unsigned int i = 1; i < argc; i++)
-        { args.push_back(std::string(argv[i])); }
+        { args.push_back(std::wstring(utils::iconv(argv[i]))); }
     setlocale(LC_ALL, "");
     utils::init_iconv();
     Core::Module::load_modules();
