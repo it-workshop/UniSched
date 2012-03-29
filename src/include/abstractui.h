@@ -150,7 +150,7 @@ public:
     {
         for (auto object : objects_)
         {
-            delete object;
+            delete object.second;
         }
     }
 

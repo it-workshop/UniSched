@@ -3,7 +3,7 @@
 #include <iconv.h>
 #include <langinfo.h>
 
-using namespace utils;
+#include <module.h>
 
 static iconv_t output_conversion;
 static iconv_t input_conversation;
@@ -29,6 +29,11 @@ char *utils::to_char(wchar_t * string)
     return output;
 }
 
+const char *utils::to_char(const wchar_t * string)
+{
+    return to_char(const_cast<wchar_t *>(string));
+}
+
 wchar_t *utils::to_wchar(char * string)
 {
     wchar_t *output;
@@ -37,21 +42,26 @@ wchar_t *utils::to_wchar(char * string)
     return output;
 }
 
+const wchar_t *utils::to_wchar(const char * string)
+{
+    return to_wchar(const_cast<char *>(string));
+}
+
 bool
 utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
-               std::vector<std::wstring>& args)
+               std::vector<std::string>& args)
 {
     *ui = nullptr;
     *storage = nullptr;
-    std::wstring uiname;
-    std::wstring storagename;
+    std::string uiname;
+    std::string storagename;
     for (auto it = args.begin(); it != args.end(); it++)
     {
-        if (*it == L"--iface")
+        if (*it == "--iface")
         {
             uiname = *++it;
         }
-        if (*it == L"--storage")
+        if (*it == "--storage")
         {
             storagename = *++it;
         }
