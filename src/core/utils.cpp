@@ -21,30 +21,52 @@ void utils::deinit_iconv()
     iconv_close(input_conversation);
 }
 
-char *utils::to_char(wchar_t * string)
+char *utils::iconv(wchar_t * string)
 {
     char *output;
     size_t size = wcslen(string);
-    iconv(output_conversion, (char **)&string, &size, &output, nullptr);
+    size_t output_size = 0;
+    ::iconv(output_conversion, (char **)&string, &size, &output, &output_size);
     return output;
 }
 
-const char *utils::to_char(const wchar_t * string)
+const char *utils::iconv(const wchar_t * string)
 {
-    return to_char(const_cast<wchar_t *>(string));
+    return iconv(const_cast<wchar_t *>(string));
 }
 
-wchar_t *utils::to_wchar(char * string)
+wchar_t *utils::iconv(char * string)
 {
     wchar_t *output;
     size_t size = strlen(string);
-    iconv(input_conversation, &string, &size, (char **)&output, nullptr);
+    size_t output_size = 0;
+    ::iconv(input_conversation, &string, &size, (char **)&output, &output_size);
     return output;
 }
 
-const wchar_t *utils::to_wchar(const char * string)
+const wchar_t *utils::iconv(const char * string)
 {
-    return to_wchar(const_cast<char *>(string));
+    return iconv(const_cast<char *>(string));
+}
+
+char *utils::iconv(std::wstring& string)
+{
+    return iconv(const_cast<wchar_t *>(string.c_str()));
+}
+
+const char *utils::iconv(const std::wstring& string)
+{
+    return iconv(const_cast<wchar_t *>(string.c_str()));
+}
+
+wchar_t *utils::iconv(std::string& string)
+{
+    return iconv(const_cast<char *>(string.c_str()));
+}
+
+const wchar_t *utils::iconv(const std::string& string)
+{
+    return iconv(string.c_str());
 }
 
 bool
