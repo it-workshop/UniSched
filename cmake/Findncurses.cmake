@@ -1,5 +1,5 @@
 find_path(NCURSES_INCLUDE_DIR ncurses.h)
-find_library(NCURSES_LIBRARY NAMES ncurses3)
+find_library(NCURSES_LIBRARY NAMES ncurses)
 
 if (NCURSES_INCLUDE_DIR AND NCURSES_LIBRARY)
     set(NCURSES_FOUND TRUE)
