@@ -2,6 +2,9 @@
 
 #include <vector>
 #include <string>
+#include <string.h>
+
+#include <iconv.h>
 
 namespace Core {
 
@@ -33,6 +36,65 @@ private:
                          * only.
                          */
     void *handle_;
+
+    iconv_t in_conv_;
+    iconv_t out_conv_;
+
+protected:
+    void init_iconv(const std::string& codeset) {
+        in_conv_ = iconv_open("UTF-32", codeset.c_str());
+        out_conv_ = iconv_open(codeset.c_str(), "UTF-32");
+    }
+
+    char * iconv(wchar_t *string)
+    {
+        size_t length = wcslen(string)*4+1;
+        size_t out_size = length;
+        char *output = new char[length];
+        ::iconv(out_conv_, (char **)&string, &length, &output, &out_size);
+        char *ret = const_cast<char *>(std::string(output).c_str());
+        delete output;
+        return ret;
+    }
+    const char * iconv(const wchar_t *string)
+    {
+        return iconv(const_cast<wchar_t *>(string));
+    }
+    char * iconv(std::wstring& string)
+    {
+        return iconv(const_cast<wchar_t *>(string.c_str()));
+    }
+    const char * iconv(const std::wstring& string)
+    {
+        return iconv(const_cast<wchar_t *>(string.c_str()));
+    }
+    wchar_t * iconv(char *string)
+    {
+        size_t length = strlen(string)+1;
+        size_t out_size = length+1;
+        wchar_t *output = new wchar_t[length];
+        ::iconv(in_conv_, &string, &length, (char **)&output, &out_size);
+        wchar_t *ret = const_cast<wchar_t *>(std::wstring(output).c_str());
+        delete output;
+        return ret;
+    }
+    const wchar_t * iconv(const char *string)
+    {
+        return iconv(const_cast<char *>(string));
+    }
+    wchar_t * iconv(std::string& string)
+    {
+        return iconv(const_cast<char *>(string.c_str()));
+    }
+    const wchar_t * iconv(const std::string& string)
+    {
+        return iconv(const_cast<char *>(string.c_str()));
+    }
+
+    void deinit_iconv() {
+        iconv_close(in_conv_);
+        iconv_close(out_conv_);
+    }
 
 public:
     Module (const enum Type type, const std::wstring& name,

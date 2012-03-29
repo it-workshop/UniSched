@@ -6,28 +6,30 @@
 #include <module.h>
 
 static iconv_t output_conversion;
-static iconv_t input_conversation;
+static iconv_t input_conversion;
 
 void utils::init_iconv()
 {
     char *codeset = nl_langinfo(CODESET);
     output_conversion = iconv_open(codeset, "UTF32");
-    input_conversation = iconv_open("UTF32", codeset);
+    input_conversion = iconv_open("UTF32", codeset);
 }
 
 void utils::deinit_iconv()
 {
     iconv_close(output_conversion);
-    iconv_close(input_conversation);
+    iconv_close(input_conversion);
 }
 
 char *utils::iconv(wchar_t * string)
 {
-    char *output;
-    size_t size = wcslen(string);
-    size_t output_size = 0;
-    ::iconv(output_conversion, (char **)&string, &size, &output, &output_size);
-    return output;
+    size_t length = wcslen(string)*4+1;
+    size_t out_size = length;
+    char *output = new char[length];
+    ::iconv(output_conversion, (char **)&string, &length, &output, &out_size);
+    char *ret = const_cast<char *>(std::string(output).c_str());
+    delete output;
+    return ret;
 }
 
 const char *utils::iconv(const wchar_t * string)
@@ -37,11 +39,13 @@ const char *utils::iconv(const wchar_t * string)
 
 wchar_t *utils::iconv(char * string)
 {
-    wchar_t *output;
-    size_t size = strlen(string);
-    size_t output_size = 0;
-    ::iconv(input_conversation, &string, &size, (char **)&output, &output_size);
-    return output;
+    size_t length = strlen(string)+1;
+    size_t out_size = length+1;
+    wchar_t *output = new wchar_t[length];
+    ::iconv(input_conversion, &string, &length, (char **)&output, &out_size);
+    wchar_t *ret = const_cast<wchar_t *>(std::wstring(output).c_str());
+    delete output;
+    return ret;
 }
 
 const wchar_t *utils::iconv(const char * string)
