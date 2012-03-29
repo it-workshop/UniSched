@@ -5,14 +5,30 @@ if ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
     message (SEND_ERROR "Building in sources not allowed.")
 endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 
-option(WITH_SQLITE "Build with SQLite support." Y)
-option(WITH_DUMMYUI "Build with DummyUI support." Y)
-option(WITH_CLI "Build with CLI support." Y)
-option(WITH_YAML "Build with YAML support." Y)
-option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y)
-option(WITH_TESTS_CORE "Build with Core tests." N)
-option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
-option(WITH_NCURSES "Build ncurses frontend." Y)
+include (cmake/CMakeDependentOption.cmake)
+
+option(CORE_ONLY "Собирать только ядро" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_SQLITE "Build with SQLite support." ON
+        "NOT CORE_ONLY" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_DUMMYUI "Build with DummyUI support." ON
+        "NOT CORE_ONLY" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_CLI "Build with CLI support." ON
+        "NOT CORE_ONLY" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_YAML "Build with YAML support." ON
+        "NOT CORE_ONLY" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." ON
+        "NOT CORE_ONLY" OFF)
+option(WITH_TESTS_CORE "Build with Core tests." OFF)
+option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" OFF)
+CMAKE_DEPENDENT_OPTION(WITH_NCURSES "Build ncurses frontend." ON
+        "NOT CORE_ONLY" OFF)
+
+if (CORE_ONLY)
+    message ("#################################")
+    message ("Внимание, собирается только ядро.")
+    message ("#################################")
+endif (CORE_ONLY)
+
 
 if (WITH_TESTS_CXX11)
     include (cmake/c++11/CheckCXX11Features.cmake)
