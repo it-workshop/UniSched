@@ -6,7 +6,7 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME "TESTINGUI_CONNECT_PERSON"
+#define TESTINGUI_NAME L"TESTINGUI_CONNECT_PERSON"
 #include "testingui.h"
 
 
@@ -22,13 +22,13 @@ int TestingUI::run()
     John->connect(group);
     group->connect(James);
 
-    if (boost::any_cast<const std::vector<Core::Object *>&>(group->read("people")).size() != 2
-        || boost::any_cast<const std::vector<Core::Object *>&>(John->read("groups")).size() != 1
-        || boost::any_cast<const std::vector<Core::Object *>&>(James->read("groups")).size() != 1)
+    if (boost::any_cast<const std::vector<Core::Object *>&>(group->read(L"people")).size() != 2
+        || boost::any_cast<const std::vector<Core::Object *>&>(John->read(L"groups")).size() != 1
+        || boost::any_cast<const std::vector<Core::Object *>&>(James->read(L"groups")).size() != 1)
     {
-        std::cout << boost::any_cast<const std::vector<Core::Object *>&>(group->read("people")).size() << " "
-            << boost::any_cast<const std::vector<Core::Object *>&>(John->read("groups")).size() << " "
-            << boost::any_cast<const std::vector<Core::Object *>&>(John->read("groups")).size()
+        std::wcout << boost::any_cast<const std::vector<Core::Object *>&>(group->read(L"people")).size() << " "
+            << boost::any_cast<const std::vector<Core::Object *>&>(John->read(L"groups")).size() << " "
+            << boost::any_cast<const std::vector<Core::Object *>&>(John->read(L"groups")).size()
             << std::endl;
         return -1;
     }
@@ -39,7 +39,7 @@ int TestingUI::run()
     }
     catch (std::bad_cast& e)
     {
-        std::cout << "Exception is catched :) " << e.what() << std::endl;
+        std::wcout << "Exception is catched :) " << e.what() << std::endl;
         return 0;
     }
 

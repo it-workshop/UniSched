@@ -5,7 +5,7 @@
 
 #include <person.h>
 
-#define TESTINGUI_NAME "TESTINGUI_CREATE_PERSON"
+#define TESTINGUI_NAME L"TESTINGUI_CREATE_PERSON"
 #include "testingui.h"
 
 

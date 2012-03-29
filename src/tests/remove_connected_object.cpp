@@ -6,7 +6,7 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME "TESTINGUI_REMOVE_CONNECTED_OBJECT"
+#define TESTINGUI_NAME L"TESTINGUI_REMOVE_CONNECTED_OBJECT"
 #include "testingui.h"
 
 
@@ -30,15 +30,15 @@ int TestingUI::run()
     remove(group1);
     remove(James);
 
-    if (boost::any_cast<std::vector<Core::Object *>>(John->read("groups")).size() != 1)
+    if (boost::any_cast<std::vector<Core::Object *>>(John->read(L"groups")).size() != 1)
     {
         return -1;
     }
-    if (boost::any_cast<std::vector<Core::Object *>>(group2->read("people")).size() != 1)
+    if (boost::any_cast<std::vector<Core::Object *>>(group2->read(L"people")).size() != 1)
     {
         return -2;
     }
-    if (boost::any_cast<std::vector<Core::Object *>>(group2->read("children_groups")).size())
+    if (boost::any_cast<std::vector<Core::Object *>>(group2->read(L"children_groups")).size())
     {
         return -3;
     }

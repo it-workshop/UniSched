@@ -6,7 +6,7 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME "TESTINGUI_DISCONNECT_GROUP"
+#define TESTINGUI_NAME L"TESTINGUI_DISCONNECT_GROUP"
 #include "testingui.h"
 
 
@@ -20,8 +20,8 @@ int TestingUI::run()
     group1->connect(group2);
     group1->disconnect(group2);
 
-    if (boost::any_cast<const std::vector<Core::Object *>&>(group1->read("children_groups")).size()
-        || boost::any_cast<const std::vector<Core::Object *>&>(group2->read("parent_groups")).size())
+    if (boost::any_cast<const std::vector<Core::Object *>&>(group1->read(L"children_groups")).size()
+        || boost::any_cast<const std::vector<Core::Object *>&>(group2->read(L"parent_groups")).size())
     {
         return -1;
     }

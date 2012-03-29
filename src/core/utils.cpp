@@ -104,7 +104,7 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
             }
             catch (std::bad_cast e)
             {
-                std::wcerr << "Warning: invalid storage module!" << e.what() <<
+                std::wcerr << L"Warning: invalid storage module!" << e.what() <<
                     std::endl;
                 *storage = nullptr;
             }
@@ -123,7 +123,7 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
             }
             catch (std::bad_cast e)
             {
-                std::wcerr << "Warning: invalid ui module!" << e.what() <<
+                std::wcerr << L"Warning: invalid ui module!" << e.what() <<
                     std::endl;
                 *ui = nullptr;
             }
@@ -135,13 +135,13 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
     if (!*ui)
     {
         error = true;
-        std::wcerr << "Error: ui module not found!" << std::endl;
+        std::wcerr << L"Error: ui module not found!" << std::endl;
     }
 
-    if (/*!storagename.empty() && */!*storage)
+    if (!storagename.empty() && !*storage)
     {
         error = true;
-        std::wcerr << "Error: Requested storage module not found!" << std::endl;
+        std::wcerr << L"Error: Requested storage module not found!" << std::endl;
     }
 
     return error;

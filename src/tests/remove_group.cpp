@@ -5,7 +5,7 @@
 
 #include <group.h>
 
-#define TESTINGUI_NAME "TESTINGUI_REMOVE_GROUP"
+#define TESTINGUI_NAME L"TESTINGUI_REMOVE_GROUP"
 #include "testingui.h"
 
 
@@ -15,7 +15,7 @@ int TestingUI::run()
     assert(object);
     remove(object);
 
-    if(search(std::map<std::string, boost::any>()).size())
+    if(search(std::map<std::wstring, boost::any>()).size())
     {
         return -1;
     }
