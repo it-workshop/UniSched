@@ -1,4 +1,3 @@
-#include <sstream>
 #include <iostream>
 
 #include <abstractui.h>
@@ -7,6 +6,8 @@
 #include <event.h>
 
 #include <sqlite3.h>
+
+#include <boost/format.hpp>
 
 class SQLiteStorage: public Core::AbstractStorage {
 friend int SQLiteStorage_load_type(void *self_, int fields_count,
@@ -75,20 +76,12 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
     {
         return;
     }
-    std::stringstream query;
+    std::string query;
     bool found = false;
     char *error = nullptr;
-    query << "SELECT * FROM ";
-    if (typeid(const time_t) == value.type())
-    {
-        query << "times";
-    }
-    else
-    {
-        query << "strings";
-    }
-    query << " WHERE object=" << id << " AND name='" << name << "';";
-    if (sqlite3_exec(connection_, query.str().c_str(),
+    query = str(boost::format ("SELECT * FROM %s WHERE object=%u AND name='%s';") %
+        (typeid(const time_t) == value.type() ? "times" : "strings") % id % name);
+    if (sqlite3_exec(connection_, query.c_str(),
         SQLiteStorage_push_select, &found, &error))
     {
         std::cerr << "SQLITE: push: " << error << std::endl;
@@ -96,21 +89,17 @@ void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         return;
     }
 
-    query << (found ? "UPDATE " : "INSERT INTO ");
-    if (typeid(const time_t) == value.type())
-    {
-        query << "times" << (found ? " SET value=" : "(value, object, name) VALUES(")
-            << boost::any_cast<const time_t>(value);
-    }
-    else
-    {
-        query << "strings"
-            << (found ? " SET value='" : "(value, object, name) VALUES('")
-            << boost::any_cast<const std::string&>(value) << '\'';
-    }
-    query << (found ? " WHERE object=" : ", ") << id
-        << (found ? " AND name='" : ", '") << name << (found ? "';" : "');");
-    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr,
+    query = str(boost::format ("%s %s %s %s %s%s%u%s%s") %
+        (found ? "UPDATE " : "INSERT INTO ") %
+        (typeid(const time_t) == value.type() ? "times" : "strings") %
+        (found ? " SET value=" : "(value, object, name) VALUES(") %
+        (typeid(const time_t) == value.type() ?
+            boost::str(boost::format ("%s") % boost::any_cast<const time_t>(value)) :
+            boost::str(boost::format ("'%s'") % boost::any_cast<const std::string&>(value))) %
+        (found ? " WHERE object=" : ", ") % id %
+        (found ? " AND name='" : ", '") % name %
+        (found ? "';" : "');"));
+    if (sqlite3_exec(connection_, query.c_str(), nullptr, nullptr,
         &error))
     {
         std::cerr << "SQLITE: push: " << error << std::endl;
@@ -125,13 +114,13 @@ void SQLiteStorage::push_connect(const Core::objid_t id,
     {
         return;
     }
-    std::stringstream query;
+    std::string query;
     char *error = nullptr;
-    query << (connect ? "INSERT INTO" : "DELETE FROM");
-    query << " connections"
-        << (connect ? "(object, with) VALUES(" : " WHERE object=") << id
-        << (connect ? ", " : " AND with=") << with << (connect ? ");" : ";");
-    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
+    query  = boost::str(boost::format("%s connections %s%u%s%u%s") %
+        (connect ? "INSERT INTO" : "DELETE FROM") %
+        (connect ? "(object, with) VALUES(" : " WHERE object=") % id %
+        (connect ? ", " : " AND with=") % with % (connect ? ");" : ";"));
+    if (sqlite3_exec(connection_, query.c_str(), nullptr, nullptr, &error))
     {
         std::cerr << "SQLITE: push_connect: " << error << std::endl;
         sqlite3_free(error);
