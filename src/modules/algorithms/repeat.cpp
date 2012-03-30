@@ -58,15 +58,9 @@ void repeat::exec(Core::Object *object)
                 new_object->update(field.first, field.second);
                 continue;
             }
-            if ("parent_groups" != field.first)
             for (Core::Object *conn : boost::any_cast<std::vector<Core::Object *>>(field.second))
             {
                 new_object->connect(conn);
-            }
-            else
-            for (Core::Object *conn : boost::any_cast<std::vector<Core::Object *>>(field.second))
-            {
-                conn->connect(new_object);
             }
         }
         new_object->update("start", start);
