@@ -20,7 +20,7 @@ option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 
 # Algorithm Collections
-option(WITH_REPEAT "Build repeat events algorithm." N)
+option(WITH_ALG_REPEAT "Build repeat events algorithm." N)
 
 
 if (WITH_TESTS_CXX11)
