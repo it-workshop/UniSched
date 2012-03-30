@@ -20,7 +20,7 @@ CMAKE_DEPENDENT_OPTION(WITH_TESTS_CXX11 "Check if the compiler handles the C++11
         "NOT CORE_ONLY" OFF)
 option(WITH_TESTS_CORE "Build with Core tests." OFF)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" OFF)
-CMAKE_DEPENDENT_OPTION(WITH_NCURSES "Build ncurses frontend." ON
+CMAKE_DEPENDENT_OPTION(WITH_NCURSES "Build ncurses frontend." OFF
         "NOT CORE_ONLY" OFF)
 
 if (CORE_ONLY)
