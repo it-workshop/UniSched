@@ -26,7 +26,8 @@ char *utils::iconv(wchar_t * string)
     size_t length = wcslen(string)*4+1;
     size_t out_size = length;
     char *output = new char[length];
-    ::iconv(output_conversion, (char **)&string, &length, &output, &out_size);
+    char *ptr = output;
+    ::iconv(output_conversion, (char **)&string, &length, &ptr, &out_size);
     char *ret = const_cast<char *>(std::string(output).c_str());
     delete output;
     return ret;
@@ -42,7 +43,8 @@ wchar_t *utils::iconv(char * string)
     size_t length = strlen(string)+1;
     size_t out_size = length+1;
     wchar_t *output = new wchar_t[length];
-    ::iconv(input_conversion, &string, &length, (char **)&output, &out_size);
+    char *ptr = (char *)output;
+    ::iconv(input_conversion, &string, &length, &ptr, &out_size);
     wchar_t *ret = const_cast<wchar_t *>(std::wstring(output).c_str());
     delete output;
     return ret;

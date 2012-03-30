@@ -29,6 +29,8 @@ main(int argc, char *argv[])
     std::ios::sync_with_stdio(false);
     utils::init_iconv();
 
+    setenv("UNISCHED_MODULES_PATH", ".", 1);
+
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::wstring(utils::iconv(argv[i]))); }
     Core::Module::load_modules();
