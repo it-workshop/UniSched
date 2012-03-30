@@ -17,7 +17,6 @@ main(int argc, char *argv[])
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
     setlocale(LC_ALL, "");
-    utils::init_iconv();
     Core::Module::load_modules();
     if (utils::select_modules(&ui, &storage, args))
     {
@@ -34,7 +33,6 @@ main(int argc, char *argv[])
         storage->disconnect();
     }
     Core::Module::unload_modules();
-    utils::deinit_iconv();
     return code;
 }
 

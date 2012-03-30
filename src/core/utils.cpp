@@ -5,47 +5,7 @@
 
 #include <module.h>
 
-static iconv_t output_conversion;
-static iconv_t input_conversation;
-
-void utils::init_iconv()
-{
-    char *codeset = nl_langinfo(CODESET);
-    output_conversion = iconv_open(codeset, "UTF32");
-    input_conversation = iconv_open("UTF32", codeset);
-}
-
-void utils::deinit_iconv()
-{
-    iconv_close(output_conversion);
-    iconv_close(input_conversation);
-}
-
-char *utils::to_char(wchar_t * string)
-{
-    char *output;
-    size_t size = wcslen(string);
-    iconv(output_conversion, (char **)&string, &size, &output, nullptr);
-    return output;
-}
-
-const char *utils::to_char(const wchar_t * string)
-{
-    return to_char(const_cast<wchar_t *>(string));
-}
-
-wchar_t *utils::to_wchar(char * string)
-{
-    wchar_t *output;
-    size_t size = strlen(string);
-    iconv(input_conversation, &string, &size, (char **)&output, nullptr);
-    return output;
-}
-
-const wchar_t *utils::to_wchar(const char * string)
-{
-    return to_wchar(const_cast<char *>(string));
-}
+#include <algorithm.h>
 
 bool
 utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
@@ -104,6 +64,20 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
                 std::cerr << "Warning: invalid ui module!" << e.what() <<
                     std::endl;
                 *ui = nullptr;
+            }
+            continue;
+        }
+        if (module->type() == Core::Module::ALGORITHM)
+        {
+            try
+            {
+                Core::Algorithm *alg = dynamic_cast<Core::Algorithm *>(module);
+                alg->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid algorithm module!" << e.what() <<
+                    std::endl;
             }
             continue;
         }
