@@ -5,7 +5,7 @@
 
 #include <event.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_CREATE_EVENT"
+#define TESTINGUI_NAME "TESTINGUI_CREATE_EVENT"
 #include "testingui.h"
 
 

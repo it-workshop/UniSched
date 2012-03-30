@@ -5,7 +5,7 @@
 
 #include <person.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_SET_DEFINED_FIELD_RIGHT"
+#define TESTINGUI_NAME "TESTINGUI_SET_DEFINED_FIELD_RIGHT"
 #include "testingui.h"
 
 
@@ -15,9 +15,9 @@ int TestingUI::run()
 
     assert(object);
 
-    object->update(L"name", std::wstring(L"John"));
-    object->update(L"surname", std::wstring(L"Connor"));
-    object->update(L"sex", std::wstring(L"MALE"));
+    object->update("name", std::string("John"));
+    object->update("surname", std::string("Connor"));
+    object->update("sex", std::string("MALE"));
 
     return 0;
 }

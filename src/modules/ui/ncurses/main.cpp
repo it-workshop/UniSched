@@ -9,16 +9,16 @@ public:
 
     ncursesUI(std::vector<Core::Module *>* modules, void *handle);
 
-    virtual void init(const std::vector<std::wstring>& args);
+    virtual void init(const std::vector<std::string>& args);
     virtual int run();
 };
 
 ncursesUI::ncursesUI(std::vector<Core::Module *>* modules, void *handle):
-        AbstractUI(L"ncurses", modules, handle)
+        AbstractUI("ncurses", modules, handle)
 {
 }
 
-void ncursesUI::init(const std::vector<std::wstring>& args)
+void ncursesUI::init(const std::vector<std::string>& args)
 {
 }
 

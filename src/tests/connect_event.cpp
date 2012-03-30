@@ -6,7 +6,7 @@
 #include <event.h>
 #include <group.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_CONNECT_EVENT"
+#define TESTINGUI_NAME "TESTINGUI_CONNECT_EVENT"
 #include "testingui.h"
 
 
@@ -22,8 +22,8 @@ int TestingUI::run()
 
     event1->connect(group);
 
-    if (boost::any_cast<const std::vector<Core::Object *>&>(event1->read(L"children_groups")).size() != 1
-        || boost::any_cast<const std::vector<Core::Object *>&>(group->read(L"parent_groups")).size() != 1)
+    if (boost::any_cast<const std::vector<Core::Object *>&>(event1->read("children_groups")).size() != 1
+        || boost::any_cast<const std::vector<Core::Object *>&>(group->read("parent_groups")).size() != 1)
     {
         return -1;
     }
@@ -33,7 +33,7 @@ int TestingUI::run()
     }
     catch(std::bad_cast& e)
     {
-        std::wcout << "Exception catched :) " << e.what() << std::endl;
+        std::cout << "Exception catched :) " << e.what() << std::endl;
         cont = true;
     }
 
@@ -49,7 +49,7 @@ int TestingUI::run()
     }
     catch(std::bad_cast& e)
     {
-        std::wcout << "Exception catched :) " << e.what() << std::endl;
+        std::cout << "Exception catched :) " << e.what() << std::endl;
         return 0;
     }
 

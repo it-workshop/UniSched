@@ -12,10 +12,10 @@ static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     {
         return false;
     }
-    if (typeid(std::wstring) == lhs.type())
+    if (typeid(std::string) == lhs.type())
     {
-        return boost::any_cast<std::wstring>(lhs)
-            == boost::any_cast<std::wstring>(rhs);
+        return boost::any_cast<std::string>(lhs)
+            == boost::any_cast<std::string>(rhs);
     }
     if (typeid(time_t) == lhs.type())
     {
@@ -25,7 +25,7 @@ static const bool operator==(const boost::any& lhs, const boost::any& rhs)
     throw boost::bad_any_cast();
 }
 
-std::vector<Object *> AbstractUI::search(const std::map<std::wstring, boost::any>& parameters)
+std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>& parameters)
 {
     std::vector<Object *> results;
     for(auto object : objects_)
@@ -56,7 +56,7 @@ std::vector<Object *> AbstractUI::search(const std::map<std::wstring, boost::any
     return results;
 }
 
-void AbstractUI::push(const int id, const std::wstring& name,
+void AbstractUI::push(const int id, const std::string& name,
         const boost::any& value)
 {
     if (storage_)

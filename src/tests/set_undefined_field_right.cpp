@@ -5,7 +5,7 @@
 
 #include <person.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_SET_UNDEFINED_FIELD_RIGHT"
+#define TESTINGUI_NAME "TESTINGUI_SET_UNDEFINED_FIELD_RIGHT"
 #include "testingui.h"
 
 
@@ -15,11 +15,11 @@ int TestingUI::run()
 
     assert(object);
 
-    object->update(L"Job", std::wstring(L"slave"));
-    std::wcout << L"Job: " << boost::any_cast<std::wstring>(object->read(L"Job")) << std::endl;
-    object->update(L"Job", std::wstring(L"master"));
-    std::wcout << L"Job: " << boost::any_cast<std::wstring>(object->read(L"Job")) << std::endl;
+    object->update("Job", std::string("slave"));
+    std::cout << "Job: " << boost::any_cast<std::string>(object->read("Job")) << std::endl;
+    object->update("Job", std::string("master"));
+    std::cout << "Job: " << boost::any_cast<std::string>(object->read("Job")) << std::endl;
 
-    return boost::any_cast<std::wstring>(object->read(L"Job")) != L"master";
+    return boost::any_cast<std::string>(object->read("Job")) != "master";
 }
 

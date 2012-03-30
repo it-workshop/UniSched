@@ -12,7 +12,7 @@
 class DummyInterface: public Core::AbstractUI {
 
 public:
-    void init (const std::vector< std::wstring > &args);
+    void init (const std::vector< std::string > &args);
     int run();
     void test_person();
     void test_group();

@@ -6,7 +6,7 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_CONNECT_GROUP"
+#define TESTINGUI_NAME "TESTINGUI_CONNECT_GROUP"
 #include "testingui.h"
 
 
@@ -19,8 +19,8 @@ int TestingUI::run()
 
     group1->connect(group2);
 
-    if (boost::any_cast<const std::vector<Core::Object *>&>(group1->read(L"children_groups")).size() != 1
-        || boost::any_cast<const std::vector<Core::Object *>&>(group2->read(L"parent_groups")).size() != 1)
+    if (boost::any_cast<const std::vector<Core::Object *>&>(group1->read("children_groups")).size() != 1
+        || boost::any_cast<const std::vector<Core::Object *>&>(group2->read("parent_groups")).size() != 1)
     {
         return -1;
     }

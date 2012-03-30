@@ -6,55 +6,55 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_SEARCH"
+#define TESTINGUI_NAME "TESTINGUI_SEARCH"
 #include "testingui.h"
 
 
 int TestingUI::run()
 {
     Core::Object *object = create<Core::Person>();
-    object->update(L"name", std::wstring(L"John"));
-    object->update(L"surname", std::wstring(L"Connor"));
-    object->update(L"sex", std::wstring(L"MALE"));
-    object->update(L"Job", std::wstring(L"none"));
+    object->update("name", std::string("John"));
+    object->update("surname", std::string("Connor"));
+    object->update("sex", std::string("MALE"));
+    object->update("Job", std::string("none"));
 
     object = create<Core::Person>();
-    object->update(L"name", std::wstring(L"Sarah"));
-    object->update(L"surname", std::wstring(L"Connor"));
-    object->update(L"sex", std::wstring(L"FEMALE"));
-    object->update(L"Job", std::wstring(L"waiter"));
+    object->update("name", std::string("Sarah"));
+    object->update("surname", std::string("Connor"));
+    object->update("sex", std::string("FEMALE"));
+    object->update("Job", std::string("waiter"));
     
     object = create<Core::Person>();
-    object->update(L"name", std::wstring(L"Steve"));
-    object->update(L"surname", std::wstring(L"Jobs"));
-    object->update(L"sex", std::wstring(L"MALE"));
-    object->update(L"Job", std::wstring(L"CEO"));
+    object->update("name", std::string("Steve"));
+    object->update("surname", std::string("Jobs"));
+    object->update("sex", std::string("MALE"));
+    object->update("Job", std::string("CEO"));
 
     object = create<Core::Person>();
-    object->update(L"name", std::wstring(L"Steve"));
-    object->update(L"surname", std::wstring(L"Wosnyak"));
-    object->update(L"sex", std::wstring(L"MALE"));
-    object->update(L"Job", std::wstring(L"Enginear"));
+    object->update("name", std::string("Steve"));
+    object->update("surname", std::string("Wosnyak"));
+    object->update("sex", std::string("MALE"));
+    object->update("Job", std::string("Enginear"));
 
     object = create<Core::Group>();
-    object->update(L"name", std::wstring(L"Apple computers inc."));
+    object->update("name", std::string("Apple computers inc."));
 
     object = create<Core::Group>();
-    object->update(L"name", std::wstring(L"Microsoft Corporation"));
+    object->update("name", std::string("Microsoft Corporation"));
 
     object = create<Core::Group>();
-    object->update(L"name", std::wstring(L"XEROX PARC"));
+    object->update("name", std::string("XEROX PARC"));
 
     reset_cache();
 
-    std::map<std::wstring, boost::any> args;
+    std::map<std::string, boost::any> args;
 
     if (search(args).size() != 7)
     {
         return -1;
     }
 
-    args[L"name"] = std::wstring(L"Steve");
+    args["name"] = std::string("Steve");
 
     if (search(args).size() != 2)
     {
@@ -62,8 +62,8 @@ int TestingUI::run()
     }
 
     args.clear();
-    args[L"surname"] = std::wstring(L"Connor");
-    args[L"Job"] = std::wstring(L"none");
+    args["surname"] = std::string("Connor");
+    args["Job"] = std::string("none");
 
     if (search(args).size() != 1)
     {

@@ -6,7 +6,7 @@
 #include <person.h>
 #include <group.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_SET_LINK_FIELD"
+#define TESTINGUI_NAME "TESTINGUI_SET_LINK_FIELD"
 #include "testingui.h"
 
 
@@ -20,11 +20,11 @@ int TestingUI::run()
 
     try
     {
-        person->update(L"groups", std::wstring(L"Why can not I set this field?"));
+        person->update("groups", std::string("Why can not I set this field?"));
     }
     catch (boost::bad_any_cast& e)
     {
-        std::wcout << "Exception is catched :) " << e.what() << std::endl;
+        std::cout << "Exception is catched :) " << e.what() << std::endl;
         cont = true;
     }
     if (!cont)
@@ -34,11 +34,11 @@ int TestingUI::run()
     cont = false;
     try
     {
-        group->update(L"people", std::wstring(L"Why can not I set this field?"));
+        group->update("people", std::string("Why can not I set this field?"));
     }
     catch (boost::bad_any_cast& e)
     {
-        std::wcout << "Exception is catched :) " << e.what() << std::endl;
+        std::cout << "Exception is catched :) " << e.what() << std::endl;
         cont = true;
     }
     if (!cont)
@@ -48,11 +48,11 @@ int TestingUI::run()
 
     try
     {
-        group->update(L"parent_groups", std::wstring(L"Why can not I set this field?"));
+        group->update("parent_groups", std::string("Why can not I set this field?"));
     }
     catch (boost::bad_any_cast& e)
     {
-        std::wcout << "Exception is catched :) " << e.what() << std::endl;
+        std::cout << "Exception is catched :) " << e.what() << std::endl;
         return 0;
     }
 

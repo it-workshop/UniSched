@@ -1,27 +1,29 @@
 #include "dummy.hpp"
 
-void DummyInterface::init(const std::vector<std::wstring>& args)
+void DummyInterface::init(const std::vector<std::string>& args)
 {
+    std::cout << "Dummy Interface INIT" << std::endl;
 }
 
 DummyInterface::DummyInterface(std::vector<Module *>* modules, void *handle):
-    AbstractUI(L"DummyUI", modules, handle)
+    AbstractUI("DummyUI", modules, handle)
 {
+    std::cout << "(Dummy Interface constructor) ";
 }
 
 void DummyInterface::test_person() {
 
     auto person = create<Core::Person>();
-    person->update(L"name", std::wstring(L"John"));
-    person->update(L"surname", std::wstring(L"Connor"));
-    person->update(L"sex", std::wstring(L"MALE"));
-    person->update(L"birthday", time_t(300400));
+    person->update("name", std::string("John"));
+    person->update("surname", std::string("Connor"));
+    person->update("sex", std::string("MALE"));
+    person->update("birthday", time_t(300400));
 
-    std::map<std::wstring, boost::any> fields;
-    fields[L"name"] = std::wstring(L"Harry");
-    fields[L"surname"] = std::wstring(L"Potter");
-    fields[L"sex"] = std::wstring(L"MALE");
-    fields[L"birthday"] = time_t(19283740);
+    std::map<std::string, boost::any> fields;
+    fields["name"] = std::string("Harry");
+    fields["surname"] = std::string("Potter");
+    fields["sex"] = std::string("MALE");
+    fields["birthday"] = time_t(19283740);
 
     auto pers = create<Core::Person>();
     pers->update(fields);
@@ -29,27 +31,27 @@ void DummyInterface::test_person() {
 
 void DummyInterface::test_group() {
     auto g = create<Core::Group>();
-    g->update(L"name", std::wstring(L"Miles Davis band"));
+    g->update("name", std::string("Miles Davis band"));
 
     auto suppa_truppa = create<Core::Group>();
-    suppa_truppa->update(L"name", std::wstring(L"Suppa-pa... Truppa-pa..."));
+    suppa_truppa->update("name", std::string("Suppa-pa... Truppa-pa..."));
 }
 
 void DummyInterface::test_connect() {
     auto g = create<Core::Group>();
-    g->update(L"name", std::wstring(L"SW gang")); // Sounds like Swamp Soft, rip
+    g->update("name", std::string("SW gang")); // Sounds like Swamp Soft, rip
 
     auto r2d2 = create<Core::Person>();
-    r2d2->update(L"name", std::wstring(L"r2"));
-    r2d2->update(L"surname", std::wstring(L"d2"));
-    r2d2->update(L"sex", std::wstring(L"MALE"));
-    r2d2->update(L"birthday", time_t(100500));
+    r2d2->update("name", std::string("r2"));
+    r2d2->update("surname", std::string("d2"));
+    r2d2->update("sex", std::string("MALE"));
+    r2d2->update("birthday", time_t(100500));
 
     auto c3po = create<Core::Person>();
-    c3po->update(L"name", std::wstring(L"c3"));
-    c3po->update(L"surname", std::wstring(L"po"));
-    c3po->update(L"sex", std::wstring(L"MALE"));
-    c3po->update(L"birthday", time_t(300700));
+    c3po->update("name", std::string("c3"));
+    c3po->update("surname", std::string("po"));
+    c3po->update("sex", std::string("MALE"));
+    c3po->update("birthday", time_t(300700));
 
     g->connect(r2d2);
     g->connect(c3po);
@@ -59,16 +61,16 @@ void DummyInterface::show_objects() {
     auto rez = this->search();
 
     for (auto o : rez) {
-        std::wcout << L"--OBJ--\n";
+        std::cout << "--OBJ--\n";
         for (auto f : o->read()) {
-            if (typeid(std::wstring) == f.second.type()) {
-                std::wcout << boost::wformat(L"%s: %s\n") % f.first % boost::any_cast<std::wstring>(f.second);
+            if (typeid(std::string) == f.second.type()) {
+                std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
             }
             else if (typeid(std::vector<Core::Object *>) == f.second.type()) {
                 auto vect = boost::any_cast<std::vector<Core::Object *>&>(f.second);
-                std::wcout << f.first << L":\n";
+                std::cout << f.first << ":\n";
                 for (auto& item : vect) {
-                    std::wcout << L"\t" << boost::any_cast<std::wstring>(item->read(L"name")) << L"\n";
+                    std::cout << "\t" << boost::any_cast<std::string>(item->read("name")) << "\n";
                 }
             }
         }
@@ -78,19 +80,19 @@ void DummyInterface::show_objects() {
 
 int DummyInterface::run()
 {
-    std::wcout << L"[DummyInterface::run] testing...\n";
+    std::cout << "[DummyInterface::run] testing...\n";
 #ifdef WITH_TESTS_CORE
     test_person();
-    std::wcout << L"[DummyInterface::test_person] PERSON CREATION works!\n";
+    std::cout << "[DummyInterface::test_person] PERSON CREATION works!\n";
     
     test_group();
-    std::wcout << L"[DummyInterface::test_group] GROUP CREATION works!\n";
+    std::cout << "[DummyInterface::test_group] GROUP CREATION works!\n";
 
     test_connect();
-    std::wcout << L"[DummyInterface::test_connect] CONNECT works!" << std::endl;
+    std::cout << "[DummyInterface::test_connect] CONNECT works!" << std::endl;
 
     show_objects();
-    std::wcout << L"[DummyInterface::show_objects] SEARCH works!" << std::endl;
+    std::cout << "[DummyInterface::show_objects] SEARCH works!" << std::endl;
 #endif
 
     return 0;

@@ -8,8 +8,6 @@
 
 #include <sqlite3.h>
 
-#include <utils.h>
-
 class SQLiteStorage: public Core::AbstractStorage {
 friend int SQLiteStorage_load_type(void *self_, int fields_count,
         char **values, char **fields);
@@ -22,7 +20,7 @@ friend int SQLiteStorage_load_connections(void *self_, int fields_count,
 friend int SQLiteStorage_load_id(void *self_, int fields_count,
         char **values, char **fields);
 private:
-    std::wstring db_name_;
+    std::string db_name_;
     bool create_;
     sqlite3 *connection_;
     bool loading_;
@@ -32,8 +30,8 @@ private:
 public:
     SQLiteStorage(std::vector<Core::Module *>* modules, void *handle);
 
-    virtual void init(const std::vector<std::wstring>& args);
-    virtual void push(const Core::objid_t id, const std::wstring& name,
+    virtual void init(const std::vector<std::string>& args);
+    virtual void push(const Core::objid_t id, const std::string& name,
             const boost::any& value);
     virtual void push_connect(Core::objid_t id, Core::objid_t with,
             bool connect);
@@ -45,21 +43,20 @@ public:
 
 SQLiteStorage::SQLiteStorage(std::vector<Core::Module *>* modules,
         void *handle):
-    AbstractStorage(L"SQLITE", modules, handle),
-    db_name_(L".raspisator.db"), create_(false)
+    AbstractStorage("SQLITE", modules, handle),
+    db_name_(".raspisator.db"), create_(false)
 {}
 
-void SQLiteStorage::init(const std::vector<std::wstring>& args)
+void SQLiteStorage::init(const std::vector<std::string>& args)
 {
-    init_iconv("UTF8");
     for (auto it = args.begin(); it != args.end(); it++)
     {
-        if (*it == L"--sqlite-db")
+        if (*it == "--sqlite-db")
         {
             db_name_ = *++it;
         }
 
-        if (*it == L"--sqlite-create")
+        if (*it == "--sqlite-create")
         {
             create_ = true;
         }
@@ -71,52 +68,52 @@ static int SQLiteStorage_push_select(void *found, int, char **, char **)
     *((bool *)found) = true;
 }
 
-void SQLiteStorage::push(const Core::objid_t id, const std::wstring& name,
+void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
         const boost::any& value)
 {
     if (loading_)
     {
         return;
     }
-    std::wstringstream query;
+    std::stringstream query;
     bool found = false;
     char *error = nullptr;
-    query << L"SELECT * FROM ";
+    query << "SELECT * FROM ";
     if (typeid(const time_t) == value.type())
     {
-        query << L"times";
+        query << "times";
     }
     else
     {
-        query << L"strings";
+        query << "strings";
     }
-    query << L" WHERE object=" << id << L" AND name='" << name << "';";
-    if (sqlite3_exec(connection_, iconv(query.str()),
+    query << " WHERE object=" << id << " AND name='" << name << "';";
+    if (sqlite3_exec(connection_, query.str().c_str(),
         SQLiteStorage_push_select, &found, &error))
     {
-        std::wcerr << L"SQLITE: push: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: push: " << error << std::endl;
         sqlite3_free(error);
         return;
     }
 
-    query << (found ? L"UPDATE " : L"INSERT INTO ");
+    query << (found ? "UPDATE " : "INSERT INTO ");
     if (typeid(const time_t) == value.type())
     {
-        query << L"times" << (found ? L" SET value=" : L"(value, object, name) VALUES(")
+        query << "times" << (found ? " SET value=" : "(value, object, name) VALUES(")
             << boost::any_cast<const time_t>(value);
     }
     else
     {
-        query << L"strings"
-            << (found ? L" SET value='" : L"(value, object, name) VALUES('")
-            << boost::any_cast<const std::wstring&>(value) << L'\'';
+        query << "strings"
+            << (found ? " SET value='" : "(value, object, name) VALUES('")
+            << boost::any_cast<const std::string&>(value) << '\'';
     }
-    query << (found ? L" WHERE object=" : L", ") << id
-        << (found ? L" AND name='" : L", '") << name << (found ? L"';" : L"');");
-    if (sqlite3_exec(connection_, iconv(query.str()), nullptr, nullptr,
+    query << (found ? " WHERE object=" : ", ") << id
+        << (found ? " AND name='" : ", '") << name << (found ? "';" : "');");
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr,
         &error))
     {
-        std::wcerr << L"SQLITE: push: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: push: " << error << std::endl;
         sqlite3_free(error);
     }
 }
@@ -128,15 +125,15 @@ void SQLiteStorage::push_connect(const Core::objid_t id,
     {
         return;
     }
-    std::wstringstream query;
+    std::stringstream query;
     char *error = nullptr;
-    query << (connect ? L"INSERT INTO" : L"DELETE FROM");
-    query << L" connections"
-        << (connect ? L"(object, with) VALUES(" : L" WHERE object=") << id
-        << (connect ? L", " : L" AND with=") << with << (connect ? L");" : L";");
-    if (sqlite3_exec(connection_, iconv(query.str()), nullptr, nullptr, &error))
+    query << (connect ? "INSERT INTO" : "DELETE FROM");
+    query << " connections"
+        << (connect ? "(object, with) VALUES(" : " WHERE object=") << id
+        << (connect ? ", " : " AND with=") << with << (connect ? ");" : ";");
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
     {
-        std::wcerr << L"SQLITE: push_connect: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: push_connect: " << error << std::endl;
         sqlite3_free(error);
         return;
     }
@@ -145,7 +142,7 @@ void SQLiteStorage::push_connect(const Core::objid_t id,
 
 void SQLiteStorage::connect()
 {
-    if (SQLITE_OK != sqlite3_open(utils::iconv(db_name_), &connection_))
+    if (SQLITE_OK != sqlite3_open(db_name_.c_str(), &connection_))
     {
         throw sqlite3_errcode(connection_);
     }
@@ -171,7 +168,7 @@ void SQLiteStorage::create_tables()
         "CREATE TABLE connections (object INT, with INT);",
          nullptr, nullptr, &error))
     {
-        std::wcerr << L"SQLITE: create_tables: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: create_tables: " << error << std::endl;
         sqlite3_free(error);
     }
 }
@@ -182,40 +179,40 @@ int SQLiteStorage_load_type(void *self_, int fields_count, char **values,
     SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 2)
     {
-        std::wcerr << L"SQLITE: load: invalid fields count!" << std::endl;
+        std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
     Core::objid_t id;
     Core::obj_t type;
     for (int i = 0; i < 2; i++)
     {
-        if (L"id" == std::wstring(utils::iconv(fields[i])))
+        if ("id" == std::string(fields[i]))
         {
-            std::wstringstream stream;
+            std::stringstream stream;
             stream << values[i];
             stream >> id;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: id is not integer!"
+                std::cerr << "SQLITE: load: id is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        if (L"type" == std::wstring(utils::iconv(fields[i])))
+        if ("type" == std::string(fields[i]))
         {
-            std::wstringstream stream;
+            std::stringstream stream;
             stream << values[i];
             stream >> (int&)type;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: type is not integer!"
+                std::cerr << "SQLITE: load: type is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        std::wcerr << L"SQLITE: load: unknown field! " << utils::iconv(fields[i])
+        std::cerr << "SQLITE: load: unknown field! " << fields[i]
             << std::endl;
         return -1;
     }
@@ -231,7 +228,7 @@ int SQLiteStorage_load_type(void *self_, int fields_count, char **values,
         self->create_in_memory<Core::Event>(id);
         break;
     default:
-        std::wcerr << L"SQLITE: load: invalid object's type!"
+        std::cerr << "SQLITE: load: invalid object's type!"
             << std::endl;
         return -1;
     }
@@ -244,46 +241,46 @@ int SQLiteStorage_load_time(void *self_, int fields_count, char **values,
     SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 3)
     {
-        std::wcerr << L"SQLITE: load: invalid fields count!" << std::endl;
+        std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
     Core::objid_t id;
     time_t value;
-    std::wstring name;
+    std::string name;
     for (int i = 0; i < 3; i++)
     {
-        if (L"object" == std::wstring(utils::iconv(fields[i])))
+        if ("object" == std::string(fields[i]))
         {
-            std::wstringstream stream;
-            stream << utils::iconv(values[i]);
+            std::stringstream stream;
+            stream << values[i];
             stream >> id;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: object is not integer!"
+                std::cerr << "SQLITE: load: object is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        if (L"value" == std::wstring(utils::iconv(fields[i])))
+        if ("value" == std::string(fields[i]))
         {
-            std::wstringstream stream;
-            stream << utils::iconv(values[i]);
+            std::stringstream stream;
+            stream << values[i];
             stream >> value;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: value is not integer!"
+                std::cerr << "SQLITE: load: value is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        if (L"name" == std::wstring(utils::iconv(fields[i])))
+        if ("name" == std::string(fields[i]))
         {
-            name = utils::iconv(values[i]);
+            name = values[i];
             continue;
         }
-        std::wcerr << L"SQLITE: load: unknown field!" << utils::iconv(fields[i]) << std::endl;
+        std::cerr << "SQLITE: load: unknown field!" << fields[i] << std::endl;
         return -1;
     }
     self->objects()[id]->update(name, value);
@@ -296,38 +293,38 @@ int SQLiteStorage_load_string(void *self_, int fields_count, char **values,
     SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 3)
     {
-        std::wcerr << L"SQLITE: load: invalid fields count!" << std::endl;
+        std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
     Core::objid_t id;
-    std::wstring name;
-    std::wstring value;
+    std::string name;
+    std::string value;
     for (int i = 0; i < 3; i++)
     {
-        if (L"object" == std::wstring(utils::iconv(fields[i])))
+        if ("object" == std::string(fields[i]))
         {
-            std::wstringstream stream;
-            stream << utils::iconv(values[i]);
+            std::stringstream stream;
+            stream << values[i];
             stream >> id;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: object is not integer!"
+                std::cerr << "SQLITE: load: object is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        if (L"name" == std::wstring(utils::iconv(fields[i])))
+        if ("name" == std::string(fields[i]))
         {
-            name = utils::iconv(values[i]);
+            name = values[i];
             continue;
         }
-        if (L"value" == std::wstring(utils::iconv(fields[i])))
+        if ("value" == std::string(fields[i]))
         {
-            value = utils::iconv(values[i]);
+            value = values[i];
             continue;
         }
-        std::wcerr << L"SQLITE: load: unknown field! " << utils::iconv(fields[i])
+        std::cerr << "SQLITE: load: unknown field! " << fields[i]
             << std::endl;
         return -1;
     }
@@ -341,40 +338,40 @@ int SQLiteStorage_load_connections(void *self_, int fields_count,
     SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 2)
     {
-        std::wcerr<< L"SQLITE: load: invalid fields count!" << std::endl;
+        std::cerr<< "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
     Core::objid_t id;
     Core::objid_t with;
     for (int i = 0; i < 2; i++)
     {
-        if (L"object" == std::wstring(utils::iconv(fields[i])))
+        if ("object" == std::string(fields[i]))
         {
-            std::wstringstream stream;
-            stream << utils::iconv(values[i]);
+            std::stringstream stream;
+            stream << values[i];
             stream >> id;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: object is not integer!"
+                std::cerr << "SQLITE: load: object is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        if (L"with" == std::wstring(utils::iconv(fields[i])))
+        if ("with" == std::string(fields[i]))
         {
-            std::wstringstream stream;
-            stream << utils::iconv(values[i]);
+            std::stringstream stream;
+            stream << values[i];
             stream >> with;
             if (stream.fail())
             {
-                std::wcerr << L"SQLITE: load: with is not integer!"
+                std::cerr << "SQLITE: load: with is not integer!"
                     << std::endl;
                 return -1;
             }
             continue;
         }
-        std::wcerr << L"SQLITE: load: unknown field: " << utils::iconv(fields[i])
+        std::cerr << "SQLITE: load: unknown field: " << fields[i]
             << std::endl;
         return -1;
     }
@@ -388,21 +385,21 @@ int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
     SQLiteStorage *self = reinterpret_cast<SQLiteStorage *>(self_);
     if (fields_count != 1)
     {
-        std::wcerr << L"SQLITE: load: invalid fields count!" << std::endl;
+        std::cerr << "SQLITE: load: invalid fields count!" << std::endl;
         return -1;
     }
-    if (L"max(id)" != std::wstring(utils::iconv(*fields)))
+    if ("max(id)" != std::string(*fields))
     {
-        std::wcerr << L"SQLITE: load: unknown field: " << utils::iconv(*fields) << std::endl;
+        std::cerr << "SQLITE: load: unknown field: " << *fields << std::endl;
         return -1;
     }
-    std::wstringstream stream;
-    stream << utils::iconv(*values);
+    std::stringstream stream;
+    stream << *values;
     Core::objid_t id;
     stream >> id;
     if (stream.fail())
     {
-        std::wcerr << L"SQLITE: load: id is not integer!" << std::endl;
+        std::cerr << "SQLITE: load: id is not integer!" << std::endl;
         return -1;
     }
     self->set_new_id(id + 1);
@@ -425,7 +422,7 @@ void SQLiteStorage::load()
     || sqlite3_exec(connection_, "SELECT max(id) FROM (SELECT id FROM objects);",
         SQLiteStorage_load_id, this, &error))
     {
-        std::wcerr << L"SQLITE: load: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: load: " << error << std::endl;
         sqlite3_free(error);
         return;
     }
@@ -435,7 +432,6 @@ void SQLiteStorage::load()
 void SQLiteStorage::disconnect()
 {
     sqlite3_close(connection_);
-    deinit_iconv();
 }
 
 void SQLiteStorage::create(const Core::Object *object)
@@ -445,12 +441,12 @@ void SQLiteStorage::create(const Core::Object *object)
         return;
     }
     char *error = nullptr;
-    std::wstringstream query;
-    query << L"INSERT INTO objects (id, type) VALUES(" << object_id(object)
-        << L", " << int(object->type())<< L")";
-    if (sqlite3_exec(connection_, iconv(query.str()), nullptr, nullptr, &error))
+    std::stringstream query;
+    query << "INSERT INTO objects (id, type) VALUES(" << object_id(object)
+        << ", " << int(object->type())<< ")";
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
     {
-        std::wcerr << L"SQLITE: create: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: create: " << error << std::endl;
         sqlite3_free(error);
         return;
     }
@@ -459,11 +455,11 @@ void SQLiteStorage::create(const Core::Object *object)
 void SQLiteStorage::remove(const Core::objid_t id)
 {
     char *error = nullptr;
-    std::wstringstream query;
-    query << L"DELETE FROM objects WHERE id = " << id;
-    if (sqlite3_exec(connection_, iconv(query.str()), nullptr, nullptr, &error))
+    std::stringstream query;
+    query << "DELETE FROM objects WHERE id = " << id;
+    if (sqlite3_exec(connection_, query.str().c_str(), nullptr, nullptr, &error))
     {
-        std::wcerr << L"SQLITE: remove: " << utils::iconv(error) << std::endl;
+        std::cerr << "SQLITE: remove: " << error << std::endl;
         sqlite3_free(error);
         return;
     }

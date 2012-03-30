@@ -5,7 +5,7 @@
 
 #include <group.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_CREATE_GROUP"
+#define TESTINGUI_NAME "TESTINGUI_CREATE_GROUP"
 #include "testingui.h"
 
 

@@ -29,7 +29,7 @@ protected:
     }
 
 public:
-    AbstractStorage(const std::wstring name, std::vector<Module *>* modules,
+    AbstractStorage(const std::string name, std::vector<Module *>* modules,
             void *handle):
         Module(Module::STORAGE, name, modules, handle)
     {}
@@ -40,7 +40,7 @@ public:
         ui->set_storage(this);
     }
 
-    virtual void push(const objid_t id, const std::wstring& name, const boost::any& value) = 0;
+    virtual void push(const objid_t id, const std::string& name, const boost::any& value) = 0;
     virtual void push_connect(objid_t id, objid_t with, bool connect) = 0;
     virtual void connect() = 0;
     virtual void disconnect() = 0;

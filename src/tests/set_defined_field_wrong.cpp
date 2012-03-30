@@ -5,7 +5,7 @@
 
 #include <person.h>
 
-#define TESTINGUI_NAME L"TESTINGUI_SET_DEFINED_FIELD_WRONG"
+#define TESTINGUI_NAME "TESTINGUI_SET_DEFINED_FIELD_WRONG"
 #include "testingui.h"
 
 
@@ -17,11 +17,11 @@ int TestingUI::run()
 
     try
     {
-        object->update(L"name", 0);
+        object->update("name", 0);
     }
     catch (boost::bad_any_cast& e)
     {   
-        std::wcout << L"Catched exception :) "<< e.what() << std::endl;
+        std::cout << "Catched exception :) "<< e.what() << std::endl;
         return 0;
     }
 

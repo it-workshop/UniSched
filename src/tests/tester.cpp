@@ -1,55 +1,69 @@
+#include <abstractui.h>
+#include <abstractui.h>
+#include <module.h>
+
 #include <iostream>
 
-#include <locale.h>
+bool
+select_modules (Core::AbstractUI **ui,
+               std::vector<std::string>& args)
+{
+    *ui = nullptr;
+    std::string uiname;
+    for (auto it = args.begin(); it != args.end(); it++)
+    {
+        if (*it == "--iface")
+        {
+            uiname = *++it;
+        }
+    }
+    for (Core::Module *module: *Core::Module::modules())
+    {
+        if (module->type() == Core::Module::UI)
+        {
+            if (*ui || (!uiname.empty() && module->name() != uiname))
+            {
+                continue;
+            }
+            try
+            {
+                *ui = dynamic_cast<Core::AbstractUI *>(module);
+                module->init(args);
+            }
+            catch (std::bad_cast e)
+            {
+                std::cerr << "Warning: invalid ui module!" << e.what() <<
+                    std::endl;
+                *ui = nullptr;
+            }
+            continue;
+        }
+    }
 
-#include <abstractui.h>
-#include <abstractstorage.h>
-#include <module.h>
-#include <utils.h>
+    bool error = false;
+    if (!*ui)
+    {
+        error = true;
+        std::cerr << "Error: ui module not found!" << std::endl;
+    }
 
+    return error;
+}
 
 int
 main(int argc, char *argv[])
 {
     Core::AbstractUI *ui = nullptr;
-    Core::AbstractStorage *storage = nullptr;
-    std::vector<std::wstring> args;
-    
-    std::clog << "libc locale: " << std::setlocale(LC_ALL, "") << std::endl;
-    std::locale::global(std::locale(""));
-    std::clog << "stl C++ locale: " << std::locale().name() << std::endl;
-    std::cout.imbue(std::locale());
-    std::cerr.imbue(std::locale());
-    std::clog.imbue(std::locale());
-    std::cin.imbue(std::locale());
-    std::wcout.imbue(std::locale());
-    std::wcerr.imbue(std::locale());
-    std::wclog.imbue(std::locale());
-    std::wcin.imbue(std::locale());
-    std::ios::sync_with_stdio(false);
-    utils::init_iconv();
-
-    setenv("UNISCHED_MODULES_PATH", ".", 1);
-
+    std::vector<std::string> args;
     for (unsigned int i = 1; i < argc; i++)
-        { args.push_back(std::wstring(utils::iconv(argv[i]))); }
+        { args.push_back(std::string(argv[i])); }
     Core::Module::load_modules();
-    if (utils::select_modules(&ui, &storage, args))
+    if (select_modules(&ui, args))
     {
         return -1;
     }
-    if (storage)
-    {
-        storage->set_UI(ui);
-        storage->connect();
-    }
     int code = ui->run();
-    if (storage)
-    {
-        storage->disconnect();
-    }
     Core::Module::unload_modules();
-    utils::deinit_iconv();
     return code;
 }
 
