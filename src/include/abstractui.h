@@ -21,6 +21,7 @@ namespace Core {
 class AbstractUI: public Module {
 friend class Object;
 friend class AbstractStorage;
+friend class Algorithm;
 private:
     std::map<objid_t, Object *> objects_;
                         /**< Model objects. Each object must be saved here for
@@ -71,17 +72,6 @@ protected:
                         /**< @brief Remove object from the storage.
                          * @param [in] object Object to delete.
                          */
-
-    template <class T>
-    Object * create()
-                        /**< @brief Create an object of the T type.
-                         * @param [in] parameters new object`s data.
-                         */
-    {
-        cache_.push_back(set_object(new T(new_id(), *this)));
-        create_in_storage(cache_.back());
-        return cache_.back();
-    }
 
     template <class T>
     Object * create(const objid_t new_id)
@@ -166,6 +156,17 @@ public:
         {
             delete object.second;
         }
+    }
+
+    template <class T>
+    Object * create()
+                        /**< @brief Create an object of the T type.
+                         * @param [in] parameters new object`s data.
+                         */
+    {
+        cache_.push_back(set_object(new T(new_id(), *this)));
+        create_in_storage(cache_.back());
+        return cache_.back();
     }
 
     virtual int run() = 0;

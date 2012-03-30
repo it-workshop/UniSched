@@ -14,6 +14,8 @@ option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 option(WITH_NCURSES "Build ncurses frontend." Y)
 
+option(WITH_REPEAT "Build repeat events algorithm." N)
+
 if (WITH_TESTS_CXX11)
     include (cmake/c++11/CheckCXX11Features.cmake)
 endif (WITH_TESTS_CXX11)
