@@ -35,7 +35,7 @@ public:
     void disconnect();
     void create(const Core::Object *object);
     void remove(const Core::objid_t id);
-    
+    void push_connect(Core::objid_t id, Core::objid_t with, bool connect);
     
     void init (const std::vector<std::string>& args);
 };

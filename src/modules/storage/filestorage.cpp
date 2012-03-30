@@ -13,8 +13,13 @@ void FileStorage::push(const Core::objid_t id, const std::string& name,
 {
 }
 
+void FileStorage::push_connect(Core::objid_t id, Core::objid_t with, bool connect)
+{
+}
+
 void FileStorage::push(const Core::objid_t , const Core::objid_t , const bool)
-{}
+{
+}
 
 void FileStorage::connect()
 {

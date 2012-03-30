@@ -12,7 +12,7 @@ option(WITH_YAML "Build with YAML support." Y)
 option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y)
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
-option(WITH_NCURSES "Build ncurses frontend." Y)
+option(WITH_NCURSES "Build ncurses frontend." N)
 
 option(WITH_REPEAT "Build repeat events algorithm." N)
 
