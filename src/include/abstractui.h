@@ -8,6 +8,7 @@
 
 #include <object.h>
 #include <module.h>
+#include <algorithm.h>
 
 /** @namespace Core
  * @brief UserInterface Objects.
@@ -135,6 +136,19 @@ protected:
     void set_storage(class AbstractStorage *storage)
     {
         storage_ = storage;
+    }
+
+    bool exec_algorithm(const std::string& name, Object *object = nullptr)
+    {
+        for ( Module *module : *modules())
+        {
+            if ( module->type() == Module::ALGORITHM && module->name() == name)
+            {
+                dynamic_cast<Algorithm *>(module)->exec(object);
+                return true;
+            }
+        }
+        return false;
     }
 
 public:

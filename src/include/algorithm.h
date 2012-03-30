@@ -1,9 +1,11 @@
 #pragma once
 
 #include <module.h>
-#include <abstractui.h>
 
 namespace Core {
+
+class AbstractUI;
+class Object;
 
 class Algorithm : public Module {
 private:
@@ -29,3 +31,5 @@ public:
 
 };
 
+#include <object.h>
+#include <abstractui.h>

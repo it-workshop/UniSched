@@ -96,6 +96,14 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
         std::cerr << "Error: Requested storage module not found!" << std::endl;
     }
 
+    for (Core::Module *module : *Core::Module::modules())
+    {
+        if (module->type() == Core::Module::ALGORITHM)
+        {
+            dynamic_cast<Core::Algorithm *>(module)->set_ui(*ui);
+        }
+    }
+
     return error;
 }
 
