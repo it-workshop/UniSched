@@ -10,6 +10,8 @@ extern "C" {
 
 class luaUI : public Core::AbstractUI {
 private:
+    std::string script_;
+    lua_State *vm_;
 protected:
 public:
     luaUI(std::vector<Core::Module *>* modules, void *handle);
@@ -25,10 +27,31 @@ luaUI::luaUI(std::vector<Core::Module *>* modules, void *handle):
 
 void luaUI::init(const std::vector<std::string>& args)
 {
+    for (auto it = args.begin(); it != args.end(); it++)
+    {
+        if ("--lua" == *it)
+        {
+            script_ = *++it;
+            continue;
+        }
+    }
+
+    if (script_.empty())
+    {
+        std::cerr << "lua UI: script name not set!" << std::endl;
+    }
 }
 
 int luaUI::run()
 {
+    vm_ = lua_open();
+
+    luaL_openlibs(vm_);
+    luaL_loadfile(vm_, script_.c_str());
+    lua_pcall(vm_, 0, LUA_MULTRET, 0);
+    
+    lua_close(vm_);
+
     return 0;
 }
 
@@ -40,4 +63,5 @@ void init(std::vector<Core::Module *>* modules, void *handle)
 }
 
 };
+
 
