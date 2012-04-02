@@ -3,6 +3,8 @@
 #include <group.h>
 #include <event.h>
 
+#include <boost/format.hpp>
+
 extern "C" {
 
 #include <lua.h>
@@ -13,6 +15,7 @@ extern "C" {
 
 class luaUI : public Core::AbstractUI {
 friend int luaUI_create(lua_State *state);
+friend int luaUI_search(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -84,6 +87,62 @@ int luaUI_create(lua_State *state)
     lua_setfield(state, -2, "__id");
     lua_getglobal(state, "object");
     lua_setmetatable(state, -2);
+    return 1;
+}
+
+int luaUI_search(lua_State *state)
+{
+    if (lua_gettop(state) != 1 || lua_istable(state, 1))
+    {
+        lua_pushstring(state, "Incorrect argument!");
+        lua_error(state);
+        return 0;
+    }
+
+    lua_pushnil(state);
+    std::map<std::string, boost::any> args;
+    while(lua_next(state, -2))
+    {
+        if (!lua_isstring(state, -2) || lua_isstring(state, -1))    //TODO: add seacrh by time.
+        {
+            std::cerr << "lua UI: search argument is not string!" << std::endl;
+            continue;
+        }
+        args[lua_tostring(state, -2)] = lua_tostring(state, -1);
+        lua_pop(state, 1);
+    }
+
+    auto ret = self->search(args);
+
+    int i = 1;
+    lua_createtable(state, 0, 0);
+    for (auto found : ret)
+    {
+        lua_createtable(state, 0, 0);
+        switch (found->type())
+        {
+        case Core::PERSON:
+            lua_pushstring(state, "person");
+            break;
+        case Core::GROUP:
+            lua_pushstring(state, "group");
+            break;
+        case Core::EVENT:
+            lua_pushstring(state, "event");
+            break;
+        default:
+            lua_pushstring(state, "unknown");
+            break;
+        }
+        lua_setfield(state, -2, "__type");
+        lua_pushnumber(state, self->objects_.size());
+        self->objects_.push_back(found);
+        lua_setfield(state, -2, "__id");
+        lua_getglobal(state, "object");
+        lua_setmetatable(state, -2);
+        lua_setfield(state, -2, boost::str(boost::format("%u") % i++).c_str());
+    }
+
     return 1;
 }
 
