@@ -9,6 +9,7 @@ endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." Y)
 option(WITH_NCURSES "Build ncurses frontend." N)
+option(WITH_LUAUI "Build lua frontend." Y)
 
 # Storage Options
 option(WITH_STORAGE_TEXTFILE "Build with storage features: YAML-formated plain text files as database." Y)
@@ -40,6 +41,10 @@ find_package (Boost REQUIRED)
 if (WITH_NCURSES)
     find_package (ncurses REQUIRED)
 endif (WITH_NCURSES)
+
+if (WITH_LUAUI)
+    find_package (lua REQUIRED)
+endif (WITH_LUAUI)
 
 if (WITH_STORAGE_TEXTFILE)
     add_definitions(-DWITH_STORAGE_TEXTFILE)

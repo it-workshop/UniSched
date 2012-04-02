@@ -8,7 +8,6 @@ if (WITH_DUMMYUI)
         message("опция тестирвания функционала ядра системы отключена, часть функционала не будет использована в DummyUI")
     endif(NOT WITH_TESTS_CORE)
     add_library (dummyui SHARED dummy.cpp)
-#    target_link_libraries (dummyui)
 endif (WITH_DUMMYUI)
 
 if (WITH_CLI)
@@ -41,7 +40,12 @@ if (WITH_EXT_PYTHON_CLI)
     target_link_libraries(${CLI_PY_LIB} core dummyui)
 endif(WITH_EXT_PYTHON_CLI)
 
-if (WITH_DUMMYUI)
+if (WITH_NCURSES)
     add_subdirectory(ncurses)
-endif (WITH_DUMMYUI)
+endif (WITH_NCURSES)
+
+if (WITH_LUAUI)
+    add_library(luaui SHARED luaui.cpp)
+    target_link_libraries(luaui core lua)
+endif (WITH_LUAUI)
 
