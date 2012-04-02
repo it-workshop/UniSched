@@ -18,6 +18,7 @@ friend int luaUI_create(lua_State *state);
 friend int luaUI_search(lua_State *state);
 friend int luaUI_remove(lua_State *state);
 friend int luaUI_object_read(lua_State *state);
+friend int luaUI_object_update(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -231,6 +232,45 @@ int luaUI_object_read(lua_State *state)
     return 1;
 }
 
+static int luaUI_object___index(lua_State *state)
+{
+    return luaUI_object_read(state);
+}
+
+int luaUI_object_update(lua_State *state)
+{
+    if (lua_gettop(state) != 3 || !lua_istable(state, 1) || !lua_isstring(state, 2) || (!lua_isnumber(state, 3) and !lua_isstring(state, 3)))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        return 0;
+    }
+    lua_getfield(state, 1, "__id");
+    if (!lua_isnumber(state, -1))
+    {
+        lua_pushstring(state, "This is not table!");
+        lua_error(state);
+        return 0;
+    }
+    std::string name = lua_tostring(state, 2);
+    boost::any value;
+    if (lua_isnumber(state, 3))
+    {
+        value = (time_t) lua_tonumber(state, 3);
+    }
+    else
+    {
+        value = std::string(lua_tostring(state, 3));
+    }
+    self->objects_.at(lua_tonumber(state, -1))->update(name, value);
+    return 0;
+}
+
+static int luaUI_object___newindex(lua_State *state)
+{
+    return luaUI_object_update(state);
+}
+
 int luaUI::run()
 {
     self = this;
@@ -238,6 +278,12 @@ int luaUI::run()
     lua_createtable(vm_, 0, 0);
     lua_pushcfunction(vm_, luaUI_object_read);
     lua_setfield(vm_, -2, "read");
+    lua_pushcfunction(vm_, luaUI_object___index);
+    lua_setfield(vm_, -2, "__index");
+    lua_pushcfunction(vm_, luaUI_object_update);
+    lua_setfield(vm_, -2, "update");
+    lua_pushcfunction(vm_, luaUI_object___newindex);
+    lua_setfield(vm_, -2, "__newindex");
     lua_setglobal(vm_, "__object");
     
     luaL_openlibs(vm_);
