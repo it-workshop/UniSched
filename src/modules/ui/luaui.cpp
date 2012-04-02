@@ -17,6 +17,7 @@ class luaUI : public Core::AbstractUI {
 friend int luaUI_create(lua_State *state);
 friend int luaUI_search(lua_State *state);
 friend int luaUI_remove(lua_State *state);
+friend int luaUI_object_read(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -86,7 +87,7 @@ int luaUI_create(lua_State *state)
     lua_setfield(state, -2, "__type");
     lua_pushnumber(state, self->objects_.size() - 1);
     lua_setfield(state, -2, "__id");
-    lua_getglobal(state, "object");
+    lua_getglobal(state, "__object");
     lua_setmetatable(state, -2);
     return 1;
 }
@@ -139,7 +140,7 @@ int luaUI_search(lua_State *state)
         lua_pushnumber(state, self->objects_.size());
         self->objects_.push_back(found);
         lua_setfield(state, -2, "__id");
-        lua_getglobal(state, "object");
+        lua_getglobal(state, "__object");
         lua_setmetatable(state, -2);
         lua_setfield(state, -2, boost::str(boost::format("%u") % i++).c_str());
     }
@@ -166,15 +167,83 @@ int luaUI_remove(lua_State *state)
     return 0;
 }
 
+int luaUI_object_read(lua_State *state)
+{
+    if (lua_gettop(state) != 2 || !lua_istable(state, 1) || !lua_isstring(state, 2))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        return 0;
+    }
+    lua_getfield(state, 1, "__id");
+    if (!lua_isnumber(state, -1))
+    {
+        lua_pushstring(state, "This is not object!");
+        lua_error(state);
+        return 0;
+    }
+    auto ret = self->objects_.at(lua_tonumber(state, -2))->read(lua_tostring(state, 2));
+    if (ret.type() == typeid(const std::string))
+    {
+        lua_pushstring(state, boost::any_cast<const std::string&>(ret).c_str());
+    }
+    else if (ret.type() == typeid(const time_t))
+    {
+        lua_pushnumber(state, boost::any_cast<const time_t>(ret));
+    }
+    else if (ret.type() == typeid(const std::vector<Core::Object *>))
+    {
+        lua_createtable(state, 0, 0);
+        int i = 0;
+        for (auto object : boost::any_cast<const std::vector<Core::Object *>>(ret))
+        {
+            lua_createtable(state, 0, 0);
+            switch (object->type())
+            {
+            case Core::PERSON:
+                lua_pushstring(state, "person");
+                break;
+            case Core::GROUP:
+                lua_pushstring(state, "group");
+                break;
+            case Core::EVENT:
+                lua_pushstring(state, "event");
+                break;
+            default:
+                lua_pushstring(state, "unknown");
+                break;
+            }
+            lua_setfield(state, -2, "__type");
+            lua_pushnumber(state, self->objects_.size());
+            self->objects_.push_back(object);
+            lua_setfield(state, -2, "__id");
+            lua_getglobal(state, "__object");
+            lua_setmetatable(state, -2);
+            lua_setfield(state, -2, boost::str(boost::format("%u") % i++).c_str());
+        }
+    }
+    else
+    {
+        lua_pushstring(state, "Unknown type!");
+        lua_error(state);
+        return 0;
+    }
+    return 1;
+}
+
 int luaUI::run()
 {
     self = this;
     vm_ = lua_open();
     lua_createtable(vm_, 0, 0);
-    lua_setglobal(vm_, "object");
+    lua_pushcfunction(vm_, luaUI_object_read);
+    lua_setfield(vm_, -2, "read");
+    lua_setglobal(vm_, "__object");
     
     luaL_openlibs(vm_);
     lua_register(vm_, "create", luaUI_create);
+    lua_register(vm_, "search", luaUI_create);
+    lua_register(vm_, "remove", luaUI_create);
 
     luaL_loadfile(vm_, script_.c_str());
     lua_pcall(vm_, 0, LUA_MULTRET, 0);
