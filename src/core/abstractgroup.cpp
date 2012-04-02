@@ -15,7 +15,7 @@ void AbstractGroup::check_field(const std::string& name,
         boost::any_cast<std::string>(value);
         return;
     }
-    if ("people" == name || "children_groups")
+    if ("people" == name || "children_groups" == name)
     {
         throw boost::bad_any_cast();
     }
