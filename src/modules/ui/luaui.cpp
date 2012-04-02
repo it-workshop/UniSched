@@ -16,6 +16,7 @@ extern "C" {
 class luaUI : public Core::AbstractUI {
 friend int luaUI_create(lua_State *state);
 friend int luaUI_search(lua_State *state);
+friend int luaUI_remove(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -144,6 +145,25 @@ int luaUI_search(lua_State *state)
     }
 
     return 1;
+}
+
+int luaUI_remove(lua_State *state)
+{
+    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        return 0;
+    }
+    lua_getfield(state, 1, "__id");
+    if (!lua_isnumber(state, -1))
+    {
+        lua_pushstring(state, "This is not object!");
+        lua_error(state);
+        return 0;
+    }
+    self->remove(self->objects_.at(lua_tonumber(state, -1)));
+    return 0;
 }
 
 int luaUI::run()
