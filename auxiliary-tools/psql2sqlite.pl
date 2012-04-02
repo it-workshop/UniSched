@@ -37,7 +37,7 @@ foreach (@no_comments) {
         @values = split "\t", $_;
         print "INSERT INTO objects(id, type) VALUES($newid, 2);\n";
         for ($i = 0; $i < $#values+1; $i++) {
-            print "INSERT INTO strings(object, name, value) VALUES($newid, '$fields[$i]', '$values[$i]');\n";
+            print "INSERT INTO strings(object, name, value) VALUES($newid, '$fields[$i]', '$values[$i]');\n" if $fields[$i] ne 'id';
             $workshops_id[$values[$i]] = $newid if $fields[$i] eq 'id';
         }
         print "\n";
@@ -55,7 +55,7 @@ foreach (@no_comments) {
         @values = split "\t", $_;
         print "INSERT INTO objects(id, type) VALUES($newid, 1);\n";
         for ($i = 0; $i < $#values+1; $i++) {
-            print "INSERT INTO strings(object, name, value) VALUES($newid, '$fields[$i]', '$values[$i]');\n";
+            print "INSERT INTO strings(object, name, value) VALUES($newid, '$fields[$i]', '$values[$i]');\n" if $fields[$i] ne 'id';
             $applicants_id[$values[$i]] = $newid if $fields[$i] eq 'id';
         }
         print "\n";
