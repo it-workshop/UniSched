@@ -99,10 +99,10 @@ int luaUI___object___index(lua_State *state)
         //long jump
     }
                                     // #1: self #2: index
-    lua_pushstring(state, "read");  // #1: self #2: index   #3: "read"
-    lua_rawget(state, 1);           // #1: self #2: index   #3: read
-    lua_pushvalue(state, 2);        // #1: self #2: index   #3: read    #4: index
-    lua_call(state, 1, 1);          // #1: self #2: index   #3: value
+    lua_pushstring(state, "read");  // #1: self #2: index   #-1: "read"
+    lua_rawget(state, 1);           // #1: self #2: index   #-1: read
+    lua_pushvalue(state, 2);        // #1: self #2: index   #-2: read   #-1: index
+    lua_call(state, 1, 1);          // #1: self #2: index   #-1: value
     return 1;
 }
 
@@ -119,18 +119,39 @@ int luaUI___object___newindex(lua_State *state)
         lua_error(state);
         //long jump
     }
-                                        // #1: self #2: index   #3: value
-    lua_pushstring(state, "update");    // #1: self #2: index   #3: value   #4: "update"
-    lua_rawget(state, 1);               // #1: self #2: index   #3: value   #4: update
-    lua_pushvalue(state, 2);            // #1: self #2: index   #3: value   #4: update  #5: index
-    lua_pushvalue(state, 3);            // #1: self #2: index   #3: value   #4: update  #5: index   #6: value
-    lua_call(state, 2, 0);              // #1: self #2: index   #3: value
+                                        // #1: self #2: index   #-1: value
+    lua_pushstring(state, "update");    // #1: self #2: index   #-2: value  #-1: "update"
+    lua_rawget(state, 1);               // #1: self #2: index   #-2: value  #-1: update
+    lua_pushvalue(state, 2);            // #1: self #2: index   #-3: value  #-2: update     #-1: index
+    lua_pushvalue(state, 3);            // #1: self #2: index   #-4: value  #-3: update     #-2: index  #-1: value
+    lua_call(state, 2, 0);              // #1: self #2: index   #-1: value
     return 0;
 }
 
 int luaUI___object___eq(lua_State *state)
 {
-    return 0;
+    /* Stack:
+     *  1: self
+     *  2: with
+     */
+    if (lua_gettop(state) != 2 || !lua_istable(state, 1) || !lua_istable(state, 2))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        // long jump
+    }
+
+    lua_pushstring(state, "__varid");   // #1: self #2: with    #-1: "__varid"
+    lua_rawget(state, 1);               // #1: self #2: with    #-1: selfid
+    int selfid = lua_tonumber(state, -1);
+    lua_pop(state, 1);                  // #1: self #2: with
+    lua_pushstring(state, "__varid");   // #1: self #2: with    #-1: "__varid"
+    lua_rawget(state, 2);               // #2: self #2: with    #-1: withid
+    int withid = lua_tonumber(state, -1);
+    lua_pop(state, 1);                  // #1: self #2: with
+    lua_pushboolean(state, self->objects_.at(selfid) == self->objects_.at(withid));
+                                        // #1: self #2: with    #-1: result
+    return 1;
 }
 
 int luaUI_create(lua_State *state)
