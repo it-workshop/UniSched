@@ -240,6 +240,30 @@ int luaUI_object_connect(lua_State *state)
 
 int luaUI_object_disconnect(lua_State *state)
 {
+    /* Stack:
+     *  1: with
+     *  lua_upvalueindex(1): varid
+     */
+    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        // long jump
+    }
+    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+    lua_getfield(state, 1, "__varid");
+    Core::Object *with = self->objects_.at(lua_tonumber(state, -1));
+    lua_pop(state, 1);
+    try
+    {
+        object->disconnect(with);
+    }
+    catch (std::bad_cast)
+    {
+        lua_pushstring(state, "Could not disconnect objects!");
+        lua_error(state);
+        // long jump
+    }
     return 0;
 }
 
