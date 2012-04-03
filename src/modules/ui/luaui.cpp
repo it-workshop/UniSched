@@ -63,7 +63,26 @@ static luaUI *self;
 
 int luaUI_object_type(lua_State *state)
 {
-    return 0;
+    /* Stack:
+     * 
+     *  upvalueindex(1): varid
+     */
+    switch (self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)))->type())
+    {
+    case Core::PERSON:
+        lua_pushstring(state, "person");
+        break;
+    case Core::GROUP:
+        lua_pushstring(state, "group");
+        break;
+    case Core::EVENT:
+        lua_pushstring(state, "event");
+        break;
+    default:
+        lua_pushstring(state, "unknown");
+        break;
+    }
+    return 1;
 }
 
 int luaUI_object_read(lua_State *state)
