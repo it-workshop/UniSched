@@ -25,6 +25,7 @@ friend int luaUI_object_read(lua_State *state);
 friend int luaUI_object_update(lua_State *state);
 friend int luaUI_object_connect(lua_State *state);
 friend int luaUI_object_disconnect(lua_State *state);
+friend void luaUI_create_lua_object(lua_State *state, Core::Object *object);
 private:
     std::string script_;
     lua_State *vm_;
@@ -65,7 +66,7 @@ int luaUI_object_type(lua_State *state)
 {
     /* Stack:
      * 
-     *  upvalueindex(1): varid
+     *  lua_upvalueindex(1): varid
      */
     switch (self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)))->type())
     {
@@ -85,9 +86,90 @@ int luaUI_object_type(lua_State *state)
     return 1;
 }
 
+int luaUI_object_read(lua_State *state);
+int luaUI_object_update(lua_State *state);
+int luaUI_object_connect(lua_State *state);
+int luaUI_object_disconnect(lua_State *state);
+
+void luaUI_create_lua_object(lua_State *state, Core::Object *object)
+{
+    int id = self->objects_.size();
+    self->objects_.push_back(object);               // Stack:
+    lua_createtable(state, 0, 0);                           // #-1: object
+
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushcclosure(state, luaUI_object_type, 1);          // #-2: object, #-1: [id]type()
+    lua_setfield(state, -2, "type");                        // #-1: object
+    
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushcclosure(state, luaUI_object_read, 1);          // #-2: object, #-1: [id]read()
+    lua_setfield(state, -2, "read");                        // #-1: object
+
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushcclosure(state, luaUI_object_update, 1);        // #-2: object, #-1: [id]update()
+    lua_setfield(state, -2, "update");                      // #-1: object
+    
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushcclosure(state, luaUI_object_connect, 1);       // #-2: object, #-1: [id]connect()
+    lua_setfield(state, -2, "connect");                     // #-1: object
+
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushcclosure(state, luaUI_object_disconnect, 1);    // #-2: object, #-1: [id]disconnect()
+    lua_setfield(state, -2, "disconnect");                  // #-1: object
+
+    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_setfield(state, -2, "__varid");                     // #-1: object
+
+    lua_getglobal(state, "__object");                       // #-2: object, #-1: __object
+    lua_setmetatable(state, -2);                            // #-1: object
+}
+
 int luaUI_object_read(lua_State *state)
 {
-    return 0;
+    /* Stack:
+     *  1: index
+     *  lua_upvalueindex(1): varid
+     */
+    if (lua_gettop(state) != 1 || !lua_isstring(state, 1))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        // long jump
+    }
+    std::string field = lua_tostring(state, 1);
+    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+    boost::any value = object->read(field);
+    if (value.empty())
+    {
+        lua_pushnil(state);
+    }
+    else if (value.type() == typeid(const std::string))
+    {
+        lua_pushstring(state, boost::any_cast<const std::string&>(value).c_str());
+    }
+    else if (value.type() == typeid(const time_t))
+    {
+        lua_pushnumber(state, boost::any_cast<const time_t>(value));
+    }
+    else if (value.type() == typeid(const std::vector<Core::Object *>))
+    {
+        auto vector = boost::any_cast<const std::vector<Core::Object *>>(value);
+        int i = 0;
+        for (Core::Object *obj : vector)
+        {
+            lua_createtable(state, 0, 0);
+            luaUI_create_lua_object(state, obj);
+            lua_pushnumber(state, ++i);
+            lua_settable(state, -2);
+        }
+    }
+    else
+    {
+        lua_pushstring(state, "Invalid field type!");
+        lua_error(state);
+        // long jump
+    }
+    return 1;
 }
 
 int luaUI_object_update(lua_State *state)
@@ -203,36 +285,7 @@ int luaUI_create(lua_State *state)
         lua_error(state);
         // long jump
     }
-    int id = self->objects_.size();
-    self->objects_.push_back(object);               // Stack:
-    lua_createtable(state, 0, 0);                           // #-1: object
-
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_pushcclosure(state, luaUI_object_type, 1);          // #-2: object, #-1: [id]type()
-    lua_setfield(state, -2, "type");                        // #-1: object
-    
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_pushcclosure(state, luaUI_object_read, 1);          // #-2: object, #-1: [id]read()
-    lua_setfield(state, -2, "read");                        // #-1: object
-
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_pushcclosure(state, luaUI_object_update, 1);        // #-2: object, #-1: [id]update()
-    lua_setfield(state, -2, "update");                      // #-1: object
-    
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_pushcclosure(state, luaUI_object_connect, 1);       // #-2: object, #-1: [id]connect()
-    lua_setfield(state, -2, "connect");                     // #-1: object
-
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_pushcclosure(state, luaUI_object_disconnect, 1);    // #-2: object, #-1: [id]disconnect()
-    lua_setfield(state, -2, "disconnect");                  // #-1: object
-
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_setfield(state, -2, "__varid");                     // #-1: object
-
-    lua_getglobal(state, "__object");                       // #-2: object, #-1: __object
-    lua_setmetatable(state, -2);                            // #-1: object
-
+    luaUI_create_lua_object(state, object);
     return 1;                                               // return object
 }
 
