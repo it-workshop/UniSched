@@ -99,16 +99,32 @@ int luaUI___object___index(lua_State *state)
         //long jump
     }
                                     // #1: self #2: index
-    lua_pushvalue(state, 2);        // #1: self #2: index   #3: index
-    lua_pushstring(state, "read");  // #1: self #2: index   #3: index   #4: "read"
-    lua_rawget(state, 1);           // #1: self #2: index   #3: index   #4: read
-    lua_replace(state, 2);          // #1: self #2: read    #3: index
-    lua_call(state, 1, 1);          // #1: self #2: value
+    lua_pushstring(state, "read");  // #1: self #2: index   #3: "read"
+    lua_rawget(state, 1);           // #1: self #2: index   #3: read
+    lua_pushvalue(state, 2);        // #1: self #2: index   #3: read    #4: index
+    lua_call(state, 1, 1);          // #1: self #2: index   #3: value
     return 1;
 }
 
 int luaUI___object___newindex(lua_State *state)
 {
+    /* Stack:
+     *  1: self
+     *  2: index
+     *  3: value
+     */
+    if (lua_gettop(state) != 3 || !lua_istable(state, 1) || !lua_isstring(state, 2) || !lua_isstring(state, 3))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        //long jump
+    }
+                                        // #1: self #2: index   #3: value
+    lua_pushstring(state, "update");    // #1: self #2: index   #3: value   #4: "update"
+    lua_rawget(state, 1);               // #1: self #2: index   #3: value   #4: update
+    lua_pushvalue(state, 2);            // #1: self #2: index   #3: value   #4: update  #5: index
+    lua_pushvalue(state, 3);            // #1: self #2: index   #3: value   #4: update  #5: index   #6: value
+    lua_call(state, 2, 0);              // #1: self #2: index   #3: value
     return 0;
 }
 
