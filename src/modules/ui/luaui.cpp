@@ -174,6 +174,38 @@ int luaUI_object_read(lua_State *state)
 
 int luaUI_object_update(lua_State *state)
 {
+    /* Stack:
+     *  1: index
+     *  2: value
+     *  lua_upvalueindex(1): varid
+     */
+    if (lua_gettop(state) != 2 || !lua_isstring(state, 1) || !lua_isstring(state, 2))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        // long jump
+    }
+    std::string field = lua_tostring(state, 1);
+    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+    boost::any value;
+    if (lua_isnumber(state, 2))
+    {
+        value = (time_t) lua_tonumber(state, 2);
+    }
+    else
+    {
+        value = std::string(lua_tostring(state, 2));
+    }
+    try
+    {
+        object->update(field, value);
+    }
+    catch (boost::bad_any_cast)
+    {
+        lua_pushstring(state, "Could not change field!");
+        lua_error(state);
+        // long jump
+    }
     return 0;
 }
 
