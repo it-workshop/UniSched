@@ -155,12 +155,12 @@ int luaUI_object_read(lua_State *state)
     {
         auto vector = boost::any_cast<const std::vector<Core::Object *>>(value);
         int i = 0;
+        lua_createtable(state, 0, 0);
         for (Core::Object *obj : vector)
         {
-            lua_createtable(state, 0, 0);
-            luaUI_create_lua_object(state, obj);
             lua_pushnumber(state, ++i);
-            lua_settable(state, -2);
+            luaUI_create_lua_object(state, obj);
+            lua_settable(state, -3);
         }
     }
     else
@@ -371,7 +371,49 @@ int luaUI_create(lua_State *state)
 
 int luaUI_search(lua_State *state)
 {
-    return 0;
+    /* Stack:
+     *  1: args
+     */
+    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    {
+        lua_pushstring(state, "Invalid arguments!");
+        lua_error(state);
+        // long jump
+    }
+    lua_pushnil(state);
+    std::map<std::string, boost::any> args;
+    while(lua_next(state, 1))
+    {
+        if (!lua_isstring(state, -2) || !lua_isstring(state, -1))
+        {
+            lua_pushstring(state, "Invalid search argument!");
+            lua_error(state);
+            // long jump
+        }
+        std::string field = lua_tostring(state, -2);
+        boost::any value;
+        if (lua_isnumber(state, -1))
+        {
+            value = (time_t) lua_tonumber(state, -1);
+        }
+        else
+        {
+            value = std::string(lua_tostring(state, -1));
+        }
+        args[field] = value;
+        lua_pop(state, 1);
+    }
+    lua_pop(state, 1);
+    std::vector<Core::Object *> vector = self->search(args);
+    lua_createtable(state, 0, 0);
+    int i = 0;
+    for (Core::Object *obj : vector)
+    {
+        lua_pushnumber(state, ++i);
+        luaUI_create_lua_object(state, obj);
+        lua_settable(state, -3);
+    }
+    return 1;
 }
 
 int luaUI_remove(lua_State *state)
