@@ -418,6 +418,17 @@ int luaUI_search(lua_State *state)
 
 int luaUI_remove(lua_State *state)
 {
+    /* Stack:
+     *  1: object
+     */
+    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    lua_getfield(state, 1, "__varid");
+    self->remove(self->objects_.at(lua_tonumber(state, -1)));
     return 0;
 }
 
