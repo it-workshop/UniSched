@@ -5,8 +5,6 @@
 
 #include <module.h>
 
-#include <algorithm.h>
-
 bool
 utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
                std::vector<std::string>& args)
