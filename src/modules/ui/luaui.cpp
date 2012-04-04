@@ -28,6 +28,7 @@ friend int luaUI_object_disconnect(lua_State *state);
 friend void luaUI_create_lua_object(lua_State *state, Core::Object *object);
 friend int luaUI___cache___index(lua_State *state);
 friend int luaUI___cache___newindex(lua_State *state);
+friend int luaUI___cache___len(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -506,6 +507,15 @@ int luaUI___cache___newindex(lua_State *state)
     return 0;
 }
 
+int luaUI___cache___len(lua_State *state)
+{
+    /* Stack:
+     *  1: cache
+     */
+    lua_pushnumber(state, self->cache().size());
+    return 1;
+}
+
 int luaUI::run()
 {
     self = this;
@@ -533,6 +543,8 @@ int luaUI::run()
     lua_setfield(vm_, -2, "__index");
     lua_pushcfunction(vm_, luaUI___cache___newindex);
     lua_setfield(vm_, -2, "__newindex");
+    lua_pushcfunction(vm_, luaUI___cache___len);
+    lua_setfield(vm_, -2, "__len");
     lua_setmetatable(vm_, -1);
     lua_setglobal(vm_, "cache");
                     // cache = {}
