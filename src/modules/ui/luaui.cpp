@@ -593,8 +593,8 @@ static int luaUI_next(lua_State *state)
     }
     lua_pushvalue(state, 1);
     lua_pushvalue(state, 2);
-    lua_call(state, 2, LUA_MULTRET);
-    return 3;
+    lua_call(state, 2, 2);
+    return 2;
 }
 
 static int luaUI_pairs (lua_State *state)
@@ -612,7 +612,7 @@ static int luaUI_pairs (lua_State *state)
         lua_pushvalue(state, lua_upvalueindex(1));
     }
     lua_pushvalue(state, 1);
-    lua_call(state, 1, LUA_MULTRET);
+    lua_call(state, 1, 3);
     return 3;
 }
 
@@ -631,7 +631,7 @@ static int luaUI_ipairs (lua_State *state)
         lua_pushvalue(state, lua_upvalueindex(1));
     }
     lua_pushvalue(state, 1);
-    lua_call(state, 1, LUA_MULTRET);
+    lua_call(state, 1, 3);
     return 3;
 }
 
