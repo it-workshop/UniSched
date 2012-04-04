@@ -8,7 +8,12 @@
 
 #include <object.h>
 #include <module.h>
-#include <algorithm.h>
+
+extern "C" {
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
+}
 
 /** @namespace Core
  * @brief UserInterface Objects.
@@ -21,7 +26,7 @@ namespace Core {
 class AbstractUI: public Module {
 friend class Object;
 friend class AbstractStorage;
-friend class Algorithm;
+
 private:
     std::map<objid_t, Object *> objects_;
                         /**< Model objects. Each object must be saved here for
@@ -57,6 +62,28 @@ private:
     class AbstractStorage *storage_;
 
     void create_in_storage(const Object *object);
+    lua_State *vm_;
+
+    static int _lua___cache___index(lua_State *state);
+    static int _lua___cache___newindex(lua_State *state);
+    static int _lua___cache___len(lua_State *state);
+    static int _lua___cache___next(lua_State *state);
+    static int _lua___cache___ipairs(lua_State *state);
+
+    static int _lua___object___index(lua_State *state);
+    static int _lua___object___newindex(lua_State *state);
+    static int _lua___object___eq(lua_State *state);
+    static int _lua_object_type(lua_State *state);
+    static int _lua_object_read(lua_State *state);
+    static int _lua_object_update(lua_State *state);
+    static int _lua_object_connect(lua_State *state);
+    static int _lua_object_disconnect(lua_State *state);
+
+    static int _lua_create(lua_State *state);
+    static int _lua_search(lua_State *state);
+    static int _lua_remove(lua_State *state);
+
+    static void _lua_create_lua_object(lua_State *state, Core::Object *);
 
 protected:
     void push(const int id, const std::string& name, const boost::any& value);
@@ -128,7 +155,7 @@ protected:
         storage_ = storage;
     }
 
-    bool exec_algorithm(const std::string& name, Object *object = nullptr)
+/*    bool exec_algorithm(const std::string& name, Object *object = nullptr)
     {
         for ( Module *module : *modules())
         {
@@ -140,7 +167,7 @@ protected:
         }
         return false;
     }
-
+*/
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
@@ -186,6 +213,8 @@ public:
     {                    
         return objects_.at(id);
     }
+    void init_algorithms();
+    void deinit_algorithms();
 };
 
 };
