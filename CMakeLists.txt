@@ -20,10 +20,6 @@ option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 
-# Algorithm Collections
-option(WITH_ALG_REPEAT "Build repeat events algorithm." N)
-
-
 if (WITH_TESTS_CXX11)
     include (cmake/c++11/CheckCXX11Features.cmake)
 endif (WITH_TESTS_CXX11)
@@ -37,14 +33,11 @@ configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/include/paths.
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 find_package (Boost REQUIRED)
+find_package (lua REQUIRED)
 
 if (WITH_NCURSES)
     find_package (ncurses REQUIRED)
 endif (WITH_NCURSES)
-
-if (WITH_LUAUI)
-    find_package (lua REQUIRED)
-endif (WITH_LUAUI)
 
 if (WITH_STORAGE_TEXTFILE)
     add_definitions(-DWITH_STORAGE_TEXTFILE)
