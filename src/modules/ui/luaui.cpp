@@ -132,7 +132,44 @@ int luaUI_object_read(lua_State *state)
      *  1: index
      *  lua_upvalueindex(1): varid
      */
-    if (lua_gettop(state) != 1 || !lua_isstring(state, 1))
+    if (lua_gettop(state) == 0)
+    {
+        Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+        auto fields = object->read();
+        lua_createtable(state, 0, 0);
+        for (auto field : fields)
+        {
+            if (typeid(std::string) == field.second.type())
+            {
+                lua_pushstring(state, boost::any_cast<const std::string&>(field.second).c_str());
+            }
+            else if (typeid(time_t) == field.second.type())
+            {
+                lua_pushnumber(state, boost::any_cast<const time_t>(field.second));
+            }
+            else if (typeid(std::vector<Core::Object *>) == field.second.type())
+            {
+                auto vector = boost::any_cast<std::vector<Core::Object *>>(field.second);
+                int i = 0;
+                lua_createtable(state, 0, 0);
+                for (Core::Object *obj : vector)
+                {
+                    lua_pushnumber(state, ++i);
+                    luaUI_create_lua_object(state, obj);
+                    lua_settable(state, -3);
+                }
+            }
+            else
+            {
+                lua_pushstring(state, "Invalid field type!");
+                lua_error(state);
+                // long jump
+            }
+            lua_setfield(state, -2, field.first.c_str());
+        }
+        return 1;
+    }
+    else if (lua_gettop(state) != 1 || !lua_isstring(state, 1))
     {
         lua_pushstring(state, "Invalid arguments!");
         lua_error(state);
