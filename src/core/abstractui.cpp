@@ -728,6 +728,9 @@ void AbstractUI::init_algorithms()
     lua_pushcclosure(vm_, _lua_ipairs, 1);
     lua_setglobal(vm_, "ipairs");
 
+    lua_createtable(vm_, 0, 0);
+    lua_setglobal(vm_, "algorithms");
+
     std::stringstream algorithms_path;
     setenv("UNISCHED_ALGORITHMS_PATH", ".", 0);
     algorithms_path << getenv("UNISCHED_ALGORITHMS_PATH");

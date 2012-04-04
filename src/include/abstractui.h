@@ -5,6 +5,7 @@
 #include <fstream>
 #include <map>
 #include <typeinfo>
+#include <iostream>
 
 #include <object.h>
 #include <module.h>
@@ -155,19 +156,26 @@ protected:
         storage_ = storage;
     }
 
-/*    bool exec_algorithm(const std::string& name, Object *object = nullptr)
+    bool exec_algorithm(const std::string& name, Object *object = nullptr)
     {
-        for ( Module *module : *modules())
+        lua_getglobal(vm_, "algorithms");
+        lua_getfield(vm_, -1, name.c_str());
+        if (lua_isnil(vm_, -1))
         {
-            if ( module->type() == Module::ALGORITHM && module->name() == name)
-            {
-                dynamic_cast<Algorithm *>(module)->exec(object);
-                return true;
-            }
+            lua_pop(vm_, 2);
+            return false;
         }
-        return false;
+        _lua_create_lua_object(vm_, object);
+        if (lua_pcall(vm_, 1, 0, 0))
+        {
+            std::cerr << lua_tostring(vm_, -1) << std::endl;
+            lua_pop(vm_, 2);
+            return false;
+        }
+        lua_pop(vm_, 1);
+        return true;
     }
-*/
+
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
