@@ -26,6 +26,8 @@ friend int luaUI_object_update(lua_State *state);
 friend int luaUI_object_connect(lua_State *state);
 friend int luaUI_object_disconnect(lua_State *state);
 friend void luaUI_create_lua_object(lua_State *state, Core::Object *object);
+friend int luaUI___cache___index(lua_State *state);
+friend int luaUI___cache___newindex(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -432,6 +434,41 @@ int luaUI_remove(lua_State *state)
     return 0;
 }
 
+int luaUI___cache___index(lua_State *state)
+{
+    /* Stack:
+     *  1: cache
+     *  2: index
+     */
+    if (lua_gettop(state) != 2 || !lua_isnumber(state, 2))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    luaUI_create_lua_object(state, self->cache().at(lua_tonumber(state, 2)));
+    return 1;
+}
+
+int luaUI___cache___newindex(lua_State *state)
+{
+    /* Stack:
+     *  1: cache
+     *  2: index
+     *  3: value
+     */
+    if (lua_gettop(state) != 3 || !lua_isnumber(state, 2) || !lua_istable(state, 3))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    lua_pushstring(state, "__varid");
+    lua_rawget(state, 3);
+    self->cache()[lua_tonumber(state, 2)] = self->objects_.at(lua_tonumber(state, -1));
+    return 0;
+}
+
 int luaUI::run()
 {
     self = this;
@@ -454,6 +491,12 @@ int luaUI::run()
                     // }
 
     lua_createtable(vm_, 0, 0);
+    lua_createtable(vm_, 0, 0);
+    lua_pushcfunction(vm_, luaUI___cache___index);
+    lua_setfield(vm_, -2, "__index");
+    lua_pushcfunction(vm_, luaUI___cache___newindex);
+    lua_setfield(vm_, -2, "__newindex");
+    lua_setmetatable(vm_, -1);
     lua_setglobal(vm_, "cache");
                     // cache = {}
 
