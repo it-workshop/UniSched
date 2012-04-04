@@ -484,7 +484,14 @@ int luaUI___cache___index(lua_State *state)
         lua_error(state);
         // long jump
     }
-    luaUI_create_lua_object(state, self->cache().at(lua_tonumber(state, 2)));
+    try
+    {
+        luaUI_create_lua_object(state, self->cache().at(lua_tonumber(state, 2)));
+    }
+    catch (std::out_of_range)
+    {
+        lua_pushnil(state);
+    }
     return 1;
 }
 
@@ -512,6 +519,7 @@ int luaUI___cache___len(lua_State *state)
     /* Stack:
      *  1: cache
      */
+    std::cerr << self->cache().size() << std::endl;
     lua_pushnumber(state, self->cache().size());
     return 1;
 }
@@ -545,7 +553,7 @@ int luaUI::run()
     lua_setfield(vm_, -2, "__newindex");
     lua_pushcfunction(vm_, luaUI___cache___len);
     lua_setfield(vm_, -2, "__len");
-    lua_setmetatable(vm_, -1);
+    lua_setmetatable(vm_, -2);
     lua_setglobal(vm_, "cache");
                     // cache = {}
 
