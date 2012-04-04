@@ -77,6 +77,8 @@ void Module::load_modules()
             if (!module_loader)
             {
                 std::cout << "FAIL" << std::endl << dlerror() << std::endl;
+                dlclose(module_handle);
+                continue;
             }
             (*module_loader)(&modules_, module_handle);
             std::cout << "OK" << std::endl;

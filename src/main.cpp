@@ -27,7 +27,9 @@ main(int argc, char *argv[])
         storage->set_UI(ui);
         storage->connect();
     }
+    ui->init_algorithms();
     int code = ui->run();
+    ui->deinit_algorithms();
     if (storage)
     {
         storage->disconnect();

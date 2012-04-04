@@ -3,6 +3,8 @@
 #include <group.h>
 #include <event.h>
 
+#include <sys/types.h>
+#include <dirent.h>
 #include <stdexcept>
 
 using namespace Core;
@@ -660,7 +662,16 @@ static int _lua_ipairs (lua_State *state)
     return 3;
 }
 
-
+static bool is_algorithm_name(std::string name)
+{
+    if (name.c_str()[0] == '.')
+    {
+        return false;
+    }
+    return name.rfind(".lua") == std::string::npos
+        || name.rfind(".lc") == std::string::npos
+        || name.rfind(".so") == std::string::npos;
+}
 
 void AbstractUI::init_algorithms()
 {
@@ -716,6 +727,37 @@ void AbstractUI::init_algorithms()
     lua_getglobal(vm_, "ipairs");
     lua_pushcclosure(vm_, _lua_ipairs, 1);
     lua_setglobal(vm_, "ipairs");
+
+    std::stringstream algorithms_path;
+    setenv("UNISCHED_ALGORITHMS_PATH", ".", 0);
+    algorithms_path << getenv("UNISCHED_ALGORITHMS_PATH");
+    char dir_name[4096];
+    for (algorithms_path.getline(dir_name, 4096, ':'); !algorithms_path.eof() || *dir_name;
+        algorithms_path.getline(dir_name, 4096, ':'))
+    {
+        DIR * dir = opendir(dir_name);
+        if (!dir)
+        {
+            perror(dir_name);
+            continue;
+        }
+        for (struct dirent *entry = readdir(dir); entry; entry = readdir(dir))
+        {
+            if (!is_algorithm_name(entry->d_name))
+            {
+                continue;
+            }
+            std::cout << "Loading " << entry->d_name << "\t";
+            std::string algorithm_name = std::string(dir_name) + "/" + entry->d_name;
+            if (luaL_loadfile(vm_, algorithm_name.c_str()) || lua_pcall(vm_, 0, 0, 0))
+            {
+                std::cout << "FAIL\n" << lua_tostring(vm_, -1) << std::endl;
+                lua_pop(vm_, -1);
+            }
+            std::cout << "OK" << std::endl;
+        }
+        closedir(dir);
+    }
 }
 
 void AbstractUI::deinit_algorithms()

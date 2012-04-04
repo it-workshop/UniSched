@@ -67,20 +67,6 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
             }
             continue;
         }
-        if (module->type() == Core::Module::ALGORITHM)
-        {
-            try
-            {
-                Core::Algorithm *alg = dynamic_cast<Core::Algorithm *>(module);
-                alg->init(args);
-            }
-            catch (std::bad_cast e)
-            {
-                std::cerr << "Warning: invalid algorithm module!" << e.what() <<
-                    std::endl;
-            }
-            continue;
-        }
     }
 
     bool error = false;
@@ -95,15 +81,6 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
         error = true;
         std::cerr << "Error: Requested storage module not found!" << std::endl;
     }
-
-    for (Core::Module *module : *Core::Module::modules())
-    {
-        if (module->type() == Core::Module::ALGORITHM)
-        {
-            dynamic_cast<Core::Algorithm *>(module)->set_ui(*ui);
-        }
-    }
-
     return error;
 }
 
