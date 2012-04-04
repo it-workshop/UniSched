@@ -29,6 +29,8 @@ friend void luaUI_create_lua_object(lua_State *state, Core::Object *object);
 friend int luaUI___cache___index(lua_State *state);
 friend int luaUI___cache___newindex(lua_State *state);
 friend int luaUI___cache___len(lua_State *state);
+friend int luaUI___cache___next(lua_State *state);
+friend int luaUI___cache___ipairs(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
@@ -486,7 +488,7 @@ int luaUI___cache___index(lua_State *state)
     }
     try
     {
-        luaUI_create_lua_object(state, self->cache().at(lua_tonumber(state, 2)));
+        luaUI_create_lua_object(state, self->cache().at(lua_tonumber(state, 2) - 1));
     }
     catch (std::out_of_range)
     {
@@ -510,7 +512,7 @@ int luaUI___cache___newindex(lua_State *state)
     }
     lua_pushstring(state, "__varid");
     lua_rawget(state, 3);
-    self->cache()[lua_tonumber(state, 2)] = self->objects_.at(lua_tonumber(state, -1));
+    self->cache()[lua_tonumber(state, 2) - 1] = self->objects_.at(lua_tonumber(state, -1));
     return 0;
 }
 
@@ -519,9 +521,118 @@ int luaUI___cache___len(lua_State *state)
     /* Stack:
      *  1: cache
      */
-    std::cerr << self->cache().size() << std::endl;
     lua_pushnumber(state, self->cache().size());
     return 1;
+}
+
+int luaUI___cache___next(lua_State *state)
+{
+    /* Stack:
+     * 1: cache
+     * 2: previous_key
+     */
+    if (lua_gettop(state) != 2 || !lua_istable(state, 1) || !(lua_isnumber(state, 2) || lua_isnil(state, 2)))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    int key;
+    if (lua_isnumber(state, 2))
+    {
+        key = lua_tonumber(state, 2) + 1;
+    }
+    else
+    {
+        key = 1;
+    }
+    if (self->cache().size() + 1 < key)
+    {
+        lua_pushnil(state);
+        return 1;
+    }
+    lua_pushnumber(state, key);
+    try {
+    luaUI_create_lua_object(state, self->cache().at(key - 1));
+    }
+    catch (std::out_of_range)
+    {
+        lua_pushnil(state);
+        return 1;
+    }
+    return 2;
+}
+
+int luaUI___cache___ipairs(lua_State *state)
+{
+    if (lua_gettop(state) != 1)
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    lua_pushcfunction(state, luaUI___cache___next);
+    lua_pushvalue(state, 1);
+    lua_pushnil(state);
+    return 3;
+}
+
+static int luaUI_next(lua_State *state)
+{
+    if (lua_gettop(state) != 2)
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    luaL_getmetafield(state, 1, "__next");
+    if (lua_isnil(state, -1))
+    {
+        lua_pop(state, 1);
+        lua_pushvalue(state, lua_upvalueindex(1));
+    }
+    lua_pushvalue(state, 1);
+    lua_pushvalue(state, 2);
+    lua_call(state, 2, LUA_MULTRET);
+    return 3;
+}
+
+static int luaUI_pairs (lua_State *state)
+{
+    if (lua_gettop(state) != 1)
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    luaL_getmetafield(state, 1, "__pairs");
+    if (lua_isnil(state, 1))
+    {
+        lua_pop(state, 1);
+        lua_pushvalue(state, lua_upvalueindex(1));
+    }
+    lua_pushvalue(state, 1);
+    lua_call(state, 1, LUA_MULTRET);
+    return 3;
+}
+
+static int luaUI_ipairs (lua_State *state)
+{
+    if (lua_gettop(state) != 1)
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+        // long jump
+    }
+    luaL_getmetafield(state, 1, "__ipairs");
+    if (lua_isnil(state, 1))
+    {
+        lua_pop(state, 1);
+        lua_pushvalue(state, lua_upvalueindex(1));
+    }
+    lua_pushvalue(state, 1);
+    lua_call(state, 1, LUA_MULTRET);
+    return 3;
 }
 
 int luaUI::run()
@@ -553,6 +664,12 @@ int luaUI::run()
     lua_setfield(vm_, -2, "__newindex");
     lua_pushcfunction(vm_, luaUI___cache___len);
     lua_setfield(vm_, -2, "__len");
+    lua_pushcfunction(vm_, luaUI___cache___next);
+    lua_setfield(vm_, -2, "__next");
+    lua_pushcfunction(vm_, luaUI___cache___ipairs);
+    lua_setfield(vm_, -2, "__ipairs");
+    lua_pushcfunction(vm_, luaUI___cache___ipairs);
+    lua_setfield(vm_, -2, "__pairs");
     lua_setmetatable(vm_, -2);
     lua_setglobal(vm_, "cache");
                     // cache = {}
@@ -563,9 +680,21 @@ int luaUI::run()
                     //function search (args) ... end
     lua_register(vm_, "remove", luaUI_remove);
                     //function remove(object) ... end
+    lua_getglobal(vm_, "next");
+    lua_pushcclosure(vm_, luaUI_next, 1);
+    lua_setglobal(vm_, "next");
+    lua_getglobal(vm_, "pairs");
+    lua_pushcclosure(vm_, luaUI_pairs, 1);
+    lua_setglobal(vm_, "pairs");
+    lua_getglobal(vm_, "ipairs");
+    lua_pushcclosure(vm_, luaUI_ipairs, 1);
+    lua_setglobal(vm_, "ipairs");
 
     luaL_loadfile(vm_, script_.c_str());
-    lua_pcall(vm_, 0, LUA_MULTRET, 0);
+    if (lua_pcall(vm_, 0, LUA_MULTRET, 0))
+    {
+        std::cerr << lua_tostring(vm_, -1) << std::endl;
+    }
     
     lua_close(vm_);
 
