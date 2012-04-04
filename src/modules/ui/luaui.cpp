@@ -34,7 +34,6 @@ friend int luaUI___cache___ipairs(lua_State *state);
 private:
     std::string script_;
     lua_State *vm_;
-    std::vector<Core::Object *> objects_;
 protected:
 public:
     luaUI(std::vector<Core::Module *>* modules, void *handle);
@@ -73,7 +72,7 @@ int luaUI_object_type(lua_State *state)
      * 
      *  lua_upvalueindex(1): varid
      */
-    switch (self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)))->type())
+    switch (((Core::Object *)lua_touserdata(state, lua_upvalueindex(1)))->type())
     {
     case Core::PERSON:
         lua_pushstring(state, "person");
@@ -98,32 +97,30 @@ int luaUI_object_disconnect(lua_State *state);
 
 void luaUI_create_lua_object(lua_State *state, Core::Object *object)
 {
-    int id = self->objects_.size();
-    self->objects_.push_back(object);               // Stack:
     lua_createtable(state, 0, 0);                           // #-1: object
 
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, luaUI_object_type, 1);          // #-2: object, #-1: [id]type()
     lua_setfield(state, -2, "type");                        // #-1: object
     
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, luaUI_object_read, 1);          // #-2: object, #-1: [id]read()
     lua_setfield(state, -2, "read");                        // #-1: object
 
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, luaUI_object_update, 1);        // #-2: object, #-1: [id]update()
     lua_setfield(state, -2, "update");                      // #-1: object
     
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, luaUI_object_connect, 1);       // #-2: object, #-1: [id]connect()
     lua_setfield(state, -2, "connect");                     // #-1: object
 
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
+    lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, luaUI_object_disconnect, 1);    // #-2: object, #-1: [id]disconnect()
     lua_setfield(state, -2, "disconnect");                  // #-1: object
 
-    lua_pushnumber(state, id);                              // #-2: object, #-1: id
-    lua_setfield(state, -2, "__varid");                     // #-1: object
+    lua_pushlightuserdata(state, object);
+    lua_setfield(state, -2, "__object");                     // #-1: object
 
     lua_getglobal(state, "__object");                       // #-2: object, #-1: __object
     lua_setmetatable(state, -2);                            // #-1: object
@@ -137,7 +134,7 @@ int luaUI_object_read(lua_State *state)
      */
     if (lua_gettop(state) == 0)
     {
-        Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+        Core::Object *object = (Core::Object *)lua_touserdata(state, lua_upvalueindex(1));
         auto fields = object->read();
         lua_createtable(state, 0, 0);
         for (auto field : fields)
@@ -179,7 +176,7 @@ int luaUI_object_read(lua_State *state)
         // long jump
     }
     std::string field = lua_tostring(state, 1);
-    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+    Core::Object *object = (Core::Object *)lua_touserdata(state, lua_upvalueindex(1));
     boost::any value = object->read(field);
     if (value.empty())
     {
@@ -228,7 +225,7 @@ int luaUI_object_update(lua_State *state)
         // long jump
     }
     std::string field = lua_tostring(state, 1);
-    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
+    Core::Object *object = (Core::Object *)lua_touserdata(state, lua_upvalueindex(1));
     boost::any value;
     if (lua_isnumber(state, 2))
     {
@@ -263,9 +260,9 @@ int luaUI_object_connect(lua_State *state)
         lua_error(state);
         // long jump
     }
-    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
-    lua_getfield(state, 1, "__varid");
-    Core::Object *with = self->objects_.at(lua_tonumber(state, -1));
+    Core::Object *object = (Core::Object *)lua_touserdata(state, lua_upvalueindex(1));
+    lua_getfield(state, 1, "__object");
+    Core::Object *with = (Core::Object *)lua_touserdata(state, -1);
     lua_pop(state, 1);
     try
     {
@@ -292,9 +289,9 @@ int luaUI_object_disconnect(lua_State *state)
         lua_error(state);
         // long jump
     }
-    Core::Object *object = self->objects_.at(lua_tonumber(state, lua_upvalueindex(1)));
-    lua_getfield(state, 1, "__varid");
-    Core::Object *with = self->objects_.at(lua_tonumber(state, -1));
+    Core::Object *object = (Core::Object *)lua_touserdata(state, lua_upvalueindex(1));
+    lua_getfield(state, 1, "__object");
+    Core::Object *with = (Core::Object *)lua_touserdata(state, -1);
     lua_pop(state, 1);
     try
     {
@@ -364,15 +361,15 @@ int luaUI___object___eq(lua_State *state)
         // long jump
     }
 
-    lua_pushstring(state, "__varid");   // #1: self #2: with    #-1: "__varid"
+    lua_pushstring(state, "__object");   // #1: self #2: with    #-1: "__varid"
     lua_rawget(state, 1);               // #1: self #2: with    #-1: selfid
-    int selfid = lua_tonumber(state, -1);
+    Core::Object *obj = (Core::Object *)lua_touserdata(state, -1);
     lua_pop(state, 1);                  // #1: self #2: with
-    lua_pushstring(state, "__varid");   // #1: self #2: with    #-1: "__varid"
+    lua_pushstring(state, "__object");   // #1: self #2: with    #-1: "__varid"
     lua_rawget(state, 2);               // #2: self #2: with    #-1: withid
-    int withid = lua_tonumber(state, -1);
+    Core::Object *with = (Core::Object *)lua_touserdata(state, -1);
     lua_pop(state, 1);                  // #1: self #2: with
-    lua_pushboolean(state, self->objects_.at(selfid) == self->objects_.at(withid));
+    lua_pushboolean(state, obj == with);
                                         // #1: self #2: with    #-1: result
     return 1;
 }
@@ -469,8 +466,9 @@ int luaUI_remove(lua_State *state)
         lua_error(state);
         // long jump
     }
-    lua_getfield(state, 1, "__varid");
-    self->remove(self->objects_.at(lua_tonumber(state, -1)));
+    lua_pushstring(state, "__object");
+    lua_rawget(state, 1);
+    self->remove((Core::Object *)lua_touserdata(state, -1));
     return 0;
 }
 
@@ -510,9 +508,9 @@ int luaUI___cache___newindex(lua_State *state)
         lua_error(state);
         // long jump
     }
-    lua_pushstring(state, "__varid");
+    lua_pushstring(state, "__object");
     lua_rawget(state, 3);
-    self->cache()[lua_tonumber(state, 2) - 1] = self->objects_.at(lua_tonumber(state, -1));
+    self->cache()[lua_tonumber(state, 2) - 1] = (Core::Object *)lua_touserdata(state, -1);
     return 0;
 }
 
