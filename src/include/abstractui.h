@@ -176,6 +176,11 @@ protected:
         return true;
     }
 
+    lua_State *vm()
+    {
+        return vm_;
+    }
+
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
