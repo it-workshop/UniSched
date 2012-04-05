@@ -48,7 +48,14 @@ void luaUI::init(const std::vector<std::string>& args)
 
 int luaUI::run()
 {
-    luaL_loadfile(vm(), script_.c_str());
+    if (script_.empty())
+    {
+        luaL_loadfile(vm(), nullptr);
+    }
+    else
+    {
+        luaL_loadfile(vm(), script_.c_str());
+    }
     if (lua_pcall(vm(), 0, LUA_MULTRET, 0))
     {
         std::cerr << lua_tostring(vm(), -1) << std::endl;
