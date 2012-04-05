@@ -37,8 +37,6 @@ private:
                          * set_object() and new_id() mehods, you can redefine
                          * this methods but do not use this field in other code.
                          */
-    std::vector<Object *> cache_;
-                        /**< Search cache. */
     int new_id_;
     const int new_id()
     {
@@ -64,12 +62,6 @@ private:
 
     void create_in_storage(const Object *object);
     lua_State *vm_;
-
-    static int _lua___cache___index(lua_State *state);
-    static int _lua___cache___newindex(lua_State *state);
-    static int _lua___cache___len(lua_State *state);
-    static int _lua___cache___next(lua_State *state);
-    static int _lua___cache___ipairs(lua_State *state);
 
     static int _lua___object___index(lua_State *state);
     static int _lua___object___newindex(lua_State *state);
@@ -111,10 +103,10 @@ protected:
                          */
     {
         if ( objects_.count(new_id) ) return nullptr;
-        cache_.push_back(set_object(new T(new_id, *this)));
-        create_in_storage(cache_.back());
+        Object *object = set_object(new T(new_id, *this));
+        create_in_storage(object);
         if (new_id_ <= new_id) { new_id_ = new_id + 1; }
-        return cache_.back();
+        return object;
     }
 
     std::vector<Object*> search(const std::map<std::string, boost::any>& parameters = std::map<std::string, boost::any>());
@@ -132,25 +124,6 @@ protected:
         return objects_;
     }
     
-    std::vector<Object *>& cache()
-                        /**< @brief Get search cache.
-                         * @return Search cache.
-                         * @internal For this and inherited classes only.
-                         */
-    {
-        return cache_;
-    }
-
-    void reset_cache() throw ()
-                        /**< @brief Clears search cache.
-                         * @internal For this and inherited classes only.
-                         *
-                         * Delete all information about objects from the cache.
-                         */
-    {
-        cache_.clear();
-    }
-
     void set_storage(class AbstractStorage *storage)
     {
         storage_ = storage;
@@ -204,9 +177,9 @@ public:
                          * @param [in] parameters new object`s data.
                          */
     {
-        cache_.push_back(set_object(new T(new_id(), *this)));
-        create_in_storage(cache_.back());
-        return cache_.back();
+        Object *object = set_object(new T(new_id(), *this));
+        create_in_storage(object);
+        return object;
     }
 
     virtual int run() = 0;

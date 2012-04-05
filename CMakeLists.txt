@@ -8,11 +8,10 @@ endif ("${PROJECT_BINARY_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}")
 # UI Options
 option(WITH_DUMMYUI "Build with DummyUI support." Y)
 option(WITH_CLI "Build with CLI support." Y)
-option(WITH_NCURSES "Build ncurses frontend." N)
 option(WITH_LUAUI "Build lua frontend." Y)
 
 # Storage Options
-option(WITH_STORAGE_TEXTFILE "Build with storage features: YAML-formated plain text files as database." Y)
+option(WITH_STORAGE_TEXTFILE "Build with storage features: YAML-formated plain text files as database." N)
 option(WITH_STORAGE_SQLITE "Build with storage features: SQLite database." Y)
 
 # Unit Test Options

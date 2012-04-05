@@ -53,10 +53,6 @@ std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>
             it--;
         }
     }
-    for (Object * object: results)
-    {
-        cache_.push_back(object);
-    }
     return results;
 }
 
@@ -87,14 +83,6 @@ void AbstractUI::remove(Object *object)
     if (storage_)
     {
         storage_->remove(id);
-    }
-    for (auto it = cache_.begin(); it != cache_.end(); it++)
-    {
-        if (*it == object)
-        {
-            cache_.erase(it);
-            return;
-        }
     }
 }
 
@@ -221,29 +209,6 @@ void AbstractUI::_lua_create_lua_object(lua_State *state, Core::Object *object)
 
     lua_getglobal(state, "__object");                       // #-2: object, #-1: __object
     lua_setmetatable(state, -2);                            // #-1: object
-}
-
-int AbstractUI::_lua___cache___index(lua_State *state)
-{
-    /* Stack:
-     *  1: cache
-     *  2: index
-     */
-    if (lua_gettop(state) != 2 || !lua_isnumber(state, 2))
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    try
-    {
-        _lua_create_lua_object(state, self->cache().at(lua_tonumber(state, 2) - 1));
-    }
-    catch (std::out_of_range)
-    {
-        lua_pushnil(state);
-    }
-    return 1;
 }
 
 int AbstractUI::_lua_object_read(lua_State *state)
@@ -524,144 +489,6 @@ int AbstractUI::_lua_remove(lua_State *state)
     return 0;
 }
 
-int AbstractUI::_lua___cache___newindex(lua_State *state)
-{
-    /* Stack:
-     *  1: cache
-     *  2: index
-     *  3: value
-     */
-    if (lua_gettop(state) != 3 || !lua_isnumber(state, 2) || !lua_istable(state, 3))
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    lua_pushstring(state, "__object");
-    lua_rawget(state, 3);
-    self->cache()[lua_tonumber(state, 2) - 1] = (Core::Object *)lua_touserdata(state, -1);
-    return 0;
-}
-
-int AbstractUI::_lua___cache___len(lua_State *state)
-{
-    /* Stack:
-     *  1: cache
-     */
-    lua_pushnumber(state, self->cache().size());
-    return 1;
-}
-
-int AbstractUI::_lua___cache___next(lua_State *state)
-{
-    /* Stack:
-     * 1: cache
-     * 2: previous_key
-     */
-    if (lua_gettop(state) != 2 || !lua_istable(state, 1) || !(lua_isnumber(state, 2) || lua_isnil(state, 2)))
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    int key;
-    if (lua_isnumber(state, 2))
-    {
-        key = lua_tonumber(state, 2) + 1;
-    }
-    else
-    {
-        key = 1;
-    }
-    if (self->cache().size() + 1 < key)
-    {
-        lua_pushnil(state);
-        return 1;
-    }
-    lua_pushnumber(state, key);
-    try {
-    _lua_create_lua_object(state, self->cache().at(key - 1));
-    }
-    catch (std::out_of_range)
-    {
-        lua_pushnil(state);
-        return 1;
-    }
-    return 2;
-}
-
-int AbstractUI::_lua___cache___ipairs(lua_State *state)
-{
-    if (lua_gettop(state) != 1)
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    lua_pushcfunction(state, _lua___cache___next);
-    lua_pushvalue(state, 1);
-    lua_pushnil(state);
-    return 3;
-}
-
-static int _lua_next(lua_State *state)
-{
-    if (lua_gettop(state) != 2)
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    luaL_getmetafield(state, 1, "__next");
-    if (lua_isnil(state, -1))
-    {
-        lua_pop(state, 1);
-        lua_pushvalue(state, lua_upvalueindex(1));
-    }
-    lua_pushvalue(state, 1);
-    lua_pushvalue(state, 2);
-    lua_call(state, 2, 2);
-    return 2;
-}
-
-static int _lua_pairs (lua_State *state)
-{
-    if (lua_gettop(state) != 1)
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    luaL_getmetafield(state, 1, "__pairs");
-    if (lua_isnil(state, 1))
-    {
-        lua_pop(state, 1);
-        lua_pushvalue(state, lua_upvalueindex(1));
-    }
-    lua_pushvalue(state, 1);
-    lua_call(state, 1, 3);
-    return 3;
-}
-
-static int _lua_ipairs (lua_State *state)
-{
-    if (lua_gettop(state) != 1)
-    {
-        lua_pushstring(state, "Invalid argument!");
-        lua_error(state);
-        // long jump
-    }
-    luaL_getmetafield(state, 1, "__ipairs");
-    if (lua_isnil(state, 1))
-    {
-        lua_pop(state, 1);
-        lua_pushvalue(state, lua_upvalueindex(1));
-    }
-    lua_pushvalue(state, 1);
-    lua_call(state, 1, 3);
-    return 3;
-}
-
 static bool is_algorithm_name(std::string name)
 {
     if (name.c_str()[0] == '.')
@@ -694,39 +521,12 @@ void AbstractUI::init_algorithms()
     lua_setglobal(vm_, "__object");
                     // }
 
-    lua_createtable(vm_, 0, 0);
-    lua_createtable(vm_, 0, 0);
-    lua_pushcfunction(vm_, _lua___cache___index);
-    lua_setfield(vm_, -2, "__index");
-    lua_pushcfunction(vm_, _lua___cache___newindex);
-    lua_setfield(vm_, -2, "__newindex");
-    lua_pushcfunction(vm_, _lua___cache___len);
-    lua_setfield(vm_, -2, "__len");
-    lua_pushcfunction(vm_, _lua___cache___next);
-    lua_setfield(vm_, -2, "__next");
-    lua_pushcfunction(vm_, _lua___cache___ipairs);
-    lua_setfield(vm_, -2, "__ipairs");
-    lua_pushcfunction(vm_, _lua___cache___ipairs);
-    lua_setfield(vm_, -2, "__pairs");
-    lua_setmetatable(vm_, -2);
-    lua_setglobal(vm_, "cache");
-                    // cache = {}
-
     lua_register(vm_, "create", _lua_create);
                     // function create (type) ... end
     lua_register(vm_, "search", _lua_search);
                     //function search (args) ... end
     lua_register(vm_, "remove", _lua_remove);
                     //function remove(object) ... end
-    lua_getglobal(vm_, "next");
-    lua_pushcclosure(vm_, _lua_next, 1);
-    lua_setglobal(vm_, "next");
-    lua_getglobal(vm_, "pairs");
-    lua_pushcclosure(vm_, _lua_pairs, 1);
-    lua_setglobal(vm_, "pairs");
-    lua_getglobal(vm_, "ipairs");
-    lua_pushcclosure(vm_, _lua_ipairs, 1);
-    lua_setglobal(vm_, "ipairs");
 
     lua_createtable(vm_, 0, 0);
     lua_setglobal(vm_, "algorithms");

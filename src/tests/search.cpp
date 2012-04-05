@@ -45,8 +45,6 @@ int TestingUI::run()
     object = create<Core::Group>();
     object->update("name", std::string("XEROX PARC"));
 
-    reset_cache();
-
     std::map<std::string, boost::any> args;
 
     if (search(args).size() != 7)

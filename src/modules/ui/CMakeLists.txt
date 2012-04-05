@@ -1,9 +1,6 @@
 cmake_minimum_required (VERSION 2.8.3)
 
 if (WITH_DUMMYUI)
-    if(NOT WITH_STORAGE_TEXTFILE)
-        message("опция сборки YAML отключена, часть функционала не будет использована в DummyUI")
-    endif(NOT WITH_STORAGE_TEXTFILE)
     if(NOT WITH_TESTS_CORE)
         message("опция тестирвания функционала ядра системы отключена, часть функционала не будет использована в DummyUI")
     endif(NOT WITH_TESTS_CORE)
@@ -39,10 +36,6 @@ if (WITH_EXT_PYTHON_CLI)
     ADD_LIBRARY(${CLI_PY_LIB} SHARED cli_py.cpp)
     target_link_libraries(${CLI_PY_LIB} core dummyui)
 endif(WITH_EXT_PYTHON_CLI)
-
-if (WITH_NCURSES)
-    add_subdirectory(ncurses)
-endif (WITH_NCURSES)
 
 if (WITH_LUAUI)
     add_library(luaui SHARED luaui.cpp)
