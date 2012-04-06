@@ -76,9 +76,9 @@ private:
     static int _lua_search(lua_State *state);
     static int _lua_remove(lua_State *state);
 
-    static void _lua_create_lua_object(lua_State *state, Core::Object *);
 
 protected:
+    static void _lua_create_lua_object(lua_State *state, Core::Object *);
     void push(const int id, const std::string& name, const boost::any& value);
                         /**< @brief Save @a field of object with @a id it hte
                          * database
