@@ -489,15 +489,14 @@ int AbstractUI::_lua_remove(lua_State *state)
     return 0;
 }
 
-static bool is_algorithm_name(std::string name)
+bool is_algorithm_name(std::string name)
 {
     if (name.c_str()[0] == '.')
     {
         return false;
     }
-    return name.rfind(".lua") == std::string::npos
-        || name.rfind(".lc") == std::string::npos
-        || name.rfind(".so") == std::string::npos;
+    return name.rfind(".lua") != std::string::npos
+        || name.rfind(".so") != std::string::npos;
 }
 
 void AbstractUI::init_algorithms()

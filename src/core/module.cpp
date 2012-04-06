@@ -23,8 +23,7 @@ Module::Module (const enum Type type, const std::string& name,
 static std::vector<Module *> modules_;
 
 static bool has_ending(std::string input, std::string ending) {
-    unsigned int last_match_position = input.rfind(ending);
-    return (last_match_position != std::string::npos);
+    return (input.rfind(ending) != std::string::npos);
 }
 
 static const bool is_module_name(const std::string& name) {
