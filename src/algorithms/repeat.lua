@@ -1,10 +1,10 @@
 #!/usr/bin/env lua
 
 algorithms['repeat'] = function (object)
-    if !object then
+    if not object then
         error('repeat: Object is needed!')
     end
-    if object.type() != 'event' then
+    if object.type() ~= 'event' then
         error('repeat: Object must be event!')
     end
     local name, start, duration, interval, max_time = tostring(object.name), tonumber(object.start), tonumber(object.duration), tonumber(object.interval), tonumber(object.max_time)
