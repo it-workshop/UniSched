@@ -19,6 +19,13 @@ algorithms.get_calendar = function(object)
         end
     end
     search_events(object)
+    local comp
+    comp = function(lhs, rhs)
+        if not lhs.start then return true end
+        if not rhs.start then return false end
+        return lhs.start < rhs.start
+    end
+    sort (result, comp)
     return result
 end
 
