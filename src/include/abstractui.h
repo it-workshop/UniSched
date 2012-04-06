@@ -129,26 +129,6 @@ protected:
         storage_ = storage;
     }
 
-    bool exec_algorithm(const std::string& name, Object *object = nullptr)
-    {
-        lua_getglobal(vm_, "algorithms");
-        lua_getfield(vm_, -1, name.c_str());
-        if (lua_isnil(vm_, -1))
-        {
-            lua_pop(vm_, 2);
-            return false;
-        }
-        _lua_create_lua_object(vm_, object);
-        if (lua_pcall(vm_, 1, 0, 0))
-        {
-            std::cerr << lua_tostring(vm_, -1) << std::endl;
-            lua_pop(vm_, 2);
-            return false;
-        }
-        lua_pop(vm_, 1);
-        return true;
-    }
-
     lua_State *vm()
     {
         return vm_;
