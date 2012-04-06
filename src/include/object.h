@@ -169,7 +169,8 @@ public:
                          * @return Corresponding field.
                          */
     {
-        return (*fields_.find(name)).second;
+        auto it = fields_.find(name);
+        return it != fields_.end() ? it->second : boost::any();
     }
 
     const std::map<const std::string,boost::any>& read() const
