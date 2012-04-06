@@ -1,3 +1,4 @@
+#!/usr/bin/env lua
 
 algorithms.get_calendar = function(object)
     local search_events
