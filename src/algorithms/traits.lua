@@ -52,6 +52,8 @@ algorithms.traits_optimize = function(traits)
         if traits.allow[i].to >= traits.allow[i + 1].from + 1 then
             traits.allow[i].to = math.max(traits.allow[i].to, traits.allow[i + 1].to)
             table.remove(traits.allow, i + 1)
+        else
+            i = i + 1
         end
     end
     sort(traits.deny, comp)
@@ -60,6 +62,8 @@ algorithms.traits_optimize = function(traits)
         if traits.deny[i].to >= traits.deny[i].from + 1 then
             traits.deny[i].to = math.max(traits.deny[i].to, traits.deny[i + 1].to)
             table.remove(traits.deny, i + 1)
+        else
+            i = i + 1
         end
     end
     local j = 1
