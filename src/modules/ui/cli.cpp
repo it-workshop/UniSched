@@ -31,6 +31,8 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("cache", &CommandLineInterface::cache));
     Commands.insert(std::make_pair("reset", &CommandLineInterface::reset));
 
+    Commands.insert(std::make_pair("read", &CommandLineInterface::read));
+
     std::for_each(Commands.begin(), 
         Commands.end(), 
         [this] (std::pair<const std::string, CLIMemCommand>& p) 
@@ -110,7 +112,7 @@ static int cache(Core::Object *object)
 }
 
 static Core::Object *
-cache(std::string& token)
+cache(const std::string& token)
     throw (std::out_of_range)
 {
     const char *c_str = token.c_str();
@@ -360,6 +362,66 @@ int CommandLineInterface::new_event(const std::vector<std::string>& tokens) {
     return 0;
 }
 
+int CommandLineInterface::read(const std::vector<std::string>& tokens) {
+    if (tokens.size() < 2) {
+        std::cout << boost::format("Weird amount of args (was hopping for at least 1, got %u)") % (tokens.size() - 1)
+            << std::endl;
+        return -1;
+    }
+    try
+    {
+        auto o = ::cache(tokens[1]);
+        std::cout << "object: " << tokens[1];
+        if (tokens.size() > 2)
+        {
+            for (int i = 2; i < tokens.size(); i++)
+            {
+                auto n = tokens[i];
+                boost::any f;
+                try
+                {
+                    f = o->read(n);
+                    std::cout << "\n" << n << ":\t";
+                    if (f.type() != typeid(const std::vector<Core::Object *>))
+                    {
+                        std::cout << f;
+                    }
+                    else
+                    {
+                        std::cout << boost::any_cast<const std::vector<Core::Object *>>(f);
+                    }
+                }
+                catch (boost::bad_any_cast)
+                {
+                    std::cout << "No such field!";
+                    continue;
+                }
+            }
+        }
+        else
+        {
+            for (auto f : o->read())
+            {
+                std::cout << "\n" << f.first << ":\t";
+                if (f.second.type() != typeid(const std::vector<Core::Object *>))
+                {
+                    std::cout << f.second;
+                }
+                else
+                {
+                    std::cout << boost::any_cast<const std::vector<Core::Object *>>(f.second);
+                }
+            }
+        }
+        std::cout << std::endl;
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such object in the cache!" << std::endl;
+        return -1;
+    }
+    return 0;
+}
 
 int CommandLineInterface::run()
 {
