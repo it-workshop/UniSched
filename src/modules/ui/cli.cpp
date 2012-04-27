@@ -1,5 +1,8 @@
 #include "cli.hpp"
 
+#include <stdexcept>
+#include <ctype.h>
+
 CommandLineInterface::CommandLineInterface(std::vector<Module *> *modules,
         void *handle):
     AbstractUI("CLI", modules, handle)
@@ -24,6 +27,8 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("event", &CommandLineInterface::new_event));
     Commands.insert(std::make_pair("load_csv", &CommandLineInterface::load_csv));
     Commands.insert(std::make_pair("dump_csv", &CommandLineInterface::dump_csv));
+
+    Commands.insert(std::make_pair("cache", &CommandLineInterface::cache));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
@@ -88,13 +93,41 @@ operator<< (std::ostream& stream, const boost::any& value)
     throw boost::bad_any_cast();
 }
 
+static std::vector<Core::Object *> cache_;
+
+static int cache(Core::Object *object)
+{
+    for (int i = 0; i < cache_.size(); i++)
+    {
+        if (cache_[i] == object)
+        {
+            return i;
+        }
+    }
+    cache_.push_back(object);
+    return cache_.size() - 1;
+}
+
+static Core::Object *
+cache(std::string& token)
+    throw (std::out_of_range)
+{
+    const char *c_str = token.c_str();
+    if (*c_str != '#' || !isdigit(*++c_str))
+    {
+        throw std::out_of_range("cache range check");
+    }
+    return cache_.at(atoi(c_str));
+}
+
 static std::ostream&
-operator<< (std::ostream& stream, const std::vector<Core::Object *>& vect)
+operator<< (std::ostream& stream,
+        const std::vector<Core::Object *>& vect)
     throw (boost::bad_any_cast)
 {
     for (auto o : vect)
     {
-        stream << "\n\tobject:";
+        stream << "\n\tobject: #" << cache(o);
         for (auto f : o->read())
         {
             stream << "\n\t\t" << f.first << ":\t" << f.second;
@@ -103,10 +136,24 @@ operator<< (std::ostream& stream, const std::vector<Core::Object *>& vect)
     return stream;
 }
 
+int CommandLineInterface::cache(const std::vector<std::string>& tokens) {
+    
+    for (int i = 0; i < cache_.size(); i++)
+    {
+        std::cout << "object #" << i;
+        for (auto f : cache_[i]->read())
+        {
+            std::cout << "\n\t" << f.first << ":\t" << f.second;
+        }
+        std::cout << "\n";
+    }
+    std::cout << std::flush;
+}
+
 int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
     auto rez = this->search();
     for (auto o : rez) {
-        std::cout << "object:";
+        std::cout << "object: #" << ::cache(o);
         for (auto f : o->read()) {
             std::cout << "\n\t" << f.first << ":\t" << f.second;
         }
@@ -261,8 +308,8 @@ int CommandLineInterface::new_person(const std::vector<std::string>& tokens) {
 
     }
 
-    std::cout << "CREATED NEW PERSON" << std::endl;
-
+    std::cout << "CREATED NEW PERSON\n" \
+                 "object: #"<< ::cache(p) << std::endl;
 
     return 0;
 }
@@ -282,6 +329,7 @@ int CommandLineInterface::new_group(const std::vector<std::string>& tokens) {
             << "Name: " << boost::any_cast<std::string>(g->read("name"))
             << std::endl;
     }
+    std::cout << "object: #" << ::cache(g) << std::endl;
 
     return 0;
 }
@@ -301,6 +349,8 @@ int CommandLineInterface::new_event(const std::vector<std::string>& tokens) {
             << "Name: " << boost::any_cast<std::string>(g->read("name"))
             << std::endl;
     }
+
+    std::cout << "object: #" << ::cache(g) << std::endl;
 
     return 0;
 }

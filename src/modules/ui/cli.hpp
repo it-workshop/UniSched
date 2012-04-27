@@ -49,5 +49,7 @@ public:
     int dig_for_objects(const std::vector<std::string>& tokens);
     int load_csv(const std::vector<std::string>& tokens);
     int dump_csv(const std::vector<std::string>& tokens);
+
+    int cache(const std::vector<std::string>& tokens);
 };
 
