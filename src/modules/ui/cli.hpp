@@ -51,5 +51,6 @@ public:
     int dump_csv(const std::vector<std::string>& tokens);
 
     int cache(const std::vector<std::string>& tokens);
+    int reset(const std::vector<std::string>& tokens);
 };
 

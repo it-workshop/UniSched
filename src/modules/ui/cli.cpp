@@ -29,6 +29,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("dump_csv", &CommandLineInterface::dump_csv));
 
     Commands.insert(std::make_pair("cache", &CommandLineInterface::cache));
+    Commands.insert(std::make_pair("reset", &CommandLineInterface::reset));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
@@ -148,6 +149,10 @@ int CommandLineInterface::cache(const std::vector<std::string>& tokens) {
         std::cout << "\n";
     }
     std::cout << std::flush;
+}
+
+int CommandLineInterface::reset(const std::vector<std::string>& tokens) {
+    cache_.clear();
 }
 
 int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
