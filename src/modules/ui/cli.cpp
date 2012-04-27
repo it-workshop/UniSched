@@ -66,16 +66,55 @@ int CommandLineInterface::toggle_debug(const std::vector<std::string>& unused) {
     }
 }
 
+static std::ostream&
+operator<< (std::ostream& stream, const boost::any& value)
+    throw (boost::bad_any_cast)
+{
+    if (value.type() == typeid(const std::string))
+    {
+        stream << boost::any_cast<const std::string&>(value);
+        return stream;
+    }
+    if (value.type() == typeid(const time_t))
+    {
+        stream << boost::any_cast<const time_t>(value);
+        return stream;
+    }
+    if (value.type() == typeid(std::vector<Core::Object *>&))
+    {
+        stream << boost::format("(length: %u)")
+            % boost::any_cast<std::vector<Core::Object *>>(value).size();
+    }
+    throw boost::bad_any_cast();
+}
+
+static std::ostream&
+operator<< (std::ostream& stream, const std::vector<Core::Object *>& vect)
+    throw (boost::bad_any_cast)
+{
+    for (auto o : vect)
+    {
+        stream << "\n\tobject:";
+        for (auto f : o->read())
+        {
+            stream << "\n\t\t" << f.first << ":\t" << f.second;
+        }
+    }
+    return stream;
+}
+
 int CommandLineInterface::dig_for_objects(const std::vector<std::string>& tokens) {
     auto rez = this->search();
     for (auto o : rez) {
+        std::cout << "object:";
         for (auto f : o->read()) {
-            std::cout << boost::format("%s: %s\n") % f.first % boost::any_cast<std::string>(f.second);
+            std::cout << "\n\t" << f.first << ":\t" << f.second;
         }
+        std::cout << "\n";
     }
     //for(auto f = p->read().begin(); f != p->read().end(); f++) {
         //std::cout << f->first;
-    std::cout << "Not implemented yet\n" << std::endl;
+    std::cout << std::flush;
 }
 
 std::vector<std::string> parse_line(std::string line) {
