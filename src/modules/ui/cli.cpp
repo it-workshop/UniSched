@@ -36,6 +36,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("connect", &CommandLineInterface::connect));
 
     Commands.insert(std::make_pair("run", &CommandLineInterface::lua_run));
+    Commands.insert(std::make_pair("call", &CommandLineInterface::lua_call));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
@@ -521,7 +522,7 @@ int CommandLineInterface::lua_run(const std::vector<std::string>& tokens)
     }
     lua_getglobal(vm(), "loadstring");
     lua_pushstring(vm(), stream.str().c_str());
-    lua_call(vm(), 1, 1);
+    ::lua_call(vm(), 1, 1);
     if (lua_pcall(vm(), 0, 0, 0))
     {
         std::cerr << lua_tostring(vm(), -1) << std::endl;
@@ -529,6 +530,46 @@ int CommandLineInterface::lua_run(const std::vector<std::string>& tokens)
     }
     return 0;
 }
+
+int CommandLineInterface::lua_call(const std::vector<std::string>& tokens)
+{
+    if (tokens.size() < 2)
+    {
+        std::cerr << "Argument expected!" << std::endl;
+        return -1;
+    }
+    lua_getglobal(vm(), "algorithms");
+    lua_getfield(vm(), -1, tokens[1].c_str());
+    try
+    {
+        for (int i = 2; i < tokens.size(); i ++)
+        {
+            if (isdigit(*(tokens[i].c_str())))
+            {
+                lua_pushnumber(vm(), to_time(tokens[i]));
+                continue;
+            }
+            if (*(tokens[i].c_str()) == '#')
+            {
+                lua_create_lua_object(vm(), ::cache(tokens[i]));
+                continue;
+            }
+            lua_pushstring(vm(), tokens[i].c_str());
+        }
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such object!" << std::endl;
+        return -1;
+    }
+    if (lua_pcall(vm(), tokens.size() - 2, 0, 0))
+    {
+        std::cerr << lua_tostring(vm(), -1) << std::endl;
+        return -1;
+    }
+    return 0;
+}
+
 
 int CommandLineInterface::run()
 {

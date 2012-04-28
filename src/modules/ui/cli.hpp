@@ -58,5 +58,6 @@ public:
     int connect(const std::vector<std::string>& tokens);
 
     int lua_run(const std::vector<std::string>& tokens);
+    int lua_call(const std::vector<std::string>& tokens);
 };
 

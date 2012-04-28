@@ -180,7 +180,7 @@ int AbstractUI::_lua_object_type(lua_State *state)
     return 1;
 }
 
-void AbstractUI::_lua_create_lua_object(lua_State *state, Core::Object *object)
+void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
 {
     lua_createtable(state, 0, 0);                           // #-1: object
 
@@ -240,7 +240,7 @@ int AbstractUI::_lua_object_read(lua_State *state)
                 for (Core::Object *obj : vector)
                 {
                     lua_pushnumber(state, ++i);
-                    _lua_create_lua_object(state, obj);
+                    lua_create_lua_object(state, obj);
                     lua_settable(state, -3);
                 }
             }
@@ -283,7 +283,7 @@ int AbstractUI::_lua_object_read(lua_State *state)
         for (Core::Object *obj : vector)
         {
             lua_pushnumber(state, ++i);
-            _lua_create_lua_object(state, obj);
+            lua_create_lua_object(state, obj);
             lua_settable(state, -3);
         }
     }
@@ -421,7 +421,7 @@ int AbstractUI::_lua_create(lua_State *state)
         lua_error(state);
         // long jump
     }
-    _lua_create_lua_object(state, object);
+    lua_create_lua_object(state, object);
     return 1;                                               // return object
 }
 
@@ -466,7 +466,7 @@ int AbstractUI::_lua_search(lua_State *state)
     for (Core::Object *obj : vector)
     {
         lua_pushnumber(state, ++i);
-        _lua_create_lua_object(state, obj);
+        lua_create_lua_object(state, obj);
         lua_settable(state, -3);
     }
     return 1;
