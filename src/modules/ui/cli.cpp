@@ -94,10 +94,11 @@ operator<< (std::ostream& stream, const boost::any& value)
         stream << str;
         return stream;
     }
-    if (value.type() == typeid(std::vector<Core::Object *>&))
+    if (value.type() == typeid(std::vector<Core::Object *>))
     {
         stream << boost::format("(length: %u)")
             % boost::any_cast<std::vector<Core::Object *>>(value).size();
+        return stream;
     }
     throw boost::bad_any_cast();
 }
