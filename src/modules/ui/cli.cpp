@@ -35,6 +35,8 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("update", &CommandLineInterface::update));
     Commands.insert(std::make_pair("connect", &CommandLineInterface::connect));
 
+    Commands.insert(std::make_pair("run", &CommandLineInterface::lua_run));
+
     std::for_each(Commands.begin(), 
         Commands.end(), 
         [this] (std::pair<const std::string, CLIMemCommand>& p) 
@@ -507,6 +509,24 @@ int CommandLineInterface::connect(const std::vector<std::string>& tokens)
         return -1;
     }
 
+    return 0;
+}
+
+int CommandLineInterface::lua_run(const std::vector<std::string>& tokens)
+{
+    std::stringstream stream;
+    for (int i = 1; i < tokens.size(); i++)
+    {
+        stream << ' ' << tokens[i];
+    }
+    lua_getglobal(vm(), "loadstring");
+    lua_pushstring(vm(), stream.str().c_str());
+    lua_call(vm(), 1, 1);
+    if (lua_pcall(vm(), 0, 0, 0))
+    {
+        std::cerr << lua_tostring(vm(), -1) << std::endl;
+        return -1;
+    }
     return 0;
 }
 
