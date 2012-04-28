@@ -32,6 +32,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("reset", &CommandLineInterface::reset));
 
     Commands.insert(std::make_pair("read", &CommandLineInterface::read));
+    Commands.insert(std::make_pair("update", &CommandLineInterface::update));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
@@ -85,7 +86,11 @@ operator<< (std::ostream& stream, const boost::any& value)
     }
     if (value.type() == typeid(const time_t))
     {
-        stream << boost::any_cast<const time_t>(value);
+        time_t t = boost::any_cast<const time_t>(value);
+        auto tmp = localtime(&t);
+        char str[20];
+        strftime(str, 20, "%F %T", tmp);
+        stream << str;
         return stream;
     }
     if (value.type() == typeid(std::vector<Core::Object *>&))
@@ -94,6 +99,20 @@ operator<< (std::ostream& stream, const boost::any& value)
             % boost::any_cast<std::vector<Core::Object *>>(value).size();
     }
     throw boost::bad_any_cast();
+}
+
+static const time_t to_time(const std::string str)
+{
+    struct tm tmp;
+    std::stringstream stream;
+    stream.str(str);
+    tmp.tm_year = tmp.tm_mon = tmp.tm_mday = tmp.tm_hour = tmp.tm_min = tmp.tm_sec = 0;
+    stream >> tmp.tm_year >> tmp.tm_mon >> tmp.tm_mday
+        >> tmp.tm_hour >> tmp.tm_min >> tmp.tm_sec;
+    tmp.tm_year -= 1900;
+    tmp.tm_mon = abs(tmp.tm_mon) - 1;
+    tmp.tm_mday = abs(tmp.tm_mday);
+    return mktime(&tmp);
 }
 
 static std::vector<Core::Object *> cache_;
@@ -419,6 +438,37 @@ int CommandLineInterface::read(const std::vector<std::string>& tokens) {
     {
         std::cerr << "No such object in the cache!" << std::endl;
         return -1;
+    }
+    return 0;
+}
+
+int CommandLineInterface::update(const std::vector<std::string>& tokens)
+{
+    if (tokens.size() % 2 || tokens.size() < 2)
+    {
+        std::cerr << "Odd number of arguments expected (More then 2)!" << std::endl;
+        return -1;
+    }
+    auto o = ::cache(tokens[1]);
+    for (int i = 2; i < tokens.size(); i++)
+    {
+        auto name = tokens[i++];
+        auto value = tokens[i];
+        try
+        {
+            if (isdigit(*(value.c_str())))
+            {
+                o->update(name, to_time(value));
+            }
+            else
+            {
+                o->update(name, value);
+            }
+        }
+        catch (boost::bad_any_cast)
+        {
+            std::cerr << name << ": Invalid type or reserved field!" << std::endl;
+        }
     }
     return 0;
 }

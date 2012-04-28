@@ -54,5 +54,6 @@ public:
     int reset(const std::vector<std::string>& tokens);
 
     int read(const std::vector<std::string>& tokens);
+    int update(const std::vector<std::string>& tokens);
 };
 
