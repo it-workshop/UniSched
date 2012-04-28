@@ -33,6 +33,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
 
     Commands.insert(std::make_pair("read", &CommandLineInterface::read));
     Commands.insert(std::make_pair("update", &CommandLineInterface::update));
+    Commands.insert(std::make_pair("connect", &CommandLineInterface::connect));
 
     std::for_each(Commands.begin(), 
         Commands.end(), 
@@ -446,10 +447,19 @@ int CommandLineInterface::update(const std::vector<std::string>& tokens)
 {
     if (tokens.size() % 2 || tokens.size() < 2)
     {
-        std::cerr << "Odd number of arguments expected (More then 2)!" << std::endl;
+        std::cerr << "Even number of arguments expected (More then 1)!" << std::endl;
         return -1;
     }
-    auto o = ::cache(tokens[1]);
+    Core::Object *o;
+    try
+    {
+        o = ::cache(tokens[1]);
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such object!" << std::endl;
+        return -1;
+    }
     for (int i = 2; i < tokens.size(); i++)
     {
         auto name = tokens[i++];
@@ -470,6 +480,32 @@ int CommandLineInterface::update(const std::vector<std::string>& tokens)
             std::cerr << name << ": Invalid type or reserved field!" << std::endl;
         }
     }
+    return 0;
+}
+
+int CommandLineInterface::connect(const std::vector<std::string>& tokens)
+{
+    if (tokens.size() != 3)
+    {
+        std::cerr << "2 arguments is expected!" << std::endl;
+        return -1;
+    }
+
+    try
+    {
+        ::cache(tokens[1])->connect(::cache(tokens[2]));
+    }
+    catch (std::bad_cast)
+    {
+        std::cerr << "You can not connect this objects!" << std::endl;
+        return -1;
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such objects!" << std::endl;
+        return -1;
+    }
+
     return 0;
 }
 
