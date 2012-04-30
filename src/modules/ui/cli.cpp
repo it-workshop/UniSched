@@ -27,6 +27,7 @@ void CommandLineInterface::init(const std::vector<std::string>& args)
     Commands.insert(std::make_pair("event", &CommandLineInterface::new_event));
     Commands.insert(std::make_pair("load_csv", &CommandLineInterface::load_csv));
     Commands.insert(std::make_pair("dump_csv", &CommandLineInterface::dump_csv));
+    Commands.insert(std::make_pair("remove", &CommandLineInterface::remove_object));
 
     Commands.insert(std::make_pair("cache", &CommandLineInterface::cache));
     Commands.insert(std::make_pair("reset", &CommandLineInterface::reset));
@@ -570,6 +571,26 @@ int CommandLineInterface::lua_call(const std::vector<std::string>& tokens)
     return 0;
 }
 
+int CommandLineInterface::remove_object(const std::vector<std::string>& tokens)
+{
+    if (tokens.size() != 2)
+    {
+        std::cerr << "One argument expected!" << std::endl;
+        return -1;
+    }
+
+    try
+    {
+        remove(::cache(tokens[1]));
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such object!" << std::endl;
+    }
+    cache_.clear();
+
+    return 0;
+}
 
 int CommandLineInterface::run()
 {
