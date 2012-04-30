@@ -388,8 +388,8 @@ int SQLiteStorage_load_id(void *self_, int fields_count, char **values,
     stream >> id;
     if (stream.fail())
     {
-        std::cerr << "SQLITE: load: id is not integer!" << std::endl;
-        return -1;
+        self->set_new_id(0);
+        return 0;
     }
     self->set_new_id(id + 1);
     return 0;
