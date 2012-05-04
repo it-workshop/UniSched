@@ -129,12 +129,28 @@ namespace
         TokenizerType                   Tokenizer( Source, Separators );    // Tokens provider
         std::string                     SingleToken;                        // Temporary storage for a token
         
+        bool quote = false;
+        std::stringstream quoted;
+
         Container.clear();
         for ( TokenizerType::const_iterator  k( Tokenizer.begin() ); k != Tokenizer.end(); ++k )
         {
             SingleToken = *k;
-            boost::algorithm::trim( SingleToken );
-            Container.push_back( SingleToken );
+            if(!quote && *SingleToken.c_str() == '"') {
+                quote = true;
+                quoted << SingleToken << " ";
+            }
+            else if (!quote) {
+                boost::algorithm::trim( SingleToken );
+                Container.push_back( SingleToken );
+            }
+            else if(SingleToken.rfind('"') != std::string::npos) {
+                quoted << SingleToken;
+                SingleToken = quoted.str();
+                Container.push_back(SingleToken.substr(1, SingleToken.size() - 2));
+            }
+            else
+                quoted << SingleToken;
         }
     }
 
