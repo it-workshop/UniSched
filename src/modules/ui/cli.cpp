@@ -1,5 +1,7 @@
 #include "cli.hpp"
 
+#include <version.h>
+
 #include <stdexcept>
 #include <ctype.h>
 
@@ -10,7 +12,6 @@ CommandLineInterface::CommandLineInterface(std::vector<Module *> *modules,
 
 void CommandLineInterface::init(const std::vector<std::string>& args)
 {
-    std::cout << "CommandLine Interface INIT" << std::endl;
     done = false;
 
     Commands.insert(std::make_pair("quit", &CommandLineInterface::quit));
@@ -595,7 +596,7 @@ int CommandLineInterface::remove_object(const std::vector<std::string>& tokens)
 int CommandLineInterface::run()
 {
     std::vector<std::string> tokens(4);
-    const std::string prompt = "RASPISATOR-REX>> ";
+    const std::string prompt = "UniSched " UNISCHED_TAG " >> ";
     const std::string history_path = "/tmp/raspisator"; // NB should be customizable
 
     Reader.LoadHistory(history_path);

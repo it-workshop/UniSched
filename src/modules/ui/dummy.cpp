@@ -2,13 +2,11 @@
 
 void DummyInterface::init(const std::vector<std::string>& args)
 {
-    std::cout << "Dummy Interface INIT" << std::endl;
 }
 
 DummyInterface::DummyInterface(std::vector<Module *>* modules, void *handle):
     AbstractUI("DummyUI", modules, handle)
 {
-    std::cout << "(Dummy Interface constructor) ";
 }
 
 void DummyInterface::test_person() {
