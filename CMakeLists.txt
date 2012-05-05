@@ -26,10 +26,29 @@ endif (WITH_TESTS_CXX11)
 add_definitions (-std=c++0x)
 
 include (CheckIncludeFileCXX)
-
 configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/include/paths.hpp)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
+
+include (git)
+git_version("${CMAKE_SOURCE_DIR}" UniSched_VERSION)
+if (UniSched_VERSION)
+    option(BUILD_TARBALL "Append version info to the source directory. Clean worktree after this." N)
+    if (BUILD_TARBALL)
+        configure_file("${CMAKE_SOURCE_DIR}/version.h.in" "${CMAKE_SOURCE_DIR}/version.h")
+        include_directories("${CMAKE_SOURCE_DIR}")
+    else (BUILD_TARBALL)
+        configure_file("${CMAKE_SOURCE_DIR}/version.h.in" "${CMAKE_BINARY_DIR}/version.h")
+        include_directories("${CMAKE_BINARY_DIR}")
+    endif (BUILD_TARBALL)
+else (UniSched_VERSION)
+    if (EXISTS "${CMAKE_SOURCE_DIR}/version.h")
+        include_directories("${CMAKE_SOURCE_DIR}")
+    else (EXISTS "${CMAKE_SOURCE_DIR}/version.h")
+        message(SEND_ERROR "Neither git repository nor version.h was not found.")
+    endif (EXISTS "${CMAKE_SOURCE_DIR}/version.h")
+endif (UniSched_VERSION)
+
 
 find_package (Boost REQUIRED)
 find_package (lua REQUIRED)

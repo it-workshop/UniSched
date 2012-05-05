@@ -1,0 +1,10 @@
+#pragma once
+
+#define UNISCHED_VERSION        "@UniSched_VERSION@"
+#define UNISCHED_TAG            "@GIT_TAG@"
+#define UNISCHED_TAG_COMMIT     "@GIT_TAG_COMMIT@"
+#define UNISCHED_COMMIT         "@GIT_COMMIT@"
+#define UNISCHED_SHORT_VERSION  "@GIT_VERSION@"
+#define UNISCHED_NAME           "@GIT_NAME@"
+#define UNISCHED_DESCRIBE       "@GIT_DESCRIBE@"
+

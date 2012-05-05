@@ -7,10 +7,12 @@
 #include <module.h>
 #include <utils.h>
 
+#include <version.h>
 
 int
 main(int argc, char *argv[])
 {
+    std::cout << "UniSched Version: " << UNISCHED_VERSION << std::endl;
     Core::AbstractUI *ui = nullptr;
     Core::AbstractStorage *storage = nullptr;
     std::vector<std::string> args;
