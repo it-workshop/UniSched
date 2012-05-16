@@ -1,0 +1,32 @@
+# Some auxiliary variables
+BUILD="$HOME/code/build"
+REPO="$HOME/code/UniSched"
+
+# Parts of MODULES_PATH
+STORAGE_MODULES="$BUILD/src/modules/storage"
+UI_MODULES="$BUILD/src/modules/ui"
+
+# Path to the executable
+UNISCHED="$BUILD/src/raspisator"
+
+# it will be in the UNISCHED_MODULES_PATH
+MODULES_PATH="$STORAGE_MODULES:$UI_MODULES"
+
+# it will be in the UNISCHED_ALGORITHMS_PATH
+ALGORITHMS_PATH="$REPO/src/algorithms/?.lua"
+
+# it will be in the UNISCHED_ALGORITHMS
+ALGORITHMS="task"
+
+# --iface value
+IFACE="CLI"
+
+# --storage value
+STORAGE="SQLITE"
+
+# --sqlite-db value (used when STORAGE == SQLITE)
+SQLITE_DB="$BUILD/raspisator.db"
+
+# Some extra arguments to the program
+EXTRA_ARGS=
+
