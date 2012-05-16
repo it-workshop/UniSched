@@ -540,8 +540,7 @@ int CommandLineInterface::lua_call(const std::vector<std::string>& tokens)
         std::cerr << "Argument expected!" << std::endl;
         return -1;
     }
-    lua_getglobal(vm(), "algorithms");
-    lua_getfield(vm(), -1, tokens[1].c_str());
+    lua_getglobal(vm(), tokens[1].c_str());
     try
     {
         for (int i = 2; i < tokens.size(); i ++)

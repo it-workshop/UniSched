@@ -527,38 +527,32 @@ void AbstractUI::init_algorithms()
     lua_register(vm_, "remove", _lua_remove);
                     //function remove(object) ... end
 
-    lua_createtable(vm_, 0, 0);
-    lua_setglobal(vm_, "algorithms");
-
-    std::stringstream algorithms_path;
-    setenv("UNISCHED_ALGORITHMS_PATH", ".", 0);
-    algorithms_path << getenv("UNISCHED_ALGORITHMS_PATH");
-    char dir_name[4096];
-    for (algorithms_path.getline(dir_name, 4096, ':'); !algorithms_path.eof() || *dir_name;
-        algorithms_path.getline(dir_name, 4096, ':'))
+    std::stringstream modules;
+    setenv("UNISCHED_ALGORITHMS", "", 0);
+    lua_getglobal(vm_, "package");
+    lua_getfield(vm_, -1, "path");
+    std::stringstream path;
+    path << lua_tostring(vm_, -1) << ';' << getenv("UNISCHED_ALGORITHMS_PATH");
+    lua_pop(vm_, 1);
+    lua_pushstring(vm_, path.str().c_str());
+    lua_setfield(vm_, -2, "path");
+    modules << getenv("UNISCHED_ALGORITHMS");
+    char module[4096];
+    for (modules.getline(module, 4096, ','); !modules.eof() || *module;
+        modules.getline(module, 4096, ','))
     {
-        DIR * dir = opendir(dir_name);
-        if (!dir)
+        std::cout << "Loading " << module << "\t";
+        lua_getglobal(vm_, "require");
+        lua_pushstring(vm_, module);
+        if (lua_pcall(vm_, 1, 0, 0))
         {
-            perror(dir_name);
-            continue;
+            std::cout << "FAIL\n" << lua_tostring(vm_, -1) << std::endl;
+            lua_pop(vm_, 1);
         }
-        for (struct dirent *entry = readdir(dir); entry; entry = readdir(dir))
+        else
         {
-            if (!is_algorithm_name(entry->d_name))
-            {
-                continue;
-            }
-            std::cout << "Loading " << entry->d_name << "\t";
-            std::string algorithm_name = std::string(dir_name) + "/" + entry->d_name;
-            if (luaL_loadfile(vm_, algorithm_name.c_str()) || lua_pcall(vm_, 0, 0, 0))
-            {
-                std::cout << "FAIL\n" << lua_tostring(vm_, -1) << std::endl;
-                lua_pop(vm_, -1);
-            }
             std::cout << "OK" << std::endl;
         }
-        closedir(dir);
     }
 }
 
