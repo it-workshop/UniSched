@@ -71,8 +71,11 @@ if (WITH_NCURSES)
 endif (WITH_NCURSES)
 
 if (WITH_STORAGE_TEXTFILE)
-#    add_definitions(-DWITH_STORAGE_TEXTFILE)
-#    find_package (yaml-cpp REQUIRED)
+    find_package (lex REQUIRED)
+    find_package (yacc REQUIRED)
+    if (NOT HAVE_LEX OR NOT HAVE_YACC)
+        message(SEND_ERROR "yacc and lex are needed for building textfile storage.")
+    endif (NOT HAVE_LEX OR NOT HAVE_YACC)
 endif (WITH_STORAGE_TEXTFILE)
 
 if (WITH_STORAGE_SQLITE)

@@ -1,8 +1,7 @@
 cmake_minimum_required (VERSION 2.8.3)
 
 if (WITH_STORAGE_TEXTFILE)
-#    add_library (filestorage SHARED filestorage.cpp)
-#    target_link_libraries (filestorage yaml-cpp)
+    add_subdirectory(textfile)
 endif (WITH_STORAGE_TEXTFILE)
 
 if (WITH_STORAGE_SQLITE)
