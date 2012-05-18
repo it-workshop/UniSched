@@ -19,9 +19,17 @@ option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 
-if (WITH_TESTS_CXX11)
-    include (cmake/c++11/CheckCXX11Features.cmake)
-endif (WITH_TESTS_CXX11)
+include (cmake/c++11/CheckCXX11Features.cmake)
+
+if (NOT HAS_CXX11_AUTO OR
+    NOT HAS_CXX11_NULLPTR OR
+    NOT HAS_CXX11_LAMBDA OR
+    NOT HAS_CXX11_RVALUE_REFERENCES)
+    message(SEND_ERROR "Needed C++11 features not supported (auto, nullptr, lambda, rvalue reerences).")
+endif (NOT HAS_CXX11_AUTO OR
+       NOT HAS_CXX11_NULLPTR OR
+       NOT HAS_CXX11_LAMBDA OR
+       NOT HAS_CXX11_RVALUE_REFERENCES)
 
 add_definitions (-std=c++0x)
 
