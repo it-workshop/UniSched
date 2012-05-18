@@ -1,7 +1,12 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <dirent.h>
+
+#ifndef _USE_WINDOWS_SPIKE_
 #include <dlfcn.h>
+#else /* _USE_WINDOWS_SPIKE_ */
+#include <windows-spike.h>
+#endif /* _USE_WINDOWS_SPIKE_ */
 
 #include <sstream>
 #include <iostream>

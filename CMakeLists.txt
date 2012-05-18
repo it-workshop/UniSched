@@ -19,6 +19,8 @@ option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 
+
+add_definitions (-std=c++0x)
 include (cmake/c++11/CheckCXX11Features.cmake)
 
 if (NOT HAS_CXX11_AUTO OR
@@ -31,10 +33,13 @@ endif (NOT HAS_CXX11_AUTO OR
        NOT HAS_CXX11_LAMBDA OR
        NOT HAS_CXX11_RVALUE_REFERENCES)
 
-add_definitions (-std=c++0x)
-
 include (CheckIncludeFileCXX)
 configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/include/paths.hpp)
+
+if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+    add_definitions (-D_USE_WINDOWS_SPIKE_)
+    set (USE_WINDOWS_SPIKE)
+endif ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 

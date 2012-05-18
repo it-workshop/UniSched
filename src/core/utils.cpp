@@ -1,8 +1,5 @@
 #include <utils.h>
 
-#include <iconv.h>
-#include <langinfo.h>
-
 #include <module.h>
 
 bool

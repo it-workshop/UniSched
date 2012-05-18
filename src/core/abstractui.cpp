@@ -3,6 +3,10 @@
 #include <group.h>
 #include <event.h>
 
+#ifdef _USE_WINDOWS_SPIKE_
+#include <windows-spike.h>
+#endif /* _USE_WINDOWS_SPIKE_ */
+
 #include <sys/types.h>
 #include <dirent.h>
 #include <stdexcept>
