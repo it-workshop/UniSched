@@ -71,8 +71,8 @@ if (WITH_NCURSES)
 endif (WITH_NCURSES)
 
 if (WITH_STORAGE_TEXTFILE)
-    add_definitions(-DWITH_STORAGE_TEXTFILE)
-    find_package (yaml-cpp REQUIRED)
+#    add_definitions(-DWITH_STORAGE_TEXTFILE)
+#    find_package (yaml-cpp REQUIRED)
 endif (WITH_STORAGE_TEXTFILE)
 
 if (WITH_STORAGE_SQLITE)
