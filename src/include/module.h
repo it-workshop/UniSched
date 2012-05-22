@@ -72,7 +72,7 @@ public:
     }
 
     static void unload_modules();
-    static void load_modules();
+    static void load_modules(Config& conf);
     static std::vector<Module *> * modules();
 };
 

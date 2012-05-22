@@ -4,20 +4,14 @@
 
 bool
 utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
-               std::vector<std::string>& args)
+               Core::Config& conf, std::vector<std::string>& args)
 {
     *ui = nullptr;
     *storage = nullptr;
     std::string uiname;
     std::string storagename;
-    std::string confname;
     for (auto it = args.begin(); it != args.end(); it++)
     {
-        if (*it == "-f")
-        {
-            confname = *++it;
-        }
-
         if (*it == "--iface")
         {
             uiname = *++it;
@@ -27,13 +21,6 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
             storagename = *++it;
         }
     }
-    if (confname.empty())
-    {
-        confname = std::string(getenv("HOME")) + "/.unisched/rc.lua";
-    }
-
-    Core::Config conf(confname);
-
     if (uiname.empty())
     {
         lua_getglobal(conf.vm(), "config");

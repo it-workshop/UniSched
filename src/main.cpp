@@ -19,8 +19,23 @@ main(int argc, char *argv[])
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
     setlocale(LC_ALL, "");
-    Core::Module::load_modules();
-    if (utils::select_modules(&ui, &storage, args))
+    std::string confname;
+    for ( auto it = args.begin(); it != args.end(); it++)
+    {
+        if (*it == "-f")
+        {
+            confname = *++it;
+            break;
+        }
+    }
+    if (confname.empty())
+    {
+        confname = std::string(getenv("HOME")) + "/.unisched/rc.lua";
+    }
+    Core::Config conf(confname);
+
+    Core::Module::load_modules(conf);
+    if (utils::select_modules(&ui, &storage, conf, args))
     {
         return -1;
     }

@@ -18,8 +18,9 @@ main(int argc, char *argv[])
     for (unsigned int i = 1; i < argc; i++)
         { args.push_back(std::string(argv[i])); }
     setlocale(LC_ALL, "");
-    Core::Module::load_modules();
-    if (utils::select_modules(&ui, &storage, args))
+    Core::Config conf("");
+    Core::Module::load_modules(conf);
+    if (utils::select_modules(&ui, &storage, conf, args))
     {
         return -1;
     }

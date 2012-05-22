@@ -45,15 +45,26 @@ static const bool is_module_name(const std::string& name) {
     return '.' != *(name.c_str());
 }
 
-void Module::load_modules()
+void Module::load_modules(Core::Config& conf)
 {
     std::stringstream modules_path;
     setenv("UNISCHED_MODULES_PATH", ".", 0);
     modules_path << getenv("UNISCHED_MODULES_PATH");
+    lua_getglobal(conf.vm(), "config");
+    lua_getfield(conf.vm(), -1, "modules_path");
+    if (lua_isstring(conf.vm(), -1))
+    {
+        modules_path << ':' << lua_tostring(conf.vm(), -1);
+    }
+    lua_pop(conf.vm(), 3);
     char dir_name[4096];
-    for (modules_path.getline(dir_name, 4096, ':'); !modules_path.eof() || *dir_name;
+    for (modules_path.getline(dir_name, 4096, ':'); *dir_name || !modules_path.eof();
         modules_path.getline(dir_name, 4096, ':'))
     {
+        if (!*dir_name)
+        {
+            continue;
+        }
         DIR * dir = opendir(dir_name);
         if (!dir)
         {

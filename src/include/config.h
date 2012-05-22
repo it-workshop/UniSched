@@ -22,8 +22,7 @@ public:
         luaL_openlibs(vm_);
         lua_createtable(vm_, 0, 0);
         lua_setglobal(vm_, "config");
-        luaL_loadfile(vm_, file.c_str());
-        if (lua_pcall(vm_, 0, 0, 0))
+        if (luaL_dofile(vm_, file.c_str()))
         {
             std::cerr << lua_tostring(vm_, 1) << std::endl;
             lua_pop(vm_, 1);
