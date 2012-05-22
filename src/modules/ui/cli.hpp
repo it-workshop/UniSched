@@ -33,7 +33,7 @@ private:
     Core::Object* mini_conveyor(std::string product_type);
 
 public:
-    void init (const std::vector< std::string > &args);
+    void init (Core::Config& conf, const std::vector< std::string > &args);
     int run();
     CommandLineInterface(std::vector<Module *> *modules, void *handle);
 

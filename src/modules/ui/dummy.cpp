@@ -1,7 +1,8 @@
 #include "dummy.hpp"
 
-void DummyInterface::init(const std::vector<std::string>& args)
+void DummyInterface::init(Core::Config& conf, const std::vector<std::string>& args)
 {
+    AbstractUI::init(conf, args);
 }
 
 DummyInterface::DummyInterface(std::vector<Module *>* modules, void *handle):

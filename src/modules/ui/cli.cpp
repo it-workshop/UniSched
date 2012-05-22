@@ -10,8 +10,10 @@ CommandLineInterface::CommandLineInterface(std::vector<Module *> *modules,
     AbstractUI("CLI", modules, handle)
 {}
 
-void CommandLineInterface::init(const std::vector<std::string>& args)
+void CommandLineInterface::init(Core::Config& conf, const std::vector<std::string>& args)
 {
+    AbstractUI::init(conf, args);
+
     done = false;
 
     Commands.insert(std::make_pair("quit", &CommandLineInterface::quit));

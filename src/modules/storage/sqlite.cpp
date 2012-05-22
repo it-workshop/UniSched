@@ -6,6 +6,9 @@
 #include <event.h>
 
 #include <sqlite3.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include <boost/format.hpp>
 
@@ -31,7 +34,7 @@ private:
 public:
     SQLiteStorage(std::vector<Core::Module *>* modules, void *handle);
 
-    virtual void init(const std::vector<std::string>& args);
+    virtual void init(Core::Config& conf, const std::vector<std::string>& args);
     virtual void push(const Core::objid_t id, const std::string& name,
             const boost::any& value);
     virtual void push_connect(Core::objid_t id, Core::objid_t with,
@@ -48,7 +51,7 @@ SQLiteStorage::SQLiteStorage(std::vector<Core::Module *>* modules,
     db_name_(".raspisator.db"), create_(false)
 {}
 
-void SQLiteStorage::init(const std::vector<std::string>& args)
+void SQLiteStorage::init(Core::Config& conf, const std::vector<std::string>& args)
 {
     for (auto it = args.begin(); it != args.end(); it++)
     {
@@ -61,6 +64,23 @@ void SQLiteStorage::init(const std::vector<std::string>& args)
         {
             create_ = true;
         }
+    }
+
+    if (db_name_.empty())
+    {
+        lua_getglobal(conf.vm(), "config");
+        lua_getfield(conf.vm(), -1, "sqlite_db");
+        if (lua_isstring(conf.vm(), -1))
+        {
+            db_name_ = lua_tostring(conf.vm(), -1);
+        }
+        lua_pop(conf.vm(), 3);
+    }
+
+    struct stat buf;
+    if (stat(db_name_.c_str(), &buf) && errno == EFAULT)
+    {
+        create_ = true;
     }
 }
 

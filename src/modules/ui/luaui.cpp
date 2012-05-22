@@ -20,7 +20,7 @@ protected:
 public:
     luaUI(std::vector<Core::Module *>* modules, void *handle);
 
-    virtual void init(const std::vector<std::string>& args);
+    virtual void init(Core::Config& conf, const std::vector<std::string>& args);
     virtual int run();
 };
 
@@ -29,8 +29,10 @@ luaUI::luaUI(std::vector<Core::Module *>* modules, void *handle):
 {
 }
 
-void luaUI::init(const std::vector<std::string>& args)
+void luaUI::init(Core::Config& conf, const std::vector<std::string>& args)
 {
+    AbstractUI::init(conf, args);
+
     for (auto it = args.begin(); it != args.end(); it++)
     {
         if ("--lua" == *it)

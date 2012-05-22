@@ -7,8 +7,10 @@ public:
         AbstractUI(TESTINGUI_NAME, modules, handle)
     {}
 
-    void init(const std::vector<std::string>& args)
-    {}
+    void init(Core::Config& conf, const std::vector<std::string>& args)
+    {
+        AbstractUI::init(conf, args);
+    }
 
     int run();
 };

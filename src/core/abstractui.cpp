@@ -503,13 +503,14 @@ bool is_algorithm_name(std::string name)
         || name.rfind(".so") != std::string::npos;
 }
 
+void AbstractUI::init(Config& conf, const std::vector<std::string> args)
+{
+    vm_ = conf.vm();
+    init_algorithms();
+}
+
 void AbstractUI::init_algorithms()
 {
-    self = this;
-    vm_ = lua_open();
-   
-    luaL_openlibs(vm_);
-
     lua_createtable(vm_, 0, 0);
                     //  __object = {
     lua_pushcfunction(vm_, _lua___object___index);

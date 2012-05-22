@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 
+#include <config.h>
+
 namespace Core {
 
 /** @class Module
@@ -47,7 +49,7 @@ public:
                          * one.
                          */
     
-    virtual void init(const std::vector<std::string>& args) = 0;
+    virtual void init(Config& conf, const std::vector<std::string>& args) = 0;
                         /**< @brief Initilize required resources. Such as memory,
                          * shared objects, create auxiliary objects, etc.
                          * @param [in] args Command line program arguments.

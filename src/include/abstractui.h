@@ -162,6 +162,8 @@ public:
         return object;
     }
 
+    virtual void init(Config& conf, const std::vector<std::string> args);
+
     virtual int run() = 0;
                         /**< @brief Main method of frontend class. It is called
                          * from main.
@@ -179,6 +181,7 @@ public:
     {                    
         return objects_.at(id);
     }
+
     void init_algorithms();
     void deinit_algorithms();
 };
