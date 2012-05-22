@@ -29,7 +29,7 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
         {
             uiname = lua_tostring(conf.vm(), -1);
         }
-        lua_pop(conf.vm(), 3);
+        lua_pop(conf.vm(), 2);
     }
     if (storagename.empty())
     {
@@ -39,7 +39,7 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
         {
             storagename = lua_tostring(conf.vm(), -1);
         }
-        lua_pop(conf.vm(), 3);
+        lua_pop(conf.vm(), 2);
     }
 
     for (Core::Module *module: *Core::Module::modules())
@@ -109,7 +109,7 @@ utils::select_modules (Core::AbstractUI **ui, Core::AbstractStorage **storage,
                 lua_pop(conf.vm(), 1);
             }
         }
-        lua_pop(conf.vm(), 3);
+        lua_pop(conf.vm(), 1);
     }
 
     return error;
