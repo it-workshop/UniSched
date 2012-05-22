@@ -15,8 +15,7 @@ config.sqlite_db = home .. '/.unisched/unisched.db'
 -- Path to sqlite3 database.
 
 -- Some work after loading.
-function config.onload ()
-    print ('Objects:', #search({}))
+function onload ()
     print ('Now:', os.date())
 end
 
