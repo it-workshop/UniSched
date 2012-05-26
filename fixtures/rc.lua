@@ -1,22 +1,23 @@
 #!/usr/bin/env lua
 
-config.ui = 'CLI'
--- Possible variants: 'DummyUI', 'CLI', 'LuaUI'
+-- UI Variants: 'DummyUI', 'CLI', 'luaui'
+config.ui = 'CLI' 
 
+-- storage module. For now 'SQLITE' is the only option
 config.storage = 'SQLITE'
--- Possible variants: 'SQLIT
 
 local home = os.getenv('HOME')
 
+-- Пути поиска модулей, как storage так и ui
 config.modules_path = home .. '/code/build/src/modules/storage:' .. home .. '/code/build/src/modules/ui'
--- Path to modules
 
-config.sqlite_db = home .. '/.unisched/unisched.db'
--- Path to sqlite3 database.
+-- Путь к базе
+config.sqlite_db = home .. '/.unisched/unisched.db' 
 
--- Some work after loading.
+-- Скрипт, выполняемый после запуска (только для config.ui 'luaui')
+-- Например, можно использовать для запуска GUI
+-- config.script('/path/to/some/script/or/gui_stub.lua')
+
 function onload ()
     print ('Now:', os.date())
-    -- dofile('/path/to/some/script/or/gui_stub.lua')
 end
-
