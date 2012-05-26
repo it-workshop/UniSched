@@ -17,5 +17,6 @@ config.sqlite_db = home .. '/.unisched/unisched.db'
 -- Some work after loading.
 function onload ()
     print ('Now:', os.date())
+    -- dofile('/path/to/some/script/or/gui_stub.lua')
 end
 
