@@ -52,26 +52,14 @@ void luaUI::init(Core::Config& conf, const std::vector<std::string>& args)
         }
         lua_pop(vm(), 2);
     }
-
-    if (script_.empty())
-    {
-        std::cerr << "lua UI: script name not set!" << std::endl;
-    }
 }
 
 int luaUI::run()
 {
-    if (script_.empty())
-    {
-        luaL_loadfile(vm(), nullptr);
-    }
-    else
-    {
-        luaL_loadfile(vm(), script_.c_str());
-    }
-    if (lua_pcall(vm(), 0, LUA_MULTRET, 0))
+    if (luaL_dofile(vm(), script_.empty() ? nullptr : script_.c_str()))
     {
         std::cerr << lua_tostring(vm(), -1) << std::endl;
+        lua_pop(vm(), 1);
         return -1;
     }
 
