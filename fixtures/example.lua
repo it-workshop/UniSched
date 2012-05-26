@@ -7,7 +7,7 @@ jane['name'] = 'Jane'   -- this form is shorter...
 jane['surname'] = 'Smith'
 
 smiths = create('group')
-smiths.['name'] = 'Smiths'
+smiths['name'] = 'Smiths'
 smiths.connect(john)
 smiths.connect(jane)
 print (john['name'] .. ' ' .. john.read('surname'))
