@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.8.3)
 
 if (WITH_DUMMYUI)
     if(NOT WITH_TESTS_CORE)
-        message("опция тестирвания функционала ядра системы отключена, часть функционала не будет использована в DummyUI")
+        message("опция тестирования функционала ядра системы отключена, часть функционала не будет использована в DummyUI")
     endif(NOT WITH_TESTS_CORE)
     add_library (dummyui SHARED dummy.cpp)
 endif (WITH_DUMMYUI)

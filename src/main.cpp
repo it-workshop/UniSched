@@ -9,6 +9,15 @@
 
 #include <version.h>
 
+void help() {
+    std::cout << "1. find README\n"
+              << "2. read it\n"
+              << "3. make sure environmental variables in ~/.unisched/rc.lua are set to the correct values\n"
+              << "4. ...\n"
+              << "5. COFFEE!" << std::endl;
+}
+
+
 int
 main(int argc, char *argv[])
 {
@@ -25,7 +34,11 @@ main(int argc, char *argv[])
         if (*it == "-f")
         {
             confname = *++it;
-            break;
+        }
+        if ((*it == "--help") || (*it == "-h"))
+        {
+            help();
+            return 0;
         }
     }
     if (confname.empty())
