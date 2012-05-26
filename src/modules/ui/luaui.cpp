@@ -44,6 +44,17 @@ void luaUI::init(Core::Config& conf, const std::vector<std::string>& args)
 
     if (script_.empty())
     {
+        lua_getglobal(vm(), "config");
+        lua_getfield(vm(), -1, "script");
+        if (lua_isstring(vm(), -1))
+        {
+            script_ = lua_tostring(vm(), -1);
+        }
+        lua_pop(vm(), 2);
+    }
+
+    if (script_.empty())
+    {
         std::cerr << "lua UI: script name not set!" << std::endl;
     }
 }
