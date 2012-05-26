@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <stdio.h>
 
 #include <boost/format.hpp>
 
@@ -48,7 +49,7 @@ public:
 SQLiteStorage::SQLiteStorage(std::vector<Core::Module *>* modules,
         void *handle):
     AbstractStorage("SQLITE", modules, handle),
-    db_name_(".raspisator.db"), create_(false)
+    create_(false)
 {}
 
 void SQLiteStorage::init(Core::Config& conf, const std::vector<std::string>& args)
@@ -74,13 +75,22 @@ void SQLiteStorage::init(Core::Config& conf, const std::vector<std::string>& arg
         {
             db_name_ = lua_tostring(conf.vm(), -1);
         }
-        lua_pop(conf.vm(), 3);
+        lua_pop(conf.vm(), 2);
     }
 
-    struct stat buf;
-    if (stat(db_name_.c_str(), &buf) && errno == EFAULT)
+    if (db_name_.empty())
+    {
+        db_name_ = ".unisched.db";
+    }
+
+    FILE *stream = fopen(db_name_.c_str(), "r");
+    if (!stream)
     {
         create_ = true;
+    }
+    else
+    {
+        fclose(stream);
     }
 }
 
