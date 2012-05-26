@@ -14,8 +14,8 @@ print (john['name'] .. ' ' .. john.read('surname'))
 print (jane['name'] .. ' ' .. jane['surname'])
 print ('In group: ' .. smiths.name)
 
-remove(smiths)  -- what is  comfortable? is this
-john.remove()   -- or that?
+remove(smiths)
+remove(john)
 remove(jane)
 
 -- It does not realy differs from C++ but

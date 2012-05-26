@@ -511,6 +511,7 @@ void AbstractUI::init(Config& conf, const std::vector<std::string> args)
 
 void AbstractUI::init_algorithms()
 {
+    self = this;
     lua_createtable(vm_, 0, 0);
                     //  __object = {
     lua_pushcfunction(vm_, _lua___object___index);
