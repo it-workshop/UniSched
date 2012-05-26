@@ -1,15 +1,5 @@
 #!/usr/bin/env lua
 
-config.ui = 'CLI' -- Other options: 'DummyUI', 'CLI', 'LuaUI'
-
-config.storage = 'SQLITE'
-
-local home = os.getenv('HOME')
-
-config.modules_path = '/tmp/uni/src/modules/storage:/tmp/uni/src/modules/ui'
-
-config.sqlite_db = home .. '/.unisched/.raspisator.db'
-
 -- Load the wxLua module, does nothing if running from wxLua, wxLuaFreeze, or wxLuaEdit
 require("wx")
 
@@ -68,11 +58,6 @@ function main()
     frame:Show(true)
 end
 
-
-function onload ()
-    print ('Now:', os.date())
-
-    main()
-    wx.wxGetApp():MainLoop()
-end
+main()
+wx.wxGetApp():MainLoop()
 
