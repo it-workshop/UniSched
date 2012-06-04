@@ -38,7 +38,7 @@ configure_file(src/modules/paths.hpp.in ${PROJECT_SOURCE_DIR}/src/include/paths.
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
     add_definitions (-D_USE_WINDOWS_SPIKE_)
-    set (USE_WINDOWS_SPIKE)
+    set (USE_WINDOWS_SPIKE Y)
 endif ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
