@@ -38,7 +38,11 @@ static const bool is_module_name(const std::string& name) {
         return false;
     }
 #endif
+#ifndef _USE_WINDOWS_SPIKE_
     if (!has_ending(name, ".so"))
+#else /* _USE_WINDOWS_SPIKE_ */
+    if (!has_ending(name, ".dll"))
+#endif /* _USE_WINDOWS_SPIKE_ */
     {
         return false;
     }

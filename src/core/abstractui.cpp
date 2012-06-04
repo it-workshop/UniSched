@@ -493,16 +493,6 @@ int AbstractUI::_lua_remove(lua_State *state)
     return 0;
 }
 
-bool is_algorithm_name(std::string name)
-{
-    if (name.c_str()[0] == '.')
-    {
-        return false;
-    }
-    return name.rfind(".lua") != std::string::npos
-        || name.rfind(".so") != std::string::npos;
-}
-
 void AbstractUI::init(Config& conf, const std::vector<std::string> args)
 {
     vm_ = conf.vm();
