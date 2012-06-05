@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION "2.6")
 
 ## Retrive version information from git repository.
 function(git_version dir version_var)
+    find_program(GIT git)
+    if (NOT GIT)
+        message(STATUS "Git was not found on your system.")
+    endif(NOT GIT)
     if (EXISTS "${dir}/.git")
         execute_process (COMMAND git describe --tags --abbrev=0
                         OUTPUT_VARIABLE GIT_TAG
