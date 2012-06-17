@@ -16,7 +16,7 @@ config.sqlite_db = home .. '/.unisched/unisched.db'
 
 -- Скрипт, выполняемый после запуска (только для config.ui 'luaui')
 -- Например, можно использовать для запуска GUI
--- config.script('/path/to/some/script/or/gui_stub.lua')
+-- config.script = '/path/to/some/script/or/gui_stub.lua'
 
 function onload ()
     print ('Now:', os.date())
