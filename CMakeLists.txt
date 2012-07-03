@@ -18,6 +18,8 @@ option(WITH_TESTS_CXX11 "Check if the compiler handles the C++11 stuff right." Y
 option(WITH_TESTS_CORE "Build with Core tests." N)
 option(WITH_EXT_PYTHON_CLI "Экспериментальные питоновские биндинги к CLI. (лучше просто пройди мимо)" N)
 
+# Aux options
+option(WITH_DOCS "Build documentation." Y)
 
 add_definitions (-std=c++0x)
 include (cmake/c++11/CheckCXX11Features.cmake)
@@ -81,6 +83,17 @@ if (WITH_EXT_PYTHON_CLI)
     add_definitions(-DWITH_EXT_PYTHON_CLI)
 endif(WITH_EXT_PYTHON_CLI)
 
+
+if (WITH_DOCS)
+    find_package (Doxygen REQUIRED)
+    if (NOT DOXYGEN_FOUND)
+        message(SEND_ERROR "Doxygen is required for documentation building.")
+    else (NOT DOXYGEN_FOUND)
+        configure_file("${CMAKE_SOURCE_DIR}/Doxyfile.in" "${CMAKE_BINARY_DIR}/Doxyfile")
+        add_custom_target(docs ${DOXYGEN_EXECUTABLE} "${CMAKE_BINARY_DIR}/Doxyfile"
+            COMMENT "Building documentation...")
+    endif (NOT DOXYGEN_FOUND)
+endif(WITH_DOCS)
 
 include_directories ("${Boost_INCLUDE_DIRS}")
 include_directories ("${PROJECT_SOURCE_DIR}/src/include")
