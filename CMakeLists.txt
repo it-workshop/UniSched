@@ -11,7 +11,6 @@ option(WITH_CLI "Build with CLI support." Y)
 option(WITH_LUAUI "Build lua frontend." Y)
 
 # Storage Options
-option(WITH_STORAGE_TEXTFILE "Build with storage features: YAML-formated plain text files as database." N)
 option(WITH_STORAGE_SQLITE "Build with storage features: SQLite database." Y)
 
 # Unit Test Options
@@ -69,14 +68,6 @@ find_package (lua REQUIRED)
 if (WITH_NCURSES)
     find_package (ncurses REQUIRED)
 endif (WITH_NCURSES)
-
-if (WITH_STORAGE_TEXTFILE)
-    find_package (lex REQUIRED)
-    find_package (yacc REQUIRED)
-    if (NOT HAVE_LEX OR NOT HAVE_YACC)
-        message(SEND_ERROR "yacc and lex are needed for building textfile storage.")
-    endif (NOT HAVE_LEX OR NOT HAVE_YACC)
-endif (WITH_STORAGE_TEXTFILE)
 
 if (WITH_STORAGE_SQLITE)
     find_package (sqlite REQUIRED)
