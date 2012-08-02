@@ -312,7 +312,7 @@ int CommandLineInterface::new_person(const std::vector<std::string>& tokens) {
     {
         try 
         {
-            p->update(person_fields[i], tokens[i+1]);
+            p->update(person_fields[i], tokens[i+1] == "M" ? "MALE" : tokens[i+1] == "F" ? "FEMALE" : tokens[i+1]);
         }
         catch (boost::bad_any_cast& bc)
         {
