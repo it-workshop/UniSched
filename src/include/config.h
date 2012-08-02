@@ -11,12 +11,16 @@ extern "C" {
 
 namespace Core {
 
+/** @class Config
+ * @brief C++ Wrapper for lua config.
+ */
 class Config {
 private:
-    lua_State *vm_;
+    lua_State *vm_;     /**< lua machine */
 public:
     Config(const std::string& file)
         throw ():
+                        /**< @brief Constructor */
         vm_(lua_open())
     {
         luaL_openlibs(vm_);
@@ -31,10 +35,12 @@ public:
 
     lua_State *
     vm()
-        throw()
+        throw()         /**< @brief Get lua machine */
     {
         return vm_;
     }
+
+    /* TODO: Add C++ wrapper for lua tables */
 };
 
 }

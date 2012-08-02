@@ -110,20 +110,6 @@ operator<< (std::ostream& stream, const boost::any& value)
     throw boost::bad_any_cast();
 }
 
-static const time_t to_time(const std::string str)
-{
-    struct tm tmp;
-    std::stringstream stream;
-    stream.str(str);
-    tmp.tm_year = tmp.tm_mon = tmp.tm_mday = tmp.tm_hour = tmp.tm_min = tmp.tm_sec = 0;
-    stream >> tmp.tm_year >> tmp.tm_mon >> tmp.tm_mday
-        >> tmp.tm_hour >> tmp.tm_min >> tmp.tm_sec;
-    tmp.tm_year -= 1900;
-    tmp.tm_mon = abs(tmp.tm_mon) - 1;
-    tmp.tm_mday = abs(tmp.tm_mday);
-    return mktime(&tmp);
-}
-
 static std::vector<Core::Object *> cache_;
 
 static int cache(Core::Object *object)
@@ -476,7 +462,9 @@ int CommandLineInterface::update(const std::vector<std::string>& tokens)
         {
             if (isdigit(*(value.c_str())))
             {
-                o->update(name, to_time(value));
+                struct tm time;
+                getdate_r(value.c_str(), &time);
+                o->update(name, mktime(&time));
             }
             else
             {
@@ -549,7 +537,9 @@ int CommandLineInterface::lua_call(const std::vector<std::string>& tokens)
         {
             if (isdigit(*(tokens[i].c_str())))
             {
-                lua_pushnumber(vm(), to_time(tokens[i]));
+                struct tm time;
+                getdate_r(tokens[i].c_str(), &time);
+                lua_pushnumber(vm(), mktime(&time));
                 continue;
             }
             if (*(tokens[i].c_str()) == '#')
