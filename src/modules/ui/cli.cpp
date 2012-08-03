@@ -363,7 +363,7 @@ int CommandLineInterface::new_event(const std::vector<std::string>& tokens) {
         return -1;
     }
 
-    auto g = create<Core::Group>();
+    auto g = create<Core::Event>();
     g->update("name", tokens[1]);
 
     if (debug) {
