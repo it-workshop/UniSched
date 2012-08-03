@@ -492,7 +492,7 @@ int CommandLineInterface::connect(const std::vector<std::string>& tokens)
     {
         ::cache(tokens[1])->connect(::cache(tokens[2]));
     }
-    catch (std::bad_cast)
+    catch (boost::bad_any_cast)
     {
         std::cerr << "You can not connect this objects!" << std::endl;
         return -1;
@@ -518,7 +518,7 @@ int CommandLineInterface::disconnect(const std::vector<std::string>& tokens)
     {
         ::cache(tokens[1])->disconnect(::cache(tokens[2]));
     }
-    catch (std::bad_cast)
+    catch (boost::bad_any_cast)
     {
         std::cerr << "You can not disconnect this objects!" << std::endl;
         return -1;
