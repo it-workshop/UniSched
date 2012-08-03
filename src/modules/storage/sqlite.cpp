@@ -97,6 +97,7 @@ void SQLiteStorage::init(Core::Config& conf, const std::vector<std::string>& arg
 static int SQLiteStorage_push_select(void *found, int, char **, char **)
 {
     *((bool *)found) = true;
+    return 0;
 }
 
 void SQLiteStorage::push(const Core::objid_t id, const std::string& name,
