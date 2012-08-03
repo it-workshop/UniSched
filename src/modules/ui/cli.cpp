@@ -38,6 +38,7 @@ void CommandLineInterface::init(Core::Config& conf, const std::vector<std::strin
     Commands.insert(std::make_pair("read", &CommandLineInterface::read));
     Commands.insert(std::make_pair("update", &CommandLineInterface::update));
     Commands.insert(std::make_pair("connect", &CommandLineInterface::connect));
+    Commands.insert(std::make_pair("disconnect", &CommandLineInterface::disconnect));
 
     Commands.insert(std::make_pair("run", &CommandLineInterface::lua_run));
     Commands.insert(std::make_pair("call", &CommandLineInterface::lua_call));
@@ -502,6 +503,31 @@ int CommandLineInterface::connect(const std::vector<std::string>& tokens)
         return -1;
     }
 
+    return 0;
+}
+
+int CommandLineInterface::disconnect(const std::vector<std::string>& tokens)
+{
+    if (tokens.size() != 3)
+    {
+        std::cerr << "2 arguments is expected!" << std::endl;
+        return -1;
+    }
+
+    try
+    {
+        ::cache(tokens[1])->disconnect(::cache(tokens[2]));
+    }
+    catch (std::bad_cast)
+    {
+        std::cerr << "You can not disconnect this objects!" << std::endl;
+        return -1;
+    }
+    catch (std::out_of_range)
+    {
+        std::cerr << "No such objects!" << std::endl;
+        return -1;
+    }
     return 0;
 }
 
