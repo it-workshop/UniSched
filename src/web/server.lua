@@ -16,15 +16,28 @@ local function to_json(object)
         elseif type(v) == 'table' then
             data = data .. "[\n"
             for i, o in pairs(v) do
-                data = data .. "        " .. o:id() .. "\n"
+                data = data .. "        " .. o:id() .. ",\n"
             end
             data = data .. "    ]"
         else
             data = data .. "'UNKNOWN FIELD TYPE'"
         end
-        data = data .. "\n"
+        data = data .. ",\n"
     end
     return "{\n" .. data .. "}"
+end
+
+local function json_error(code, message, headers)
+    local ret = {
+            code = code,
+            message = message,
+            headers = headers,
+            data = "{ 'error': '" .. message .. "' }"
+    }
+    ret.headers['Content-Type'] = 'application/json'
+    return function (request)
+        return ret
+    end
 end
 
 api = {
@@ -63,10 +76,42 @@ api = {
                 },
                 data = to_json(get_object(request.args.id))
             }
+        end,
+        create = json_error(405, 'Method not allowed', { Allow = 'POST' })
+    },
+    POST = {
+        search = json_error(405, 'Method not allowed', { Allow = 'GET' }),
+        read = json_error(405, 'Method not allowed', { Allow = 'GET' }),
+        create = function (request)
+            if not tostring(request.post.type) or
+                (request.post.type ~= 'person' and
+                 request.post.type ~= 'group' and
+                 request.post.type ~= 'event') then
+                 return {
+                    code = 400,
+                    message = 'Bad request',
+                    headers = {
+                        ['Content-Type'] = 'application/json'
+                    },
+                    data = "{ 'error': 'Incorrect type!' }"
+                 }
+            end
+            local o = create(request.post.type)
+            return {
+                code = 200,
+                message = 'OK',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = to_json(o)
+            }
         end
     },
-    POST = {},
-    DELETE = {}
+    DELETE = {
+        search = json_error(405, 'Method not allowed', { Allow = 'GET' }),
+        read = json_error(405, 'Method not allowed', { Allow = 'GET' }),
+        create = json_error(405, 'Method not allowed', { Allow = 'POST' })
+    }
 }
 
 local function urlunescape(s)
