@@ -67,6 +67,7 @@ private:
     static int _lua___object___newindex(lua_State *state);
     static int _lua___object___eq(lua_State *state);
     static int _lua_object_type(lua_State *state);
+    static int _lua_object_id(lua_State *state);
     static int _lua_object_read(lua_State *state);
     static int _lua_object_update(lua_State *state);
     static int _lua_object_connect(lua_State *state);

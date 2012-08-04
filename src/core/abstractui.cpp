@@ -184,6 +184,12 @@ int AbstractUI::_lua_object_type(lua_State *state)
     return 1;
 }
 
+int AbstractUI::_lua_object_id(lua_State *state)
+{
+    lua_pushnumber(state, ((Core::Object *)lua_touserdata(state, lua_upvalueindex(1)))->id());
+    return 1;
+}
+
 void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
 {
     lua_createtable(state, 0, 0);                           // #-1: object
@@ -191,6 +197,10 @@ void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_type, 1);          // #-2: object, #-1: [id]type()
     lua_setfield(state, -2, "type");                        // #-1: object
+
+    lua_pushlightuserdata(state, object);
+    lua_pushcclosure(state, _lua_object_id, 1);
+    lua_setfield(state, -2, "id");
     
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_read, 1);          // #-2: object, #-1: [id]read()
@@ -207,7 +217,7 @@ void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_disconnect, 1);    // #-2: object, #-1: [id]disconnect()
     lua_setfield(state, -2, "disconnect");                  // #-1: object
-
+    
     lua_pushlightuserdata(state, object);
     lua_setfield(state, -2, "__object");                     // #-1: object
 
