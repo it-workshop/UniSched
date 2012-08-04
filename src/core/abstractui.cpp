@@ -486,6 +486,19 @@ int AbstractUI::_lua_search(lua_State *state)
     return 1;
 }
 
+int AbstractUI::_lua_get_object(lua_State *state)
+{
+    if (lua_gettop(state) != 1 || !lua_isnumber(state, 1))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+    }
+
+    lua_create_lua_object(state, self->objects_[lua_tonumber(state, 1)]);
+
+    return 1;
+}
+
 int AbstractUI::_lua_remove(lua_State *state)
 {
     /* Stack:
@@ -532,6 +545,7 @@ void AbstractUI::init_algorithms()
                     //function search (args) ... end
     lua_register(vm_, "remove", _lua_remove);
                     //function remove(object) ... end
+    lua_register(vm_, "get_object", _lua_get_object);
 
     std::stringstream modules;
     setenv("UNISCHED_ALGORITHMS", "", 0);

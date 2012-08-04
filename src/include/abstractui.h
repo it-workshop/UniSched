@@ -74,6 +74,7 @@ private:
     static int _lua_object_disconnect(lua_State *state);
 
     static int _lua_create(lua_State *state);
+    static int _lua_get_object(lua_State *state);
     static int _lua_search(lua_State *state);
     static int _lua_remove(lua_State *state);
 

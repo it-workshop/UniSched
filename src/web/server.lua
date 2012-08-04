@@ -43,6 +43,26 @@ api = {
                 },
                 data = data
             }
+        end,
+        read = function (request)
+            if not tonumber(request.args.id) then
+                return {
+                    code = 400,
+                    message = 'Bad request',
+                    headers = {
+                        ['Content-Type'] = 'application/json'
+                    },
+                    data = "{ 'error': 'No id specified!' }"
+                }
+            end
+            return {
+                code = 200,
+                message = 'OK',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = to_json(get_object(request.args.id))
+            }
         end
     },
     POST = {},
