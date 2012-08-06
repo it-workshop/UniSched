@@ -40,80 +40,6 @@ local function json_error(code, message, headers)
     end
 end
 
-api = {
-    GET = {
-        search = function (request)
-            local data = '[\n'
-            for k, o in pairs(search(request.args)) do
-                data = data .. to_json(o) .. ',\n'
-            end
-            data = data .. ']'
-            return {
-                code = 200,
-                message = 'OK',
-                headers = {
-                    ['Content-Type'] = 'application/json'
-                },
-                data = data
-            }
-        end,
-        read = function (request)
-            if not tonumber(request.args.id) then
-                return {
-                    code = 400,
-                    message = 'Bad request',
-                    headers = {
-                        ['Content-Type'] = 'application/json'
-                    },
-                    data = "{ 'error': 'No id specified!' }"
-                }
-            end
-            return {
-                code = 200,
-                message = 'OK',
-                headers = {
-                    ['Content-Type'] = 'application/json'
-                },
-                data = to_json(get_object(request.args.id))
-            }
-        end,
-        create = json_error(405, 'Method not allowed', { Allow = 'POST' })
-    },
-    POST = {
-        search = json_error(405, 'Method not allowed', { Allow = 'GET' }),
-        read = json_error(405, 'Method not allowed', { Allow = 'GET' }),
-        create = function (request)
-            if not tostring(request.post.type) or
-                (request.post.type ~= 'person' and
-                 request.post.type ~= 'group' and
-                 request.post.type ~= 'event') then
-                 return {
-                    code = 400,
-                    message = 'Bad request',
-                    headers = {
-                        ['Content-Type'] = 'application/json'
-                    },
-                    data = "{ 'error': 'Incorrect type!' }"
-                 }
-            end
-            local o = create(request.post.type)
-            return {
-                code = 200,
-                message = 'OK',
-                headers = {
-                    ['Content-Type'] = 'application/json'
-                },
-                data = to_json(o)
-            }
-        end
-    },
-    DELETE = {
-        search = json_error(405, 'Method not allowed', { Allow = 'GET' }),
-        read = json_error(405, 'Method not allowed', { Allow = 'GET' }),
-        create = json_error(405, 'Method not allowed', { Allow = 'POST' })
-    }
-}
-
 local function urlunescape(s)
     s = string.gsub(s, '+', ' ')
     s = string.gsub(s, '%%(%x%x)', function (h)
@@ -121,6 +47,148 @@ local function urlunescape(s)
     end)
     return s
 end
+
+local function get(type)
+    return function (request, id)
+        if tonumber(id) then
+            local o = get_object(id)
+            if not type or o.type() == type then
+                return {
+                    code = 200,
+                    message = 'OK',
+                    headers = {
+                        ['Content-Type'] = 'application/json'
+                    },
+                    data = to_json(o)
+                }
+            end
+            return {
+                code = 404,
+                message = 'Not found',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "No such object!" }'
+            }
+        end
+        local ret = ''
+        for k, v in pairs(search(request.args)) do
+            if not type or v.type() == type then
+                ret = ret .. to_json(v) .. ',\n'
+            end
+        end
+        return {
+            code = 200,
+            message = 'OK',
+            headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            data = '[\n' .. ret .. ']'
+        }
+    end
+end
+
+local function post(type)
+    return function (request, id)
+        if not tonumber(id) then
+            return {
+                code = 405,
+                message = 'Bad method',
+                headers = {
+                    ['Content-Type'] = 'application/json',
+                    ['Allow'] = 'GET,HEAD'
+                },
+                data = '{ "error": "Bad method!" }'
+            }
+        end
+        local o = get_object(id)
+        if not o or type and o.type() ~= type then
+            return {
+                code = 404,
+                message = 'Not found!',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "No such object!" }'
+            }
+        end
+        if not tostring(request.post.name) or not tostring(request.post.value) then
+            return {
+                code = 400,
+                message = 'Bad request!',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "Invalid arguments" }'
+            }
+        end
+        print(request.post.name, request.post.value)
+        local code, error = pcall(o.update, request.post.name, request.post.value)
+        if not code then
+            return {
+                code = 400,
+                message = 'Bad request!',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "' .. error .. '" }'
+            }
+        end
+        return {
+            code = 200,
+            message = 'OK',
+            headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            data = to_json(o)
+        }
+    end
+end
+
+local api = {
+    HEAD = {
+        object = get(),
+        person = get('person'),
+        group = get('group'),
+        event = get('event')
+        },
+    GET = {
+        object = get(),
+        person = get('person'),
+        group = get('group'),
+        event = get('event')
+        },
+    POST = {
+        object = post(),
+        person = post('person'),
+        group = post('group'),
+        event = post('event')
+        },
+    LINK = {
+        object = function () end,
+        person = function () end,
+        group = function () end,
+        event = function () end
+        },
+    UNLINK = {
+        object = function () end,
+        person = function () end,
+        group = function () end,
+        event = function () end
+        },
+    CREATE = {
+        object = function () end,
+        person = function () end,
+        group = function () end,
+        event = function () end
+        },
+    DELETE = {
+        object = function () end,
+        person = function () end,
+        group = function () end,
+        event = function () end
+        }
+}
 
 function request(request)
     local path
@@ -144,16 +212,25 @@ function request(request)
         end
     end
     if string.match(request.path, '^' .. config.httpd.api_prefix) then
-        local func = string.match(request.path, '^' .. config.httpd.api_prefix .. '([^/?]*)')
-        local args = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^/?]*?(.+)$')
+        local type = string.match(request.path, '^' .. config.httpd.api_prefix .. '([^/?]*)')
+        local id = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^/]*/([0-9]*)')
+        local args = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^?]*?(.+)$')
         request.args = {}
         if args then
             for k, v in string.gmatch(args, '([^&=]+)=([^&=]*)') do
                 request.args[urlunescape(k)] = urlunescape(v)
             end
         end
-        if api[request.method] and api[request.method][func] then
-            return api[request.method][func](request)
+        request.post = {}
+        if request.method == 'POST' then
+            print('POST:', request.post_data)
+            for k, v in string.gmatch(request.post_data, '([^&=]+)=([^&=]*)') do
+                print('POST:', k, v)
+                request.post[urlunescape(k)] = urlunescape(v)
+            end
+        end
+        if api[request.method] and api[request.method][type] then
+            return api[request.method][type](request, id)
         else
             return config.httpd.page_404(request)
         end
@@ -169,17 +246,29 @@ function process(sock)
         headers[key] = value
         str = sock:receive('*l')
     end
+    local post_data
+    if method == 'POST' then
+        post_data, str = '', sock:receive('*l')
+        while str and str ~= '' do
+            post_data = post_data .. str
+            str = sock:receive('*l')
+        end
+    end
     local response = request({
         method = method,
         path = path,
         protocol = protocol,
-        headers = headers
+        headers = headers,
+        post_data = post_data
         })
-    str = protocol ..  response.code .. ' ' .. response.message .. '\n'
+    response.headers['Content-Length'] = #(response.data)
+    if method == 'HEAD' then
+        response.data = ''
+    end
+    str = protocol ..  ' ' .. response.code .. ' ' .. response.message .. '\n'
     for key, value in pairs(response.headers) do
         str = str .. key .. ': ' .. value .. '\n'
     end
-    response.headers['Content-Length'] = #(response.data)
     str = str .. '\n' .. response.data
     print(os.date(), method, path, sock:getpeername(), response.code, response.message, response.headers['Content-Length']);
     sock:send(str)
