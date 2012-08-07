@@ -114,8 +114,8 @@ local function post(type)
         end
         if not tostring(request.post.name) or not tostring(request.post.value) then
             return {
-                code = 400,
-                message = 'Bad request!',
+                code = 500,
+                message = 'Internal server error!',
                 headers = {
                     ['Content-Type'] = 'application/json'
                 },
@@ -126,8 +126,8 @@ local function post(type)
         local code, error = pcall(o.update, request.post.name, request.post.value)
         if not code then
             return {
-                code = 400,
-                message = 'Bad request!',
+                code = 500,
+                message = 'Internal server error!',
                 headers = {
                     ['Content-Type'] = 'application/json'
                 },
@@ -163,7 +163,7 @@ function link(type, connect)
             }
         end
         local o = get_object(id)
-        local with = get_object(request.headers.Location)
+        local with = get_object(tonumber(string.match(request.headers.Location, '^/' .. api_prefix .. '/[^/]+/([0-9]+)')))
         if not o or not with then
             return {
                 code = 404,
@@ -201,6 +201,72 @@ function link(type, connect)
     end
 end
 
+local function create_method(type)
+    if not type then
+        return json_error(405, 'Bad method', { Allow = 'GET,HEAD' })
+    end
+    return function (request, id)
+        local o = create(type)
+        if not o then
+            return {
+                code = 500,
+                message = 'Internal server error',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "Could not create object" }'
+            }
+        end
+        return {
+            code = 201,
+            message = 'Created',
+            headers = {
+                ['Content-Type'] = 'application/json',
+                Location = config.httpd.api_prefix .. '/' .. type .. '/' .. o.id()
+            },
+            data = to_json(o)
+        }
+    end
+end
+
+local function delete(type)
+    local create = ''
+    if type then
+        create = ',CREATE'
+    end
+    return function (request, id)
+        if not tonumber(id) then
+            return {
+                code = 405,
+                message = 'Bad method',
+                headers = {
+                    ['Content-Type'] = 'application/json',
+                    Allow = 'HEAD,GET' .. create
+                },
+                data = '{ "error": "Bad method" }'
+            }
+        end
+        local o = get_object(id)
+        if not o then
+            return {
+                code = 404,
+                message = 'Not found',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "No such object!" }'
+            }
+        end
+        o.remove()
+        return {
+            code = 204,
+            message = 'No content',
+            headers = {},
+            data = ''
+        }
+    end
+end
+
 local api = {
     HEAD = {
         object = get(),
@@ -233,10 +299,10 @@ local api = {
         event = link('event')
         },
     CREATE = {
-        object = function () end,
-        person = function () end,
-        group = function () end,
-        event = function () end
+        object = create_method(),
+        person = create_method('person'),
+        group = create_method('group'),
+        event = create_method('event')
         },
     DELETE = {
         object = function () end,
@@ -269,7 +335,7 @@ function request(request)
     end
     if string.match(request.path, '^' .. config.httpd.api_prefix) then
         local type = string.match(request.path, '^' .. config.httpd.api_prefix .. '([^/?]*)')
-        local id = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^/]*/([0-9]*)')
+        local id = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^/]*/([0-9]+)')
         local args = string.match(request.path, '^' .. config.httpd.api_prefix .. '[^?]*?(.+)$')
         request.args = {}
         if args then
