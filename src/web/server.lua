@@ -145,6 +145,62 @@ local function post(type)
     end
 end
 
+function link(type, connect)
+    local create = ''
+    if type then
+        create = ',CREATE'
+    end
+    return function(request, id)
+        if not tonumber(id) then
+            return {
+                code = 405,
+                message = 'Bad method',
+                headers = {
+                    ['Content-Type'] = 'application/json',
+                    Allow = 'HEAD,GET' .. create
+                },
+                data = '{ "error": "Bad method" }'
+            }
+        end
+        local o = get_object(id)
+        local with = get_object(request.headers.Location)
+        if not o or not with then
+            return {
+                code = 404,
+                message = 'Not found',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "No such object" }'
+            }
+        end
+        local code, error
+        if connect then
+            code, error = pcall(o.connect, with)
+        else
+            code, error = pcall(o.disconnect, with)
+        end
+        if not code then
+            return {
+                code = 500,
+                message = 'Internal server error',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '{ "error": "Could not connect objects" }'
+            }
+        end
+        return {
+            code = 200,
+            message = 'OK',
+            headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            data = '[\n' .. to_json(o) .. ',\n' .. to_json(with) .. '\n]'
+        }
+    end
+end
+
 local api = {
     HEAD = {
         object = get(),
@@ -165,16 +221,16 @@ local api = {
         event = post('event')
         },
     LINK = {
-        object = function () end,
-        person = function () end,
-        group = function () end,
-        event = function () end
+        object = link(nil, true),
+        person = link('person', true),
+        group = link('group', true),
+        event = link('event', true)
         },
     UNLINK = {
-        object = function () end,
-        person = function () end,
-        group = function () end,
-        event = function () end
+        object = link(),
+        person = link('person'),
+        group = link('group'),
+        event = link('event')
         },
     CREATE = {
         object = function () end,
