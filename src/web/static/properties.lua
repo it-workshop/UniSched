@@ -1,8 +1,25 @@
 #!/usr/bin/env lua
 
 config.httpd.static = {
-    ['/index.html'] = { ['Content-Type'] = 'text/html' }
 }
+
+local extensions = {
+    html = 'text/html',
+    css = 'text/css',
+    js = 'text/javascript',
+    png = 'image/png'
+}
+
+setmetatable(config.httpd.static, {
+    __index = function (table, key)
+        for k, v in pairs(extensions) do
+            if string.match(key, k .. '$') then
+                return { ['Content-Type'] = v }
+            end
+        end
+        return { ['Content-Type'] = 'text/plain' }
+    end
+})
 
 local function get_file(file)
     local fd = io.open(config.httpd.static_dir .. file)

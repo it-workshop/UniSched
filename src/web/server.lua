@@ -5,24 +5,31 @@ require 'socket'
 
 local function to_json(object)
     local data = [[
-    'id': ]] .. object.id() .. [[,
-    'type': ']] .. object.type() .. "',\n"
+    "id": "]] .. object.id() .. [[",
+    "type": "]] .. object.type() .. '",\n'
+    local first = true
     for k, v in pairs(object.read()) do
-        data = data .. "    '" .. k .. "': "
-        if type(v) == 'number' then
-            data = data .. v
-        elseif type(v) == 'string' then
-            data = data .. "'" .. v .. "'"
+        if not first then
+            data = data .. ','
+        end
+       data = data .. '    "' .. k .. '": '
+        if type(v) == 'number' or type(v) == 'string' then
+            data = data .. '"' .. v .. '"'
         elseif type(v) == 'table' then
             data = data .. "[\n"
             for i, o in pairs(v) do
-                data = data .. "        " .. o:id() .. ",\n"
+                data = data .. '        "' .. o:id() .. '"'
+                if i ~= #v then
+                    data =  data .. ','
+                end
+                data = data .. '\n'
             end
             data = data .. "    ]"
         else
             data = data .. "'UNKNOWN FIELD TYPE'"
         end
-        data = data .. ",\n"
+        data = data .. "\n"
+        first = false
     end
     return "{\n" .. data .. "}"
 end
@@ -72,9 +79,12 @@ local function get(type)
             }
         end
         local ret = ''
-        for k, v in pairs(search(request.args)) do
+        for k, v in pairs(search(request.args)) do 
             if not type or v.type() == type then
-                ret = ret .. to_json(v) .. ',\n'
+                if ret ~= '' then
+                    ret = ret .. ','
+                end
+                ret = ret .. to_json(v) .. '\n'
             end
         end
         return {
