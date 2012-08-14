@@ -12,3 +12,32 @@
 #group-info th {
     min-width: 100px;
 }
+
+#people-list {
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#person-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#person-info th {
+    min-width: 100px;
+}
+
+.btn {
+	width: 50px;
+}
+
+.table {
+	width: auto;
+
+}
+	
+.column {
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
