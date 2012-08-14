@@ -1,2 +1,14 @@
+#groups-list {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
 
+#group-info {
+    display: inline-block;
+    vertical-align: top;
+}
 
+#group-info th {
+    min-width: 100px;
+}
