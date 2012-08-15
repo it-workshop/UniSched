@@ -27,25 +27,28 @@
      </div>
     </div>
    </div>
+   
    <div class='frame' id='groups'>
     <ul class='list' id='groups-list'>
     </ul>
     <table class='ui-widget-content ui-corner-all' id='group-info'>
     </table>
    </div>
+   
    <div class='frame' id='people'>
+    <div id="add-person" title="Добавление записи о человеке">
+    </div>
+    <div id="del-person" title="Удаление записи о человеке">
+    	<p>Вы действительно хотите удалить эту запись?</p>
+    </div>
     <div class='column'>
      <table class="table">
       <tr>
        <td>
-        <form action="">
-         <input style="width: 50px" id="add-person" type="submit" value="Add"/>
-        </form>
+        <button style="width: 50px" id="add-person-start">Add</button>
        </td>
        <td>
-        <form action="">
-         <input style="width: 50px" id="delete-person" type="submit" value="Del"/>
-        </form>
+        <button style="width: 50px" id="del-person-start">Del</button>
        </td>
        <td>
         <form action=''>

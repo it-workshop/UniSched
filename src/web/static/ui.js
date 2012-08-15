@@ -5,7 +5,46 @@ $(document).ready(function() {
     $('.tabs').tabs();
     $('.accordion').accordion();
     $('.list').list();
-
+    
+    $('#add-person').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	buttons: {
+    		'Добавить человека': function() {
+    			$('#add-person').dialog('close');
+    		},
+    		'Отмена': function() {
+    			$('#add-person').dialog('close');
+    		}
+    	}
+    });
+    
+    $('#del-person').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	buttons: {
+    		'Да': function() {
+    			$('#people-list li[class="ui-state-active"]').attr('id');
+    			$('#del-person').dialog('close');
+    		},
+    		'Нет': function() {
+    			$('#del-person').dialog('close');
+    		}
+    	}
+    });
+    
+    $('#add-person-start').click(function() {
+    	$('#add-person').dialog('open');
+    	return false;
+    });
+    
+    $('#del-person-start').click(function() {
+    	$('#del-person').dialog('open');
+    	return false;
+    });
+	
     $('#groups-list').list({change: function(event, target) {
         var group = groups[$(target).attr('id')];
         $('#group-info').empty();
@@ -61,5 +100,6 @@ $(document).ready(function() {
             people[person.id] = person;
         });
     });
+  
 });
 
