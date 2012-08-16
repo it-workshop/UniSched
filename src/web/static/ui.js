@@ -10,8 +10,15 @@ $(document).ready(function() {
     	autoOpen: false,
     	resizable: false,
     	modal: true,
+    	width: 'auto',
     	buttons: {
     		'Добавить человека': function() {
+//    			$.ajax({
+//    				url: '/api/person/',
+//    				type: 'CREATE',
+//    				data: {
+//    				}
+//    				});
     			$('#add-person').dialog('close');
     		},
     		'Отмена': function() {
@@ -26,8 +33,14 @@ $(document).ready(function() {
     	modal: true,
     	buttons: {
     		'Да': function() {
-    			$('#people-list li[class="ui-state-active"]').attr('id');
-    			$('#del-person').dialog('close');
+    			var id = $('#people-list li[class="ui-state-active"]').attr('id');
+//    			$.ajax({
+//   				url: '/api/person/' + id,
+//    				type: "DELETE",
+//    				success: function() {
+//	    				$('#del-person').dialog('close');
+//	    			}
+//	    		});
     		},
     		'Нет': function() {
     			$('#del-person').dialog('close');
@@ -69,6 +82,7 @@ $(document).ready(function() {
     $.getJSON('/api/group/', function (data) {
         $.each(data, function (i, group) {
             $('#groups-list').list('append', group.id, group.name);
+            $('<option value="' + group.id + '">' + group.name + '</option>').appendTo($('#link-group'));
             groups[group.id] = group;
         });
     });
@@ -96,10 +110,23 @@ $(document).ready(function() {
 
     $.getJSON('/api/person/', function (data) {
         $.each(data, function (i, person) {
-            $('#people-list').list('append', person.id, person.name);
+            $('#people-list').list('append', person.id, person.surname + ' ' + person.name);
             people[person.id] = person;
         });
     });
-  
+	
+	$('option:first-child').attr("selected", "true");
+	
+	$('#add-field').click(function() {
+		$('<tr>' +
+			'<td><input type="text" class="data-name"></td>' +
+			'<td><input type="text" name="empty"></td>' +
+			'<td><button class="del-field" type="button">Del</button></td>' +
+			'</tr>').
+			appendTo($('#add-person-form'));
+		$('.del-field').click(function(event) {
+			$(event.target).parents('tr').remove();
+		});
+	});
 });
 

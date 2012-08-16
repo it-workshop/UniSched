@@ -37,6 +37,33 @@
    
    <div class='frame' id='people'>
     <div id="add-person" title="Добавление записи о человеке">
+    	<!--form-->
+	    	<table id="add-person-form">
+    			<tr>
+    				<td>name</td>
+    				<td><input type="text" name="name"></td>
+    			</tr>
+    			<tr>
+    				<td>surname</td>
+    				<td><input type="text" name="surname"></td>
+    			</tr>
+    			<tr>
+    				<td>sex</td>
+    				<td>
+    					<input type="radio" name="sex" value="MALE" checked>MALE<br>
+    					<input type="radio" name="sex" value="FEMALE">FEMALE<br>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>group</td>
+    				<td>
+    					<select name="link-group" id="link-group">
+    					</select>
+    				</td>
+    			</tr>
+	    	</table>
+	    <!--/form-->
+    	<button id="add-field">Add field</button>
     </div>
     <div id="del-person" title="Удаление записи о человеке">
     	<p>Вы действительно хотите удалить эту запись?</p>
@@ -44,16 +71,10 @@
     <div class='column'>
      <table class="table">
       <tr>
+       <td><button style="width: 50px" id="add-person-start">Add</button></td>
+       <td><button style="width: 50px" id="del-person-start">Del</button></td>
        <td>
-        <button style="width: 50px" id="add-person-start">Add</button>
-       </td>
-       <td>
-        <button style="width: 50px" id="del-person-start">Del</button>
-       </td>
-       <td>
-        <form action=''>
-         <input style="width: 132px" id="search-person" type="text"/>
-        </form>
+        <input style="width: 132px" id="search-person" type="text">
        </td>
       </tr>
      </table>
