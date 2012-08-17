@@ -13,12 +13,25 @@ $(document).ready(function() {
     	width: 'auto',
     	buttons: {
     		'Добавить человека': function() {
-//    			$.ajax({
-//    				url: '/api/person/',
-//    				type: 'CREATE',
-//    				data: {
-//    				}
-//    				});
+    			var field = {
+    				'id': String(Number($('#people-list li:last').attr('id')) + 1),
+    				'name': $('#add-person-form input[name="name"]').attr('value'),
+    				'surname': $('#add-person-form input[name="surname"]').attr('value'),
+    				'sex': $('#add-person-form input[name="sex"]["checked"]').attr('value')
+    			};
+    			if (field.id == "NaN") {
+    				field.id = 0;
+    			}
+    			$('#add-person-form .editable').each(function(i, elem) {
+    				field[$(elem).children('.data-name').attr('value')] = $(elem).children('.data').attr('value');
+    			});
+    			$.ajax({
+    				url: '/api/person/' + field.id,
+    				type: 'CREATE',
+    				data: field
+    			});
+    			$('#people-list').list('append', field.id, field.surname + ' ' + field.name);
+            	people[field.id] = field;
     			$('#add-person').dialog('close');
     		},
     		'Отмена': function() {
@@ -34,13 +47,13 @@ $(document).ready(function() {
     	buttons: {
     		'Да': function() {
     			var id = $('#people-list li[class="ui-state-active"]').attr('id');
-//    			$.ajax({
-//   				url: '/api/person/' + id,
-//    				type: "DELETE",
-//    				success: function() {
-//	    				$('#del-person').dialog('close');
-//	    			}
-//	    		});
+    			$.ajax({
+   					url: '/api/person/' + id,
+    				type: 'DELETE',
+    				success: function() {
+	    				$('#del-person').dialog('close');
+	    			}
+	    		});
     		},
     		'Нет': function() {
     			$('#del-person').dialog('close');
@@ -118,9 +131,9 @@ $(document).ready(function() {
 	$('option:first-child').attr("selected", "true");
 	
 	$('#add-field').click(function() {
-		$('<tr>' +
+		$('<tr class="editable">' +
 			'<td><input type="text" class="data-name"></td>' +
-			'<td><input type="text" name="empty"></td>' +
+			'<td><input type="text" class="data"></td>' +
 			'<td><button class="del-field" type="button">Del</button></td>' +
 			'</tr>').
 			appendTo($('#add-person-form'));

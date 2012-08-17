@@ -315,10 +315,14 @@ local api = {
         event = create_method('event')
         },
     DELETE = {
-        object = function () end,
-        person = function () end,
-        group = function () end,
-        event = function () end
+--        object = function () end,
+--        person = function () end,
+--        group = function () end,
+--        event = function () end
+		object = delete(),
+		person = delete('person'),
+		group = delete('group'),
+		event = delete('event')
         }
 }
 
