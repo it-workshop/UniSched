@@ -267,7 +267,7 @@ local function delete(type)
                 data = '{ "error": "No such object!" }'
             }
         end
-        o.remove()
+        remove(o)
         return {
             code = 204,
             message = 'No content',

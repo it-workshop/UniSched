@@ -51,6 +51,8 @@ $(document).ready(function() {
    					url: '/api/person/' + id,
     				type: 'DELETE',
     				success: function() {
+    					$('#person-info').empty();
+    					$('#people-list li[class="ui-state-active"]').remove();
 	    				$('#del-person').dialog('close');
 	    			}
 	    		});
