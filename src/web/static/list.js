@@ -56,7 +56,8 @@ $.widget( "ui.list" , {
         $.Widget.prototype._setOption.apply(this, arguments);
     },
 
-    _destroy: function () {
+    destroy: function () {
+        $.Widget.prototype.destroy.call(this);
     },
 
     append: function (id, text) {
