@@ -137,6 +137,7 @@ $(document).ready(function() {
     }});
 
     $.getJSON('/api/person/', function (data) {
+//    	$('#people-list').empty();
         $.each(data, function (i, person) {
             $('#people-list').list('append', person.id, person.surname + ' ' + person.name);
             people[person.id] = person;
@@ -156,16 +157,33 @@ $(document).ready(function() {
 			$(event.target).parents('tr').remove();
 		});
 	});
-	
+
 	$('#search-person').keypress(function(event) {
 		if (event.which == 13) {
-			var search = $(event.target).attr('value');//.charAt(0).toUpperCase() + $(event.target).attr('value').substr(1).toLowerCase();
-			console.log(search + "," + typeof(search));
-			console.log($('#people-list li:contains(' + search + ')').attr('id') + "," + $('#people-list li:contains(' + search + ')').text());
+			var search = $(event.target).attr('value').toLowerCase();
+			/* Old search
 			$('#people-list li:contains(' + search + ')').removeClass('ui-state-default');
 			$('#people-list li:contains(' + search + ')').removeClass('ui-state-active');
 			$('#people-list li:contains(' + search + ')').addClass('ui-state-hover');
 			$('#people-list li:contains(' + search + ')').click();
+			*/
+			$('#people-list').empty();
+			if (search == '') {
+				people.forEach(function(person) {
+					$('#people-list').list('append', person.id, person.surname + ' ' + person.name);
+				});
+			}
+			else {
+				people.forEach(function(person) {
+					if (search == person.name.toLowerCase() ||
+						search == person.surname.toLowerCase() ||
+						search == person.name.toLowerCase() + ' ' + person.surname.toLowerCase() ||
+						search == person.surname.toLowerCase() + ' ' + person.name.toLowerCase()
+						) {
+						$('#people-list').list('append', person.id, person.surname + ' ' + person.name);
+					}
+				});
+			}
 		}
 	});
 });
