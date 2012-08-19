@@ -17,7 +17,7 @@ $.widget( "ui.list" , {
             addClass('ui-corner-all');
         this.refresh();
     },
-
+/*
     refresh: function () {
         var _self = this;
         this.element.children().
@@ -51,7 +51,7 @@ $.widget( "ui.list" , {
                 }
             });
     },
-
+*/
     _setOption: function(key, value) {
         $.Widget.prototype._setOption.apply(this, arguments);
     },
