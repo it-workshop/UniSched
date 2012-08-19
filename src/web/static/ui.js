@@ -27,9 +27,10 @@ $(document).ready(function() {
     	buttons: {
     		'Добавить человека': function() {
     			var field = {
-    				'id': String(Number($('#people-list li:last').attr('id')) + 1),
+    				'id': Number($('#people-list li:last').attr('id')) + 1,
     				'name': $('#add-person-form input[name="name"]').attr('value'),
     				'surname': $('#add-person-form input[name="surname"]').attr('value'),
+//    				'groups': $('#choose-groups input[checked]'),
     				'sex': $('#add-person-form input[name="sex"]["checked"]').attr('value')
     			};
     			if (field.id == "NaN") {
@@ -76,8 +77,66 @@ $(document).ready(function() {
     	}
     });
     
+    $('#add-group').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	buttons: {
+    		'Добавить группу': function() {
+    			var field = {
+    				'id': Number($('#groups-list li:last').attr('id')) + 1,
+    				'name': $('#add-group-form input[name="name"]').attr('value')
+    			};
+    			$.ajax({
+   					url: '/api/group/' + field.id,
+    				type: 'CREATE',
+    				data: field
+	    		});
+	    		$('#groups-list').list('append', field.id, field.name);
+            	groups[field.id] = field;
+    			$('#add-group').dialog('close');
+    		},
+    		'Отмена': function() {
+    			$('#add-group').dialog('close');
+    		}
+    	}
+    });
+    
+    $('#del-group').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	buttons: {
+    		'Да': function() {
+    			var id = $('#groups-list li[class="ui-state-active"]').attr('id');
+    			$.ajax({
+   					url: '/api/group/' + id,
+    				type: 'DELETE',
+    				success: function() {
+    					$('#group-info').empty();
+    					$('#groups-list li[class="ui-state-active"]').remove();
+	    				$('#del-group').dialog('close');
+	    			}
+	    		});
+    		},
+    		'Нет': function() {
+    			$('#del-group').dialog('close');
+    		}
+    	}
+    });
+    
     $('#add-person-start').click(function() {
     	$('#add-person').dialog('open');
+    	return false;
+    });
+    
+    $('#del-group-start').click(function() {
+    	$('#del-group').dialog('open');
+    	return false;
+    });
+    
+    $('#add-group-start').click(function() {
+    	$('#add-group').dialog('open');
     	return false;
     });
     
@@ -110,7 +169,7 @@ $(document).ready(function() {
     $.getJSON('/api/group/', function (data) {
         $.each(data, function (i, group) {
             $('#groups-list').list('append', group.id, group.name);
-            $('<option value="' + group.id + '">' + group.name + '</option>').appendTo($('#link-group'));
+            $('<input name="choose-groups" type="checkbox" value="' + group.id + '">' + group.name + '<br>').appendTo($('#choose-groups'));
             groups[group.id] = group;
         });
     });
@@ -137,7 +196,6 @@ $(document).ready(function() {
     }});
 
     $.getJSON('/api/person/', function (data) {
-//    	$('#people-list').empty();
         $.each(data, function (i, person) {
             $('#people-list').list('append', person.id, person.surname + ' ' + person.name);
             people[person.id] = person;
@@ -167,20 +225,19 @@ $(document).ready(function() {
 			$('#people-list li:contains(' + search + ')').addClass('ui-state-hover');
 			$('#people-list li:contains(' + search + ')').click();
 			*/
-			$('#people-list').empty();
 			if (search == '') {
 				people.forEach(function(person) {
-					$('#people-list').list('append', person.id, person.surname + ' ' + person.name);
+					$('#people-list li[id=' + person.id + ']').attr('hidden', false);
 				});
 			}
 			else {
 				people.forEach(function(person) {
-					if (search == person.name.toLowerCase() ||
-						search == person.surname.toLowerCase() ||
-						search == person.name.toLowerCase() + ' ' + person.surname.toLowerCase() ||
-						search == person.surname.toLowerCase() + ' ' + person.name.toLowerCase()
+					if (search != person.name.toLowerCase() &&
+						search != person.surname.toLowerCase() &&
+						search != person.name.toLowerCase() + ' ' + person.surname.toLowerCase() &&
+						search != person.surname.toLowerCase() + ' ' + person.name.toLowerCase()
 						) {
-						$('#people-list').list('append', person.id, person.surname + ' ' + person.name);
+						$('#people-list li[id=' + person.id + ']').attr('hidden', true);
 					}
 				});
 			}

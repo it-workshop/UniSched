@@ -9,6 +9,11 @@
   <script src=jquery-ui-1.8.22.custom.min.js></script>
   <script src=ui.js></script>
   <script src=list.js></script>
+  <style>
+   .CSS-try:{
+    background-color: #FF0000;
+   }
+  </style>
  </head>
  <body>
   <div class='tabs'>
@@ -28,7 +33,22 @@
     </div>
    </div>
    <div class='frame' id='groups'>
+    <div id="add-group" title="Добавление записи о группе">
+    	<table id="add-group-form">
+    		<tr>
+    			<td>name</td>
+    			<td><input type="text" name="name"></td>
+    		</tr>
+    	</table>
+    </div>
+    <div id="del-group" title="Удаление записи о группе">
+    	<p>Вы действительно хотите удалить эту запись?</p>
+    </div>
     <div class=column>
+     <div class=toolbar>
+      <button class=tool id="add-group-start">+</button>
+      <button class=tool id="del-group-start">-</button>
+     </div>
      <ul class='list' id='groups-list'>
      </ul>
     </div>
@@ -39,32 +59,27 @@
    </div>
    <div class='frame' id='people'>
     <div id="add-person" title="Добавление записи о человеке">
-    	<!--form-->
-	    	<table id="add-person-form">
-    			<tr>
-    				<td>name</td>
-    				<td><input type="text" name="name"></td>
-    			</tr>
-    			<tr>
-    				<td>surname</td>
-    				<td><input type="text" name="surname"></td>
-    			</tr>
-    			<tr>
-    				<td>sex</td>
-    				<td>
-    					<input type="radio" name="sex" value="MALE" checked>MALE<br>
-    					<input type="radio" name="sex" value="FEMALE">FEMALE<br>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>group</td>
-    				<td>
-    					<select name="link-group" id="link-group">
-    					</select>
-    				</td>
-    			</tr>
-	    	</table>
-	    <!--/form-->
+    	<table id="add-person-form">
+   			<tr>
+   				<td>name</td>
+   				<td><input type="text" name="name"></td>
+   			</tr>
+   			<tr>
+   				<td>surname</td>
+   				<td><input type="text" name="surname"></td>
+   			</tr>
+   			<tr>
+   				<td>sex</td>
+   				<td>
+   					<input type="radio" name="sex" value="MALE" checked>MALE<br>
+   					<input type="radio" name="sex" value="FEMALE">FEMALE<br>
+   				</td>
+   			</tr>
+   			<tr>
+   				<td>groups</td>
+   				<td id="choose-groups"></td>
+   			</tr>
+    	</table>
     	<button id="add-field">Add field</button>
     </div>
     <div id="del-person" title="Удаление записи о человеке">

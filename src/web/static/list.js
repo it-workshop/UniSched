@@ -62,6 +62,7 @@ $.widget( "ui.list" , {
 
     append: function (id, text) {
         $('<li id=' + id + '>' + text + '</li>').appendTo(this.element);
+        var _self = this;
         this.element.children('[id=' + id + ']').
             removeClass('ui-state-active').
             removeClass('ui-state-hover').
