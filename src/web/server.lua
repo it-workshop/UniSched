@@ -375,7 +375,12 @@ function request(request)
 end
 
 function process(sock)
-    local method, path, protocol = string.match(sock:receive('*l'), '^([^ ]*) ([^ ]*) ([^ ]*)$')
+    local data = sock:receive('*l')
+    if not data then
+        sock:close()
+        return
+    end
+    local method, path, protocol = string.match(data, '^([^ ]*) ([^ ]*) ([^ ]*)$')
     local str, headers = sock:receive('*l'), {}
     while str and str ~= '' do
         local key, value = string.match(str, '^([^:]*): (.+)$')
