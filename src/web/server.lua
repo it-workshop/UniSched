@@ -315,10 +315,6 @@ local api = {
         event = create_method('event')
         },
     DELETE = {
---        object = function () end,
---        person = function () end,
---        group = function () end,
---        event = function () end
 		object = delete(),
 		person = delete('person'),
 		group = delete('group'),
@@ -416,8 +412,19 @@ function process(sock)
     sock:close()
 end
 
-local done = false
 function server(host, port)
+local done = false
+    api.POST.shutdown = function (request, id)
+        done = true
+        return {
+            code = 200,
+            message = 'OK',
+            headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            data = '{ "state": "shutting down" }'
+        }
+    end
     sock = socket.bind(host, port)
     print(sock:getsockname())
     while not done do
