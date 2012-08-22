@@ -26,29 +26,52 @@ $(document).ready(function() {
     	width: 'auto',
     	buttons: {
     		'Добавить человека': function() {
-    			var field = {
-    				'id': Number($('#people-list li:last').attr('id')) + 1,
-    				'name': $('#add-person-form input[name="name"]').attr('value'),
-    				'surname': $('#add-person-form input[name="surname"]').attr('value'),
-//    				'groups': $('#choose-groups input[checked]'),
-    				'sex': $('#add-person-form input[name="sex"]["checked"]').attr('value')
-    			};
-    			if (field.id == "NaN") {
-    				field.id = 0;
-    			}
+                var field = {
+                    name: $('#add-person-form input[name="name"]').attr('value'),
+                    surname: $('#add-person-form input[name="surname"]').attr('value'),
+                    sex: $('#add-person-form input:checked').attr('value')
+                };
+                var object;
     			$('#add-person-form .editable').each(function(i, elem) {
     				field[$(elem).children('.data-name').attr('value')] = $(elem).children('.data').attr('value');
     			});
     			$.ajax({
-    				url: '/api/person/' + field.id,
+    				url: '/api/person/',
     				type: 'CREATE',
-    				data: field
+                    async: false,
+                    success: function (data) {
+                        object = data;
+                    },
+                    error: function (jqXHR, message, exception) {
+                        object = $.parseJSON(jqXHR.responseText);
+                        if (object.error) {
+                            alert(object.error);
+                            $('#add-person-form .editable').remove();
+                            $('#add-person').dialog('close');
+                        }
+                    }
     			});
-    			$('#people-list').list('append', field.id, field.surname + ' ' + field.name);
-            	people[field.id] = field;
+                $.each(field, function (k, v) {
+                    $.ajax({
+                        url: '/api/person/' + object.id,
+                            type: 'POST',
+                            async: false,
+                            data: {
+                                name: k,
+                                value: v
+                            },
+                            success: function (data) {
+                            object = data;
+                        }
+                    });
+                });
+                $('#people-list').list('append', object.id, object.surname + ' ' + object.name);
+                people[object.id] = object;
+                $('#add-person-form .editable').remove();
     			$('#add-person').dialog('close');
     		},
     		'Отмена': function() {
+                $('#add-person-form .editable').remove();
     			$('#add-person').dialog('close');
     		}
     	}

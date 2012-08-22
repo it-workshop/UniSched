@@ -6,13 +6,10 @@ require 'socket'
 local function to_json(object)
     local data = [[
     "id": "]] .. object.id() .. [[",
-    "type": "]] .. object.type() .. '",\n'
+    "type": "]] .. object.type() .. '"'
     local first = true
     for k, v in pairs(object.read()) do
-        if not first then
-            data = data .. ','
-        end
-       data = data .. '    "' .. k .. '": '
+        data = data .. ',\n    "' .. k .. '": '
         if type(v) == 'number' or type(v) == 'string' then
             data = data .. '"' .. v .. '"'
         elseif type(v) == 'table' then
@@ -28,10 +25,9 @@ local function to_json(object)
         else
             data = data .. "'UNKNOWN FIELD TYPE'"
         end
-        data = data .. "\n"
-        first = false
+        data = data
     end
-    return "{\n" .. data .. "}"
+    return "{\n" .. data .. "\n}"
 end
 
 local function json_error(code, message, headers)
@@ -385,11 +381,10 @@ function process(sock)
     end
     local post_data
     if method == 'POST' then
-        post_data, str = '', sock:receive('*l')
-        while str and str ~= '' do
-            post_data = post_data .. str
-            str = sock:receive('*l')
+        for k, v in pairs(headers) do
+            print(k, v)
         end
+        post_data = sock:receive(headers['Content-Length'])
     end
     local response = request({
         method = method,
