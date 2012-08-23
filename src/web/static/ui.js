@@ -1,10 +1,10 @@
-var groups = [];
-var people = [];
+var objects = [];
 
 $(document).ready(function() {
     $('.tabs').tabs();
     $('.accordion').accordion();
     $('.list').list();
+    $('.info').info();
 
     $('.toolbar').children().addClass('ui-corner-all');
     $('.tool').addClass('ui-widget').addClass('ui-state-default').hover(
@@ -27,13 +27,13 @@ $(document).ready(function() {
     	buttons: {
     		'Добавить человека': function() {
                 var field = {
-                    name: $('#add-person-form input[name="name"]').attr('value'),
-                    surname: $('#add-person-form input[name="surname"]').attr('value'),
-                    sex: $('#add-person-form input:checked').attr('value')
+                    name: $('#add-person-form input[name="name"]').val(),
+                    surname: $('#add-person-form input[name="surname"]').val(),
+                    sex: $('#add-person-form input:checked').val()
                 };
                 var object;
     			$('#add-person-form .editable').each(function(i, elem) {
-    				field[$(elem).children('.data-name').attr('value')] = $(elem).children('.data').attr('value');
+    				field[$(elem).children('.data-name').val()] = $(elem).children('.data').val();
     			});
     			$.ajax({
     				url: '/api/person/',
@@ -66,7 +66,7 @@ $(document).ready(function() {
                     });
                 });
                 $('#people-list').list('append', object.id, object.surname + ' ' + object.name);
-                people[object.id] = object;
+                objects[object.id] = object;
                 $('#add-person-form .editable').remove();
     			$('#add-person').dialog('close');
     		},
@@ -116,7 +116,7 @@ $(document).ready(function() {
     				data: field
 	    		});
 	    		$('#groups-list').list('append', field.id, field.name);
-            	groups[field.id] = field;
+            	objects[field.id] = field;
     			$('#add-group').dialog('close');
     		},
     		'Отмена': function() {
@@ -169,59 +169,25 @@ $(document).ready(function() {
     });
 	
     $('#groups-list').list({change: function(event, target) {
-        var group = groups[$(target).attr('id')];
-        $('#group-info').empty();
-        $.each(group, function (key, value) {
-            if ( key != 'id' && key != 'type' ) {
-                if (typeof(value) != 'object') {
-                    $('<tr id=field-' + 
-                        key + '><th>' + key +
-                        '</th><td><input type=text class="ui-corner-all ui-widget-content" value="'+
-                        value +'"></td></tr>').
-                        appendTo($('#group-info'));
-                } else {
-                    $('<tr id=field-' +
-                        key + '><th>' + key +
-                        '</th><td>' + value.length + '</td></tr>').
-                        appendTo($('#group-info'));
-                }
-            }
-        });
+        $('#group-info').info('set_object', objects[$(target).attr('id')]);
     }});
 
     $.getJSON('/api/group/', function (data) {
         $.each(data, function (i, group) {
             $('#groups-list').list('append', group.id, group.name);
             $('<input name="choose-groups" type="checkbox" value="' + group.id + '">' + group.name + '<br>').appendTo($('#choose-groups'));
-            groups[group.id] = group;
+            objects[group.id] = group;
         });
     });
     
     $('#people-list').list({change: function(event, target) {
-        var person = people[$(target).attr('id')];
-        $('#person-info').empty();
-        $.each(person, function (key, value) {
-            if ( key != 'id' && key != 'type' ) {
-                if (typeof(value) != 'object') {
-                    $('<tr id=field-' + 
-                        key + '><th>' + key +
-                        '</th><td><input type=text class="ui-corner-all ui-widget-content" value="'+
-                        value +'"></td></tr>').
-                        appendTo($('#person-info'));
-                } else {
-                    $('<tr id=field-' +
-                        key + '><th>' + key +
-                        '</th><td>' + value.length + '</td></tr>').
-                        appendTo($('#person-info'));
-                }
-            }
-        });
+        $('#person-info').info('set_object', objects[$(target).attr('id')]);
     }});
 
     $.getJSON('/api/person/', function (data) {
         $.each(data, function (i, person) {
             $('#people-list').list('append', person.id, person.surname + ' ' + person.name);
-            people[person.id] = person;
+            objects[person.id] = person;
         });
     });
 	
@@ -249,13 +215,14 @@ $(document).ready(function() {
 			$('#people-list li:contains(' + search + ')').click();
 			*/
 			if (search == '') {
-				people.forEach(function(person) {
-					$('#people-list li[id=' + person.id + ']').attr('hidden', false);
+				objects.forEach(function(person) {
+                    $('#people-list li[id=' + person.id + ']').attr('hidden', false);
 				});
 			}
 			else {
-				people.forEach(function(person) {
-					if (search != person.name.toLowerCase() &&
+				objects.forEach(function(person) {
+					if (person.type == 'person' &&
+                        search != person.name.toLowerCase() &&
 						search != person.surname.toLowerCase() &&
 						search != person.name.toLowerCase() + ' ' + person.surname.toLowerCase() &&
 						search != person.surname.toLowerCase() + ' ' + person.name.toLowerCase()
