@@ -1,7 +1,5 @@
 $(window).resize(function() {
 
-console.log($('html').outerHeight(true));
-//$('html').css('overflow', 'hidden');
 //$('.tabs').css('height', $('html').outerHeight(true) - 25);
 //$('.tabs').css('height', $('html').innerHeight() - 25);
 $('.tabs').css('height', $('html').height() - 25);
@@ -11,4 +9,7 @@ $('.column').each(function(i, elem) {$(elem).css('height', $(elem).parent().heig
 $('.accordion').accordion('resize');
 });
 
-$(document).ready(function() {$(window).resize()});
+$(document).ready(function() {
+	$('html').css('overflow', 'hidden');
+	$(window).resize();
+});

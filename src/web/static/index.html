@@ -32,6 +32,32 @@
 					</div>
 					<h3><a href="#">List</a></h3>
 					<div>
+						<div id="add-event" title="Добавление записи о событии">
+							<table id="add-event-form">
+								<tr>
+									<td>name</td>
+									<td><input type="text" name="name"></td>
+								</tr>
+								<tr>
+									<td>start</td>
+									<td><input type="text" name="start"></td>
+								</tr>
+								<tr>
+									<td>duration</td>
+									<td><input type="text" name="duration"></td>
+								</tr>
+								<!--
+								<tr>
+									<td>groups</td>
+									<td id="choose-groups"></td>
+								</tr>
+								-->
+							</table>
+							<button class="add-field">Add field</button>
+						</div>
+						<div id="del-event" title="Удаление записи о событии">
+							<p>Вы действительно хотите удалить эту запись?</p>
+						</div>
 						<div class=column>
 							<div class=toolbar>
 								<button class=tool id="add-event-start">+</button>
@@ -97,7 +123,7 @@
 						</tr>
 						-->
 					</table>
-					<button id="add-field">Add field</button>
+					<button class="add-field">Add field</button>
 				</div>
 				<div id="del-person" title="Удаление записи о человеке">
 					<p>Вы действительно хотите удалить эту запись?</p>

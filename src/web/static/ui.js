@@ -194,13 +194,13 @@ $(document).ready(function() {
 	
 	$('option:first-child').attr("selected", "true");
 	
-	$('#add-field').click(function() {
+	$('.add-field').click(function(event) {
 		$('<tr class="editable">' +
 			'<td><input type="text" class="data-name"></td>' +
 			'<td><input type="text" class="data"></td>' +
 			'<td><button class="del-field" type="button">Del</button></td>' +
 			'</tr>').
-			appendTo($('#add-person-form'));
+			appendTo($(event.target).prev('table'));
 		$('.del-field').click(function(event) {
 			$(event.target).parents('tr').remove();
 		});
@@ -248,5 +248,101 @@ $(document).ready(function() {
 			$('#events-list').list('append', event.id, event.name);
             objects[event.id] = event;
         });
+    });
+    
+    $('#add-event').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	width: 'auto',
+    	buttons: {
+    		'Добавить событие': function() {
+                var field = {
+                    name: $('#add-event-form input[name="name"]').val(),
+                    start: $('#add-event-form input[name="start"]').val(),
+                    duration: $('#add-event-form input[name="duration"]').val()
+                };
+                var object;
+    			$('#add-event-form .editable').each(function(i, elem) {
+    				field[$(elem).children('.data-name').val()] = $(elem).children('.data').val();
+    			});
+    			$.ajax({
+    				url: '/api/event/',
+    				type: 'CREATE',
+                    async: false,
+                    success: function (data) {
+                        object = data;
+                    },
+                    error: function (jqXHR, message, exception) {
+                        object = $.parseJSON(jqXHR.responseText);
+                        if (object.error) {
+                            alert(object.error);
+                            $('#add-event-form .editable').remove();
+                            $('#add-event').dialog('close');
+                        }
+                    }
+    			});
+                $.each(field, function (k, v) {
+                    $.ajax({
+                        url: '/api/event/' + object.id,
+                            type: 'POST',
+                            async: false,
+                            data: {
+                                name: k,
+                                value: v
+                            },
+                            success: function (data) {
+                            object = data;
+                        }
+                    });
+                });
+                $('<div id=' + event.id + '>' + event.name +
+ 		           	'<div id="start">' + event.start + '</div>' +
+        	    	'<div id="duration">' + event.duration + '</div>' +
+        	    	'</div>').appendTo('#timeline');
+                $('#events-list').list('append', object.id, object.name);
+                objects[object.id] = object;
+                $('#add-event-form .editable').remove();
+    			$('#add-event').dialog('close');
+    		},
+    		'Отмена': function() {
+                $('#add-event-form .editable').remove();
+    			$('#add-event').dialog('close');
+    		}
+    	}
+    });
+    
+    $('#del-event').dialog({
+    	autoOpen: false,
+    	resizable: false,
+    	modal: true,
+    	buttons: {
+    		'Да': function() {
+    			var id = $('#events-list li[class="ui-state-active"]').attr('id');
+    			$.ajax({
+   					url: '/api/event/' + id,
+    				type: 'DELETE',
+    				success: function() {
+    					$('#event-info').empty();
+    					$('#timeline div[id=' + id + ']').remove();
+    					$('#events-list li[class="ui-state-active"]').remove();
+	    				$('#del-event').dialog('close');
+	    			}
+	    		});
+    		},
+    		'Нет': function() {
+    			$('#del-event').dialog('close');
+    		}
+    	}
+    });
+    
+    $('#add-event-start').click(function() {
+    	$('#add-event').dialog('open');
+    	return false;
+    });
+    
+    $('#del-event-start').click(function() {
+    	$('#del-event').dialog('open');
+    	return false;
     });
 });
