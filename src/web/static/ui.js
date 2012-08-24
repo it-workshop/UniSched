@@ -2,7 +2,8 @@ var objects = [];
 
 $(document).ready(function() {
     $('.tabs').tabs();
-    $('.accordion').accordion();
+    $('.datepicker').datepicker({ dateFormat: "@" });
+    $('.accordion').accordion({ fillSpace: true });
     $('.list').list();
     $('.info').info();
 
@@ -233,5 +234,19 @@ $(document).ready(function() {
 			}
 		}
 	});
+	
+	$('#events-list').list({change: function(event, target) {
+        $('#event-info').info('set_object', objects[$(target).attr('id')]);
+    }});
+	
+	$.getJSON('/api/event/', function (data) {
+        $.each(data, function (i, event) {
+            $('<div id=' + event.id + '>' + event.name +
+            	'<div id="start">' + event.start + '</div>' +
+            	'<div id="duration">' + event.duration + '</div>' +
+            	'</div>').appendTo('#timeline');
+			$('#events-list').list('append', event.id, event.name);
+            objects[event.id] = event;
+        });
+    });
 });
-

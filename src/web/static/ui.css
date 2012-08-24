@@ -9,7 +9,7 @@
 
 .list {
     min-width: 250px;
-    height: 400px;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -41,4 +41,8 @@
 	width: auto;
 	display: inline-block;
 	vertical-align: top;
+}
+
+html, body {
+	height: 100%;
 }
