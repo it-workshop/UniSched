@@ -38,9 +38,10 @@
     	<table id="add-group-form">
     		<tr>
     			<td>name</td>
-    			<td><input type="text" name="name"></td>
+    			<td><input class=default-field type="text" name="name"></td>
     		</tr>
     	</table>
+        <button class='add-field'>Add field</button>
     </div>
     <div id="del-group" title="Удаление записи о группе">
     	<p>Вы действительно хотите удалить эту запись?</p>
@@ -64,27 +65,21 @@
     	<table id="add-person-form">
    			<tr>
    				<td>name</td>
-   				<td><input type="text" name="name"></td>
+   				<td><input type="text" name="name" class=default-field></td>
    			</tr>
    			<tr>
    				<td>surname</td>
-   				<td><input type="text" name="surname"></td>
+   				<td><input type="text" name="surname" class=default-field></td>
    			</tr>
    			<tr>
    				<td>sex</td>
    				<td>
-   					<input type="radio" name="sex" value="MALE" checked>MALE<br>
-   					<input type="radio" name="sex" value="FEMALE">FEMALE<br>
+   					<input class=default-field type="radio" name="sex" value="MALE" checked>MALE<br>
+   					<input class=default-field type="radio" name="sex" value="FEMALE">FEMALE<br>
    				</td>
    			</tr>
-            <!--
-   			<tr>
-   				<td>groups</td>
-   				<td id="choose-groups"></td>
-   			</tr>
-            --!>
     	</table>
-    	<button id="add-field">Add field</button>
+    	<button class="add-field">Add field</button>
     </div>
     <div id="del-person" title="Удаление записи о человеке">
     	<p>Вы действительно хотите удалить эту запись?</p>

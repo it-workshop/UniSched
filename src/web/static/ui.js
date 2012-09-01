@@ -18,42 +18,49 @@ $(document).ready(function() {
                 $(event.target).removeClass('ui-state-hover').addClass('ui-state-default');
             }
         });
-    
-    $('#add-person').dialog({
-    	autoOpen: false,
-    	resizable: false,
-    	modal: true,
-    	width: 'auto',
-    	buttons: {
-    		'Добавить человека': function() {
-                var field = {
-                    name: $('#add-person-form input[name="name"]').val(),
-                    surname: $('#add-person-form input[name="surname"]').val(),
-                    sex: $('#add-person-form input:checked').val()
-                };
-                var object;
-    			$('#add-person-form .editable').each(function(i, elem) {
-    				field[$(elem).children('.data-name').val()] = $(elem).children('.data').val();
-    			});
-    			$.ajax({
-    				url: '/api/person/',
-    				type: 'CREATE',
-                    async: false,
-                    success: function (data) {
-                        object = data;
-                    },
-                    error: function (jqXHR, message, exception) {
-                        object = $.parseJSON(jqXHR.responseText);
-                        if (object.error) {
-                            alert(object.error);
-                            $('#add-person-form .editable').remove();
-                            $('#add-person').dialog('close');
-                        }
-                    }
-    			});
-                $.each(field, function (k, v) {
+    var make_create_dialog = function($div, type, $list, name, $start) {
+        var close_dialog = function() {
+            $div.find('.editable').remove();
+            $div.find('input.default-field[type="text"]').val('');
+            $div.dialog('close');
+        }
+        $div.dialog({
+            autoOpen: false,
+            resizable: false,
+            modal: true,
+            width: 'auto',
+            buttons: {
+                'OK': function () {
+                    var field = {};
+                    $($div.find('input.default-field[type="text"]'),
+                        $div.find('input.default-field:checked')).
+                        each(function (i, v) {
+                        v = $(v);
+                        field[v.attr('name')] = v.val();
+                    });
+                    var object;
+                    $div.find('.editable').each(function(i, v) {
+                        v = $(v);
+                        field[v.find('input.data-name').val()] = v.find('input.data').val();
+                    });
                     $.ajax({
-                        url: '/api/person/' + object.id,
+                        url: '/api/' + type + '/',
+                        type: 'CREATE',
+                        async: false,
+                        success: function (data) {
+                            object = data;
+                        },
+                        error: function (jqXHR, message, exception) {
+                            object = $.parseJSON(jqXHR.responseText);
+                            if (object.error) {
+                                alert(object.error);
+                                close_dialog();
+                            }
+                        }
+                    });
+                    $.each(field, function (k, v) {
+                        $.ajax({
+                            url: '/api/' + type + '/' + object.id,
                             type: 'POST',
                             async: false,
                             data: {
@@ -61,21 +68,33 @@ $(document).ready(function() {
                                 value: v
                             },
                             success: function (data) {
-                            object = data;
-                        }
+                                object = data;
+                            }
+                        });
                     });
-                });
-                $('#people-list').list('append', object.id, object.surname + ' ' + object.name);
-                objects[object.id] = object;
-                $('#add-person-form .editable').remove();
-    			$('#add-person').dialog('close');
-    		},
-    		'Отмена': function() {
-                $('#add-person-form .editable').remove();
-    			$('#add-person').dialog('close');
-    		}
-    	}
-    });
+                    $list.list('append', object.id, name(object));
+                    objects[object.id] = object;
+                    close_dialog();
+                },
+                'Cancel': close_dialog
+            }
+        });
+        $start.click(function(event) {
+            $div.dialog('open');
+        });
+        $div.find('.add-field').click(function (event) {
+            var tr = 
+            $('<tr class=editable><th><input type=text class=data-name></th><td><input type=text class=data></td><td><button>Del</button></td></tr>').
+                appendTo($div.find('table'));
+            tr.find('button').click(function (event) {
+                tr.remove();
+            });
+        });
+    };
+
+    make_create_dialog($('#add-group'), 'group', $('#groups-list'), function (object) { return object.name; }, $('#add-group-start'));
+
+    make_create_dialog($('#add-person'), 'person', $('#people-list'), function (object) { return object.surname + ' ' + object.name; }, $('#add-person-start'));
     
     $('#del-person').dialog({
     	autoOpen: false,
@@ -96,31 +115,6 @@ $(document).ready(function() {
     		},
     		'Нет': function() {
     			$('#del-person').dialog('close');
-    		}
-    	}
-    });
-    
-    $('#add-group').dialog({
-    	autoOpen: false,
-    	resizable: false,
-    	modal: true,
-    	buttons: {
-    		'Добавить группу': function() {
-    			var field = {
-    				'id': Number($('#groups-list li:last').attr('id')) + 1,
-    				'name': $('#add-group-form input[name="name"]').attr('value')
-    			};
-    			$.ajax({
-   					url: '/api/group/' + field.id,
-    				type: 'CREATE',
-    				data: field
-	    		});
-	    		$('#groups-list').list('append', field.id, field.name);
-            	objects[field.id] = field;
-    			$('#add-group').dialog('close');
-    		},
-    		'Отмена': function() {
-    			$('#add-group').dialog('close');
     		}
     	}
     });
@@ -148,18 +142,8 @@ $(document).ready(function() {
     	}
     });
     
-    $('#add-person-start').click(function() {
-    	$('#add-person').dialog('open');
-    	return false;
-    });
-    
     $('#del-group-start').click(function() {
     	$('#del-group').dialog('open');
-    	return false;
-    });
-    
-    $('#add-group-start').click(function() {
-    	$('#add-group').dialog('open');
     	return false;
     });
     
