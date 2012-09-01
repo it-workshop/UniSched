@@ -8,7 +8,7 @@
 }
 
 .list {
-    min-width: 250px;
+    min-width: 300px;
     height: 400px;
     overflow-y: scroll;
 }
@@ -32,6 +32,10 @@
     margin-bottom: 5px;
 }
 
+.search {
+    display: inline-block;
+}
+
 .table {
 	width: auto;
 
@@ -42,3 +46,4 @@
 	display: inline-block;
 	vertical-align: top;
 }
+

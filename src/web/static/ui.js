@@ -7,6 +7,7 @@ $(document).ready(function() {
     $('.info').info();
 
     $('.toolbar').children().addClass('ui-corner-all');
+    $('.search').addClass('ui-widget-content').children().css('border', 'none').css('display', 'inline-block');
     $('.tool').addClass('ui-widget').addClass('ui-state-default').hover(
         function (event) {
             if ($(event.target).hasClass('ui-state-default')) {
