@@ -179,6 +179,21 @@ $(document).ready(function() {
             objects[group.id] = group;
         });
     });
+
+    $('#search-group').change(function(event) {
+        var $element = $(event.target);
+        var $list = $('#groups-list');
+        $list.children().hide();
+        if ($element.val() == '') {
+            $list.children().show();
+        } else {
+            $.getJSON('/api/group/?q=' + encodeURIComponent($element.val()), function (data) {
+                $.each(data, function (i, v) {
+                    $('#' + v.id).show();
+                });
+            });
+        }
+    });
     
     $('#people-list').list({change: function(event, target) {
         $('#person-info').info('set_object', objects[$(target).attr('id')]);
