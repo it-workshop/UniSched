@@ -180,20 +180,22 @@ $(document).ready(function() {
         });
     });
 
-    $('#search-group').change(function(event) {
-        var $element = $(event.target);
-        var $list = $('#groups-list');
-        $list.children().hide();
-        if ($element.val() == '') {
-            $list.children().show();
-        } else {
-            $.getJSON('/api/group/?q=' + encodeURIComponent($element.val()), function (data) {
-                $.each(data, function (i, v) {
-                    $('#' + v.id).show();
+    var make_search = function (field, list, type) {
+        field.change(function(event) {
+            if (field.val() == '') {
+                list.children().show();
+            } else {
+                list.children().hide();
+                $.getJSON('/api/' + type + '/?q=' + encodeURIComponent(field.val()), function (data) {
+                    $.each(data, function (i, v) {
+                        $('#' + v.id).show();
+                    });
                 });
-            });
-        }
-    });
+            }
+        });
+    };
+
+    make_search($('#search-group'), $('#groups-list'), 'group');
     
     $('#people-list').list({change: function(event, target) {
         $('#person-info').info('set_object', objects[$(target).attr('id')]);
@@ -205,6 +207,8 @@ $(document).ready(function() {
             objects[person.id] = person;
         });
     });
+
+    make_search($('#search-person'), $('#people-list'), 'person');
 	
 	$('option:first-child').attr("selected", "true");
 	
@@ -219,20 +223,5 @@ $(document).ready(function() {
 			$(event.target).parents('tr').remove();
 		});
 	});
-
-	$('#search-person').change(function(event) {
-        var $element = $(event.target);
-        var $list = $('#people-list');
-        $list.children().hide();
-        if ($element.val() == '') {
-            $list.children().show();
-        } else {
-            $.getJSON('/api/person/?q=' + encodeURIComponent($element.val()), function (data) {
-                $.each(data, function (i, v) {
-                    $('#' + v.id).show();
-                });
-            });
-        }
-    });
 });
 
