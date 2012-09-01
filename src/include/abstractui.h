@@ -121,6 +121,8 @@ protected:
                          * is empty that all objects will satisfied.
                          */
 
+    std::vector<Object*> search(const std::string query);
+
     const std::map<objid_t, Object *>& objects() const
     {
         return objects_;

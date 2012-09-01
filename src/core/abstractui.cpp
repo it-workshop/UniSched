@@ -60,6 +60,22 @@ std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>
     return results;
 }
 
+std::vector<Object*> AbstractUI::search(const std::string query)
+{
+    std::vector<Object *> results;
+    for (auto object : objects_)
+    {
+        for (auto value : object.second->read()) {
+            if (value.second.type() == typeid(std::string)
+                && boost::any_cast<const std::string>(value.second) == query)
+            {
+                results.push_back(object.second);
+            }
+        }
+    }
+    return results;
+}
+
 void AbstractUI::push(const int id, const std::string& name,
         const boost::any& value)
 {
@@ -444,14 +460,20 @@ int AbstractUI::_lua_search(lua_State *state)
     /* Stack:
      *  1: args
      */
-    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    if (lua_gettop(state) != 1 || (!lua_istable(state, 1) && !lua_isstring(state, 1)))
     {
         lua_pushstring(state, "Invalid arguments!");
         lua_error(state);
         // long jump
     }
-    lua_pushnil(state);
+    std::vector<Core::Object*> vector;
     std::map<std::string, boost::any> args;
+    if (lua_isstring(state, 1))
+    {
+        vector = self->search(lua_tostring(state, 1));
+        goto convert_and_return;
+    }
+    lua_pushnil(state);
     while(lua_next(state, 1))
     {
         if (!lua_isstring(state, -2) || !lua_isstring(state, -1))
@@ -474,7 +496,8 @@ int AbstractUI::_lua_search(lua_State *state)
         lua_pop(state, 1);
     }
     lua_pop(state, 1);
-    std::vector<Core::Object *> vector = self->search(args);
+    vector = self->search(args);
+convert_and_return:
     lua_createtable(state, 0, 0);
     int i = 0;
     for (Core::Object *obj : vector)

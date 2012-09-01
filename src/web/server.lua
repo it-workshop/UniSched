@@ -75,7 +75,7 @@ local function get(type)
             }
         end
         local ret = ''
-        for k, v in pairs(search(request.args)) do 
+        for k, v in pairs(search(request.args.q or request.args)) do 
             if not type or v.type() == type then
                 if ret ~= '' then
                     ret = ret .. ','
