@@ -411,9 +411,7 @@ function request(request)
         end
         request.post = {}
         if request.method == 'POST' then
-            print('POST:', request.post_data)
             for k, v in string.gmatch(request.post_data, '([^&=]+)=([^&=]*)') do
-                print('POST:', k, v)
                 request.post[urlunescape(k)] = urlunescape(v)
             end
         end
@@ -441,9 +439,6 @@ function process(sock)
     end
     local post_data
     if method == 'POST' then
-        for k, v in pairs(headers) do
-            print(k, v)
-        end
         post_data = sock:receive(headers['Content-Length'])
     end
     local response = request({
