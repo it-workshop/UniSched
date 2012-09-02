@@ -2,7 +2,8 @@ var objects = [];
 
 $(document).ready(function() {
     $('.tabs').tabs();
-    $('.accordion').accordion();
+    $('.datepicker').datepicker({ dateFormat: "@" });
+    $('.accordion').accordion({ fillSpace: true });
     $('.list').list();
     $('.info').info();
 
@@ -197,16 +198,15 @@ $(document).ready(function() {
 	
 	$('option:first-child').attr("selected", "true");
 	
-	$('#add-field').click(function() {
+	$('.add-field').click(function(event) {
 		$('<tr class="editable">' +
 			'<td><input type="text" class="data-name"></td>' +
 			'<td><input type="text" class="data"></td>' +
 			'<td><button class="del-field" type="button">Del</button></td>' +
 			'</tr>').
-			appendTo($('#add-person-form'));
+			appendTo($(event.target).prev('table'));
 		$('.del-field').click(function(event) {
 			$(event.target).parents('tr').remove();
 		});
 	});
 });
-
