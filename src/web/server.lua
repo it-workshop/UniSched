@@ -4,12 +4,23 @@ require 'luarocks.loader'
 require 'socket'
 
 local function to_json(object)
-    local data = [[
+    assert(object)
+    local data = ''
+    if object.id then
+        data = [[
     "id": "]] .. object.id() .. [[",
     "type": "]] .. object.type() .. '"'
+    end
     local first = true
-    for k, v in pairs(object.read()) do
-        data = data .. ',\n    "' .. k .. '": '
+    local t = object
+    if object.read and type(object.read) == 'function' then
+        t = object.read()
+    end
+    for k, v in pairs(t) do
+        if data ~= '' then
+            data = data .. ',\n'
+        end
+        data = data .. '    "' .. k .. '": '
         if type(v) == 'number' or type(v) == 'string' then
             data = data .. '"' .. v .. '"'
         elseif type(v) == 'table' then
@@ -32,10 +43,10 @@ end
 
 local function json_error(code, message, headers)
     local ret = {
-            code = code,
-            message = message,
-            headers = headers,
-            data = "{ 'error': '" .. message .. "' }"
+        code = code,
+        message = message,
+        headers = headers,
+        data = "{ 'error': '" .. message .. "' }"
     }
     ret.headers['Content-Type'] = 'application/json'
     return function (request)
@@ -51,7 +62,30 @@ local function urlunescape(s)
     return s
 end
 
+local log = {}
+
 local function get(type)
+    if type == 'log' then
+        return function (request, id)
+            local ret
+            for i = id or 1, #log do
+                if not ret then
+                    ret = to_json(log[i])
+                else
+                    ret = ret .. ',\n' .. to_json(log[i])
+                end
+            end
+            ret = ret or ''
+            return {
+                code = 200,
+                message = 'OK',
+                headers = {
+                    ['Content-Type'] = 'application/json'
+                },
+                data = '[\n' .. ret .. '\n]'
+            }
+        end
+    end
     return function (request, id)
         if tonumber(id) then
             local o = get_object(id)
@@ -128,7 +162,6 @@ local function post(type)
                 data = '{ "error": "Invalid arguments" }'
             }
         end
-        print(request.post.name, request.post.value)
         local code, error = pcall(o.update, request.post.name, request.post.value)
         if not code then
             return {
@@ -140,6 +173,13 @@ local function post(type)
                 data = '{ "error": "' .. error .. '" }'
             }
         end
+        table.insert(log, {
+            state = #log + 1,
+            object = id,
+            method = 'update',
+            name = request.post.name,
+            value = request.post.value
+        })
         return {
             code = 200,
             message = 'OK',
@@ -196,6 +236,13 @@ function link(type, connect)
                 data = '{ "error": "Could not connect objects" }'
             }
         end
+        table.insert(log, {
+            state = #log + 1,
+            object = id,
+            method = 'connect',
+            connect = connect,
+            with = with.id();
+        })
         return {
             code = 200,
             message = 'OK',
@@ -223,6 +270,12 @@ local function create_method(type)
                 data = '{ "error": "Could not create object" }'
             }
         end
+        table.insert(log, {
+            state = #log + 1,
+            object = o.id();
+            method = 'create',
+            type = type
+        })
         return {
             code = 201,
             message = 'Created',
@@ -264,6 +317,11 @@ local function delete(type)
             }
         end
         remove(o)
+        table.insert(log, {
+            state = #log + 1,
+            object = id,
+            method = 'remove'
+        })
         return {
             code = 204,
             message = 'No content',
@@ -278,13 +336,15 @@ local api = {
         object = get(),
         person = get('person'),
         group = get('group'),
-        event = get('event')
+        event = get('event'),
+        log = get('log')
         },
     GET = {
         object = get(),
         person = get('person'),
         group = get('group'),
-        event = get('event')
+        event = get('event'),
+        log = get('log')
         },
     POST = {
         object = post(),

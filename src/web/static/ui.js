@@ -147,6 +147,7 @@ $(document).ready(function() {
     $('#del-group-start').click(function() {
     	$('#del-group').dialog('open');
     	return false;
+    a
     });
     
     $('#del-person-start').click(function() {
@@ -195,18 +196,34 @@ $(document).ready(function() {
     });
 
     make_search($('#search-person'), $('#people-list'), 'person');
-	
-	$('option:first-child').attr("selected", "true");
-	
-	$('.add-field').click(function(event) {
-		$('<tr class="editable">' +
-			'<td><input type="text" class="data-name"></td>' +
-			'<td><input type="text" class="data"></td>' +
-			'<td><button class="del-field" type="button">Del</button></td>' +
-			'</tr>').
-			appendTo($(event.target).prev('table'));
-		$('.del-field').click(function(event) {
-			$(event.target).parents('tr').remove();
-		});
-	});
+
+    var state;
+    $.getJSON('/api/log/', function (data) {
+        state = data.length + 1;
+    });
+    $(document).everyTime('15s', 'update-timer', function (i) {
+        $.getJSON('/api/log/' + state, function (data) {
+            $.each(data, function (i, v) {
+                switch(v.method) {
+                    case 'create':
+                        objects[v.id] = { id: v.id, type: v.type };
+                        if (v.type == 'person') {
+                            $('#people-list').list('append', v.id, '');
+                        } else if (v.type == 'group') {
+                            $('#groups-list').list('append', v.id, '');
+                        }
+                        break;
+                    case 'update':
+                        objects[v.id][v.name] = v.value;
+                        break;
+                    case 'remove':
+                        objects[v.id] = undefined;
+                        break;
+                    default:
+                        break;
+                }
+            });
+            state += data.length;
+        });
+    })
 });
