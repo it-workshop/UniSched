@@ -1,3 +1,10 @@
+/** @file
+ * @brief Core::Person class implementation.
+ * @author Derbenev Aleksander
+ * @author Ter-Gabrielyan Arshavir
+ * @date 2011-2012
+ */
+
 #include <person.h>
 
 using namespace Core;
