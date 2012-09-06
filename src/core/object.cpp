@@ -1,3 +1,10 @@
+/** @file
+ * @brief Core::object implementation.
+ * @author Derbenev Aleksander
+ * @author Mosyagin Igor
+ * @date 2012
+ */
+
 #include <object.h>
 
 using namespace Core;

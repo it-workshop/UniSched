@@ -1,3 +1,11 @@
+/** @file
+ * @brief Core::Object, Core::obj_t and Core::objid_t definition.
+ * @author Derbenev Aleksander
+ * @author Mosyagin Igor
+ * @author Ter-Gabrielyan Arshavir
+ * @date 2012
+ */
+
 #pragma once
 
 #include <string>
@@ -5,9 +13,39 @@
 
 #include <boost/any.hpp>
 
+/** @namespace Core
+ * Kernel of the project.
+ *
+ * It contains the objects and modules model implementations.
+ */
 namespace Core {
 
-enum obj_t {UNKNOWN, PERSON, GROUP, EVENT};
+/** @enum obj_t
+ * Object type.
+ *
+ * Describes types of objects known by the core.
+ */
+enum obj_t
+{
+    UNKNOWN,    /**< Unknown object.
+                 * @attention It must not be used anywhere!
+                 */
+    PERSON,     /**< Person.
+                 * Must be used in the Core::Person class
+                 */
+    GROUP,      /**< Group.
+                 * Must be used in the Core::Group class
+                 */
+    EVENT       /**< Event.
+                 * Must be used in the Core::Event class
+                 */
+};
+
+/** @typedef objid_t
+ * Object id type.
+ *
+ * Used for store, load and search objects.
+ */
 typedef unsigned long int objid_t;
 
 /** @class Object
@@ -102,7 +140,7 @@ protected:
                          * Must throw boost::any_cast if field has incorrect
                          * type or value.
                          *
-                         * @important Make sure that fields that changed by
+                         * @attention Make sure that fields that changed by
                          * connect and disconnect methods cannot be changed
                          * by simple update. Throw exception for thouse fields.
                          *
@@ -313,9 +351,9 @@ public:
     void cleanup();
                         /**< @brief Cleanup connections.
                          * 
-                         * @important Call it before delete object.
+                         * @attention Call it before delete object.
                          *
-                         * @important This code is not in the destructor because
+                         * @attention This code is not in the destructor because
                          * it use some virtual methods and it must not be called
                          * when object just deletes. It must be called when
                          * object is removed from database.
@@ -403,7 +441,7 @@ public:
                          * It can throw std::bad_cast exception if @a object
                          * cannot be connected to or disconnected from this one.
                          *
-                         * @important It can throw boost:bad_any_cast if the
+                         * @attention It can throw boost:bad_any_cast if the
                          * needed field of the some objects contain invalid type
                          * for connecting. You have to check check_field
                          * function to make sure that you deny to change
