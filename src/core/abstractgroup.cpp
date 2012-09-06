@@ -8,7 +8,7 @@ AbstractGroup::AbstractGroup(obj_t type, objid_t id, AbstractUI& ui):
 }
 
 void AbstractGroup::check_field(const std::string& name,
-        const boost::any& value) const throw (boost::bad_any_cast, std::bad_cast)
+        const boost::any& value) const throw (boost::bad_any_cast)
 {
     if ("name" == name)
     {

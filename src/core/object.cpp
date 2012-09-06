@@ -3,6 +3,7 @@
 using namespace Core;
 
 void Object::update(const std::string& name, const boost::any& value)
+    throw (boost::bad_any_cast)
 {
     check_field(name, value);
     if (!fields_[name].empty() && fields_[name].type() != value.type())
@@ -14,6 +15,7 @@ void Object::update(const std::string& name, const boost::any& value)
 }
 
 void Object::update(const std::map<std::string, boost::any>& fields)
+    throw (boost::bad_any_cast)
 {
     for (auto f: fields) {
         this->update(f.first, f.second);

@@ -10,7 +10,7 @@ namespace Core {
 class Event: public AbstractGroup {
 protected:
     void check_field(const std::string& name, const boost::any& value) const
-        throw(boost::bad_any_cast, std::bad_cast);
+        throw(boost::bad_any_cast);
 public:
     Event (const objid_t id, AbstractUI& ui) throw (std::bad_cast):
             AbstractGroup(EVENT, id, ui)

@@ -51,12 +51,12 @@ private:
                          */
 
     Object * set_object(Object * object)
-                        /**< @brief Apply changes in an object.
-                         * @param [in] object Object to apply.
-                         */
     {
         return objects_[object->id()] = object;
     }
+                        /**< @brief Apply changes in an object.
+                         * @param [in] object Object to apply.
+                         */
 
     class AbstractStorage *storage_;
 
@@ -95,12 +95,6 @@ protected:
 
     template <class T>
     Object * create(const objid_t new_id)
-                        /**< @brief Create an object of the T type with given id.
-                         * This method is designed to be used only in the 
-                         * AbstractStorage class.
-                         * @param [in] id Identificator of the new object.
-                         * @param [in] parameters new object`s data.
-                         */
     {
         if ( objects_.count(new_id) ) return nullptr;
         Object *object = set_object(new T(new_id, *this));
@@ -108,6 +102,11 @@ protected:
         if (new_id_ <= new_id) { new_id_ = new_id + 1; }
         return object;
     }
+                        /**< @brief Create an object of the T type with given id.
+                         * This method is designed to be used only in the 
+                         * AbstractStorage class.
+                         * @param [in] id Identificator of the new object.
+                         */
 
     std::vector<Object*> search(const std::map<std::string, boost::any>& parameters = std::map<std::string, boost::any>());
                         /**< @brief Search objects by some parameters.
@@ -153,14 +152,13 @@ public:
 
     template <class T>
     Object * create()
-                        /**< @brief Create an object of the T type.
-                         * @param [in] parameters new object`s data.
-                         */
     {
         Object *object = set_object(new T(new_id(), *this));
         create_in_storage(object);
         return object;
     }
+                        /**< @brief Create an object of the T type.
+                         */
 
     virtual void init(Config& conf, const std::vector<std::string> args);
 
