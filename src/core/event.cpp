@@ -1,3 +1,9 @@
+/** @file
+ * @brief Core::Event class implementation.
+ * @author Derbenev Aleksander
+ * @date 2011-2012
+ */
+
 #include <event.h>
 
 using namespace Core;
