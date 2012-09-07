@@ -1,3 +1,10 @@
+/** @file
+ * @brief Core::AbstractGroup class implementation.
+ * @author Derbenev Aleksander
+ * @author Ter-Gabrielyan Arhsavir
+ * @date 2011-2012
+ */
+
 #include <abstractgroup.h>
 
 using namespace Core;
