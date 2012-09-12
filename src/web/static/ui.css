@@ -22,9 +22,16 @@
     min-width: 100px;
 }
 
+.column .tool {
+    display: block;
+}
+
 .tool {
 	width: 32px;
     height: 32px;
+}
+
+.toolbar .tool {
     display: inline-block;
 }
 
@@ -36,15 +43,19 @@
     display: inline-block;
 }
 
-.table {
+table {
 	width: auto;
-
 }
 	
 .column {
 	width: auto;
 	display: inline-block;
 	vertical-align: top;
+    margin: 0 2px;
+}
+
+.column > table {
+    overflow-y: scroll;
 }
 
 html, body {

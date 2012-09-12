@@ -26,16 +26,8 @@
     }
 } ());
 
-$(document).ready(function() {
-    $('.tabs').tabs();
-    $('.datepicker').datepicker({ dateFormat: "@" });
-    $('.accordion').accordion({ fillSpace: true });
-    $('.list').list();
-    $('.info').info();
-
-    $('.toolbar').children().addClass('ui-corner-all');
-    $('.search').addClass('ui-widget-content').children().css('border', 'none').css('display', 'inline-block');
-    $('.tool').addClass('ui-widget').addClass('ui-state-default').hover(
+function refresh_tools() {
+    $('.tool').addClass('ui-widget').addClass('ui-corner-all').addClass('ui-state-default').hover(
         function (event) {
             if ($(event.target).hasClass('ui-state-default')) {
                 $(event.target).removeClass('ui-state-default').addClass('ui-state-hover');
@@ -46,6 +38,17 @@ $(document).ready(function() {
                 $(event.target).removeClass('ui-state-hover').addClass('ui-state-default');
             }
         });
+}
+
+$(document).ready(function() {
+    $('.tabs').tabs();
+    $('.datepicker').datepicker({ dateFormat: "@" });
+    $('.accordion').accordion({ fillSpace: true });
+    $('.list').list();
+    $('.info').info();
+
+    $('.toolbar').children().addClass('ui-corner-all');
+    $('.search').addClass('ui-widget-content').children().css('border', 'none').css('display', 'inline-block');
     var make_create_dialog = function($div, type, $list, $start) {
         var close_dialog = function() {
             $div.find('.editable').remove();
@@ -140,7 +143,11 @@ $(document).ready(function() {
     });
 	
     $('#groups-list').list({change: function(event, target) {
-        $('#group-info').info('set_object', objects[$(target).attr('id')]);
+        $('#group-info').info('set_object', objects[$(target).attr('id')],{
+            people: Person,
+            children_groups: Group,
+            parent_groups: AbstractGroup
+        });
     }});
 
     var make_search = function (field, list, type) {
@@ -157,10 +164,8 @@ $(document).ready(function() {
     };
 
     make_search($('#search-group'), $('#groups-list'), 'group');
-    
     $('#people-list').list({change: function(event, target) {
-        $('#person-info').info('set_object', objects[$(target).attr('id')]);
+        $('#person-info').info('set_object', objects[$(target).attr('id')], {groups: AbstractGroup});
     }});
-
     make_search($('#search-person'), $('#people-list'), 'person');
 });

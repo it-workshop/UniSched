@@ -14,15 +14,59 @@ $.widget('ui.info', {
         $.Widget.prototype._setOption.apply(this, arguments);
     },
 
-    set_object: function (object) {
+    set_object: function (object, arrays) {
         var _self = this;
-        var add = function (field, text) {
+        function add(field, text) {
             var tr = $('<tr></tr>').appendTo(_self.element);
             var th = $('<th>' + field + '</th>').appendTo(tr);
             var td = $('<td></td>').appendTo(tr);
             var input = $('<input class="ui-corner-all">').val(text).appendTo(td).change(function(event) {
                 object.update(field, input.val());
             });
+        }
+        function add_lists(field, array) {
+            var tr = $('<tr></tr>').appendTo(_self.element);
+            var td = $('<td colspan=2></td>').appendTo(tr);
+            var h = $('<h3>' + field + '</h3>').appendTo(td);
+            var left_list = $('<ul class="list column"></ul>').list().appendTo(td);
+            var tools = $('<div class=column></div>').appendTo(td);
+            var to_right = $('<button class=tool><div class="ui-icon ui-icon-arrowthick-1-e"></button>').click(function() {
+                var o2 = objects[/object-([0-9]+)/.match(left_list.children('.ui-state-active').attr('id'))[0]];
+                if (object.disconnect_way(field)) {
+                    object.disconnect(o2);
+                } else {
+                    o2.disconnect(object);
+                }
+            }).appendTo(tools);
+            $.each(array, function (i, id) {
+                left_list.list('append', 'object-' + id, objects[id].display_text());
+            });
+            var to_left = $('<button class=tool><div class="ui-icon ui-icon-arrowthick-1-w"></button>').click(function() {
+                var o2 = objects[/object-([0-9]+)/.match(right_list.children('.ui-state-active').attr('id'))[0]];
+                if (object.disconnect_way(field)) {
+                    object.connect(o2);
+                } else {
+                    o2.connect(object);
+                }
+            }).appendTo(tools);
+            var right_list = $('<ul class="list column"></ul>').list().appendTo(td);
+            $.each(objects, function(i, o) {
+                if (!(o instanceof arrays[field])) {
+                    return true;
+                }
+                var found = false;
+                $.each(array, function(i, used) {
+                    if (o.id == used) {
+                        found = true;
+                        return false;
+                    }
+                });
+                if (found) {
+                    return true;
+                }
+                right_list.list('append', 'object-' + o.id, o.display_text());
+            });
+            refresh_tools();
         }
         this.element.empty();
         $.each(object.data, function (k, val) {
@@ -31,7 +75,7 @@ $.widget('ui.info', {
                 return true;
             }
             if (typeof(val) == 'object') {
-                $('<tr><th>' + k + '</th><td>' + val.length + '</td></tr>').appendTo(_self.element);
+                add_lists(k, val);
                 return true;
             }
         });

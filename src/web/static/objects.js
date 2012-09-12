@@ -5,7 +5,7 @@ var create, search;
 var objects = [];
 
 /* Public classes */
-var Person, Group, Event;
+var AbstractGroup, Person, Group, Event;
 
 /* Public Functions:
  * create(type), type = 'person' || 'group' || 'event'
@@ -214,7 +214,7 @@ var Person, Group, Event;
                 });
             }
         };
-        function AbstractGroup() {
+        AbstractGroup = function() {
         }
         AbstractGroup.prototype = new Obj();
         AbstractGroup.prototype.linkfield = function(o) {
