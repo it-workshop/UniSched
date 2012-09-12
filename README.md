@@ -40,7 +40,7 @@
 что нужно для сборки:
 
     $ cd /tmp
-    $ git clone git://github.com/alex-ac/UniSched.git
+    $ git clone git://github.com/it-workshop/UniSched.git
     $ mkdir /tmp/build-unisched/
     $ cd !$
     $ cmake /tmp/UniSched/
@@ -50,7 +50,7 @@
 расписатора. Для доступа на запись всё то же саме, только необходимо заменить
 адрес репозитория
 
-    $ git clone git@github.com:alex-ac/UniSched.git
+    $ git clone git@github.com:it-workshop/UniSched.git
 
 Сборка для отладки:
     
