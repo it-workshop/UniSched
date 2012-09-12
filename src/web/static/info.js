@@ -31,23 +31,29 @@ $.widget('ui.info', {
             var left_list = $('<ul class="list column"></ul>').list().appendTo(td);
             var tools = $('<div class=column></div>').appendTo(td);
             var to_right = $('<button class=tool><div class="ui-icon ui-icon-arrowthick-1-e"></button>').click(function() {
-                var o2 = objects[/object-([0-9]+)/.match(left_list.children('.ui-state-active').attr('id'))[0]];
+                var o2 = objects[/object-([0-9]+)/.exec(left_list.children('.ui-state-active').attr('id'))[1]];
+                $.ajaxSetup({async: false});
                 if (object.disconnect_way(field)) {
                     object.disconnect(o2);
                 } else {
                     o2.disconnect(object);
                 }
+                $.ajaxSetup({async: true});
+                _self.set_object(object, arrays);
             }).appendTo(tools);
             $.each(array, function (i, id) {
                 left_list.list('append', 'object-' + id, objects[id].display_text());
             });
             var to_left = $('<button class=tool><div class="ui-icon ui-icon-arrowthick-1-w"></button>').click(function() {
-                var o2 = objects[/object-([0-9]+)/.match(right_list.children('.ui-state-active').attr('id'))[0]];
+                $.ajaxSetup({async: false});
+                var o2 = objects[/object-([0-9]+)/.exec(right_list.children('.ui-state-active').attr('id'))[1]];
                 if (object.disconnect_way(field)) {
                     object.connect(o2);
                 } else {
                     o2.connect(object);
                 }
+                $.ajaxSetup({async: true});
+                _self.set_object(object, arrays);
             }).appendTo(tools);
             var right_list = $('<ul class="list column"></ul>').list().appendTo(td);
             $.each(objects, function(i, o) {

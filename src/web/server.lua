@@ -209,7 +209,7 @@ function link(type, connect)
             }
         end
         local o = get_object(id)
-        local with = get_object(tonumber(string.match(request.headers.Location, '^/' .. api_prefix .. '/[^/]+/([0-9]+)')))
+        local with = get_object(tonumber(string.match(request.headers.Location, '^' .. config.httpd.api_prefix .. '[^/]+/([0-9]+)')))
         if not o or not with then
             return {
                 code = 404,
