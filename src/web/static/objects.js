@@ -1,9 +1,15 @@
 /* Public functions */
 var create, search;
 
+/* Public variables */
+var objects = [];
+
+/* Public classes */
+var Person, Group, Event;
+
 /* Public Functions:
  * create(type), type = 'person' || 'group' || 'event'
- * search(q), typeof q = 'string' || 'object'
+ * search(q[, type]), typeof q = 'string' || 'object'
  *
  * Object methods:
  * update(name, value)
@@ -31,11 +37,8 @@ var create, search;
     var api_prefix = '/api/';
 
     /* private variables */
-    var objects = [];
     var patches = [];
 
-    /* classes */
-    var Person, Group, Event;
 
     /* private functions */
     function run_callback(o, callback) {
@@ -45,6 +48,7 @@ var create, search;
     }
     function do_create(type, id) {
         var o;
+        console.log('<- create(' + type + ', ' + id + ')');
         switch(type) {
         case 'person':
             o = new Person(id);
@@ -57,74 +61,80 @@ var create, search;
             break;
         }
         run_callback(o, o.on_create);
+        objects[id] = o;
         return o;
+    }
+
+    function do_connect(o1, o2) {
+        console.log('<- connect(' + o1.id + ', ' + o2.id + ')');
+        var to_name = o1.linkfield(o2);
+        var from_name = o2.backlinkfield(o1);
+        var found = false;
+        $.each(o1.data[to_name], function(i, o) {
+            if (o == o2) {
+                found = true;
+                return false;
+            }
+        });
+        if (found) {
+            return;
+        }
+        o1.data[to_name].push(o2.id);
+        o2.data[from_name].push(o1.id);
+        run_callback(o1, o1.on_connect);
+        run_callback(o2, o2.on_connect);
+    }
+    function do_disconnect(o1, o2) {
+        console.log('<- disconnect(' + o1.id + ', ' + o2.id + ')');
+        var to_name = o1.linkfield(o2);
+        var from_name = o2.backlinkfield(o1);
+        var found = false;
+        $.each(o1.data[to_name], function(i, o) {
+            if (o == o2.id) {
+                found = true;
+                o1.data[to_name].splice(i, 1);
+                return false;
+            }
+        });
+        if (!found) {
+            return;
+        }
+        $.each(o2.data[from_name], function (i, o) {
+            if (o == o1.id) {
+                o2.data[from_name].splice(i, 1);
+            }
+        });
+        run_callback(o1, o1.on_disconnect);
+        run_callback(o2, o2.on_disconnect);
+    }
+    function do_remove(o) {
+        console.log('<- remove(' + o.id + ')');
+        objects[o.id] = undefined;
+        $.each(o.data, function(k, v) {
+            if (v instanceof Array) {
+                if (o.disconnect_way(k)) {
+                    $.each(v, function(i, id) {
+                        do_disconnect(o, objects[id]);
+                    });
+                } else {
+                    $.each(v, function(i, id) {
+                        do_disconnect(objects[id], o);
+                    });
+                }
+            }
+        });
+        run_callback(o, o.on_remove);
+        delete o;
+    }
+    function do_update(o, name, value) {
+        console.log('<- update(' + o.id + ', ' + name + ', ' + value + ')');
+        o.data[name] = value;
+        run_callback(o, o.on_update);
     }
 
     /* Conclusion */
     (function () {
         /* Private functions */
-        function do_connect(o1, o2) {
-            var to_name = o1.linkfield(o2);
-            var from_name = o2.backlinkfield(o1);
-            var found = false;
-            $.each(o1.data[to_name], function(i, o) {
-                if (o == o2) {
-                    found = true;
-                    return false;
-                }
-            });
-            if (found) {
-                return;
-            }
-            o1.data[to_name].push(o2.id);
-            o2.data[from_name].push(o1.id);
-            run_callback(o1, o1.on_connect);
-            run_callback(o2, o2.on_connect);
-        }
-        function do_disconnect(o1, o2) {
-            var to_name = o1.linkfield(o2);
-            var from_name = o2.backlinkfield(o1);
-            var found = false;
-            $.each(o1.data[to_name], function(i, o) {
-                if (o == o2.id) {
-                    found = true;
-                    o1.data[to_name].splice(i, 1);
-                    return false;
-                }
-            });
-            if (!found) {
-                return;
-            }
-            $.each(o2.data[from_name], function (i, o) {
-                if (o == o1.id) {
-                    o2.data[from_name].splice(i, 1);
-                }
-            });
-            run_callback(o1, o1.on_disconnect);
-            run_callback(o2, o2.on_disconnect);
-        }
-        function do_remove(o) {
-            objects[o.id] = undefined;
-            $.each(o.data, function(k, v) {
-                if (v instanceof Array) {
-                    if (o.disconnect_way(k)) {
-                        $.each(v, function(i, id) {
-                            do_disconnect(o, objects[id]);
-                        });
-                    } else {
-                        $.each(v, function(i, id) {
-                            do_disconnect(objects[id], o);
-                        });
-                    }
-                }
-            });
-            run_callback(o, o.on_remove);
-            delete o;
-        }
-        function do_update(o, name, value) {
-            o.data[name] = value;
-            run_callback(o, o.on_update);
-        }
 
         /* Private classes */
         function Obj() {
@@ -134,6 +144,7 @@ var create, search;
                 if (!name || !value) {
                     return;
                 }
+                console.log('-> update(' + this.id + ', ' + name + ', ' + value + ')');
                 var _self = this;
                 $.ajax({
                     type: 'POST',
@@ -162,6 +173,7 @@ var create, search;
                 }
                 connect = connect == undefined ? true : connect;
                 var _self = this;
+                console.log('-> connect(' + this.id + ', ' + o.id + ', ' + connect + ')');
                 $.ajax({
                     type: connect ? 'LINK' : 'UNLINK',
                     url: api_prefix + 'object/' + _self.id,
@@ -188,6 +200,7 @@ var create, search;
             },
             remove: function() {
                 var _self = this;
+                console.log('-> remove(' + this.id + ')');
                 $.ajax({
                     type: 'DELETE',
                     url: api_prefix + 'object/' + _self.id,
@@ -214,7 +227,7 @@ var create, search;
         }
         AbstractGroup.prototype.backlinkfield = function(o) {
             if (o instanceof Person) {
-                return 'people'
+                return 'people';
             }
         }
         AbstractGroup.prototype.disconnect_way = function(name) {
@@ -224,7 +237,7 @@ var create, search;
         /* Public classes */
         Person = function (id) {
             this.id = id;
-            this.data = [];
+            this.data = {};
         }
         Person.prototype = new Obj();
         Person.prototype.linkfield = function(o) {
@@ -238,7 +251,7 @@ var create, search;
         }
         Group = function (id) {
             this.id = id;
-            this.data = [];
+            this.data = {};
         }
         Group.prototype = new AbstractGroup();
         Group.prototype.backlinkfield = function(o) {
@@ -252,7 +265,7 @@ var create, search;
         }
         Event = function (id) {
             this.id = id;
-            this.data = [];
+            this.data = {};
         }
         Event.prototype = new AbstractGroup();
     } ());
@@ -260,6 +273,7 @@ var create, search;
     /* public functions */
     create = function(type) {
         var o;
+        console.log('-> create(' + type +')');
         $.ajax({
             async: false,
             type: 'CREATE',
@@ -312,6 +326,7 @@ var create, search;
             state = data.length + 1;
         });
         $(document).everyTime('15s', 'update-timer', function (i) {
+            console.log('-> log(' + state + ')');
             $.getJSON(api_prefix + 'log/' + state, function (data) {
                 $.each(data, function(i, patch) {
                     var found = false;
@@ -345,10 +360,10 @@ var create, search;
                     if (found) {
                         return true;
                     }
-                    var o = objects[path.object];
+                    var o = objects[patch.object];
                     switch(patch.method) {
                     case 'create':
-                        do_create(path.type, patch.object);
+                        do_create(patch.type, patch.object);
                         break;
                     case 'remove':
                         do_remove(o);

@@ -1,4 +1,30 @@
-var objects = [];
+(function() {
+    Person.prototype.display_text = function () {
+        return this.read('name') + ' ' + this.read('surname');
+    }
+    Person.prototype.on_create = function () {
+        $('#people-list').list('append', this.id, this.display_text());
+    }
+    Person.prototype.on_update = function () {
+        $('#' + this.id).text(this.display_text());
+    }
+    Person.prototype.on_remove = function () {
+        $('#' + this.id).remove();
+    }
+
+    Group.prototype.display_text = function () {
+        return this.read('name');
+    }
+    Group.prototype.on_create = function () {
+        $('#groups-list').list('append', this.id, this.display_text());
+    }
+    Group.prototype.on_update = function () {
+        $('#' + this.id).text(this.display_text());
+    }
+    Group.prototype.on_remove = function () {
+        $('#' + this.id).remove();
+    }
+} ());
 
 $(document).ready(function() {
     $('.tabs').tabs();
@@ -20,7 +46,7 @@ $(document).ready(function() {
                 $(event.target).removeClass('ui-state-hover').addClass('ui-state-default');
             }
         });
-    var make_create_dialog = function($div, type, $list, name, $start) {
+    var make_create_dialog = function($div, type, $list, $start) {
         var close_dialog = function() {
             $div.find('.editable').remove();
             $div.find('input.default-field[type="text"]').val('');
@@ -40,42 +66,14 @@ $(document).ready(function() {
                         v = $(v);
                         field[v.attr('name')] = v.val();
                     });
-                    var object;
                     $div.find('.editable').each(function(i, v) {
                         v = $(v);
                         field[v.find('input.data-name').val()] = v.find('input.data').val();
                     });
-                    $.ajax({
-                        url: '/api/' + type + '/',
-                        type: 'CREATE',
-                        async: false,
-                        success: function (data) {
-                            object = data;
-                        },
-                        error: function (jqXHR, message, exception) {
-                            object = $.parseJSON(jqXHR.responseText);
-                            if (object.error) {
-                                alert(object.error);
-                                close_dialog();
-                            }
-                        }
-                    });
+                    var object = create(type);
                     $.each(field, function (k, v) {
-                        $.ajax({
-                            url: '/api/' + type + '/' + object.id,
-                            type: 'POST',
-                            async: false,
-                            data: {
-                                name: k,
-                                value: v
-                            },
-                            success: function (data) {
-                                object = data;
-                            }
-                        });
+                        object.update(k, v);
                     });
-                    $list.list('append', object.id, name(object));
-                    objects[object.id] = object;
                     close_dialog();
                 },
                 'Cancel': close_dialog
@@ -94,9 +92,9 @@ $(document).ready(function() {
         });
     };
 
-    make_create_dialog($('#add-group'), 'group', $('#groups-list'), function (object) { return object.name; }, $('#add-group-start'));
+    make_create_dialog($('#add-group'), 'group', $('#groups-list'), $('#add-group-start'));
 
-    make_create_dialog($('#add-person'), 'person', $('#people-list'), function (object) { return object.surname + ' ' + object.name; }, $('#add-person-start'));
+    make_create_dialog($('#add-person'), 'person', $('#people-list'), $('#add-person-start'));
     
     $('#del-person').dialog({
     	autoOpen: false,
@@ -105,15 +103,8 @@ $(document).ready(function() {
     	buttons: {
     		'Да': function() {
     			var id = $('#people-list li[class="ui-state-active"]').attr('id');
-    			$.ajax({
-   					url: '/api/person/' + id,
-    				type: 'DELETE',
-    				success: function() {
-    					$('#person-info').empty();
-    					$('#people-list li[class="ui-state-active"]').remove();
-	    				$('#del-person').dialog('close');
-	    			}
-	    		});
+    			objects[id].remove();
+                $('#del-person').dialog('close');
     		},
     		'Нет': function() {
     			$('#del-person').dialog('close');
@@ -128,15 +119,8 @@ $(document).ready(function() {
     	buttons: {
     		'Да': function() {
     			var id = $('#groups-list li[class="ui-state-active"]').attr('id');
-    			$.ajax({
-   					url: '/api/group/' + id,
-    				type: 'DELETE',
-    				success: function() {
-    					$('#group-info').empty();
-    					$('#groups-list li[class="ui-state-active"]').remove();
-	    				$('#del-group').dialog('close');
-	    			}
-	    		});
+                objects[id].remove();
+                $('#del-group').dialog('close');
     		},
     		'Нет': function() {
     			$('#del-group').dialog('close');
@@ -159,24 +143,14 @@ $(document).ready(function() {
         $('#group-info').info('set_object', objects[$(target).attr('id')]);
     }});
 
-    $.getJSON('/api/group/', function (data) {
-        $.each(data, function (i, group) {
-            $('#groups-list').list('append', group.id, group.name);
-            $('<input name="choose-groups" type="checkbox" value="' + group.id + '">' + group.name + '<br>').appendTo($('#choose-groups'));
-            objects[group.id] = group;
-        });
-    });
-
     var make_search = function (field, list, type) {
         field.change(function(event) {
             if (field.val() == '') {
                 list.children().show();
             } else {
                 list.children().hide();
-                $.getJSON('/api/' + type + '/?q=' + encodeURIComponent(field.val()), function (data) {
-                    $.each(data, function (i, v) {
-                        $('#' + v.id).show();
-                    });
+                $.each(search(field.val(), type), function(i, o) {
+                    list.find('#' + o.id).show();
                 });
             }
         });
@@ -188,42 +162,5 @@ $(document).ready(function() {
         $('#person-info').info('set_object', objects[$(target).attr('id')]);
     }});
 
-    $.getJSON('/api/person/', function (data) {
-        $.each(data, function (i, person) {
-            $('#people-list').list('append', person.id, person.surname + ' ' + person.name);
-            objects[person.id] = person;
-        });
-    });
-
     make_search($('#search-person'), $('#people-list'), 'person');
-
-    var state;
-    $.getJSON('/api/log/', function (data) {
-        state = data.length + 1;
-    });
-    $(document).everyTime('15s', 'update-timer', function (i) {
-        $.getJSON('/api/log/' + state, function (data) {
-            $.each(data, function (i, v) {
-                switch(v.method) {
-                    case 'create':
-                        objects[v.id] = { id: v.id, type: v.type };
-                        if (v.type == 'person') {
-                            $('#people-list').list('append', v.id, '');
-                        } else if (v.type == 'group') {
-                            $('#groups-list').list('append', v.id, '');
-                        }
-                        break;
-                    case 'update':
-                        objects[v.id][v.name] = v.value;
-                        break;
-                    case 'remove':
-                        objects[v.id] = undefined;
-                        break;
-                    default:
-                        break;
-                }
-            });
-            state += data.length;
-        });
-    })
 });

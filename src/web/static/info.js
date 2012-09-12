@@ -20,31 +20,12 @@ $.widget('ui.info', {
             var tr = $('<tr></tr>').appendTo(_self.element);
             var th = $('<th>' + field + '</th>').appendTo(tr);
             var td = $('<td></td>').appendTo(tr);
-            var input = $('<input class="ui-corner-all">').val(text).
-                change(function (event) {
-                    $.ajax({
-                        type: 'POST',
-                        data: {
-                            name: field,
-                            value: $(this).val()
-                        },
-                        url: '/api/object/' + object.id,
-                        success: function (data) {
-                            objects[object.id] = data;
-                        },
-                        error: function (data) {
-                            alert($.parseJSON(data.responseText).error);
-                            input.val(text);
-                        }
-                    });
-                }
-            ).appendTo(td);
+            var input = $('<input class="ui-corner-all">').val(text).appendTo(td).change(function(event) {
+                object.update(field, input.val());
+            });
         }
         this.element.empty();
-        $.each(object, function (k, val) {
-            if (k == 'id' || k == 'type') {
-                return true;
-            }
+        $.each(object.data, function (k, val) {
             if (typeof(val) == 'string') {
                 add(k, val);
                 return true;
