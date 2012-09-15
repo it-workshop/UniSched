@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset=utf8>
+  <title>UniSched</title>
+  <link rel=stylesheet type=text/css href=ui.css>
+  <link href="jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src=jquery-1.7.2.min.js></script>
+  <script src=jquery-ui-1.8.22.custom.min.js></script>
+  <script src=jquery.timers.js></script>
+  <script src=objects.js></script>
+  <script src=ui.js></script>
+  <script src=list.js></script>
+  <script src=info.js></script>
+  <script src=style.js></script>
+  <style>
+   .CSS-try:{
+    background-color: #FF0000;
+   }
+  </style>
+ </head>
+ <body>
+  <div class='tabs'>
+   <ul>
+    <li><a href=#events>Events</a></li>
+    <li><a href=#groups>Groups</a></li>
+    <li><a href=#people>People</a></li>
+   </ul>
+   <div class='frame' id='events'>
+    <div class='accordion'>
+     <h3>Filters</h3>
+     <div class='filters'>
+     </div>
+     <h3>Timelines</h3>
+     <div class='timelines'>
+     </div>
+    </div>
+   </div>
+   <div class='frame' id='groups'>
+    <div id="add-group" title="Добавление записи о группе">
+    	<table id="add-group-form">
+    		<tr>
+    			<td>name</td>
+    			<td><input class=default-field type="text" name="name"></td>
+    		</tr>
+    	</table>
+        <button class='add-field'>Add field</button>
+    </div>
+    <div id="del-group" title="Удаление записи о группе">
+    	<p>Вы действительно хотите удалить эту запись?</p>
+    </div>
+    <div class=column>
+     <div class=toolbar>
+      <button class=tool id="add-group-start"><div class='ui-icon ui-icon-plusthick' style='display: inline-block;'></div></button>
+      <button class=tool id="del-group-start"><div class='ui-icon ui-icon-minusthick' style='display: inline-block;'></div></button>
+      <div class=search>
+       <input type=text id='search-group' placeholder='search'>
+       <div class='ui-icon ui-icon-search'></div>
+      </div>
+     </div>
+     <ul class='list' id='groups-list'>
+     </ul>
+    </div>
+    <div class=column>
+     <table class='info' id='group-info'>
+     </table>
+    </div>
+   </div>
+   <div class='frame' id='people'>
+    <div id="add-person" title="Добавление записи о человеке">
+    	<table id="add-person-form">
+   			<tr>
+   				<td>name</td>
+   				<td><input type="text" name="name" class=default-field></td>
+   			</tr>
+   			<tr>
+   				<td>surname</td>
+   				<td><input type="text" name="surname" class=default-field></td>
+   			</tr>
+   			<tr>
+   				<td>sex</td>
+   				<td>
+   					<input class=default-field type="radio" name="sex" value="MALE" checked>MALE<br>
+   					<input class=default-field type="radio" name="sex" value="FEMALE">FEMALE<br>
+   				</td>
+   			</tr>
+    	</table>
+    	<button class="add-field">Add field</button>
+    </div>
+    <div id="del-person" title="Удаление записи о человеке">
+    	<p>Вы действительно хотите удалить эту запись?</p>
+    </div>
+    <div class=column>
+     <div class=toolbar>
+      <button class=tool id="add-person-start"><div class='ui-icon ui-icon-plusthick' style='display: inline-block;'></div></button>
+      <button class=tool id="del-person-start"><div class='ui-icon ui-icon-minusthick' style='display: inline-block;'></div></button>
+      <div class=search>
+       <input id="search-person" type="text" placeholder='search'>
+       <div class='ui-icon ui-icon-search'></div>
+      </div>
+     </div>
+     <ul class='list' id='people-list'>
+     </ul>
+    </div>
+    <div class=column>
+     <table class='info' id='person-info'>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

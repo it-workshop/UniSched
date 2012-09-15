@@ -60,6 +60,22 @@ std::vector<Object *> AbstractUI::search(const std::map<std::string, boost::any>
     return results;
 }
 
+std::vector<Object*> AbstractUI::search(const std::string query)
+{
+    std::vector<Object *> results;
+    for (auto object : objects_)
+    {
+        for (auto value : object.second->read()) {
+            if (value.second.type() == typeid(std::string)
+                && boost::any_cast<const std::string>(value.second) == query)
+            {
+                results.push_back(object.second);
+            }
+        }
+    }
+    return results;
+}
+
 void AbstractUI::push(const int id, const std::string& name,
         const boost::any& value)
 {
@@ -184,6 +200,12 @@ int AbstractUI::_lua_object_type(lua_State *state)
     return 1;
 }
 
+int AbstractUI::_lua_object_id(lua_State *state)
+{
+    lua_pushnumber(state, ((Core::Object *)lua_touserdata(state, lua_upvalueindex(1)))->id());
+    return 1;
+}
+
 void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
 {
     lua_createtable(state, 0, 0);                           // #-1: object
@@ -191,6 +213,10 @@ void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_type, 1);          // #-2: object, #-1: [id]type()
     lua_setfield(state, -2, "type");                        // #-1: object
+
+    lua_pushlightuserdata(state, object);
+    lua_pushcclosure(state, _lua_object_id, 1);
+    lua_setfield(state, -2, "id");
     
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_read, 1);          // #-2: object, #-1: [id]read()
@@ -207,7 +233,7 @@ void AbstractUI::lua_create_lua_object(lua_State *state, Core::Object *object)
     lua_pushlightuserdata(state, object);
     lua_pushcclosure(state, _lua_object_disconnect, 1);    // #-2: object, #-1: [id]disconnect()
     lua_setfield(state, -2, "disconnect");                  // #-1: object
-
+    
     lua_pushlightuserdata(state, object);
     lua_setfield(state, -2, "__object");                     // #-1: object
 
@@ -434,14 +460,20 @@ int AbstractUI::_lua_search(lua_State *state)
     /* Stack:
      *  1: args
      */
-    if (lua_gettop(state) != 1 || !lua_istable(state, 1))
+    if (lua_gettop(state) != 1 || (!lua_istable(state, 1) && !lua_isstring(state, 1)))
     {
         lua_pushstring(state, "Invalid arguments!");
         lua_error(state);
         // long jump
     }
-    lua_pushnil(state);
+    std::vector<Core::Object*> vector;
     std::map<std::string, boost::any> args;
+    if (lua_isstring(state, 1))
+    {
+        vector = self->search(lua_tostring(state, 1));
+        goto convert_and_return;
+    }
+    lua_pushnil(state);
     while(lua_next(state, 1))
     {
         if (!lua_isstring(state, -2) || !lua_isstring(state, -1))
@@ -464,7 +496,8 @@ int AbstractUI::_lua_search(lua_State *state)
         lua_pop(state, 1);
     }
     lua_pop(state, 1);
-    std::vector<Core::Object *> vector = self->search(args);
+    vector = self->search(args);
+convert_and_return:
     lua_createtable(state, 0, 0);
     int i = 0;
     for (Core::Object *obj : vector)
@@ -473,6 +506,19 @@ int AbstractUI::_lua_search(lua_State *state)
         lua_create_lua_object(state, obj);
         lua_settable(state, -3);
     }
+    return 1;
+}
+
+int AbstractUI::_lua_get_object(lua_State *state)
+{
+    if (lua_gettop(state) != 1 || !lua_isnumber(state, 1))
+    {
+        lua_pushstring(state, "Invalid argument!");
+        lua_error(state);
+    }
+
+    lua_create_lua_object(state, self->objects_[lua_tonumber(state, 1)]);
+
     return 1;
 }
 
@@ -522,6 +568,7 @@ void AbstractUI::init_algorithms()
                     //function search (args) ... end
     lua_register(vm_, "remove", _lua_remove);
                     //function remove(object) ... end
+    lua_register(vm_, "get_object", _lua_get_object);
 
     std::stringstream modules;
     setenv("UNISCHED_ALGORITHMS", "", 0);

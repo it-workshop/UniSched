@@ -1,0 +1,63 @@
+#group-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#group-info th {
+    min-width: 100px;
+}
+
+.list {
+    min-width: 300px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#person-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#person-info th {
+    min-width: 100px;
+}
+
+.column .tool {
+    display: block;
+}
+
+.tool {
+	width: 32px;
+    height: 32px;
+}
+
+.toolbar .tool {
+    display: inline-block;
+}
+
+.toolbar {
+    margin-bottom: 5px;
+}
+
+.search {
+    display: inline-block;
+}
+
+table {
+	width: auto;
+}
+	
+.column {
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
+    margin: 0 2px;
+}
+
+.column > table {
+    overflow-y: scroll;
+}
+
+html, body {
+	height: 100%;
+}
