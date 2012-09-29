@@ -80,14 +80,14 @@ class Object {
 friend class AbstractUI;
 friend class AbstractStorage;
 private:
-    objid_t id_;
+    const objid_t id_;
                         /**< Identificator of the object.
                          *
                          * @internal This field must be used only in
                          * classes which implement storage or manager
                          * functions.
                          */
-    obj_t type_;
+    const obj_t type_;
                         /**< Type of the object.
                          *
                          * @internal This field must be used only in

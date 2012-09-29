@@ -67,12 +67,14 @@ private:
     static int _lua___object___newindex(lua_State *state);
     static int _lua___object___eq(lua_State *state);
     static int _lua_object_type(lua_State *state);
+    static int _lua_object_id(lua_State *state);
     static int _lua_object_read(lua_State *state);
     static int _lua_object_update(lua_State *state);
     static int _lua_object_connect(lua_State *state);
     static int _lua_object_disconnect(lua_State *state);
 
     static int _lua_create(lua_State *state);
+    static int _lua_get_object(lua_State *state);
     static int _lua_search(lua_State *state);
     static int _lua_remove(lua_State *state);
 
@@ -117,6 +119,8 @@ protected:
                          * by the any field of specified type. If value
                          * is empty that all objects will satisfied.
                          */
+
+    std::vector<Object*> search(const std::string query);
 
     const std::map<objid_t, Object *>& objects() const
     {
