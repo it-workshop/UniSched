@@ -237,7 +237,9 @@ var AbstractGroup, Person, Group, Event;
         /* Public classes */
         Person = function (id) {
             this.id = id;
-            this.data = {};
+            this.data = {
+                groups: []
+            };
         }
         Person.prototype = new Obj();
         Person.prototype.linkfield = function(o) {
@@ -251,7 +253,11 @@ var AbstractGroup, Person, Group, Event;
         }
         Group = function (id) {
             this.id = id;
-            this.data = {};
+            this.data = {
+                people: [],
+                children_groups: [],
+                parent_groups: []
+            };
         }
         Group.prototype = new AbstractGroup();
         Group.prototype.backlinkfield = function(o) {
@@ -265,7 +271,10 @@ var AbstractGroup, Person, Group, Event;
         }
         Event = function (id) {
             this.id = id;
-            this.data = {};
+            this.data = {
+                people: [],
+                children_groups: [],
+            };
         }
         Event.prototype = new AbstractGroup();
     } ());
