@@ -1,3 +1,9 @@
+/** @file
+ * @brief Definition of abstract group class is.
+ * @author Aleksander Derbenev
+ * @author Arshavir Ter-Gabrielyan
+ * @date 2011-2012
+ */
 #pragma once
 
 #include <vector>

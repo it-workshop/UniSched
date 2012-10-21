@@ -1,3 +1,8 @@
+/** @file
+ * @brief Module class definition.
+ * @author Derbenev Aleksander
+ * @date 2011-2012
+ */
 #pragma once
 
 #include <vector>
@@ -36,6 +41,8 @@ private:
                          * only.
                          */
     void *handle_;
+                        /**< Handle of the shared object.
+                         */
 
 public:
     Module (const enum Type type, const std::string& name,
@@ -56,24 +63,30 @@ public:
                          */
 
     const Type type() const throw ()
-                        /**< @brief Get type of the module.
-                         * @return Type identificator.
-                         */
     {
         return type_;
     }
+                        /**< @brief Get type of the module.
+                         * @return Type identificator.
+                         */
 
     const std::string& name() const throw()
-                        /**< @brief Get name of the module.
-                         * @return Name of the module.
-                         */
     {
         return name_;
     }
+                        /**< @brief Get name of the module.
+                         * @return Name of the module.
+                         */
 
     static void unload_modules();
+                        /**< Close all shared objects. */
     static void load_modules(Config& conf);
+                        /**< Load modules.
+                         * @param [in] conf Configuration.
+                         */
     static std::vector<Module *> * modules();
+                        /**< Return vector vith all modules.
+                         */
 };
 
 }
