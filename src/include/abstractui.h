@@ -1,3 +1,10 @@
+/** @file
+ * @brief Definition of the AbstractUI class.
+ * @author Aleksander Derbenev
+ * @author Arshavir Ter-Gabrielyan
+ * @author Igor Mosyagin
+ * @date 2011-2012
+ */
 #pragma once
 
 #include <string>
@@ -17,12 +24,14 @@ extern "C" {
 }
 
 /** @namespace Core
- * @brief UserInterface Objects.
+ * @brief Core Objects.
  */
 namespace Core {
 
 /** @class AbstractUI
  * @brief Interface for frontend modules.
+ *
+ * Fabric of objects.
  */
 class AbstractUI: public Module {
 friend class Object;
@@ -56,27 +65,78 @@ private:
     }
                         /**< @brief Apply changes in an object.
                          * @param [in] object Object to apply.
+                         * @return Object, that was an argument.
                          */
 
     class AbstractStorage *storage_;
+                        /**< Storage of objects.
+                         */
 
     void create_in_storage(const Object *object);
+                        /**< Create object in the storage.
+                         * @param [in] object Object to save into storage.
+                         */
     lua_State *vm_;
+                        /**< Lua virtual machine instance.
+                         */
 
     static int _lua___object___index(lua_State *state);
+                        /**< Lua binding for object [] read operator.
+                         * @param [in] state Lua vm state.
+                         *
+                         * calls _lua_object_read()
+                         */
     static int _lua___object___newindex(lua_State *state);
+                        /**< Lua binding for object [] write operator.
+                         * @param [in] state Lua vm state.
+                         *
+                         * calls _lua_object_update()
+                         */
     static int _lua___object___eq(lua_State *state);
+                        /**< Lua binding for objct == operator.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_type(lua_State *state);
+                        /**< Lua binding for object.type() method.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_id(lua_State *state);
+                        /**< Lua binding for object.id() method.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_read(lua_State *state);
+                        /**< Lua binding for object.read() method.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_update(lua_State *state);
+                        /**< Lua binding for object.update() method.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_connect(lua_State *state);
+                        /**< Lua binding for object.connect() method.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_object_disconnect(lua_State *state);
+                        /**< Lua binding for object.disconnect() method.
+                         * @param [in] state Lua vm state.
+                         */
 
     static int _lua_create(lua_State *state);
+                        /**< Lua binding for create() function.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_get_object(lua_State *state);
+                        /**< Lua binding for get_object() function.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_search(lua_State *state);
+                        /**< Lua binding for search() function.
+                         * @param [in] state Lua vm state.
+                         */
     static int _lua_remove(lua_State *state);
+                        /**< Lua binding for remove() function.
+                         * @param [in] state Lua vm state.
+                         */
 
 
 protected:
@@ -89,6 +149,12 @@ protected:
                          * @param [in] value Value of the field to be saved.
                          */
     void push(Object *object, Object *with, bool connect);
+                        /**< Save connection state into the storage.
+                         * @param [in] object The object that connect.
+                         * @param [in] with The object to connect with.
+                         * @param [in] connect State of connection (true if
+                         * connect).
+                         */
 
     void remove(Object * object);
                         /**< @brief Remove object from the storage.
@@ -108,11 +174,15 @@ protected:
                          * This method is designed to be used only in the 
                          * AbstractStorage class.
                          * @param [in] id Identificator of the new object.
+                         * @return Object that was created.
                          */
 
-    std::vector<Object*> search(const std::map<std::string, boost::any>& parameters = std::map<std::string, boost::any>());
+    std::vector<Object*>
+    search(const std::map<std::string,
+            boost::any>& parameters = std::map<std::string, boost::any>());
                         /**< @brief Search objects by some parameters.
                          * @param [in] parameters Search parameters.
+                         * @return Objects that were found.
                          *
                          * Parameters are connected by logical AND.
                          * If parameter have not got a name, search value
@@ -121,28 +191,43 @@ protected:
                          */
 
     std::vector<Object*> search(const std::string query);
+                        /**< Search objects by string fields.
+                         * @param [in] query String to search.
+                         * @return Objects that were found.
+                         */
 
     const std::map<objid_t, Object *>& objects() const
     {
         return objects_;
     }
+                        /**< Get all objects.
+                         * @return Map of objects.
+                         */
     
     void set_storage(class AbstractStorage *storage)
     {
         storage_ = storage;
     }
+                        /**< Set storage. Called, when storage is selected.
+                         * @param [in] The storage that was selected.
+                         */
 
     lua_State *vm()
     {
         return vm_;
     }
+                        /**< Getter for lua vm.
+                         * @return Lua virtual machine.
+                         */
 
 public:
     AbstractUI (const std::string& name, std::vector<Module *>* modules,
             void *handle):
         Module(Module::UI, name, modules, handle), new_id_(0), storage_(nullptr)
                         /**< @brief constructor.
-                         * @param name Name of the frontend.
+                         * @param [in] name Name of the frontend.
+                         * @param [in] modules Vector for all modules.
+                         * @param [in] handle Handle of the shared object.
                          */
     {}
 
@@ -153,6 +238,10 @@ public:
             delete object.second;
         }
     }
+                        /**< Destructor.
+                         *
+                         * Deletes all objects, but not from database.
+                         */
 
     template <class T>
     Object * create()
@@ -162,30 +251,45 @@ public:
         return object;
     }
                         /**< @brief Create an object of the T type.
+                         * @return Object that was created.
                          */
 
     virtual void init(Config& conf, const std::vector<std::string> args);
+                        /**< Configure module.
+                         * @param [in] conf Configuration.
+                         * @param [in] args Command line arguments.
+                         * It's called when this module is selected as ui.
+                         */
 
     virtual int run() = 0;
                         /**< @brief Main method of frontend class. It is called
                          * from main.
                          * @return Program return code.
+                         * Must be implemented in the children classes.
                          */
 
     Object * object(const int id) const throw (std::bad_cast)
+    {                    
+        return objects_.at(id);
+    }
                         /**< @brief Return object by id.
                          * @param [in] id Object identificator.
                          * @return Requested object.
                          *
-                         * Use this method carefully. It can be moved to the
-                         * protected or private section in the future.
+                         * @attention Use this method carefully. It can be
+                         * moved to the protected or private section in the
+                         * future.
                          */
-    {                    
-        return objects_.at(id);
-    }
-
+ 
     void init_algorithms();
+                        /**< Load scripts.
+                         */
     void deinit_algorithms();
+                        /**< Stop lua vm.
+                         *
+                         * FIXME: Is there is OK that vm created in the
+                         * Config class but stopped here?
+                         */
 };
 
 };
