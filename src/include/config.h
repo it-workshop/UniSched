@@ -1,4 +1,8 @@
-
+/** @file
+ * @brief Configuration implementation.
+ * @author Aleksander Derbenev
+ * @date 2012
+ */
 #pragma once
 
 extern "C" {
@@ -20,7 +24,6 @@ private:
 public:
     Config(const std::string& file)
         throw ():
-                        /**< @brief Constructor */
         vm_(lua_open())
     {
         luaL_openlibs(vm_);
@@ -32,13 +35,22 @@ public:
             lua_pop(vm_, 1);
         }
     }
-
+                        /**< @brief Constructor
+                         * @param [in] file Name of the file to load.
+                         *
+                         * FIXME: Is there is alright that lua vm created here
+                         * but removed in the AbstractUI?
+                         */
+ 
     lua_State *
     vm()
-        throw()         /**< @brief Get lua machine */
+        throw()
     {
         return vm_;
     }
+                        /**< Getter for the lua vm.
+                         * @return Lua virtual machine.
+                         */
 
     /* TODO: Add C++ wrapper for lua tables */
 };
